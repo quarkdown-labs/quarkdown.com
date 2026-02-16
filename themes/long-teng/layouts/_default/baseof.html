@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ .Site.Title }} - Markdown with superpowers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="next-size-adjust" content="">
+    <meta name="description" content="Markdown with superpowers: a modern typesetting system for papers, presentations and books.">
+    <meta name="keywords" content="typesetting, markdown, latex, compiler, document creation, PDF generation, live preview">
+    <meta name="author" content="Giorgio Garofalo">
+    <meta property="og:title" content="Quarkdown">
+    <meta property="og:description" content="Markdown with superpowers: a modern typesetting system.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/iamgio/quarkdown/project-files/images/banner-light.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="theme-color" content="#FFFFFF">
+    <meta itemprop="operatingSystem" content="Cross-platform">
+    <meta itemprop="applicationCategory" content="DeveloperApplication" />
+    
+    {{ $baseDir := .Params.baseDir | default "" }}
+    <link href="{{ print $baseDir "css/clean.css" | absURL }}" rel="stylesheet" type="text/css">
+    <link href="{{ print $baseDir "img/fav.png" | absURL }}" rel="shortcut icon" type="image/x-icon">
+    <link href="{{ print $baseDir "img/fav.png" | absURL }}" rel="icon" type="image/x-icon" sizes="48x48">
+    <link href="{{ .Permalink }}" rel="canonical">
+    <link href="{{ print $baseDir "css/styles.css" }}" rel="stylesheet" type="text/css">
+    <link rel="apple-touch-icon" href="{{ print $baseDir "img/fav.png" | absURL }}">
+    {{ $stylesheet := .Params.stylesheet }}
+    {{ if $stylesheet }}
+    <link href="{{ print $baseDir "css/" $stylesheet }}" rel="stylesheet" type="text/css">
+    {{ end }}
+</head>
+<body>
+<div class="page-wrapper">
+
+    {{ partial "navbar.html" . }}
+    {{ block "main" . }}{{ end }}
+    {{ partial "footer.html" . }}
+
+</div>
+<!-- Toast Element -->
+<div id="toast" class="toast"></div>
+
+{{ $baseDir := .Params.baseDir | default "" }}
+<script src="{{ print $baseDir "js/main.js" | absURL }}" type="application/javascript"></script>
+
+</body>
+</html>
