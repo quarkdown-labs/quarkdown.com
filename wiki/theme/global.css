@@ -345,9 +345,6 @@ body.quarkdown.quarkdown-paged .pagedjs_area {
   margin-bottom: 0;
   text-indent: var(--qd-paragraph-text-indent);
 }
-.quarkdown.quarkdown p:empty {
-  display: none;
-}
 .quarkdown.quarkdown:not(.quarkdown-slides) p {
   hyphens: auto;
 }
@@ -390,6 +387,10 @@ table + p,
 details > summary + p,
 .float + p {
   text-indent: var(--qd-first-paragraph-text-indent, 0) !important;
+}
+
+.quarkdown p:not([data-accept-empty]):empty {
+  display: none !important;
 }
 
 .quarkdown a {
