@@ -43,7 +43,7 @@
             </a>        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle" type="button">Toggle table of contents
         </button>
         <div class="navigation-controls--break ui-kit_mobile-only"></div>
-        <div class="library-version" id="library-version">1.13.0
+        <div class="library-version" id="library-version">1.14.0
         </div>
         <div class="navigation-controls">
         <div class="filter-section filter-section_loading" id="filter-section">
@@ -112,7 +112,22 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">sealed </span><span class="token keyword">interface </span><a href="-subdocument/index.html">Subdocument</a></div><div class="brief "><p class="paragraph">A subdocument in a Quarkdown document is an independent unit that can be rendered separately, can be linked from other documents, and can link to other subdocuments in order to create a graph of subdocuments, available via <a href="../com.quarkdown.core.context/-context/subdocument-graph.html">com.quarkdown.core.context.Context.subdocumentGraph</a>.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">sealed </span><span class="token keyword">interface </span><a href="-subdocument/index.html">Subdocument</a></div><div class="brief "><p class="paragraph">A subdocument in a Quarkdown document is an independent unit that can be rendered separately, can be linked from other documents, and can link to other subdocuments in order to create a graph of subdocuments, available via <a href="../com.quarkdown.core.context/-context/shared-subdocuments-data.html">com.quarkdown.core.context.Context.sharedSubdocumentsData</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1022909085%2FClasslikes%2F1831116724" anchor-label="SubdocumentOutputNaming" id="-1022909085%2FClasslikes%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
+          <div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-subdocument-output-naming/index.html"><span>Subdocument</span><wbr><span>Output</span><wbr><span><span>Naming</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1022909085%2FClasslikes%2F1831116724"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">enum </span><a href="-subdocument-output-naming/index.html">SubdocumentOutputNaming</a> : <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><a href="-subdocument-output-naming/index.html">SubdocumentOutputNaming</a><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">Strategy for naming subdocument output files.</p></div></div></div>
                 </div>
               </div>
             </div>
@@ -131,7 +146,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="-subdocument/index.html">Subdocument</a><span class="token punctuation">.</span><a href="get-output-file-name.html"><span class="token function">getOutputFileName</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="../com.quarkdown.core.context/-context/index.html">Context</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><p class="paragraph">Returns the output file name for the subdocument, based on the context's options. If the pipeline enforces minimal subdocument collisions (<a href="../com.quarkdown.core.pipeline/-pipeline-options/minimize-subdocument-collisions.html">com.quarkdown.core.pipeline.PipelineOptions.minimizeSubdocumentCollisions</a>), <a href="-subdocument/unique-name.html">Subdocument.uniqueName</a> is returned, otherwise just <a href="-subdocument/name.html">Subdocument.name</a>, which is more human-readable but prone to collisions.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="-subdocument/index.html">Subdocument</a><span class="token punctuation">.</span><a href="get-output-file-name.html"><span class="token function">getOutputFileName</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="../com.quarkdown.core.context/-context/index.html">Context</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><p class="paragraph">Returns the output file name for the subdocument, based on the context's <a href="-subdocument-output-naming/index.html">SubdocumentOutputNaming</a> strategy.</p></div></div></div>
                 </div>
               </div>
             </div>
@@ -143,7 +158,7 @@
 </div>
     <div class="footer">
         <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
-        <span>© 2025 Quarkdown</span>
+        <span>© 2026 Quarkdown</span>
         <span class="pull-right">
             <span>Generated by </span>
             <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
