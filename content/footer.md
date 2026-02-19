@@ -1,3 +1,0 @@
----
-author: Giorgio Garofalo & contributors
----
