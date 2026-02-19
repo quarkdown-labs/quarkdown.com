@@ -1,0 +1,41 @@
+---
+interface Props {
+  href: string;
+  variant?: 'link' | 'button';
+}
+
+const { href, variant = 'link' } = Astro.props;
+---
+
+<a href={href} class:list={['cta', `cta--${variant}`]}>
+  <slot />
+</a>
+
+<style lang="scss">
+  @use '../styles/colors' as *;
+  @use '../styles/typography' as *;
+
+  .cta {
+    font-family: $font-body;
+    font-size: $font-size-cta;
+    color: $heading;
+    text-decoration: none;
+    transition: background-color 0.2s;
+  }
+
+  .cta--link:hover {
+    text-decoration: underline;
+  }
+
+  .cta--button {
+    background-color: $brand-800;
+    border: solid $heading;
+    border-width: 1px 0.5px 0.5px 2px;
+    padding: 0.75rem 1.75rem;
+    border-radius: 8px;
+
+    &:hover {
+      background-color: $brand-700;
+    }
+  }
+</style>
