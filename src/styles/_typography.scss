@@ -1,0 +1,12 @@
+$font-body: var(--font-body);
+$font-heading: var(--font-heading);
+$font-sans: var(--font-sans);
+
+$letter-spacing-body: 0.03em;
+$letter-spacing-sans: 0.04em;
+
+@mixin heading {
+  font-family: $font-heading;
+  font-weight: normal;
+  letter-spacing: $letter-spacing-body;
+}

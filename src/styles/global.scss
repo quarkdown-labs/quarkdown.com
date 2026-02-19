@@ -1,0 +1,22 @@
+@use 'colors' as *;
+@use 'typography' as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font-body;
+  letter-spacing: $letter-spacing-body;
+  background-color: $brand-900;
+  color: $text;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @include heading;
+  color: $heading;
+}
