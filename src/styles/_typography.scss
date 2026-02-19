@@ -1,12 +1,28 @@
 $font-body: var(--font-body);
 $font-heading: var(--font-heading);
 $font-sans: var(--font-sans);
+$font-code: var(--font-code);
 
 $letter-spacing-body: 0.03em;
 $letter-spacing-sans: 0.04em;
+
+$font-size-h1: 4rem;
+$font-size-h2: 2.5rem;
+$font-size-h3: 1.75rem;
+$font-size-body: 1.1rem;
+$font-size-overline: 0.9rem;
+$font-size-cta: 1.1rem;
+$font-size-code: 0.9rem;
 
 @mixin heading {
   font-family: $font-heading;
   font-weight: normal;
   letter-spacing: $letter-spacing-body;
+}
+
+@mixin overline {
+  font-family: $font-body;
+  font-size: $font-size-overline;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing-sans;
 }

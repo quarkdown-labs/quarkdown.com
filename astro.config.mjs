@@ -20,6 +20,11 @@ export default defineConfig({
         name: 'Urbanist',
         cssVariable: '--font-sans',
       },
+      {
+        provider: fontProviders.google(),
+        name: 'JetBrains Mono',
+        cssVariable: '--font-code',
+      },
     ],
   },
 });

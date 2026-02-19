@@ -11,6 +11,7 @@
 
 body {
   font-family: $font-body;
+  font-size: $font-size-body;
   letter-spacing: $letter-spacing-body;
   background-color: $brand-900;
   color: $text;
@@ -19,4 +20,13 @@ body {
 h1, h2, h3, h4, h5, h6 {
   @include heading;
   color: $heading;
+}
+
+h1 { font-size: $font-size-h1; }
+h2 { font-size: $font-size-h2; }
+h3 { font-size: $font-size-h3; }
+
+code, pre {
+  font-family: $font-code;
+  font-size: $font-size-code;
 }
