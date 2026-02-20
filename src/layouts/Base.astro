@@ -1,6 +1,7 @@
 ---
 import { Font } from 'astro:assets';
 import '../styles/global.scss';
+import BackgroundEffects from '../components/BackgroundEffects.astro';
 ---
 
 <html lang="en">
@@ -17,6 +18,7 @@ import '../styles/global.scss';
     <title>Quarkdown</title>
   </head>
   <body>
+    <BackgroundEffects />
     <slot />
   </body>
 </html>
