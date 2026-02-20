@@ -1,3 +1,5 @@
+@use 'colors' as *;
+
 $font-body: var(--font-body);
 $font-heading: var(--font-heading);
 $font-sans: var(--font-sans);
@@ -9,10 +11,18 @@ $letter-spacing-sans: 0.04em;
 $font-size-h1: 4rem;
 $font-size-h2: 2.5rem;
 $font-size-h3: 1.75rem;
-$font-size-body: 1.1rem;
+$font-size-body: 1.15rem;
 $font-size-overline: 0.9rem;
 $font-size-cta: 1.1rem;
 $font-size-code: 0.9rem;
+
+$line-height-text: 1.7;
+
+@mixin text {
+  font-family: $font-body;
+  color: $text;
+  line-height: $line-height-text;
+}
 
 @mixin heading {
   font-family: $font-heading;
