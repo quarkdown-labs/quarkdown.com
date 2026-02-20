@@ -1,8 +1,20 @@
 ---
 import Base from '../layouts/Base.astro';
 import Hero from '../components/Hero.astro';
+import Feature from '../components/Feature.astro';
+import Placeholder from '../components/Placeholder.astro';
 ---
 
 <Base>
   <Hero />
+
+  <main class="features">
+    <Feature
+      overline="No boilerplate"
+      title="Spend your time writing"
+      description="and don't worry about the rest."
+    >
+      <Placeholder />
+    </Feature>
+  </main>
 </Base>

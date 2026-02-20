@@ -21,8 +21,9 @@ $font-size-code: 0.9rem;
 }
 
 @mixin overline {
-  font-family: $font-body;
+  font-family: $font-sans;
   font-size: $font-size-overline;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: $letter-spacing-sans;
 }

@@ -1,0 +1,52 @@
+---
+interface Props {
+  overline: string;
+  title: string;
+  description: string;
+}
+
+const { overline, title, description } = Astro.props;
+---
+
+<section class="feature">
+  <span class="feature-overline">{overline}</span>
+  <h2 class="feature-title">{title}</h2>
+  <p class="feature-description">{description}</p>
+  <div class="feature-content">
+    <slot />
+  </div>
+</section>
+
+<style lang="scss">
+  @use '../styles/colors' as *;
+  @use '../styles/typography' as *;
+
+  .feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 5rem 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .feature-overline {
+    @include overline;
+    color: $text-faint;
+  }
+
+  .feature-title {
+    margin-bottom: 0.5rem;
+    text-shadow: $glow;
+  }
+
+  .feature-description {
+    color: $text;
+    margin-bottom: 3rem;
+  }
+
+  .feature-content {
+    width: 100%;
+  }
+</style>

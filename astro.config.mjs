@@ -19,6 +19,7 @@ export default defineConfig({
         provider: fontProviders.google(),
         name: 'Urbanist',
         cssVariable: '--font-sans',
+        weights: [600],
       },
       {
         provider: fontProviders.google(),
