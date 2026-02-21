@@ -1,6 +1,10 @@
 @use 'colors' as *;
 @use 'typography' as *;
 
+:root {
+  color-scheme: dark;
+}
+
 *,
 *::before,
 *::after {
@@ -30,6 +34,16 @@ h3 { font-size: $font-size-h3; }
 code, pre {
   font-family: $font-code;
   font-size: $font-size-code;
+}
+
+pre:has(code) {
+  padding: 1rem 1.5rem;
+  background-color: $brand-800;
+  border: 1px solid $brand-400;
+  border-bottom-width: 3px;
+  border-radius: 10px;
+  overflow-x: auto;
+  line-height: 1.7;
 }
 
 .faint {

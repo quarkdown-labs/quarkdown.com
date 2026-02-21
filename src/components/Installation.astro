@@ -1,0 +1,84 @@
+---
+const methods = [
+  {
+    label: 'Linux / macOS',
+    commands: ['curl -fsSL https://raw.githubusercontent.com/quarkdown-labs/get-quarkdown/refs/heads/main/install.sh | sudo env "PATH=$PATH" bash'],
+  },
+  {
+    label: 'macOS (<a href="https://brew.sh">Homebrew</a>)',
+    commands: ['brew install quarkdown-labs/quarkdown/quarkdown'],
+  },
+  {
+    label: 'Windows (<a href="https://scoop.sh">Scoop</a>)',
+    commands: [
+      'scoop bucket add java',
+      'scoop bucket add quarkdown https://github.com/quarkdown-labs/scoop-quarkdown',
+      'scoop install quarkdown',
+    ],
+  },
+];
+---
+
+<section class="installation">
+  <h2 class="installation-title">Installation</h2>
+
+  <div class="installation-methods">
+    {methods.map(({ label, commands }) => (
+      <div class="method">
+        <span class="method-label"><Fragment set:html={label} /></span>
+        <pre class="method-code"><code>{commands.join('\n')}</code></pre>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style lang="scss">
+  @use '../styles/colors' as *;
+  @use '../styles/typography' as *;
+
+  .installation {
+    padding: 5rem 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .installation-title {
+    text-align: center;
+    font-size: $font-size-h1;
+    margin-bottom: 3rem;
+  }
+
+  .installation-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .method {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .method-label {
+    flex-shrink: 0;
+    width: 180px;
+    text-align: right;
+    font-family: $font-body;
+    font-size: $font-size-body;
+    color: $heading;
+
+    :global(a) {
+      color: $text;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .method-code {
+    flex: 1;
+  }
+</style>
