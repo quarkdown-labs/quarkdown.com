@@ -18,6 +18,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 </nav>
 
 <style lang="scss">
+  @use 'sass:color';
   @use '../styles/colors' as *;
   @use '../styles/typography' as *;
 
@@ -42,7 +43,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 
     // Color overlay
     &::before {
-      background-color: transparentize($brand-800, 0.6);
+      background-color: color.scale($brand-800, $alpha: -60%);
       mask-image: linear-gradient(to bottom, black, transparent 80%);
       -webkit-mask-image: linear-gradient(to bottom, black, transparent 80%);
     }
