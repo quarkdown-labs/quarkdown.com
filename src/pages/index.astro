@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import Hero from '../components/Hero.astro';
 import Feature from '../components/Feature.astro';
 import Placeholder from '../components/Placeholder.astro';
+import CodeWithOutput from '../components/CodeWithOutput.astro';
 import Typewriter from '../components/Typewriter.astro';
 import Installation from '../components/Installation.astro';
 ---
@@ -45,4 +46,10 @@ import Installation from '../components/Installation.astro';
   </main>
 
   <Installation />
+
+  <Feature
+    overline="Over 10K stars"
+    title="Open source, proudly made in Italy"
+    description="Quarkdown’s compiler is actively evolving, and will stay free and open source forever."
+  />
 </Base>
