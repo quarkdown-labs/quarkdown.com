@@ -49,3 +49,33 @@ pre:has(code) {
 .faint {
   color: $text-faint;
 }
+
+[data-copyable] {
+  cursor: pointer;
+  position: relative;
+
+  &::after {
+    content: 'Click to copy';
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $font-sans;
+    font-size: 1rem;
+    color: $heading;
+    background: rgba($brand-900, 0.6);
+    backdrop-filter: blur(3px);
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+
+  &[data-copied]::after {
+    content: 'Copied!';
+  }
+}

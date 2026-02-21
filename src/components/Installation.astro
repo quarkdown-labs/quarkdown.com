@@ -26,7 +26,7 @@ const methods = [
     {methods.map(({ label, commands }) => (
       <div class="method">
         <span class="method-label"><Fragment set:html={label} /></span>
-        <pre class="method-code"><code>{commands.join('\n')}</code></pre>
+        <pre class="method-code" data-copyable><code>{commands.join('\n')}</code></pre>
       </div>
     ))}
   </div>
