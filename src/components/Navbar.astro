@@ -1,0 +1,78 @@
+---
+import { links } from '../links';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+---
+
+<nav class="navbar">
+  <div class="links">
+    <a href={links.wiki}>Wiki</a>
+    <a href={links.docs}>Docs</a>
+    <a href={links.github} class="icon" aria-label="GitHub">
+      <i class="bi bi-github"></i>
+    </a>
+  </div>
+</nav>
+
+<style lang="scss">
+  @use '../styles/colors' as *;
+  @use '../styles/typography' as *;
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: flex-end;
+    padding: 1.5rem 3rem 2rem;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+    }
+
+    // Color overlay
+    &::before {
+      background-color: transparentize($brand-800, 0.6);
+      mask-image: linear-gradient(to bottom, black, transparent 80%);
+      -webkit-mask-image: linear-gradient(to bottom, black, transparent 80%);
+    }
+
+    // Blur overlay
+    &::after {
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      mask-image: linear-gradient(to bottom, black 20%, transparent);
+      -webkit-mask-image: linear-gradient(to bottom, black 20%, transparent);
+    }
+  }
+
+  .links {
+    display: flex;
+    align-items: center;
+    gap: 2.2rem;
+  }
+
+  a {
+    font-family: $font-body;
+    font-size: $font-size-nav;
+    letter-spacing: $letter-spacing-body;
+    color: $text;
+    text-decoration: none;
+    transition: color 0.2s;
+
+    &:hover {
+      color: $heading;
+    }
+  }
+
+  .icon {
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+  }
+</style>

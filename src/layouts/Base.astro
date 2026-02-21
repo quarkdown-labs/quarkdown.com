@@ -2,6 +2,7 @@
 import { Font } from 'astro:assets';
 import '../styles/global.scss';
 import BackgroundEffects from '../components/BackgroundEffects.astro';
+import Navbar from '../components/Navbar.astro';
 ---
 
 <html lang="en">
@@ -19,6 +20,7 @@ import BackgroundEffects from '../components/BackgroundEffects.astro';
   </head>
   <body>
     <BackgroundEffects />
+    <Navbar />
     <slot />
     <script src="../scripts/copyable.ts"></script>
   </body>
