@@ -1,9 +1,13 @@
 ---
 import { links } from '../links';
+import Banner from '../assets/banner.svg';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 ---
 
-<nav class="navbar">
+<nav class="navbar" data-navbar>
+  <a href="/" class="logo" aria-label="Quarkdown">
+    <Banner />
+  </a>
   <div class="links">
     <a href={links.wiki}>Wiki</a>
     <a href={links.docs}>Docs</a>
@@ -24,7 +28,8 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
     right: 0;
     z-index: 100;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
     padding: 1.5rem 3rem 2rem;
 
     &::before,
@@ -70,9 +75,41 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
     }
   }
 
+  .logo {
+    opacity: 0;
+    transform: translateY(-0.3rem);
+    transition: opacity 0.3s, transform 0.3s;
+    pointer-events: none;
+
+    :global(svg) {
+      width: 128px;
+      height: auto;
+    }
+
+    .navbar:global(.scrolled) & {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+  }
+
   .icon {
     display: flex;
     align-items: center;
     font-size: 1.2em;
   }
 </style>
+
+<script>
+  const navbar = document.querySelector('[data-navbar]')!;
+  const hero = document.querySelector('.hero-title')!;
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      navbar.classList.toggle('scrolled', !entry.isIntersecting);
+    },
+    { threshold: 0 },
+  );
+
+  observer.observe(hero);
+</script>

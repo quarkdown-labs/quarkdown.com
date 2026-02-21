@@ -65,7 +65,7 @@ pre:has(code) {
     font-size: 1rem;
     color: $heading;
     background: rgba($brand-900, 0.6);
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(2px);
     border-radius: inherit;
     opacity: 0;
     transition: opacity 0.2s;
