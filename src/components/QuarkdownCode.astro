@@ -25,7 +25,10 @@ const { code, output, alt = '' } = Astro.props;
   .code-with-output {
     display: flex;
     align-items: center;
-    width: 100%;
+
+    &:has(.output) {
+      width: 100%;
+    }
   }
 
   pre:has(+ .output) {

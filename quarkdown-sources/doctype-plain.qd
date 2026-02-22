@@ -1,0 +1,49 @@
+.doctype {plain}
+.doclang {en}
+.theme {paperwhite} layout:{minimal}
+
+# Ecology notes - week 3
+
+## Keystone species
+
+A keystone species has a disproportionately large effect on its ecosystem
+relative to its population size.
+
+.row alignment:{spaceevenly}
+    .clip {circle} 
+        !(75)[](https://blog.nwf.org/wp-content/blogs.dir/11/files/2012/09/Sea-Otter-LeDent.jpg)
+
+    .clip {circle} 
+        !(75)[](https://images.squarespace-cdn.com/content/v1/54fbb611e4b0d7c1e151d22a/1597462524646-8XP34Y1YT3S3HEDAV424/honeybeeonflower2.jpg)
+    
+    .clip {circle} 
+        !(75)[](https://upload.wikimedia.org/wikipedia/commons/6/68/Eurasian_wolf_2.jpg)
+
+| Species | Role | Ecosystem |
+|---|---|---|
+| Sea otters | Control sea urchin populations | Kelp forests |
+| Bees | Pollination | Basically everywhere |
+| Wolves | Regulate herbivore numbers | Temperate forests |
+
+## Food webs
+
+A food web is a bunch of food chains linked together.
+Energy flows from **producers** (plants) to **consumers** (animals) to **decomposers** (fungi, bacteria).
+
+- Producers convert sunlight into energy through photosynthesis
+- Primary consumers eat producers (herbivores)
+- Secondary consumers eat primary consumers (carnivores)
+- Tertiary consumers sit at the top — think eagles, sharks
+
+> Note: energy transfer is inefficient--only about 10% of energy moves up each level.
+
+## Biodiversity
+
+Three types:
+
+1. **Genetic diversity** — variation within a species
+2. **Species diversity** — number of different species in an area
+3. **Ecosystem diversity** — variety of ecosystems in a region
+
+Higher biodiversity = more resilient ecosystem.
+Monocultures are fragile — one disease can wipe everything out.

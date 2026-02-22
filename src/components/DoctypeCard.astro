@@ -1,0 +1,44 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import QuarkdownCode from './QuarkdownCode.astro';
+
+interface Props {
+  code: string;
+  output: ImageMetadata;
+  alt: string;
+  caption: string;
+}
+
+const { code, output, alt, caption } = Astro.props;
+---
+
+<div class="doctype-card">
+  <QuarkdownCode code={code} />
+  <Image src={output} alt={alt} class="doctype-output" />
+  <p class="doctype-caption">{caption}</p>
+</div>
+
+<style lang="scss">
+  @use '../styles/colors' as *;
+  @use '../styles/typography' as *;
+
+  .doctype-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .doctype-output {
+    height: 450px;
+    width: auto;
+    border-radius: 10px;
+  }
+
+  .doctype-caption {
+    @include text;
+    font-size: $font-size-body;
+    color: $text-faint;
+  }
+</style>

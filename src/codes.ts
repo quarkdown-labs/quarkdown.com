@@ -31,3 +31,7 @@ ${s(fn, '.abstract')}
 
 ${s(qt, '&gt; This would be the closest thing we know of around any black hole.')}
 ${s(qt, '&gt; - Megan Masterson, a graduate student in physics at MIT')}`;
+
+export const doctypePlain = `${s(fn, '.doctype')} ${s(p, '{')}${s(str, 'plain')}${s(p, '}')}`;
+
+export const doctypePaged = `${s(fn, '.doctype')} ${s(p, '{')}${s(str, 'paged')}${s(p, '}')}`;

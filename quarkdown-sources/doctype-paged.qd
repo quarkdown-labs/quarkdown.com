@@ -1,0 +1,90 @@
+.doctype {paged}
+.theme {paperwhite} layout:{latex}
+
+.paragraphstyle indent:{2} spacing:{0}
+.nonumbering
+
+.pagemargin {bottomcenter} 
+    .currentpage
+
+# Coral Reefs
+
+## An Underwater Ecosystem
+
+.float alignment:{start} 
+    !(180)[](reef.jpg)
+
+Coral reefs are among the most biologically diverse ecosystems on Earth.
+Often called the *rainforests of the sea*, they cover less than one percent of the ocean floor
+yet support roughly twenty-five percent of all known marine species.
+These vibrant underwater structures are built over thousands of years
+by tiny organisms called coral polyps, which secrete calcium carbonate to form
+hard, protective skeletons.
+
+Reefs are found in shallow, warm waters across the tropics,
+with the largest and most famous being the **Great Barrier Reef** off the coast of Australia,
+stretching over 2,300 kilometers.
+Other major reef systems include the Mesoamerican Reef in the Caribbean,
+the Red Sea Coral Reef, and the Coral Triangle in Southeast Asia.
+
+## The Architects of the Reef
+
+Coral polyps are small, soft-bodied animals closely related to jellyfish and sea anemones.
+Each polyp measures only a few millimeters in diameter,
+yet colonies of millions of polyps work together to construct massive reef formations.
+Most reef-building corals contain symbiotic algae called **zooxanthellae**,
+which live within the coral tissue.
+These algae perform photosynthesis and provide the coral with up to ninety percent
+of its energy needs, while the coral offers the algae shelter and nutrients.
+
+This mutualistic relationship is also responsible for the stunning array of colors
+found in healthy reefs. The pigments of the zooxanthellae give corals
+their characteristic hues of gold, green, brown, and purple.
+
+## Biodiversity and Ecological Importance
+
+A single coral reef can be home to thousands of species.
+Fish such as clownfish, parrotfish, and groupers find shelter among the coral branches.
+Sea turtles graze on sponges and algae, while octopuses and moray eels
+hide in crevices during the day.
+Invertebrates including sea urchins, starfish, and shrimp play essential roles
+in maintaining the balance of the ecosystem.
+
+Beyond marine life, reefs provide critical services to human communities.
+They act as natural barriers, protecting coastlines from the erosive force of waves and storms.
+An estimated **500 million people** worldwide depend on coral reefs
+for food, income from fishing and tourism, and coastal protection.
+The global economic value of coral reef services has been estimated
+at hundreds of billions of dollars annually.
+
+## Threats to Coral Reefs
+
+Despite their importance, coral reefs face severe and growing threats.
+**Climate change** is the most pressing danger: rising ocean temperatures
+cause coral bleaching, a stress response in which corals expel their zooxanthellae,
+turning white and becoming vulnerable to disease and death.
+Mass bleaching events have become more frequent and intense in recent decades.
+
+Ocean acidification, driven by increased absorption of atmospheric carbon dioxide,
+weakens the calcium carbonate structures that corals depend on.
+Additionally, local stressors such as overfishing, destructive fishing practices,
+coastal development, and pollution from agricultural runoff
+degrade water quality and disrupt the delicate balance of reef ecosystems.
+
+## Conservation and Restoration
+
+Efforts to protect and restore coral reefs are underway around the world.
+Marine protected areas restrict human activity in critical reef zones,
+allowing ecosystems to recover.
+Coral nurseries and reef restoration programs cultivate resilient coral fragments
+and transplant them onto degraded reefs.
+
+Scientists are also investigating **assisted evolution**,
+selectively breeding corals that demonstrate higher tolerance to heat and acidity.
+Advances in genetic research may one day allow researchers to enhance
+the resilience of entire reef populations.
+
+Community engagement is equally vital.
+Educating coastal populations about sustainable fishing, reducing plastic waste,
+and supporting reef-friendly tourism practices all contribute to the long-term
+survival of these irreplaceable ecosystems.
