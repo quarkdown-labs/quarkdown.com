@@ -1,15 +1,22 @@
 ---
 import QuarkdownCode from './QuarkdownCode.astro';
 import type { ImageMetadata } from 'astro';
+import 'simple-icons-font/font/simple-icons.min.css';
 import { doctypePlain, doctypePaged } from '../codes';
 import doctypePlainOutput from '../assets/output/doctype-plain.png';
 import doctypePagedOutput from '../assets/output/doctype-paged.png';
+
+interface ReplacedTool {
+  name: string;
+  icon: string;
+}
 
 interface Doctype {
   code: string;
   output: ImageMetadata;
   alt: string;
   caption: string;
+  replaces: ReplacedTool[];
 }
 
 const doctypes: Doctype[] = [
@@ -18,19 +25,33 @@ const doctypes: Doctype[] = [
     output: doctypePlainOutput,
     alt: 'Plain document output showing ecology notes',
     caption: 'For notes, knowledge bases and simple static websites.',
+    replaces: [
+      { name: 'Notion', icon: 'si-notion' },
+      { name: 'Obsidian', icon: 'si-obsidian' },
+    ],
   },
   {
     code: doctypePaged,
     output: doctypePagedOutput,
     alt: 'Paged document output showing a formatted article',
     caption: 'For articles, books and reports.',
+    replaces: [
+      { name: 'LaTeX', icon: 'si-latex' },
+      { name: 'Typst', icon: 'si-typst' },
+    ],
   },
 ];
 ---
 
 <div class="doctype-grid">
-  {doctypes.map(({ code, output, alt, caption }) => (
+  {doctypes.map(({ code, output, alt, caption, replaces }) => (
     <div class="doctype-item">
+      <div class="doctype-replaces">
+        <span>Replaces</span>
+        {replaces.map((tool) => (
+          <i class={`si ${tool.icon} replaces-icon`} title={tool.name}></i>
+        ))}
+      </div>
       <QuarkdownCode vertical code={code} output={output} alt={alt} />
       <p class="doctype-caption">{caption}</p>
     </div>
@@ -57,6 +78,17 @@ const doctypes: Doctype[] = [
 
   .doctype-caption {
     @include text;
+  }
+
+  .doctype-replaces {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
     color: $text-faint;
+  }
+
+  .replaces-icon {
+    color: $text;
+    font-size: 1rem;
   }
 </style>
