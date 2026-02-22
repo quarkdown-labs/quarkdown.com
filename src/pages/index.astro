@@ -3,9 +3,11 @@ import Base from '../layouts/Base.astro';
 import Hero from '../components/Hero.astro';
 import Feature from '../components/Feature.astro';
 import Placeholder from '../components/Placeholder.astro';
-import CodeWithOutput from '../components/CodeWithOutput.astro';
+import QuarkdownCode from '../components/QuarkdownCode.astro';
 import Typewriter from '../components/Typewriter.astro';
 import Installation from '../components/Installation.astro';
+import { noBoilerplate } from '../codes';
+import noBoilerplateOutput from '../assets/output/no-boilerplate.jpg';
 ---
 
 <Base>
@@ -17,7 +19,7 @@ import Installation from '../components/Installation.astro';
       description="and don't worry about the rest."
     >
       <Fragment slot="title">Spend your time <Typewriter text="writing" /></Fragment>
-      <Placeholder />
+      <QuarkdownCode code={noBoilerplate} output={noBoilerplateOutput} alt="Rendered article about X-ray flashes from a supermassive black hole" />
     </Feature>
 
     <Feature
