@@ -4,14 +4,12 @@ import Hero from '../components/Hero.astro';
 import Feature from '../components/Feature.astro';
 import Placeholder from '../components/Placeholder.astro';
 import QuarkdownCode from '../components/QuarkdownCode.astro';
-import DoctypeCard from '../components/DoctypeCard.astro';
 import Typewriter from '../components/Typewriter.astro';
 import Installation from '../components/Installation.astro';
 import Footnotes from '../components/Footnotes.astro';
-import { noBoilerplate, doctypePlain, doctypePaged } from '../codes';
+import DoctypeShowcase from '../components/DoctypeShowcase.astro';
+import { noBoilerplate } from '../codes';
 import noBoilerplateOutput from '../assets/output/no-boilerplate.jpg';
-import doctypePlainOutput from '../assets/output/doctype-plain.png';
-import doctypePagedOutput from '../assets/output/doctype-paged.png';
 ---
 
 <Base>
@@ -31,20 +29,7 @@ import doctypePagedOutput from '../assets/output/doctype-paged.png';
       title="One tool to rule them all"
       description="Whether you are writing a research paper, a quick report, a company-wide wiki, class notes, or preparing interactive slides for your next talk, there's only one line you need."
     >
-      <div class="doctype-grid">
-        <DoctypeCard
-          code={doctypePlain}
-          output={doctypePlainOutput}
-          alt="Plain document output showing ecology notes"
-          caption="for notes, published documents and simple static websites"
-        />
-        <DoctypeCard
-          code={doctypePaged}
-          output={doctypePagedOutput}
-          alt="Paged document output showing a formatted article"
-          caption="for articles, books and reports"
-        />
-      </div>
+      <DoctypeShowcase />
     </Feature>
 
     <Feature
@@ -85,14 +70,3 @@ import doctypePagedOutput from '../assets/output/doctype-paged.png';
   </Footnotes>
 </Base>
 
-<style>
-  .doctype-grid {
-    display: flex;
-    gap: 3rem;
-    width: 100%;
-  }
-
-  .doctype-grid > :global(*) {
-    flex: 1;
-  }
-</style>
