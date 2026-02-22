@@ -51,12 +51,14 @@ const { code, output, alt = '', vertical = false } = Astro.props;
   .vertical {
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
 
     pre {
       flex: none;
       overflow: visible;
       transform: none;
+      z-index: 1;
+      margin-bottom: -1.5rem;
+      box-shadow: 0 10px 28px rgba($brand-700, 0.5);
     }
 
     .output {
