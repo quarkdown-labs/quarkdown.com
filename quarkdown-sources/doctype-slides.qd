@@ -1,0 +1,49 @@
+.doctype {slides}
+.theme {beaver} layout:{beamer}
+
+.footer 
+    Programming languages
+
+    Giorgio Garofalo
+
+    Slide .currentpage
+
+.css 
+    ol { margin-left: 0 }
+
+    pre { box-shadow: none }
+
+    .page-margin-content { padding-bottom: 1cm }
+
+# Compile-time errors
+
+.row gap:{1cm} cross:{start} 
+    .container width:{50%} textalignment:{start}
+        ## Mismatching types
+
+        Statically typed languages require that the type of a variable is known at compile time. This can lead to errors if the types do not match.
+
+        Can you explain why the highlighted code will not compile?
+
+    .container width:{50%}
+        .code lang:{cpp} focus:{16..16} 
+            #include <iostream>
+            #include <string>
+
+            double compute_average(int a, int b) {
+                return (a + b) / 2.0;
+            }
+
+            std::string format_result(double val) {
+                return "Result: " + std::to_string(val);
+            }
+
+            int main() {
+                int x = 90, y = 85;
+                double avg = compute_average(x, y);
+
+                int output = format_result(avg);
+
+                std::cout << output << std::endl;
+                return 0;
+            }

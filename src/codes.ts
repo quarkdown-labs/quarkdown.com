@@ -37,3 +37,5 @@ export const doctypePlain = `${s(fn, '.doctype')} ${s(p, '{')}${s(str, 'plain')}
 export const doctypePaged = `${s(fn, '.doctype')} ${s(p, '{')}${s(str, 'paged')}${s(p, '}')}`;
 
 export const doctypeDocs = `${s(fn, '.doctype')} ${s(p, '{')}${s(str, 'docs')}${s(p, '}')}`;
+
+export const doctypeSlides = `${s(fn, '.doctype')} ${s(p, '{')}${s(str, 'slides')}${s(p, '}')}`;
