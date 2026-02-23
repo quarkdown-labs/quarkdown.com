@@ -35,3 +35,5 @@ ${s(qt, '&gt; - Megan Masterson, a graduate student in physics at MIT')}`;
 export const doctypePlain = `${s(fn, '.doctype')} ${s(p, '{')}${s(str, 'plain')}${s(p, '}')}`;
 
 export const doctypePaged = `${s(fn, '.doctype')} ${s(p, '{')}${s(str, 'paged')}${s(p, '}')}`;
+
+export const doctypeDocs = `${s(fn, '.doctype')} ${s(p, '{')}${s(str, 'docs')}${s(p, '}')}`;
