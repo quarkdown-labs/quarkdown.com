@@ -8,6 +8,7 @@ import Typewriter from '../components/Typewriter.astro';
 import Installation from '../components/Installation.astro';
 import Footnotes from '../components/Footnotes.astro';
 import DoctypeShowcase from '../components/DoctypeShowcase.astro';
+import AuthoringShowcase from '../components/AuthoringShowcase.astro';
 import { noBoilerplate, scripting } from '../codes';
 import noBoilerplateOutput from '../assets/output/no-boilerplate.jpg';
 import scriptingOutput from '../assets/output/scripting.png';
@@ -23,6 +24,14 @@ import scriptingOutput from '../assets/output/scripting.png';
     >
       <Fragment slot="title">Spend your time <Typewriter text="writing" /></Fragment>
       <QuarkdownCode code={noBoilerplate} output={noBoilerplateOutput} alt="Rendered article about X-ray flashes from a supermassive black hole" />
+    </Feature>
+    
+    <Feature
+      overline="Batteries included"
+      title="Complete authoring experience"
+      description="Write Markdown to reach flow state faster.<br>Use Quarkdown's extensions to achieve more."
+    >
+      <AuthoringShowcase />
     </Feature>
 
     <Feature
@@ -40,15 +49,7 @@ import scriptingOutput from '../assets/output/scripting.png';
     >
       <Placeholder />
     </Feature>
-
-    <Feature
-      overline="Batteries included"
-      title="Complete authoring experience"
-      description="Reach flow state faster with the rich set of libraries and elements available out of the box."
-    >
-      <Placeholder />
-    </Feature>
-  
+ 
     <Feature
       overline="Turing complete"
       title="Don't repeat yourself"

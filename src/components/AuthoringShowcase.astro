@@ -1,0 +1,72 @@
+---
+import { Image } from 'astro:assets';
+import authoring1 from '../assets/output/authoring-1.png';
+import authoring2 from '../assets/output/authoring-2.png';
+---
+
+<div class="authoring-showcase" data-authoring>
+  <Image src={authoring1} alt="First page of a scientific paper with title, abstract and introduction" class="authoring-page" data-authoring-left />
+  <Image src={authoring2} alt="Second page of a scientific paper with formulas and a results table" class="authoring-page" data-authoring-right />
+</div>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const container = document.querySelector('[data-authoring]') as HTMLElement;
+  const left = container.querySelector('[data-authoring-left]') as HTMLElement;
+  const right = container.querySelector('[data-authoring-right]') as HTMLElement;
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: container,
+      start: 'top 90%',
+      end: 'top 35%',
+      scrub: 0.6,
+    },
+  });
+
+  tl.fromTo(left,
+    { rotateY: -45, rotateX: 40, rotateZ: 4, y: 80, x: 30, scale: 0.85, opacity: 0 },
+    { rotateY: 10, rotateX: -2, rotateZ: -1, y: 20, x: 70, scale: 0.9, opacity: 0.95, ease: 'none' },
+    0,
+  );
+
+  tl.fromTo(right,
+    { rotateY: 45, rotateX: 75, rotateZ: -4, y: 60, x: -30, scale: 0.85, opacity: 0 },
+    { rotateY: 0, rotateX: 0, rotateZ: 0, y: 15, x: -30, scale: 1.15, opacity: 1, ease: 'none' },
+    0,
+  );
+</script>
+
+<style lang="scss">
+  @use '../styles/colors' as *;
+
+  .authoring-showcase {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    perspective: 800px;
+  }
+
+  .authoring-page {
+    height: auto;
+    width: auto;
+    max-height: 500px;
+    border-radius: 10px;
+    box-shadow: $glow, 0 10px 20px rgba($brand-800, 0.2);
+    will-change: transform, opacity;
+  }
+
+  @media (max-width: 768px) {
+    .authoring-showcase {
+      transform: translateX(30px);
+    }
+
+    .authoring-page:first-child {
+      display: none;
+    }
+  }
+</style>
