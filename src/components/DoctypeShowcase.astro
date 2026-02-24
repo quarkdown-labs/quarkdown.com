@@ -23,16 +23,6 @@ interface Doctype {
 
 const doctypes: Doctype[] = [
   {
-    code: doctypePlain,
-    output: doctypePlainOutput,
-    alt: 'Plain document output showing ecology notes',
-    caption: 'For notes, knowledge bases and simple static websites.',
-    replaces: [
-      { name: 'Notion', icon: 'si-notion' },
-      { name: 'Obsidian', icon: 'si-obsidian' },
-    ],
-  },
-  {
     code: doctypePaged,
     output: doctypePagedOutput,
     alt: 'Paged document output showing a formatted article',
@@ -40,6 +30,16 @@ const doctypes: Doctype[] = [
     replaces: [
       { name: 'LaTeX', icon: 'si-latex' },
       { name: 'Typst', icon: 'si-typst' },
+    ],
+  },
+  {
+    code: doctypePlain,
+    output: doctypePlainOutput,
+    alt: 'Plain document output showing a coffee brewing guide',
+    caption: 'For notes, knowledge bases and simple static websites.',
+    replaces: [
+      { name: 'Notion', icon: 'si-notion' },
+      { name: 'Obsidian', icon: 'si-obsidian' },
     ],
   },
   {
