@@ -1,0 +1,12 @@
+/// Syntax‑highlight colors for Quarkdown code blocks.
+/// Usage: `pre { @include highlight-classes; }`
+@mixin highlight-classes {
+  :global(.hl-keyword) { color: #FFFFFF; }
+  :global(.hl-function) { color: #C792EA; }
+  :global(.hl-string) { color: #C3E88D; }
+  :global(.hl-heading) { color: #FFCB6B; }
+  :global(.hl-comment) { color: #546E7A; }
+  :global(.hl-punctuation) { color: #9e9e9e; }
+  :global(.hl-reference) { color: #82AAFF; }
+  :global(.hl-quote) { color: #89DDFF; font-style: italic; }
+}

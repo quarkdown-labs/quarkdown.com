@@ -194,6 +194,7 @@
 <style lang="scss">
   @use "../styles/colors" as *;
   @use "../styles/typography" as *;
+  @use "../styles/highlights" as *;
 
   .reactive-preview {
     display: flex;
@@ -268,25 +269,8 @@
     text-align: center;
   }
 
-  /* Syntax highlight classes */
-  pre :global(.hl-keyword) {
-    color: #ffffff;
-  }
-
-  pre :global(.hl-heading) {
-    color: #ffcb6b;
-  }
-
-  pre :global(.hl-function) {
-    color: #c792ea;
-  }
-
-  pre :global(.hl-string) {
-    color: #c3e88d;
-  }
-
-  pre :global(.hl-punctuation) {
-    color: #9e9e9e;
+  pre {
+    @include highlight-classes;
   }
 
   @media (max-width: 768px) {

@@ -22,6 +22,7 @@ const { code, output, alt = '', vertical = false } = Astro.props;
 <style lang="scss">
   @use '../styles/colors' as *;
   @use '../styles/typography' as *;
+  @use '../styles/highlights' as *;
 
   .code-with-output {
     display: flex;
@@ -93,38 +94,7 @@ const { code, output, alt = '', vertical = false } = Astro.props;
     }
   }
 
-  /* Syntax highlight classes */
-
-  pre :global(.hl-keyword) {
-    color: #FFFFFF;
-  }
-
-  pre :global(.hl-function) {
-    color: #C792EA;
-  }
-
-  pre :global(.hl-string) {
-    color: #C3E88D;
-  }
-
-  pre :global(.hl-heading) {
-    color: #FFCB6B;
-  }
-
-  pre :global(.hl-comment) {
-    color: #546E7A;
-  }
-
-  pre :global(.hl-punctuation) {
-    color: #9e9e9e;
-  }
-
-  pre :global(.hl-reference) {
-    color: #82AAFF;
-  }
-
-  pre :global(.hl-quote) {
-    color: #89DDFF;
-    font-style: italic;
+  pre {
+    @include highlight-classes;
   }
 </style>
