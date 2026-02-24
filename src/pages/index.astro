@@ -34,13 +34,15 @@ import scriptingOutput from '../assets/output/scripting.png';
       <AuthoringShowcase />
     </Feature>
 
-    <Feature
-      overline="Versatile"
-      title="One tool to rule them all"
-      description="Whether you are writing a research paper, a quick report, a company-wide wiki, class notes, or preparing interactive slides for your next talk, there's only one line you need."
-    >
-      <DoctypeShowcase />
-    </Feature>
+    <div class="contained-section">
+      <Feature
+        overline="Versatile"
+        title="One tool to rule them all"
+        description="Whether you are writing a research paper, a quick report, a company-wide wiki, class notes, or preparing interactive slides for your next talk, there's only one line you need."
+      >
+        <DoctypeShowcase />
+      </Feature>
+    </div>
 
     <Feature
       overline="Reactive preview"
@@ -72,3 +74,13 @@ import scriptingOutput from '../assets/output/scripting.png';
   </Footnotes>
 </Base>
 
+<style lang="scss">
+  @use '../styles/colors' as *;
+
+  .contained-section {
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 2rem;
+    max-width: 1400px;
+    margin: 4rem auto 0;
+  }
+</style>
