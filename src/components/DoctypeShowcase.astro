@@ -67,9 +67,9 @@ const doctypes: Doctype[] = [
 ];
 ---
 
-<div class="doctype-showcase">
+<div class="doctype-showcase" data-doctype-showcase>
   {doctypes.map(({ code, output, alt, caption, replaces }) => (
-    <div class="doctype-item">
+    <div class="doctype-item" data-doctype-item>
       <div class="doctype-replaces">
         <span>Replaces</span>
         {replaces.map((tool) => (
@@ -81,6 +81,33 @@ const doctypes: Doctype[] = [
     </div>
   ))}
 </div>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  document.querySelectorAll('[data-doctype-item]').forEach((item) => {
+    const img = item.querySelector('img');
+    if (!img) return;
+
+    gsap.fromTo(img,
+      { scale: 0.97, opacity: 0.5 },
+      {
+        scale: 1,
+        opacity: 1,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: item,
+          start: 'top 85%',
+          end: 'top 40%',
+          scrub: 0.6,
+        },
+      },
+    );
+  });
+</script>
 
 <style lang="scss">
   @use '../styles/colors' as *;
