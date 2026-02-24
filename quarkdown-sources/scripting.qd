@@ -1,0 +1,24 @@
+.css
+    ul { margin-left: -1em }
+
+&nbsp;
+
+&nbsp;
+
+.function {animal}
+    name ecosystem picture:
+    .row
+        .clip {circle} 
+            .picture
+    
+        - **Name**: .name
+        - **Ecosystem**: .ecosystem
+
+.animal {Red panda} ecosystem:{Temperate forests}
+    !(150)[Red panda](https://encyclopedia.pub/media/common/202402/mceclip0-65d842094f48f.jpg)
+
+.animal {Sea otter} ecosystem:{Kelp forests}
+    !(150)[Sea otter](https://uploads.alaska.org/suppliers/lodging/A/alaska-wildland-adventures/kenai-fjords-glacier-lodge/_960xAUTO_fit_center-center_65_none/Kenai-Fjords-Glacier-Lodge-Sea-otter-D-opt2019.jpg)
+
+.animal {Clownfish} ecosystem:{Coral reefs}
+    !(150)[Clownfish](https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Amphiprion_ocellaris_%28Clown_anemonefish%29_by_Nick_Hobgood.jpg/1280px-Amphiprion_ocellaris_%28Clown_anemonefish%29_by_Nick_Hobgood.jpg)

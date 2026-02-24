@@ -8,8 +8,9 @@ import Typewriter from '../components/Typewriter.astro';
 import Installation from '../components/Installation.astro';
 import Footnotes from '../components/Footnotes.astro';
 import DoctypeShowcase from '../components/DoctypeShowcase.astro';
-import { noBoilerplate } from '../codes';
+import { noBoilerplate, scripting } from '../codes';
 import noBoilerplateOutput from '../assets/output/no-boilerplate.jpg';
+import scriptingOutput from '../assets/output/scripting.png';
 ---
 
 <Base>
@@ -53,7 +54,7 @@ import noBoilerplateOutput from '../assets/output/no-boilerplate.jpg';
       title="Don't repeat yourself"
       description="Reuse your workflow thanks to powerful scripting capabilities."
     >
-      <Placeholder />
+      <QuarkdownCode code={scripting} output={scriptingOutput} alt="Animal cards rendered from a custom function" />
     </Feature>
   </main>
 

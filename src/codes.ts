@@ -39,3 +39,23 @@ export const doctypePaged = `${s(fn, '.doctype')} ${s(p, '{')}${s(str, 'paged')}
 export const doctypeDocs = `${s(fn, '.doctype')} ${s(p, '{')}${s(str, 'docs')}${s(p, '}')}`;
 
 export const doctypeSlides = `${s(fn, '.doctype')} ${s(p, '{')}${s(str, 'slides')}${s(p, '}')}`;
+
+export const scripting = `\
+${s(fn, '.function')} ${s(p, '{')}${s(str, 'animal')}${s(p, '}')}
+    name ecosystem picture${s(p, ':')}
+    ${s(fn, '.row')}
+        ${s(fn, '.clip')} ${s(p, '{')}${s(str, 'circle')}${s(p, '}')}
+            ${s(fn, '.picture')}
+
+        - ${s(kw, '**Name**')}: ${s(fn, '.name')}
+        - ${s(kw, '**Ecosystem**')}: ${s(fn, '.ecosystem')}
+
+${s(fn, '.animal')} ${s(p, '{')}${s(str, 'Red panda')}${s(p, '}')} ecosystem${s(p, ':')}${s(p, '{')}${s(str, 'Temperate forests')}${s(p, '}')}
+    ${s(p, '![')}Red panda${s(p, '](')}${s(ref, 'img/red-panda.jpg')}${s(p, ')')}
+
+${s(fn, '.animal')} ${s(p, '{')}${s(str, 'Sea otter')}${s(p, '}')} ecosystem${s(p, ':')}${s(p, '{')}${s(str, 'Kelp forests')}${s(p, '}')}
+    ${s(p, '![')}Sea otter${s(p, '](')}${s(ref, 'img/sea-otter.jpg')}${s(p, ')')}
+
+${s(fn, '.animal')} ${s(p, '{')}${s(str, 'Clownfish')}${s(p, '}')} ecosystem${s(p, ':')}${s(p, '{')}${s(str, 'Coral reefs')}${s(p, '}')}
+    ${s(p, '![')}Clownfish${s(p, '](')}${s(ref, 'img/clownfish.jpg')}${s(p, ')')}`;
+
