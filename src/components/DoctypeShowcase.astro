@@ -67,7 +67,7 @@ const doctypes: Doctype[] = [
 ];
 ---
 
-<div class="doctype-grid">
+<div class="doctype-showcase">
   {doctypes.map(({ code, output, alt, caption, replaces }) => (
     <div class="doctype-item">
       <div class="doctype-replaces">
@@ -86,12 +86,10 @@ const doctypes: Doctype[] = [
   @use '../styles/colors' as *;
   @use '../styles/typography' as *;
 
-  .doctype-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 3rem;
-    row-gap: 3.5rem;
-    width: 100%;
+  .doctype-showcase {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
   }
 
   .doctype-item {
