@@ -214,6 +214,8 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
   @use "../styles/colors" as *;
 
   .reactive-preview {
+    position: relative;
+
     pre {
       flex: 1 !important;
     }
@@ -234,6 +236,10 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
     }
 
     .replay-button {
+      position: absolute;
+      bottom: -3.5rem;
+      left: 50%;
+      transform: translateX(-50%);
       background: none;
       border: none;
       color: $text-faint;
@@ -242,8 +248,8 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
       cursor: pointer;
       opacity: 0;
       pointer-events: none;
+      padding: 1rem;
       transition: opacity 0.3s, color 0.1s;
-      padding: 1rem 2rem 0 2rem;
 
       &:hover {
         color: $text;
