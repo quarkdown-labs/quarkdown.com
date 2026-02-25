@@ -1,3 +1,4 @@
+$brand-50: #EAF0F0;
 $brand-400: #547070;
 $brand-500: #304242;
 $brand-600: #212D2D;
@@ -7,7 +8,7 @@ $brand-900: #061111;
 $brand-muted: #121C1D;
 
 $text: #A9C0C0;
-$heading: #FFFFFF;
+$heading: $brand-50;
 $text-faint: $brand-400;
 
 $glow: 0 0 25px rgba(255, 255, 255, 0.25);

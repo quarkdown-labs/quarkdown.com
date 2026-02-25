@@ -1,10 +1,12 @@
 ---
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import Logo from '../assets/logo.svg';
 
 const year = new Date().getFullYear();
 ---
 
 <footer class="footer">
+  <Logo class="background-logo" aria-hidden="true" />
   <p>Quarkdown &copy; 2024&ndash;{year}</p>
   <p class="credits">By <a href="https://github.com/iamgio" target="_blank" rel="noopener">Giorgio Garofalo (iamgio)</a> and contributors</p>
   <div class="footer-links">
@@ -18,7 +20,11 @@ const year = new Date().getFullYear();
   @use '../styles/colors' as *;
   @use '../styles/typography' as *;
 
+  $overlay-color: $brand-700;
+
   .footer {
+    position: relative;
+    overflow: hidden;
     font-size: $font-size-footer;
     background-color: $brand-muted;
     text-align: center;
@@ -28,6 +34,24 @@ const year = new Date().getFullYear();
     flex-direction: column;
     align-items: center;
     gap: 0.4rem;
+    border-top: 4px solid $overlay-color;
+
+    > :not(.background-logo) {
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  .background-logo {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    height: 130%;
+    width: auto;
+    color: $overlay-color;
+    z-index: 0;
+    pointer-events: none;
   }
 
   .credits, .image-credits {
