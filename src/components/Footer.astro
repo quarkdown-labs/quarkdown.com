@@ -1,0 +1,51 @@
+---
+import 'bootstrap-icons/font/bootstrap-icons.css';
+---
+
+<footer class="footer">
+  <p>Quarkdown &copy; 2024&ndash;2026</p>
+  <p class="credits">By <a href="https://github.com/iamgio" target="_blank" rel="noopener">Giorgio Garofalo (iamgio)</a> and contributors</p>
+  <p class="image-credits">Image credits: Wikipedia, Alaska.org, Aluna1</p>
+  <div class="footer-links">
+    <a href="https://github.com/iamgio/quarkdown" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
+    <a href="https://linkedin.com/in/giorgio-garofalo" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+  </div>
+</footer>
+
+<style lang="scss">
+  @use '../styles/colors' as *;
+  @use '../styles/typography' as *;
+
+  .footer {
+    font-size: $font-size-footer;
+    background-color: $brand-700;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    color: $text;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .credits, .image-credits {
+    color: $text-faint;
+  }
+
+  .image-credits {
+    opacity: 0.7;
+    font-size: $font-size-footnote;
+  }
+
+  a {
+    color: currentColor;
+    text-decoration: none;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 1.2rem;
+    font-size: $font-size-nav;
+    margin-top: 1rem;
+  }
+</style>
