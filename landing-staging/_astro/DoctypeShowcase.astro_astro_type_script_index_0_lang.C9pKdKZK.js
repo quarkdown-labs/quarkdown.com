@@ -1,0 +1,1 @@
+import{g as o,S as t}from"./ScrollTrigger.C0eCJjti.js";o.registerPlugin(t);document.querySelectorAll("[data-doctype-item]").forEach(r=>{const e=r.querySelector("img");e&&o.fromTo(e,{scale:.97,opacity:.5},{scale:1,opacity:1,ease:"none",scrollTrigger:{trigger:r,start:"top 85%",end:"top 40%",scrub:.6}})});
