@@ -1,15 +1,17 @@
 ---
 import 'bootstrap-icons/font/bootstrap-icons.css';
+
+const year = new Date().getFullYear();
 ---
 
 <footer class="footer">
-  <p>Quarkdown &copy; 2024&ndash;2026</p>
+  <p>Quarkdown &copy; 2024&ndash;{year}</p>
   <p class="credits">By <a href="https://github.com/iamgio" target="_blank" rel="noopener">Giorgio Garofalo (iamgio)</a> and contributors</p>
-  <p class="image-credits">Image credits: Wikipedia, Alaska.org, Aluna1</p>
   <div class="footer-links">
-    <a href="https://github.com/iamgio/quarkdown" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
     <a href="https://linkedin.com/in/giorgio-garofalo" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+    <a href="https://github.com/iamgio/quarkdown" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
   </div>
+  <p class="image-credits">Image credits: Wikipedia, Alaska.org, Aluna1</p>
 </footer>
 
 <style lang="scss">
@@ -18,7 +20,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 
   .footer {
     font-size: $font-size-footer;
-    background-color: $brand-700;
+    background-color: $brand-muted;
     text-align: center;
     padding: 2rem 1.5rem;
     color: $text;
@@ -33,6 +35,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
   }
 
   .image-credits {
+    margin-top: 1rem;
     opacity: 0.7;
     font-size: $font-size-footnote;
   }
@@ -44,8 +47,8 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 
   .footer-links {
     display: flex;
-    gap: 1.2rem;
-    font-size: $font-size-nav;
+    gap: 2rem;
+    font-size: $font-size-h3;
     margin-top: 1rem;
   }
 </style>
