@@ -4,11 +4,13 @@
  * Demonstrates Quarkdown's reactive preview — "see results instantly as you type."
  * Triggered by IntersectionObserver when scrolled into view. Runs once.
  */
+import QuarkdownCode from './QuarkdownCode.astro';
 ---
 
 <div class="reactive-preview" data-reactive-preview>
-  <pre><code></code></pre>
-  <div class="output"></div>
+  <QuarkdownCode>
+    <div class="output reactive-output"></div>
+  </QuarkdownCode>
 </div>
 
 <script>
@@ -39,9 +41,8 @@
     },
     {
       segments: [
-        { text: "Add " },
         { text: "_", cls: "hl-punctuation" },
-        { text: "superpowers", cls: "hl-keyword" },
+        { text: "Control", cls: "hl-keyword" },
         { text: "_", cls: "hl-punctuation" },
         { text: " with Quarkdown." },
       ],
@@ -59,9 +60,9 @@
     },
   ];
 
-  const CHAR_DELAY = 45;
-  const LINE_PAUSE = 300;
-  const BLANK_LINE_PAUSE = 200;
+  const CHAR_DELAY = 65;
+  const LINE_PAUSE = 400;
+  const BLANK_LINE_PAUSE = 300;
 
   function sleep(ms: number): Promise<void> {
     return new Promise((r) => setTimeout(r, ms));
@@ -70,8 +71,6 @@
   function parseInline(text: string): string {
     text = text.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
     text = text.replace(/_(.+?)_/g, "<em>$1</em>");
-    text = text.replace(/\*+/g, "");
-    text = text.replace(/_/g, "");
     return text;
   }
 
@@ -92,9 +91,12 @@
     return html;
   }
 
+  const INITIAL_DELAY = 600;
+
   async function animate(container: Element) {
+    await sleep(INITIAL_DELAY);
     const code = container.querySelector("code")!;
-    const output = container.querySelector(".output") as HTMLElement;
+    const output = container.querySelector(".reactive-output") as HTMLElement;
     let rawText = "";
     let lastHtml = "";
 
@@ -191,36 +193,28 @@
   });
 </script>
 
-<style lang="scss">
+<style is:global lang="scss">
   @use "../styles/colors" as *;
-  @use "../styles/typography" as *;
-  @use "../styles/highlights" as *;
 
   .reactive-preview {
-    display: flex;
-    align-items: center;
-    width: 100%;
-  }
-
-  pre {
-    flex: 2;
-    overflow: hidden;
-    transform: translateX(32px) perspective(400px) rotateY(1deg);
+    pre {
+      flex: 1 !important;
+    }
 
     code {
       display: block;
       white-space: pre;
-      min-height: calc(6 * 1.7em); // 6 lines at inherited line-height
+      min-height: calc(6 * 1.7em);
+
+      &::after {
+        content: "▎";
+        animation: blink 1s step-end infinite;
+      }
     }
 
-    code::after {
-      content: "▎";
-      animation: blink 1s step-end infinite;
+    &.done code::after {
+      visibility: hidden;
     }
-  }
-
-  .reactive-preview.done pre code::after {
-    visibility: hidden;
   }
 
   @keyframes blink {
@@ -229,7 +223,7 @@
     }
   }
 
-  .output {
+  .reactive-output {
     flex: 2;
     max-width: 50%;
     padding: 1.5rem 2rem;
@@ -241,54 +235,31 @@
     box-shadow: $glow;
     min-height: 200px;
     text-align: left;
-  }
 
-  .output :global(h1) {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 1.4rem;
-    color: #1a1a1a;
-    margin-bottom: 1rem;
-    font-weight: bold;
-    letter-spacing: normal;
-  }
-
-  .output :global(p) {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: #333;
-    margin-bottom: 0.4rem;
-  }
-
-  .output :global(strong) {
-    font-weight: bold;
-    color: #1a1a1a;
-  }
-
-  .output.centered {
-    text-align: center;
-  }
-
-  pre {
-    @include highlight-classes;
-  }
-
-  @media (max-width: 768px) {
-    .reactive-preview {
-      flex-direction: column;
-      gap: 1.5rem;
+    &.centered {
+      text-align: center;
     }
 
-    pre {
-      flex: none;
-      overflow: visible;
-      transform: none;
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.4rem;
+      color: #1a1a1a;
+      margin-bottom: 1rem;
+      font-weight: bold;
+      letter-spacing: normal;
     }
 
-    .output {
-      flex: none;
-      max-width: 100%;
-      transform: none;
+    p {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #333;
+      margin-bottom: 0.4rem;
+    }
+
+    strong {
+      font-weight: bold;
+      color: #1a1a1a;
     }
   }
 </style>
