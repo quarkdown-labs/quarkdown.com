@@ -3,6 +3,7 @@ import { defineConfig, fontProviders } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
+  base: import.meta.env.BASE_PATH || '/',
   experimental: {
     fonts: [
       {
