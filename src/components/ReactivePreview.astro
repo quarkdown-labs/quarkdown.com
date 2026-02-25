@@ -5,12 +5,14 @@
  * Triggered by IntersectionObserver when scrolled into view. Runs once.
  */
 import QuarkdownCode from './QuarkdownCode.astro';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 ---
 
 <div class="reactive-preview" data-reactive-preview>
   <QuarkdownCode>
     <div class="output reactive-output"></div>
   </QuarkdownCode>
+  <button class="replay-button" data-replay><i class="bi bi-arrow-clockwise"></i> Replay</button>
 </div>
 
 <script>
@@ -177,6 +179,19 @@ import QuarkdownCode from './QuarkdownCode.astro';
     container.classList.add("done");
   }
 
+  function setupReplay(container: Element) {
+    const btn = container.querySelector("[data-replay]") as HTMLElement;
+    btn.addEventListener("click", () => {
+      const code = container.querySelector("code")!;
+      const output = container.querySelector(".reactive-output") as HTMLElement;
+      container.classList.remove("done");
+      code.textContent = "";
+      output.innerHTML = "";
+      output.classList.remove("centered");
+      animate(container);
+    });
+  }
+
   const observer = new IntersectionObserver(
     (entries, obs) => {
       for (const entry of entries) {
@@ -190,10 +205,12 @@ import QuarkdownCode from './QuarkdownCode.astro';
 
   document.querySelectorAll("[data-reactive-preview]").forEach((el) => {
     observer.observe(el);
+    setupReplay(el);
   });
 </script>
 
 <style is:global lang="scss">
+  @use "../styles/typography" as *;
   @use "../styles/colors" as *;
 
   .reactive-preview {
@@ -214,6 +231,28 @@ import QuarkdownCode from './QuarkdownCode.astro';
 
     &.done code::after {
       visibility: hidden;
+    }
+
+    .replay-button {
+      background: none;
+      border: none;
+      color: $text-faint;
+      font-family: inherit;
+      font-size: $font-size-overline;
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s, color 0.1s;
+      padding: 1rem 2rem 0 2rem;
+
+      &:hover {
+        color: $text;
+      }
+    }
+
+    &.done .replay-button {
+      opacity: 1;
+      pointer-events: auto;
     }
   }
 
