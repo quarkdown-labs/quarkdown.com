@@ -15,7 +15,7 @@ const { code = '', output, alt = '', vertical = false } = Astro.props;
 <div class:list={['code-with-output', { vertical }]}>
   <pre><code set:html={code} /></pre>
   {output ? (
-    <Image src={output} alt={alt} class="output" />
+    <Image src={output} alt={alt} class="output" loading="eager" />
   ) : (
     <slot />
   )}
