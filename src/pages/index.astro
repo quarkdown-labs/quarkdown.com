@@ -65,9 +65,10 @@ import scriptingOutput from '../assets/output/scripting.png';
 
   <Feature
     overline="Over 10K stars"
-    title="Open source, proudly made in Italy"
-    description="Quarkdown’s compiler is actively evolving, and will stay free and open source forever."
-  />
+    description="Quarkdown's compiler is actively evolving, and will stay free and open source forever."
+  >
+    <Fragment slot="title">Open source, proudly made in <span class="italy">Italy</span></Fragment>
+  </Feature>
 
   <Footer />
 </Base>
@@ -84,5 +85,18 @@ import scriptingOutput from '../assets/output/scripting.png';
     border-radius: 2rem;
     max-width: 1400px;
     margin: 4rem auto 0;
+  }
+
+  .italy {
+    background: linear-gradient(
+      90deg,
+      #a8d4a8,
+      $heading 40%,
+      $heading 60%,
+      #dba0a0
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 </style>
