@@ -88,6 +88,8 @@ const doctypes: Doctype[] = [
 
   gsap.registerPlugin(ScrollTrigger);
 
+  const isMobile = window.matchMedia('(max-width: 768px)').matches;
+
   document.querySelectorAll('[data-doctype-item]').forEach((item) => {
     const img = item.querySelector('img');
     if (!img) return;
@@ -100,8 +102,8 @@ const doctypes: Doctype[] = [
         ease: 'none',
         scrollTrigger: {
           trigger: item,
-          start: 'top 85%',
-          end: 'top 40%',
+          start: isMobile ? 'top 95%' : 'top 85%',
+          end: isMobile ? 'top 55%' : 'top 40%',
           scrub: 0.6,
         },
       },
