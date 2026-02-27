@@ -212,6 +212,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 <style is:global lang="scss">
   @use "../styles/typography" as *;
   @use "../styles/colors" as *;
+  @use "../styles/breakpoints" as *;
 
   .reactive-preview {
     position: relative;
@@ -305,6 +306,23 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
     strong {
       font-weight: bold;
       color: #1a1a1a;
+    }
+  }
+
+  @include sm-down {
+    .reactive-preview .code-with-output {
+      flex-direction: column;
+    }
+
+    .reactive-preview pre {
+      width: 100%;
+      transform: none !important;
+    }
+
+    .reactive-output {
+      max-width: 100%;
+      width: 100%;
+      transform: none;
     }
   }
 </style>

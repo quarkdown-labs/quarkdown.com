@@ -20,6 +20,7 @@ const { overline, title, description } = Astro.props;
 <style lang="scss">
   @use '../styles/colors' as *;
   @use '../styles/typography' as *;
+  @use '../styles/breakpoints' as *;
 
   .feature {
     display: flex;
@@ -29,6 +30,11 @@ const { overline, title, description } = Astro.props;
     padding: 5rem 2rem;
     max-width: 1000px;
     margin: 0 auto;
+
+    @include sm-down {
+      align-items: start;
+      text-align: start;
+    }
   }
 
   .feature-overline {

@@ -21,6 +21,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
   @use 'sass:color';
   @use '../styles/colors' as *;
   @use '../styles/typography' as *;
+  @use '../styles/breakpoints' as *;
 
   .navbar {
     position: fixed;
@@ -61,6 +62,10 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
     display: flex;
     align-items: center;
     gap: 2.2rem;
+
+    @include sm-down {
+      margin-left: auto;
+    }
   }
 
   a {
@@ -91,6 +96,10 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
       opacity: 1;
       transform: translateY(0);
       pointer-events: auto;
+    }
+
+    @include sm-down {
+      display: none;
     }
   }
 

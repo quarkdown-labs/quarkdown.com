@@ -1,0 +1,14 @@
+$bp-sm: 768px;
+$bp-md: 1024px;
+
+@mixin sm-down {
+  @media (max-width: $bp-sm) {
+    @content;
+  }
+}
+
+@mixin md-down {
+  @media (max-width: $bp-md) {
+    @content;
+  }
+}

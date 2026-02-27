@@ -7,12 +7,13 @@ interface Props {
   output?: ImageMetadata;
   alt?: string;
   vertical?: boolean;
+  prioritizeCode?: boolean;
 }
 
-const { code = '', output, alt = '', vertical = false } = Astro.props;
+const { code = '', output, alt = '', vertical = false, prioritizeCode = false } = Astro.props;
 ---
 
-<div class:list={['code-with-output', { vertical }]}>
+<div class:list={['code-with-output', { vertical, 'prioritize-code': prioritizeCode }]}>
   <pre><code set:html={code} /></pre>
   {output ? (
     <Image src={output} alt={alt} class="output" loading="eager" />
@@ -25,6 +26,7 @@ const { code = '', output, alt = '', vertical = false } = Astro.props;
   @use '../styles/colors' as *;
   @use '../styles/typography' as *;
   @use '../styles/highlights' as *;
+  @use '../styles/breakpoints' as *;
 
   .code-with-output {
     display: flex;
@@ -76,23 +78,45 @@ const { code = '', output, alt = '', vertical = false } = Astro.props;
     }
   }
 
-  @media (max-width: 768px) {
+  @include sm-down {
     .code-with-output {
       flex-direction: column;
       align-items: center;
-      gap: 1.5rem;
     }
 
     pre:has(+ .output) {
       flex: none;
-      overflow: visible;
+      max-width: 100%;
+      overflow-x: auto;
       transform: none;
     }
 
     .code-with-output :global(.output) {
       flex: none;
       max-width: 100%;
-      transform: none;
+      transform: scale(1.1) translateY(0.1rem);
+      position: relative;
+      z-index: 1;
+    }
+
+    .vertical pre {
+      position: relative;
+      z-index: 1;
+      margin-bottom: -1.5rem;
+    }
+
+    .vertical :global(.output) {
+      z-index: 0;
+      margin-top: 0;
+    }
+
+    .prioritize-code pre {
+      position: relative;
+      z-index: 1;
+    }
+
+    .prioritize-code :global(.output) {
+      z-index: 0;
     }
   }
 

@@ -57,7 +57,7 @@ import scriptingOutput from '../assets/output/scripting.png';
       title="Don't repeat yourself"
       description="Reuse your workflow thanks to powerful scripting capabilities."
     >
-      <QuarkdownCode code={scripting} output={scriptingOutput} alt="Animal cards rendered from a custom function" />
+      <QuarkdownCode prioritizeCode code={scripting} output={scriptingOutput} alt="Animal cards rendered from a custom function" />
     </Feature>
   </main>
 
@@ -74,6 +74,10 @@ import scriptingOutput from '../assets/output/scripting.png';
 
 <style lang="scss">
   @use '../styles/colors' as *;
+
+  .features {
+    overflow: hidden;
+  }
 
   .contained-section {
     background: rgba(0, 0, 0, 0.25);
