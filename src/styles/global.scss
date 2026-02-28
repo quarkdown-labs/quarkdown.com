@@ -1,5 +1,6 @@
 @use 'colors' as *;
 @use 'typography' as *;
+@use 'breakpoints' as *;
 
 :root {
   color-scheme: dark;
@@ -54,6 +55,10 @@ pre:has(code) {
   line-height: 1.7;
   letter-spacing: 0;
   text-align: left;
+}
+
+img {
+  filter: brightness(0.96);
 }
 
 .faint {
