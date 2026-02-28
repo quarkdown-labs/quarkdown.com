@@ -1,0 +1,29 @@
+---
+interface Props {
+  title?: string;
+}
+
+const { title = 'Quarkdown | Markdown with superpowers' } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+
+<meta charset="utf-8" />
+<link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+<link rel="icon" href={`${base}favicon.ico`} />
+<link rel=apple-touch-icon href={`${base}apple-touch-icon.png`}>
+<meta name="viewport" content="width=device-width" />
+<meta name="generator" content={Astro.generator} />
+<meta name=description content="Markdown with superpowers: a modern typesetting system for papers, presentations and knowledge bases.">
+<meta name=keywords content="typesetting,markdown,latex,compiler,document creation,paper,presentation,slides,static site generator,wiki,PDF,live preview">
+<meta name=author content="Giorgio Garofalo">
+<meta property="og:title" content="Quarkdown">
+<meta property="og:description" content="Markdown with superpowers: a modern typesetting system for papers, presentations and knowledge bases.">
+<meta property="og:image" content="https://raw.githubusercontent.com/iamgio/quarkdown/project-files/images/banner-light.png">
+<meta name=msapplication-TileColor content="#061111">
+<meta name=theme-color content="#061111">
+<meta itemprop=operatingSystem content="Cross-platform">
+<meta itemprop=applicationCategory content="DeveloperApplication">
+<link href=https://quarkdown.com/ rel=canonical>
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7ff9d84e763543269faa5a5ae685ef9d"}'></script>
+<title>{title}</title>
+<slot />
