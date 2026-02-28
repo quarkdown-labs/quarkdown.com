@@ -1,0 +1,17 @@
+---
+import CallToAction from './CallToAction.astro';
+import { links } from '../links';
+---
+
+<div class="action-pair">
+  <CallToAction href={links.learnMore}>Learn more</CallToAction>
+  <CallToAction href={links.gettingStarted} variant="button">Get started &rarr;</CallToAction>
+</div>
+
+<style lang="scss">
+  .action-pair {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+</style>

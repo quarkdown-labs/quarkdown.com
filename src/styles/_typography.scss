@@ -1,0 +1,45 @@
+@use 'colors' as *;
+
+$font-body: var(--font-body);
+$font-heading: var(--font-heading);
+$font-sans: var(--font-sans);
+$font-code: var(--font-code);
+
+$letter-spacing-body: 0.03em;
+$letter-spacing-sans: 0.04em;
+
+$font-size-h1: clamp(2.5rem, 5vw + 1rem, 4rem);
+$font-size-h2: clamp(1.75rem, 3vw + 0.5rem, 2.5rem);
+$font-size-h3: clamp(1.4rem, 2vw + 0.5rem, 1.75rem);
+$font-size-body: clamp(1rem, 1vw + 0.5rem, 1.15rem);
+$font-size-overline: 0.9rem;
+$font-size-cta: 1.1rem;
+$font-size-nav: 1.1rem;
+$font-size-code: 0.9rem;
+$font-size-footer: 1rem;
+$font-size-footnote: 0.75rem;
+
+$line-height-text: 1.7;
+
+@mixin text {
+  font-family: $font-body;
+  color: $text;
+  line-height: $line-height-text;
+}
+
+@mixin heading {
+  font-family: $font-heading;
+  font-weight: normal;
+  letter-spacing: $letter-spacing-body;
+  line-height: 1.4;
+  margin-top: 0.2em;
+  margin-bottom: 0.3em;
+}
+
+@mixin overline {
+  font-family: $font-sans;
+  font-size: $font-size-overline;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing-sans;
+}

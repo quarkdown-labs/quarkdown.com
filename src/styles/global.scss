@@ -1,0 +1,108 @@
+@use 'colors' as *;
+@use 'typography' as *;
+@use 'breakpoints' as *;
+
+:root {
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  position: relative;
+  font-family: $font-body;
+  font-size: $font-size-body;
+  letter-spacing: $letter-spacing-body;
+  background-color: $brand-900;
+  color: $text;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @include heading;
+  color: $heading;
+}
+
+h1 {
+  font-size: $font-size-h1;
+}
+
+h2 { 
+  font-size: $font-size-h2;
+}
+
+h3 { 
+  font-size: $font-size-h3; 
+}
+
+code, pre {
+  font-family: $font-code;
+  font-size: $font-size-code;
+}
+
+pre:has(code) {
+  padding: 1rem 1.5rem;
+  background-color: $brand-800;
+  border: 1px solid $brand-400;
+  border-bottom-width: 3px;
+  border-radius: 10px;
+  overflow-x: auto;
+  line-height: 1.7;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+img {
+  filter: brightness(0.96);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.faint {
+  color: $text-faint;
+}
+
+[data-copyable] {
+  cursor: pointer;
+  position: relative;
+
+  &::after {
+    content: 'Click to copy';
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $font-sans;
+    font-size: 1rem;
+    color: $heading;
+    background: rgba($brand-900, 0.6);
+    backdrop-filter: blur(2px);
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+
+  &[data-copied]::after {
+    content: 'Copied!';
+  }
+}

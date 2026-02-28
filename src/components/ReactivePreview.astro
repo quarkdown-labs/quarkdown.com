@@ -1,0 +1,328 @@
+---
+/**
+ * Animated demo showing code typed on the left with live HTML output on the right.
+ * Demonstrates Quarkdown's reactive preview — "see results instantly as you type."
+ * Triggered by IntersectionObserver when scrolled into view. Runs once.
+ */
+import QuarkdownCode from './QuarkdownCode.astro';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+---
+
+<div class="reactive-preview" data-reactive-preview>
+  <QuarkdownCode>
+    <div class="output reactive-output"></div>
+  </QuarkdownCode>
+  <button class="replay-button" data-replay><i class="bi bi-arrow-clockwise"></i> Replay</button>
+</div>
+
+<script>
+  interface Segment {
+    text: string;
+    cls?: string;
+  }
+
+  interface Line {
+    segments: Segment[];
+    blankBefore?: boolean;
+    pause?: number;
+  }
+
+  const lines: Line[] = [
+    {
+      segments: [{ text: "# Quick start", cls: "hl-heading" }],
+    },
+    {
+      blankBefore: true,
+      segments: [
+        { text: "Write in " },
+        { text: "**", cls: "hl-punctuation" },
+        { text: "Markdown", cls: "hl-keyword" },
+        { text: "**", cls: "hl-punctuation" },
+        { text: "." },
+      ],
+    },
+    {
+      segments: [
+        { text: "_", cls: "hl-punctuation" },
+        { text: "Control", cls: "hl-keyword" },
+        { text: "_", cls: "hl-punctuation" },
+        { text: " with Quarkdown." },
+      ],
+    },
+    {
+      blankBefore: true,
+      segments: [
+        { text: ".pageformat", cls: "hl-function" },
+        { text: " alignment" },
+        { text: ":", cls: "hl-punctuation" },
+        { text: "{", cls: "hl-punctuation" },
+        { text: "center", cls: "hl-string" },
+        { text: "}", cls: "hl-punctuation" },
+      ],
+    },
+  ];
+
+  const CHAR_DELAY = 65;
+  const LINE_PAUSE = 400;
+  const BLANK_LINE_PAUSE = 300;
+
+  function sleep(ms: number): Promise<void> {
+    return new Promise((r) => setTimeout(r, ms));
+  }
+
+  function parseInline(text: string): string {
+    text = text.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+    text = text.replace(/_(.+?)_/g, "<em>$1</em>");
+    return text;
+  }
+
+  function renderMarkdown(raw: string): string {
+    const srcLines = raw.split("\n");
+    let html = "";
+
+    for (const line of srcLines) {
+      if (line === "" || line.startsWith(".")) continue;
+
+      if (line.startsWith("# ")) {
+        html += `<h1>${parseInline(line.slice(2))}</h1>`;
+      } else {
+        html += `<p>${parseInline(line)}</p>`;
+      }
+    }
+
+    return html;
+  }
+
+  const INITIAL_DELAY = 600;
+
+  async function animate(container: Element) {
+    await sleep(INITIAL_DELAY);
+    const code = container.querySelector("code")!;
+    const output = container.querySelector(".reactive-output") as HTMLElement;
+    let rawText = "";
+    let lastHtml = "";
+
+    function updateOutput() {
+      const html = renderMarkdown(rawText);
+      if (html !== lastHtml) {
+        output.innerHTML = html;
+        lastHtml = html;
+      }
+    }
+
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i];
+      const isLast = i === lines.length - 1;
+
+      if (line.blankBefore) {
+        code.appendChild(document.createTextNode("\n"));
+        rawText += "\n";
+        updateOutput();
+        await sleep(BLANK_LINE_PAUSE);
+      }
+
+      for (const segment of line.segments) {
+        const span = document.createElement("span");
+        if (segment.cls) span.className = segment.cls;
+        code.appendChild(span);
+
+        for (const char of segment.text) {
+          span.textContent += char;
+          rawText += char;
+          updateOutput();
+          await sleep(CHAR_DELAY);
+        }
+      }
+
+      if (!isLast) {
+        code.appendChild(document.createTextNode("\n"));
+        rawText += "\n";
+        updateOutput();
+        await sleep(line.pause ?? LINE_PAUSE);
+      }
+    }
+
+    // Animate each output child to centered alignment, staggered by 100ms.
+    // Wrap each child's content in an inline span to measure text offset.
+    const children = Array.from(output.children) as HTMLElement[];
+    const wrappers: HTMLElement[] = [];
+
+    for (const child of children) {
+      const wrapper = document.createElement("span");
+      wrapper.style.display = "inline-block";
+      wrapper.innerHTML = child.innerHTML;
+      child.innerHTML = "";
+      child.appendChild(wrapper);
+      wrappers.push(wrapper);
+    }
+
+    // Measure left-aligned text positions
+    const firsts = wrappers.map((w) => w.getBoundingClientRect().left);
+
+    // Apply centering
+    output.classList.add("centered");
+
+    // Measure centered text positions and set inverse transforms
+    wrappers.forEach((wrapper, i) => {
+      const last = wrapper.getBoundingClientRect().left;
+      wrapper.style.transform = `translateX(${firsts[i] - last}px)`;
+    });
+
+    output.offsetHeight; // force reflow
+
+    // Animate to final centered position with stagger
+    wrappers.forEach((wrapper, i) => {
+      wrapper.style.transition = `transform 0.4s ease ${i * 100}ms`;
+      wrapper.style.transform = "";
+    });
+
+    container.classList.add("done");
+  }
+
+  function setupReplay(container: Element) {
+    const btn = container.querySelector("[data-replay]") as HTMLElement;
+    btn.addEventListener("click", () => {
+      const code = container.querySelector("code")!;
+      const output = container.querySelector(".reactive-output") as HTMLElement;
+      container.classList.remove("done");
+      code.textContent = "";
+      output.innerHTML = "";
+      output.classList.remove("centered");
+      animate(container);
+    });
+  }
+
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        animate(entry.target);
+        obs.unobserve(entry.target);
+      }
+    },
+    { rootMargin: "-20% 0px -20% 0px" },
+  );
+
+  document.querySelectorAll("[data-reactive-preview]").forEach((el) => {
+    observer.observe(el);
+    setupReplay(el);
+  });
+</script>
+
+<style is:global lang="scss">
+  @use "../styles/typography" as *;
+  @use "../styles/colors" as *;
+  @use "../styles/breakpoints" as *;
+
+  .reactive-preview {
+    position: relative;
+
+    pre {
+      flex: 1 !important;
+    }
+
+    code {
+      display: block;
+      white-space: pre;
+      min-height: calc(6 * 1.7em);
+
+      &::after {
+        content: "▎";
+        animation: blink 1s step-end infinite;
+      }
+    }
+
+    &.done code::after {
+      visibility: hidden;
+    }
+
+    .replay-button {
+      position: absolute;
+      bottom: -3.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: none;
+      border: none;
+      color: $text-faint;
+      font-family: inherit;
+      font-size: $font-size-overline;
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      padding: 1rem;
+      transition: opacity 0.3s, color 0.1s;
+
+      &:hover {
+        color: $text;
+      }
+    }
+
+    &.done .replay-button {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .reactive-output {
+    flex: 2;
+    max-width: 50%;
+    padding: 1.5rem 2rem;
+    background: #faf8f5;
+    color: #1a1a1a;
+    border-radius: 10px;
+    border: 1px solid $brand-400;
+    transform: perspective(400px) rotateY(-3deg);
+    box-shadow: $glow;
+    min-height: 200px;
+    text-align: left;
+
+    &.centered {
+      text-align: center;
+    }
+
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.4rem;
+      color: #1a1a1a;
+      margin-bottom: 1rem;
+      font-weight: bold;
+      letter-spacing: normal;
+    }
+
+    p {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #333;
+      margin-bottom: 0.4rem;
+    }
+
+    strong {
+      font-weight: bold;
+      color: #1a1a1a;
+    }
+  }
+
+  @include sm-down {
+    .reactive-preview .code-with-output {
+      flex-direction: column;
+    }
+
+    .reactive-preview pre {
+      width: 100%;
+      transform: none !important;
+    }
+
+    .reactive-output {
+      max-width: 100%;
+      width: 100%;
+      transform: none;
+    }
+  }
+</style>

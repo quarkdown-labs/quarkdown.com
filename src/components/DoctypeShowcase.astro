@@ -1,0 +1,148 @@
+---
+import QuarkdownCode from './QuarkdownCode.astro';
+import type { ImageMetadata } from 'astro';
+import 'simple-icons-font/font/simple-icons.min.css';
+import { doctypePlain, doctypePaged, doctypeDocs, doctypeSlides } from '../codes';
+import doctypePlainOutput from '../assets/output/doctype-plain.png';
+import doctypePagedOutput from '../assets/output/doctype-paged.png';
+import doctypeDocsOutput from '../assets/output/doctype-docs.png';
+import doctypeSlidesOutput from '../assets/output/doctype-slides.png';
+
+interface ReplacedTool {
+  name: string;
+  icon: string;
+}
+
+interface Doctype {
+  code: string;
+  output: ImageMetadata;
+  alt: string;
+  caption: string;
+  replaces: ReplacedTool[];
+}
+
+const doctypes: Doctype[] = [
+  {
+    code: doctypePaged,
+    output: doctypePagedOutput,
+    alt: 'Paged document output showing a formatted article',
+    caption: 'For articles, books and reports.',
+    replaces: [
+      { name: 'LaTeX', icon: 'si-latex' },
+      { name: 'Typst', icon: 'si-typst' },
+    ],
+  },
+  {
+    code: doctypePlain,
+    output: doctypePlainOutput,
+    alt: 'Plain document output showing a coffee brewing guide',
+    caption: 'For notes, knowledge bases and simple static websites.',
+    replaces: [
+      { name: 'Notion', icon: 'si-notion' },
+      { name: 'Obsidian', icon: 'si-obsidian' },
+    ],
+  },
+  {
+    code: doctypeDocs,
+    output: doctypeDocsOutput,
+    alt: 'Documentation website output',
+    caption: 'For wikis, technical documentation and large knowledge bases.',
+    replaces: [
+      { name: 'GitBook', icon: 'si-gitbook' },
+      { name: 'Docusaurus', icon: 'si-docusaurus' },
+      { name: 'MkDocs', icon: 'si-materialformkdocs' },
+      { name: 'VitePress', icon: 'si-vitepress' },
+    ],
+  },
+  {
+    code: doctypeSlides,
+    output: doctypeSlidesOutput,
+    alt: 'Slide presentation output',
+    caption: 'For lectures, talks and interactive presentations.',
+    replaces: [
+      { name: 'Beamer', icon: 'si-latex' },
+      { name: 'Google Slides', icon: 'si-googleslides' },
+    ],
+  },
+];
+---
+
+<div class="doctype-showcase" data-doctype-showcase>
+  {doctypes.map(({ code, output, alt, caption, replaces }) => (
+    <div class="doctype-item" data-doctype-item>
+      <div class="doctype-replaces">
+        <span>Replaces</span>
+        {replaces.map((tool) => (
+          <i class={`si ${tool.icon} replaces-icon`} title={tool.name}></i>
+        ))}
+      </div>
+      <QuarkdownCode vertical code={code} output={output} alt={alt} />
+      <p class="doctype-caption">{caption}</p>
+    </div>
+  ))}
+</div>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const isMobile = window.matchMedia('(max-width: 768px)').matches;
+
+  document.querySelectorAll('[data-doctype-item]').forEach((item) => {
+    const img = item.querySelector('img');
+    if (!img) return;
+
+    gsap.fromTo(img,
+      { scale: 0.97, opacity: 0.5 },
+      {
+        scale: 1,
+        opacity: 1,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: item,
+          start: isMobile ? 'top 95%' : 'top 85%',
+          end: isMobile ? 'top 55%' : 'top 40%',
+          scrub: 0.6,
+        },
+      },
+    );
+  });
+</script>
+
+<style lang="scss">
+  @use '../styles/colors' as *;
+  @use '../styles/typography' as *;
+
+  .doctype-showcase {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .doctype-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .doctype-caption {
+    @include text;
+    text-align: center;
+  }
+
+  .doctype-replaces {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: $text-faint;
+  }
+
+  .replaces-icon {
+    color: $text;
+    font-size: 1rem;
+  }
+</style>

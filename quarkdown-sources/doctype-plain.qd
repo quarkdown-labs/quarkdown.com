@@ -1,0 +1,43 @@
+.doctype {plain}
+.doclang {en}
+.theme {paperwhite} layout:{minimal}
+
+.css
+    table { width: 100% }
+
+    td, th { border-color: lightgray }
+
+    th { background: #f5f5f5 }
+
+    .sidebar ol { border: none }
+
+    #a { display: none }
+
+    h1 { margin-top: 12px }
+
+.numbering
+    - headings: 1.1
+
+# a
+
+.center 
+    #! Coffee Brewing Guide
+
+!(40%)[](https://upload.wikimedia.org/wikipedia/commons/4/41/Espresso_BW_1.jpg "Espresso")
+
+## Brew methods
+
+Each method extracts flavor differently depending on contact time, grind size and water temperature.
+
+| Method | Grind | Time | Strength |
+|---|---|---|---|
+| Pour over | Medium-fine | 3–4 min | Light, clean |
+| Espresso | Fine | 25–30 sec | Bold, concentrated |
+| French press | Coarse | 4 min | Full-bodied, rich |
+
+## Water temperature
+
+Water temperature has a huge impact on extraction.
+The sweet spot is between **90°C** and **96°C** for most methods.
+
+> Tip: if you don't have a thermometer, let boiling water rest for 30–45 seconds before pouring.

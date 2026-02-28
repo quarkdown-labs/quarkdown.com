@@ -1,0 +1,126 @@
+---
+/**
+ * Scroll-triggered typewriter animation powered by `typewriter-effect`.
+ *
+ * Renders the full text as a visible, crawlable placeholder for SEO and
+ * accessibility. When the element scrolls into view, the placeholder hides
+ * and the typewriter animation begins. Uses two IntersectionObservers:
+ *   - One at the viewport edge to hide the placeholder (no layout shift).
+ *   - One at ~center of viewport to start typing at eye level.
+ *
+ * Accessibility:
+ *   - The placeholder is real DOM text: visible to screen readers and
+ *     search engines by default.
+ *   - `aria-hidden` is only added via JS when the animation takes over,
+ *     so assistive tech always has access to the content.
+ *   - Without JS (crawlers, no-JS browsers) the placeholder stays fully
+ *     visible and readable — progressive enhancement.
+ *
+ * @example
+ * <h2>Spend your time <Typewriter text="writing" /></h2>
+ */
+interface Props {
+  /** The text to type out. */
+  text: string;
+  /** Typing speed in ms per character. Default: 80 */
+  delay?: number;
+}
+
+const { text, delay = 80 } = Astro.props;
+---
+
+<span class="typewriter-wrapper">
+  <span class="typewriter-placeholder">{text}</span>
+  <span class="typewriter" data-typewriter data-text={text} data-delay={delay}></span>
+</span>
+
+<script>
+  import Typewriter from "typewriter-effect/dist/core";
+
+  const CURSOR_HIDE_PAUSE = 1200;
+  const TYPE_ROOT_MARGIN = "-30% 0px -30% 0px";
+
+  const instances = new Map<Element, Typewriter>();
+  const pendingStart = new Set<Element>();
+
+  function createTypewriter(el: HTMLSpanElement): Typewriter {
+    const text = el.dataset.text!;
+    const delay = Number(el.dataset.delay);
+
+    return new Typewriter(el, { delay, cursor: "|" })
+      .typeString(text)
+      .pauseFor(CURSOR_HIDE_PAUSE)
+      .callFunction(({ elements }: { elements: { cursor: HTMLElement } }) => {
+        elements.cursor.style.visibility = "hidden";
+      });
+  }
+
+  // Hides the placeholder and shows a blinking cursor as soon as the element
+  // enters the viewport. If typing was already requested (race condition),
+  // starts immediately.
+  const hideObserver = new IntersectionObserver((entries, obs) => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+
+      const placeholder = entry.target.querySelector(".typewriter-placeholder") as HTMLElement;
+      placeholder.style.visibility = "hidden";
+      placeholder.setAttribute("aria-hidden", "true");
+
+      const el = entry.target.querySelector("[data-typewriter]") as HTMLSpanElement;
+      const instance = createTypewriter(el);
+      instances.set(entry.target, instance);
+
+      if (pendingStart.has(entry.target)) {
+        instance.start();
+        pendingStart.delete(entry.target);
+      }
+
+      obs.unobserve(entry.target);
+    }
+  });
+
+  // Starts the typing animation when the element reaches eye level.
+  const typeObserver = new IntersectionObserver(
+    (entries, obs) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+
+        const instance = instances.get(entry.target);
+        if (instance) {
+          instance.start();
+        } else {
+          pendingStart.add(entry.target);
+        }
+
+        obs.unobserve(entry.target);
+      }
+    },
+    { rootMargin: TYPE_ROOT_MARGIN },
+  );
+
+  document.querySelectorAll<HTMLSpanElement>("[data-typewriter]").forEach((el) => {
+    const wrapper = el.parentElement!;
+    hideObserver.observe(wrapper);
+    typeObserver.observe(wrapper);
+  });
+</script>
+
+<style lang="scss">
+  .typewriter-wrapper {
+    display: inline-block;
+    position: relative;
+  }
+
+  .typewriter {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: inline;
+
+    :global(.Typewriter),
+    :global(.Typewriter__wrapper),
+    :global(.Typewriter__cursor) {
+      display: inline;
+    }
+  }
+</style>

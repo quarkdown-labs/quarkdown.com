@@ -1,0 +1,19 @@
+---
+
+---
+
+<footer class="footnotes">
+  <slot />
+</footer>
+
+<style lang="scss">
+  @use '../styles/colors' as *;
+  @use '../styles/typography' as *;
+
+  .footnotes {
+    font-size: $font-size-footnote;
+    color: $text-faint;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+</style>
