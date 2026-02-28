@@ -3,14 +3,16 @@ import { Font } from 'astro:assets';
 import '../styles/global.scss';
 import BackgroundEffects from '../components/BackgroundEffects.astro';
 import Navbar from '../components/Navbar.astro';
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
-    <link rel=apple-touch-icon href="/apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+    <link rel="icon" href={`${base}favicon.ico`} />
+    <link rel=apple-touch-icon href={`${base}apple-touch-icon.png`}>
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta name=description content="Markdown with superpowers: a modern typesetting system for papers, presentations and knowledge bases.">
