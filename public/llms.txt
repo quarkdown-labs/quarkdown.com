@@ -1,0 +1,32 @@
+# Quarkdown
+
+Quarkdown is a modern, open-source typesetting system that extends Markdown with powerful features inspired by LaTeX. It compiles Markdown-based documents into PDF, HTML, and other formats.
+
+## Key Features
+
+- **Markdown-based**: Write in familiar Markdown syntax with Quarkdown extensions for advanced typesetting.
+- **Multiple output formats**: Generate paged documents (articles, books, reports), plain HTML pages, documentation sites, and slide presentations.
+- **Scripting support**: Turing-complete scripting capabilities for reusable templates, functions, and dynamic content.
+- **Live preview**: Blazing fast compilation with reactive preview for instant feedback.
+- **Cross-platform**: Available on Linux, macOS, and Windows.
+
+## Use Cases
+
+- Research papers, theses, and academic articles
+- Books and technical reports
+- Slide presentations and lectures
+- Documentation sites and wikis
+- Knowledge bases and notes
+
+## Learn More
+
+For detailed documentation, syntax reference, scripting guides, and technical topics, visit the Quarkdown Wiki: https://quarkdown.com/wiki
+
+In particular, check out the Quickstart Guide for a hands-on introduction: https://quarkdown.com/wiki/quickstart
+
+## Links
+
+- Website: https://quarkdown.com
+- GitHub: https://github.com/iamgio/quarkdown
+- Wiki: https://quarkdown.com/wiki
+- API Docs: https://quarkdown.com/docs
