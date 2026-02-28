@@ -1,0 +1,16 @@
+.DS_Store
+node_modules/
+dist/
+build/
+output/
+*.log
+*.cache
+*.tmp
+*.env
+.idea/
+.vscode/
+.astro/
+.astro-dev/
+.astro-temp/
+.astro-cache/
+.claude/
