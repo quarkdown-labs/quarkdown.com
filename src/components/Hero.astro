@@ -52,12 +52,26 @@ const tags = ['Papers', 'Books', 'Presentations', 'Static sites', 'Knowledge bas
     margin: 0 auto;
   }
 
+  @keyframes hero-entry {
+    from {
+      opacity: 0;
+      transform: translateY(1rem);
+      filter: blur(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+  }
+
   .hero-logo {
     width: 120px;
     height: auto;
     margin-bottom: 2.5rem;
     color: $heading;
     filter: drop-shadow($glow);
+    animation: hero-entry 0.6s ease-out both;
   }
 
   .hero-title {
