@@ -2,7 +2,7 @@
 <html class="no-js">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-    <title>launchLocal</title>
+    <title>dependent</title>
 <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">    <script>var pathToRoot = "../../../";</script>
     <script>document.documentElement.classList.replace("no-js","js");</script>
     <script>const storage = localStorage.getItem("dokka-dark-mode")
@@ -47,7 +47,7 @@
         </div>
         <div class="navigation-controls">
         <div class="filter-section filter-section_loading" id="filter-section">
-                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":quarkdown-server/main">jvm</button>
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":quarkdown-interaction/main">jvm</button>
             <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
                 <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox" data-role="dropdown-toggle" aria-controls="platform-tags-listbox" aria-haspopup="listbox" aria-expanded="false" aria-label="Toggle source sets"></button>
                 <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox">
@@ -58,7 +58,7 @@
                     </div>
                         <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
                             <label class="checkbox">
-                                <input type="checkbox" class="checkbox--input" id=":quarkdown-server/main" data-filter=":quarkdown-server/main">
+                                <input type="checkbox" class="checkbox--input" id=":quarkdown-interaction/main" data-filter=":quarkdown-interaction/main">
                                 <span class="checkbox--icon"></span>
                                 jvm
                             </label>
@@ -92,12 +92,12 @@
                 </div>
             </div>
             <div id="main">
-<div class="main-content" data-page-type="member" id="content" pageids="quarkdown-server::com.quarkdown.server.browser/BrowserLauncher/launchLocal/#kotlin.Int#kotlin.String/PointingToDeclaration//1314577368">
-  <div class="breadcrumbs"><a href="../../index.html">quarkdown-server</a><span class="delimiter">/</span><a href="../index.html">com.quarkdown.server.browser</a><span class="delimiter">/</span><a href="index.html">BrowserLauncher</a><span class="delimiter">/</span><span class="current">launchLocal</span></div>
+<div class="main-content" data-page-type="member" id="content" pageids="quarkdown-interaction::com.quarkdown.interaction.os/OsUtils/dependent/#kotlin.Function0[TypeParam(bounds=[kotlin.Any?])]#kotlin.Function0[TypeParam(bounds=[kotlin.Any?])]/PointingToDeclaration//1054256907">
+  <div class="breadcrumbs"><a href="../../index.html">quarkdown-interaction</a><span class="delimiter">/</span><a href="../index.html">com.quarkdown.interaction.os</a><span class="delimiter">/</span><a href="index.html">OsUtils</a><span class="delimiter">/</span><span class="current">dependent</span></div>
   <div class="cover ">
-    <h1 class="cover"><span>launch</span><wbr><span><span>Local</span></span></h1>
+    <h1 class="cover"><span><span>dependent</span></span></h1>
   </div>
-  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-server/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="launch-local.html"><span class="token function">launchLocal</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">port<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">endpoint<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator"> = </span><span class="token string">"/"</span></span></span><span class="token punctuation">)</span></div><p class="paragraph">Launches a local server URL in the specified browser.</p><h4 class="">Parameters</h4><div class="table"><div class="table-row" data-filterable-current=":quarkdown-server/main" data-filterable-set=":quarkdown-server/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>port</span></span></u></div></span></div><div><div class="title"><p class="paragraph">port to launch</p></div></div></div></div><div class="table-row" data-filterable-current=":quarkdown-server/main" data-filterable-set=":quarkdown-server/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>endpoint</span></span></u></div></span></div><div><div class="title"><p class="paragraph">endpoint to launch, defaults to <code class="lang-kotlin">/</code></p></div></div></div></div></div></div></div>
+  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-interaction/main"><div class="symbol monospace"><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="dependent.html">T</a><span class="token operator">&gt; </span><a href="dependent.html"><span class="token function">dependent</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">windows<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="dependent.html">T</a><span class="token punctuation">, </span></span><span class="parameter ">unix<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="dependent.html">T</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="dependent.html">T</a></div><p class="paragraph">Runs the given <a href="dependent.html">windows</a> or <a href="dependent.html">unix</a> function depending on the current operating system.</p><span class="kdoc-tag"><h4 class="">Return</h4><p class="paragraph">the result of the function based on the OS</p></span></div></div>
 </div>
     <div class="footer">
         <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
