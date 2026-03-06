@@ -43,7 +43,7 @@
             </a>        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle" type="button">Toggle table of contents
         </button>
         <div class="navigation-controls--break ui-kit_mobile-only"></div>
-        <div class="library-version" id="library-version">1.14.0
+        <div class="library-version" id="library-version">1.14.1
         </div>
         <div class="navigation-controls">
         <div class="filter-section filter-section_loading" id="filter-section">
@@ -96,7 +96,7 @@
   <div class="breadcrumbs"><a href="../../index.html">quarkdown-core</a><span class="delimiter">/</span><a href="../index.html">com.quarkdown.core.lexer</a><span class="delimiter">/</span><span class="current">Lexer</span></div>
   <div class="cover ">
     <h1 class="cover"><span><span>Lexer</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="index.html">Lexer</a></div><p class="paragraph">A scanner that transforms raw string data into a list of token. For instance, the Markdown code <code class="lang-kotlin">Hello _Quarkdown_</code> is tokenized by its implementation into <code class="lang-kotlin">Hello </code>, <code class="lang-kotlin">_</code>, <code class="lang-kotlin">Quarkdown</code>, <code class="lang-kotlin">_</code>. See <a href="https://github.com/iamgio/quarkdown/blob/analysis/lexing_examples.txt">lexing_examples.txt</a> for further information.</p><h4 class="">Inheritors</h4><div class="table"><div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../-abstract-lexer/index.html">AbstractLexer</a></div></span></div><div></div></div></div></div></div></div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="index.html">Lexer</a></div><p class="paragraph">A scanner that transforms raw string data into a list of token. For instance, the Markdown code <code class="lang-kotlin">Hello _Quarkdown_</code> is tokenized by its implementation into <code class="lang-kotlin">Hello </code>, <code class="lang-kotlin">_Quarkdown_</code>.</p><h4 class="">Inheritors</h4><div class="table"><div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../-abstract-lexer/index.html">AbstractLexer</a></div></span></div><div></div></div></div></div></div></div>
   </div>
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
@@ -132,7 +132,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="tokenize.html"><span class="token function">tokenize</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../-token/index.html">Token</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Disassembles some raw string into smaller tokens.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="tokenize.html"><span class="token function">tokenize</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.sequences/-sequence/index.html">Sequence</a><span class="token operator">&lt;</span><a href="../-token/index.html">Token</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Disassembles some raw string into smaller tokens.</p></div></div></div>
                 </div>
               </div>
             </div>
