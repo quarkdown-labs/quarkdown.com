@@ -1,0 +1,1 @@
+import{l as r,g as a}from"./gsap.BANUBKKA.js";await r();const e=window.matchMedia("(max-width: 768px)").matches;document.querySelectorAll("[data-doctype-item]").forEach(o=>{const t=o.querySelector("img");t&&a.fromTo(t,{scale:.97,opacity:.5},{scale:1,opacity:1,ease:"none",scrollTrigger:{trigger:o,start:e?"top 95%":"top 85%",end:e?"top 55%":"top 40%",scrub:.6}})});
