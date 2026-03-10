@@ -83,10 +83,9 @@ const doctypes: Doctype[] = [
 </div>
 
 <script>
-  import { gsap } from 'gsap';
-  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  import { gsap, loadScrollTrigger } from '../scripts/gsap';
 
-  gsap.registerPlugin(ScrollTrigger);
+  await loadScrollTrigger();
 
   const isMobile = window.matchMedia('(max-width: 768px)').matches;
 
