@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
+import { imagePresets } from '../image';
 
 interface Props {
   code?: string;
@@ -16,7 +17,7 @@ const { code = '', output, alt = '', vertical = false, prioritizeCode = false } 
 <div class:list={['code-with-output', { vertical, 'prioritize-code': prioritizeCode }]}>
   <pre><code set:html={code} /></pre>
   {output ? (
-    <Image src={output} alt={alt} class="output" loading="eager" widths={[400, 640, 800]} sizes="(max-width: 768px) 100vw, 640px" />
+    <Image src={output} alt={alt} class="output" loading="eager" {...imagePresets.output} />
   ) : (
     <slot />
   )}
