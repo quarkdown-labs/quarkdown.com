@@ -1,11 +1,10 @@
 // @ts-check
 import { defineConfig, fontProviders } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
-import { links } from './src/links';
 
 // https://astro.build/config
 export default defineConfig({
-  site: links.base,
+  site: 'https://quarkdown.com',
   // @ts-ignore — process.env is available at config time in Node
   base: process.env.BASE_PATH || '/',
   integrations: [sitemap()],
