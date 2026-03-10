@@ -1,6 +1,6 @@
 ---
-import 'bootstrap-icons/font/bootstrap-icons.css';
 import Logo from '../assets/logo.svg';
+import Icon from './Icon.astro';
 import { links } from '../links';
 
 const year = new Date().getFullYear();
@@ -14,8 +14,8 @@ const year = new Date().getFullYear();
       <p class="credits">By <a href="https://github.com/iamgio" target="_blank" rel="noopener">Giorgio Garofalo (iamgio)</a> and contributors</p>
       <p class="image-credits">Image credits: Wikipedia, Alaska.org, Aluna1</p>
       <div class="footer-socials">
-        <a href="https://linkedin.com/in/giorgio-garofalo" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-        <a href={links.repo} target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
+        <a href="https://linkedin.com/in/giorgio-garofalo" target="_blank" rel="noopener" aria-label="LinkedIn"><Icon name="linkedin" /></a>
+        <a href={links.repo} target="_blank" rel="noopener" aria-label="GitHub"><Icon name="github" /></a>
       </div>
     </div>
     <div class="footer-col footer-col-right">

@@ -5,14 +5,14 @@
  * Triggered by IntersectionObserver when scrolled into view. Runs once.
  */
 import QuarkdownCode from './QuarkdownCode.astro';
-import 'bootstrap-icons/font/bootstrap-icons.css';
+import Icon from './Icon.astro';
 ---
 
 <div class="reactive-preview" data-reactive-preview>
   <QuarkdownCode>
     <div class="output reactive-output"></div>
   </QuarkdownCode>
-  <button class="replay-button" data-replay><i class="bi bi-arrow-clockwise"></i> Replay</button>
+  <button class="replay-button" data-replay><Icon name="arrow-clockwise" /> Replay</button>
 </div>
 
 <script>

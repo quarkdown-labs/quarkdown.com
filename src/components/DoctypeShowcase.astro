@@ -1,7 +1,7 @@
 ---
 import QuarkdownCode from './QuarkdownCode.astro';
+import SimpleIcon from './SimpleIcon.astro';
 import type { ImageMetadata } from 'astro';
-import 'simple-icons-font/font/simple-icons.min.css';
 import { doctypePlain, doctypePaged, doctypeDocs, doctypeSlides } from '../codes';
 import doctypePlainOutput from '../assets/output/doctype-plain.png';
 import doctypePagedOutput from '../assets/output/doctype-paged.png';
@@ -10,7 +10,7 @@ import doctypeSlidesOutput from '../assets/output/doctype-slides.png';
 
 interface ReplacedTool {
   name: string;
-  icon: string;
+  slug: string;
 }
 
 interface Doctype {
@@ -28,8 +28,8 @@ const doctypes: Doctype[] = [
     alt: 'Paged document output showing a formatted article',
     caption: 'For articles, books and reports.',
     replaces: [
-      { name: 'LaTeX', icon: 'si-latex' },
-      { name: 'Typst', icon: 'si-typst' },
+      { name: 'LaTeX', slug: 'latex' },
+      { name: 'Typst', slug: 'typst' },
     ],
   },
   {
@@ -38,8 +38,8 @@ const doctypes: Doctype[] = [
     alt: 'Plain document output showing a coffee brewing guide',
     caption: 'For notes, knowledge bases and simple static websites.',
     replaces: [
-      { name: 'Notion', icon: 'si-notion' },
-      { name: 'Obsidian', icon: 'si-obsidian' },
+      { name: 'Notion', slug: 'notion' },
+      { name: 'Obsidian', slug: 'obsidian' },
     ],
   },
   {
@@ -48,10 +48,10 @@ const doctypes: Doctype[] = [
     alt: 'Documentation website output',
     caption: 'For wikis, technical documentation and large knowledge bases.',
     replaces: [
-      { name: 'GitBook', icon: 'si-gitbook' },
-      { name: 'Docusaurus', icon: 'si-docusaurus' },
-      { name: 'MkDocs', icon: 'si-materialformkdocs' },
-      { name: 'VitePress', icon: 'si-vitepress' },
+      { name: 'GitBook', slug: 'gitbook' },
+      { name: 'Docusaurus', slug: 'docusaurus' },
+      { name: 'MkDocs', slug: 'materialformkdocs' },
+      { name: 'VitePress', slug: 'vitepress' },
     ],
   },
   {
@@ -60,8 +60,8 @@ const doctypes: Doctype[] = [
     alt: 'Slide presentation output',
     caption: 'For lectures, talks and interactive presentations.',
     replaces: [
-      { name: 'Beamer', icon: 'si-latex' },
-      { name: 'Google Slides', icon: 'si-googleslides' },
+      { name: 'Beamer', slug: 'latex' },
+      { name: 'Google Slides', slug: 'googleslides' },
     ],
   },
 ];
@@ -73,7 +73,7 @@ const doctypes: Doctype[] = [
       <div class="doctype-replaces">
         <span>Replaces</span>
         {replaces.map((tool) => (
-          <i class={`si ${tool.icon} replaces-icon`} title={tool.name}></i>
+          <SimpleIcon name={tool.slug} title={tool.name} class="replaces-icon" />
         ))}
       </div>
       <QuarkdownCode vertical code={code} output={output} alt={alt} />

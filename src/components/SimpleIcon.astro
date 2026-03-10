@@ -1,0 +1,34 @@
+---
+import icons from '../icons.json';
+
+interface Props {
+  name: string;
+  title?: string;
+  class?: string;
+}
+
+const { name, title, class: className } = Astro.props;
+const path = icons[name as keyof typeof icons];
+---
+
+{path && (
+  <svg
+    role="img"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+    class:list={['simple-icon', className]}
+    aria-label={title}
+  >
+    {title && <title>{title}</title>}
+    <Fragment set:html={path} />
+  </svg>
+)}
+
+<style>
+  .simple-icon {
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+    vertical-align: -0.125em;
+  }
+</style>
