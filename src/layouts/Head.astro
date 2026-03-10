@@ -1,10 +1,36 @@
 ---
+import { links } from '../links';
+import { meta } from '../meta';
+
 interface Props {
   title?: string;
 }
 
-const { title = 'Quarkdown | Markdown with superpowers' } = Astro.props;
+const { title = `${meta.name} | Markdown with superpowers` } = Astro.props;
 const base = import.meta.env.BASE_URL;
+const ogImage = `${links.base}/og-image.jpg`;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': meta.type,
+  name: meta.name,
+  url: `${links.base}/`,
+  description: meta.description,
+  applicationCategory: meta.appCategory,
+  operatingSystem: meta.appOS,
+  author: {
+    '@type': 'Person',
+    name: meta.author,
+  },
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'USD',
+  },
+  license: meta.license,
+  codeRepository: links.repo,
+  image: ogImage,
+};
 ---
 
 <meta charset="utf-8" />
@@ -13,18 +39,19 @@ const base = import.meta.env.BASE_URL;
 <link rel=apple-touch-icon href={`${base}apple-touch-icon.png`}>
 <meta name="viewport" content="width=device-width" />
 <meta name="generator" content={Astro.generator} />
-<meta name=description content="Markdown with superpowers: a modern typesetting system for papers, presentations and knowledge bases.">
+<meta name=description content={meta.description}>
 <meta name=keywords content="typesetting,markdown,latex,compiler,document creation,paper,presentation,slides,static site generator,wiki,PDF,live preview">
-<meta name=author content="Giorgio Garofalo">
+<meta name=author content={meta.author}>
 <meta property="og:title" content={title}>
-<meta property="og:description" content="Markdown with superpowers: a modern typesetting system for papers, presentations and knowledge bases.">
-<meta property="og:image" content="https://quarkdown.com/og-image.jpg">
-<meta property="og:url" content="https://quarkdown.com/">
-<meta name=msapplication-TileColor content="#061111">
-<meta name=theme-color content="#061111">
-<meta itemprop=operatingSystem content="Cross-platform">
-<meta itemprop=applicationCategory content="DeveloperApplication">
-<link href=https://quarkdown.com/ rel=canonical>
+<meta property="og:description" content={meta.description}>
+<meta property="og:image" content={ogImage}>
+<meta property="og:url" content={`${links.base}/`}>
+<meta name=msapplication-TileColor content={meta.themeColor}>
+<meta name=theme-color content={meta.themeColor}>
+<meta itemprop=operatingSystem content={meta.appOS}>
+<meta itemprop=applicationCategory content={meta.appCategory}>
+<link href={`${links.base}/`} rel=canonical>
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7ff9d84e763543269faa5a5ae685ef9d"}'></script>
 <title>{title}</title>
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 <slot />
