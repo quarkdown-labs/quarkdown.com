@@ -262,6 +262,8 @@ com.quarkdown.core.rendering.representable
 com.quarkdown.core.rendering.tag
 com.quarkdown.core.template
 com.quarkdown.core.util
+com.quarkdown.core.util.node
+com.quarkdown.core.util.node.conversion.list
 com.quarkdown.core.visitor.node
 com.quarkdown.core.visitor.token
 module:quarkdown-html
