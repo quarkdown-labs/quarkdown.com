@@ -2,7 +2,7 @@
 <html class="no-js">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-    <title>LinkDefinitionRegistrationHook</title>
+    <title>LinkDefinitionResolverHook</title>
 <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">    <script>var pathToRoot = "../../../";</script>
     <script>document.documentElement.classList.replace("no-js","js");</script>
     <script>const storage = localStorage.getItem("dokka-dark-mode")
@@ -92,23 +92,23 @@
                 </div>
             </div>
             <div id="main">
-<div class="main-content" data-page-type="classlike" id="content" pageids="quarkdown-core::com.quarkdown.core.context.hooks/LinkDefinitionRegistrationHook///PointingToDeclaration//1831116724">
-  <div class="breadcrumbs"><a href="../../index.html">quarkdown-core</a><span class="delimiter">/</span><a href="../index.html">com.quarkdown.core.context.hooks</a><span class="delimiter">/</span><span class="current">LinkDefinitionRegistrationHook</span></div>
+<div class="main-content" data-page-type="classlike" id="content" pageids="quarkdown-core::com.quarkdown.core.context.hooks.reference/LinkDefinitionResolverHook///PointingToDeclaration//1831116724">
+  <div class="breadcrumbs"><a href="../../index.html">quarkdown-core</a><span class="delimiter">/</span><a href="../index.html">com.quarkdown.core.context.hooks.reference</a><span class="delimiter">/</span><span class="current">LinkDefinitionResolverHook</span></div>
   <div class="cover ">
-    <h1 class="cover"><span>Link</span><wbr><span>Definition</span><wbr><span>Registration</span><wbr><span><span>Hook</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">LinkDefinitionRegistrationHook</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="../../com.quarkdown.core.context/-mutable-context/index.html">MutableContext</a></span></span><span class="token punctuation">)</span> : <a href="../../com.quarkdown.core.ast.iterator/-ast-iterator-hook/index.html">AstIteratorHook</a></div><p class="paragraph">Hook that registers the <a href="../../com.quarkdown.core.ast.base.block/-link-definition/index.html">LinkDefinition</a>s in the <a href="../../../quarkdown-core/com.quarkdown.core.context.hooks/-link-definition-registration-hook/context.html">context</a> so that they can be later looked up by <a href="../../com.quarkdown.core.ast.base.inline/-reference-link/index.html">com.quarkdown.core.ast.base.inline.ReferenceLink</a>s.</p></div></div>
+    <h1 class="cover"><span>Link</span><wbr><span>Definition</span><wbr><span>Resolver</span><wbr><span><span>Hook</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">LinkDefinitionResolverHook</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="../../com.quarkdown.core.context/-mutable-context/index.html">MutableContext</a></span></span><span class="token punctuation">)</span> : <a href="../-reference-definition-resolver-hook/index.html">ReferenceDefinitionResolverHook</a><span class="token operator">&lt;</span><a href="../../com.quarkdown.core.ast.base.inline/-reference-link/index.html">ReferenceLink</a><span class="token punctuation">, </span><a href="../../com.quarkdown.core.ast.base.block/-link-definition/index.html">LinkDefinition</a><span class="token punctuation">, </span><a href="../../com.quarkdown.core.ast.base/-link-node/index.html">LinkNode</a><span class="token operator">&gt; </span></div><p class="paragraph">Hook that associates a <a href="../../com.quarkdown.core.ast.base.block/-link-definition/index.html">LinkDefinition</a> to each <a href="../../com.quarkdown.core.ast.base.inline/-reference-link/index.html">ReferenceLink</a>, producing a resolved <a href="../../com.quarkdown.core.ast.base.inline/-link/index.html">Link</a> node that can be retrieved via <a href="../../com.quarkdown.core.ast.attributes.reference/get-definition.html">com.quarkdown.core.ast.attributes.reference.getDefinition</a>.</p><p class="paragraph">When a match is found, <a href="../../com.quarkdown.core.ast.base.inline/-reference-link/on-resolve.html">ReferenceLink.onResolve</a> callbacks are triggered, which are used by <a href="../../com.quarkdown.core.context.hooks/-media-storer-hook/index.html">com.quarkdown.core.context.hooks.MediaStorerHook</a> to register media for reference images.</p></div></div>
   </div>
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
     <div class="tabs-section-body">
       <div data-togglable="CONSTRUCTOR">
         <h2 class="">Constructors</h2>
-        <div class="table"><a data-name="1679498710%2FConstructors%2F1831116724" anchor-label="LinkDefinitionRegistrationHook" id="1679498710%2FConstructors%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
+        <div class="table"><a data-name="-461294509%2FConstructors%2F1831116724" anchor-label="LinkDefinitionResolverHook" id="-461294509%2FConstructors%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
           <div class="table-row" data-togglable="CONSTRUCTOR" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
-                  <div><a href="-link-definition-registration-hook.html"><span>Link</span><wbr><span>Definition</span><wbr><span>Registration</span><wbr><span><span>Hook</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1679498710%2FConstructors%2F1831116724"></span>
+                  <div><a href="-link-definition-resolver-hook.html"><span>Link</span><wbr><span>Definition</span><wbr><span>Resolver</span><wbr><span><span>Hook</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-461294509%2FConstructors%2F1831116724"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
@@ -122,17 +122,17 @@
       </div>
       <div data-togglable="FUNCTION">
         <h2 class="">Functions</h2>
-        <div class="table"><a data-name="-1319782751%2FFunctions%2F1831116724" anchor-label="attach" id="-1319782751%2FFunctions%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
+        <div class="table"><a data-name="1336327578%2FFunctions%2F1831116724" anchor-label="attach" id="1336327578%2FFunctions%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
           <div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
-                  <div><a href="attach.html"><span><span>attach</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1319782751%2FFunctions%2F1831116724"></span>
+                  <div><a href="../-reference-definition-resolver-hook/attach.html"><span><span>attach</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1336327578%2FFunctions%2F1831116724"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="attach.html"><span class="token function">attach</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">iterator<span class="token operator">: </span><a href="../../com.quarkdown.core.ast.iterator/-observable-ast-iterator/index.html">ObservableAstIterator</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Attaches this hook to the given <a href="attach.html">iterator</a>.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="../-reference-definition-resolver-hook/attach.html"><span class="token function">attach</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">iterator<span class="token operator">: </span><a href="../../com.quarkdown.core.ast.iterator/-observable-ast-iterator/index.html">ObservableAstIterator</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Attaches this hook to the given <a href="../-reference-definition-resolver-hook/attach.html">iterator</a>.</p></div></div></div>
                 </div>
               </div>
             </div>
