@@ -14,7 +14,6 @@ body.quarkdown.quarkdown-plain, body.quarkdown.quarkdown-docs :is(header, .conte
 body.quarkdown.quarkdown-plain > main, body.quarkdown.quarkdown-docs :is(header, .content-wrapper) > main {
   min-width: min(100%, var(--qd-content-width));
   max-width: min(100%, var(--qd-content-width));
-  column-count: var(--qd-column-count);
 }
 body.quarkdown.quarkdown-plain > aside, body.quarkdown.quarkdown-docs :is(header, .content-wrapper) > aside {
   --aside-width: 30vw;
@@ -184,9 +183,6 @@ body.quarkdown.quarkdown-slides .reveal .slides > .pdf-page {
   border-style: var(--qd-page-content-border-style);
   box-sizing: border-box;
 }
-body.quarkdown.quarkdown-slides .reveal .slides > section, body.quarkdown.quarkdown-slides .reveal .slides .pdf-page {
-  column-count: var(--qd-column-count);
-}
 body.quarkdown.quarkdown-paged .pagedjs_pages {
   display: flex;
   flex-direction: column;
@@ -253,11 +249,8 @@ body.quarkdown.quarkdown-paged .pagedjs_area {
   break-after: avoid;
 }
 
-.quarkdown.multicolumn .full-column-span, .quarkdown.multicolumn h1, .quarkdown.multicolumn h2, .quarkdown.multicolumn h3, .quarkdown.multicolumn nav {
-  column-span: all;
-}
 .quarkdown table:not(code table), .quarkdown pre, .quarkdown figure, .quarkdown blockquote,
-.quarkdown hr, .quarkdown .stack:not(.stack .stack) {
+.quarkdown hr, .quarkdown .stack:not(.stack .stack), .quarkdown .file-tree {
   margin-top: var(--qd-block-margin);
   margin-bottom: var(--qd-block-margin);
 }
@@ -265,9 +258,17 @@ body.quarkdown.quarkdown-paged .pagedjs_area {
   margin-top: calc(var(--qd-block-margin) * var(--qd-box-margin-multiplier));
   margin-bottom: calc(var(--qd-block-margin) * var(--qd-box-margin-multiplier));
 }
-.quarkdown .pagedjs_page_content > div > *:first-child,
-.quarkdown .pagedjs_page_content > div > *[data-hidden]:first-child ~ *:nth-child(2) {
+.quarkdown .paged-content-wrapper > :first-child,
+.quarkdown .paged-content-wrapper > [data-hidden]:first-child ~ :nth-child(2) {
   margin-top: 0 !important;
+}
+
+.quarkdown.multicolumn .full-column-span, .quarkdown.multicolumn h1, .quarkdown.multicolumn h2, .quarkdown.multicolumn h3, .quarkdown.multicolumn nav {
+  column-span: all;
+}
+.quarkdown.multicolumn.quarkdown-plain > main, .quarkdown.multicolumn.quarkdown-paged .paged-content-wrapper, .quarkdown.multicolumn.quarkdown-slides .slides section, .quarkdown.multicolumn.quarkdown-docs > .content-wrapper > main {
+  column-count: var(--qd-column-count);
+  column-fill: auto;
 }
 
 .quarkdown h1 {
@@ -616,10 +617,10 @@ details > summary + p,
   min-width: 50%;
 }
 .quarkdown.quarkdown-paged .mermaid > svg {
-  max-height: calc(var(--viewport-remaining-height));
+  max-height: var(--pagedjs-pagebox-height);
 }
 .quarkdown.quarkdown-paged figure:has(figcaption) .mermaid > svg {
-  max-height: calc(var(--viewport-remaining-height) - 100px);
+  max-height: calc(var(--pagedjs-pagebox-height) - 100px);
 }
 .quarkdown.quarkdown-slides .mermaid {
   box-shadow: none;
@@ -678,6 +679,49 @@ details > summary + p,
 }
 .quarkdown .mermaid defs path, .quarkdown .mermaid .marker path {
   stroke: var(--qd-mermaid-node-line-color) !important;
+}
+
+.quarkdown .file-tree.file-tree.file-tree ul {
+  list-style: none;
+  margin: 0.5em 0 0 0.5em;
+  padding: 0 0.75em 0 0.75em;
+}
+.quarkdown .file-tree.file-tree.file-tree ul ul {
+  padding-left: 1em;
+  border-left: 1px solid var(--qd-main-color-muted);
+}
+.quarkdown .file-tree.file-tree.file-tree ul li {
+  font-family: var(--qd-code-font), monospace;
+  font-size: var(--qd-code-span-font-size);
+}
+.quarkdown .file-tree.file-tree.file-tree ul li::before {
+  margin-right: 0.5em;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+}
+.quarkdown .file-tree.file-tree.file-tree ul li[data-highlighted] {
+  width: fit-content;
+  padding: 0.3em;
+  margin: -0.3em;
+  border-radius: 4px;
+  background-color: var(--qd-file-tree-highlight-color);
+}
+.quarkdown .file-tree.file-tree.file-tree ul li.file::before {
+  font-family: "bootstrap-icons", monospace;
+  content: "\f392";
+}
+.quarkdown .file-tree.file-tree.file-tree ul li.directory::before {
+  font-family: "bootstrap-icons", monospace;
+  content: "\f3d1";
+}
+.quarkdown .file-tree.file-tree.file-tree ul li.ellipsis {
+  color: transparent;
+}
+.quarkdown .file-tree.file-tree.file-tree ul li.ellipsis::before {
+  font-family: "bootstrap-icons", monospace;
+  content: "\f5d4";
+  color: initial;
 }
 
 .float[style*="float: inline-start"] {
@@ -895,11 +939,21 @@ details > summary + p,
 .quarkdown .container {
   display: inline-block;
 }
-.quarkdown .container.fullwidth {
+.quarkdown .container.fullwidth, .quarkdown .container.full-column-span {
   display: block;
 }
 .quarkdown .container:not(.fullwidth):not(.clip > .container) :only-child {
   margin: 0;
+}
+.quarkdown .container[style*=margin] > :not([style*=margin]) {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+.quarkdown .container[style*=margin] > :not([style*=margin]):first-child {
+  margin-top: 0 !important;
+}
+.quarkdown .container[style*=margin] > :not([style*=margin]):last-child {
+  margin-bottom: 0 !important;
 }
 .quarkdown .container > .stack {
   width: 100%;
@@ -1477,6 +1531,7 @@ body.quarkdown-paged .pagedjs_page {
 }
 .quarkdown nav.sidebar.sidebar.sidebar.sidebar ol {
   list-style: none;
+  border: none;
   padding: 0;
   margin: 0;
 }
@@ -1632,6 +1687,7 @@ body.quarkdown-paged .pagedjs_page {
   --qd-mermaid-node-text-color: var(--qd-color-on-primary);
   --qd-mermaid-node-line-color: var(--qd-main-color);
   --qd-mermaid-node-filter: none;
+  --qd-file-tree-highlight-color: color-mix(in srgb, var(--qd-link-color) 10%, transparent);
   --qd-docs-header-height: 60px;
   --qd-docs-header-vertical-padding: 12px;
   --qd-docs-header-background-color: var(--qd-primary-color);
@@ -1649,7 +1705,6 @@ body.quarkdown-paged .pagedjs_page {
   --r-heading-font: var(--qd-heading-font);
   --r-block-margin: var(--qd-block-margin);
   --r-heading-margin: var(--qd-heading-margin);
-  --viewport-remaining-height: 50vh;
 }
 
 /*# sourceMappingURL=global.css.map */

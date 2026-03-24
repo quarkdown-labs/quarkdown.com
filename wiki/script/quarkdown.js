@@ -433,26 +433,6 @@
     }
   });
 
-  // src/main/typescript/document/handlers/remaining-height.ts
-  var RemainingHeight;
-  var init_remaining_height = __esm({
-    "src/main/typescript/document/handlers/remaining-height.ts"() {
-      "use strict";
-      init_document_handler();
-      RemainingHeight = class extends DocumentHandler {
-        async onPostRendering() {
-          const fillHeightElements = document.querySelectorAll(".fill-height");
-          fillHeightElements.forEach((element) => {
-            const contentArea = this.quarkdownDocument.getParentViewport(element);
-            if (!contentArea) return;
-            const remainingHeight = contentArea.getBoundingClientRect().bottom - element.getBoundingClientRect().top;
-            element.style.setProperty("--viewport-remaining-height", `${remainingHeight}px`);
-          });
-        }
-      };
-    }
-  });
-
   // src/main/typescript/document/handlers/capabilities/math-renderer.ts
   var MathRenderer;
   var init_math_renderer = __esm({
@@ -634,11 +614,11 @@
           if (cachedSvg) {
             console.debug("Using cached SVG for diagram:", id);
             element.innerHTML = cachedSvg;
+            element.dataset.fromCache = "true";
             return;
           }
           console.debug("Rendering diagram:", id);
           const diagram = await mermaid.render(id, code, element);
-          console.log(diagram);
           const svg = diagram.svg;
           element.innerHTML = svg;
           sessionStorage.setItem(id, svg);
@@ -685,7 +665,6 @@
   function getGlobalHandlers(document2) {
     return [
       new InlineCollapsibles(document2),
-      new RemainingHeight(document2),
       capabilities.code && new CodeHighlighter(document2),
       capabilities.math && new MathRenderer(document2),
       capabilities.mermaid && new MermaidRenderer(document2)
@@ -696,7 +675,6 @@
       "use strict";
       init_capabilities();
       init_inline_collapsibles();
-      init_remaining_height();
       init_math_renderer();
       init_code_highlighter();
       init_mermaid_renderer();
@@ -781,9 +759,10 @@
           let currentChunk = createElement();
           Array.from(this.container.children).forEach((child) => {
             const el = child;
-            if (el.className === "page-break") {
+            if (el.classList.contains("page-break")) {
               chunks.push(currentChunk);
               currentChunk = createElement();
+              currentChunk.appendChild(child);
             } else {
               currentChunk.appendChild(child);
             }
@@ -1653,24 +1632,6 @@
     }
   });
 
-  // src/main/typescript/document/handlers/paged/column-count-paged.ts
-  var ColumnCountPaged;
-  var init_column_count_paged = __esm({
-    "src/main/typescript/document/handlers/paged/column-count-paged.ts"() {
-      "use strict";
-      init_document_handler();
-      ColumnCountPaged = class extends DocumentHandler {
-        async onPostRendering() {
-          const columnCount = getComputedStyle(document.body).getPropertyValue("--qd-column-count")?.trim();
-          if (!columnCount || columnCount === "") return;
-          document.querySelectorAll(".pagedjs_page_content > div").forEach((content) => {
-            content.style.columnCount = columnCount;
-          });
-        }
-      };
-    }
-  });
-
   // src/main/typescript/document/handlers/show-on-ready.ts
   var ShowOnReady;
   var init_show_on_ready = __esm({
@@ -1698,7 +1659,6 @@
       init_page_margins_paged();
       init_footnotes_paged();
       init_split_code_blocks_fix_paged();
-      init_column_count_paged();
       init_page_numbers();
       init_show_on_ready();
       init_persistent_headings();
@@ -1752,7 +1712,6 @@
             new PageNumbers(this),
             new PersistentHeadings(this),
             new FootnotesPaged(this),
-            new ColumnCountPaged(this),
             new SplitCodeBlocksFixPaged(this)
           ];
         }
