@@ -43,7 +43,7 @@
             </a>        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle" type="button">Toggle table of contents
         </button>
         <div class="navigation-controls--break ui-kit_mobile-only"></div>
-        <div class="library-version" id="library-version">1.14.1
+        <div class="library-version" id="library-version">1.15.0
         </div>
         <div class="navigation-controls">
         <div class="filter-section filter-section_loading" id="filter-section">
@@ -112,7 +112,22 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-page-format-info/index.html">PageFormatInfo</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>pageWidth<span class="token operator">: </span><a href="../com.quarkdown.core.document.size/-size/index.html">Size</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>pageHeight<span class="token operator">: </span><a href="../com.quarkdown.core.document.size/-size/index.html">Size</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>margin<span class="token operator">: </span><a href="../com.quarkdown.core.document.size/-sizes/index.html">Sizes</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>contentBorderWidth<span class="token operator">: </span><a href="../com.quarkdown.core.document.size/-sizes/index.html">Sizes</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>contentBorderColor<span class="token operator">: </span><a href="../com.quarkdown.core.misc.color/-color/index.html">Color</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>columnCount<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>alignment<span class="token operator">: </span><a href="../com.quarkdown.core.ast.quarkdown.block/-container/-text-alignment/index.html">Container.TextAlignment</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span> : <a href="../com.quarkdown.core.util/-defaultable/index.html">Defaultable</a></div><div class="brief "><p class="paragraph">Immutable information about the format of all pages of a document. When any of the fields is <code class="lang-kotlin">null</code>, the default value supplied by the underlying renderer is used.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-page-format-info/index.html">PageFormatInfo</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>selector<span class="token operator">: </span><a href="-page-format-selector/index.html">PageFormatSelector</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>pageWidth<span class="token operator">: </span><a href="../com.quarkdown.core.document.size/-size/index.html">Size</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>pageHeight<span class="token operator">: </span><a href="../com.quarkdown.core.document.size/-size/index.html">Size</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>margin<span class="token operator">: </span><a href="../com.quarkdown.core.document.size/-sizes/index.html">Sizes</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>contentBorderWidth<span class="token operator">: </span><a href="../com.quarkdown.core.document.size/-sizes/index.html">Sizes</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>contentBorderColor<span class="token operator">: </span><a href="../com.quarkdown.core.misc.color/-color/index.html">Color</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>columnCount<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>alignment<span class="token operator">: </span><a href="../com.quarkdown.core.ast.quarkdown.block/-container/-text-alignment/index.html">Container.TextAlignment</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Immutable information about the format of all pages of a document. When any of the fields is <code class="lang-kotlin">null</code>, the default value supplied by the underlying renderer is used.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1254023977%2FClasslikes%2F1831116724" anchor-label="PageFormatSelector" id="1254023977%2FClasslikes%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
+          <div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-page-format-selector/index.html"><span>Page</span><wbr><span>Format</span><wbr><span><span>Selector</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1254023977%2FClasslikes%2F1831116724"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-page-format-selector/index.html">PageFormatSelector</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>side<span class="token operator">: </span><a href="-page-side/index.html">PageSide</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>range<span class="token operator">: </span><a href="../com.quarkdown.core.function.value.data/-range/index.html">Range</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Determines which pages a <a href="-page-format-info/index.html">PageFormatInfo</a> applies to. A selector can target a specific <a href="-page-format-selector/side.html">side</a> (left/right pages), a <a href="-page-format-selector/range.html">range</a> of 1-based page indices, or both (e.g. left pages within a given range).</p></div></div></div>
                 </div>
               </div>
             </div>
@@ -147,6 +162,21 @@
               </div>
             </div>
           </div>
+<a data-name="448687976%2FClasslikes%2F1831116724" anchor-label="PageSide" id="448687976%2FClasslikes%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
+          <div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-page-side/index.html"><span>Page</span><wbr><span><span>Side</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="448687976%2FClasslikes%2F1831116724"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">enum </span><a href="-page-side/index.html">PageSide</a> : <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><a href="-page-side/index.html">PageSide</a><span class="token operator">&gt; </span>, <a href="../com.quarkdown.core.rendering.representable/-render-representable/index.html">RenderRepresentable</a></div><div class="brief "><p class="paragraph">The side of a page in a paged document, used to apply distinct formatting (e.g. mirrored margins) to left and right pages via <a href="-page-format-info/index.html">PageFormatInfo</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
 <a data-name="1423091207%2FClasslikes%2F1831116724" anchor-label="PageSizeFormat" id="1423091207%2FClasslikes%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
           <div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
             <div class="main-subrow keyValue ">
@@ -177,6 +207,21 @@
               <div>
                 <div class="title">
                   <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="-page-format-info/index.html">PageFormatInfo</a><span class="token punctuation">.</span><a href="merge.html"><span class="token function">merge</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">other<span class="token operator">: </span><a href="-page-format-info/index.html">PageFormatInfo</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-page-format-info/index.html">PageFormatInfo</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2035625508%2FFunctions%2F1831116724" anchor-label="mergeAll" id="2035625508%2FFunctions%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
+          <div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="merge-all.html"><span>merge</span><wbr><span><span>All</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2035625508%2FFunctions%2F1831116724"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="-page-format-info/index.html">PageFormatInfo</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="merge-all.html"><span class="token function">mergeAll</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-page-format-info/index.html">PageFormatInfo</a></div><div class="brief "><p class="paragraph">Merges a list of <a href="-page-format-info/index.html">PageFormatInfo</a> layers into a single instance. Later entries take priority: their non-null fields override earlier ones.</p></div></div></div>
                 </div>
               </div>
             </div>

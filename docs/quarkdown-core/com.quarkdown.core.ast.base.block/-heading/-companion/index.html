@@ -43,7 +43,7 @@
             </a>        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle" type="button">Toggle table of contents
         </button>
         <div class="navigation-controls--break ui-kit_mobile-only"></div>
-        <div class="library-version" id="library-version">1.14.1
+        <div class="library-version" id="library-version">1.15.0
         </div>
         <div class="navigation-controls">
         <div class="filter-section filter-section_loading" id="filter-section">
@@ -99,21 +99,70 @@
     <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">object </span><a href="index.html">Companion</a></div></div></div>
   </div>
   <div class="tabbedcontent">
-    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button><button class="section-tab" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION,EXTENSION_PROPERTY,EXTENSION_FUNCTION">Members &amp; Extensions</button></div>
     <div class="tabs-section-body">
-      <div data-togglable="FUNCTION">
-        <h2 class="">Functions</h2>
-        <div class="table"><a data-name="-1910441773%2FFunctions%2F1831116724" anchor-label="marker" id="-1910441773%2FFunctions%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="294551051%2FProperties%2F1831116724" anchor-label="MAX_DEPTH" id="294551051%2FProperties%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
           <div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
-                  <div><a href="marker.html"><span><span>marker</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1910441773%2FFunctions%2F1831116724"></span>
+                  <div><a href="-m-a-x_-d-e-p-t-h.html"><span>MAX_</span><wbr><span>DEPTH</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="294551051%2FProperties%2F1831116724"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="marker.html"><span class="token function">marker</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="../../../com.quarkdown.core.ast/-inline-content/index.html">InlineContent</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../index.html">Heading</a></div><div class="brief "><p class="paragraph">Creates an invisible <a href="../index.html">Heading</a> that acts as a marker that can be referenced by other elements in the document. A useful use case would be, for example, in combination with a <a href="../../../com.quarkdown.core.context.toc/-table-of-contents/index.html">com.quarkdown.core.context.toc.TableOfContents</a>. Depth 0 cannot be achieved with plain Markdown, but it can be supplied by the Quarkdown function <code class="lang-kotlin">.marker</code>.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-m-a-x_-d-e-p-t-h.html">MAX_DEPTH</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">6</span></div><div class="brief "><p class="paragraph">The maximum allowed heading depth (H6).</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1368793251%2FProperties%2F1831116724" anchor-label="MIN_DEPTH" id="-1368793251%2FProperties%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
+          <div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-m-i-n_-d-e-p-t-h.html"><span>MIN_</span><wbr><span>DEPTH</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1368793251%2FProperties%2F1831116724"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-m-i-n_-d-e-p-t-h.html">MIN_DEPTH</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">1</span></div><div class="brief "><p class="paragraph">The minimum allowed heading depth (H1). This does not take 0-depth headings into account. See <a href="../../is-marker.html">isMarker</a> for marker headings.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="EXTENSION_FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="-1578051280%2FFunctions%2F1831116724" anchor-label="createSectionHeading" id="-1578051280%2FFunctions%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
+          <div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../create-section-heading.html"><span>create</span><wbr><span>Section</span><wbr><span><span>Heading</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1578051280%2FFunctions%2F1831116724"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="index.html">Heading.Companion</a><span class="token punctuation">.</span><a href="../../create-section-heading.html"><span class="token function">createSectionHeading</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">title<span class="token operator">: </span><a href="../../../com.quarkdown.core.ast/-inline-content/index.html">InlineContent</a><span class="token operator">?</span><span class="token punctuation">, </span></span><span class="parameter ">localizationKey<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">context<span class="token operator">: </span><a href="../../../com.quarkdown.core.context/-context/index.html">Context</a><span class="token punctuation">, </span></span><span class="parameter ">depth<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">1</span><span class="token punctuation">, </span></span><span class="parameter ">customId<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">canBreakPage<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">true</span><span class="token punctuation">, </span></span><span class="parameter ">canTrackLocation<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span><span class="token punctuation">, </span></span><span class="parameter ">includeInTableOfContents<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../index.html">Heading</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Creates an auto-generated <a href="../index.html">Heading</a> for a structural section of the document (e.g. table of contents, bibliography).</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-746108895%2FFunctions%2F1831116724" anchor-label="marker" id="-746108895%2FFunctions%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
+          <div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../marker.html"><span><span>marker</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-746108895%2FFunctions%2F1831116724"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="index.html">Heading.Companion</a><span class="token punctuation">.</span><a href="../../marker.html"><span class="token function">marker</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="../../../com.quarkdown.core.ast/-inline-content/index.html">InlineContent</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../index.html">Heading</a></div><div class="brief "><p class="paragraph">Creates an invisible <a href="../index.html">Heading</a> that acts as a marker that can be referenced by other elements in the document. A useful use case would be, for example, in combination with a <a href="../../../com.quarkdown.core.context.toc/-table-of-contents/index.html">com.quarkdown.core.context.toc.TableOfContents</a>. Depth 0 cannot be achieved with plain Markdown, but it can be supplied by the Quarkdown function <code class="lang-kotlin">.marker</code>.</p></div></div></div>
                 </div>
               </div>
             </div>
