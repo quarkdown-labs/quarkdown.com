@@ -251,6 +251,7 @@ com.quarkdown.core.misc.font.resolver
 com.quarkdown.core.parser
 com.quarkdown.core.parser.walker
 com.quarkdown.core.parser.walker.funcall
+com.quarkdown.core.parser.walker.lambda
 com.quarkdown.core.pipeline
 com.quarkdown.core.pipeline.error
 com.quarkdown.core.pipeline.output
