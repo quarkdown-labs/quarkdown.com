@@ -166,6 +166,7 @@ module:quarkdown-core
 com.quarkdown.core
 com.quarkdown.core.ast
 com.quarkdown.core.ast.attributes
+com.quarkdown.core.ast.attributes.error
 com.quarkdown.core.ast.attributes.id
 com.quarkdown.core.ast.attributes.link
 com.quarkdown.core.ast.attributes.localization
