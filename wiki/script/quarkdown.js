@@ -3506,7 +3506,7 @@
           }
         }
       };
-      MiniSearch.wildcard = Symbol("*");
+      MiniSearch.wildcard = /* @__PURE__ */ Symbol("*");
       getOwnProperty = (object, property) => Object.prototype.hasOwnProperty.call(object, property) ? object[property] : void 0;
       combinators = {
         [OR]: (a, b) => {
