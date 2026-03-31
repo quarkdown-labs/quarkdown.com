@@ -43,7 +43,7 @@
             </a>        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle" type="button">Toggle table of contents
         </button>
         <div class="navigation-controls--break ui-kit_mobile-only"></div>
-        <div class="library-version" id="library-version">1.15.0
+        <div class="library-version" id="library-version">1.15.1
         </div>
         <div class="navigation-controls">
         <div class="filter-section filter-section_loading" id="filter-section">
@@ -96,14 +96,29 @@
   <div class="breadcrumbs"><a href="../../index.html">quarkdown-core</a><span class="delimiter">/</span><a href="../index.html">com.quarkdown.core.ast.base</a><span class="delimiter">/</span><span class="current">LinkNode</span></div>
   <div class="cover ">
     <h1 class="cover"><span>Link</span><wbr><span><span>Node</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="index.html">LinkNode</a> : <a href="../../com.quarkdown.core.ast/-node/index.html">Node</a></div><p class="paragraph">A general link node.</p><h4 class="">See also</h4><div class="table"><div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../../com.quarkdown.core.ast.base.inline/-link/index.html"><span><span>Link</span></span></a></div></span></div><div></div></div></div><div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../../com.quarkdown.core.ast.base.block/-link-definition/index.html"><span>Link</span><wbr><span><span>Definition</span></span></a></div></span></div><div></div></div></div></div><h4 class="">Inheritors</h4><div class="table"><div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../../com.quarkdown.core.ast.base.block/-link-definition/index.html">LinkDefinition</a></div></span></div><div></div></div></div><div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../../com.quarkdown.core.ast.base.inline/-link/index.html">Link</a></div></span></div><div></div></div></div><div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../../com.quarkdown.core.ast.base.inline/-subdocument-link/index.html">SubdocumentLink</a></div></span></div><div></div></div></div></div></div></div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="index.html">LinkNode</a> : <a href="../../com.quarkdown.core.ast.attributes.error/-error-capable-node/index.html">ErrorCapableNode</a></div><p class="paragraph">A general link node. A link can error for various reasons. For example, a <a href="../../com.quarkdown.core.ast.base.inline/-subdocument-link/index.html">com.quarkdown.core.ast.base.inline.SubdocumentLink</a> can error if the linked subdocument cannot be found.</p><h4 class="">See also</h4><div class="table"><div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../../com.quarkdown.core.ast.base.inline/-link/index.html"><span><span>Link</span></span></a></div></span></div><div></div></div></div><div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../../com.quarkdown.core.ast.base.block/-link-definition/index.html"><span>Link</span><wbr><span><span>Definition</span></span></a></div></span></div><div></div></div></div></div><h4 class="">Inheritors</h4><div class="table"><div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../../com.quarkdown.core.ast.base.block/-link-definition/index.html">LinkDefinition</a></div></span></div><div></div></div></div><div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../../com.quarkdown.core.ast.base.inline/-link/index.html">Link</a></div></span></div><div></div></div></div><div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../../com.quarkdown.core.ast.base.inline/-subdocument-link/index.html">SubdocumentLink</a></div></span></div><div></div></div></div></div></div></div>
   </div>
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button><button class="section-tab" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION,EXTENSION_PROPERTY,EXTENSION_FUNCTION">Members &amp; Extensions</button></div>
     <div class="tabs-section-body">
       <div data-togglable="PROPERTY">
         <h2 class="">Properties</h2>
-        <div class="table"><a data-name="-337885787%2FProperties%2F1831116724" anchor-label="fileSystem" id="-337885787%2FProperties%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
+        <div class="table"><a data-name="-1362926312%2FProperties%2F1831116724" anchor-label="error" id="-1362926312%2FProperties%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
+          <div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../com.quarkdown.core.ast.attributes.error/-error-capable-node/error.html"><span><span>error</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1362926312%2FProperties%2F1831116724"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">var </span><a href="../../com.quarkdown.core.ast.attributes.error/-error-capable-node/error.html">error</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-pair/index.html">Pair</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-throwable/index.html">Throwable</a><span class="token punctuation">, </span><a href="../../com.quarkdown.core.pipeline.error/-pipeline-error-handler/index.html">PipelineErrorHandler</a><span class="token operator">&gt;</span><span class="token operator">?</span></div><div class="brief "><p class="paragraph">The error that occurred during processing, paired with the <a href="../../com.quarkdown.core.pipeline.error/-pipeline-error-handler/index.html">PipelineErrorHandler</a> strategy to handle it. If <code class="lang-kotlin">null</code>, no error occurred and the node is rendered normally via <a href="../../com.quarkdown.core.ast.attributes.error/-error-capable-node/accept-on-success.html">acceptOnSuccess</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-337885787%2FProperties%2F1831116724" anchor-label="fileSystem" id="-337885787%2FProperties%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
           <div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
@@ -167,17 +182,32 @@
       </div>
       <div data-togglable="FUNCTION">
         <h2 class="">Functions</h2>
-        <div class="table"><a data-name="-837589351%2FFunctions%2F1831116724" anchor-label="accept" id="-837589351%2FFunctions%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
+        <div class="table"><a data-name="-726264918%2FFunctions%2F1831116724" anchor-label="accept" id="-726264918%2FFunctions%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
           <div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
-                  <div><a href="../../com.quarkdown.core.ast/-node/accept.html"><span><span>accept</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-837589351%2FFunctions%2F1831116724"></span>
+                  <div><a href="../../com.quarkdown.core.ast.attributes.error/-error-capable-node/accept.html"><span><span>accept</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-726264918%2FFunctions%2F1831116724"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="../../com.quarkdown.core.ast/-node/accept.html">T</a><span class="token operator">&gt; </span><a href="../../com.quarkdown.core.ast/-node/accept.html"><span class="token function">accept</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">visitor<span class="token operator">: </span><a href="../../com.quarkdown.core.visitor.node/-node-visitor/index.html">NodeVisitor</a><span class="token operator">&lt;</span><a href="../../com.quarkdown.core.ast/-node/accept.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.quarkdown.core.ast/-node/accept.html">T</a></div><div class="brief "><p class="paragraph">Accepts a visitor.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="../../com.quarkdown.core.ast.attributes.error/-error-capable-node/accept.html">T</a><span class="token operator">&gt; </span><a href="../../com.quarkdown.core.ast.attributes.error/-error-capable-node/accept.html"><span class="token function">accept</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">visitor<span class="token operator">: </span><a href="../../com.quarkdown.core.visitor.node/-node-visitor/index.html">NodeVisitor</a><span class="token operator">&lt;</span><a href="../../com.quarkdown.core.ast.attributes.error/-error-capable-node/accept.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.quarkdown.core.ast.attributes.error/-error-capable-node/accept.html">T</a></div><div class="brief "><p class="paragraph">Accepts the error as a node if an error is present, otherwise accepts this node normally via <a href="../../com.quarkdown.core.ast.attributes.error/-error-capable-node/accept-on-success.html">acceptOnSuccess</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="567938012%2FFunctions%2F1831116724" anchor-label="acceptOnSuccess" id="567938012%2FFunctions%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
+          <div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../com.quarkdown.core.ast.attributes.error/-error-capable-node/accept-on-success.html"><span>accept</span><wbr><span>On</span><wbr><span><span>Success</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="567938012%2FFunctions%2F1831116724"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="../../com.quarkdown.core.ast.attributes.error/-error-capable-node/accept-on-success.html">T</a><span class="token operator">&gt; </span><a href="../../com.quarkdown.core.ast.attributes.error/-error-capable-node/accept-on-success.html"><span class="token function">acceptOnSuccess</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">visitor<span class="token operator">: </span><a href="../../com.quarkdown.core.visitor.node/-node-visitor/index.html">NodeVisitor</a><span class="token operator">&lt;</span><a href="../../com.quarkdown.core.ast.attributes.error/-error-capable-node/accept-on-success.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.quarkdown.core.ast.attributes.error/-error-capable-node/accept-on-success.html">T</a></div><div class="brief "><p class="paragraph">Visits this node with the given <a href="../../com.quarkdown.core.ast.attributes.error/-error-capable-node/accept-on-success.html">visitor</a> when no error is present.</p></div></div></div>
                 </div>
               </div>
             </div>
@@ -208,6 +238,21 @@
               <div>
                 <div class="title">
                   <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="../../com.quarkdown.core.ast/-node/index.html">Node</a><span class="token punctuation">.</span><a href="../../com.quarkdown.core.ast.media/get-stored-media.html"><span class="token function">getStoredMedia</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="../../com.quarkdown.core.context/-context/index.html">Context</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.quarkdown.core.media.storage/-stored-media/index.html">StoredMedia</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Retrieves the stored media associated with <a href="../../../quarkdown-core/com.quarkdown.core.ast.media/index.html">this</a> node, if any.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1214930933%2FFunctions%2F1831116724" anchor-label="setError" id="1214930933%2FFunctions%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../com.quarkdown.core.ast.attributes.error/set-error.html"><span>set</span><wbr><span><span>Error</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1214930933%2FFunctions%2F1831116724"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="../../com.quarkdown.core.ast.attributes.error/-error-capable-node/index.html">ErrorCapableNode</a><span class="token punctuation">.</span><a href="../../com.quarkdown.core.ast.attributes.error/set-error.html"><span class="token function">setError</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">throwable<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-throwable/index.html">Throwable</a><span class="token punctuation">, </span></span><span class="parameter ">context<span class="token operator">: </span><a href="../../com.quarkdown.core.context/-context/index.html">Context</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Sets the given <a href="../../com.quarkdown.core.ast.attributes.error/set-error.html">throwable</a> as the error of this node, paired with the error handler from <a href="../../com.quarkdown.core.ast.attributes.error/set-error.html">context</a>.</p></div></div></div>
                 </div>
               </div>
             </div>

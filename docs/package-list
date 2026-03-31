@@ -166,6 +166,7 @@ module:quarkdown-core
 com.quarkdown.core
 com.quarkdown.core.ast
 com.quarkdown.core.ast.attributes
+com.quarkdown.core.ast.attributes.error
 com.quarkdown.core.ast.attributes.id
 com.quarkdown.core.ast.attributes.link
 com.quarkdown.core.ast.attributes.localization
@@ -251,6 +252,7 @@ com.quarkdown.core.misc.font.resolver
 com.quarkdown.core.parser
 com.quarkdown.core.parser.walker
 com.quarkdown.core.parser.walker.funcall
+com.quarkdown.core.parser.walker.lambda
 com.quarkdown.core.pipeline
 com.quarkdown.core.pipeline.error
 com.quarkdown.core.pipeline.output
