@@ -2,7 +2,7 @@
 <html class="no-js">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-    <title>entries</title>
+    <title>rootFileSystem</title>
 <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">    <script>var pathToRoot = "../../../";</script>
     <script>document.documentElement.classList.replace("no-js","js");</script>
     <script>const storage = localStorage.getItem("dokka-dark-mode")
@@ -47,7 +47,7 @@
         </div>
         <div class="navigation-controls">
         <div class="filter-section filter-section_loading" id="filter-section">
-                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":quarkdown-stdlib/main">jvm</button>
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":quarkdown-core/main">jvm</button>
             <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
                 <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox" data-role="dropdown-toggle" aria-controls="platform-tags-listbox" aria-haspopup="listbox" aria-expanded="false" aria-label="Toggle source sets"></button>
                 <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox">
@@ -58,7 +58,7 @@
                     </div>
                         <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
                             <label class="checkbox">
-                                <input type="checkbox" class="checkbox--input" id=":quarkdown-stdlib/main" data-filter=":quarkdown-stdlib/main">
+                                <input type="checkbox" class="checkbox--input" id=":quarkdown-core/main" data-filter=":quarkdown-core/main">
                                 <span class="checkbox--icon"></span>
                                 jvm
                             </label>
@@ -92,12 +92,12 @@
                 </div>
             </div>
             <div id="main">
-<div class="main-content" data-page-type="member" id="content" pageids="quarkdown-stdlib::com.quarkdown.stdlib.internal/RootGranularity/entries/#/PointingToDeclaration//742850071">
-  <div class="breadcrumbs"><a href="../../index.html">quarkdown-stdlib</a><span class="delimiter">/</span><a href="../index.html">com.quarkdown.stdlib.internal</a><span class="delimiter">/</span><a href="index.html">RootGranularity</a><span class="delimiter">/</span><span class="current">entries</span></div>
+<div class="main-content" data-page-type="member" id="content" pageids="quarkdown-core::com.quarkdown.core.permissions/PermissionHolder/rootFileSystem/#/PointingToDeclaration//1831116724">
+  <div class="breadcrumbs"><a href="../../index.html">quarkdown-core</a><span class="delimiter">/</span><a href="../index.html">com.quarkdown.core.permissions</a><span class="delimiter">/</span><a href="index.html">PermissionHolder</a><span class="delimiter">/</span><span class="current">rootFileSystem</span></div>
   <div class="cover ">
-    <h1 class="cover"><span><span>entries</span></span></h1>
+    <h1 class="cover"><span>root</span><wbr><span>File</span><wbr><span><span>System</span></span></h1>
   </div>
-  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-stdlib/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="entries.html">entries</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.enums/-enum-entries/index.html">EnumEntries</a><span class="token operator">&lt;</span><a href="index.html">RootGranularity</a><span class="token operator">&gt;</span></div><p class="paragraph">Returns a representation of an immutable list of all enum entries, in the order they're declared.</p><p class="paragraph">This method may be used to iterate over the enum entries.</p></div></div>
+  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">val </span><a href="root-file-system.html">rootFileSystem</a><span class="token operator">: </span><a href="../../com.quarkdown.core.context.file/-file-system/index.html">FileSystem</a><span class="token operator">?</span></div><p class="paragraph">The root file system used to determine whether a file resides within the project directory. If <code class="lang-kotlin">null</code>, all file reads are considered global (requiring <a href="../-permission/-global-read/index.html">Permission.GlobalRead</a>).</p></div></div>
 </div>
     <div class="footer">
         <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>

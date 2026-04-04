@@ -2,7 +2,7 @@
 <html class="no-js">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-    <title>getRootFileSystem</title>
+    <title>com.quarkdown.core.media.storage.permissions</title>
 <link href="../../images/logo-icon.svg" rel="icon" type="image/svg">    <script>var pathToRoot = "../../";</script>
     <script>document.documentElement.classList.replace("no-js","js");</script>
     <script>const storage = localStorage.getItem("dokka-dark-mode")
@@ -47,7 +47,7 @@
         </div>
         <div class="navigation-controls">
         <div class="filter-section filter-section_loading" id="filter-section">
-                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":quarkdown-stdlib/main">jvm</button>
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":quarkdown-core/main">jvm</button>
             <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
                 <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox" data-role="dropdown-toggle" aria-controls="platform-tags-listbox" aria-haspopup="listbox" aria-expanded="false" aria-label="Toggle source sets"></button>
                 <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox">
@@ -58,7 +58,7 @@
                     </div>
                         <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
                             <label class="checkbox">
-                                <input type="checkbox" class="checkbox--input" id=":quarkdown-stdlib/main" data-filter=":quarkdown-stdlib/main">
+                                <input type="checkbox" class="checkbox--input" id=":quarkdown-core/main" data-filter=":quarkdown-core/main">
                                 <span class="checkbox--icon"></span>
                                 jvm
                             </label>
@@ -92,12 +92,35 @@
                 </div>
             </div>
             <div id="main">
-<div class="main-content" data-page-type="member" id="content" pageids="quarkdown-stdlib::com.quarkdown.stdlib.internal//getRootFileSystem/#com.quarkdown.core.context.Context#com.quarkdown.stdlib.internal.RootGranularity/PointingToDeclaration//742850071">
-  <div class="breadcrumbs"><a href="../index.html">quarkdown-stdlib</a><span class="delimiter">/</span><a href="index.html">com.quarkdown.stdlib.internal</a><span class="delimiter">/</span><span class="current">getRootFileSystem</span></div>
+<div class="main-content" data-page-type="package" id="content" pageids="quarkdown-core::com.quarkdown.core.media.storage.permissions////PointingToDeclaration//1831116724">
+  <div class="breadcrumbs"><a href="../index.html">quarkdown-core</a><span class="delimiter">/</span><span class="current">com.quarkdown.core.media.storage.permissions</span></div>
   <div class="cover ">
-    <h1 class="cover"><span>get</span><wbr><span>Root</span><wbr><span>File</span><wbr><span><span>System</span></span></h1>
+    <h1 class="cover"><span><span>Package-level</span></span> <span><span>declarations</span></span></h1>
   </div>
-  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-stdlib/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="get-root-file-system.html"><span class="token function">getRootFileSystem</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="../../quarkdown-core/com.quarkdown.core.context/-context/index.html">Context</a><span class="token punctuation">, </span></span><span class="parameter ">granularity<span class="token operator">: </span><a href="-root-granularity/index.html">RootGranularity</a><span class="token operator"> = </span>RootGranularity.PROJECT</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../quarkdown-core/com.quarkdown.core.context.file/-file-system/index.html">FileSystem</a><span class="token operator">?</span></div><p class="paragraph">Retrieves the relative path to the root of the file system. The root of the file system is determined by the working directory of the current subdocument.</p><p class="paragraph">Example:</p><ul><li><p class="paragraph">When used in the root folder: <code class="lang-kotlin">.pathtoroot</code> returns <code class="lang-kotlin">.</code></p></li><li><p class="paragraph">When used in <code class="lang-kotlin">&lt;root&gt;/subfolder</code>: <code class="lang-kotlin">.pathtoroot</code> returns <code class="lang-kotlin">..</code></p></li><li><p class="paragraph">When used in <code class="lang-kotlin">&lt;root&gt;/subfolder1/subfolder2</code>: <code class="lang-kotlin">.pathtoroot</code> returns <code class="lang-kotlin">../..</code></p></li></ul><span class="kdoc-tag"><h4 class="">Return</h4><p class="paragraph">a string value of the relative path to the root of the file system</p></span><h4 class="">Throws</h4><div class="table"><div class="table-row" data-filterable-current=":quarkdown-stdlib/main" data-filterable-set=":quarkdown-stdlib/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalStateException.html"><span>Illegal</span><wbr><span>State</span><wbr><span><span>Exception</span></span></a></div></span></div><div><div class="title"><p class="paragraph">if the relative path cannot be determined</p></div></div></div></div></div></div></div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="TYPE">Types</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="TYPE">
+        <h2 class="">Types</h2>
+        <div class="table"><a data-name="1299755391%2FClasslikes%2F1831116724" anchor-label="MediaAccessPermissionChecker" id="1299755391%2FClasslikes%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
+          <div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-media-access-permission-checker/index.html"><span>Media</span><wbr><span>Access</span><wbr><span>Permission</span><wbr><span><span>Checker</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1299755391%2FClasslikes%2F1831116724"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="-media-access-permission-checker/index.html">MediaAccessPermissionChecker</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">holder<span class="token operator">: </span><a href="../com.quarkdown.core.permissions/-permission-holder/index.html">PermissionHolder</a></span></span><span class="token punctuation">)</span> : <a href="../com.quarkdown.core.media/-media-visitor/index.html">MediaVisitor</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">Checks whether a media type is allowed to be stored according to the granted permissions in context. If a required permission is missing, a <a href="../com.quarkdown.core.permissions/-missing-permission-exception/index.html">com.quarkdown.core.permissions.MissingPermissionException</a> will be thrown.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
     <div class="footer">
         <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
