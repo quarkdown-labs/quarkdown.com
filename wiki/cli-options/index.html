@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="generator" content="Quarkdown">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="quarkdown:root-path" content="..">
+    <meta name="quarkdown:search-index" content="../search-index.json">
+    <title>CLI - Options</title>
+    <script src="../script/quarkdown.js"></script>
+    <script>const capabilities = window.quarkdownCapabilities</script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="../theme/theme.css" rel="stylesheet">
+    <style>
+
+</style>
+    <script>prepare(new DocsDocument());</script>
+<template id="sidebar-template"><nav class="sidebar" role="doc-toc"><ol><li data-target-id="compiler-options" data-depth="2"><a href="#compiler-options">Compiler options</a><ol><li data-target-id="preview-and-watch" data-depth="3"><a href="#preview-and-watch">Preview and watch</a></li><li data-target-id="output" data-depth="3"><a href="#output">Output</a></li><li data-target-id="permissions" data-depth="3"><a href="#permissions">Permissions</a></li><li data-target-id="libraries" data-depth="3"><a href="#libraries">Libraries</a></li><li data-target-id="other-options" data-depth="3"><a href="#other-options">Other options</a></li></ol></li></ol></nav>
+</template>  </head>
+  <body class="quarkdown quarkdown-docs">
+    <header>
+      <aside class="margin-area"></aside>
+      <main>
+        <div class="search-wrapper">
+          <div class="search-field"><i class="bi bi-search"></i><input type="text" id="search-input" placeholder="Search" autocomplete="off"><kbd>/</kbd></div>
+        </div>
+      </main>
+      <aside class="margin-area"></aside>
+    </header>
+    <div class="content-wrapper">
+      <aside class="margin-area" id="margin-area-left">
+        <div class="position-top"></div>
+        <div class="position-middle"></div>
+        <div class="position-bottom"></div>
+      </aside>
+      <main><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7ff9d84e763543269faa5a5ae685ef9d"}'></script><style data-hidden="">.page-margin-top-left a {
+    display: flex !important;
+}
+
+header .version {
+    opacity: 0.6 !important;
+    transform: translateY(2px) !important;
+}
+
+.quarkdown-output {
+    padding: 12px 16px !important;
+    border-radius: 8px !important;
+    background-color: var(--box-header-background-color) !important;
+}
+
+.quarkdown-output:empty::after {
+    content: "(No output)" !important;
+    color: var(--qd-main-color-muted) !important;
+}
+
+.quarkdown-output :is(h1, h2, h3, h4, h5, h6) {
+    padding: 0 !important;
+    border: none !important;
+}
+
+.quarkdown-output :is(h1, h2, h3, h4, h5, h6):first-child {
+    margin-top: 0 !important;
+}
+
+.quarkdown-output .file-tree:only-child {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.quarkdown-output img[src*="sky"] {
+    max-width: 50% !important;
+}
+
+.box:has(.quarkdown-output) pre {
+    margin-bottom: 16px !important;
+}</style><div class="page-margin-content page-margin-top-left" data-on-left-page="top-left" data-on-right-page="top-left"><div style="justify-content: flex-start; align-items: center; column-gap: 12.0px;" class="stack stack-row"><p><a href="https://quarkdown.com"><img src="media/banner-light@2065058880.svg" alt="Quarkdown" /></a></p><a href="https://github.com/iamgio/quarkdown/releases/tag/latest"><span class="version">1.15.1</span></a></div></div><div class="page-margin-content page-margin-top-right" data-on-left-page="top-right" data-on-right-page="top-right"><div style="justify-content: flex-start; align-items: center;" class="stack stack-row"><p><a href="/docs">Docs</a></p><hr /><p><a href="https://github.com/iamgio/quarkdown"><i class="icon-image bi bi-github" aria-hidden="true"></i></a></p></div></div><div class="page-margin-content page-margin-left-top" data-on-left-page="left-top" data-on-right-page="left-top"><nav role="navigation" data-role="page-list"><h3 id="getting-started" data-decorative="">Getting started</h3><ul><li><a href="../quickstart">Quickstart</a></li><li><a href="../cli-options" aria-current="page">CLI options</a></li></ul><h3 id="documentation" data-decorative="">Documentation</h3><ul><li><a href="https://quarkdown.com/docs/quarkdown-stdlib/">Stable ↗</a></li><li><a href="https://quarkdown.com/docs/latest/quarkdown-stdlib/">Latest build ↗</a></li></ul><h3 id="functions" data-decorative="">Functions</h3><ul><li><a href="../syntax-of-a-function-call">Syntax of a function call</a><ul><li><a href="../syntax-of-a-function-call#chaining-calls">Chaining calls</a></li><li><a href="../syntax-of-a-function-call#block-vs-inline-function-calls">Block vs. inline calls</a></li></ul></li><li><a href="../declaring-functions">Declaring functions</a></li><li><a href="../typing">Dynamic typing</a></li><li><a href="../localization">Localization</a></li></ul><h3 id="document-setup" data-decorative="">Document setup</h3><ul><li><a href="../document-metadata">Document metadata</a><ul><li><a href="../document-types">Document types</a></li></ul></li><li><a href="../themes">Theme</a></li><li><a href="../font-configuration">Fonts</a></li><li><a href="../page-format">Page format</a><ul><li><a href="../multi-column-layout">Multi-column layout</a></li></ul></li><li><a href="../page-margin-content">Page margin content</a></li><li><a href="../page-counter">Page counter</a></li><li><a href="../persistent-headings">Persistent headings</a></li><li><a href="../numbering">Numbering</a></li><li><a href="../paragraph-style">Paragraph style</a></li><li><a href="../caption-position">Caption position</a></li><li><a href="../table-of-contents">Table of contents</a></li><li><a href="../bibliography">Bibliography</a></li><li><a href="../footnotes">Footnotes</a></li><li><a href="../book-cover">Book cover</a></li></ul><h3 id="markdown-enhancements" data-decorative="">Markdown enhancements</h3><ul><li><a href="../figure">Figures</a></li><li><a href="../image-size">Image size</a></li><li><a href="../tex-formulae">TeX formulae</a></li><li><a href="../table-caption">Table caption</a></li><li><a href="../code-caption">Code caption</a></li><li><a href="../headings">Headings</a><ul><li><a href="../headings#decorative-headings">Decorative headings</a></li></ul></li><li><a href="../quote-types">Alerts (quote types)</a></li><li><a href="../quotation-source">Quotation source</a></li><li><a href="../cross-references">Cross-references</a></li><li><a href="../page-break">Page breaks</a><ul><li><a href="../page-break#automatic-break">Automatic break</a></li></ul></li><li><a href="../text-symbols">Text symbols</a></li><li><a href="../icons">Icons</a></li><li><a href="../emojis">Emojis</a></li></ul><h3 id="layout" data-decorative="">Layout</h3><ul><li><a href="../stacks">Stacks: rows, columns, grids</a></li><li><a href="../container">Container</a></li><li><a href="../align">Align</a></li><li><a href="../float">Float</a></li><li><a href="../custom-figure">Figure</a></li><li><a href="../clip">Clip</a></li><li><a href="../box">Box</a></li><li><a href="../file-tree">File tree</a></li><li><a href="../collapsible">Collapsible</a></li><li><a href="../landscape-content">Landscape</a></li><li><a href="../whitespace">Whitespace</a></li></ul><h3 id="multi-file-projects" data-decorative="">Multi-file projects</h3><ul><li><a href="../including-other-quarkdown-files">Including other Quarkdown files</a></li><li><a href="../subdocuments">Referencing other Quarkdown files</a><ul><li><a href="../inclusion-vs-subdocuments">Including vs. referencing</a></li></ul></li><li><a href="../importing-external-libraries">Importing external libraries</a></li></ul><h3 id="variables-amp-scripting" data-decorative="">Variables &amp; scripting</h3><ul><li><a href="../variables">Variables</a></li><li><a href="../none">Optionality</a></li><li><a href="../math">Math</a></li><li><a href="../conditional-statements">Conditional statements</a></li><li><a href="../loops">Loops</a></li><li><a href="../let">Let</a></li><li><a href="../destructuring">Destructuring</a></li></ul><h3 id="data-amp-tables" data-decorative="">Data &amp; tables</h3><ul><li><a href="../table-manipulation">Table manipulation</a></li><li><a href="../table-generation">Table generation</a></li><li><a href="../file-data#file-text-content">Text content from file</a></li><li><a href="../file-data#table-from-csv">Table from CSV data</a></li></ul><h3 id="charts-amp-diagrams" data-decorative="">Charts &amp; diagrams</h3><ul><li><a href="../xy-chart">XY chart</a></li><li><a href="../mermaid-diagrams">Mermaid diagrams</a></li></ul><h3 id="text-amp-code" data-decorative="">Text &amp; code</h3><ul><li><a href="../text">Advanced text formatting</a></li><li><a href="../code">Advanced code block</a></li><li><a href="../line-breaks">Explicit line breaks</a></li><li><a href="../tex-macros">TeX macros</a></li></ul><h3 id="slides" data-decorative="">Slides</h3><ul><li><a href="../slides-configuration">Slides configuration</a></li><li><a href="../slides-fragment">Interactive fragment</a></li><li><a href="../slides-speaker-notes">Speaker notes</a></li></ul><h3 id="native-content" data-decorative="">Native content</h3><ul><li><a href="../html">HTML</a></li><li><a href="../css">CSS</a></li></ul><h3 id="value-types" data-decorative="">Value types</h3><ul><li>String</li><li>Number</li><li><a href="../markdown-content">Markdown content</a></li><li><a href="../boolean">Boolean</a></li><li><a href="../none">None</a></li><li><a href="../enumeration-entry">Enumeration entry</a></li><li><a href="../iterable">Iterable</a></li><li><a href="../dictionary">Dictionary</a></li><li><a href="../range">Range</a></li><li><a href="../lambda">Lambda</a></li><li><a href="../sizes">Size(s)</a></li><li><a href="../color">Color</a></li><li><a href="../typing">Dynamic</a></li></ul><h3 id="built-in-libraries" data-decorative="">Built-in libraries</h3><ul><li><a href="../docs-library">Docs: documentation projects</a></li><li><a href="../paper-library">Paper: abstract, definitions, theorems</a></li></ul><h3 id="resources-amp-logging" data-decorative="">Resources &amp; logging</h3><ul><li><a href="../media-storage">Media storage</a></li><li><a href="../logging">Logging</a></li></ul><h3 id="cli-tools" data-decorative="">CLI tools</h3><ul><li><a href="../cli-compiler">Compiler</a></li><li><a href="../pdf-export">Exporting to PDF</a></li><li><a href="../cli-project-creator">Project creator</a></li><li><a href="../cli-webserver">Webserver</a></li></ul><h3 id="inside-quarkdown" data-decorative="">Inside Quarkdown</h3><ul><li><a href="../pipeline">Quarkdown&rsquo;s pipeline</a><ul><li><a href="../pipeline---lexing">Lexing</a></li><li><a href="../pipeline---parsing">Parsing</a></li><li><a href="../pipeline---function-call-expansion">Function call expansion</a></li><li><a href="../pipeline---tree-traversal">Tree traversal</a></li><li><a href="../pipeline---rendering">Rendering</a></li><li><a href="../pipeline---post-rendering">Post-rendering</a></li></ul></li><li><a href="../inside-live-preview">How does live preview work?</a></li></ul></nav></div><div class="page-margin-content page-margin-right-top" data-on-left-page="right-top" data-on-right-page="right-top"><h3 id="table-of-contents">On this page</h3><nav role="table-of-contents" data-role="table-of-contents"><ol><li data-target-id="compiler-options" data-depth="2"><a href="#compiler-options">Compiler options</a><ol><li data-target-id="preview-and-watch" data-depth="3"><a href="#preview-and-watch">Preview and watch</a></li><li data-target-id="output" data-depth="3"><a href="#output">Output</a></li><li data-target-id="permissions" data-depth="3"><a href="#permissions">Permissions</a></li><li data-target-id="libraries" data-depth="3"><a href="#libraries">Libraries</a></li><li data-target-id="other-options" data-depth="3"><a href="#other-options">Other options</a></li></ol></li></ol></nav></div><h1 id="cli---options" data-decorative="">CLI - Options</h1><p>This page lists all the options available for the <a href="../cli-compiler">compiler</a> and REPL.</p><h2 id="compiler-options">Compiler options</h2><p>Running <strong><span class="codespan-content"><code>quarkdown c file.qd</code></span></strong> compiles the given file and saves the output to file.</p><blockquote class="note" style="--quote-type-label: 'Note';" data-labeled=""><p>If the project is composed of multiple source files, the target file must be the root one, i.e. the one that <a href="../including-other-quarkdown-files">includes</a> the other files.</p></blockquote><h3 id="preview-and-watch">Preview and watch</h3><ul><li><p><strong><span class="codespan-content"><code>-p</code></span></strong> or <strong><span class="codespan-content"><code>--preview</code></span></strong>: enables automatic content reloading after compiling.
+If a <a href="../cli-webserver">webserver</a> is not running yet, it is started and the document is opened in the default browser.
+This is required in order to render paged documents in the browser.</p></li><li><p><strong><span class="codespan-content"><code>-w</code></span></strong> or <strong><span class="codespan-content"><code>--watch</code></span></strong>: recompiles the source every time a file from the source directory is changed.</p></li><li><p><span class="codespan-content"><code>-b &lt;browser&gt;</code></span> or <span class="codespan-content"><code>--browser &lt;browser&gt;</code></span>: sets the browser to launch the preview with. Defaults to <span class="codespan-content"><code>default</code></span>. Accepted values:</p><ul><li><span class="codespan-content"><code>default</code></span></li><li><span class="codespan-content"><code>none</code></span></li><li><span class="codespan-content"><code>xdg</code></span> (uses <span class="codespan-content"><code>xdg-open</code></span>). <span class="codespan-content"><code>default</code></span> falls back to this.</li><li><span class="codespan-content"><code>chrome</code></span></li><li><span class="codespan-content"><code>chromium</code></span></li><li><span class="codespan-content"><code>firefox</code></span></li><li><span class="codespan-content"><code>edge</code></span> (Windows only)</li><li>Any other name, backed by the <span class="codespan-content"><code>BROWSER_&lt;NAME&gt;</code></span> environment variable</li><li>A full path to a browser executable</li></ul></li><li><p><span class="codespan-content"><code>--server-port &lt;port&gt;</code></span>: optional customization of the local <a href="../cli-webserver">webserver</a>&rsquo;s port. Defaults to <span class="codespan-content"><code>8089</code></span>.</p></li></ul><blockquote class="tip" style="--quote-type-label: 'Tip';" data-labeled=""><p>Combine <span class="codespan-content"><code>-p -w</code></span> to achieve <strong>live preview</strong>.</p></blockquote><h3 id="output">Output</h3><ul><li><p><strong><span class="codespan-content"><code>--pdf</code></span></strong>: produces a PDF file. Learn more in the <a href="../pdf-export">PDF export</a> page.</p></li><li><p><span class="codespan-content"><code>-o &lt;dir&gt;</code></span> or <span class="codespan-content"><code>--out &lt;dir&gt;</code></span>: sets the directory of the output files. Defaults to <span class="codespan-content"><code>./output</code></span>.</p></li><li><p><span class="codespan-content"><code>--out-name &lt;name&gt;</code></span>: sets the name of the output resource to be saved inside the output directory.
+Defaults to the name of the document, set via <a href="../document-metadata"><span class="codespan-content"><code>.docname</code></span></a>.
+Special characters will be replaced with dashes in the actual file name.</p></li><li><p><span class="codespan-content"><code>-r &lt;renderer&gt;</code></span> or <span class="codespan-content"><code>--render &lt;renderer&gt;</code></span>: sets the target renderer. Defaults to <span class="codespan-content"><code>html</code></span>. Accepted values:</p><ul><li><span class="codespan-content"><code>html</code></span></li><li><span class="codespan-content"><code>html-pdf</code></span> (equivalent to <span class="codespan-content"><code>-r html --pdf</code></span>)</li><li><span class="codespan-content"><code>text</code></span> (plain text)</li></ul></li></ul><h3 id="permissions">Permissions</h3><ul><li><span class="codespan-content"><code>--allow &lt;permission&gt;</code></span> / <span class="codespan-content"><code>--deny &lt;permission&gt;</code></span>: grants or revokes a <a href="../cli-compiler#permissions">permission</a> (repeatable).
+Accepted values: <span class="codespan-content"><code>project-read</code></span>, <span class="codespan-content"><code>global-read</code></span>, <span class="codespan-content"><code>network</code></span>, <span class="codespan-content"><code>native-content</code></span>, <span class="codespan-content"><code>all</code></span>.
+By default, <span class="codespan-content"><code>project-read</code></span> and <span class="codespan-content"><code>native-content</code></span> are granted.</li></ul><h3 id="libraries">Libraries</h3><ul><li><span class="codespan-content"><code>-l &lt;dir&gt;</code></span> or <span class="codespan-content"><code>--libs &lt;dir&gt;</code></span>: sets the directory where external libraries can be loaded from. Defaults to <span class="codespan-content"><code>&lt;install dir&gt;/lib/qd</code></span>.
+Learn more in the <a href="../importing-external-libraries">external libraries</a> page.</li></ul><h3 id="other-options">Other options</h3><ul><li><p><span class="codespan-content"><code>--pipe</code></span>: outputs the generated content to stdout instead of saving it to file and suppresses other logs,
+useful for piping to other commands.</p></li><li><p><span class="codespan-content"><code>--clean</code></span>: deletes the content of the output directory before producing new files. <strong>Destructive operation.</strong></p></li><li><p><span class="codespan-content"><code>--strict</code></span>: forces the program to exit if an error occurs. When not in strict mode, errors are shown as boxes in the document.</p></li><li><p><span class="codespan-content"><code>--nowrap</code></span>: prevents the rendered output from being wrapped in a full document structure.
+If enabled in HTML rendering, only the inner content of the <span class="codespan-content"><code>&lt;body&gt;</code></span> tag is produced.</p></li><li><p><span class="codespan-content"><code>--pretty</code></span>: produces pretty output code. This is useful for debugging or to read the output code more easily,
+but it should be disabled in production as the results might be visually affected.</p></li><li><p><span class="codespan-content"><code>--no-media-storage</code></span>: turns the <a href="../media-storage">media storage</a> system off.</p></li><li><p><span class="codespan-content"><code>--subdoc-naming &lt;strategy&gt;</code></span>: sets the <a href="../subdocuments">subdocument</a> output naming strategy. Defaults to <span class="codespan-content"><code>file-name</code></span>. Accepted values:</p><ul><li><span class="codespan-content"><code>file-name</code></span>: uses the subdocument&rsquo;s file name (human-readable, but prone to collisions)</li><li><span class="codespan-content"><code>collision-proof</code></span>: appends a hash to <span class="codespan-content"><code>file-name</code></span> to minimize name collisions</li><li><span class="codespan-content"><code>document-name</code></span>: uses the document name set via <span class="codespan-content"><code>.docname</code></span>, falling back to <span class="codespan-content"><code>file-name</code></span> if unset</li></ul></li><li><p><span class="codespan-content"><code>-Dloglevel=&lt;level&gt;</code></span> (JVM property): sets the log level. If set to <span class="codespan-content"><code>warning</code></span> or higher, the output content is not printed out.</p></li></ul>
+        <div id="footnote-area">
+          <div class="footnote-rule"></div>
+        </div>
+        <div id="sibling-pages-button-area"></div>
+        <footer>
+          <div class="position-left"></div>
+          <div class="position-center"></div>
+          <div class="position-right"></div>
+        </footer>
+      </main>
+      <aside class="margin-area" id="margin-area-right">
+        <div class="position-top"></div>
+        <div class="position-middle"></div>
+        <div class="position-bottom"></div>
+      </aside>
+    </div>
+  </body>
+</html>
