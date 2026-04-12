@@ -96,24 +96,24 @@
   <div class="breadcrumbs"><a href="../../index.html">quarkdown-html</a><span class="delimiter">/</span><a href="../index.html">com.quarkdown.rendering.html</a><span class="delimiter">/</span><span class="current">HtmlExportOptions</span></div>
   <div class="cover ">
     <h1 class="cover"><span>Html</span><wbr><span>Export</span><wbr><span><span>Options</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-html/main"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="index.html">HtmlExportOptions</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>libraryDirectory<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html">File</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span></div><p class="paragraph">Options for exporting HTML artifacts.</p><h4 class="">Parameters</h4><div class="table"><div class="table-row" data-filterable-current=":quarkdown-html/main" data-filterable-set=":quarkdown-html/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>library</span><wbr><span><span>Directory</span></span></u></div></span></div><div><div class="title"><p class="paragraph">the filesystem directory containing third-party library files to bundle into the output,     typically <code class="lang-kotlin">lib/html</code> within the Quarkdown installation</p></div></div></div></div></div></div></div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-html/main"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="index.html">HtmlExportOptions</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>resourcesLayout<span class="token operator">: </span><a href="../../../quarkdown-install-layout-navigator/com.quarkdown.installlayout/-install-layout/-html/index.html">InstallLayout.Html</a><span class="token operator">?</span><span class="token operator"> = </span>InstallLayout.get.htmlResources</span></span><span class="token punctuation">)</span></div><p class="paragraph">Options for exporting HTML artifacts.</p><h4 class="">Parameters</h4><div class="table"><div class="table-row" data-filterable-current=":quarkdown-html/main" data-filterable-set=":quarkdown-html/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>resources</span><wbr><span><span>Layout</span></span></u></div></span></div><div><div class="title"><p class="paragraph">the install layout node for the <code class="lang-kotlin">html/</code> subtree, used to locate     themes, scripts, and third-party libraries. Defaults to the lazily resolved     <a href="../../../quarkdown-install-layout-navigator/com.quarkdown.installlayout/-install-layout/-companion/get.html">InstallLayout.get</a> singleton. Pass <code class="lang-kotlin">null</code> in tests to skip resource bundling.</p></div></div></div></div></div></div></div>
   </div>
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
     <div class="tabs-section-body">
       <div data-togglable="CONSTRUCTOR">
         <h2 class="">Constructors</h2>
-        <div class="table"><a data-name="1458098478%2FConstructors%2F-203176000" anchor-label="HtmlExportOptions" id="1458098478%2FConstructors%2F-203176000" data-filterable-set=":quarkdown-html/main"></a>
+        <div class="table"><a data-name="-1970520938%2FConstructors%2F-203176000" anchor-label="HtmlExportOptions" id="-1970520938%2FConstructors%2F-203176000" data-filterable-set=":quarkdown-html/main"></a>
           <div class="table-row" data-togglable="CONSTRUCTOR" data-filterable-current=":quarkdown-html/main" data-filterable-set=":quarkdown-html/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-html-export-options.html"><span>Html</span><wbr><span>Export</span><wbr><span><span>Options</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1458098478%2FConstructors%2F-203176000"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1970520938%2FConstructors%2F-203176000"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-html/main"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">libraryDirectory<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html">File</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-html/main"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">resourcesLayout<span class="token operator">: </span><a href="../../../quarkdown-install-layout-navigator/com.quarkdown.installlayout/-install-layout/-html/index.html">InstallLayout.Html</a><span class="token operator">?</span><span class="token operator"> = </span>InstallLayout.get.htmlResources</span></span><span class="token punctuation">)</span></div></div></div>
                 </div>
               </div>
             </div>
@@ -122,17 +122,17 @@
       </div>
       <div data-togglable="PROPERTY">
         <h2 class="">Properties</h2>
-        <div class="table"><a data-name="1194646940%2FProperties%2F-203176000" anchor-label="libraryDirectory" id="1194646940%2FProperties%2F-203176000" data-filterable-set=":quarkdown-html/main"></a>
+        <div class="table"><a data-name="-1066079939%2FProperties%2F-203176000" anchor-label="resourcesLayout" id="-1066079939%2FProperties%2F-203176000" data-filterable-set=":quarkdown-html/main"></a>
           <div class="table-row" data-filterable-current=":quarkdown-html/main" data-filterable-set=":quarkdown-html/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
-                  <div><a href="library-directory.html"><span>library</span><wbr><span><span>Directory</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1194646940%2FProperties%2F-203176000"></span>
+                  <div><a href="resources-layout.html"><span>resources</span><wbr><span><span>Layout</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1066079939%2FProperties%2F-203176000"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-html/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="library-directory.html">libraryDirectory</a><span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html">File</a><span class="token operator">?</span></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-html/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="resources-layout.html">resourcesLayout</a><span class="token operator">: </span><a href="../../../quarkdown-install-layout-navigator/com.quarkdown.installlayout/-install-layout/-html/index.html">InstallLayout.Html</a><span class="token operator">?</span></div></div></div>
                 </div>
               </div>
             </div>
