@@ -2,19 +2,11 @@
 /**
  * Scroll-triggered typewriter animation powered by `typewriter-effect`.
  *
- * Renders the full text as a visible, crawlable placeholder for SEO and
- * accessibility. When the element scrolls into view, the placeholder hides
- * and the typewriter animation begins. Uses two IntersectionObservers:
- *   - One at the viewport edge to hide the placeholder (no layout shift).
- *   - One at ~center of viewport to start typing at eye level.
- *
- * Accessibility:
- *   - The placeholder is real DOM text: visible to screen readers and
- *     search engines by default.
- *   - `aria-hidden` is only added via JS when the animation takes over,
- *     so assistive tech always has access to the content.
- *   - Without JS (crawlers, no-JS browsers) the placeholder stays fully
- *     visible and readable — progressive enhancement.
+ * Renders the full text as a visually hidden but crawlable placeholder
+ * for SEO and accessibility (`opacity: 0` is still announced by screen
+ * readers). When the element scrolls into view, the typewriter animation
+ * begins. A `<noscript>` fallback restores the placeholder for no-JS
+ * browsers and crawlers (progressive enhancement).
  *
  * @example
  * <h2>Spend your time <Typewriter text="writing" /></h2>
@@ -32,6 +24,7 @@ const { text, delay = 80 } = Astro.props;
 <span class="typewriter-wrapper">
   <span class="typewriter-placeholder">{text}</span>
   <span class="typewriter" data-typewriter data-text={text} data-delay={delay}></span>
+  <noscript><style>.typewriter-placeholder { opacity: 1 !important; }</style></noscript>
 </span>
 
 <script>
@@ -55,16 +48,11 @@ const { text, delay = 80 } = Astro.props;
       });
   }
 
-  // Hides the placeholder and shows a blinking cursor as soon as the element
-  // enters the viewport. If typing was already requested (race condition),
-  // starts immediately.
+  // Creates the typewriter instance as soon as the element enters the viewport.
+  // If typing was already requested (race condition), starts immediately.
   const hideObserver = new IntersectionObserver((entries, obs) => {
     for (const entry of entries) {
       if (!entry.isIntersecting) continue;
-
-      const placeholder = entry.target.querySelector(".typewriter-placeholder") as HTMLElement;
-      placeholder.style.visibility = "hidden";
-      placeholder.setAttribute("aria-hidden", "true");
 
       const el = entry.target.querySelector("[data-typewriter]") as HTMLSpanElement;
       const instance = createTypewriter(el);
@@ -109,6 +97,10 @@ const { text, delay = 80 } = Astro.props;
   .typewriter-wrapper {
     display: inline-block;
     position: relative;
+  }
+
+  .typewriter-placeholder {
+    opacity: 0;
   }
 
   .typewriter {
