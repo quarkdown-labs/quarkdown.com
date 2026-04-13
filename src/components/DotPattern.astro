@@ -14,21 +14,35 @@
   // Barrel distortion: higher = stronger convex bulge.
   const DISTORTION_K = 1.2;
 
+  // Motion: smooth flowing displacement field across the whole grid.
+  const DRIFT_AMPLITUDE = 7;    // max pixel displacement
+  const DRIFT_SPEED = 0.0006;   // radians per ms
+  const DRIFT_SCALE = 0.003;    // spatial scale — lower = larger, smoother waves
+
   // Opacity
   const BASE_OPACITY = 0.6;
   const CENTER_FADE_CURVE = 0.6;   // pow exponent — lower = wider transparent core
   const VERTICAL_FADE_CURVE = 0.8; // pow exponent — lower = earlier fade
 
-  function distort(gx: number, gy: number, cx: number, cy: number, normScale: number): [number, number] {
+  function distort(gx: number, gy: number, cx: number, cy: number, normScale: number, t: number): [number, number] {
     const nx = (gx - cx) / normScale;
     const ny = (gy - cy) / normScale;
     const scale = 1 + DISTORTION_K * (nx * nx + ny * ny);
-    return [cx + nx * scale * normScale, cy + ny * scale * normScale];
+    const x = cx + nx * scale * normScale;
+    const y = cy + ny * scale * normScale;
+
+    // Smooth displacement field — nearby dots move together like a flowing surface.
+    const sx = gx * DRIFT_SCALE;
+    const sy = gy * DRIFT_SCALE;
+    const dx = (Math.sin(sx + t) + Math.sin(sy * 0.7 + t * 0.8)) * DRIFT_AMPLITUDE;
+    const dy = (Math.cos(sy + t * 0.9) + Math.cos(sx * 0.6 + t * 1.1)) * DRIFT_AMPLITUDE;
+
+    return [x + dx, y + dy];
   }
 
   function dotOpacity(x: number, y: number, cx: number, cy: number, diagonal: number, height: number): number {
     const centerFade = Math.pow(Math.hypot(x - cx, y - cy) / diagonal, CENTER_FADE_CURVE);
-    const verticalFade = 1 - Math.pow(y / height, VERTICAL_FADE_CURVE);
+    const verticalFade = 1 - Math.pow(Math.max(0, y) / height, VERTICAL_FADE_CURVE);
     return BASE_OPACITY * centerFade * verticalFade;
   }
 
@@ -37,20 +51,38 @@
         && y >= -DOT_RADIUS && y <= height + DOT_RADIUS;
   }
 
-  function render(canvas: HTMLCanvasElement) {
-    const ctx = canvas.getContext("2d")!;
-    const { width, height } = canvas.getBoundingClientRect();
+  interface CanvasState {
+    canvas: HTMLCanvasElement;
+    ctx: CanvasRenderingContext2D;
+    width: number;
+    height: number;
+    cx: number;
+    cy: number;
+    normScale: number;
+    diagonal: number;
+  }
+
+  function resize(state: CanvasState) {
+    const { canvas, ctx } = state;
+    const rect = canvas.getBoundingClientRect();
     const dpr = devicePixelRatio;
 
-    canvas.width = width * dpr;
-    canvas.height = height * dpr;
-    ctx.scale(dpr, dpr);
+    state.width = rect.width;
+    state.height = rect.height;
+    canvas.width = rect.width * dpr;
+    canvas.height = rect.height * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-    const cx = width / 2;
-    const cy = height / 2;
-    const normScale = Math.max(cx, cy);
-    const diagonal = Math.hypot(cx, cy);
+    state.cx = rect.width / 2;
+    state.cy = rect.height / 2;
+    state.normScale = Math.max(state.cx, state.cy);
+    state.diagonal = Math.hypot(state.cx, state.cy);
+  }
 
+  function render(state: CanvasState, t: number) {
+    const { ctx, width, height, cx, cy, normScale, diagonal } = state;
+
+    ctx.clearRect(0, 0, width, height);
     ctx.fillStyle = DOT_COLOR;
 
     const margin = DOT_SPACING * GRID_OVERFLOW;
@@ -58,7 +90,7 @@
 
     for (let gy = gridStart; gy < height + margin; gy += DOT_SPACING) {
       for (let gx = gridStart; gx < width + margin; gx += DOT_SPACING) {
-        const [x, y] = distort(gx, gy, cx, cy, normScale);
+        const [x, y] = distort(gx, gy, cx, cy, normScale, t);
         if (!isVisible(x, y, width, height)) continue;
 
         const opacity = dotOpacity(x, y, cx, cy, diagonal, height);
@@ -73,10 +105,32 @@
   }
 
   document.querySelectorAll<HTMLCanvasElement>("canvas.dot-pattern").forEach((canvas) => {
-    render(canvas);
+    const state: CanvasState = {
+      canvas,
+      ctx: canvas.getContext("2d")!,
+      width: 0, height: 0, cx: 0, cy: 0, normScale: 0, diagonal: 0,
+    };
 
-    const observer = new ResizeObserver(() => render(canvas));
-    observer.observe(canvas.parentElement!);
+    resize(state);
+
+    new ResizeObserver(() => resize(state)).observe(canvas.parentElement!);
+
+    let visible = true;
+    new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting;
+    }).observe(canvas);
+
+    const FRAME_INTERVAL = 1000 / 15; // 15 fps
+    let lastFrame = 0;
+
+    function tick(ms: number) {
+      if (visible && ms - lastFrame >= FRAME_INTERVAL) {
+        lastFrame = ms;
+        render(state, ms * DRIFT_SPEED);
+      }
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
   });
 </script>
 
