@@ -16,7 +16,7 @@
 
   // Motion: smooth flowing displacement field across the whole grid.
   const DRIFT_AMPLITUDE = 7;    // max pixel displacement
-  const DRIFT_SPEED = 0.0006;   // radians per ms
+  const DRIFT_SPEED = 0.0005;   // radians per ms
   const DRIFT_SCALE = 0.003;    // spatial scale — lower = larger, smoother waves
 
   // Opacity
@@ -112,25 +112,41 @@
     };
 
     resize(state);
+    render(state, 0);
 
-    new ResizeObserver(() => resize(state)).observe(canvas.parentElement!);
+    const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
 
-    let visible = true;
-    new IntersectionObserver(([entry]) => {
-      visible = entry.isIntersecting;
-    }).observe(canvas);
+    new ResizeObserver(() => {
+      resize(state);
+      if (reducedMotion.matches) render(state, 0);
+    }).observe(canvas.parentElement!);
+
+    if (reducedMotion.matches) return;
 
     const FRAME_INTERVAL = 1000 / 15; // 15 fps
     let lastFrame = 0;
+    let rafId = 0;
 
     function tick(ms: number) {
-      if (visible && ms - lastFrame >= FRAME_INTERVAL) {
+      if (ms - lastFrame >= FRAME_INTERVAL) {
         lastFrame = ms;
         render(state, ms * DRIFT_SPEED);
       }
-      requestAnimationFrame(tick);
+      rafId = requestAnimationFrame(tick);
     }
-    requestAnimationFrame(tick);
+
+    function start() {
+      if (!rafId) rafId = requestAnimationFrame(tick);
+    }
+
+    function stop() {
+      cancelAnimationFrame(rafId);
+      rafId = 0;
+    }
+
+    new IntersectionObserver(([entry]) => {
+      entry.isIntersecting ? start() : stop();
+    }).observe(canvas);
   });
 </script>
 
