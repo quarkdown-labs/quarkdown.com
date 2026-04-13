@@ -2,18 +2,90 @@
 
 ---
 
-<div class="dot-pattern" aria-hidden="true"></div>
+<canvas class="dot-pattern" aria-hidden="true"></canvas>
 
-<style lang="scss">
-  @use '../styles/colors' as *;
+<script>
+  // Grid
+  const DOT_SPACING = 24;
+  const DOT_RADIUS = 2;
+  const DOT_COLOR = getComputedStyle(document.documentElement).getPropertyValue("--dot-color").trim();
+  const GRID_OVERFLOW = 4; // extra rows/cols beyond canvas edges
 
+  // Barrel distortion: higher = stronger convex bulge.
+  const DISTORTION_K = 1.2;
+
+  // Opacity
+  const BASE_OPACITY = 0.6;
+  const CENTER_FADE_CURVE = 0.6;   // pow exponent — lower = wider transparent core
+  const VERTICAL_FADE_CURVE = 0.8; // pow exponent — lower = earlier fade
+
+  function distort(gx: number, gy: number, cx: number, cy: number, normScale: number): [number, number] {
+    const nx = (gx - cx) / normScale;
+    const ny = (gy - cy) / normScale;
+    const scale = 1 + DISTORTION_K * (nx * nx + ny * ny);
+    return [cx + nx * scale * normScale, cy + ny * scale * normScale];
+  }
+
+  function dotOpacity(x: number, y: number, cx: number, cy: number, diagonal: number, height: number): number {
+    const centerFade = Math.pow(Math.hypot(x - cx, y - cy) / diagonal, CENTER_FADE_CURVE);
+    const verticalFade = 1 - Math.pow(y / height, VERTICAL_FADE_CURVE);
+    return BASE_OPACITY * centerFade * verticalFade;
+  }
+
+  function isVisible(x: number, y: number, width: number, height: number): boolean {
+    return x >= -DOT_RADIUS && x <= width + DOT_RADIUS
+        && y >= -DOT_RADIUS && y <= height + DOT_RADIUS;
+  }
+
+  function render(canvas: HTMLCanvasElement) {
+    const ctx = canvas.getContext("2d")!;
+    const { width, height } = canvas.getBoundingClientRect();
+    const dpr = devicePixelRatio;
+
+    canvas.width = width * dpr;
+    canvas.height = height * dpr;
+    ctx.scale(dpr, dpr);
+
+    const cx = width / 2;
+    const cy = height / 2;
+    const normScale = Math.max(cx, cy);
+    const diagonal = Math.hypot(cx, cy);
+
+    ctx.fillStyle = DOT_COLOR;
+
+    const margin = DOT_SPACING * GRID_OVERFLOW;
+    const gridStart = DOT_SPACING / 2 - margin;
+
+    for (let gy = gridStart; gy < height + margin; gy += DOT_SPACING) {
+      for (let gx = gridStart; gx < width + margin; gx += DOT_SPACING) {
+        const [x, y] = distort(gx, gy, cx, cy, normScale);
+        if (!isVisible(x, y, width, height)) continue;
+
+        const opacity = dotOpacity(x, y, cx, cy, diagonal, height);
+        if (opacity <= 0) continue;
+
+        ctx.globalAlpha = opacity;
+        ctx.beginPath();
+        ctx.arc(x, y, DOT_RADIUS, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+  }
+
+  document.querySelectorAll<HTMLCanvasElement>("canvas.dot-pattern").forEach((canvas) => {
+    render(canvas);
+
+    const observer = new ResizeObserver(() => render(canvas));
+    observer.observe(canvas.parentElement!);
+  });
+</script>
+
+<style>
   .dot-pattern {
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(circle, $brand-400 2px, transparent 2px);
-    background-size: 34px 34px;
-    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) -10%, transparent 80%);
-    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) -10%, transparent 80%);
+    width: 100%;
+    height: 100%;
     pointer-events: none;
   }
 </style>
