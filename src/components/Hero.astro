@@ -2,7 +2,6 @@
 import Logo from '../assets/logo.svg';
 import DotPattern from './DotPattern.astro';
 import TagList from './TagList.astro';
-import GetStartedActionPair from './GetStartedActionPair.astro';
 
 const tags = ['Papers', 'Books', 'Presentations', 'Static sites', 'Knowledge bases'];
 ---
@@ -27,7 +26,6 @@ const tags = ['Papers', 'Books', 'Presentations', 'Static sites', 'Knowledge bas
       And it's free and open source.
     </p>
 
-    <GetStartedActionPair />
   </div>
 </section>
 
@@ -92,6 +90,6 @@ const tags = ['Papers', 'Books', 'Presentations', 'Static sites', 'Knowledge bas
   .hero-subtitle {
     @include text;
     font-size: $font-size-body;
-    margin-bottom: 4rem;
+    margin-bottom: 0;
   }
 </style>
