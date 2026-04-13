@@ -2,18 +2,160 @@
 
 ---
 
-<div class="dot-pattern" aria-hidden="true"></div>
+<canvas class="dot-pattern" aria-hidden="true"></canvas>
 
-<style lang="scss">
-  @use '../styles/colors' as *;
+<script>
+  // Grid
+  const DOT_SPACING = 24;
+  const DOT_RADIUS = 2;
+  const DOT_COLOR = getComputedStyle(document.documentElement).getPropertyValue("--dot-color").trim();
+  const GRID_OVERFLOW = 4; // extra rows/cols beyond canvas edges
 
+  // Barrel distortion: higher = stronger convex bulge.
+  const DISTORTION_K = 1.2;
+
+  // Motion: smooth flowing displacement field across the whole grid.
+  const DRIFT_AMPLITUDE = 7;    // max pixel displacement
+  const DRIFT_SPEED = 0.0005;   // radians per ms
+  const DRIFT_SCALE = 0.003;    // spatial scale — lower = larger, smoother waves
+
+  // Opacity
+  const BASE_OPACITY = 0.6;
+  const CENTER_FADE_CURVE = 0.6;   // pow exponent — lower = wider transparent core
+  const VERTICAL_FADE_CURVE = 0.8; // pow exponent — lower = earlier fade
+
+  function distort(gx: number, gy: number, cx: number, cy: number, normScale: number, t: number): [number, number] {
+    const nx = (gx - cx) / normScale;
+    const ny = (gy - cy) / normScale;
+    const scale = 1 + DISTORTION_K * (nx * nx + ny * ny);
+    const x = cx + nx * scale * normScale;
+    const y = cy + ny * scale * normScale;
+
+    // Smooth displacement field — nearby dots move together like a flowing surface.
+    const sx = gx * DRIFT_SCALE;
+    const sy = gy * DRIFT_SCALE;
+    const dx = (Math.sin(sx + t) + Math.sin(sy * 0.7 + t * 0.8)) * DRIFT_AMPLITUDE;
+    const dy = (Math.cos(sy + t * 0.9) + Math.cos(sx * 0.6 + t * 1.1)) * DRIFT_AMPLITUDE;
+
+    return [x + dx, y + dy];
+  }
+
+  function dotOpacity(x: number, y: number, cx: number, cy: number, diagonal: number, height: number): number {
+    const centerFade = Math.pow(Math.hypot(x - cx, y - cy) / diagonal, CENTER_FADE_CURVE);
+    const verticalFade = 1 - Math.pow(Math.max(0, y) / height, VERTICAL_FADE_CURVE);
+    return BASE_OPACITY * centerFade * verticalFade;
+  }
+
+  function isVisible(x: number, y: number, width: number, height: number): boolean {
+    return x >= -DOT_RADIUS && x <= width + DOT_RADIUS
+        && y >= -DOT_RADIUS && y <= height + DOT_RADIUS;
+  }
+
+  interface CanvasState {
+    canvas: HTMLCanvasElement;
+    ctx: CanvasRenderingContext2D;
+    width: number;
+    height: number;
+    cx: number;
+    cy: number;
+    normScale: number;
+    diagonal: number;
+  }
+
+  function resize(state: CanvasState) {
+    const { canvas, ctx } = state;
+    const rect = canvas.getBoundingClientRect();
+    const dpr = devicePixelRatio;
+
+    state.width = rect.width;
+    state.height = rect.height;
+    canvas.width = rect.width * dpr;
+    canvas.height = rect.height * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+    state.cx = rect.width / 2;
+    state.cy = rect.height / 2;
+    state.normScale = Math.max(state.cx, state.cy);
+    state.diagonal = Math.hypot(state.cx, state.cy);
+  }
+
+  function render(state: CanvasState, t: number) {
+    const { ctx, width, height, cx, cy, normScale, diagonal } = state;
+
+    ctx.clearRect(0, 0, width, height);
+    ctx.fillStyle = DOT_COLOR;
+
+    const margin = DOT_SPACING * GRID_OVERFLOW;
+    const gridStart = DOT_SPACING / 2 - margin;
+
+    for (let gy = gridStart; gy < height + margin; gy += DOT_SPACING) {
+      for (let gx = gridStart; gx < width + margin; gx += DOT_SPACING) {
+        const [x, y] = distort(gx, gy, cx, cy, normScale, t);
+        if (!isVisible(x, y, width, height)) continue;
+
+        const opacity = dotOpacity(x, y, cx, cy, diagonal, height);
+        if (opacity <= 0) continue;
+
+        ctx.globalAlpha = opacity;
+        ctx.beginPath();
+        ctx.arc(x, y, DOT_RADIUS, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+  }
+
+  document.querySelectorAll<HTMLCanvasElement>("canvas.dot-pattern").forEach((canvas) => {
+    const state: CanvasState = {
+      canvas,
+      ctx: canvas.getContext("2d")!,
+      width: 0, height: 0, cx: 0, cy: 0, normScale: 0, diagonal: 0,
+    };
+
+    resize(state);
+    render(state, 0);
+
+    const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
+
+    new ResizeObserver(() => {
+      resize(state);
+      if (reducedMotion.matches) render(state, 0);
+    }).observe(canvas.parentElement!);
+
+    if (reducedMotion.matches) return;
+
+    const FRAME_INTERVAL = 1000 / 15; // 15 fps
+    let lastFrame = 0;
+    let rafId = 0;
+
+    function tick(ms: number) {
+      if (ms - lastFrame >= FRAME_INTERVAL) {
+        lastFrame = ms;
+        render(state, ms * DRIFT_SPEED);
+      }
+      rafId = requestAnimationFrame(tick);
+    }
+
+    function start() {
+      if (!rafId) rafId = requestAnimationFrame(tick);
+    }
+
+    function stop() {
+      cancelAnimationFrame(rafId);
+      rafId = 0;
+    }
+
+    new IntersectionObserver(([entry]) => {
+      entry.isIntersecting ? start() : stop();
+    }).observe(canvas);
+  });
+</script>
+
+<style>
   .dot-pattern {
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(circle, $brand-400 2px, transparent 2px);
-    background-size: 34px 34px;
-    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) -10%, transparent 80%);
-    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) -10%, transparent 80%);
+    width: 100%;
+    height: 100%;
     pointer-events: none;
   }
 </style>
