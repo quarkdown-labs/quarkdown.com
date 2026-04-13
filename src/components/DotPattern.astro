@@ -118,7 +118,7 @@
 
     new ResizeObserver(() => {
       resize(state);
-      if (reducedMotion.matches) render(state, 0);
+      render(state, 0);
     }).observe(canvas.parentElement!);
 
     if (reducedMotion.matches) return;
