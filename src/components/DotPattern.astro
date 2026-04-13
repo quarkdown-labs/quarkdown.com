@@ -8,7 +8,7 @@
   // Grid
   const DOT_SPACING = 24;
   const DOT_RADIUS = 2;
-  const DOT_COLOR = getComputedStyle(document.documentElement).getPropertyValue("--dot-color").trim();
+  let DOT_COLOR: string;
   const GRID_OVERFLOW = 4; // extra rows/cols beyond canvas edges
 
   // Barrel distortion: higher = stronger convex bulge.
@@ -83,6 +83,7 @@
     const { ctx, width, height, cx, cy, normScale, diagonal } = state;
 
     ctx.clearRect(0, 0, width, height);
+    DOT_COLOR ??= getComputedStyle(document.documentElement).getPropertyValue("--dot-color").trim();
     ctx.fillStyle = DOT_COLOR;
 
     const margin = DOT_SPACING * GRID_OVERFLOW;
