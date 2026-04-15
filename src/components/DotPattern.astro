@@ -112,7 +112,7 @@
     };
 
     resize(state);
-    render(state, 0);
+    requestAnimationFrame(() => render(state, 0));
 
     const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
 
