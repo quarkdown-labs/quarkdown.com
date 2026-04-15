@@ -66,13 +66,19 @@
     const { canvas, ctx } = state;
     const rect = canvas.getBoundingClientRect();
     const dpr = devicePixelRatio;
+    const pw = Math.round(rect.width * dpr);
+    const ph = Math.round(rect.height * dpr);
+
+    // Only reset the canvas buffer when dimensions actually change,
+    // avoiding unnecessary context resets (which clear fillStyle etc.).
+    if (canvas.width !== pw || canvas.height !== ph) {
+      canvas.width = pw;
+      canvas.height = ph;
+    }
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
     state.width = rect.width;
     state.height = rect.height;
-    canvas.width = rect.width * dpr;
-    canvas.height = rect.height * dpr;
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-
     state.cx = rect.width / 2;
     state.cy = rect.height / 2;
     state.normScale = Math.max(state.cx, state.cy);
