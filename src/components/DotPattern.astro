@@ -8,7 +8,7 @@
   // Grid
   const DOT_SPACING = 24;
   const DOT_RADIUS = 2;
-  const DOT_COLOR = getComputedStyle(document.documentElement).getPropertyValue("--dot-color").trim();
+  const DOT_COLOR = "#547070";
   const GRID_OVERFLOW = 4; // extra rows/cols beyond canvas edges
 
   // Barrel distortion: higher = stronger convex bulge.
@@ -66,13 +66,19 @@
     const { canvas, ctx } = state;
     const rect = canvas.getBoundingClientRect();
     const dpr = devicePixelRatio;
+    const pw = Math.round(rect.width * dpr);
+    const ph = Math.round(rect.height * dpr);
+
+    // Only reset the canvas buffer when dimensions actually change,
+    // avoiding unnecessary context resets (which clear fillStyle etc.).
+    if (canvas.width !== pw || canvas.height !== ph) {
+      canvas.width = pw;
+      canvas.height = ph;
+    }
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
     state.width = rect.width;
     state.height = rect.height;
-    canvas.width = rect.width * dpr;
-    canvas.height = rect.height * dpr;
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-
     state.cx = rect.width / 2;
     state.cy = rect.height / 2;
     state.normScale = Math.max(state.cx, state.cy);
@@ -112,13 +118,13 @@
     };
 
     resize(state);
-    render(state, 0);
+    requestAnimationFrame(() => render(state, 0));
 
     const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
 
     new ResizeObserver(() => {
       resize(state);
-      if (reducedMotion.matches) render(state, 0);
+      render(state, 0);
     }).observe(canvas.parentElement!);
 
     if (reducedMotion.matches) return;
