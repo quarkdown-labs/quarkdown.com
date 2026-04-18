@@ -1,6 +1,14 @@
 ---
 import GetStartedActionPair from './GetStartedActionPair.astro';
 
+const release = await fetch('https://api.github.com/repos/iamgio/quarkdown/releases/latest')
+  .then(res => res.json())
+  .then(({ tag_name, published_at }) => ({
+    tag: tag_name,
+    date: new Date(published_at).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }),
+  }))
+  .catch(() => null);
+
 const methods = [
   {
     label: 'Linux / macOS',
@@ -27,6 +35,7 @@ const methods = [
 
 <section class="installation">
   <h2 class="installation-title">Installation</h2>
+  {release && <span class="installation-subtitle">{release.tag} <span class="installation-date">({release.date})</span></span>}
 
   <div class="installation-methods">
     {methods.map(({ label, commands }) => (
@@ -56,7 +65,20 @@ const methods = [
   .installation-title {
     text-align: center;
     font-size: $font-size-h1;
+    margin-bottom: 0.5rem;
+  }
+
+  .installation-subtitle {
+    display: block;
+    text-align: center;
+    font-family: $font-sans;
+    font-size: $font-size-overline;
+    color: $heading;
     margin-bottom: 3rem;
+  }
+
+  .installation-date {
+    color: $text-faint;
   }
 
   .installation-methods {
