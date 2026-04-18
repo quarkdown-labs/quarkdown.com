@@ -35,7 +35,7 @@ const methods = [
 
 <section class="installation">
   <h2 class="installation-title">Installation</h2>
-  {release && <span class="installation-subtitle">{release.tag} <span class="installation-date">({release.date})</span></span>}
+  {release && <span class="installation-subtitle">{release.tag} <span class="installation-date">was released on {release.date}</span></span>}
 
   <div class="installation-methods">
     {methods.map(({ label, commands }) => (
