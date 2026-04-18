@@ -139,11 +139,12 @@
                 ),
                 ScriptPostRendererResource(scriptsLayout = resourcesLayout?.scripts),
                 MediaPostRendererResource(context.mediaStorage),
-                if (context.documentInfo.type == DocumentType.DOCS) {
-                    SearchIndexPostRendererResource(SearchIndexGenerator.generate(context.sharedSubdocumentsData))
-                } else {
-                    null
-                },
+                context.fileSystem.workingDirectory
+                    ?.let(::StaticAssetsPostRendererResource),
+                SearchIndexGenerator
+                    .takeIf { context.documentInfo.type == DocumentType.DOCS }
+                    ?.generate(context.sharedSubdocumentsData)
+                    ?.let(::SearchIndexPostRendererResource),
                 ThirdPartyPostRendererResource(context, librariesLayout = resourcesLayout?.libraries),
             )
         }</span></span><span class="token punctuation">)</span> : <a href="../../quarkdown-core/com.quarkdown.core.rendering/-post-renderer/index.html">PostRenderer</a></div><div class="brief "><p class="paragraph">A <a href="../../quarkdown-core/com.quarkdown.core.rendering/-post-renderer/index.html">PostRenderer</a> that wraps content into a full HTML document. This includes all the features of <a href="-html-only-post-renderer/index.html">HtmlOnlyPostRenderer</a>, plus:</p></div></div></div>
