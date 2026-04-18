@@ -110,6 +110,7 @@
                 MediaPostRendererResource(context.mediaStorage),
                 context.fileSystem.workingDirectory
                     ?.let(::StaticAssetsPostRendererResource),
+                SitemapPostRendererResource(context),
                 SearchIndexGenerator
                     .takeIf { context.documentInfo.type == DocumentType.DOCS }
                     ?.generate(context.sharedSubdocumentsData)
@@ -147,6 +148,7 @@
                 MediaPostRendererResource(context.mediaStorage),
                 context.fileSystem.workingDirectory
                     ?.let(::StaticAssetsPostRendererResource),
+                SitemapPostRendererResource(context),
                 SearchIndexGenerator
                     .takeIf { context.documentInfo.type == DocumentType.DOCS }
                     ?.generate(context.sharedSubdocumentsData)
