@@ -246,6 +246,7 @@ com.quarkdown.core.localization
 com.quarkdown.core.log
 com.quarkdown.core.media
 com.quarkdown.core.media.export
+com.quarkdown.core.media.passthrough
 com.quarkdown.core.media.storage
 com.quarkdown.core.media.storage.name
 com.quarkdown.core.media.storage.options
