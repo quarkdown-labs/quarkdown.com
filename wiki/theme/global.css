@@ -754,6 +754,22 @@ details > summary + p,
   color: var(--qd-main-color);
 }
 
+.quarkdown .keybinding kbd {
+  position: relative;
+  top: -1px;
+  font-family: var(--qd-code-font), monospace;
+  font-size: calc(var(--qd-code-span-font-size) * 0.85);
+  background-color: var(--qd-kbd-background-color);
+  border: 1px solid var(--qd-kbd-border-color);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  padding: 2px 6px;
+}
+
+.keybinding kbd + kbd {
+  margin-left: 4px;
+}
+
 .float[style*="float: inline-start"] {
   margin-right: 1.1em;
 }
@@ -1723,6 +1739,8 @@ body.quarkdown-paged .pagedjs_page {
   --qd-mermaid-node-line-color: var(--qd-main-color);
   --qd-mermaid-node-filter: none;
   --qd-file-tree-highlight-color: color-mix(in srgb, var(--qd-link-color) 10%, transparent);
+  --qd-kbd-background-color: color-mix(in srgb, var(--qd-main-color-muted) 15%, var(--qd-background-color));
+  --qd-kbd-border-color: color-mix(in srgb, var(--qd-main-color-muted) 90%, var(--qd-main-color));
   --qd-docs-header-height: 60px;
   --qd-docs-header-vertical-padding: 12px;
   --qd-docs-header-background-color: var(--qd-primary-color);
