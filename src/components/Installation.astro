@@ -41,7 +41,9 @@ const methods = [
     {methods.map(({ label, commands }) => (
       <div class="method">
         <span class="method-label"><Fragment set:html={label} /></span>
-        <pre class="method-code" data-copyable><code>{commands.join('\n')}</code></pre>
+        <div class="method-code-wrapper" data-copyable>
+          <pre class="method-code"><code>{commands.join('\n')}</code></pre>
+        </div>
       </div>
     ))}
   </div>
@@ -123,8 +125,15 @@ const methods = [
     }
   }
 
-  .method-code {
+  .method-code-wrapper {
     flex: 1;
+    position: relative;
+    border-radius: 10px;
+    min-width: 0;
+  }
+
+  .method-code {
+    margin: 0;
   }
 
   code {
