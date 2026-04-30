@@ -1,0 +1,19 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<div class:list={['styled-container', className]}>
+  <slot />
+</div>
+
+<style lang="scss">
+  @use '../styles/container' as *;
+
+  .styled-container {
+    @include styled-container;
+  }
+</style>

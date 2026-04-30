@@ -1,6 +1,7 @@
 @use 'colors' as *;
 @use 'typography' as *;
 @use 'breakpoints' as *;
+@use 'container' as *;
 
 :root {
   color-scheme: dark;
@@ -46,11 +47,8 @@ code, pre {
 }
 
 pre:has(code) {
+  @include styled-container;
   padding: 1rem 1.5rem;
-  background-color: $brand-800;
-  border: 1px solid $brand-400;
-  border-bottom-width: 3px;
-  border-radius: 10px;
   overflow-x: auto;
   line-height: 1.7;
   letter-spacing: 0;
