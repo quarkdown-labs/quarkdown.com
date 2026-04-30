@@ -1,0 +1,33 @@
+---
+import StyledContainer from '../StyledContainer.astro';
+---
+
+<StyledContainer class="product-hunt">
+  <h2>Quarkdown is on Product Hunt today</h2>
+  <p>Your upvote shows your support and helps Quarkdown reach more people 💚</p>
+  <a href="https://www.producthunt.com/products/quarkdown?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-quarkdown" target="_blank" rel="noopener noreferrer">
+    <img alt="Quarkdown - Markdown with superpowers: from ideas to stunning documents. | Product Hunt" width="250" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1130470&theme=light&t=1777515991214" />
+  </a>
+</StyledContainer>
+
+<style lang="scss">
+  :global(.styled-container.product-hunt) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.75rem;
+    padding: 2rem 3rem 2.5rem;
+    max-width: 900px;
+    margin: 0 1.5rem;
+    margin-inline: auto;
+
+    a {
+      margin-top: 1.5rem;
+    }
+
+    img {
+      filter: none;
+    }
+  }
+</style>

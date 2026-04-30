@@ -9,6 +9,7 @@ import Installation from '../components/Installation.astro';
 import Footer from '../components/Footer.astro';
 import DoctypeShowcase from '../components/DoctypeShowcase.astro';
 import AuthoringShowcase from '../components/AuthoringShowcase.astro';
+import ProductHuntAlert from '../components/alerts/ProductHuntAlert.astro';
 import { noBoilerplate, scripting } from '../codes';
 import noBoilerplateOutput from '../assets/output/no-boilerplate.jpg';
 import scriptingOutput from '../assets/output/scripting.png';
@@ -16,6 +17,8 @@ import scriptingOutput from '../assets/output/scripting.png';
 
 <Base>
   <Hero />
+
+  <ProductHuntAlert />
 
   <main class="features">
     <Feature
