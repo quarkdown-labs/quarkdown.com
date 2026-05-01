@@ -6,6 +6,7 @@ export const links = {
   quickstart: '/wiki/quickstart',
   docs: '/docs/quarkdown-stdlib',
   vsCode: '/vs-code',
+  productHunt: 'https://www.producthunt.com/products/quarkdown',
   discussions: `${REPO}/discussions`,
   repo: REPO,
   gettingStarted: `${REPO}?tab=readme-ov-file#getting-started`,
