@@ -9,6 +9,5 @@ export const links = {
   productHunt: 'https://www.producthunt.com/products/quarkdown',
   discussions: `${REPO}/discussions`,
   repo: REPO,
-  gettingStarted: `${REPO}?tab=readme-ov-file#getting-started`,
   learnMore: `${REPO}?tab=readme-ov-file#table-of-contents`,
 } as const;

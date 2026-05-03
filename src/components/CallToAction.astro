@@ -1,7 +1,7 @@
 ---
 interface Props {
   href: string;
-  variant?: 'link' | 'button';
+  variant?: 'link' | 'primary' | 'secondary';
 }
 
 const { href, variant = 'link' } = Astro.props;
@@ -27,12 +27,26 @@ const { href, variant = 'link' } = Astro.props;
     text-decoration: underline;
   }
 
-  .cta--button {
-    background-color: $brand-800;
+  %cta-button {
     border: solid $heading;
     border-width: 0.065rem 0.05rem 0.05rem 0.13rem;
-    padding: 0.75rem 1.75rem;
+    padding: 0.6rem 1.25rem;
     border-radius: 8px;
+  }
+
+  .cta--primary {
+    @extend %cta-button;
+    background-color: $heading;
+    color: $brand-900;
+
+    &:hover {
+      background-color: $brand-50;
+    }
+  }
+
+  .cta--secondary {
+    @extend %cta-button;
+    background-color: $brand-800;
 
     &:hover {
       background-color: $brand-700;

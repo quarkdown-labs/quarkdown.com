@@ -1,5 +1,6 @@
 ---
-import GetStartedActionPair from './GetStartedActionPair.astro';
+import CallToAction from './CallToAction.astro';
+import { links } from '../links';
 
 const release = await fetch('https://api.github.com/repos/iamgio/quarkdown/releases/latest')
   .then(res => res.json())
@@ -33,7 +34,7 @@ const methods = [
 ];
 ---
 
-<section class="installation">
+<section id="install" class="installation">
   <h2 class="installation-title">Installation</h2>
   {release && <span class="installation-subtitle">{release.tag} <span class="installation-date">was released on {release.date}</span></span>}
 
@@ -47,7 +48,7 @@ const methods = [
   </div>
 
   <div class="installation-actions">
-    <GetStartedActionPair />
+    <CallToAction href={links.quickstart} variant="primary">Get started &nbsp;&rarr;</CallToAction>
   </div>
 </section>
 

@@ -4,14 +4,15 @@ import { links } from '../links';
 ---
 
 <div class="action-pair">
-  <CallToAction href={links.learnMore}>Explore</CallToAction>
-  <CallToAction href={links.gettingStarted} variant="button">Get started &rarr;</CallToAction>
+  <CallToAction href="#install" variant="secondary">Install</CallToAction>
+  <CallToAction href={links.quickstart} variant="primary">Get started &nbsp;&rarr;</CallToAction>
 </div>
 
 <style lang="scss">
   .action-pair {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
+    margin-top: 1rem;
   }
 </style>

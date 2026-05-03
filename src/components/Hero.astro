@@ -1,6 +1,7 @@
 ---
 import GalaxySpiral from '../assets/galaxy-spiral.svg';
 import DotPattern from './DotPattern.astro';
+import GetStartedActionPair from './GetStartedActionPair.astro';
 ---
 
 <section class="hero">
@@ -19,6 +20,8 @@ import DotPattern from './DotPattern.astro';
         <br />
         And it's free and open source.
       </p>
+
+      <GetStartedActionPair />
     </div>
 
     <div class="hero-illustration" aria-hidden="true">
@@ -58,9 +61,11 @@ import DotPattern from './DotPattern.astro';
     flex-direction: column;
     align-items: flex-start;
     flex: 1;
+    margin-top: 1rem;
 
     @include md-down {
       align-items: center;
+      margin-top: 0;
     }
   }
 
@@ -84,7 +89,7 @@ import DotPattern from './DotPattern.astro';
     font-family: $font-body;
     font-size: $font-size-h1;
     line-height: 0.85;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
     strong {
       @include heading;
       font-size: 1.2em;
@@ -94,6 +99,6 @@ import DotPattern from './DotPattern.astro';
   .hero-subtitle {
     @include text;
     font-size: $font-size-body;
-    margin-bottom: 0;
+    margin-bottom: 2rem;
   }
 </style>
