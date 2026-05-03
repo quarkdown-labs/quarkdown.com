@@ -1,37 +1,36 @@
 ---
-import Logo from '../assets/logo.svg';
+import GalaxySpiral from '../assets/galaxy-spiral.svg';
 import DotPattern from './DotPattern.astro';
-import TagList from './TagList.astro';
-
-const tags = ['Papers', 'Books', 'Presentations', 'Static sites', 'Knowledge bases'];
 ---
 
 <section class="hero">
   <DotPattern />
 
-  <div class="hero-content">
-    <Logo class="hero-logo" aria-label="Quarkdown" />
+  <div class="hero-inner">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        Markdown <span class="faint">with</span>
+        <br />
+        <strong>superpowers</strong>
+      </h1>
 
-    <h1 class="hero-title">
-      Markdown <span class="faint">with</span>
-      <br />
-      <strong>superpowers</strong>
-    </h1>
+      <p class="hero-subtitle">
+        Markdown meets the power of LaTeX.
+        <br />
+        And it's free and open source.
+      </p>
+    </div>
 
-    <TagList tags={tags} />
-
-    <p class="hero-subtitle">
-      Markdown meets the power of LaTeX in this modern typesetting system.
-      <br />
-      And it's free and open source.
-    </p>
-
+    <div class="hero-illustration" aria-hidden="true">
+      <GalaxySpiral />
+    </div>
   </div>
 </section>
 
 <style lang="scss">
   @use '../styles/colors' as *;
   @use '../styles/typography' as *;
+  @use '../styles/breakpoints' as *;
 
   .hero {
     position: relative;
@@ -39,35 +38,46 @@ const tags = ['Papers', 'Books', 'Presentations', 'Static sites', 'Knowledge bas
     overflow: hidden;
   }
 
-  .hero-content {
+  .hero-inner {
     position: relative;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    text-align: center;
-    padding: 6rem 2rem 4rem;
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
-  }
+    padding: 6rem 2rem 4rem;
+    gap: 1rem;
 
-  @keyframes hero-entry {
-    from {
-      opacity: 0;
-      transform: translateY(1rem);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
+    @include md-down {
+      flex-direction: column;
+      text-align: center;
     }
   }
 
-  .hero-logo {
-    width: 120px;
-    height: auto;
-    margin-bottom: 2.5rem;
-    color: $heading;
-    filter: drop-shadow($glow);
-    animation: hero-entry 0.6s ease-out both;
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+
+    @include md-down {
+      align-items: center;
+    }
+  }
+
+  .hero-illustration {
+    flex: 1;
+    display: flex;
+
+    :global(svg) {
+      width: 100%;
+      max-width: 560px;
+      height: auto;
+    }
+
+    @include md-down {
+      max-width: 350px;
+      order: -1;
+    }
   }
 
   .hero-title {
@@ -79,10 +89,6 @@ const tags = ['Papers', 'Books', 'Presentations', 'Static sites', 'Knowledge bas
       @include heading;
       font-size: 1.2em;
     }
-  }
-
-  .hero-content > :global(.tag-list) {
-    margin-bottom: 2rem;
   }
 
   .hero-subtitle {
