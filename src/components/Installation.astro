@@ -28,7 +28,7 @@ const methods = [
 
 <section id="install" class="installation">
   <h2 class="installation-title">Installation</h2>
-  <span class="installation-subtitle" data-release hidden><span data-release-tag></span> <span class="installation-date">was released on <span data-release-date></span></span></span>
+  <span class="installation-subtitle" data-release hidden><a data-release-tag target="_blank" rel="noopener"></a> <span class="installation-date">was released on <span data-release-date></span></span></span>
 
   <div class="installation-methods">
     {methods.map(({ label, commands }) => (
@@ -47,12 +47,13 @@ const methods = [
 <script>
   fetch('https://api.github.com/repos/iamgio/quarkdown/releases/latest')
     .then(res => res.json())
-    .then(({ tag_name, published_at }) => {
+    .then(({ tag_name, published_at, html_url }) => {
       const container = document.querySelector<HTMLElement>('[data-release]');
-      const tag = document.querySelector<HTMLElement>('[data-release-tag]');
+      const tag = document.querySelector<HTMLAnchorElement>('[data-release-tag]');
       const date = document.querySelector<HTMLElement>('[data-release-date]');
       if (!container || !tag || !date) return;
       tag.textContent = tag_name;
+      tag.href = html_url;
       date.textContent = new Date(published_at).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
       container.hidden = false;
     })
@@ -83,6 +84,15 @@ const methods = [
     font-size: $font-size-overline;
     color: $heading;
     margin-bottom: 3rem;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 
   .installation-date {
