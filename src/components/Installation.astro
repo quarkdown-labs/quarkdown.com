@@ -2,14 +2,6 @@
 import CallToAction from './CallToAction.astro';
 import { links } from '../links';
 
-const release = await fetch('https://api.github.com/repos/iamgio/quarkdown/releases/latest')
-  .then(res => res.json())
-  .then(({ tag_name, published_at }) => ({
-    tag: tag_name,
-    date: new Date(published_at).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }),
-  }))
-  .catch(() => null);
-
 const methods = [
   {
     label: 'Linux / macOS',
@@ -36,7 +28,7 @@ const methods = [
 
 <section id="install" class="installation">
   <h2 class="installation-title">Installation</h2>
-  {release && <span class="installation-subtitle">{release.tag} <span class="installation-date">was released on {release.date}</span></span>}
+  <span class="installation-subtitle" data-release hidden><span data-release-tag></span> <span class="installation-date">was released on <span data-release-date></span></span></span>
 
   <div class="installation-methods">
     {methods.map(({ label, commands }) => (
@@ -51,6 +43,21 @@ const methods = [
     <CallToAction href={links.quickstart} variant="primary">Get started &nbsp;&rarr;</CallToAction>
   </div>
 </section>
+
+<script>
+  fetch('https://api.github.com/repos/iamgio/quarkdown/releases/latest')
+    .then(res => res.json())
+    .then(({ tag_name, published_at }) => {
+      const container = document.querySelector<HTMLElement>('[data-release]');
+      const tag = document.querySelector<HTMLElement>('[data-release-tag]');
+      const date = document.querySelector<HTMLElement>('[data-release-date]');
+      if (!container || !tag || !date) return;
+      tag.textContent = tag_name;
+      date.textContent = new Date(published_at).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+      container.hidden = false;
+    })
+    .catch(() => {});
+</script>
 
 <style lang="scss">
   @use '../styles/colors' as *;
