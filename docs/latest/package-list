@@ -48,6 +48,7 @@ $dokka.location:com.quarkdown.stdlib//docLanguage/#com.quarkdown.core.context.Mu
 $dokka.location:com.quarkdown.stdlib//docName/#com.quarkdown.core.context.MutableContext#kotlin.String?/PointingToDeclaration/quarkdown-stdlib/com.quarkdown.stdlib.module.Document/docname.html
 $dokka.location:com.quarkdown.stdlib//docType/#com.quarkdown.core.context.MutableContext#com.quarkdown.core.document.DocumentType?/PointingToDeclaration/quarkdown-stdlib/com.quarkdown.stdlib.module.Document/doctype.html
 $dokka.location:com.quarkdown.stdlib//emoji/#kotlin.String/PointingToDeclaration/quarkdown-stdlib/com.quarkdown.stdlib.module.Emoji/emoji.html
+$dokka.location:com.quarkdown.stdlib//env/#com.quarkdown.core.context.Context#kotlin.String/PointingToDeclaration/quarkdown-stdlib/com.quarkdown.stdlib.module.Process/env.html
 $dokka.location:com.quarkdown.stdlib//equals/#com.quarkdown.core.function.value.DynamicValue#com.quarkdown.core.function.value.DynamicValue/PointingToDeclaration/quarkdown-stdlib/com.quarkdown.stdlib.module.Logical/equals.html
 $dokka.location:com.quarkdown.stdlib//error/#kotlin.String/PointingToDeclaration/quarkdown-stdlib/com.quarkdown.stdlib.module.Logger/error.html
 $dokka.location:com.quarkdown.stdlib//figure/#com.quarkdown.core.ast.InlineMarkdownContent?#kotlin.String?#com.quarkdown.core.ast.MarkdownContent/PointingToDeclaration/quarkdown-stdlib/com.quarkdown.stdlib.module.Primitives/figure.html
@@ -366,6 +367,7 @@ com.quarkdown.stdlib.module.Mermaid
 com.quarkdown.stdlib.module.MiscElements
 com.quarkdown.stdlib.module.Optionality
 com.quarkdown.stdlib.module.Primitives
+com.quarkdown.stdlib.module.Process
 com.quarkdown.stdlib.module.Reference
 com.quarkdown.stdlib.module.Slides
 com.quarkdown.stdlib.module.String
