@@ -2,7 +2,7 @@
 <html class="no-js">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-    <title>DoctorGetInstallDirCommand</title>
+    <title>AbstractDoctorGetPathCommand</title>
 <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">    <script>var pathToRoot = "../../../";</script>
     <script>document.documentElement.classList.replace("no-js","js");</script>
     <script>const storage = localStorage.getItem("dokka-dark-mode")
@@ -92,28 +92,28 @@
                 </div>
             </div>
             <div id="main">
-<div class="main-content" data-page-type="classlike" id="content" pageids="quarkdown-cli::com.quarkdown.cli.doctor.get/DoctorGetInstallDirCommand///PointingToDeclaration//918969369">
-  <div class="breadcrumbs"><a href="../../index.html">quarkdown-cli</a><span class="delimiter">/</span><a href="../index.html">com.quarkdown.cli.doctor.get</a><span class="delimiter">/</span><span class="current">DoctorGetInstallDirCommand</span></div>
+<div class="main-content" data-page-type="classlike" id="content" pageids="quarkdown-cli::com.quarkdown.cli.doctor.get/AbstractDoctorGetPathCommand///PointingToDeclaration//918969369">
+  <div class="breadcrumbs"><a href="../../index.html">quarkdown-cli</a><span class="delimiter">/</span><a href="../index.html">com.quarkdown.cli.doctor.get</a><span class="delimiter">/</span><span class="current">AbstractDoctorGetPathCommand</span></div>
   <div class="cover ">
-    <h1 class="cover"><span>Doctor</span><wbr><span>Get</span><wbr><span>Install</span><wbr><span>Dir</span><wbr><span><span>Command</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-cli/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">DoctorGetInstallDirCommand</a> : <span data-unresolved-link="com.github.ajalt.clikt.core/CliktCommand///PointingToDeclaration/">CliktCommand</span></div><p class="paragraph">Prints the absolute path of the Quarkdown install directory to standard output.</p><p class="paragraph">In a Quarkdown distribution, this is the root directory containing <code class="lang-kotlin">bin/</code>, <code class="lang-kotlin">lib/</code>, and <code class="lang-kotlin">docs/</code>. Intended for shell substitution, replacing fragile cross-platform symlink-resolution snippets:</p><div class="sample-container"><pre><code class="block lang-bash" theme="idea">INSTALL="$(quarkdown doctor get install-dir)"<br>ls "$INSTALL/docs"</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">Exits with a non-zero status if the install directory cannot be resolved (for example, when Quarkdown is run outside its standard distribution layout and the dev-lib layout is unavailable).</p></div></div>
+    <h1 class="cover"><span>Abstract</span><wbr><span>Doctor</span><wbr><span>Get</span><wbr><span>Path</span><wbr><span><span>Command</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-cli/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">class </span><a href="index.html">AbstractDoctorGetPathCommand</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">description<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span> : <span data-unresolved-link="com.github.ajalt.clikt.core/CliktCommand///PointingToDeclaration/">CliktCommand</span></div><p class="paragraph">Base class for <code class="lang-kotlin">doctor get &lt;name&gt;</code> subcommands that print the absolute filesystem path of a single entry in the Quarkdown install layout to standard output.</p><p class="paragraph">Subclasses select the entry to print by overriding <a href="../../../quarkdown-cli/com.quarkdown.cli.doctor.get/-abstract-doctor-get-path-command/get-file.html">getFile</a>, and provide a human-readable <a href="../../../quarkdown-cli/com.quarkdown.cli.doctor.get/-abstract-doctor-get-path-command/description.html">description</a> used in error messages. The command exits with a non-zero status if the install layout cannot be resolved or if the entry does not exist on disk.</p><h4 class="">Parameters</h4><div class="table"><div class="table-row" data-filterable-current=":quarkdown-cli/main" data-filterable-set=":quarkdown-cli/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>name</span></span></u></div></span></div><div><div class="title"><p class="paragraph">name of the leaf subcommand (e.g. <code class="lang-kotlin">install-dir</code>)</p></div></div></div></div><div class="table-row" data-filterable-current=":quarkdown-cli/main" data-filterable-set=":quarkdown-cli/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>description</span></span></u></div></span></div><div><div class="title"><p class="paragraph">human-readable description of the entry, used in error messages     (e.g. <code class="lang-kotlin">"Quarkdown install directory"</code>)</p></div></div></div></div></div><h4 class="">Inheritors</h4><div class="table"><div class="table-row" data-filterable-current=":quarkdown-cli/main" data-filterable-set=":quarkdown-cli/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../-doctor-get-command/-install-dir-command/index.html">InstallDirCommand</a></div></span></div><div></div></div></div><div class="table-row" data-filterable-current=":quarkdown-cli/main" data-filterable-set=":quarkdown-cli/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../-doctor-get-command/-agent-skill-command/index.html">AgentSkillCommand</a></div></span></div><div></div></div></div></div></div></div>
   </div>
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button><button class="section-tab" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION,EXTENSION_PROPERTY,EXTENSION_FUNCTION">Members &amp; Extensions</button></div>
     <div class="tabs-section-body">
       <div data-togglable="CONSTRUCTOR">
         <h2 class="">Constructors</h2>
-        <div class="table"><a data-name="-1928626523%2FConstructors%2F918969369" anchor-label="DoctorGetInstallDirCommand" id="-1928626523%2FConstructors%2F918969369" data-filterable-set=":quarkdown-cli/main"></a>
+        <div class="table"><a data-name="-1485902908%2FConstructors%2F918969369" anchor-label="AbstractDoctorGetPathCommand" id="-1485902908%2FConstructors%2F918969369" data-filterable-set=":quarkdown-cli/main"></a>
           <div class="table-row" data-togglable="CONSTRUCTOR" data-filterable-current=":quarkdown-cli/main" data-filterable-set=":quarkdown-cli/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
-                  <div><a href="-doctor-get-install-dir-command.html"><span>Doctor</span><wbr><span>Get</span><wbr><span>Install</span><wbr><span>Dir</span><wbr><span><span>Command</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1928626523%2FConstructors%2F918969369"></span>
+                  <div><a href="-abstract-doctor-get-path-command.html"><span>Abstract</span><wbr><span>Doctor</span><wbr><span>Get</span><wbr><span>Path</span><wbr><span><span>Command</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1485902908%2FConstructors%2F918969369"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-cli/main"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-cli/main"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">description<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div></div></div>
                 </div>
               </div>
             </div>
@@ -591,17 +591,17 @@
               </div>
             </div>
           </div>
-<a data-name="356584712%2FFunctions%2F918969369" anchor-label="run" id="356584712%2FFunctions%2F918969369" data-filterable-set=":quarkdown-cli/main"></a>
+<a data-name="-1191529031%2FFunctions%2F918969369" anchor-label="run" id="-1191529031%2FFunctions%2F918969369" data-filterable-set=":quarkdown-cli/main"></a>
           <div class="table-row" data-filterable-current=":quarkdown-cli/main" data-filterable-set=":quarkdown-cli/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="run.html"><span><span>run</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="356584712%2FFunctions%2F918969369"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1191529031%2FFunctions%2F918969369"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-cli/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="run.html"><span class="token function">run</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-cli/main"><div class="symbol monospace"><span class="token keyword">override </span><span class="token keyword">fun </span><a href="run.html"><span class="token function">run</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
                 </div>
               </div>
             </div>
