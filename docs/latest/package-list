@@ -158,6 +158,8 @@ com.quarkdown.cli.creator
 com.quarkdown.cli.creator.command
 com.quarkdown.cli.creator.content
 com.quarkdown.cli.creator.template
+com.quarkdown.cli.doctor
+com.quarkdown.cli.doctor.get
 com.quarkdown.cli.exec
 com.quarkdown.cli.exec.strategy
 com.quarkdown.cli.lib
