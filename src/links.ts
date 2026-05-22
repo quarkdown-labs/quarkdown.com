@@ -8,6 +8,7 @@ export const links = {
   vsCode: '/vs-code',
   productHunt: 'https://www.producthunt.com/products/quarkdown',
   discussions: `${REPO}/discussions`,
+  sponsor: 'https://github.com/sponsors/iamgio',
   repo: REPO,
   learnMore: `${REPO}?tab=readme-ov-file#table-of-contents`,
 } as const;
