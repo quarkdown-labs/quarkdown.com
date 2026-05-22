@@ -102,6 +102,8 @@ img {
     border-radius: inherit;
     opacity: 0;
     transition: opacity 0.2s;
+    z-index: 1;
+    pointer-events: none;
   }
 
   &:hover::after {
