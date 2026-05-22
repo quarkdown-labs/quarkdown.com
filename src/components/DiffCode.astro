@@ -1,0 +1,46 @@
+---
+interface Props {
+  code: string;
+}
+
+const { code } = Astro.props;
+const lines = code.split('\n');
+---
+
+<pre class="diff-code"><code>{lines.map((line) => (
+  <span class="diff-add" set:html={line || '&nbsp;'} />
+))}</code></pre>
+
+<style lang="scss">
+  @use '../styles/highlights' as *;
+
+  $diff-color: #56d364;
+  $diff-pad-x: 1.5rem;
+
+  .diff-code,
+  .diff-code code {
+    font-size: inherit;
+  }
+
+  .diff-code {
+    background: none;
+    border: none;
+    @include highlight-classes;
+  }
+
+  .diff-add {
+    display: block;
+    padding: 0 $diff-pad-x;
+    margin: 0 (-$diff-pad-x);
+    background-color: rgba($diff-color, 0.12);
+    position: relative;
+
+    &::before {
+      content: '+';
+      position: absolute;
+      left: 0.5rem;
+      color: $diff-color;
+      opacity: 0.85;
+    }
+  }
+</style>

@@ -1,0 +1,103 @@
+---
+import Terminal from './Terminal.astro';
+import DiffCode from './DiffCode.astro';
+import { agentBox } from '../codes';
+
+const userPrompt = 'Add a warning for candy thieves';
+const skillName = 'quarkdown';
+---
+
+<div class="agent-showcase" data-agent-showcase>
+  <div class="terminal-wrap">
+    <Terminal label="Claude Code session">
+      <div class="user-row" data-agent-step>
+        <span class="user-prompt">&gt;</span>
+        <span class="user-text">{userPrompt}</span>
+      </div>
+      <div class="agent-row" data-agent-step>
+        <span class="agent-bullet">&#9679;</span>
+        <span class="agent-text">Skill(<span class="skill-name">{skillName}</span>)</span>
+      </div>
+      <div class="agent-code" data-agent-step>
+        <DiffCode code={agentBox} />
+      </div>
+    </Terminal>
+  </div>
+</div>
+
+<script>
+  import { gsap, loadScrollTrigger } from '../scripts/gsap';
+
+  await loadScrollTrigger();
+
+  const container = document.querySelector('[data-agent-showcase]') as HTMLElement;
+  const [, ...steps] = container.querySelectorAll('[data-agent-step]');
+
+  gsap.set(steps, { opacity: 0, y: 12 });
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: container,
+      start: 'top 80%',
+      end: 'top 50%',
+      scrub: 0.6,
+    },
+  });
+
+  steps.forEach((step, i) => {
+    tl.to(step, { opacity: 1, y: 0, ease: 'none' }, i * 0.5);
+  });
+</script>
+
+<style lang="scss">
+  @use '../styles/colors' as *;
+
+  .agent-showcase {
+    display: flex;
+    justify-content: center;
+  }
+
+  .terminal-wrap {
+    width: 100%;
+    max-width: 720px;
+  }
+
+  .user-row,
+  .agent-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+  }
+
+  .user-prompt {
+    color: #C792EA;
+    font-weight: 600;
+  }
+
+  .user-text {
+    color: $heading;
+  }
+
+  .agent-row {
+    margin-top: 0.6rem;
+  }
+
+  .agent-bullet {
+    color: #27C93F;
+    font-size: 0.7em;
+    transform: translateY(-0.1em);
+  }
+
+  .agent-text {
+    color: $text;
+  }
+
+  .skill-name {
+    color: #C792EA;
+    font-weight: 600;
+  }
+
+  .agent-code {
+    margin-top: 0.9rem;
+  }
+</style>

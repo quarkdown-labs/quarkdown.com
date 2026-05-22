@@ -40,6 +40,10 @@ export const doctypeDocs = `${s(fn, '.doctype')} ${s(p, '{')}${s(str, 'docs')}${
 
 export const doctypeSlides = `${s(fn, '.doctype')} ${s(p, '{')}${s(str, 'slides')}${s(p, '}')}`;
 
+export const agentBox = `\
+${s(fn, '.box')} type${s(p, ':{')}${s(str, 'warning')}${s(p, '}')}
+    ${s(kw, '**Hands off the candy jar.**')} You have been warned.`;
+
 export const scripting = `\
 ${s(fn, '.function')} ${s(p, '{')}${s(str, 'animal')}${s(p, '}')}
     name ecosystem picture${s(p, ':')}
