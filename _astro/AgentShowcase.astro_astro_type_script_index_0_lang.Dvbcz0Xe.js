@@ -1,0 +1,1 @@
+import{l as s,g as t}from"./gsap.BANUBKKA.js";await s();const e=document.querySelector("[data-agent-showcase]"),[,...o]=e.querySelectorAll("[data-agent-step]");t.set(o,{opacity:0,y:12});const c=t.timeline({scrollTrigger:{trigger:e,start:"top 80%",end:"top 50%",scrub:.6}});o.forEach((a,r)=>{c.to(a,{opacity:1,y:0,ease:"none"},r*.5)});
