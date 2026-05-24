@@ -1,41 +1,94 @@
 ---
-title: Teaching agents to speak Quarkdown
+title: An eval of the Quarkdown agent skill
 date: 2026-05-24
-description: How the new agent skill lets AI assistants author Quarkdown documents with the same fluency they bring to plain Markdown.
+description: The skill shipped in Quarkdown 2.1. Here's how it works and what I found when I tested whether it actually helps.
 ---
 
-Quarkdown was designed to be read and written by humans, but a growing share
-of the documents flowing through it now come from AI assistants. The new
-**agent skill** closes the gap between the two: it gives an agent enough
-context to use Quarkdown's extensions correctly without flooding the prompt
-with the full specification.
+The agent skill shipped in Quarkdown 2.1, aiming at making it easier for agents to write correct and idiomatic Quarkdown.
 
-## What the skill teaches
+If you already have the CLI installed, wiring it up to Claude Code is one line:
 
-The skill is a focused guide covering the parts of the language an agent is
-most likely to reach for:
-
-- Document setup — doctype, theme, page layout
-- Function definitions and reusable components
-- Common stdlib helpers for tables, math, and figures
-- The conventions that make output render predictably across themes
-
-## A small example
-
-A function defined in one place, reused everywhere:
-
-```quarkdown
-.function {greet}
-  name:
-  **Hello, .name!**
-
-.greet {world}
+```bash
+ln -s "$(quarkdown doctor get agent-skill)" ~/.claude/skills/quarkdown
 ```
 
-That's the entire idea: write once, reuse everywhere — and let the agent do
-the typing.
+## How it works
 
-> The point of the skill isn't to teach an agent to be clever. It's to keep it
-> from being wrong about the obvious things.
+The skill is a `SKILL.md` file bundled with the Quarkdown distribution. When the agent loads it, it picks up on a few key points:
 
-You can install it from the [Quarkdown repository](https://github.com/iamgio/quarkdown).
+- Quarkdown ships with an offline copy of its own wiki and API reference. The skill points the agent to them, thanks to the `quarkdown doctor get install-dir` command, which returns the path to the installation directory.
+- Given a problem, the agent scans the wiki's table of contents to orient, then pull the wiki pages for what's relevant.
+- Types and enum values are looked up on demand from the API reference, to cut down on compilation errors from hallucinated values.
+
+## The eval
+
+Five tasks, each handed to two clean agents on Opus 4.7. Both arms got the spec, the path to the `quarkdown` CLI, and permission to compile, read the error, and retry up to three times.
+
+Legend:
+- ✅ correct and idiomatic on the first try
+- ⚠️ works but non-idiomatic, or needed a retry
+- ❌ wrong or missed
+
+### Article
+
+A web article with metadata, titles, a table and a blockquote.
+
+| | with | without |
+|---|---|---|
+| Doctype choice | ✅ | ⚠️ |
+| Document metadata | ✅ | ⚠️ |
+| Plain Markdown syntax | ✅ | ✅ |
+
+### Title page
+
+A title page with a two-column body, a title spanning both columns, and callout boxes.
+
+| | with | without |
+|---|---|---|
+| Title spanning columns | ✅ | ❌ |
+| Two-column layout | ✅ | ⚠️ |
+| Callout boxes | ✅ | ⚠️ |
+| Authors metadata | ✅ | ⚠️ |
+
+### Math paper
+
+A page of derivations with five numbered display equations and a tip callout.
+
+| | with | without |
+|---|---|---|
+| Equation numbering | ✅ | ❌ |
+| Doctype choice | ✅ | ⚠️ |
+| Math equation syntax | ✅ | ⚠️ |
+
+### Scripting
+
+A document with a `gridsize` variable that generates a dynamic N×N multiplication table.
+
+| | with | without |
+|---|---|---|
+| Dynamic table scaling with `gridsize` | ✅ | ❌ |
+| Nested `.foreach` loops | ✅ | ❌ |
+| Avoiding `.size` stdlib name collision | ⚠️ | ⚠️ |
+
+The `without` agent gave up on the dynamic table and hand-typed 10 rows.
+
+### Slide deck
+
+A 5-slide deck with transitions, multi-column layouts, side-by-side code with captions, and a task list.
+
+| | with | without |
+|---|---|---|
+| Slide-break marker `<<<` | ✅ | ⚠️ |
+| Row / column layouts | ✅ | ⚠️ |
+| Code with captions | ✅ | ⚠️ |
+
+## Aggregate
+
+| | with | without |
+|---|---|---|
+| First-try compile rate | **4/5** | **0/5** |
+| Total compile attempts | **6** | **14** |
+| Silent spec misses | **0** | **3** |
+| Wall time | 358s | 378s |
+| Tokens | 157k | 99k |
+| Avg output size | 2055 B | 1467 B |

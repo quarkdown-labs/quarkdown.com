@@ -1,5 +1,6 @@
 @use 'colors' as *;
 @use 'typography' as *;
+@use 'breakpoints' as *;
 
 .prose {
   @include text;
@@ -66,4 +67,42 @@
     margin-block: 1.5em;
     background-color: $brand-800 !important;
   }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-block: 2em;
+    font-size: 0.95em;
+
+    th, td {
+      padding: 0.65rem 1rem;
+      border-bottom: 1px solid $brand-700;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      color: $heading;
+      font-weight: normal;
+      background-color: $brand-800;
+      border-bottom: 1px solid $brand-500;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    th:not(:first-child),
+    td:not(:first-child) {
+      text-align: center;
+    }
+  }
+
+  @include sm-down {
+    table {
+      display: block;
+      overflow-x: auto;
+    }
+  }
 }
+
