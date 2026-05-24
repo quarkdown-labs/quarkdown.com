@@ -273,7 +273,6 @@ com.quarkdown.core.property
 com.quarkdown.core.rendering
 com.quarkdown.core.rendering.representable
 com.quarkdown.core.rendering.tag
-com.quarkdown.core.template
 com.quarkdown.core.util
 com.quarkdown.core.util.node
 com.quarkdown.core.util.node.conversion.list
@@ -375,3 +374,5 @@ com.quarkdown.stdlib.module.Slides
 com.quarkdown.stdlib.module.String
 com.quarkdown.stdlib.module.TableComputation
 com.quarkdown.stdlib.module.Text
+module:quarkdown-template
+com.quarkdown.template
