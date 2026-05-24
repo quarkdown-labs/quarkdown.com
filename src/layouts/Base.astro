@@ -2,13 +2,19 @@
 import { Font } from 'astro:assets';
 import '../styles/global.scss';
 import Head from './Head.astro';
-import BackgroundEffects from '../components/BackgroundEffects.astro';
 import Navbar from '../components/Navbar.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
 ---
 
 <html lang="en">
   <head>
-    <Head>
+    <Head title={title} description={description}>
       <Font cssVariable="--font-body" preload />
       <Font cssVariable="--font-heading" preload />
       <Font cssVariable="--font-sans" />
@@ -16,7 +22,6 @@ import Navbar from '../components/Navbar.astro';
     </Head>
   </head>
   <body>
-    <BackgroundEffects />
     <Navbar />
     <slot />
     <script src="../scripts/copyable.ts"></script>

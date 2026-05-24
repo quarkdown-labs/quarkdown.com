@@ -6,6 +6,7 @@ export const links = {
   quickstart: '/wiki/quickstart',
   docs: '/docs/quarkdown-stdlib',
   vsCode: '/vs-code',
+  blog: '/blog',
   productHunt: 'https://www.producthunt.com/products/quarkdown',
   discussions: `${REPO}/discussions`,
   sponsor: 'https://github.com/sponsors/iamgio',

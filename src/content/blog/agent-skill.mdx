@@ -1,0 +1,41 @@
+---
+title: Teaching agents to speak Quarkdown
+date: 2026-05-24
+description: How the new agent skill lets AI assistants author Quarkdown documents with the same fluency they bring to plain Markdown.
+---
+
+Quarkdown was designed to be read and written by humans, but a growing share
+of the documents flowing through it now come from AI assistants. The new
+**agent skill** closes the gap between the two: it gives an agent enough
+context to use Quarkdown's extensions correctly without flooding the prompt
+with the full specification.
+
+## What the skill teaches
+
+The skill is a focused guide covering the parts of the language an agent is
+most likely to reach for:
+
+- Document setup — doctype, theme, page layout
+- Function definitions and reusable components
+- Common stdlib helpers for tables, math, and figures
+- The conventions that make output render predictably across themes
+
+## A small example
+
+A function defined in one place, reused everywhere:
+
+```quarkdown
+.function {greet}
+  name:
+  **Hello, .name!**
+
+.greet {world}
+```
+
+That's the entire idea: write once, reuse everywhere — and let the agent do
+the typing.
+
+> The point of the skill isn't to teach an agent to be clever. It's to keep it
+> from being wrong about the obvious things.
+
+You can install it from the [Quarkdown repository](https://github.com/iamgio/quarkdown).

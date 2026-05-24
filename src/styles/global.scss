@@ -2,6 +2,7 @@
 @use 'typography' as *;
 @use 'breakpoints' as *;
 @use 'container' as *;
+@use 'prose';
 
 :root {
   color-scheme: dark;

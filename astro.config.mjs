@@ -1,13 +1,14 @@
 // @ts-check
 import { defineConfig, fontProviders } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://quarkdown.com',
   // @ts-ignore — process.env is available at config time in Node
   base: process.env.BASE_PATH || '/',
-  integrations: [sitemap()],
+  integrations: [mdx(), sitemap()],
   experimental: {
     fonts: [
       {

@@ -1,0 +1,71 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Footer from '../../components/Footer.astro';
+import BlogPostCard from '../../components/BlogPostCard.astro';
+import { meta } from '../../meta';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+
+const description = `Articles and updates from the ${meta.name} project.`;
+---
+
+<Base title={`Blog | ${meta.name}`} description={description}>
+  <main class="blog-index">
+    <header class="hero">
+      <h1 class="hero-title">Blog<span class="ext">.qd</span></h1>
+    </header>
+
+    <ul class="posts">
+      {posts.map(post => (
+        <li>
+          <BlogPostCard
+            slug={post.id}
+            title={post.data.title}
+            date={post.data.date}
+            description={post.data.description}
+          />
+        </li>
+      ))}
+    </ul>
+  </main>
+
+  <Footer />
+</Base>
+
+<style lang="scss">
+  @use '../../styles/colors' as *;
+  @use '../../styles/typography' as *;
+  @use '../../styles/breakpoints' as *;
+
+  .blog-index {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 9rem 1.5rem 5rem;
+
+    @include md-down {
+      padding-top: 7rem;
+    }
+  }
+
+  .hero {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .ext {
+    font-family: $font-code;
+    font-size: 0.8em;
+    margin-left: 0.15em;
+    color: $text-faint;
+  }
+
+  .posts {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+</style>
