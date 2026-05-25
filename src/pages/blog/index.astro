@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import Footer from '../../components/Footer.astro';
 import BlogPostCard from '../../components/BlogPostCard.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import { meta } from '../../meta';
 
 const posts = (await getCollection('blog')).sort(
@@ -15,6 +16,9 @@ const description = `Articles and updates from the ${meta.name} project.`;
 <Base title={`Blog | ${meta.name}`} description={description}>
   <main class="blog-index">
     <header class="hero">
+      <div class="breadcrumbs-row">
+        <Breadcrumbs items={[{ href: '/', label: meta.name }]} />
+      </div>
       <h1 class="hero-title">Blog<span class="ext">.qd</span></h1>
     </header>
 
@@ -53,6 +57,10 @@ const description = `Articles and updates from the ${meta.name} project.`;
   .hero {
     text-align: center;
     margin-bottom: 4rem;
+  }
+
+  .breadcrumbs-row {
+    margin-bottom: 1.25rem;
   }
 
   .ext {

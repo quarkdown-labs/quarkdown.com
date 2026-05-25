@@ -3,6 +3,7 @@ import { getCollection, render, type CollectionEntry } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import Footer from '../../components/Footer.astro';
 import AuthorCard from '../../components/AuthorCard.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import { getAuthor } from '../../authors';
 import { meta } from '../../meta';
 
@@ -36,6 +37,12 @@ const readingTime = Math.max(1, Math.ceil(wordCount / WORDS_PER_MINUTE));
 <Base title={`${post.data.title} | ${meta.name}`} description={post.data.description}>
   <main class="post">
     <header>
+      <div class="breadcrumbs-row">
+        <Breadcrumbs items={[
+          { href: '/', label: meta.name },
+          { href: '/blog', label: 'Blog' },
+        ]} />
+      </div>
       <p class="overline">
         <time datetime={post.data.date.toISOString()}>{formattedDate}</time>
         <span class="sep">•</span>
@@ -72,6 +79,14 @@ const readingTime = Math.max(1, Math.ceil(wordCount / WORDS_PER_MINUTE));
   header {
     text-align: center;
     margin-bottom: 4rem;
+  }
+
+  .hero-title {
+    font-size: $font-size-h1-prose;
+  }
+
+  .breadcrumbs-row {
+    margin-bottom: 1.25rem;
   }
 
   .overline {
