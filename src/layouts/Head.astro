@@ -4,9 +4,13 @@ import { meta } from '../meta';
 
 interface Props {
   title?: string;
+  description?: string;
 }
 
-const { title = `${meta.name} | Markdown with superpowers` } = Astro.props;
+const {
+  title = `${meta.name} | Markdown with superpowers`,
+  description = meta.description,
+} = Astro.props;
 const ogImage = `${links.base}/og-image.jpg`;
 
 const jsonLd = {
@@ -14,7 +18,7 @@ const jsonLd = {
   '@type': meta.type,
   name: meta.name,
   url: `${links.base}/`,
-  description: meta.description,
+  description,
   applicationCategory: meta.appCategory,
   operatingSystem: meta.appOS,
   author: {
@@ -38,11 +42,11 @@ const jsonLd = {
 <link rel=apple-touch-icon href="/apple-touch-icon.png">
 <meta name="viewport" content="width=device-width" />
 <meta name="generator" content={Astro.generator} />
-<meta name=description content={meta.description}>
+<meta name=description content={description}>
 <meta name=keywords content="typesetting,markdown,latex,compiler,document creation,paper,presentation,slides,static site generator,wiki,PDF,live preview">
 <meta name=author content={meta.author}>
 <meta property="og:title" content={title}>
-<meta property="og:description" content={meta.description}>
+<meta property="og:description" content={description}>
 <meta property="og:image" content={ogImage}>
 <meta property="og:url" content={`${links.base}/`}>
 <meta name=msapplication-TileColor content={meta.themeColor}>

@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import BackgroundEffects from '../components/BackgroundEffects.astro';
 import Hero from '../components/Hero.astro';
 import Feature from '../components/Feature.astro';
 import ReactivePreview from '../components/ReactivePreview.astro';
@@ -19,6 +20,7 @@ import scriptingOutput from '../assets/output/scripting.png';
 ---
 
 <Base>
+  <BackgroundEffects />
   <Hero />
 
   <main class="features">
@@ -41,7 +43,7 @@ import scriptingOutput from '../assets/output/scripting.png';
     <Feature
       overline="Ready for autopilot"
       title="Agent-friendly"
-      description="Let your AI agent speak fluent Quarkdown with built-in skills."
+      description='Let your AI agent speak fluent Quarkdown with built-in skills.<br><a href="/blog/agent-skill" class="eval-link">Read the eval</a>'
     >
       <AgentShowcase />
     </Feature>

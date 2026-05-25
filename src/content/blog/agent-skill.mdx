@@ -1,0 +1,434 @@
+---
+title: An eval of the Quarkdown agent skill
+date: 2026-05-24
+description: An overview and evaluation of the agent skill shipped in Quarkdown 2.1, for a frictionless agentic authoring experience.
+---
+
+The agent skill shipped in Quarkdown 2.1, aiming at making it easier for agents to write correct and idiomatic Quarkdown
+for a frictionless authoring experience.
+
+If you already have the CLI installed, wiring it up to Claude Code is one line:
+
+```bash
+ln -s "$(quarkdown doctor get agent-skill)" ~/.claude/skills/quarkdown
+```
+
+## How it works
+
+The skill is a `SKILL.md` file bundled with the Quarkdown distribution. When the agent loads it, it picks up on a few key points:
+
+- Quarkdown ships with an offline copy of its own wiki and API reference. The skill points the agent to them, thanks to the `quarkdown doctor get install-dir` command, which returns the path to the installation directory.
+- Given a problem, the agent scans the wiki's table of contents to orient, then pull the wiki pages for what's relevant.
+- Types and enum values are looked up on demand from the API reference, to cut down on compilation errors from hallucinated values.
+
+## The eval
+
+Five tasks, each handed to two clean agents on Opus 4.7. Both arms got the spec, the path to the `quarkdown` CLI, and permission to compile, read the error, and retry up to three times.
+
+Legend:
+- ✅ correct and idiomatic on the first try
+- ⚠️ works but non-idiomatic, or needed a retry
+- ❌ wrong or missed
+
+### Article
+
+A web article with metadata, titles, a table and a blockquote.
+
+| | with | without |
+|---|---|---|
+| Doctype choice | ✅ | ⚠️ |
+| Document metadata | ✅ | ⚠️ |
+| Plain Markdown syntax | ✅ | ✅ |
+
+**With-skill output:**
+
+```markdown
+.docname {Tonk Coffee Grinder Review}
+.doctype {plain}
+.doclang {English}
+.theme {paperwhite} layout:{latex}
+.docauthor {Giorgio}
+
+# Tonk Coffee Grinder: A Hands-On Review
+
+## Overview
+
+The Tonk is a mid-range burr grinder aimed at home baristas who want espresso-grade
+consistency without the price tag of commercial machines. It features 40 mm conical
+steel burrs, a stepless adjustment ring, and a single-dose hopper that holds up
+to 30 g of beans. After two weeks of daily use, here is what stood out.
+
+## Build Quality
+
+The chassis is solid cast aluminum with a brushed finish, and the grinder weighs in
+at 3.4 kg, heavy enough to stay put during use. The adjustment ring turns smoothly
+with detents that are easy to feel but never sloppy. Internal wiring is tidy, and
+the motor runs cooler than competitors at the same price point.
+
+| Pros                          | Cons                             |
+|-------------------------------|----------------------------------|
+| Excellent grind consistency   | Loud at higher speeds            |
+| Stepless adjustment           | Single-dose hopper feels small   |
+| Solid all-metal construction  | No timed dosing                  |
+| Low retention (< 0.3 g)       | Anti-static dispenser sold extra |
+| Easy to disassemble for cleaning | Limited warranty (1 year)     |
+
+## Verdict
+
+> Note: The Tonk replaced my old grinder on day one, and I have not looked back. It
+> pulls espresso shots that taste cleaner and brighter than anything I have made
+> at home before. -- Marco R., home barista
+
+For the price, the Tonk delivers performance that punches well above its class.
+The minor quibbles around noise and the small hopper are easy to forgive once
+you taste the results in the cup.
+
+**Rating: 4.5 / 5 stars**
+```
+
+### Title page
+
+A title page with a two-column body, a title spanning both columns, and callout boxes.
+
+| | with | without |
+|---|---|---|
+| Title spanning columns | ✅ | ❌ |
+| Two-column layout | ✅ | ⚠️ |
+| Callout boxes | ✅ | ⚠️ |
+| Authors metadata | ✅ | ⚠️ |
+
+**With-skill output:**
+
+```markdown
+.docname {Resilient Caching at the Edge}
+.doctype {paged}
+.doclang {English}
+.theme {paperwhite} layout:{latex}
+
+.docauthors
+    - Ada Lovelace
+        - affiliation: Edge Systems Lab, Analytical Institute
+    - Grace Hopper
+        - affiliation: Distributed Computing Group, Naval Research
+
+.pageformat columns:{2} margin:{1.8cm}
+
+.fullspan
+    .center
+        .text {Resilient Caching at the Edge} size:{huge} weight:{bold}
+
+    .center
+        .text {Ada Lovelace} weight:{bold} .text {(Edge Systems Lab, Analytical Institute)} size:{small} .text {  |  } .text {Grace Hopper} weight:{bold} .text {(Distributed Computing Group, Naval Research)} size:{small}
+
+.box {Problem} type:{error}
+    Edge caches face frequent node failures, partial network partitions, and bursty
+    request patterns. Traditional LRU and TTL-based policies degrade rapidly under
+    these conditions, producing cold-cache stampedes that overwhelm origin servers
+    and inflate tail latency by an order of magnitude during failover.
+
+.box {Approach} type:{note}
+    We introduce **GossipCache**, a decentralized replication protocol that combines
+    consistent hashing with reactive prefetching driven by peer-to-peer gossip.
+    Each edge node maintains a probabilistic digest of its neighbors' working sets
+    and proactively replicates entries whose loss would breach a configurable
+    availability budget.
+
+    Key ingredients:
+
+    1. Adaptive replication factor tied to live failure rate
+    2. Bloom-filter digests exchanged every 200 ms
+    3. Origin-side admission control to absorb residual misses
+
+.box {Result} type:{tip}
+    Across a 30-node testbed driven by a production CDN trace, GossipCache reduced
+    p99 latency by **62%** during simulated rack failures and cut origin egress by
+    **41%** compared to a tuned LRU baseline, while adding under 3% steady-state
+    network overhead.
+
+## Background
+
+Content delivery at the network edge has become the dominant pattern for serving
+latency-sensitive workloads. Operators routinely deploy thousands of small caches
+geographically close to end users, trading per-node capacity for proximity. The
+resulting topology is highly dynamic: nodes join, leave, and fail far more often
+than in centralized clusters, and the request mix shifts on the order of seconds.
+
+## Design
+
+GossipCache treats availability as a first-class budget rather than a side effect
+of replication. The protocol layer continuously estimates the loss probability of
+each cached object, given the current view of peer liveness, and triggers
+opportunistic replication when that estimate crosses a tunable threshold.
+
+## Evaluation
+
+We replayed 24 hours of anonymized CDN logs against the testbed while injecting
+correlated node failures drawn from a published outage dataset. Results above
+summarize the headline metrics; full breakdowns by object class are deferred to
+the extended report.
+
+## Acknowledgements
+
+We thank the anonymous reviewers and the maintainers of the trace dataset for
+their feedback and support.
+```
+
+### Math paper
+
+A page of derivations with five numbered display equations and a tip callout.
+
+| | with | without |
+|---|---|---|
+| Equation numbering | ✅ | ❌ |
+| Doctype choice | ✅ | ⚠️ |
+| Math equation syntax | ✅ | ⚠️ |
+
+**With-skill output:**
+
+```markdown
+.docname {Deriving the Quadratic Formula}
+.doctype {plain}
+.doclang {English}
+.theme {paperwhite} layout:{latex}
+
+.numbering
+    - equations: (1)
+
+# Deriving the Quadratic Formula
+
+The general quadratic equation $ ax^2 + bx + c = 0 $ (with $ a \neq 0 $) has solutions given by the famous *quadratic formula*. In this short tutorial we derive it step by step using the technique of **completing the square**. Each step is shown as a numbered display equation so it is easy to refer back to.
+
+## Step 1: Start from the general form
+
+We begin with the equation in its standard form, where $ a $, $ b $, and $ c $ are real coefficients.
+
+$ ax^2 + bx + c = 0 $ {#_}
+
+## Step 2: Divide by the leading coefficient
+
+Since $ a \neq 0 $, we may divide every term by $ a $ to make the leading coefficient equal to $ 1 $.
+
+$ x^2 + \frac{b}{a}x + \frac{c}{a} = 0 $ {#_}
+
+## Step 3: Move the constant to the right side
+
+Subtracting $ \frac{c}{a} $ from both sides isolates the terms containing $ x $ on the left.
+
+$ x^2 + \frac{b}{a}x = -\frac{c}{a} $ {#_}
+
+## Step 4: Complete the square
+
+To complete the square, we add $ \left(\frac{b}{2a}\right)^2 $ to both sides. The left-hand side then becomes a perfect square trinomial.
+
+$ x^2 + \frac{b}{a}x + \left(\frac{b}{2a}\right)^2 = \left(\frac{b}{2a}\right)^2 - \frac{c}{a} $ {#_}
+
+## Step 5: Factor and simplify
+
+The left side factors as a binomial squared, while the right side combines over the common denominator $ 4a^2 $.
+
+$ \left(x + \frac{b}{2a}\right)^2 = \frac{b^2 - 4ac}{4a^2} $ {#_}
+
+## Taking the square root
+
+Taking the square root of both sides (and remembering the $ \pm $ sign) gives
+
+$$$
+x + \frac{b}{2a} = \pm \frac{\sqrt{b^2 - 4ac}}{2a}
+$$$
+
+Finally, subtracting $ \frac{b}{2a} $ from both sides yields the quadratic formula.
+
+.box {Quadratic Formula} type:{tip}
+    $$$
+    x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+    $$$
+
+The quantity $ b^2 - 4ac $ under the square root is called the **discriminant**; its sign determines whether the two roots are real and distinct, real and repeated, or a pair of complex conjugates.
+```
+
+### Scripting
+
+A document with a `gridsize` variable that generates a dynamic N×N multiplication table.
+
+| | with | without |
+|---|---|---|
+| Dynamic table scaling with `gridsize` | ✅ | ❌ |
+| Nested `.foreach` loops | ✅ | ❌ |
+| Avoiding `.size` stdlib name collision | ⚠️ | ⚠️ |
+
+The `without` agent gave up on the dynamic table and hand-typed 10 rows.
+
+**With-skill output:**
+
+```markdown
+.docname {Dynamic Multiplication Table}
+.doctype {plain}
+.doclang {English}
+.theme {paperwhite} layout:{latex}
+
+.var {gridsize} {10}
+
+# Dynamic Multiplication Table
+
+This document demonstrates Quarkdown's scripting features by generating
+a **.gridsize x .gridsize** multiplication table programmatically, without
+hand-typing any of its .multiply {.gridsize} by:{.gridsize} cells.
+
+The grid size is stored in a variable called `gridsize`, currently set
+to **.gridsize**. Changing that single value would regenerate the entire
+table below.
+
+## The table
+
+The table is built with `.tablebyrows` and two nested `.foreach` loops over
+the range `1..gridsize`. Each cell evaluates `x * y` at compile time.
+
+.tablebyrows
+    .foreach {.range {1} {.gridsize}}
+        y:
+        .foreach {.range {1} {.gridsize}}
+            x:
+            .multiply {.x} by:{.y}
+
+## Custom function: square
+
+We declare our own function `square` that takes a single parameter `n`
+and returns `n * n`.
+
+.function {square}
+    n:
+    .multiply {.n} by:{.n}
+
+For example, `.square {7}` evaluates to **.square {7}**.
+
+## Squares from 1 to 8
+
+Using `square` inside a `.foreach` loop produces this list of n squared:
+
+.foreach {1..8}
+    n:
+    - .n squared is **.square {.n}**
+```
+
+### Slide deck
+
+A 5-slide deck with transitions, multi-column layouts, side-by-side code with captions, and a task list.
+
+| | with | without |
+|---|---|---|
+| Slide-break marker `<<<` | ✅ | ⚠️ |
+| Row / column layouts | ✅ | ⚠️ |
+| Code with captions | ✅ | ⚠️ |
+
+**With-skill output:**
+
+````markdown
+.docname {Why we chose Rust}
+.doctype {slides}
+.doclang {English}
+.docauthor {Engineering Team}
+
+.slides transition:{slide} speed:{default}
+
+.align {center}
+    # Why we chose Rust
+
+    ## A safer, faster path forward
+
+    *.docauthor*
+
+<<<
+
+# The Problem
+
+Our legacy systems suffer from recurring, costly failures.
+
+- Frequent memory safety bugs and segfaults in production
+- Data races that surface only under heavy load
+- Slow CI cycles caused by long debug-and-patch loops
+- High onboarding cost for new contributors
+- Unpredictable latency spikes in critical services
+
+<<<
+
+# Three Benefits
+
+.row gap:{1cm} alignment:{spacearound} cross:{stretch}
+    .box {Memory Safety} type:{tip}
+        Ownership and borrowing eliminate entire classes of
+        bugs at compile time, without a garbage collector.
+
+    .box {Performance} type:{note}
+        Zero-cost abstractions and predictable allocation
+        deliver C-like throughput with high-level ergonomics.
+
+    .box {Fearless Concurrency} type:{warning}
+        The type system rules out data races, so parallel
+        code is safe to write, refactor, and scale.
+
+<<<
+
+# Code Comparison
+
+.row gap:{1.5cm} alignment:{spacearound} cross:{start}
+    .column gap:{0.4cm}
+        ```rust "Rust: safe, explicit ownership"
+        fn sum(values: &[i32]) -> i32 {
+            values.iter().sum()
+        }
+
+        fn main() {
+            let nums = vec![1, 2, 3, 4];
+            println!("{}", sum(&nums));
+        }
+        ```
+
+    .column gap:{0.4cm}
+        ```c "C: manual memory, easy to misuse"
+        #include <stdio.h>
+        #include <stdlib.h>
+
+        int sum(int *v, size_t n) {
+            int s = 0;
+            for (size_t i = 0; i < n; i++) s += v[i];
+            return s;
+        }
+
+        int main(void) {
+            int *nums = malloc(4 * sizeof(int));
+            nums[0]=1; nums[1]=2; nums[2]=3; nums[3]=4;
+            printf("%d\n", sum(nums, 4));
+            free(nums);
+        }
+        ```
+
+<<<
+
+# Next Steps
+
+- [ ] Migrate the ingestion service to Rust by Q3
+- [ ] Train the platform team on async Rust patterns
+- [ ] Establish shared crates for logging and metrics
+````
+
+## Aggregate
+
+| | with | without |
+|---|---|---|
+| First-try compile rate | **4/5** | **0/5** |
+| Total compile attempts | **6** | **14** |
+| Silent spec misses | **0** | **3** |
+| Wall time | 358s | 378s |
+| Tokens | 157k | 99k |
+| Avg output size | 2055 B | 1467 B |
+
+Arbitrary quality scores (compile success is binary 100%; these factor in spec compliance, idiomatic usage, completeness):
+
+| Task # | with | without |
+|---|---|---|
+| 1 | 90% | 75% |
+| 2 | 95% | 55% |
+| 3 | 95% | 60% |
+| 4 | 90% | 50% |
+| 5 | 90% | 75% |
+| **Average** | **92%** | **63%** |

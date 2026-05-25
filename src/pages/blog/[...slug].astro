@@ -1,0 +1,106 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Footer from '../../components/Footer.astro';
+import AuthorCard from '../../components/AuthorCard.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { getAuthor } from '../../authors';
+import { meta } from '../../meta';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(post => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const author = getAuthor(post.data.author);
+
+const formattedDate = post.data.date.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
+const WORDS_PER_MINUTE = 350;
+const wordCount = (post.body ?? '').trim().split(/\s+/).filter(Boolean).length;
+const readingTime = Math.max(1, Math.ceil(wordCount / WORDS_PER_MINUTE));
+---
+
+<Base title={`${post.data.title} | ${meta.name}`} description={post.data.description}>
+  <main class="post">
+    <header>
+      <div class="breadcrumbs-row">
+        <Breadcrumbs items={[
+          { href: '/', label: meta.name },
+          { href: '/blog', label: 'Blog' },
+        ]} />
+      </div>
+      <p class="overline">
+        <time datetime={post.data.date.toISOString()}>{formattedDate}</time>
+        <span class="sep">•</span>
+        <span>{readingTime} min read</span>
+      </p>
+      <h1 class="hero-title">{post.data.title}</h1>
+    </header>
+
+    <article class:list={['prose', `post-${post.id}`]}>
+      <Content />
+    </article>
+
+    <AuthorCard author={author} />
+  </main>
+
+  <Footer />
+</Base>
+
+<style lang="scss">
+  @use '../../styles/colors' as *;
+  @use '../../styles/typography' as *;
+  @use '../../styles/breakpoints' as *;
+
+  .post {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 9rem 1.5rem 5rem;
+
+    @include md-down {
+      padding-top: 7rem;
+    }
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .hero-title {
+    font-size: $font-size-h1-prose;
+  }
+
+  .breadcrumbs-row {
+    margin-bottom: 1.25rem;
+  }
+
+  .overline {
+    @include overline;
+    color: $text-faint;
+    margin-bottom: 1.5rem;
+
+    .sep {
+      margin: 0 0.5em;
+    }
+  }
+
+  :global(.post-agent-skill pre) {
+    max-height: 480px;
+    overflow-y: auto;
+  }
+</style>
