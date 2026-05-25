@@ -28,7 +28,7 @@ const formattedDate = post.data.date.toLocaleDateString('en-US', {
   day: 'numeric',
 });
 
-const WORDS_PER_MINUTE = 200;
+const WORDS_PER_MINUTE = 350;
 const wordCount = (post.body ?? '').trim().split(/\s+/).filter(Boolean).length;
 const readingTime = Math.max(1, Math.ceil(wordCount / WORDS_PER_MINUTE));
 ---
@@ -44,7 +44,7 @@ const readingTime = Math.max(1, Math.ceil(wordCount / WORDS_PER_MINUTE));
       <h1 class="hero-title">{post.data.title}</h1>
     </header>
 
-    <article class="prose">
+    <article class:list={['prose', `post-${post.id}`]}>
       <Content />
     </article>
 
@@ -84,4 +84,8 @@ const readingTime = Math.max(1, Math.ceil(wordCount / WORDS_PER_MINUTE));
     }
   }
 
+  :global(.post-agent-skill pre) {
+    max-height: 480px;
+    overflow-y: auto;
+  }
 </style>
