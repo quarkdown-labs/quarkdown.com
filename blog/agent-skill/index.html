@@ -16,9 +16,9 @@ for a frictionless authoring experience.</p>
 <h2 id="how-it-works">How it works</h2>
 <p>The skill is a <code>SKILL.md</code> file bundled with the Quarkdown distribution. When the agent loads it, it picks up on a few key points:</p>
 <ul>
-<li>Quarkdown ships with an offline copy of its own wiki and API reference. The skill points the agent to them, thanks to the <code>quarkdown doctor get install-dir</code> command, which returns the path to the installation directory.</li>
-<li>Given a problem, the agent scans the wiki’s table of contents to orient, then pull the wiki pages for what’s relevant.</li>
-<li>Types and enum values are looked up on demand from the API reference, to cut down on compilation errors from hallucinated values.</li>
+<li>Quarkdown ships with an offline copy of its own wiki and API reference, which the agent is pointed to for on-demand lookups.</li>
+<li>Given a problem, the agent scans the wiki’s table of contents to orient, then pulls the wiki pages for what’s relevant.</li>
+<li>Types and enum values are looked up from the API reference, to cut down on compilation errors from hallucinated values.</li>
 </ul>
 <h2 id="the-eval">The eval</h2>
 <p>Five tasks, each handed to two clean agents on Opus 4.7. Both arms got the spec, the path to the <code>quarkdown</code> CLI, and permission to compile, read the error, and retry up to three times.</p>
@@ -524,7 +524,7 @@ for a frictionless authoring experience.</p>
 
 
 <table><thead><tr><th></th><th>with</th><th>without</th></tr></thead><tbody><tr><td>First-try compile rate</td><td><strong>4/5</strong></td><td><strong>0/5</strong></td></tr><tr><td>Total compile attempts</td><td><strong>6</strong></td><td><strong>14</strong></td></tr><tr><td>Silent spec misses</td><td><strong>0</strong></td><td><strong>3</strong></td></tr><tr><td>Wall time</td><td>358s</td><td>378s</td></tr><tr><td>Tokens</td><td>157k</td><td>99k</td></tr><tr><td>Avg output size</td><td>2055 B</td><td>1467 B</td></tr></tbody></table>
-<p>Arbitrary quality scores (compile success is binary 100%; these factor in spec compliance, idiomatic usage, completeness):</p>
+<p>Arbitrary quality scores (in spec compliance, idiomatic usage, completeness):</p>
 
 
 
