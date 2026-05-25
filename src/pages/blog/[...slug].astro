@@ -29,8 +29,9 @@ const formattedDate = post.data.date.toLocaleDateString('en-US', {
   day: 'numeric',
 });
 
-const WORDS_PER_MINUTE = 350;
-const wordCount = (post.body ?? '').trim().split(/\s+/).filter(Boolean).length;
+const WORDS_PER_MINUTE = 200;
+const prose = (post.body ?? '').replace(/^(`{3,}|~{3,})[^\n]*\n[\s\S]*?\n\1/gm, '');
+const wordCount = prose.trim().split(/\s+/).filter(Boolean).length;
 const readingTime = Math.max(1, Math.ceil(wordCount / WORDS_PER_MINUTE));
 ---
 
