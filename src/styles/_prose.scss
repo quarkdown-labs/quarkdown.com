@@ -10,17 +10,6 @@
     margin-block: 1em;
   }
 
-  a {
-    color: $heading;
-    text-decoration: underline;
-    text-underline-offset: 0.2em;
-    transition: opacity 0.2s;
-
-    &:hover {
-      opacity: 0.75;
-    }
-  }
-
   h2, h3, h4 {
     margin-top: 2em;
   }

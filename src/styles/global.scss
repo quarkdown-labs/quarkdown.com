@@ -77,6 +77,20 @@ img {
   filter: brightness(0.96);
 }
 
+// Baseline for any <a> that isn't styled by a component (e.g. links rendered
+// via set:html inside marketing-page descriptions). Components keep overriding
+// with their own color/decoration.
+a {
+  color: $heading;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.75;
+  }
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
