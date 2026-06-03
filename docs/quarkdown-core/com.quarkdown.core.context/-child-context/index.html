@@ -1,58 +1,55 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <title>ChildContext</title>
-<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">    <script>var pathToRoot = "../../../";</script>
-    <script>document.documentElement.classList.replace("no-js","js");</script>
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
     <script>const storage = localStorage.getItem("dokka-dark-mode")
-    if (storage == null) {
+      if (storage == null) {
         const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
         if (osDarkSchemePreferred === true) {
-            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
         }
-    } else {
+      } else {
         const savedDarkMode = JSON.parse(storage)
-        if(savedDarkMode === true) {
-            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        if (savedDarkMode === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
         }
-    }
+      }
     </script>
-<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async></script>
 <script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
 <link href="../../../styles/style.css" rel="Stylesheet">
 <link href="../../../styles/main.css" rel="Stylesheet">
 <link href="../../../styles/prism.css" rel="Stylesheet">
 <link href="../../../styles/logo-styles.css" rel="Stylesheet">
-<link href="../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
 <link href="../../../ui-kit/ui-kit.min.css" rel="Stylesheet">
-<script type="text/javascript" src="../../../scripts/clipboard.js" async></script>
+<script type="text/javascript" src="../../../scripts/safe-local-storage_blocking.js"></script>
 <script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
 <script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
 <script type="text/javascript" src="../../../scripts/main.js" defer></script>
 <script type="text/javascript" src="../../../scripts/prism.js" async></script>
 <script type="text/javascript" src="../../../ui-kit/ui-kit.min.js" defer></script>
-<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer></script>
 <link href="../../../images/logo-icon.svg">
 <link href="../../../styles/stylesheet.css" rel="Stylesheet"></head>
 <body>
-    <div class="root">
-    <nav class="navigation theme-dark" id="navigation-wrapper">
-<a class="library-name--link" href="../../../index.html">
+<div class="root">
+    <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+<a class="library-name--link" href="../../../index.html" tabindex="1">
                     quarkdown
             </a>        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle" type="button">Toggle table of contents
         </button>
         <div class="navigation-controls--break ui-kit_mobile-only"></div>
-        <div class="library-version" id="library-version">2.1.2
+        <div class="library-version" id="library-version">2.2.0
         </div>
         <div class="navigation-controls">
-        <div class="filter-section filter-section_loading" id="filter-section">
-                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":quarkdown-core/main">jvm</button>
+        <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
+                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true" data-filter=":quarkdown-core/main">jvm</button>
             <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
                 <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox" data-role="dropdown-toggle" aria-controls="platform-tags-listbox" aria-haspopup="listbox" aria-expanded="false" aria-label="Toggle source sets"></button>
-                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox">
-                    <div class="dropdown--header"><span>Platform filter</span>
-                        <button class="button" data-role="dropdown-toggle" aria-label="Close platform filter">
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
+                    <div class="dropdown--header"><span>Target filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close target filter">
                             <i class="ui-kit-icon ui-kit-icon_cross"></i>
                         </button>
                     </div>
@@ -66,45 +63,47 @@
                 </ul>
                 <div class="dropdown--overlay"></div>
             </div>
-        </div>
+        </ul>
             <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button" type="button">Switch theme
             </button>
             <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
                 API
             </div>
         </div>
-    </nav>
-        <div id="container">
-            <div class="sidebar" id="leftColumn">
-                <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
-                    <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list" data-role="dropdown-listbox">
-                        <div class="dropdown--header">
+    </header>
+    <div id="container">
+        <nav id="leftColumn" class="sidebar" data-item-type="SECTION" data-item-config="{&quot;defaultSize&quot;: 280, &quot;minSize&quot;: 200, &quot;maxSize&quot;: 400}">
+            <a class="toc--skip-link" href="#main">Skip to content</a>
+            <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list" data-role="dropdown-listbox" aria-label="Table of contents">
+                    <div class="dropdown--header">
                             <span>
                                     quarkdown
                             </span>
-                            <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
-                                <i class="ui-kit-icon ui-kit-icon_cross"></i>
-                            </button>
-                        </div>
-                        <div class="sidebar--inner" id="sideMenu"></div>
-                    </ul>
-                    <div class="dropdown--overlay"></div>
-                </div>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar--inner" id="sideMenu"></div>
+                </ul>
+                <div class="dropdown--overlay"></div>
             </div>
-            <div id="main">
+        </nav>
+        <div id="resizer" class="resizer" data-item-type="BAR"></div>
+        <div id="main" data-item-type="SECTION" role="main">
 <div class="main-content" data-page-type="classlike" id="content" pageids="quarkdown-core::com.quarkdown.core.context/ChildContext///PointingToDeclaration//1831116724">
   <div class="breadcrumbs"><a href="../../index.html">quarkdown-core</a><span class="delimiter">/</span><a href="../index.html">com.quarkdown.core.context</a><span class="delimiter">/</span><span class="current">ChildContext</span></div>
   <div class="cover ">
     <h1 class="cover"><span>Child</span><wbr><span><span>Context</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="index.html">ChildContext</a><span class="token operator">&lt;</span><a href="index.html">C</a><span class="token operator"> : </span><a href="../-context/index.html">Context</a><span class="token operator">&gt;</span> : <a href="../-context/index.html">Context</a></div><p class="paragraph">A <a href="../-context/index.html">Context</a> that has a parent context, forming a scope tree. This context can access its parent's properties and inherit them.</p><h4 class="">Parameters</h4><div class="table"><div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>C</span></span></u></div></span></div><div><div class="title"><p class="paragraph">type of the parent context</p></div></div></div></div></div><h4 class="">Inheritors</h4><div class="table"><div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../-shared-context/index.html">SharedContext</a></div></span></div><div></div></div></div><div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../-subdocument-context/index.html">SubdocumentContext</a></div></span></div><div></div></div></div></div></div></div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="index.html">ChildContext</a><span class="token operator">&lt;</span><a href="index.html">C</a><span class="token operator"> : </span><a href="../-context/index.html">Context</a><span class="token operator">&gt;</span> : <a href="../-context/index.html">Context</a></div><p class="paragraph">A <a href="../-context/index.html">Context</a> that has a parent context, forming a scope tree. This context can access its parent's properties and inherit them.</p><h4 class="tableheader">Type Parameters</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>C</span></span></u></div></span></div><div><div class="title"><p class="paragraph">type of the parent context</p></div></div></div></div></div><h4 class="tableheader">Inheritors</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../-shared-context/index.html">SharedContext</a></div></span></div><div></div></div></div><div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../-subdocument-context/index.html">SubdocumentContext</a></div></span></div><div></div></div></div></div></div></div>
   </div>
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button><button class="section-tab" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION,EXTENSION_PROPERTY,EXTENSION_FUNCTION">Members &amp; Extensions</button></div>
     <div class="tabs-section-body">
       <div data-togglable="PROPERTY">
-        <h2 class="">Properties</h2>
+        <h2 class="tableheader">Properties</h2>
         <div class="table"><a data-name="79123147%2FProperties%2F1831116724" anchor-label="attachedPipeline" id="79123147%2FProperties%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-context/attached-pipeline.html"><span>attached</span><wbr><span><span>Pipeline</span></span></a></div>
@@ -119,7 +118,7 @@
             </div>
           </div>
 <a data-name="980036090%2FProperties%2F1831116724" anchor-label="attributes" id="980036090%2FProperties%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-context/attributes.html"><span><span>attributes</span></span></a></div>
@@ -134,7 +133,7 @@
             </div>
           </div>
 <a data-name="-1595979224%2FProperties%2F1831116724" anchor-label="documentInfo" id="-1595979224%2FProperties%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-context/document-info.html"><span>document</span><wbr><span><span>Info</span></span></a></div>
@@ -149,7 +148,7 @@
             </div>
           </div>
 <a data-name="1101145788%2FProperties%2F1831116724" anchor-label="errorHandler" id="1101145788%2FProperties%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+          <div class="table-row table-row_content" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../error-handler.html"><span>error</span><wbr><span><span>Handler</span></span></a></div>
@@ -164,7 +163,7 @@
             </div>
           </div>
 <a data-name="-1461594362%2FProperties%2F1831116724" anchor-label="fileSystem" id="-1461594362%2FProperties%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-context/file-system.html"><span>file</span><wbr><span><span>System</span></span></a></div>
@@ -179,7 +178,7 @@
             </div>
           </div>
 <a data-name="956620947%2FProperties%2F1831116724" anchor-label="flavor" id="956620947%2FProperties%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-context/flavor.html"><span><span>flavor</span></span></a></div>
@@ -194,7 +193,7 @@
             </div>
           </div>
 <a data-name="316492048%2FProperties%2F1831116724" anchor-label="libraries" id="316492048%2FProperties%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-context/libraries.html"><span><span>libraries</span></span></a></div>
@@ -203,13 +202,13 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">val </span><a href="../-context/libraries.html">libraries</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-set/index.html">Set</a><span class="token operator">&lt;</span><a href="../../com.quarkdown.core.function.library/-library/index.html">Library</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Loaded libraries to look up functions from.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">val </span><a href="../-context/libraries.html">libraries</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../../com.quarkdown.core.function.library/-library/index.html">Library</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Loaded libraries to look up functions from.</p></div></div></div>
                 </div>
               </div>
             </div>
           </div>
 <a data-name="579723376%2FProperties%2F1831116724" anchor-label="loadableLibraries" id="579723376%2FProperties%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-context/loadable-libraries.html"><span>loadable</span><wbr><span><span>Libraries</span></span></a></div>
@@ -224,7 +223,7 @@
             </div>
           </div>
 <a data-name="-1160877357%2FProperties%2F1831116724" anchor-label="localizationTables" id="-1160877357%2FProperties%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-context/localization-tables.html"><span>localization</span><wbr><span><span>Tables</span></span></a></div>
@@ -239,7 +238,7 @@
             </div>
           </div>
 <a data-name="-616617894%2FProperties%2F1831116724" anchor-label="mediaStorage" id="-616617894%2FProperties%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-context/media-storage.html"><span>media</span><wbr><span><span>Storage</span></span></a></div>
@@ -254,7 +253,7 @@
             </div>
           </div>
 <a data-name="1891997611%2FProperties%2F1831116724" anchor-label="options" id="1891997611%2FProperties%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-context/options.html"><span><span>options</span></span></a></div>
@@ -269,7 +268,7 @@
             </div>
           </div>
 <a data-name="-202411101%2FProperties%2F1831116724" anchor-label="parent" id="-202411101%2FProperties%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="parent.html"><span><span>parent</span></span></a></div>
@@ -284,7 +283,7 @@
             </div>
           </div>
 <a data-name="1902463766%2FProperties%2F1831116724" anchor-label="permissions" id="1902463766%2FProperties%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../../com.quarkdown.core.permissions/-permission-holder/permissions.html"><span><span>permissions</span></span></a></div>
@@ -299,7 +298,7 @@
             </div>
           </div>
 <a data-name="1739538027%2FProperties%2F1831116724" anchor-label="root" id="1739538027%2FProperties%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="root.html"><span><span>root</span></span></a></div>
@@ -314,7 +313,7 @@
             </div>
           </div>
 <a data-name="-404358509%2FProperties%2F1831116724" anchor-label="rootFileSystem" id="-404358509%2FProperties%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../../com.quarkdown.core.permissions/-permission-holder/root-file-system.html"><span>root</span><wbr><span>File</span><wbr><span><span>System</span></span></a></div>
@@ -329,7 +328,7 @@
             </div>
           </div>
 <a data-name="-569583478%2FProperties%2F1831116724" anchor-label="sharedSubdocumentsData" id="-569583478%2FProperties%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-context/shared-subdocuments-data.html"><span>shared</span><wbr><span>Subdocuments</span><wbr><span><span>Data</span></span></a></div>
@@ -344,7 +343,7 @@
             </div>
           </div>
 <a data-name="-577247346%2FProperties%2F1831116724" anchor-label="subdocument" id="-577247346%2FProperties%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-context/subdocument.html"><span><span>subdocument</span></span></a></div>
@@ -359,7 +358,7 @@
             </div>
           </div>
 <a data-name="-1172862402%2FProperties%2F1831116724" anchor-label="subdocumentGraph" id="-1172862402%2FProperties%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+          <div class="table-row table-row_content" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../../com.quarkdown.core.context.subdocument/subdocument-graph.html"><span>subdocument</span><wbr><span><span>Graph</span></span></a></div>
@@ -376,9 +375,9 @@
         </div>
       </div>
       <div data-togglable="FUNCTION">
-        <h2 class="">Functions</h2>
+        <h2 class="tableheader">Functions</h2>
         <div class="table"><a data-name="714456047%2FFunctions%2F1831116724" anchor-label="fork" id="714456047%2FFunctions%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-context/fork.html"><span><span>fork</span></span></a></div>
@@ -393,7 +392,7 @@
             </div>
           </div>
 <a data-name="299803787%2FFunctions%2F1831116724" anchor-label="getFunctionByName" id="299803787%2FFunctions%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-context/get-function-by-name.html"><span>get</span><wbr><span>Function</span><wbr><span>By</span><wbr><span><span>Name</span></span></a></div>
@@ -408,7 +407,7 @@
             </div>
           </div>
 <a data-name="1019127832%2FFunctions%2F1831116724" anchor-label="getRootFileSystem" id="1019127832%2FFunctions%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+          <div class="table-row table-row_content" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../../com.quarkdown.core.context.file/get-root-file-system.html"><span>get</span><wbr><span>Root</span><wbr><span>File</span><wbr><span><span>System</span></span></a></div>
@@ -423,7 +422,7 @@
             </div>
           </div>
 <a data-name="1078189492%2FFunctions%2F1831116724" anchor-label="isSubdocumentUrl" id="1078189492%2FFunctions%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+          <div class="table-row table-row_content" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../../com.quarkdown.core.context.options/is-subdocument-url.html"><span>is</span><wbr><span>Subdocument</span><wbr><span><span>Url</span></span></a></div>
@@ -438,7 +437,7 @@
             </div>
           </div>
 <a data-name="969565974%2FFunctions%2F1831116724" anchor-label="lastParentOrNull" id="969565974%2FFunctions%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="last-parent-or-null.html"><span>last</span><wbr><span>Parent</span><wbr><span>Or</span><wbr><span><span>Null</span></span></a></div>
@@ -453,7 +452,7 @@
             </div>
           </div>
 <a data-name="688882203%2FFunctions%2F1831116724" anchor-label="localize" id="688882203%2FFunctions%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-context/localize.html"><span><span>localize</span></span></a></div>
@@ -468,7 +467,7 @@
             </div>
           </div>
 <a data-name="-2145498951%2FFunctions%2F1831116724" anchor-label="localizeOrDefault" id="-2145498951%2FFunctions%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+          <div class="table-row table-row_content" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../../com.quarkdown.core.context.localization/localize-or-default.html"><span>localize</span><wbr><span>Or</span><wbr><span><span>Default</span></span></a></div>
@@ -483,7 +482,7 @@
             </div>
           </div>
 <a data-name="1372737702%2FFunctions%2F1831116724" anchor-label="localizeOrNull" id="1372737702%2FFunctions%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+          <div class="table-row table-row_content" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../../com.quarkdown.core.context.localization/localize-or-null.html"><span>localize</span><wbr><span>Or</span><wbr><span><span>Null</span></span></a></div>
@@ -498,7 +497,7 @@
             </div>
           </div>
 <a data-name="888266606%2FFunctions%2F1831116724" anchor-label="newUuid" id="888266606%2FFunctions%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-context/new-uuid.html"><span>new</span><wbr><span><span>Uuid</span></span></a></div>
@@ -513,7 +512,7 @@
             </div>
           </div>
 <a data-name="-2034724010%2FFunctions%2F1831116724" anchor-label="requirePermission" id="-2034724010%2FFunctions%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+          <div class="table-row table-row_content" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../../com.quarkdown.core.permissions/require-permission.html"><span>require</span><wbr><span><span>Permission</span></span></a></div>
@@ -528,7 +527,7 @@
             </div>
           </div>
 <a data-name="1635156783%2FFunctions%2F1831116724" anchor-label="requireReadPermission" id="1635156783%2FFunctions%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+          <div class="table-row table-row_content" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../../com.quarkdown.core.permissions/require-read-permission.html"><span>require</span><wbr><span>Read</span><wbr><span><span>Permission</span></span></a></div>
@@ -543,7 +542,7 @@
             </div>
           </div>
 <a data-name="1088924543%2FFunctions%2F1831116724" anchor-label="resolve" id="1088924543%2FFunctions%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-context/resolve.html"><span><span>resolve</span></span></a></div>
@@ -558,7 +557,7 @@
             </div>
           </div>
 <a data-name="-77997683%2FFunctions%2F1831116724" anchor-label="resolveUnchecked" id="-77997683%2FFunctions%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-context/resolve-unchecked.html"><span>resolve</span><wbr><span><span>Unchecked</span></span></a></div>
@@ -573,7 +572,7 @@
             </div>
           </div>
 <a data-name="-194182368%2FFunctions%2F1831116724" anchor-label="shouldAutoPageBreak" id="-194182368%2FFunctions%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+          <div class="table-row table-row_content" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../../com.quarkdown.core.context.options/should-auto-page-break.html"><span>should</span><wbr><span>Auto</span><wbr><span>Page</span><wbr><span><span>Break</span></span></a></div>
@@ -593,17 +592,21 @@
   </div>
 </div>
     <div class="footer">
-        <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
-        <span>© 2026 Quarkdown</span>
-        <span class="pull-right">
-            <span>Generated by </span>
-            <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
-                <span>dokka</span>
-            </a>
-        </span>
-    </div>
+        <div class="footer--container">
+            <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+            <div class="footer--content">
+                <div>
+                    <span>Generated by </span>
+                    <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                        Dokka
+                    </a>
+                    <div>© 2026 Quarkdown</div>
+                </div>
             </div>
         </div>
     </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
