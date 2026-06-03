@@ -36,7 +36,7 @@ $dokka.location:com.quarkdown.stdlib//csv/#com.quarkdown.core.context.Context#ko
 $dokka.location:com.quarkdown.stdlib//currentPage/#/PointingToDeclaration/quarkdown-stdlib/com.quarkdown.stdlib.module.Document/currentpage.html
 $dokka.location:com.quarkdown.stdlib//debug/#kotlin.String/PointingToDeclaration/quarkdown-stdlib/com.quarkdown.stdlib.module.Logger/debug.html
 $dokka.location:com.quarkdown.stdlib//dictionary/#kotlin.collections.Map[kotlin.String,com.quarkdown.core.function.value.OutputValue[*]]/PointingToDeclaration/quarkdown-stdlib/com.quarkdown.stdlib.module.Dictionary/dictionary.html
-$dokka.location:com.quarkdown.stdlib//dictionaryGet/#kotlin.String#kotlin.collections.Map[kotlin.String,com.quarkdown.core.function.value.OutputValue[*]]#com.quarkdown.core.function.value.DynamicValue/PointingToDeclaration/quarkdown-stdlib/com.quarkdown.stdlib.module.Dictionary/get.html
+$dokka.location:com.quarkdown.stdlib//dictionaryGet/#kotlin.collections.Map[kotlin.String,com.quarkdown.core.function.value.OutputValue[*]]#kotlin.String#com.quarkdown.core.function.value.DynamicValue/PointingToDeclaration/quarkdown-stdlib/com.quarkdown.stdlib.module.Dictionary/get.html
 $dokka.location:com.quarkdown.stdlib//disableAutoPageBreak/#com.quarkdown.core.context.MutableContext/PointingToDeclaration/quarkdown-stdlib/com.quarkdown.stdlib.module.Document/noautopagebreak.html
 $dokka.location:com.quarkdown.stdlib//disableNumbering/#com.quarkdown.core.context.MutableContext/PointingToDeclaration/quarkdown-stdlib/com.quarkdown.stdlib.module.Document/nonumbering.html
 $dokka.location:com.quarkdown.stdlib//divide/#kotlin.Number#kotlin.Number/PointingToDeclaration/quarkdown-stdlib/com.quarkdown.stdlib.module.Math/divide.html
