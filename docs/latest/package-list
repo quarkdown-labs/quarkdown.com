@@ -165,6 +165,7 @@ com.quarkdown.cli.exec
 com.quarkdown.cli.exec.strategy
 com.quarkdown.cli.lib
 com.quarkdown.cli.lsp
+com.quarkdown.cli.preview
 com.quarkdown.cli.renderer
 com.quarkdown.cli.server
 com.quarkdown.cli.util
@@ -344,6 +345,7 @@ com.quarkdown.server
 com.quarkdown.server.browser
 com.quarkdown.server.endpoints
 com.quarkdown.server.message
+com.quarkdown.server.preview
 com.quarkdown.server.stop
 module:quarkdown-stdlib
 com.quarkdown.stdlib

@@ -111,7 +111,13 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-cli/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="-compile-command/index.html">CompileCommand</a> : <a href="-execute-command/index.html">ExecuteCommand</a></div><div class="brief "><p class="paragraph">Command to compile a Quarkdown file into an output.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-cli/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="-compile-command/index.html">CompileCommand</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">previewStrategyProvider<span class="token operator">: </span><a href="-compile-command/index.html">CompileCommand</a><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="../com.quarkdown.cli.preview/-preview-strategy/index.html">PreviewStrategy</a><span class="token operator"> = </span>{
+        WebServerPreviewStrategy(
+            port = serverPort,
+            browser = browser,
+            preferLivePreviewUrl = preview &amp;&amp; watch,
+        )
+    }</span></span><span class="token punctuation">)</span> : <a href="-execute-command/index.html">ExecuteCommand</a></div><div class="brief "><p class="paragraph">Command to compile a Quarkdown file into an output.</p></div></div></div>
                 </div>
               </div>
             </div>

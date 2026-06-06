@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-    <title>CompileCommand</title>
+    <title>update</title>
 <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>
     <script>document.documentElement.classList.replace("no-js", "js");</script>
     <script>const storage = localStorage.getItem("dokka-dark-mode")
@@ -91,18 +91,12 @@
         </nav>
         <div id="resizer" class="resizer" data-item-type="BAR"></div>
         <div id="main" data-item-type="SECTION" role="main">
-<div class="main-content" data-page-type="member" id="content" pageids="quarkdown-cli::com.quarkdown.cli.exec/CompileCommand/CompileCommand/#kotlin.Function1[com.quarkdown.cli.exec.CompileCommand,com.quarkdown.cli.preview.PreviewStrategy]/PointingToDeclaration//918969369">
-  <div class="breadcrumbs"><a href="../../index.html">quarkdown-cli</a><span class="delimiter">/</span><a href="../index.html">com.quarkdown.cli.exec</a><span class="delimiter">/</span><a href="index.html">CompileCommand</a><span class="delimiter">/</span><span class="current">CompileCommand</span></div>
+<div class="main-content" data-page-type="member" id="content" pageids="quarkdown-cli::com.quarkdown.cli.preview/WebServerPreviewStrategy/update/#com.quarkdown.core.pipeline.PipelineOptions#com.quarkdown.cli.exec.ExecutionOutcome/PointingToDeclaration//918969369">
+  <div class="breadcrumbs"><a href="../../index.html">quarkdown-cli</a><span class="delimiter">/</span><a href="../index.html">com.quarkdown.cli.preview</a><span class="delimiter">/</span><a href="index.html">WebServerPreviewStrategy</a><span class="delimiter">/</span><span class="current">update</span></div>
   <div class="cover ">
-    <h1 class="cover"><span>Compile</span><wbr><span><span>Command</span></span></h1>
+    <h1 class="cover"><span><span>update</span></span></h1>
   </div>
-  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-cli/main"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">previewStrategyProvider<span class="token operator">: </span><a href="index.html">CompileCommand</a><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="../../com.quarkdown.cli.preview/-preview-strategy/index.html">PreviewStrategy</a><span class="token operator"> = </span>{
-        WebServerPreviewStrategy(
-            port = serverPort,
-            browser = browser,
-            preferLivePreviewUrl = preview &amp;&amp; watch,
-        )
-    }</span></span><span class="token punctuation">)</span></div><h4 class="tableheader">Parameters</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":quarkdown-cli/main" data-filterable-set=":quarkdown-cli/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>preview</span><wbr><span>Strategy</span><wbr><span><span>Provider</span></span></u></div></span></div><div><div class="title"><p class="paragraph">factory invoked once to produce the <a href="../../com.quarkdown.cli.preview/-preview-strategy/index.html">PreviewStrategy</a> used after each successful                                 compile when preview mode is enabled.</p></div></div></div></div></div></div></div>
+  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-cli/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="update.html"><span class="token function">update</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">options<span class="token operator">: </span><a href="../../../quarkdown-core/com.quarkdown.core.pipeline/-pipeline-options/index.html">PipelineOptions</a><span class="token punctuation">, </span></span><span class="parameter ">outcome<span class="token operator">: </span><a href="../../com.quarkdown.cli.exec/-execution-outcome/index.html">ExecutionOutcome</a></span></span><span class="token punctuation">)</span></div><p class="paragraph">Notifies the preview target that a new compilation outcome is available and that the preview should be refreshed accordingly. Implementations are expected to be invoked once per successful compile and may keep internal state.</p><h4 class="tableheader">Parameters</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":quarkdown-cli/main" data-filterable-set=":quarkdown-cli/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>options</span></span></u></div></span></div><div><div class="title"><p class="paragraph">pipeline options used for the compilation that produced <a href="../-preview-strategy/update.html">outcome</a></p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":quarkdown-cli/main" data-filterable-set=":quarkdown-cli/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>outcome</span></span></u></div></span></div><div><div class="title"><p class="paragraph">outcome of the compilation that just completed</p></div></div></div></div></div></div></div>
 </div>
     <div class="footer">
         <div class="footer--container">
