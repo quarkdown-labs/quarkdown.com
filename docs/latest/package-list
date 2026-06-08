@@ -344,8 +344,8 @@ module:quarkdown-server
 com.quarkdown.server
 com.quarkdown.server.browser
 com.quarkdown.server.endpoints
-com.quarkdown.server.message
 com.quarkdown.server.preview
+com.quarkdown.server.reload
 com.quarkdown.server.stop
 module:quarkdown-stdlib
 com.quarkdown.stdlib

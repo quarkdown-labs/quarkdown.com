@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-    <title>ServerMessageSession</title>
+    <title>ReloadTrigger</title>
 <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>
     <script>document.documentElement.classList.replace("no-js", "js");</script>
     <script>const storage = localStorage.getItem("dokka-dark-mode")
@@ -91,23 +91,23 @@
         </nav>
         <div id="resizer" class="resizer" data-item-type="BAR"></div>
         <div id="main" data-item-type="SECTION" role="main">
-<div class="main-content" data-page-type="classlike" id="content" pageids="quarkdown-server::com.quarkdown.server.message/ServerMessageSession///PointingToDeclaration//1314577368">
-  <div class="breadcrumbs"><a href="../../index.html">quarkdown-server</a><span class="delimiter">/</span><a href="../index.html">com.quarkdown.server.message</a><span class="delimiter">/</span><span class="current">ServerMessageSession</span></div>
+<div class="main-content" data-page-type="classlike" id="content" pageids="quarkdown-server::com.quarkdown.server.reload/ReloadTrigger///PointingToDeclaration//1314577368">
+  <div class="breadcrumbs"><a href="../../index.html">quarkdown-server</a><span class="delimiter">/</span><a href="../index.html">com.quarkdown.server.reload</a><span class="delimiter">/</span><span class="current">ReloadTrigger</span></div>
   <div class="cover ">
-    <h1 class="cover"><span>Server</span><wbr><span>Message</span><wbr><span><span>Session</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-server/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">ServerMessageSession</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">host<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator"> = </span>SERVER_HOST<span class="token punctuation">, </span></span><span class="parameter ">port<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">endpoint<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><p class="paragraph">Manages a client WebSocket session to a server.</p><p class="paragraph">The session lifecycle is decoupled from the server's: if the underlying WebSocket drops, <a href="send.html">send</a> transparently reconnects against the still-running server. Callers that need to stop the session explicitly should call <a href="close.html">close</a>.</p><h4 class="tableheader">Parameters</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":quarkdown-server/main" data-filterable-set=":quarkdown-server/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>host</span></span></u></div></span></div><div><div class="title"><p class="paragraph">server hostname</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":quarkdown-server/main" data-filterable-set=":quarkdown-server/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>port</span></span></u></div></span></div><div><div class="title"><p class="paragraph">server port to connect to</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":quarkdown-server/main" data-filterable-set=":quarkdown-server/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>endpoint</span></span></u></div></span></div><div><div class="title"><p class="paragraph">WebSocket endpoint path segment (without leading slash)</p></div></div></div></div></div></div></div>
+    <h1 class="cover"><span>Reload</span><wbr><span><span>Trigger</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-server/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">ReloadTrigger</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">host<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator"> = </span>SERVER_HOST<span class="token punctuation">, </span></span><span class="parameter ">port<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">endpoint<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><p class="paragraph">Stateless trigger for live-preview reloads.</p><p class="paragraph">Each call performs a fire-and-forget <code class="lang-kotlin">POST</code> to the server's reload endpoint; the server then broadcasts the event to every connected Server-Sent Events subscriber. Unlike a persistent session, there is no connection to keep alive: a failed call simply means no clients will reload, and the next attempt is independent.</p><h4 class="tableheader">Parameters</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":quarkdown-server/main" data-filterable-set=":quarkdown-server/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>host</span></span></u></div></span></div><div><div class="title"><p class="paragraph">server hostname</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":quarkdown-server/main" data-filterable-set=":quarkdown-server/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>port</span></span></u></div></span></div><div><div class="title"><p class="paragraph">server port to contact</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":quarkdown-server/main" data-filterable-set=":quarkdown-server/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>endpoint</span></span></u></div></span></div><div><div class="title"><p class="paragraph">reload endpoint path (with leading slash)</p></div></div></div></div></div></div></div>
   </div>
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
     <div class="tabs-section-body">
       <div data-togglable="CONSTRUCTOR">
         <h2 class="tableheader">Constructors</h2>
-        <div class="table"><a data-name="-591505476%2FConstructors%2F1314577368" anchor-label="ServerMessageSession" id="-591505476%2FConstructors%2F1314577368" data-filterable-set=":quarkdown-server/main"></a>
+        <div class="table"><a data-name="19516250%2FConstructors%2F1314577368" anchor-label="ReloadTrigger" id="19516250%2FConstructors%2F1314577368" data-filterable-set=":quarkdown-server/main"></a>
           <div class="table-row table-row_content" data-togglable="CONSTRUCTOR" data-filterable-current=":quarkdown-server/main" data-filterable-set=":quarkdown-server/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
-                  <div><a href="-server-message-session.html"><span>Server</span><wbr><span>Message</span><wbr><span><span>Session</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-591505476%2FConstructors%2F1314577368"></span>
+                  <div><a href="-reload-trigger.html"><span>Reload</span><wbr><span><span>Trigger</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="19516250%2FConstructors%2F1314577368"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
@@ -121,47 +121,32 @@
       </div>
       <div data-togglable="FUNCTION">
         <h2 class="tableheader">Functions</h2>
-        <div class="table"><a data-name="-2007046382%2FFunctions%2F1314577368" anchor-label="close" id="-2007046382%2FFunctions%2F1314577368" data-filterable-set=":quarkdown-server/main"></a>
+        <div class="table"><a data-name="163171651%2FFunctions%2F1314577368" anchor-label="close" id="163171651%2FFunctions%2F1314577368" data-filterable-set=":quarkdown-server/main"></a>
           <div class="table-row table-row_content" data-filterable-current=":quarkdown-server/main" data-filterable-set=":quarkdown-server/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="close.html"><span><span>close</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2007046382%2FFunctions%2F1314577368"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="163171651%2FFunctions%2F1314577368"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-server/main"><div class="symbol monospace"><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="close.html"><span class="token function">close</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Releases the session and the underlying HTTP client. After this call, no further <a href="send.html">send</a>s will succeed without a new session being created externally.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-server/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="close.html"><span class="token function">close</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Releases the underlying HTTP client. After this call no further triggers can be sent.</p></div></div></div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="-907034915%2FFunctions%2F1314577368" anchor-label="init" id="-907034915%2FFunctions%2F1314577368" data-filterable-set=":quarkdown-server/main"></a>
+<a data-name="-2145884669%2FFunctions%2F1314577368" anchor-label="trigger" id="-2145884669%2FFunctions%2F1314577368" data-filterable-set=":quarkdown-server/main"></a>
           <div class="table-row table-row_content" data-filterable-current=":quarkdown-server/main" data-filterable-set=":quarkdown-server/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
-                  <div><a href="init.html"><span><span>init</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-907034915%2FFunctions%2F1314577368"></span>
+                  <div><a href="trigger.html"><span><span>trigger</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2145884669%2FFunctions%2F1314577368"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-server/main"><div class="symbol monospace"><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="init.html"><span class="token function">init</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">onReady<span class="token operator">: </span><span class="token keyword">suspend </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator"> = </span>{}</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Opens the WebSocket session (if not already open) and invokes <a href="init.html">onReady</a> once the connection is established. Then blocks until the session is closed, so callers that rely on this method to keep their thread alive (e.g. the standalone server command) continue to work.</p></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-<a data-name="1199949811%2FFunctions%2F1314577368" anchor-label="send" id="1199949811%2FFunctions%2F1314577368" data-filterable-set=":quarkdown-server/main"></a>
-          <div class="table-row table-row_content" data-filterable-current=":quarkdown-server/main" data-filterable-set=":quarkdown-server/main">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="send.html"><span><span>send</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1199949811%2FFunctions%2F1314577368"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-server/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="send.html"><span class="token function">send</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">message<span class="token operator">: </span><a href="../-server-message/index.html">ServerMessage</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Sends a <a href="../-server-message/index.html">ServerMessage</a> as a text frame, opening (or reopening) the session if needed.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-server/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="trigger.html"><span class="token function">trigger</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Sends a reload trigger to the server. Errors are logged but not rethrown, since a missed reload is recoverable: the next compile will issue another.</p></div></div></div>
                 </div>
               </div>
             </div>
