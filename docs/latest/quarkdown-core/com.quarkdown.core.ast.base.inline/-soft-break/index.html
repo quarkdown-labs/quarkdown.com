@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-    <title>LineBreakToken</title>
+    <title>SoftBreak</title>
 <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>
     <script>document.documentElement.classList.replace("no-js", "js");</script>
     <script>const storage = localStorage.getItem("dokka-dark-mode")
@@ -91,66 +91,58 @@
         </nav>
         <div id="resizer" class="resizer" data-item-type="BAR"></div>
         <div id="main" data-item-type="SECTION" role="main">
-<div class="main-content" data-page-type="classlike" id="content" pageids="quarkdown-core::com.quarkdown.core.lexer.tokens/LineBreakToken///PointingToDeclaration//1831116724">
-  <div class="breadcrumbs"><a href="../../index.html">quarkdown-core</a><span class="delimiter">/</span><a href="../index.html">com.quarkdown.core.lexer.tokens</a><span class="delimiter">/</span><span class="current">LineBreakToken</span></div>
+<div class="main-content" data-page-type="classlike" id="content" pageids="quarkdown-core::com.quarkdown.core.ast.base.inline/SoftBreak///PointingToDeclaration//1831116724">
+  <div class="breadcrumbs"><a href="../../index.html">quarkdown-core</a><span class="delimiter">/</span><a href="../index.html">com.quarkdown.core.ast.base.inline</a><span class="delimiter">/</span><span class="current">SoftBreak</span></div>
   <div class="cover ">
-    <h1 class="cover"><span>Line</span><wbr><span>Break</span><wbr><span><span>Token</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">LineBreakToken</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">data<span class="token operator">: </span><a href="../../com.quarkdown.core.lexer/-token-data/index.html">TokenData</a></span></span><span class="token punctuation">)</span> : <a href="../../com.quarkdown.core.lexer/-token/index.html">Token</a></div><p class="paragraph">A line break. Example:</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">Line 1&lt;space&gt;&lt;space&gt;<br>Line 2</code></pre><span class="copy-tooltip"><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span class="copy-icon"></span></span></div><h4 class="tableheader">See also</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../../com.quarkdown.core.ast.base.inline/-line-break/index.html"><span>Line</span><wbr><span><span>Break</span></span></a></div></span></div><div></div></div></div><div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../../com.quarkdown.core.ast.base.inline/-soft-break/index.html"><span>Soft</span><wbr><span><span>Break</span></span></a></div></span></div><div></div></div></div></div></div></div>
+    <h1 class="cover"><span>Soft</span><wbr><span><span>Break</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">object </span><a href="index.html">SoftBreak</a> : <a href="../../com.quarkdown.core.ast/-node/index.html">Node</a></div><p class="paragraph">A soft line break within a paragraph, representing a newline in the source that is not a hard line break (i.e., not preceded by two spaces or a backslash).</p><p class="paragraph">The rendering of a soft break depends on the document language: for CJK languages (Chinese, Japanese, Korean) no space is inserted, while for other languages a space is inserted.</p></div></div>
   </div>
   <div class="tabbedcontent">
-    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button><button class="section-tab" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION,EXTENSION_PROPERTY,EXTENSION_FUNCTION">Members &amp; Extensions</button></div>
     <div class="tabs-section-body">
-      <div data-togglable="CONSTRUCTOR">
-        <h2 class="tableheader">Constructors</h2>
-        <div class="table"><a data-name="1557496768%2FConstructors%2F1831116724" anchor-label="LineBreakToken" id="1557496768%2FConstructors%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row table-row_content" data-togglable="CONSTRUCTOR" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="-line-break-token.html"><span>Line</span><wbr><span>Break</span><wbr><span><span>Token</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1557496768%2FConstructors%2F1831116724"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">data<span class="token operator">: </span><a href="../../com.quarkdown.core.lexer/-token-data/index.html">TokenData</a></span></span><span class="token punctuation">)</span></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div data-togglable="PROPERTY">
-        <h2 class="tableheader">Properties</h2>
-        <div class="table"><a data-name="2038063534%2FProperties%2F1831116724" anchor-label="data" id="2038063534%2FProperties%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="../../com.quarkdown.core.lexer/-token/data.html"><span><span>data</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2038063534%2FProperties%2F1831116724"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="../../com.quarkdown.core.lexer/-token/data.html">data</a><span class="token operator">: </span><a href="../../com.quarkdown.core.lexer/-token-data/index.html">TokenData</a></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
       <div data-togglable="FUNCTION">
         <h2 class="tableheader">Functions</h2>
-        <div class="table"><a data-name="-512265603%2FFunctions%2F1831116724" anchor-label="accept" id="-512265603%2FFunctions%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
+        <div class="table"><a data-name="-713592030%2FFunctions%2F1831116724" anchor-label="accept" id="-713592030%2FFunctions%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
           <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="accept.html"><span><span>accept</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-512265603%2FFunctions%2F1831116724"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-713592030%2FFunctions%2F1831116724"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="accept.html">T</a><span class="token operator">&gt; </span><a href="accept.html"><span class="token function">accept</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">visitor<span class="token operator">: </span><a href="../../com.quarkdown.core.visitor.token/-token-visitor/index.html">TokenVisitor</a><span class="token operator">&lt;</span><a href="accept.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="accept.html">T</a></div><div class="brief "><p class="paragraph">Accepts a visitor.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="accept.html">T</a><span class="token operator">&gt; </span><a href="accept.html"><span class="token function">accept</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">visitor<span class="token operator">: </span><a href="../../com.quarkdown.core.visitor.node/-node-visitor/index.html">NodeVisitor</a><span class="token operator">&lt;</span><a href="accept.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="accept.html">T</a></div><div class="brief "><p class="paragraph">Accepts a visitor.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="656906508%2FFunctions%2F1831116724" anchor-label="getStoredMedia" id="656906508%2FFunctions%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
+          <div class="table-row table-row_content" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../com.quarkdown.core.ast.media/get-stored-media.html"><span>get</span><wbr><span>Stored</span><wbr><span><span>Media</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="656906508%2FFunctions%2F1831116724"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="../../com.quarkdown.core.ast/-node/index.html">Node</a><span class="token punctuation">.</span><a href="../../com.quarkdown.core.ast.media/get-stored-media.html"><span class="token function">getStoredMedia</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="../../com.quarkdown.core.context/-context/index.html">Context</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.quarkdown.core.media.storage/-stored-media/index.html">StoredMedia</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Retrieves the stored media associated with <a href="../../com.quarkdown.core.ast/-node/index.html">this</a> node, if any.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1184672826%2FFunctions%2F1831116724" anchor-label="wrappedAsValue" id="1184672826%2FFunctions%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
+          <div class="table-row table-row_content" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../com.quarkdown.core.function.value/wrapped-as-value.html"><span>wrapped</span><wbr><span>As</span><wbr><span><span>Value</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1184672826%2FFunctions%2F1831116724"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="../../com.quarkdown.core.ast/-node/index.html">Node</a><span class="token punctuation">.</span><a href="../../com.quarkdown.core.function.value/wrapped-as-value.html"><span class="token function">wrappedAsValue</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.quarkdown.core.function.value/-node-value/index.html">NodeValue</a></div></div></div>
                 </div>
               </div>
             </div>
