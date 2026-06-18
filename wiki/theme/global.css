@@ -350,6 +350,10 @@ body.quarkdown.quarkdown-paged .pagedjs_area {
   display: none;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  break-after: avoid;
+}
+
 .quarkdown.quarkdown p {
   margin-top: 0;
   margin-bottom: 0;
@@ -1001,6 +1005,9 @@ details > summary + p,
 }
 .quarkdown .container[style*=margin] > :not([style*=margin]):last-child {
   margin-bottom: 0 !important;
+}
+.quarkdown .container[style*=color] > :not([style*=color]) {
+  color: inherit !important;
 }
 .quarkdown .container > .stack {
   width: 100%;
