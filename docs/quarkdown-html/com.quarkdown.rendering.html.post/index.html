@@ -40,7 +40,7 @@
             </a>        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle" type="button">Toggle table of contents
         </button>
         <div class="navigation-controls--break ui-kit_mobile-only"></div>
-        <div class="library-version" id="library-version">2.2.0
+        <div class="library-version" id="library-version">2.3.0
         </div>
         <div class="navigation-controls">
         <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
@@ -130,13 +130,18 @@
             context,
             relativePathToRoot = relativePathToRoot,
         )<span class="token punctuation">, </span></span><span class="parameter ">resourcesProvider<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-set/index.html">Set</a><span class="token operator">&lt;</span><a href="../com.quarkdown.rendering.html.post.resources/-post-renderer-resource/index.html">PostRendererResource</a><span class="token operator">&gt;</span><span class="token operator"> = </span>{
+            // During live preview, symlink file references instead of deep copying.
+            val symlinkDependencies = context.attachedPipeline?.options?.symlinkDependencies ?: false
             setOfNotNull(
                 ThemePostRendererResource(
                     theme = context.documentInfo.theme.orDefault(DEFAULT_THEME),
                     locale = context.documentInfo.locale,
                     themeLayout = resourcesLayout?.themes,
                 ),
-                ScriptPostRendererResource(scriptsLayout = resourcesLayout?.scripts),
+                ScriptPostRendererResource(
+                    scriptsLayout = resourcesLayout?.scripts,
+                    symlink = symlinkDependencies,
+                ),
                 MediaPostRendererResource(context.mediaStorage),
                 context.fileSystem.workingDirectory
                     ?.let(::StaticAssetsPostRendererResource),
@@ -145,7 +150,11 @@
                     .takeIf { context.documentInfo.type == DocumentType.DOCS }
                     ?.generate(context.sharedSubdocumentsData)
                     ?.let(::SearchIndexPostRendererResource),
-                ThirdPartyPostRendererResource(context, librariesLayout = resourcesLayout?.libraries),
+                ThirdPartyPostRendererResource(
+                    context,
+                    librariesLayout = resourcesLayout?.libraries,
+                    symlink = symlinkDependencies,
+                ),
             )
         }</span></span><span class="token punctuation">)</span> : <a href="../../quarkdown-core/com.quarkdown.core.rendering/-post-renderer/index.html">PostRenderer</a></div><div class="brief "><p class="paragraph">A <a href="../../quarkdown-core/com.quarkdown.core.rendering/-post-renderer/index.html">PostRenderer</a> that wraps content into a full HTML document. This includes all the features of <a href="-html-only-post-renderer/index.html">HtmlOnlyPostRenderer</a>, plus:</p></div></div></div>
                 </div>
