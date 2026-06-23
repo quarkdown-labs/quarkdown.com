@@ -181,6 +181,7 @@ com.quarkdown.core.ast.attributes.link
 com.quarkdown.core.ast.attributes.localization
 com.quarkdown.core.ast.attributes.location
 com.quarkdown.core.ast.attributes.presence
+com.quarkdown.core.ast.attributes.primitive
 com.quarkdown.core.ast.attributes.reference
 com.quarkdown.core.ast.base
 com.quarkdown.core.ast.base.block
