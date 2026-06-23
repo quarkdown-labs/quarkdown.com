@@ -198,6 +198,7 @@ com.quarkdown.core.ast.quarkdown.block.toc
 com.quarkdown.core.ast.quarkdown.inline
 com.quarkdown.core.ast.quarkdown.invisible
 com.quarkdown.core.ast.quarkdown.reference
+com.quarkdown.core.ast.rewriter
 com.quarkdown.core.bibliography
 com.quarkdown.core.bibliography.style
 com.quarkdown.core.bibliography.style.csl
