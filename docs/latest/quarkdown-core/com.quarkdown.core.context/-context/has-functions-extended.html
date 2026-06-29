@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-    <title>toFunctionCall</title>
+    <title>hasFunctionsExtended</title>
 <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>
     <script>document.documentElement.classList.replace("no-js", "js");</script>
     <script>const storage = localStorage.getItem("dokka-dark-mode")
@@ -91,12 +91,12 @@
         </nav>
         <div id="resizer" class="resizer" data-item-type="BAR"></div>
         <div id="main" data-item-type="SECTION" role="main">
-<div class="main-content" data-page-type="member" id="content" pageids="quarkdown-core::com.quarkdown.core.ast.attributes.primitive/PrimitiveFunctionBackedNode/toFunctionCall/#/PointingToDeclaration//1831116724">
-  <div class="breadcrumbs"><a href="../../index.html">quarkdown-core</a><span class="delimiter">/</span><a href="../index.html">com.quarkdown.core.ast.attributes.primitive</a><span class="delimiter">/</span><a href="index.html">PrimitiveFunctionBackedNode</a><span class="delimiter">/</span><span class="current">toFunctionCall</span></div>
+<div class="main-content" data-page-type="member" id="content" pageids="quarkdown-core::com.quarkdown.core.context/Context/hasFunctionsExtended/#/PointingToDeclaration//1831116724">
+  <div class="breadcrumbs"><a href="../../index.html">quarkdown-core</a><span class="delimiter">/</span><a href="../index.html">com.quarkdown.core.context</a><span class="delimiter">/</span><a href="index.html">Context</a><span class="delimiter">/</span><span class="current">hasFunctionsExtended</span></div>
   <div class="cover ">
-    <h1 class="cover"><span>to</span><wbr><span>Function</span><wbr><span><span>Call</span></span></h1>
+    <h1 class="cover"><span>has</span><wbr><span>Functions</span><wbr><span><span>Extended</span></span></h1>
   </div>
-  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="to-function-call.html"><span class="token function">toFunctionCall</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-pair/index.html">Pair</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../../com.quarkdown.core.function.call/-function-call-argument/index.html">FunctionCallArgument</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div><p class="paragraph">Materializes this node's properties into the arguments of the backing function call. Argument names must match the parameter names of the function identified by name.</p><span class="kdoc-tag"><h4 class="">Return</h4><p class="paragraph">a pair of the function name, from a loaded library, and a list of arguments to call it with</p></span></div></div>
+  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="has-functions-extended.html"><span class="token function">hasFunctionsExtended</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div><p class="paragraph">Whether any function has been wrapped via an <code class="lang-kotlin">.extend</code> call visible from this context. Used for optimization of <a href="../../com.quarkdown.core.ast.attributes.primitive/-primitive-function-backed-node/index.html">com.quarkdown.core.ast.attributes.primitive.PrimitiveFunctionBackedNode</a>.</p></div></div>
 </div>
     <div class="footer">
         <div class="footer--container">
