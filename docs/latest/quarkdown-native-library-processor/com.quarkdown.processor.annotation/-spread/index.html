@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-    <title>originalName</title>
+    <title>Spread</title>
 <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>
     <script>document.documentElement.classList.replace("no-js", "js");</script>
     <script>const storage = localStorage.getItem("dokka-dark-mode")
@@ -91,12 +91,16 @@
         </nav>
         <div id="resizer" class="resizer" data-item-type="BAR"></div>
         <div id="main" data-item-type="SECTION" role="main">
-<div class="main-content" data-page-type="member" id="content" pageids="quarkdown-native-library-processor::com.quarkdown.processor.model/ParameterDescriptor/originalName/#/PointingToDeclaration//273850079">
-  <div class="breadcrumbs"><a href="../../index.html">quarkdown-native-library-processor</a><span class="delimiter">/</span><a href="../index.html">com.quarkdown.processor.model</a><span class="delimiter">/</span><a href="index.html">ParameterDescriptor</a><span class="delimiter">/</span><span class="current">originalName</span></div>
+<div class="main-content" data-page-type="classlike" id="content" pageids="quarkdown-native-library-processor::com.quarkdown.processor.annotation/Spread///PointingToDeclaration//273850079">
+  <div class="breadcrumbs"><a href="../../index.html">quarkdown-native-library-processor</a><span class="delimiter">/</span><a href="../index.html">com.quarkdown.processor.annotation</a><span class="delimiter">/</span><span class="current">Spread</span></div>
   <div class="cover ">
-    <h1 class="cover"><span>original</span><wbr><span><span>Name</span></span></h1>
+    <h1 class="cover"><span><span>Spread</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-native-library-processor/main"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.annotation/-target/index.html"><span class="token annotation builtin">Target</span></a><span class="token punctuation">(</span><span>allowedTargets<span class="token operator"> = </span><span class="token punctuation">[</span><span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.annotation/-annotation-target/-v-a-l-u-e_-p-a-r-a-m-e-t-e-r/index.html">AnnotationTarget.VALUE_PARAMETER</a></span><wbr><span class="token punctuation">]</span></span><wbr><span class="token punctuation">)</span></div></div><span class="token keyword">annotation class </span><a href="index.html">Spread</a></div><p class="paragraph">Marks a parameter of a <a href="../-q-function/index.html">QFunction</a> as a <i>spread</i> of a class type: the processor unpacks the class's primary-constructor parameters into individual wrapper parameters and reconstructs an instance at the delegation call site via named-argument constructor invocation.</p><p class="paragraph"><code class="lang-kotlin">@Name</code> on a component of the spread class is honored the same way it is on top-level <code class="lang-kotlin">@QFunction</code> parameters, so exported names are consistent across the wrapper regardless of whether a parameter came from the source function directly or from a spread component.</p><p class="paragraph">Example:</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">data class Style(<br>    @Name("foreground") val foregroundColor: String,<br>    @Name("background") val backgroundColor: String = "white",<br>)<br><br>@QFunction<br>fun container(text: String, @Spread style: Style) = ...</code></pre><span class="copy-tooltip"><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span class="copy-icon"></span></span></div><p class="paragraph">generates:</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">public fun container(<br>    text: String,<br>    foreground: String,<br>    background: String = "white",<br>): ... =<br>    container(text = text, style = Style(foregroundColor = foreground, backgroundColor = background))</code></pre><span class="copy-tooltip"><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span class="copy-icon"></span></span></div></div></div>
   </div>
-  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-native-library-processor/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">val </span><a href="original-name.html">originalName</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div><p class="paragraph">Kotlin parameter name on the source function (the name used as the delegation argument label).</p></div></div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"></div>
+    <div class="tabs-section-body"></div>
+  </div>
 </div>
     <div class="footer">
         <div class="footer--container">
