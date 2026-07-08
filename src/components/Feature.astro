@@ -1,17 +1,17 @@
 ---
 interface Props {
-  overline: string;
+  overline?: string;
   title?: string;
-  description: string;
+  description?: string;
 }
 
 const { overline, title, description } = Astro.props;
 ---
 
 <section class="feature">
-  <span class="feature-overline">{overline}</span>
+  {overline && <span class="feature-overline">{overline}</span>}
   <h2 class="feature-title"><slot name="title">{title}</slot></h2>
-  <p class="feature-description" set:html={description}></p>
+  {description && <p class="feature-description" set:html={description}></p>}
   <div class="feature-content">
     <slot />
   </div>
@@ -44,10 +44,10 @@ const { overline, title, description } = Astro.props;
 
   .feature-description {
     @include text;
-    margin-bottom: 3rem;
   }
 
   .feature-content {
     width: 100%;
+    margin-top: 3rem;
   }
 </style>

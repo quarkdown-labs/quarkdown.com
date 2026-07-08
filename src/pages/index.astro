@@ -13,6 +13,7 @@ import AuthoringShowcase from '../components/AuthoringShowcase.astro';
 import AgentShowcase from '../components/AgentShowcase.astro';
 import ProductHuntAlert from '../components/alerts/ProductHuntAlert.astro';
 import CallToAction from '../components/CallToAction.astro';
+import Faq from '../components/Faq.astro';
 import { links } from '../links';
 import { noBoilerplate, scripting } from '../codes';
 import noBoilerplateOutput from '../assets/output/no-boilerplate.jpg';
@@ -83,6 +84,10 @@ import scriptingOutput from '../assets/output/scripting.png';
   >
     <Fragment slot="title">Open source, proudly made in <span class="italy">Italy</span></Fragment>
     <CallToAction href={links.sponsor} variant="secondary">Become a sponsor</CallToAction>
+  </Feature>
+
+  <Feature title="Frequently asked questions">
+    <Faq />
   </Feature>
 
   <Footer />
