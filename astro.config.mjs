@@ -29,6 +29,12 @@ export default defineConfig({
       },
       {
         provider: fontProviders.google(),
+        name: 'IBM Plex Sans',
+        cssVariable: '--font-prose',
+        weights: [400, 600],
+      },
+      {
+        provider: fontProviders.google(),
         name: 'JetBrains Mono',
         cssVariable: '--font-code',
       },

@@ -4,7 +4,9 @@
 
 .prose {
   @include text;
-  font-size: $font-size-body;
+  font-family: $font-prose;
+  font-size: $font-size-prose;
+  line-height: 1.8;
 
   p {
     margin-block: 1em;
@@ -19,7 +21,11 @@
   }
 
   h2, h3, h4 {
+    font-family: $font-prose;
+    font-weight: 600;
+    letter-spacing: normal;
     margin-top: 2em;
+    margin-bottom: 0.6em;
   }
 
   ul, ol {
@@ -35,7 +41,7 @@
     margin-block: 1.5em;
     padding: 0.25em 1.25em;
     border-left: 3px solid $brand-500;
-    color: $text-faint;
+    color: $brand-300;
     font-style: italic;
   }
 
@@ -61,7 +67,7 @@
   }
 
   pre {
-    margin-block: 1.5em;
+    margin-block: 2em;
     background-color: $brand-800 !important;
   }
 
