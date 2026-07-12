@@ -71,6 +71,56 @@
     background-color: $brand-800 !important;
   }
 
+  .result {
+    margin-block: 2em;
+    padding: 1.25em 1.5em;
+    background-color: rgba($brand-800, 0.5);
+    border: 1px solid $brand-600;
+    border-radius: 0.5rem;
+
+    &::before {
+      content: 'Renders as';
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: $text-faint;
+      margin-bottom: 0.9em;
+    }
+
+    > * {
+      margin-block: 0;
+    }
+
+    > * + * {
+      margin-top: 0.6em;
+    }
+
+    .h {
+      font-family: $font-prose;
+      font-weight: 600;
+      line-height: 1.4;
+      letter-spacing: normal;
+      color: $heading;
+    }
+
+    .h1 {
+      @extend .h;
+      font-size: 1.4em;
+    }
+
+    .h2 {
+      @extend .h;
+      font-size: 1.2em;
+    }
+
+    .h3 {
+      @extend .h;
+      font-size: 1.1em;
+    }
+  }
+
   table {
     width: 100%;
     border-collapse: collapse;

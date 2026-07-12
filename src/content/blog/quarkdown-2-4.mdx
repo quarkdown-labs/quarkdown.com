@@ -4,6 +4,8 @@ date: 2026-07-13
 description: A dive into Quarkdown's most powerful new feature that allows you to redefine Markdown itself.
 ---
 
+import Icon from '../../components/Icon.astro';
+
 2.4 marks one of the most impactful releases Quarkdown has ever faced, with the core concept being: "you can now extend Markdown itself."
 Similar to Typst's `#show` rules, you can think of it as CSS that rewrites the AST, written in Quarkdown itself.
 
@@ -29,7 +31,13 @@ Most of them also inherit `.container`'s styling options, such as `foreground`, 
     content:
     .super foreground:{blue}
         *.content*
+
+## A section heading
 ```
+
+<div class="result">
+  <div class="h2" style="color: #4a9eff; font-style: italic;">A section heading</div>
+</div>
 
 The previous snippet restyles every heading in the document to have blue text and italics, by calling `.super` — the original function — called with the overridden arguments.
 
@@ -41,7 +49,17 @@ The following snippet styles H1 and H2 to have blue text, while H3 and lower hea
 ```markdown
 .extend {heading} where:{depth: .depth::islower than:{3}}
     .super foreground:{blue}
+
+# Top-level heading
+## Section heading
+### Subsection heading
 ```
+
+<div class="result">
+  <div class="h1" style="color: #4a9eff;">Top-level heading</div>
+  <div class="h2" style="color: #4a9eff;">Section heading</div>
+  <div class="h3">Subsection heading</div>
+</div>
 
 The following snippet adds an external-link icon to every link that isn't internal (doesn't start with `https://quarkdown.com`):
 
@@ -50,7 +68,18 @@ The following snippet adds an external-link icon to every link that isn't intern
     content:
     .super
         .content .icon {box-arrow-up-right}
+
+Check out the [docs](https://quarkdown.com/docs)
+and the [repo](https://github.com/iamgio/quarkdown) to get started.
 ```
+
+<div class="result">
+  <p>
+    Check out the <a href="https://quarkdown.com/docs" style="text-decoration: none;">docs</a>
+    and the <a href="https://github.com/iamgio/quarkdown" style="text-decoration: none;">repo <Icon name="box-arrow-up-right" /></a>
+    to get started.
+  </p>
+</div>
 
 ## Matching against patterns
 
@@ -61,7 +90,9 @@ The following snippet adds an external-link icon to every link that isn't intern
     **.1**
 ```
 
-> **Quarkdown** takes its name from **quarks**
+<div class="result">
+  <p><strong>Quarkdown</strong> takes its name from <strong>quarks</strong></p>
+</div>
 
 Pair it with paragraph extension to highlight every occurrence of a pattern across the document:
 
@@ -70,8 +101,18 @@ Pair it with paragraph extension to highlight every occurrence of a pattern acro
     content:
     .super
         .content::match {[Qq]uark(down|s)?}
-            **.1**
+            ***.1***
+
+Quarkdown is a typesetting system that borrows its name from quarks,
+which are elementary particles in physics and include:
+up quarks, down quarks, strange quarks, charm quarks,
+top quarks and bottom quarks.
 ```
+
+<div class="result">
+  <p><em><strong>Quarkdown</strong></em> is a typesetting system that borrows its name from <em><strong>quarks</strong></em>,
+  which are elementary particles in physics and include: up <em><strong>quarks</strong></em>, down <em><strong>quarks</strong></em>, strange <em><strong>quarks</strong></em>, charm <em><strong>quarks</strong></em>, top <em><strong>quarks</strong></em> and bottom <em><strong>quarks</strong></em>.</p>
+</div>
 
 ## Status
 
