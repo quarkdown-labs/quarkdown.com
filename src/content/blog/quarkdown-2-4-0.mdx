@@ -1,0 +1,82 @@
+---
+title: "Quarkdown 2.4.0: flexibility as a first-class citizen"
+date: 2026-07-13
+description: A dive into Quarkdown's most powerful new feature that allows you to redefine Markdown itself.
+---
+
+2.4.0 marks one of the most impactful releases Quarkdown has ever faced, with the core concept being: "you can now extend Markdown itself."
+If you've used Typst's `#show` rules, that's the closest analogue; you can think of it as CSS that rewrites the AST, written in Quarkdown itself.
+
+## Primitives
+
+Several Markdown elements now have a matching function behind them, called a *primitive*:
+
+- `.heading` backs `#`, `##`, ...
+- `.paragraph` backs plain paragraphs
+- `.link` backs `[label](url)`
+- `.math` backs `$ ... $` and `$$$ ... $$$`
+- `.image` and `.figure` back `![label](url)`
+- `.pagebreak` backs `<<<`
+
+Most of them also inherit `.container`'s styling options, such as `foreground`, `background`, `border`, `padding` and `fontsize`.
+
+## Extending a primitive
+
+`.extend` was first introduced in 2.2.0. Because this release directly binds Markdown elements to their primitives, `.extend` on primitive functions allows intercepting and overriding the default behavior of Markdown elements.
+
+```markdown
+.extend {heading}
+    content:
+    .super foreground:{blue}
+        *.content*
+```
+
+The previous snippet restyles every heading in the document to have blue text and italics, by calling `.super` — the original function — called with the overridden arguments.
+
+## Conditional extension
+
+The new `where` parameter lets a wrapper fall through to the original when a condition isn't met. 
+The following snippet styles H1 and H2 to have blue text, while H3 and lower headings remain unaffected:
+
+```markdown
+.extend {heading} where:{depth: .depth::islower than:{3}}
+    .super foreground:{blue}
+```
+
+The following snippet adds an external-link icon to every link that isn't internal (doesn't start with `https://quarkdown.com`):
+
+```markdown
+.extend {link} where:{url: .url::startswith {https://quarkdown.com}::not}
+    content:
+    .super
+        .content .icon {box-arrow-up-right}
+```
+
+## Matching against patterns
+
+`.match` scans inline content for regex hits and replaces each one with the output of a lambda:
+
+```markdown
+.match {Quarkdown takes its name from quarks} pattern:{[Qq]uark(down|s)?}
+    **.1**
+```
+
+> **Quarkdown** takes its name from **quarks**
+
+Pair it with paragraph extension to highlight every occurrence of a pattern across the document:
+
+```markdown
+.extend {paragraph}
+    content:
+    .super
+        .content::match {[Qq]uark(down|s)?}
+            **.1**
+```
+
+## Status
+
+Primitive extension ships as slightly experimental with a deliberately small set of primitives. The plan is for every Markdown element to eventually be backed by a primitive, if this feature proves stable.
+
+Any feedback, bug reports and enhancement requests are welcome via [issues](https://github.com/iamgio/quarkdown/issues).
+
+[Get Quarkdown](/#install)
