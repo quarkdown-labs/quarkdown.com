@@ -1,11 +1,11 @@
 ---
-title: "Quarkdown 2.4.0: flexibility as a first-class citizen"
+title: "Quarkdown 2.4: flexibility as a first-class citizen"
 date: 2026-07-13
 description: A dive into Quarkdown's most powerful new feature that allows you to redefine Markdown itself.
 ---
 
-2.4.0 marks one of the most impactful releases Quarkdown has ever faced, with the core concept being: "you can now extend Markdown itself."
-If you've used Typst's `#show` rules, that's the closest analogue; you can think of it as CSS that rewrites the AST, written in Quarkdown itself.
+2.4 marks one of the most impactful releases Quarkdown has ever faced, with the core concept being: "you can now extend Markdown itself."
+Similar to Typst's `#show` rules, you can think of it as CSS that rewrites the AST, written in Quarkdown itself.
 
 ## Primitives
 
@@ -22,7 +22,7 @@ Most of them also inherit `.container`'s styling options, such as `foreground`, 
 
 ## Extending a primitive
 
-`.extend` was first introduced in 2.2.0. Because this release directly binds Markdown elements to their primitives, `.extend` on primitive functions allows intercepting and overriding the default behavior of Markdown elements.
+`.extend` was first introduced in 2.2. Because this release directly binds Markdown elements to their primitives, `.extend` on primitive functions allows intercepting and overriding the default behavior of Markdown elements.
 
 ```markdown
 .extend {heading}
@@ -79,4 +79,4 @@ Primitive extension ships as slightly experimental with a deliberately small set
 
 Any feedback, bug reports and enhancement requests are welcome via [issues](https://github.com/iamgio/quarkdown/issues).
 
-[Get Quarkdown](/#install)
+[Get Quarkdown](/#install), or read the full [release notes](https://github.com/iamgio/quarkdown/releases/tag/v2.4.0).
