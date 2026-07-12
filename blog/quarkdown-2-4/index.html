@@ -57,8 +57,8 @@ to get started.</p></p></div>
 <h2 id="matching-against-patterns">Matching against patterns</h2>
 <p><code>.match</code> scans inline content for regex hits and replaces each one with the output of a lambda:</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#E1E4E8">.match {Quarkdown takes its name from quarks} pattern:{[</span><span style="color:#DBEDFF;text-decoration:underline">Qq</span><span style="color:#E1E4E8">]uark(down|s)?}</span></span>
-<span class="line"><span style="color:#E1E4E8;font-weight:bold">    **.1**</span></span></code></pre>
-<div class="result"><p><strong>Quarkdown</strong> takes its name from <strong>quarks</strong></p></div>
+<span class="line"><span style="color:#E1E4E8;font-weight:bold">    **</span><span style="color:#E1E4E8;font-style:italic">*.1*</span><span style="color:#E1E4E8;font-weight:bold">**</span></span></code></pre>
+<div class="result"><p><em><strong>Quarkdown</strong></em> takes its name from <em><strong>quarks</strong></em></p></div>
 <p>Pair it with paragraph extension to highlight every occurrence of a pattern across the document:</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#E1E4E8">.extend {paragraph}</span></span>
 <span class="line"><span style="color:#E1E4E8">    content:</span></span>
