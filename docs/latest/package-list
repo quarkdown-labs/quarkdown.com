@@ -236,6 +236,7 @@ com.quarkdown.core.function
 com.quarkdown.core.function.call
 com.quarkdown.core.function.call.binding
 com.quarkdown.core.function.call.validate
+com.quarkdown.core.function.dsl
 com.quarkdown.core.function.error
 com.quarkdown.core.function.error.internal
 com.quarkdown.core.function.expression
