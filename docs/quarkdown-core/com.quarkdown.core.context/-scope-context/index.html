@@ -40,7 +40,7 @@
             </a>        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle" type="button">Toggle table of contents
         </button>
         <div class="navigation-controls--break ui-kit_mobile-only"></div>
-        <div class="library-version" id="library-version">2.3.1
+        <div class="library-version" id="library-version">2.4.0
         </div>
         <div class="navigation-controls">
         <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
@@ -455,6 +455,36 @@
               </div>
             </div>
           </div>
+<a data-name="-966859276%2FFunctions%2F1831116724" anchor-label="hasFunctionsExtended" id="-966859276%2FFunctions%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-subdocument-context/has-functions-extended.html"><span>has</span><wbr><span>Functions</span><wbr><span><span>Extended</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-966859276%2FFunctions%2F1831116724"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="../-subdocument-context/has-functions-extended.html"><span class="token function">hasFunctionsExtended</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Whether any function has been wrapped via an <code class="lang-kotlin">.extend</code> call visible from this context. Used for optimization of <a href="../../com.quarkdown.core.ast.attributes.primitive/-primitive-function-backed-node/index.html">com.quarkdown.core.ast.attributes.primitive.PrimitiveFunctionBackedNode</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="818894481%2FFunctions%2F1831116724" anchor-label="isFunctionExtended" id="818894481%2FFunctions%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-subdocument-context/is-function-extended.html"><span>is</span><wbr><span>Function</span><wbr><span><span>Extended</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="818894481%2FFunctions%2F1831116724"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="../-subdocument-context/is-function-extended.html"><span class="token function">isFunctionExtended</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">A subdocument inherits the parent's <code class="lang-kotlin">.extend</code> registrations, but new ones declared inside it stay local and don't propagate back to the main document's context.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
 <a data-name="1078189492%2FFunctions%2F1831116724" anchor-label="isSubdocumentUrl" id="1078189492%2FFunctions%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
           <div class="table-row table-row_content" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
             <div class="main-subrow keyValue ">
@@ -556,6 +586,21 @@
               <div>
                 <div class="title">
                   <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="../-mutable-context/lock-function-call-enqueuing.html">T</a><span class="token operator">&gt; </span><a href="../-mutable-context/lock-function-call-enqueuing.html"><span class="token function">lockFunctionCallEnqueuing</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">block<span class="token operator">: </span><a href="../-mutable-context/index.html">MutableContext</a><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="../-mutable-context/lock-function-call-enqueuing.html">T</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-mutable-context/lock-function-call-enqueuing.html">T</a></div><div class="brief "><p class="paragraph">Performs an action locking the enqueuing of function calls. This causes <a href="../-mutable-context/register.html">register</a> to do nothing until the action is completed. Any function call enqueued during the action is discarded and won't be expanded by the pipeline.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-634519471%2FFunctions%2F1831116724" anchor-label="markFunctionAsExtended" id="-634519471%2FFunctions%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-mutable-context/mark-function-as-extended.html"><span>mark</span><wbr><span>Function</span><wbr><span>As</span><wbr><span><span>Extended</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-634519471%2FFunctions%2F1831116724"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-mutable-context/mark-function-as-extended.html"><span class="token function">markFunctionAsExtended</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Marks <a href="../-mutable-context/mark-function-as-extended.html">name</a> as extended in this context. Used for optimization of <a href="../../com.quarkdown.core.ast.attributes.primitive/-primitive-function-backed-node/index.html">com.quarkdown.core.ast.attributes.primitive.PrimitiveFunctionBackedNode</a>, so it can know whether to short-circuit or not.</p></div></div></div>
                 </div>
               </div>
             </div>
