@@ -44,6 +44,19 @@ export const agentBox = `\
 ${s(fn, '.box')} type${s(p, ':{')}${s(str, 'warning')}${s(p, '}')}
     ${s(kw, '**Hands off the candy jar.**')} You have been warned.`;
 
+export const flexibility = `\
+${s(fn, '.extend')} ${s(p, '{')}${s(str, 'link')}${s(p, '}')}
+    ${s(fn, '.super')} foreground${s(p, ':{')}${s(str, 'darkgreen')}${s(p, '}')}
+
+${s(fn, '.extend')} ${s(p, '{')}${s(str, 'paragraph')}${s(p, '}')}
+    content${s(p, ':')}
+    ${s(fn, '.super')}
+        ${s(fn, '.content')}${s(p, '::')}${s(fn, 'match')} ${s(p, '{')}${s(str, '[Oo]rigami')}${s(p, '}')}
+            ${s(kw, '***')}${s(fn, '.1')}${s(kw, '***')}
+
+Origami is the art of folding paper.${'  '}
+Learn more about origami on ${s(p, '[')}Wikipedia${s(p, '](')}${s(ref, 'https://en.wikipedia.org/wiki/Origami')}${s(p, ')')}.`;
+
 export const scripting = `\
 ${s(fn, '.function')} ${s(p, '{')}${s(str, 'animal')}${s(p, '}')}
     name ecosystem picture${s(p, ':')}

@@ -11,11 +11,11 @@ import Footer from '../components/Footer.astro';
 import DoctypeShowcase from '../components/DoctypeShowcase.astro';
 import AuthoringShowcase from '../components/AuthoringShowcase.astro';
 import AgentShowcase from '../components/AgentShowcase.astro';
-import ProductHuntAlert from '../components/alerts/ProductHuntAlert.astro';
+import FlexibilityOutput from '../components/FlexibilityOutput.astro';
 import CallToAction from '../components/CallToAction.astro';
 import Faq from '../components/Faq.astro';
 import { links } from '../links';
-import { noBoilerplate, scripting } from '../codes';
+import { noBoilerplate, scripting, flexibility } from '../codes';
 import noBoilerplateOutput from '../assets/output/no-boilerplate.jpg';
 import scriptingOutput from '../assets/output/scripting.png';
 ---
@@ -58,6 +58,16 @@ import scriptingOutput from '../assets/output/scripting.png';
         <DoctypeShowcase />
       </Feature>
     </div>
+
+    <Feature
+      overline="Deep customization"
+      title="You're in control"
+      description='Redefine any Markdown element from a single source of truth.<br><a href="/blog/quarkdown-2-4" class="eval-link">Learn more about extensions</a>'
+    >
+      <QuarkdownCode code={flexibility}>
+        <FlexibilityOutput />
+      </QuarkdownCode>
+    </Feature>
 
     <Feature
       overline="Reactive preview"

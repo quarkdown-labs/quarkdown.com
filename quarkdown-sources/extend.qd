@@ -1,0 +1,19 @@
+.theme layout:{hyperlegible}
+
+.extend {paragraph}
+    content:
+    .super
+        .content::match {Quarkdown}
+            ***.1***
+
+.extend {link}
+    .super foreground:{forestgreen}
+
+.extend {link} where:{url: .url::startswith {https://quarkdown.com}::not}
+    content:
+    .super
+        .content .icon {box-arrow-up-right}
+
+Quarkdown is free!  
+Check out Quarkdown's [docs](https://quarkdown.com/docs)
+and [repo](https://github.com/iamgio/quarkdown) to get started.

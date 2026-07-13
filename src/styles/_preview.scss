@@ -1,0 +1,32 @@
+// Paper-like preview block: emulates a rendered Quarkdown document
+// inside QuarkdownCode's output slot. 
+// The surrounding .output class (from QuarkdownCode) contributes flex sizing, border, radius, tilt and glow.
+
+@mixin preview-paper {
+  background: #faf8f5;
+  color: #1a1a1a;
+  padding: 1.5rem 2rem;
+  text-align: left;
+
+  h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.4rem;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    letter-spacing: normal;
+  }
+
+  p {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 0.4rem;
+  }
+
+  strong {
+    font-weight: bold;
+    color: #1a1a1a;
+  }
+}
