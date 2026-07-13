@@ -12,6 +12,7 @@ const {
   description = meta.description,
 } = Astro.props;
 const ogImage = `${links.base}/og-image.jpg`;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? links.base).href;
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -48,12 +49,12 @@ const jsonLd = {
 <meta property="og:title" content={title}>
 <meta property="og:description" content={description}>
 <meta property="og:image" content={ogImage}>
-<meta property="og:url" content={`${links.base}/`}>
+<meta property="og:url" content={canonicalURL}>
 <meta name=msapplication-TileColor content={meta.themeColor}>
 <meta name=theme-color content={meta.themeColor}>
 <meta itemprop=operatingSystem content={meta.appOS}>
 <meta itemprop=applicationCategory content={meta.appCategory}>
-<link href={`${links.base}/`} rel=canonical>
+<link href={canonicalURL} rel=canonical>
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7ff9d84e763543269faa5a5ae685ef9d"}'></script>
 <title>{title}</title>
 <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
