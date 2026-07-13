@@ -7,7 +7,7 @@ description: A dive into Quarkdown's most powerful new feature that allows you t
 import Icon from '../../components/Icon.astro';
 
 2.4 marks one of the most impactful releases Quarkdown has ever faced, with the core concept being: "you can now extend Markdown itself."
-Similar to Typst's `#show` rules, you can think of it as CSS that rewrites the AST, written in Quarkdown itself.
+Similar to Typst's `#show` rules, you can think of this feature as CSS that rewrites the AST, written in Quarkdown itself.
 
 > For more detailed and up-to-date information, check out the [wiki page](https://quarkdown.com/wiki/element-styling) on element styling.
 
@@ -26,7 +26,7 @@ Most of them also inherit `.container`'s styling options, such as `foreground`, 
 
 ## Extending a primitive
 
-`.extend` was first introduced in 2.2. Because this release directly binds Markdown elements to their primitives, `.extend` on primitive functions allows intercepting and overriding the default behavior of Markdown elements.
+`.extend` was first introduced in 2.2 as a way to override user-defined functions. Because this update directly binds Markdown elements to their primitives, extending a primitive function allows intercepting and overriding the default behavior of its corresponding Markdown element.
 
 ```markdown
 .extend {heading}
