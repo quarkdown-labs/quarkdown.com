@@ -16,6 +16,9 @@ const { href, variant = 'link' } = Astro.props;
   @use '../styles/typography' as *;
 
   .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
     font-family: $font-body;
     font-size: $font-size-cta;
     color: $heading;

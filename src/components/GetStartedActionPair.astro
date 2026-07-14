@@ -1,11 +1,12 @@
 ---
 import CallToAction from './CallToAction.astro';
+import Icon from './Icon.astro';
 import { links } from '../links';
 ---
 
 <div class="action-pair">
   <CallToAction href="#install" variant="secondary">Install</CallToAction>
-  <CallToAction href={links.quickstart} variant="primary">Get started &nbsp;&rarr;</CallToAction>
+  <CallToAction href={links.quickstart} variant="primary">Get started<Icon name="arrow-right" /></CallToAction>
 </div>
 
 <style lang="scss">
