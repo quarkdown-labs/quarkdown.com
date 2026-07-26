@@ -3,10 +3,7 @@
 @use 'breakpoints' as *;
 
 .prose {
-  @include text;
-  font-family: $font-prose;
-  font-size: $font-size-prose;
-  line-height: 1.8;
+  @include prose;
 
   p {
     margin-block: 1em;
@@ -21,9 +18,7 @@
   }
 
   h2, h3, h4 {
-    font-family: $font-prose;
-    font-weight: 600;
-    letter-spacing: normal;
+    @include prose-heading;
     margin-top: 2em;
     margin-bottom: 0.6em;
   }
@@ -98,10 +93,8 @@
     }
 
     .h {
-      font-family: $font-prose;
-      font-weight: 600;
+      @include prose-heading;
       line-height: 1.4;
-      letter-spacing: normal;
       color: $heading;
     }
 

@@ -43,7 +43,8 @@ import { faqs } from '../faqs';
   }
 
   .faq-question {
-    @include text;
+    @include prose;
+    @include prose-heading;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -108,7 +109,7 @@ import { faqs } from '../faqs';
   }
 
   .faq-answer {
-    @include text;
+    @include prose;
     padding: 0 1.75rem 1.5rem;
     list-style-position: inside;
 

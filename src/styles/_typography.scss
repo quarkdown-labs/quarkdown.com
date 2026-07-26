@@ -31,6 +31,19 @@ $line-height-text: 1.7;
   line-height: $line-height-text;
 }
 
+@mixin prose {
+  @include text;
+  font-family: $font-prose;
+  font-size: $font-size-prose;
+  line-height: 1.8;
+}
+
+@mixin prose-heading {
+  font-family: $font-prose;
+  font-weight: 600;
+  letter-spacing: normal;
+}
+
 @mixin heading {
   font-family: $font-heading;
   font-weight: normal;
