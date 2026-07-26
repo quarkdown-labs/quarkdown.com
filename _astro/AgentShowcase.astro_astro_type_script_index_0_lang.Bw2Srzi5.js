@@ -1,0 +1,1 @@
+import{n as e,t}from"./gsap.Dd7XmNHQ.js";await t();var n=document.querySelector(`[data-agent-showcase]`),[,...r]=n.querySelectorAll(`[data-agent-step]`);e.set(r,{opacity:0,y:12});var i=e.timeline({scrollTrigger:{trigger:n,start:`top 80%`,end:`top 50%`,scrub:.6}});r.forEach((e,t)=>{i.to(e,{opacity:1,y:0,ease:`none`},t*.5)});

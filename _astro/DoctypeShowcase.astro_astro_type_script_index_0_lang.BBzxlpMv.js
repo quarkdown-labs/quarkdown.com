@@ -1,0 +1,1 @@
+import{n as e,t}from"./gsap.Dd7XmNHQ.js";await t();var n=window.matchMedia(`(max-width: 768px)`).matches;document.querySelectorAll(`[data-doctype-item]`).forEach(t=>{let r=t.querySelector(`img`);r&&e.fromTo(r,{scale:.97,opacity:.5},{scale:1,opacity:1,ease:`none`,scrollTrigger:{trigger:t,start:n?`top 95%`:`top 85%`,end:n?`top 55%`:`top 40%`,scrub:.6}})});
