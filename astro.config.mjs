@@ -9,35 +9,33 @@ export default defineConfig({
   // @ts-ignore — process.env is available at config time in Node
   base: process.env.BASE_PATH || '/',
   integrations: [mdx(), sitemap()],
-  experimental: {
-    fonts: [
-      {
-        provider: fontProviders.google(),
-        name: 'Zilla Slab',
-        cssVariable: '--font-body',
-      },
-      {
-        provider: fontProviders.google(),
-        name: 'Odor Mean Chey',
-        cssVariable: '--font-heading',
-      },
-      {
-        provider: fontProviders.google(),
-        name: 'Urbanist',
-        cssVariable: '--font-sans',
-        weights: [600],
-      },
-      {
-        provider: fontProviders.google(),
-        name: 'IBM Plex Sans',
-        cssVariable: '--font-prose',
-        weights: [400, 600],
-      },
-      {
-        provider: fontProviders.google(),
-        name: 'JetBrains Mono',
-        cssVariable: '--font-code',
-      },
-    ],
-  },
+  fonts: [
+    {
+      provider: fontProviders.google(),
+      name: 'Zilla Slab',
+      cssVariable: '--font-body',
+    },
+    {
+      provider: fontProviders.google(),
+      name: 'Odor Mean Chey',
+      cssVariable: '--font-heading',
+    },
+    {
+      provider: fontProviders.google(),
+      name: 'Urbanist',
+      cssVariable: '--font-sans',
+      weights: [600],
+    },
+    {
+      provider: fontProviders.google(),
+      name: 'IBM Plex Sans',
+      cssVariable: '--font-prose',
+      weights: [400, 600],
+    },
+    {
+      provider: fontProviders.google(),
+      name: 'JetBrains Mono',
+      cssVariable: '--font-code',
+    },
+  ],
 });
