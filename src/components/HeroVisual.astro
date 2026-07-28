@@ -12,8 +12,9 @@ import GalaxySpiral from '../assets/galaxy-spiral.svg';
   const FADE_END = 0.75; // Fraction of viewport height until fully dissolved
   const FILL_STEEPNESS = 4.5;
   const MAX_BLUR_PX = 8;
-  const MAX_LIFT_PX = 100;
+  const MAX_LIFT_PX = 140;
   const MAX_ROTATE_DEG = 6;
+  const MIN_SCALE = 0.95;
 
   const slot = document.querySelector<HTMLElement>('.hero-visual');
   const image = document.querySelector<HTMLElement>('.hero-visual-image');
@@ -37,6 +38,7 @@ import GalaxySpiral from '../assets/galaxy-spiral.svg';
       image!.style.setProperty('--visual-blur', `${t * MAX_BLUR_PX}px`);
       image!.style.setProperty('--visual-lift', `${-t * MAX_LIFT_PX}px`);
       image!.style.setProperty('--visual-rotate', `${-t * MAX_ROTATE_DEG}deg`);
+      image!.style.setProperty('--visual-scale', String(1 - t * (1 - MIN_SCALE)));
     }
 
     let scheduled = false;
@@ -82,7 +84,10 @@ import GalaxySpiral from '../assets/galaxy-spiral.svg';
     height: var(--visual-height, 0);
     pointer-events: none;
     z-index: 0;
-    transform: translateY(var(--visual-lift, 0px)) rotate(var(--visual-rotate, 0deg));
+    transform:
+      translateY(var(--visual-lift, 0px))
+      rotate(var(--visual-rotate, 0deg))
+      scale(var(--visual-scale, 1));
 
     :global(svg) {
       width: 100%;
