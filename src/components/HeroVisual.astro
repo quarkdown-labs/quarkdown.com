@@ -10,10 +10,10 @@ import GalaxySpiral from '../assets/galaxy-spiral.svg';
 
 <script>
   const FADE_END = 0.75; // Fraction of viewport height until fully dissolved
-  const FILL_STEEPNESS = 3;
+  const FILL_STEEPNESS = 4.5;
   const MAX_BLUR_PX = 8;
   const MAX_LIFT_PX = 70;
-  const MAX_ROTATE_DEG = 4;
+  const MAX_ROTATE_DEG = 5;
 
   const slot = document.querySelector<HTMLElement>('.hero-visual');
   const image = document.querySelector<HTMLElement>('.hero-visual-image');
@@ -31,7 +31,7 @@ import GalaxySpiral from '../assets/galaxy-spiral.svg';
       const vh = window.innerHeight;
       const t = Math.min(1, window.scrollY / (vh * FADE_END));
       const stroke = 1 - t;
-      const fill = Math.max(0.001, Math.pow(stroke, FILL_STEEPNESS));
+      const fill = Math.max(0.01, Math.pow(stroke, FILL_STEEPNESS));
       image!.style.setProperty('--visual-fill-opacity', String(fill));
       image!.style.setProperty('--visual-stroke-opacity', String(stroke));
       image!.style.setProperty('--visual-blur', `${t * MAX_BLUR_PX}px`);
