@@ -12,8 +12,8 @@ import GalaxySpiral from '../assets/galaxy-spiral.svg';
   const FADE_END = 0.75; // Fraction of viewport height until fully dissolved
   const FILL_STEEPNESS = 3;
   const MAX_BLUR_PX = 8;
-  const MAX_LIFT_PX = 25;
-  const MAX_ROTATE_DEG = 3;
+  const MAX_LIFT_PX = 70;
+  const MAX_ROTATE_DEG = 4;
 
   const slot = document.querySelector<HTMLElement>('.hero-visual');
   const image = document.querySelector<HTMLElement>('.hero-visual-image');
@@ -82,13 +82,13 @@ import GalaxySpiral from '../assets/galaxy-spiral.svg';
     height: var(--visual-height, 0);
     pointer-events: none;
     z-index: 0;
+    transform: translateY(var(--visual-lift, 0px)) rotate(var(--visual-rotate, 0deg));
 
     :global(svg) {
       width: 100%;
       height: 100%;
       opacity: var(--visual-stroke-opacity, 1);
       filter: blur(var(--visual-blur, 0));
-      transform: translateY(var(--visual-lift, 0)) rotate(var(--visual-rotate, 0));
     }
 
     :global(svg [fill]:not([fill='none'])) {
