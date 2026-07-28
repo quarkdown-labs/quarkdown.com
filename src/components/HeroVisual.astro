@@ -1,0 +1,104 @@
+---
+import GalaxySpiral from '../assets/galaxy-spiral.svg';
+---
+
+<div class="hero-visual" aria-hidden="true">
+  <div class="hero-visual-image">
+    <GalaxySpiral />
+  </div>
+</div>
+
+<script>
+  const FADE_END = 0.75; // Fraction of viewport height until fully dissolved
+  const FILL_STEEPNESS = 3;
+  const MAX_BLUR_PX = 8;
+  const MAX_LIFT_PX = 25;
+  const MAX_ROTATE_DEG = 3;
+
+  const slot = document.querySelector<HTMLElement>('.hero-visual');
+  const image = document.querySelector<HTMLElement>('.hero-visual-image');
+
+  if (slot && image) {
+    function syncPosition() {
+      const rect = slot!.getBoundingClientRect();
+      image!.style.setProperty('--visual-top', `${rect.top + window.scrollY}px`);
+      image!.style.setProperty('--visual-left', `${rect.left + window.scrollX}px`);
+      image!.style.setProperty('--visual-width', `${rect.width}px`);
+      image!.style.setProperty('--visual-height', `${rect.height}px`);
+    }
+
+    function updateFade() {
+      const vh = window.innerHeight;
+      const t = Math.min(1, window.scrollY / (vh * FADE_END));
+      const stroke = 1 - t;
+      const fill = Math.max(0.001, Math.pow(stroke, FILL_STEEPNESS));
+      image!.style.setProperty('--visual-fill-opacity', String(fill));
+      image!.style.setProperty('--visual-stroke-opacity', String(stroke));
+      image!.style.setProperty('--visual-blur', `${t * MAX_BLUR_PX}px`);
+      image!.style.setProperty('--visual-lift', `${-t * MAX_LIFT_PX}px`);
+      image!.style.setProperty('--visual-rotate', `${-t * MAX_ROTATE_DEG}deg`);
+    }
+
+    let scheduled = false;
+    function onScroll() {
+      if (scheduled) return;
+      scheduled = true;
+      requestAnimationFrame(() => {
+        updateFade();
+        scheduled = false;
+      });
+    }
+
+    syncPosition();
+    updateFade();
+    
+    new ResizeObserver(syncPosition).observe(document.body);
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
+</script>
+
+<style lang="scss">
+  @use '../styles/breakpoints' as *;
+
+  .hero-visual {
+    flex: 1;
+    display: flex;
+    align-self: center;
+    aspect-ratio: 1;
+    max-width: 560px;
+
+    @include md-down {
+      max-width: 350px;
+      order: -1;
+      width: 100%;
+    }
+  }
+
+  .hero-visual-image {
+    position: fixed;
+    top: var(--visual-top);
+    left: var(--visual-left);
+    width: var(--visual-width);
+    height: var(--visual-height);
+    pointer-events: none;
+    z-index: 0;
+
+    :global(svg) {
+      width: 100%;
+      height: 100%;
+      opacity: var(--visual-stroke-opacity, 1);
+      filter: blur(var(--visual-blur, 0));
+      transform: translateY(var(--visual-lift, 0)) rotate(var(--visual-rotate, 0));
+    }
+
+    :global(svg [fill]:not([fill='none'])) {
+      fill-opacity: var(--visual-fill-opacity, 1);
+    }
+
+    @include md-down {
+      position: static;
+      width: 100%;
+      height: 100%;
+    }
+  }
+</style>

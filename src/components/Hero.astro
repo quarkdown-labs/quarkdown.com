@@ -1,7 +1,7 @@
 ---
-import GalaxySpiral from '../assets/galaxy-spiral.svg';
 import DotPattern from './DotPattern.astro';
 import GetStartedActionPair from './GetStartedActionPair.astro';
+import HeroVisual from './HeroVisual.astro';
 ---
 
 <section class="hero">
@@ -24,9 +24,7 @@ import GetStartedActionPair from './GetStartedActionPair.astro';
       <GetStartedActionPair />
     </div>
 
-    <div class="hero-illustration" aria-hidden="true">
-      <GalaxySpiral />
-    </div>
+    <HeroVisual />
   </div>
 </section>
 
@@ -66,22 +64,6 @@ import GetStartedActionPair from './GetStartedActionPair.astro';
     @include md-down {
       align-items: center;
       margin-top: 0;
-    }
-  }
-
-  .hero-illustration {
-    flex: 1;
-    display: flex;
-
-    :global(svg) {
-      width: 100%;
-      max-width: 560px;
-      height: auto;
-    }
-
-    @include md-down {
-      max-width: 350px;
-      order: -1;
     }
   }
 
