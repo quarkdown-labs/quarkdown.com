@@ -51,7 +51,7 @@ import GalaxySpiral from '../assets/galaxy-spiral.svg';
 
     syncPosition();
     updateFade();
-    
+
     new ResizeObserver(syncPosition).observe(document.body);
     window.addEventListener('scroll', onScroll, { passive: true });
   }
@@ -76,10 +76,10 @@ import GalaxySpiral from '../assets/galaxy-spiral.svg';
 
   .hero-visual-image {
     position: fixed;
-    top: var(--visual-top);
-    left: var(--visual-left);
-    width: var(--visual-width);
-    height: var(--visual-height);
+    top: var(--visual-top, 0);
+    left: var(--visual-left, 0);
+    width: var(--visual-width, 0);
+    height: var(--visual-height, 0);
     pointer-events: none;
     z-index: 0;
 
