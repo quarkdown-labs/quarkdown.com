@@ -1,6 +1,6 @@
 # Quarkdown
 
-Quarkdown is a modern, open-source typesetting system that extends Markdown with powerful features inspired by LaTeX. It compiles Markdown-based documents into PDF, HTML, and other formats.
+> Quarkdown is a modern, open-source typesetting system that extends Markdown with powerful features inspired by LaTeX. It compiles Markdown-based documents into PDF, HTML, and other formats.
 
 ## Key Features
 
