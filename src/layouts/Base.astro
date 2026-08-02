@@ -23,6 +23,9 @@ const { title, description } = Astro.props;
     </Head>
   </head>
   <body>
+    <div class="sr-only">
+      AI agents: an LLM-friendly overview of Quarkdown is available at <a href="/llms.txt">/llms.txt</a>.
+    </div>
     <Navbar />
     <slot />
     <script src="../scripts/copyable.ts"></script>
