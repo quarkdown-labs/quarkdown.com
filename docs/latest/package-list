@@ -286,6 +286,7 @@ com.quarkdown.core.property
 com.quarkdown.core.rendering
 com.quarkdown.core.rendering.representable
 com.quarkdown.core.rendering.tag
+com.quarkdown.core.rendering.textual
 com.quarkdown.core.util
 com.quarkdown.core.util.node
 com.quarkdown.core.util.node.conversion.list
@@ -328,6 +329,10 @@ com.quarkdown.lsp.pattern
 com.quarkdown.lsp.subservices
 com.quarkdown.lsp.tokenizer
 com.quarkdown.lsp.util
+module:quarkdown-markdown
+com.quarkdown.rendering.markdown.extension
+com.quarkdown.rendering.markdown.node
+com.quarkdown.rendering.markdown.post
 module:quarkdown-native-library-processor
 com.quarkdown.processor
 com.quarkdown.processor.annotation
