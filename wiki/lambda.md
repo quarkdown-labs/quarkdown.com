@@ -1,0 +1,78 @@
+# Lambda
+
+A **lambda** is a block of code that maps a variable number of parameters into a single output value of any type (see the *Value types* section of this wiki).
+
+The syntax is:
+
+```markdown
+param1 param2 param3:
+My code
+```
+
+The `param1 param2 param3:` portion is the *header* of the lambda, where you define parameter names. You can access their values as if you were dealing with [variables](variables.qd):
+
+```markdown
+param1 param2 param3:
+The second parameter is .param2
+```
+
+You can omit the header in these cases:
+
+- When the lambda expects 0 parameters (such as in [conditional statements](conditional-statements.qd))
+- In any other case, the parameters become *implicit* and can be accessed by position via `.1`, `.2`, `.3`, etc.
+
+```markdown
+The second parameter is .2
+```
+
+Lambdas are constructs that can fork and create new **scopes**.
+
+- Nested scopes inherit properties from their parent, such as defined variables and functions.
+- Properties defined inside a nested scope cannot be accessed by their parent, meaning variables defined within a lambda block do not exist outside the lambda itself.
+
+## Inline lambda
+
+Lambdas are defined the same way whether they appear in a block or an inline argument (those wrapped in curly braces).
+
+```markdown
+.myfunction {x y: The values are .x and .y}
+```
+
+Implicit parameters work as well:
+
+```markdown
+.myfunction {The values are .1 and .2}
+```
+
+## Examples
+
+### [`.foreach`](loops.qd)
+
+```markdown
+.foreach {2..5}
+    n:
+    The number is **.n**
+```
+
+With implicit parameter:
+
+```markdown
+.foreach {2..5}
+    The number is **.1**
+```
+
+### [`.function`](declaring-functions.qd)
+
+The body of `.function` is a lambda that accepts a variable amount of *explicit* parameters:
+
+```markdown
+.function {area}
+    width height:
+    .multiply {.width} by:{.height}
+```
+
+### [`.takeif`](none.qd)
+
+```markdown
+.num::takeif {x: .x::equals {5}}
+```

@@ -1,0 +1,70 @@
+# Page counter
+
+The **`.currentpage`** and **`.totalpages`** functions display, respectively, the current index (beginning from 1) of the page or slide where the function call appears and the total number of pages or slides. They do not accept any arguments.
+
+These functions are supported in `paged` and `slides` documents. In other document types, the `-` placeholder is shown instead.
+
+> These functions return visual elements (nodes), *not* numbers. Therefore, you cannot perform operations like `.sum {.currentpage} {3}`.
+
+## Fixed page counter
+
+You can display a page counter on each page using [page margin content](page-margin-content.qd):
+
+```markdown
+.pagemargin {bottomcenter}
+  .currentpage / .totalpages
+```
+
+## Formatting the page number
+
+The **`.formatpagenumber {format}`**  function sets a new page number format from the page where it appears. It only affects page numbers from that point onwards.
+
+The format string accepts the same syntax as the one in [numbering](numbering.qd):
+
+- `1` (default) for decimal (1, 2, 3, …)
+- `a` for lowercase latin alphabet (a, b, c, …)
+- `A` for uppercase latin alphabet (A, B, C, …)
+- `i` for lowercase roman numerals (i, ii, iii, …)
+- `I` for uppercase roman numerals (I, II, III, …)
+
+These changes are reflected in `.currentpage` and page numbers in the [table of contents](table-of-contents.qd).
+
+> **Example 1**
+> 
+> ```markdown
+> .pagemargin {topcenter}
+>     .currentpage
+> 
+> # First page
+> 
+> .formatpagenumber {i}
+> 
+> # Second page
+> 
+> # Third page
+> ```
+> 
+> ![Page number format](media/format@983793580.png)
+
+## Resetting the page number
+
+The **`.resetpagenumber {from?}`**  function allows you to overwrite the current page number at any point in a `paged` or `slides` document.
+
+These changes are reflected in `.currentpage` and page numbers in the [table of contents](table-of-contents.qd).
+
+> **Example 2**
+> 
+> ```markdown
+> .pagemargin {topcenter}
+>     .currentpage
+> 
+> # First page
+> 
+> # Second page
+> 
+> .resetpagenumber start:{20}
+> 
+> # Third page
+> ```
+> 
+> ![Page number reset](media/reset@380519566.png)

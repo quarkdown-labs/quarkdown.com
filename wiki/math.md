@@ -1,0 +1,27 @@
+# Math
+
+Mathematical functions provide a way to perform numeric operations.
+
+> **Example 1**
+> 
+> ```markdown
+> .var {radius} {8}
+> 
+> If we try to calculate the **surface** of a circle of **radius .radius**,
+> we'll find out it's **.pow {.radius} to:{2}::multiply {.pi}::truncate {2}**
+> ```
+> 
+> If we try to calculate the **surface** of a circle of **radius 8**,
+> we’ll find out it’s **201.06**
+
+Handling complex math is particularly effective when combined with [function call chaining](syntax-of-a-function-call.qd). The following two calls are equivalent, with the latter being more natural to read:
+
+```markdown
+.truncate {.multiply {.pow {.radius} to:{2}} by:{.pi}} {2}
+```
+
+```markdown
+.pow {.radius} to:{2}::multiply {.pi}::truncate {2}
+```
+
+For a complete list of available functions, refer to the standard library’s [`Math` documentation](https://quarkdown.com/docs/quarkdown-stdlib/com.quarkdown.stdlib.module.Math).

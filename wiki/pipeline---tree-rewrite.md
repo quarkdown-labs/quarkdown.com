@@ -1,0 +1,11 @@
+# Pipeline - Tree rewrite
+
+> Main packages: [`core.ast.iterator`](https://github.com/iamgio/quarkdown/tree/main/quarkdown-core/src/main/kotlin/com/quarkdown/core/ast/iterator), [`core.pipeline.stages`](https://github.com/iamgio/quarkdown/tree/main/quarkdown-core/src/main/kotlin/com/quarkdown/core/pipeline/stages)
+
+Once the queued function calls have been [expanded](pipeline---function-call-expansion.qd), the AST is rewritten in place to apply any [show-rules](element-styling.qd) via user-defined [extensions](extending-functions.qd).
+
+Several built-in nodes, such as [headings](headings.qd), are *primitive function-backed*: the stdlib exposes functions whose parameters mirror the node’s properties. Whenever an `.extend` wrapper is registered for that name, every occurrence of the primitive must be routed through the wrapper.
+
+The tree rewrite stage walks the AST depth-first and, for each primitive whose backing function has been extended, replaces the node with an equivalent function call.
+
+As an optimization, the whole stage is skipped when no extension is registered in the document, which is the common case.

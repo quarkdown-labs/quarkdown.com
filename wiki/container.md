@@ -1,0 +1,101 @@
+# Container
+
+The **`.container`**  function creates a highly customizable block of content, and resets the current layout rules back to normal.
+
+## Layout reset
+
+> **Example 1**
+> 
+> Imagine you want to create a row with two columns, each containing a heading and some text. A beginner might try the following *wrong* approach. As explained in the [Stacks](stacks.qd) page, stack functions rely on the strict Markdown concept of a block, an isolated chunk of the document, to determine which elements they handle.
+> 
+> ```markdown
+> <!-- WRONG! -->
+> .row alignment:{center} gap:{1cm}
+>     ##! Left
+>     Text on left column.
+> 
+>     ##! Right
+>     Text on right column.
+> ```
+> 
+> ## Left
+> 
+> Text on left column.
+> 
+> ## Right
+> 
+> Text on right column.
+
+> **Example 2**
+> 
+> You might then try using columns. This works, but the concept is not quite right. You do not want a *layout rule*; you just want to reset the document flow back to normal. This is exactly what the container does: it groups elements together according to the natural flow of the document.
+> 
+> ```markdown
+> <!-- Could be improved -->
+> .row alignment:{center} gap:{1cm}
+>     .column cross:{start}
+>         ##! Left
+>         Text on left column.
+> 
+>     .column cross:{start}
+>         ##! Right
+>         Text on right column.
+> ```
+> 
+> ## Left
+> 
+> Text on left column.
+> 
+> ## Right
+> 
+> Text on right column.
+
+> **Example 3**
+> 
+> The correct way to achieve the desired layout is to use containers. Each container resets the layout rules, allowing the row to treat them as separate blocks of content.
+> 
+> ```markdown
+> <!-- Correct! -->
+> .row alignment:{center} gap:{1cm}
+>     .container
+>         ##! Left
+>         Text on left column.
+> 
+>     .container
+>         ##! Right
+>         Text on right column.
+> ```
+> 
+> ## Left
+> 
+> Text on left column.
+> 
+> ## Right
+> 
+> Text on right column.
+
+## Container-specific parameters
+
+| Parameter | Description | Accepts | Default |
+| --- | --- | --- | --- |
+| `width` | Box width constraint. | [`Size`](sizes.qd) | No constraint |
+| `height` | Box height constraint. | [`Size`](sizes.qd) | No constraint |
+| `fullwidth` | Whether to take up the parent’s full width. Overridden by `width`. | [`Boolean`](boolean.qd) | False |
+| `classname` | Custom CSS class name. | String | None |
+
+## Styling
+
+`.container` accepts every option described on [*Element styling*](element-styling.qd), for customizing colors, spacing, borders, and text appearance.
+
+> **Example 4**
+> 
+> ```markdown
+> .container fullwidth:{yes} borderstyle:{dashed} padding:{1cm} fontsize:{medium} fontstyle:{italic} fontvariant:{smallcaps}
+>     This is a styled container. Fancy, isn't it?
+> 
+>     Quarkdown can truly give life to complex layouts with ease.
+> ```
+> 
+> This is a styled container. Fancy, isn’t it?
+> 
+> Quarkdown can truly give life to complex layouts with ease.
