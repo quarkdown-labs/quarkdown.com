@@ -4,11 +4,15 @@ Quarkdown is a modern, open-source typesetting system that extends Markdown with
 
 ## Key Features
 
-- **Markdown-based**: Write in familiar Markdown syntax with Quarkdown extensions for advanced typesetting.
-- **Multiple output formats**: Generate paged documents (articles, books, reports), plain HTML pages, documentation sites, and slide presentations.
-- **Scripting support**: Turing-complete scripting capabilities for reusable templates, functions, and dynamic content.
-- **Live preview**: Blazing fast compilation with reactive preview for instant feedback.
-- **Cross-platform**: Available on Linux, macOS, and Windows.
+- **Familiar:** built on the well-known Markdown syntax, for a flat learning curve.
+- **Elegant:** produces output that matches the quality of industry-leading tools.
+- **Agent-friendly:** comes with a built-in skill for idiomatic fluency of your coding agents.
+- **Customizable:** full control over document layout, aesthetics, and properties.
+- **Secure by default:** a restrictive permission system limits access to system resources.
+- **Versatile:** a single source compiles to multiple targets.
+- **Reactive:** low-latency live previews for rapid iteration. The official wiki (100+ subdocuments) compiles in ~2 seconds.
+- **Reusable:** repeated content can be turned into one-line function calls.
+- **Easily deployable:** set a CD workflow up in under 3 minutes ([example](https://raw.githubusercontent.com/iamgio/iamgio.github.io/refs/heads/main/.github/workflows/build.yml)).
 
 ## Use Cases
 
@@ -26,7 +30,9 @@ In particular, check out the Quickstart Guide for a hands-on introduction: https
 
 ## Links
 
-- Website: https://quarkdown.com
-- GitHub: https://github.com/iamgio/quarkdown
-- Wiki: https://quarkdown.com/wiki
-- API Docs: https://quarkdown.com/docs
+- [Website](https://quarkdown.com)
+- [GitHub](https://github.com/iamgio/quarkdown)
+- [Wiki](https://quarkdown.com/wiki)
+- [API Docs](https://quarkdown.com/docs)
+- [Blog](https://quarkdown.com/blog)
+- [VS Code Extension](https://quarkdown.com/vs-code)
