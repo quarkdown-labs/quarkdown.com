@@ -48,7 +48,7 @@ The source may contain inline content, including function calls.
 
 ## Typed quotes
 
-[Typed quotes](quote-types.qd) may also have sources:
+[Typed quotes](quote-types.md) may also have sources:
 
 > **Example 4**
 > 

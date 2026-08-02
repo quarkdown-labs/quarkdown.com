@@ -5,7 +5,7 @@
 The **`.match {content} {pattern} {replacement}`**  function:
 
 1. finds every substring of inline content that matches a regular expression,
-2. replaces each match with the inline content produced by a [lambda](lambda.qd).
+2. replaces each match with the inline content produced by a [lambda](lambda.md).
 
 ## Basic example
 
@@ -34,7 +34,7 @@ The lambda runs once per matched substring, with its argument referring to the m
 
 ## Chained call
 
-`.match` works naturally in a [chain](syntax-of-a-function-call.qd), since `content` is its first parameter.
+`.match` works naturally in a [chain](syntax-of-a-function-call.md), since `content` is its first parameter.
 
 > **Example 3**
 > 

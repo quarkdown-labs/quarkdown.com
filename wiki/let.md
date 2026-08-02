@@ -4,8 +4,8 @@
 
 The **`.let`** function defines a temporary variable that is accessible only within its scope. It accepts two parameters:
 
-1. The value, of [any type](typing.qd), to assign to the scoped variable
-2. A [lambda](lambda.qd) block that accepts one parameter (the given value)
+1. The value, of [any type](typing.md), to assign to the scoped variable
+2. A [lambda](lambda.md) block that accepts one parameter (the given value)
 
 > **Example 1**
 > 
@@ -32,7 +32,7 @@ The function returns the evaluation of the lambda, so you can use it as an expre
 > 
 > QUARKDOWN, quarkdown, Quarkdown
 
-The lambda block also accepts implicit positional parameters. See [*Lambda*](lambda.qd) for more information.
+The lambda block also accepts implicit positional parameters. See [*Lambda*](lambda.md) for more information.
 
 > **Example 3**
 > 

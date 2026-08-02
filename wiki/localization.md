@@ -4,13 +4,13 @@
 
 Quarkdown supports **string localization** out of the box.
 
-The first step is to set the document language via [**`.doclang {locale}`**](document-metadata.qd). Call this function among the other document metadata functions (such as `.docname`, `.docauthor`, etc.).
+The first step is to set the document language via [**`.doclang {locale}`**](document-metadata.md). Call this function among the other document metadata functions (such as `.docname`, `.docauthor`, etc.).
 
 The `locale` value can be either a case-insensitive English full name (e.g., `English`, `Italian`, `French (Canada)`) or an IETF BCP 47 language tag (e.g., `en`, `it`, `fr-CA`).
 
 ## Built-in localization
 
-Quarkdown’s built-in libraries expose localization tables that localize elements such as [quote types](quote-types.qd), [numbering](numbering.qd) captions, and [table of contents](table-of-contents.qd) title.
+Quarkdown’s built-in libraries expose localization tables that localize elements such as [quote types](quote-types.md), [numbering](numbering.md) captions, and [table of contents](table-of-contents.md) title.
 
 > The currently supported locales are **Chinese, English, French, German, Italian, Japanese, Polish, Portuguese, Russian, Ukrainian**.
 > 
@@ -36,7 +36,7 @@ Quarkdown’s built-in libraries expose localization tables that localize elemen
 
 This works well for your own English document, but what if you are making a library for everyone to use? You would need to support multiple languages. This is where *localization tables* come in.
 
-The `.localization {name}` function defines a new **localization table** associated with a unique name. Its body parameter accepts a particular Markdown list that, in Quarkdown, is called a [*dictionary*](dictionary.qd).
+The `.localization {name}` function defines a new **localization table** associated with a unique name. Its body parameter accepts a particular Markdown list that, in Quarkdown, is called a [*dictionary*](dictionary.md).
 
 This localization dictionary exposes key-value pairs for each locale that you intend to support. The locale names follow the same rules as those from `.doclang`, meaning they can be full names or tags. As long as `.doclang` is set, you can access the localized string via `.localize {table:key}`, in this case `.localize {mylib:theorem}`.
 
@@ -65,7 +65,7 @@ If your locale is not yet supported by Quarkdown and you are unable to contribut
 
 When calling `.localization {name}`, an additional **`merge:{yes}`** argument causes the localization table with the given name to be extended with the new user-provided one. Any conflicting entries will be replaced by the new ones.
 
-For instance, [typed boxes](box.qd) feature a localized title by default, such as *Warning* for a warning-typed box. If the document locale is not supported, the title will be missing. To extend the built-in localization with box titles in Canadian French, use the following approach:
+For instance, [typed boxes](box.md) feature a localized title by default, such as *Warning* for a warning-typed box. If the document locale is not supported, the title will be missing. To extend the built-in localization with box titles in Canadian French, use the following approach:
 
 ```yaml
 .localization {std} merge:{yes}

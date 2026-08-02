@@ -2,7 +2,7 @@
 
 # Page margin content
 
-The **`.pagemargin`** function displays content on each page in a fixed position along its [margins](page-format.qd).
+The **`.pagemargin`** function displays content on each page in a fixed position along its [margins](page-format.md#content-area).
 
 - In `paged` documents, a special area of each page is reserved for margins:
 
@@ -23,7 +23,7 @@ The function accepts an optional `position` and a body argument `content`:
 | Parameter | Description | Accepts |
 | --- | --- | --- |
 | `position` | Page area to target. | `topleftcorner`, `topleft`, `topcenter`, `topright`, `toprightcorner`, `righttop`, `rightmiddle`, `rightbottom`, `bottomrightcorner`, `bottomright`, `bottomcenter`, `bottomleft`, `bottomleftcorner`, `leftbottom`, `leftmiddle`, `lefttop`, *`topoutsidecorner`, `topoutside`, `topinsidecorner`, `topinside`, `bottomoutsidecorner`, `bottomoutside`, `bottominsidecorner`, `bottominside`* |
-| `content` | Element to display. | [Block content](markdown-content.qd) |
+| `content` | Element to display. | [Block content](markdown-content.md#block-content) |
 
 > **Example 1**
 > 
@@ -109,4 +109,4 @@ The **`.footer`** function is a shorthand for `.pagemargin {bottomcenter}`.
 
 ## Page counter
 
-A page margin can host a page counter. See [Page counter](page-counter.qd) for more information.
+A page margin can host a page counter. See [Page counter](page-counter.md) for more information.

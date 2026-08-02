@@ -6,7 +6,7 @@ Quarkdown offers two ways to include content from other files: **inclusion** and
 
 ## Inclusion
 
-[Inclusion](including-other-quarkdown-files.qd) via `.include` and `.includeall` evaluates other Quarkdown source files.
+[Inclusion](including-other-quarkdown-files.md) via `.include` and `.includeall` evaluates other Quarkdown source files.
 
 The function returns the evaluation result, making it appear as if the target file’s content was inserted directly in place of the function call. This is an **opaque operation** because the output contains no traces of the original file.
 
@@ -37,7 +37,7 @@ The execution context is ***shared*** between the main file and the included fil
 
 Any customization, function, variable, and other information declared in the main file will be available in the included file, **and vice versa**.
 
-You can optionally restrict this behavior via the [`sandbox`](including-other-quarkdown-files.qd) parameter.
+You can optionally restrict this behavior via the [`sandbox`](including-other-quarkdown-files.md#context-sharing) parameter.
 
 ### Circular references
 
@@ -45,7 +45,7 @@ Circular or recursive inclusions are not allowed and will result in an error.
 
 ## Subdocuments
 
-[Subdocuments](subdocuments.qd) are independent and referenceable source files.
+[Subdocuments](subdocuments.md) are independent and referenceable source files.
 
 Subdocuments render as separate resources, and Quarkdown stores links to them in a graph structure.
 

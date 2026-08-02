@@ -65,7 +65,7 @@ All stack functions accept the following optional arguments:
 | --- | --- | --- |
 | `alignment` | Main axis alignment (CSS `justify-content`). | `start`, `center`, `end`, `spacebetween`, `spacearound`, `spaceevenly` |
 | `cross` | Cross axis alignment (CSS `align-items`). | `start`, `center`, `end`, `stretch` |
-| `gap` | Space between items. | [`Size`](sizes.qd) |
+| `gap` | Space between items. | [`Size`](sizes.md) |
 
 The `grid` function requires a `columns` argument, which must be specified as an integer.   
 

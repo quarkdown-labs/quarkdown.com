@@ -8,8 +8,8 @@ The **`.json {path}`**  function loads a JSON file and returns its content ready
 
 The shape of the returned value depends on the top-level JSON value:
 
-- A JSON *object* is loaded as a [dictionary](dictionary.qd), which you can query with [`.get`](dictionary.qd).
-- A JSON *array* is loaded as an [iterable](iterable.qd), which you can iterate with [`.foreach`](loops.qd) or manipulate with any iterable operation.
+- A JSON *object* is loaded as a [dictionary](dictionary.md), which you can query with [`.get`](dictionary.md).
+- A JSON *array* is loaded as an [iterable](iterable.md), which you can iterate with [`.foreach`](loops.md) or manipulate with any iterable operation.
 
 > **Example 1**
 > 

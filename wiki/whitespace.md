@@ -2,10 +2,10 @@
 
 # Whitespace
 
-You can add blank space anywhere via the **`.whitespace`** function  , which accepts optional `width` and `height` [Size](sizes.qd) arguments.
+You can add blank space anywhere via the **`.whitespace`** function  , which accepts optional `width` and `height` [Size](sizes.md#single-size-size) arguments.
 
 - If you set neither argument, a simple whitespace character is rendered (` `), which is useful for adding blank lines.
-- If you set at least one argument, a rectangle of that size is rendered. Note that this might not always work outside of [layout functions](stacks.qd).
+- If you set at least one argument, a rectangle of that size is rendered. Note that this might not always work outside of [layout functions](stacks.md).
 
 > **Example 1**
 > 

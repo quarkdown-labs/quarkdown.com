@@ -4,7 +4,7 @@
 
 You can declare functions using the **`.function`**  function (in Quarkdown, everything is a function!).
 
-It accepts two arguments: the function name and its body. The function can then be invoked as a normal function call – see [Syntax of a function call](syntax-of-a-function-call.qd).
+It accepts two arguments: the function name and its body. The function can then be invoked as a normal function call – see [Syntax of a function call](syntax-of-a-function-call.md).
 
 > **Example 1**
 > 
@@ -19,7 +19,7 @@ It accepts two arguments: the function name and its body. The function can then 
 
 ## Parameters
 
-The body parameter is a [lambda](lambda.qd), and each parameter of the function is a parameter of the lambda block. You can access each argument within the function body as a [variable](variables.qd), which in Quarkdown is essentially a function with no parameters.
+The body parameter is a [lambda](lambda.md), and each parameter of the function is a parameter of the lambda block. You can access each argument within the function body as a [variable](variables.md), which in Quarkdown is essentially a function with no parameters.
 
 > **Example 2**
 > 
@@ -41,7 +41,7 @@ The body parameter is a [lambda](lambda.qd), and each parameter of the function 
 
 ### Optional parameters
 
-If a function parameter ends with a question mark `?`, it becomes optional. When you do not provide the corresponding argument, it receives the value [`None`](none.qd).
+If a function parameter ends with a question mark `?`, it becomes optional. When you do not provide the corresponding argument, it receives the value [`None`](none.md).
 
 > **Example 3**
 > 
@@ -59,7 +59,7 @@ If a function parameter ends with a question mark `?`, it becomes optional. When
 > 
 > Hello, world from John!
 
-`None` provides several useful [operations](none.qd), such as `.otherwise` for placeholders that emulate default parameter values.
+`None` provides several useful [operations](none.md#operations), such as `.otherwise` for placeholders that emulate default parameter values.
 
 > **Example 4**
 > 
@@ -99,7 +99,7 @@ Block arguments always correspond to the last parameter of a function. There is 
 
 ## Returning values
 
-In Quarkdown, there are no return statements. Every reached instruction becomes part of the output – see [Conditional statements](conditional-statements.qd).
+In Quarkdown, there are no return statements. Every reached instruction becomes part of the output – see [Conditional statements](conditional-statements.md).
 
 > **Example 6**
 > 
@@ -128,7 +128,7 @@ Functions can return any Markdown content.
 > 
 > **Hello, world** from John!
 
-Quarkdown is [weakly typed](typing.qd), so functions can return any type of value.
+Quarkdown is [weakly typed](typing.md), so functions can return any type of value.
 
 > **Example 8**
 > 
@@ -175,4 +175,4 @@ A function can be redeclared at any point, and the new definition takes preceden
 > 
 > quarkdown
 
-This behavior can be disabled at the command-line level via the [`--forbid-function-overwriting`](cli-compiler.qd) option, which raises a compilation error when a function is declared with a name that is already in use.
+This behavior can be disabled at the command-line level via the [`--forbid-function-overwriting`](cli-compiler.md#function-overwriting) option, which raises a compilation error when a function is declared with a name that is already in use.

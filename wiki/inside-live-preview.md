@@ -2,7 +2,7 @@
 
 # Inside live preview
 
-Quarkdown’s [webserver](cli-webserver.qd) enables direct communication between the compiler’s CLI and the browser, which makes live previewing possible.
+Quarkdown’s [webserver](cli-webserver.md) enables direct communication between the compiler’s CLI and the browser, which makes live previewing possible.
 
 The server exposes the following endpoints:
 

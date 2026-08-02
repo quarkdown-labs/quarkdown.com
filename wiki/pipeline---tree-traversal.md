@@ -6,8 +6,8 @@
 
 After the function calls have been expanded, the AST is traversed depth-first to gather enriched information about the document, such as:
 
-- Heading hierarchy, used for the [table of contents](table-of-contents.qd)
-- [Numbering](numbering.qd): each heading, figure, and other numbered element is assigned a unique number based on its location in the heading hierarchy
+- Heading hierarchy, used for the [table of contents](table-of-contents.md)
+- [Numbering](numbering.md): each heading, figure, and other numbered element is assigned a unique number based on its location in the heading hierarchy
 - Link definition bound to each link reference
 
 For performance reasons, only one traversal is performed during this stage. Each operation can however act independently by attaching its own *hook* to the tree iterator, which is triggered when nodes of a certain kind are encountered.

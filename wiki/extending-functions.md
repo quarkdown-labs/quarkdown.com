@@ -4,7 +4,7 @@
 
 Function extension is a powerful feature that lets you transform, decorate, or replace a function’s behavior.
 
-> This is the backbone of the [element styling](element-styling.qd) engine, when the extended function is a [Markdown primitive](primitives.qd), such as [`.heading`](headings.qd). See its page for more details about extending Markdown elements.
+> This is the backbone of the [element styling](element-styling.md) engine, when the extended function is a [Markdown primitive](primitives.md), such as [`.heading`](headings.md). See its page for more details about extending Markdown elements.
 
 You can extend any previously-declared function using the **`.extend`**  function within a scope. The extension wraps the original function without losing the original definition.
 
@@ -29,7 +29,7 @@ Within the wrapper body, the original function is exposed as **`.super`**. Calli
 
 ## Parameters
 
-The wrapper body is a [lambda](lambda.qd). Its explicit parameters, if any, must match the names of the original function’s parameters and let you intercept the arguments the caller passed.
+The wrapper body is a [lambda](lambda.md). Its explicit parameters, if any, must match the names of the original function’s parameters and let you intercept the arguments the caller passed.
 
 Because `.super` is the original function itself, it accepts the same arguments. Any argument you pass overrides the one the wrapper was called with, while everything you leave out falls through unchanged.
 
@@ -87,7 +87,7 @@ All wrapper parameters are always optional. You only need to declare the paramet
 
 ## Conditional extension
 
-An optional `where` [inline lambda](lambda.qd) parameter lets you define a condition that, if not met at call time, lets the whole call fall back to the original definition. Its parameters follow the same rules as the body lambda.
+An optional `where` [inline lambda](lambda.md) parameter lets you define a condition that, if not met at call time, lets the whole call fall back to the original definition. Its parameters follow the same rules as the body lambda.
 
 > **Example 5**
 > 
@@ -111,7 +111,7 @@ An optional `where` [inline lambda](lambda.qd) parameter lets you define a condi
 
 > **Example 6**
 > 
-> Built-in functions, such as [`.heading`](headings.qd), can be extended. See [*Element styling*](element-styling.qd) for more details.
+> Built-in functions, such as [`.heading`](headings.md), can be extended. See [*Element styling*](element-styling.md) for more details.
 > 
 > ```markdown
 > .extend {heading} where:{depth: .depth::islower than:{4}}
@@ -160,7 +160,7 @@ When extensions carry `where` conditions, the outer (first-declared) condition i
 
 ### Resetting values in a chain
 
-Passing [None](none.qd) as an argument to a nullable parameter restores it to its default.
+Passing [None](none.md) as an argument to a nullable parameter restores it to its default.
 
 > **Example 8**
 > 

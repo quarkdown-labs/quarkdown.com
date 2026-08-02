@@ -6,8 +6,8 @@
 
 The main type of loop is provided by the **`.foreach`** function, which accepts:
 
-1. An [`Iterable`](iterable.qd) value
-2. A single-parameter [lambda](lambda.qd) block, where the argument is the current item being iterated
+1. An [`Iterable`](iterable.md) value
+2. A single-parameter [lambda](lambda.md) block, where the argument is the current item being iterated
 
 > **Example 1**
 > 
@@ -41,7 +41,7 @@ The function returns an ordered iterable **collection** of the same size as the 
 > 
 > 3
 
-Any iterable value is accepted, including Markdown lists. See [*Iterable*](iterable.qd) for all possible ways of defining an iterable value.
+Any iterable value is accepted, including Markdown lists. See [*Iterable*](iterable.md) for all possible ways of defining an iterable value.
 
 > **Example 3**
 > 
@@ -69,7 +69,7 @@ Any iterable value is accepted, including Markdown lists. See [*Iterable*](itera
 > 
 > The letter is **C**.
 
-The type of iterated elements is preserved. See [*Typing*](typing.qd) for more information.
+The type of iterated elements is preserved. See [*Typing*](typing.md) for more information.
 
 > **Example 4**
 > 

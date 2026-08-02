@@ -6,7 +6,7 @@ The **`.css`**  function lets you apply CSS styles to the document.
 
 > CSS styles only apply to HTML and HTML-PDF documents. They have no effect on other output formats.
 > 
-> See the [HTML](html.qd) page for more details on this topic.
+> See the [HTML](html.md) page for more details on this topic.
 
 ```css
 .css
@@ -19,19 +19,19 @@ The **`.css`**  function lets you apply CSS styles to the document.
     }
 ```
 
-You can also load CSS styles from a file using the [`.read`](file-text-content.qd) function:
+You can also load CSS styles from a file using the [`.read`](file-text-content.md) function:
 
 ```markdown
 .css {.read {styles.css}}
 ```
 
-> Unlike [`.code`](code.qd), the `.css` function does not allow function calls inside its body argument because they would be ambiguous with CSS syntax.
+> Unlike [`.code`](code.md), the `.css` function does not allow function calls inside its body argument because they would be ambiguous with CSS syntax.
 > 
 > For this reason, you must inline the `.read` call as shown in the previous example.
 
 ## Custom classes
 
-You can assign custom CSS class names to specific elements using the `classname` parameter, which is available in [`.container`](container.qd) for blocks and [`.text`](text.qd) for inline elements.
+You can assign custom CSS class names to specific elements using the `classname` parameter, which is available in [`.container`](container.md) for blocks and [`.text`](text.md) for inline elements.
 
 > **Example 1**
 > 
@@ -63,7 +63,7 @@ You can assign custom CSS class names to specific elements using the `classname`
 
 ## Custom reusable elements
 
-You can leverage [custom functions](declaring-functions.qd) to create reusable elements with custom classes.
+You can leverage [custom functions](declaring-functions.md) to create reusable elements with custom classes.
 
 > **Example 2**
 > 
@@ -81,7 +81,7 @@ You can leverage [custom functions](declaring-functions.qd) to create reusable e
 
 If you want to *override* Quarkdown’s default styles, we recommend using the **`.cssproperties`**  function.
 
-This function takes a [dictionary](dictionary.qd) of strings, where each item is a `--qd-*` CSS property and its value.
+This function takes a [dictionary](dictionary.md) of strings, where each item is a `--qd-*` CSS property and its value.
 
 You can find a complete list of available properties in the [global theme source](https://github.com/iamgio/quarkdown/blob/main/quarkdown-html/src/main/scss/global.scss). Unknown properties are safely ignored.
 
@@ -98,6 +98,6 @@ You can find a complete list of available properties in the [global theme source
 > 
 > Quarkdown’s themes use CSS custom properties for more granular control and easier overrides. For instance, the same property may be applied differently depending on the document type.
 > 
-> When you call functions like [`.pageformat`](page-format.qd) or [`.paragraphstyle`](paragraph-style.qd), they apply their effects by injecting the corresponding `--qd-*` properties.
+> When you call functions like [`.pageformat`](page-format.md) or [`.paragraphstyle`](paragraph-style.md), they apply their effects by injecting the corresponding `--qd-*` properties.
 > 
 > Overriding a `--qd-*` property rather than its raw CSS equivalent provides smoother control and reduces the risk of future breaking changes.

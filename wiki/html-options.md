@@ -12,7 +12,7 @@ The **`.htmloptions`**  function configures HTML-specific generation settings.
 
 The `baseurl` parameter sets the base URL of the generated website for SEO purposes. When specified:
 
-- A `<link rel="canonical">` tag is added to each page, helping search engines identify the preferred URL for each [subdocument](subdocuments.qd).
+- A `<link rel="canonical">` tag is added to each page, helping search engines identify the preferred URL for each [subdocument](subdocuments.md).
 - A `sitemap.xml` is generated if there’s at least one subdocument.
 
 ```markdown

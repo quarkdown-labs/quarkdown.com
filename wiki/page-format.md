@@ -11,19 +11,19 @@ Multiple calls to `.pageformat` are layered on top of each other, with later cal
 | `side` | Restricts the format to left (verso) or right (recto) pages only. See [Scoped formatting](#scoped-formatting). | `left`, `right` | `paged` |
 | `pages` | Restricts the format to specific pages by 1-based inclusive range. See [Scoped formatting](#scoped-formatting). Combinable with `side`. | Range, e.g. `2..5` | `paged` |
 | `size` | Name of the paper format. | `A0`..`A10`, `B0`..`B5`, `letter`, `legal`, `ledger` | `paged`, `slides` |
-| `width` | Page width. If `size` is set too, this value overrides its width. | [`Size`](sizes.qd), e.g. `300px`, `15cm`, `5.8in` | `plain`, `paged`, `slides`, `docs` |
-| `height` | Page height. If `size` is set too, this value overrides its height. | [`Size`](sizes.qd), e.g. `300px`, `15cm`, `5.8in` | `paged`, `slides` |
+| `width` | Page width. If `size` is set too, this value overrides its width. | [`Size`](sizes.md#size-single-size), e.g. `300px`, `15cm`, `5.8in` | `plain`, `paged`, `slides`, `docs` |
+| `height` | Page height. If `size` is set too, this value overrides its height. | [`Size`](sizes.md#size-single-size), e.g. `300px`, `15cm`, `5.8in` | `paged`, `slides` |
 | `orientation` | Whether width and height of the paper format (`size`) should be swapped. This defaults to `portrait` for `plain` and `paged` documents and to `landscape` for `slides`. | `portrait`, `landscape` | `paged`, `slides` |
-| `margin` | Blank space between page borders and content area. | [`Sizes`](sizes.qd), e.g. `1cm`, `15mm 30px`, `2in 1in 3in 2in` | `plain`, `paged`, `slides` |
-| `bordertop`, `borderright`, `borderbottom`, `borderleft` | Thickness of the border at each side of the content area. | [`Size`](sizes.qd) | `plain`, `paged`, `slides` |
-| `bordercolor` | Color of the border around the content area. | [`Color`](color.qd) | `plain`, `paged`, `slides` |
-| `background` | Background color of each page. | [`Color`](color.qd) | `plain`, `paged`, `slides`, `docs` |
-| `columns` | Number of columns in each page. If set to 2 or higher, the document has a [multi-column layout](multi-column-layout.qd). | Positive integer | `plain`, `paged`, `slides` |
+| `margin` | Blank space between page borders and content area. | [`Sizes`](sizes.md#size-group-sizes), e.g. `1cm`, `15mm 30px`, `2in 1in 3in 2in` | `plain`, `paged`, `slides` |
+| `bordertop`, `borderright`, `borderbottom`, `borderleft` | Thickness of the border at each side of the content area. | [`Size`](sizes.md) | `plain`, `paged`, `slides` |
+| `bordercolor` | Color of the border around the content area. | [`Color`](color.md) | `plain`, `paged`, `slides` |
+| `background` | Background color of each page. | [`Color`](color.md) | `plain`, `paged`, `slides`, `docs` |
+| `columns` | Number of columns in each page. If set to 2 or higher, the document has a [multi-column layout](multi-column-layout.md). | Positive integer | `plain`, `paged`, `slides` |
 | `alignment` | Horizontal content and text alignment. | `start` (default in `slides`), `center`, `end`, `justify` (default in `plain` and `paged`) | `plain`, `paged`, `slides`, `docs` |
 
 ## Content area
 
-Each page consists of a *content area* in which the main content is displayed, and a *margin area*, a blank outline that may host [page margin content](page-margin-content.qd) such as [page counters](page-counter.qd).
+Each page consists of a *content area* in which the main content is displayed, and a *margin area*, a blank outline that may host [page margin content](page-margin-content.md) such as [page counters](page-counter.md).
 
 <img src="media/content-area@-1272840179.png" alt="Content area" width="400.0px" />
 

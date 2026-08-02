@@ -20,7 +20,7 @@ Using the `yes` and `no` literals is encouraged because they contribute to a mor
 
 The following operator functions return a `Boolean` value:
 
-- `.not {bool}`: Negates a boolean. [Chaining](syntax-of-a-function-call.qd) is recommended: `.bool::not`
+- `.not {bool}`: Negates a boolean. [Chaining](syntax-of-a-function-call.md#chaining-calls) is recommended: `.bool::not`
 - `.islower {a} {than}`: Returns `true` if `a` is less than `than`
 - `.isgreater {a} {than}`: Returns `true` if `a` is greater than `than`
 - `.isequal {a} {to}`: Returns `true` if `a` equals `to`

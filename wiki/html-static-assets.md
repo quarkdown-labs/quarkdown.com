@@ -48,10 +48,10 @@ Assets copied from `public/` can be referenced using relative paths from the out
 
 > **Why `@`?**
 > 
-> The `@` prefix is called [media passthrough](media-storage.qd) and resolves to the output root.
+> The `@` prefix is called [media passthrough](media-storage.md#opting-out) and resolves to the output root.
 > A path starting with this prefix prevents the media storage from processing it, since the asset is not present at that location in the source and would produce a warning.
 > 
-> Additionally, when working with [subdocuments](subdocuments.qd), the `@` prefix ensures that the path is correctly resolved regardless of the subdocument’s output location.
+> Additionally, when working with [subdocuments](subdocuments.md), the `@` prefix ensures that the path is correctly resolved regardless of the subdocument’s output location.
 
 ## Name collisions
 

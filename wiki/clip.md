@@ -23,7 +23,7 @@ Supported shapes:
 
 ## Figures
 
-When clipping a [figure](figure.qd), only the content is affected, leaving the caption intact:
+When clipping a [figure](figure.md), only the content is affected, leaving the caption intact:
 
 > **Example 2**
 > 
@@ -42,7 +42,7 @@ When clipping a [figure](figure.qd), only the content is affected, leaving the c
 
 ## General content
 
-Clipping works with any content, not just images. Here a [container](container.qd) is used:
+Clipping works with any content, not just images. Here a [container](container.md) is used:
 
 > **Example 3**
 > 

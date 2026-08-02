@@ -6,7 +6,7 @@ The **`.csv {path} {mode?} {caption?}`**  function loads a table from a CSV file
 
 > The `path` parameter can be either a path relative to the main source file’s location or an absolute path. Use a slash (`/`) as the path separator, regardless of the operating system.
 
-Tables loaded from CSV can also be manipulated. See [*Table manipulation*](table-manipulation.qd) for more information.
+Tables loaded from CSV can also be manipulated. See [*Table manipulation*](table-manipulation.md) for more information.
 
 > **Example 1**
 > 

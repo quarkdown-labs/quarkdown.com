@@ -51,7 +51,7 @@ The Mermaid code accepts Quarkdown function calls.
 
 ## Diagram from file
 
-Since function calls can be used inside the block argument, you can leverage the [**`.read`**](file-text-content.qd) function to load text from a file.
+Since function calls can be used inside the block argument, you can leverage the [**`.read`**](file-text-content.md) function to load text from a file.
 
 ```markdown
 .mermaid
@@ -60,7 +60,7 @@ Since function calls can be used inside the block argument, you can leverage the
 
 ## Diagram caption and numbering
 
-An optional `caption` argument assigns a caption to the diagram and lets the block be numbered according to the document’s *figure* [numbering](numbering.qd).
+An optional `caption` argument assigns a caption to the diagram and lets the block be numbered according to the document’s *figure* [numbering](numbering.md).
 
 > **Example 3**
 > 

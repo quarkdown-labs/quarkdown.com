@@ -6,11 +6,11 @@ When referring to a Quarkdown *document*, we are talking broadly about the group
 
 Commonly, especially in the case of knowledge management and wikis like this one, pages can have links that point to other pages, building a network of interconnected ***subdocuments***.
 
-In Quarkdown, a subdocument’s entry point is a source file that is referenced by another subdocument. In practice, when I do [this](quickstart.qd), I am referring to a subdocument.
+In Quarkdown, a subdocument’s entry point is a source file that is referenced by another subdocument. In practice, when I do [this](quickstart.md), I am referring to a subdocument.
 
 Every project consists of at least one subdocument: the main one, called *root*.
 
-> Do not confuse subdocuments with [inclusion](including-other-quarkdown-files.qd). See [*Inclusion vs. subdocuments*](inclusion-vs-subdocuments.qd) for a comparison.
+> Do not confuse subdocuments with [inclusion](including-other-quarkdown-files.md). See [*Inclusion vs. subdocuments*](inclusion-vs-subdocuments.md) for a comparison.
 
 ## Referencing subdocuments
 
@@ -32,7 +32,7 @@ Equivalently, you can use the **`.subdocument {path} {label?}`**  function:
 .subdocument {file.qd} label:{My subdocument}
 ```
 
-Unlike the link syntax, the function accepts dynamic paths, making it suitable for more complex use cases. For instance, you can use it in combination with [`.listfiles`](listing-files.qd) to automatically link all documents in a directory through a [for-each loop](loops.qd):
+Unlike the link syntax, the function accepts dynamic paths, making it suitable for more complex use cases. For instance, you can use it in combination with [`.listfiles`](listing-files.md) to automatically link all documents in a directory through a [for-each loop](loops.md):
 
 ```markdown
 .foreach {.listfiles {pages} sortby:{date} order:{descending}}
@@ -73,7 +73,7 @@ A relevant difference is that **subdocuments inherit the referrer’s context**:
 > > .greet
 > > ```
 
-Unlike [`.include`](including-other-quarkdown-files.qd), the context is *inherited*, not *shared*: changes made in the subdocument do not affect the referrer.
+Unlike [`.include`](including-other-quarkdown-files.md), the context is *inherited*, not *shared*: changes made in the subdocument do not affect the referrer.
 
 > **Example 2**
 > 
@@ -108,7 +108,7 @@ The working directory of a subdocument is relative to the subdocument’s entry 
 
 Whereas `main.qd` can reference `images/image.png`, `introduction.qd` should reference it as `../images/image.png`.
 
-> The [media storage system](media-storage.qd) can still store media files across subdocuments.
+> The [media storage system](media-storage.md) can still store media files across subdocuments.
 
 ## Subdocument graph
 
@@ -126,7 +126,7 @@ Subdocuments are exported differently depending on the output target.
 
 Each subdocument is exported as a separate subdirectory in the same directory as `index.html`.
 
-Configuration resources, such as themes and runtime scripts, are generated only once. [Media](media-storage.qd) is stored per subdocument instead.
+Configuration resources, such as themes and runtime scripts, are generated only once. [Media](media-storage.md) is stored per subdocument instead.
 
 - MyDocument/
 
@@ -167,7 +167,7 @@ By default, subdocument output files are named after their source file name. Thi
 
 #### Document name
 
-Launching the compiler with `--subdoc-naming document-name` names each subdocument output after their own [`.docname`](document-metadata.qd), rather than the source file name. If a subdocument does not set `.docname`, the source file name is used as a fallback. Note that duplicate document names are not handled, and may lead to name collisions and overwritten files.
+Launching the compiler with `--subdoc-naming document-name` names each subdocument output after their own [`.docname`](document-metadata.md), rather than the source file name. If a subdocument does not set `.docname`, the source file name is used as a fallback. Note that duplicate document names are not handled, and may lead to name collisions and overwritten files.
 
 > **Example 4**
 > 

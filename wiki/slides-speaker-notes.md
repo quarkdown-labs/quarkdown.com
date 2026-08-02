@@ -15,7 +15,7 @@ Calling the **`.speakernote`** function adds a speaker note to the current slide
 
 By default, speaker notes are displayed only when the document is viewed in the **speaker view**, which you can enable by pressing the **`S`** key while viewing the HTML presentation.
 
-> Reveal.js’ speaker view requires an active [web server](cli-webserver.qd).
+> Reveal.js’ speaker view requires an active [web server](cli-webserver.md).
 
 ### Outside speaker view
 

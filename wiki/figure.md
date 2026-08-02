@@ -20,7 +20,7 @@ Quarkdown introduces the concept of **figure**, which is missing in base Markdow
 > 
 > Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
-> The [image size](image-size.qd) feature works on figures as well.
+> The [image size](image-size.md) feature works on figures as well.
 
 ## Caption
 
@@ -35,4 +35,4 @@ If the image contains a *title* attribute (wrapped in double quotes, single quot
 > ![Icon](media/icon@-1965017468.svg "The Quarkdown icon.")
 > The Quarkdown icon.
 
-> Figures can be **numbered**. See [Numbering](numbering.qd) for more information.
+> Figures can be **numbered**. See [Numbering](numbering.md) for more information.

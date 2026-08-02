@@ -6,7 +6,7 @@
 > 
 > Rendering modules: [`quarkdown-html`](https://github.com/iamgio/quarkdown/tree/main/quarkdown-html), [`quarkdown-plaintext`](https://github.com/iamgio/quarkdown/tree/main/quarkdown-plaintext)
 
-After obtaining the translation of the AST to the target format from the [Renderer](pipeline---rendering.qd), you might notice that it is not enough to display to the user. Considering the HTML format, that is just the content that would go inside `<body>`, but everything else is missing: metadata, styling, and possibly a runtime.
+After obtaining the translation of the AST to the target format from the [Renderer](pipeline---rendering.md), you might notice that it is not enough to display to the user. Considering the HTML format, that is just the content that would go inside `<body>`, but everything else is missing: metadata, styling, and possibly a runtime.
 
 Here comes the *post-renderer*, which programmatically builds the full document around the rendered content. For HTML, this is handled by `HtmlDocumentBuilder` (using the `kotlinx.html` DSL), located in [`html.post.document`](https://github.com/iamgio/quarkdown/tree/main/quarkdown-html/src/main/kotlin/com/quarkdown/rendering/html/post/document). The builder injects all the needed data, such as:
 
@@ -21,5 +21,5 @@ On top of that, the post-renderer is also responsible for returning the output r
 - The group of stylesheets (global stylesheet, layout theme, and color theme)
 - The group of required runtime scripts
 
-These resources are then added to those provided by the [media storage](media-storage.qd) and ultimately returned by the pipeline.
+These resources are then added to those provided by the [media storage](media-storage.md) and ultimately returned by the pipeline.
 It is then up to the invoker to handle those resources, which in the case of [CLI](https://github.com/iamgio/quarkdown/tree/main/quarkdown-cli) are saved to file.

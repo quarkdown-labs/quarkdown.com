@@ -2,18 +2,18 @@
 
 # CLI - Options
 
-This page lists all the options available for the [compiler](cli-compiler.qd) and REPL.
+This page lists all the options available for the [compiler](cli-compiler.md) and REPL.
 
 ## Compiler options
 
 Running **`quarkdown c file.qd`** compiles the given file and saves the output to file.
 
-> If the project is composed of multiple source files, the target file must be the root one, i.e. the one that [includes](including-other-quarkdown-files.qd) the other files.
+> If the project is composed of multiple source files, the target file must be the root one, i.e. the one that [includes](including-other-quarkdown-files.md) the other files.
 
 ### Preview and watch
 
 - **`-p`** or **`--preview`**: enables automatic content reloading after compiling.
-  If a [webserver](cli-webserver.qd) is not running yet, it is started and the document is opened in the default browser.
+  If a [webserver](cli-webserver.md) is not running yet, it is started and the document is opened in the default browser.
   This is required in order to render paged documents in the browser.
 
 - 
@@ -36,13 +36,13 @@ Running **`quarkdown c file.qd`** compiles the given file and saves the output t
 
 - 
 
-- `--server-port <port>`: optional customization of the local [webserver](cli-webserver.qd)’s port. Defaults to `8089`.
+- `--server-port <port>`: optional customization of the local [webserver](cli-webserver.md)’s port. Defaults to `8089`.
 
 > Combine `-p -w` to achieve **live preview**.
 
 ### Output
 
-- **`--pdf`**: produces a PDF file. Learn more in the [PDF export](pdf-export.qd) page.
+- **`--pdf`**: produces a PDF file. Learn more in the [PDF export](pdf-export.md) page.
 
 - 
 
@@ -51,7 +51,7 @@ Running **`quarkdown c file.qd`** compiles the given file and saves the output t
 - 
 
 - `--out-name <name>`: sets the name of the output resource to be saved inside the output directory.
-  Defaults to the name of the document, set via [`.docname`](document-metadata.qd).
+  Defaults to the name of the document, set via [`.docname`](document-metadata.md).
   Special characters will be replaced with dashes in the actual file name.
 
 - 
@@ -65,14 +65,14 @@ Running **`quarkdown c file.qd`** compiles the given file and saves the output t
 
 ### Permissions
 
-- `--allow <permission>` / `--deny <permission>`: grants or revokes a [permission](cli-compiler.qd) (repeatable).
+- `--allow <permission>` / `--deny <permission>`: grants or revokes a [permission](cli-compiler.md#permissions) (repeatable).
   Accepted values: `project-read`, `global-read`, `network`, `native-content`, `process`, `all`.
   By default, `project-read` and `native-content` are granted.
 
 ### Libraries
 
 - `-l <dir>` or `--libs <dir>`: sets the directory where external libraries can be loaded from. Defaults to `<install dir>/lib/qd`.
-  Learn more in the [external libraries](importing-external-libraries.qd) page.
+  Learn more in the [external libraries](importing-external-libraries.md) page.
 
 ### Other options
 
@@ -104,15 +104,15 @@ Running **`quarkdown c file.qd`** compiles the given file and saves the output t
 
 - 
 
-- `--no-media-storage`: turns the [media storage](media-storage.qd) system off.
+- `--no-media-storage`: turns the [media storage](media-storage.md) system off.
 
 - 
 
-- `--forbid-function-overwriting`: raises a compilation error when a [function is declared](declaring-functions.qd) with a name that is already in use, instead of silently overwriting the previous definition.
+- `--forbid-function-overwriting`: raises a compilation error when a [function is declared](declaring-functions.md#overwriting-functions) with a name that is already in use, instead of silently overwriting the previous definition.
 
 - 
 
-- `--subdoc-naming <strategy>`: sets the [subdocument](subdocuments.qd) output naming strategy. Defaults to `file-name`. Accepted values:
+- `--subdoc-naming <strategy>`: sets the [subdocument](subdocuments.md) output naming strategy. Defaults to `file-name`. Accepted values:
 
   - `file-name`: uses the subdocument’s file name (human-readable, but prone to collisions)
   - `collision-proof`: appends a hash to `file-name` to minimize name collisions

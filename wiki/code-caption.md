@@ -2,7 +2,7 @@
 
 # Code caption
 
-Quarkdown introduces code captions, which you can set by adding a caption directly in the code block declaration. Place the caption after the language identifier, wrapped in double quotes, single quotes, or parentheses. This syntax is the same as the image *title* attribute and [table captions](table-caption.qd).
+Quarkdown introduces code captions, which you can set by adding a caption directly in the code block declaration. Place the caption after the language identifier, wrapped in double quotes, single quotes, or parentheses. This syntax is the same as the image *title* attribute and [table captions](table-caption.md).
 
 > **Example 1**
 > 
@@ -23,7 +23,7 @@ Quarkdown introduces code captions, which you can set by adding a caption direct
 > ```
 > Fibonacci function
 
-Equivalently, via the [`.code`](code.qd) function:
+Equivalently, via the [`.code`](code.md) function:
 
 > **Example 2**
 > 
@@ -45,4 +45,4 @@ Equivalently, via the [`.code`](code.qd) function:
 
 ## Numbering
 
-You can also **number** code blocks, to display a sequential number alongside the caption. See [Numbering](numbering.qd) for more information.
+You can also **number** code blocks, to display a sequential number alongside the caption. See [Numbering](numbering.md) for more information.

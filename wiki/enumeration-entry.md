@@ -13,20 +13,20 @@ Name matching follows these rules:
 
 ## Examples
 
-[Page format](page-format.qd):
+[Page format](page-format.md):
 
 ```html
 .pageformat {A4} <!-- A4 is an entry of PageSizeFormat -->
 ```
 
-[Stacks](stacks.qd):
+[Stacks](stacks.md):
 
 ```html
 .row alignment:{center} <!-- center is an entry of MainAxisAlignment -->
   ...
 ```
 
-[Box](box.qd):
+[Box](box.md):
 
 ```html
 .box type:{warning} <!-- warning is an entry of Box.Type -->

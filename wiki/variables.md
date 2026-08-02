@@ -6,7 +6,7 @@ Variables allow you to store and reuse values throughout your document. They are
 
 ## Defining a variable
 
-Use **`.var {name} {value}`** to define a variable. The `value` is a [dynamic value](typing.qd), meaning it can be of any type: text, numbers, booleans, or even complex elements like layouts.
+Use **`.var {name} {value}`** to define a variable. The `value` is a [dynamic value](typing.md), meaning it can be of any type: text, numbers, booleans, or even complex elements like layouts.
 
 ```markdown
 .var {name} {Quarkdown}
@@ -51,7 +51,7 @@ You can update a variable’s value at any point. There are two equivalent ways 
 
 ## Block variables
 
-As mentioned in [Syntax of a function call](syntax-of-a-function-call.qd):
+As mentioned in [Syntax of a function call](syntax-of-a-function-call.md#the-body-argument):
 
 > A body argument always refers to the last parameter of the signature.
 
@@ -80,4 +80,4 @@ This means a variable’s value can span multiple lines and contain complex bloc
 
 ## Scoped variables
 
-For temporary variables that should only exist within a limited scope, see the [`.let`](let.qd) function. Unlike `.var`, which creates document-wide variables, `.let` creates variables that exist only within a lambda block.
+For temporary variables that should only exist within a limited scope, see the [`.let`](let.md) function. Unlike `.var`, which creates document-wide variables, `.let` creates variables that exist only within a lambda block.

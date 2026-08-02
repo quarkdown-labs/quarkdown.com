@@ -11,7 +11,7 @@ param1 param2 param3:
 My code
 ```
 
-The `param1 param2 param3:` portion is the *header* of the lambda, where you define parameter names. You can access their values as if you were dealing with [variables](variables.qd):
+The `param1 param2 param3:` portion is the *header* of the lambda, where you define parameter names. You can access their values as if you were dealing with [variables](variables.md):
 
 ```markdown
 param1 param2 param3:
@@ -48,7 +48,7 @@ Implicit parameters work as well:
 
 ## Examples
 
-### [`.foreach`](loops.qd)
+### [`.foreach`](loops.md)
 
 ```markdown
 .foreach {2..5}
@@ -63,7 +63,7 @@ With implicit parameter:
     The number is **.1**
 ```
 
-### [`.function`](declaring-functions.qd)
+### [`.function`](declaring-functions.md)
 
 The body of `.function` is a lambda that accepts a variable amount of *explicit* parameters:
 
@@ -73,7 +73,7 @@ The body of `.function` is a lambda that accepts a variable amount of *explicit*
     .multiply {.width} by:{.height}
 ```
 
-### [`.takeif`](none.qd)
+### [`.takeif`](none.md#operations)
 
 ```markdown
 .num::takeif {x: .x::equals {5}}

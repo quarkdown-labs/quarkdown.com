@@ -2,7 +2,7 @@
 
 # Multi-column layout
 
-[**`.pageformat {columns}`**](page-format.qd) applies a multi-column layout to each page when the value of `columns` is higher than 1.
+[**`.pageformat {columns}`**](page-format.md) applies a multi-column layout to each page when the value of `columns` is higher than 1.
 
 > **Example 1**
 > 

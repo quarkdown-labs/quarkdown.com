@@ -2,7 +2,7 @@
 
 # Table manipulation
 
-This page describes table manipulation functions  that allow you to sort, filter, and compute values from any kind of table, including plain Markdown ones and those [loaded from CSV](table-from-csv.qd).
+This page describes table manipulation functions  that allow you to sort, filter, and compute values from any kind of table, including plain Markdown ones and those [loaded from CSV](table-from-csv.md).
 
 > **Example 1**
 > 
@@ -71,7 +71,7 @@ The **`.tablefilter`** function keeps or removes rows based on the values of a s
 | Parameter | Description | Accepts |
 | --- | --- | --- |
 | `column` | Index of the column, starting from 1. | 1 to number of columns. |
-| `filter` | Lambda that returns whether each row should be kept, with the value of its cell in the corresponding column as input. | [`Dynamic`](typing.qd) → [`Boolean`](boolean.qd) [lambda](lambda.qd) |
+| `filter` | Lambda that returns whether each row should be kept, with the value of its cell in the corresponding column as input. | [`Dynamic`](typing.md) → [`Boolean`](boolean.md) [lambda](lambda.md) |
 
 > **Example 4**
 > 
@@ -96,9 +96,9 @@ The **`.tablecompute`** function computes the cells in a column and appends the 
 | Parameter | Description | Accepts |
 | --- | --- | --- |
 | `column` | Index of the column, starting from 1. | 1 to number of columns. |
-| `compute` | Lambda that returns the computed value, with the collection of the cells in the column as input. | [`Iterable`](iterable.qd) → [`Dynamic`](typing.qd) [lambda](lambda.qd) |
+| `compute` | Lambda that returns the computed value, with the collection of the cells in the column as input. | [`Iterable`](iterable.md) → [`Dynamic`](typing.md) [lambda](lambda.md) |
 
-See [*Iterable*](iterable.qd) to learn more about available operations on collections.
+See [*Iterable*](iterable.md) to learn more about available operations on collections.
 
 > **Example 5**
 > 
@@ -143,7 +143,7 @@ You can chain multiple table operations. The order of operations goes from inner
 
 ## Retrieve columns
 
-The **`.tablecolumn`** function extracts values from the cells of a specific column and returns them as an [Iterable](iterable.qd).
+The **`.tablecolumn`** function extracts values from the cells of a specific column and returns them as an [Iterable](iterable.md).
 
 | Parameter | Description | Accepts |
 | --- | --- | --- |

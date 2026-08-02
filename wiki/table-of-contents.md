@@ -12,7 +12,7 @@ The function accepts the following optional parameters:
 
 | Parameter | Description | Accepts | Default |
 | --- | --- | --- | --- |
-| `title` | Title that precedes the table of contents. If unset, it is automatically localized. | Inline content | Automatically localized if [`.doclang`](document-metadata.qd)’s locale is supported (e.g., `Table of Contents` for English) |
+| `title` | Title that precedes the table of contents. If unset, it is automatically localized. | Inline content | Automatically localized if [`.doclang`](document-metadata.md)’s locale is supported (e.g., `Table of Contents` for English) |
 | `maxdepth` | Maximum heading level to display. For example, `maxdepth:{2}` collects `#` and `##` headings, but not `###` or deeper. | Integer | `3` |
 
 > **Example 1**
@@ -56,7 +56,7 @@ The table of contents adapts to different document types:
 
 ## Theming
 
-[Layout themes](themes.qd) greatly influence the appearance of the table of contents.
+[Layout themes](themes.md) greatly influence the appearance of the table of contents.
 
 > **Example 2**
 > 
@@ -65,7 +65,7 @@ The table of contents adapts to different document types:
 
 ## Ignoring specific headings
 
-Sometimes you want certain headings to appear in your document but not in the table of contents. [Decorative headings](headings.qd) serve this purpose: they are not numbered and are excluded from the table of contents.
+Sometimes you want certain headings to appear in your document but not in the table of contents. [Decorative headings](headings.md#decorative-headings) serve this purpose: they are not numbered and are excluded from the table of contents.
 
 To mark a heading as decorative, append `!` to the last `#` sign:
 
@@ -75,7 +75,7 @@ To mark a heading as decorative, append `!` to the last `#` sign:
 
 ## Custom numbering
 
-You can customize how headings are numbered in the table of contents via the `.numbering` function. See [Numbering](numbering.qd) for more information.
+You can customize how headings are numbered in the table of contents via the `.numbering` function. See [Numbering](numbering.md) for more information.
 
 ## Heading options
 
@@ -84,8 +84,8 @@ The heading that precedes the table of contents can be customized with the follo
 | Parameter | Description | Accepts | Default |
 | --- | --- | --- | --- |
 | `headingdepth` | Depth of the heading that precedes the table of contents. | Integer | Depends on document type (1 for most, 3 for `docs`) |
-| `breakpage` | Whether the heading triggers an automatic [page break](page-break.qd). | Boolean | `yes` |
-| `numberheading` | Whether the heading should be [numbered](numbering.qd) and have its position tracked in the document hierarchy. | Boolean | `no` |
+| `breakpage` | Whether the heading triggers an automatic [page break](page-break.md#automatic-break). | Boolean | `yes` |
+| `numberheading` | Whether the heading should be [numbered](numbering.md) and have its position tracked in the document hierarchy. | Boolean | `no` |
 | `indexheading` | Whether the heading should be included in the table of contents itself. Implicitly enables `numberheading`. | Boolean | `no` |
 
 ## Focusing entries

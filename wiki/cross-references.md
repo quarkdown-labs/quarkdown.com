@@ -7,7 +7,7 @@ In typesetting, cross-references are references to other parts of the document, 
 In Quarkdown, you create a cross-reference using the **`.ref {id}`** function, where `id` is the cross-reference ID of the target element. The function can appear either before or after the target element.
 
 > Cross-referencing works best when elements are numbered, and you have set a supported document language.
-> See [Numbering](numbering.qd) and [Localization](localization.qd) for details.
+> See [Numbering](numbering.md) and [Localization](localization.md) for details.
 
 You typically set the ID using the `{#id}` syntax. The exact location depends on the element type, as the following sections explain.
 
@@ -56,7 +56,7 @@ You typically set the ID using the `{#id}` syntax. The exact location depends on
 
 > **Example 4**
 > 
-> With a [caption](table-caption.qd):
+> With a [caption](table-caption.md):
 > 
 > ```markdown
 > | Person  | Beverage |
@@ -89,7 +89,7 @@ You typically set the ID using the `{#id}` syntax. The exact location depends on
 > $$$
 > ```
 
-> See [TeX Formulae](tex-formulae.qd) for more information on writing equations in Quarkdown.
+> See [TeX Formulae](tex-formulae.md) for more information on writing equations in Quarkdown.
 
 ### Code blocks (listings)
 
@@ -109,7 +109,7 @@ You typically set the ID using the `{#id}` syntax. The exact location depends on
 
 > **Example 8**
 > 
-> With a [caption](code-caption.qd):
+> With a [caption](code-caption.md):
 > 
 > ````markdown
 > ```kotlin "Hello World in Kotlin" {#main}
@@ -121,7 +121,7 @@ You typically set the ID using the `{#id}` syntax. The exact location depends on
 
 ### Custom numbered elements
 
-> The `.numbered` function is explained in detail in [Numbering](numbering.qd).
+> The `.numbered` function is explained in detail in [Numbering](numbering.md#custom-numbered-elements).
 
 > **Example 9**
 > 

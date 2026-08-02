@@ -2,10 +2,10 @@
 
 # Book cover
 
-A common pattern for [paged documents](document-types.qd) is a full-bleed cover page, where an image spans the entire first page. This is achieved by combining:
+A common pattern for [paged documents](document-types.md) is a full-bleed cover page, where an image spans the entire first page. This is achieved by combining:
 
-- [`.pageformat`](page-format.qd) to remove margins on the first page;
-- [`.container`](container.qd) to hold a full-width image.
+- [`.pageformat`](page-format.md) to remove margins on the first page;
+- [`.container`](container.md) to hold a full-width image.
 
 > **Example 1**
 > 

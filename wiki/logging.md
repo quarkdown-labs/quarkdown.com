@@ -14,5 +14,5 @@ Quarkdown provides several ways to log content to standard channels, which can b
 
 - **`.error {message}`** throws a runtime error, which the error manager then handles according to the current mode:
 
-  - By default, the error message is logged to stderr (when `-Dloglevel=error` or a lower threshold is set) and an error [box](box.qd) appears in the document.
+  - By default, the error message is logged to stderr (when `-Dloglevel=error` or a lower threshold is set) and an error [box](box.md) appears in the document.
   - If you launch the CLI in strict mode (`--strict`), a full stack trace is logged to stderr and the program exits.

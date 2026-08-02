@@ -2,7 +2,7 @@
 
 # Listing files
 
-The **`.listfiles {path} {directories?} {recursive?} {pattern?} {fullpath?} {sortby?} {order?}`**  function returns an [iterable](iterable.qd) of entries from a directory.
+The **`.listfiles {path} {directories?} {recursive?} {pattern?} {fullpath?} {sortby?} {order?}`**  function returns an [iterable](iterable.md) of entries from a directory.
 
 By default, the result is an *unordered* collection of absolute paths to the immediate children of the directory at `path`. The path is interpreted relative to the main source file’s location, or as an absolute path. Use a slash (`/`) as the path separator, regardless of the operating system.
 
@@ -32,7 +32,7 @@ By default, the result is an *unordered* collection of absolute paths to the imm
 > - file2.txt
 > - file3.md
 
-The result is an iterable value, that can be passed to [`.foreach`](loops.qd).
+The result is an iterable value, that can be passed to [`.foreach`](loops.md).
 
 > **Example 2**
 > 
@@ -65,7 +65,7 @@ By default, each entry is returned as its absolute path:
 > - /home/runner/work/quarkdown/quarkdown/docs/./assets/folder/file2.txt
 > - /home/runner/work/quarkdown/quarkdown/docs/./assets/folder/file3.md
 
-This can be used in combination with [`.read`](file-text-content.qd) to load file content:
+This can be used in combination with [`.read`](file-text-content.md) to load file content:
 
 > **Example 4**
 > 
@@ -158,7 +158,7 @@ The `order` parameter then chooses the direction:
 
 ## Bulk inclusion of sources
 
-Because the result is iterable, it composes naturally with [`.includeall`](including-other-quarkdown-files.qd):
+Because the result is iterable, it composes naturally with [`.includeall`](including-other-quarkdown-files.md):
 
 > **Example 9**
 > 
@@ -172,5 +172,5 @@ Because the result is iterable, it composes naturally with [`.includeall`](inclu
 
 `.listfiles` follows the same permission model as the other file-reading functions:
 
-- Listing under the project directory requires the `project-read` [permission](cli-compiler.qd) (granted by default).
+- Listing under the project directory requires the `project-read` [permission](cli-compiler.md#available-permissions) (granted by default).
 - Listing outside the project directory requires `global-read` (opt-in).

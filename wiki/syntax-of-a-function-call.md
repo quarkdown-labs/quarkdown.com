@@ -109,7 +109,7 @@ This performs $(3^2 - 1) + 2 = 10$. As simple as it is, it could not be harder t
 
 Much better. It now resembles the way we naturally read math.
 
-To understand how chaining works, consider this simpler example (see [*Variables*](variables.qd) to learn more about variables):
+To understand how chaining works, consider this simpler example (see [*Variables*](variables.md) to learn more about variables):
 
 ```markdown
 .myvar::uppercase
@@ -145,7 +145,7 @@ You can append additional arguments to any function in the chain. Just keep in m
 > 
 > 30
 
-Many core functions are designed to be called in a chain, for example [`None` operations](none.qd).
+Many core functions are designed to be called in a chain, for example [`None` operations](none.md#examples).
 
 ## Tight function calls
 

@@ -2,25 +2,25 @@
 
 # XY chart
 
-The **`.xychart`**  function allows you to plot 2D line and bar charts in a pure, flexible Quarkdown fashion, through the power of [Mermaid diagrams](mermaid-diagrams.qd).
+The **`.xychart`**  function allows you to plot 2D line and bar charts in a pure, flexible Quarkdown fashion, through the power of [Mermaid diagrams](mermaid-diagrams.md).
 
 All parameters, except for `values`, are optional.
 
 | Parameter | Description | Accepts |
 | --- | --- | --- |
-| `lines` | Whether to draw lines (defaults to true). | [Boolean](boolean.qd) |
-| `bars` | Whether to draw bars (defaults to false). | [Boolean](boolean.qd) |
+| `lines` | Whether to draw lines (defaults to true). | [Boolean](boolean.md) |
+| `bars` | Whether to draw bars (defaults to false). | [Boolean](boolean.md) |
 | `x` | Label for the X axis. | String |
-| `xrange` | Numerical range for the X axis. Can be open-ended. Incompatible with `xtags`. | [Range](range.qd) |
-| `xtags` | Categorical tags for the X axis. Incompatible with `xrange`. | [Iterable](iterable.qd) |
+| `xrange` | Numerical range for the X axis. Can be open-ended. Incompatible with `xtags`. | [Range](range.md) |
+| `xtags` | Categorical tags for the X axis. Incompatible with `xrange`. | [Iterable](iterable.md) |
 | `y` | Label for the Y axis. | String |
-| `yrange` | Range for the Y axis. Can be open-ended. | [Range](range.qd) |
-| `caption` | Caption. If present, the chart is [numbered](numbering.qd) as a figure. | String |
-| `values` | Y values to plot. | [Iterable](iterable.qd) of points (single line), or iterable of iterables of points (multiple lines) |
+| `yrange` | Range for the Y axis. Can be open-ended. | [Range](range.md) |
+| `caption` | Caption. If present, the chart is [numbered](numbering.md) as a figure. | String |
+| `values` | Y values to plot. | [Iterable](iterable.md) of points (single line), or iterable of iterables of points (multiple lines) |
 
 ## Axis ranges
 
-`xrange` and `yrange` define the boundaries of the visible area of the chart through the usual `x..y` [Range](range.qd) syntax.
+`xrange` and `yrange` define the boundaries of the visible area of the chart through the usual `x..y` [Range](range.md) syntax.
 
 The range may also be open on either end, or both:
 
@@ -87,7 +87,7 @@ In case of nested lists (iterable of iterables), multiple lines will be plotted:
 
 ### From iterations
 
-Quarkdown [loops](loops.qd) return an iterable containing the result of each iteration, making them a suitable input for `values`, especially in combination with [math](math.qd) functions.
+Quarkdown [loops](loops.md) return an iterable containing the result of each iteration, making them a suitable input for `values`, especially in combination with [math](math.md) functions.
 
 > **Example 3**
 > 
@@ -108,7 +108,7 @@ Quarkdown [loops](loops.qd) return an iterable containing the result of each ite
 
 ### From JSON
 
-[`.json`](data-from-json.qd) loads a JSON file as an iterable when its top-level value is an array, making it a natural input for `.xychart`.
+[`.json`](data-from-json.md) loads a JSON file as an iterable when its top-level value is an array, making it a natural input for `.xychart`.
 
 > **Example 4**
 > 
@@ -139,7 +139,7 @@ Quarkdown [loops](loops.qd) return an iterable containing the result of each ite
 
 ### From CSV/table
 
-[Table manipulation](table-manipulation.qd) functions such as [`.tablecolumn`](table-manipulation.qd) can extract values from the columns of a table as iterables.
+[Table manipulation](table-manipulation.md) functions such as [`.tablecolumn`](table-manipulation.md#retrieve-columns) can extract values from the columns of a table as iterables.
 
 > **Example 5**
 > 
@@ -154,7 +154,7 @@ Quarkdown [loops](loops.qd) return an iterable containing the result of each ite
 > 	line [85.0, 100.0, 135.0, 180.0, 240.0, 320.0, 430.0, 580.0, 800.0]
 > ```
 
-If you need to access multiple columns from the same table, consider calling `.tablecolumns` for efficiency, which returns a collection of columns. You can then perform any [`Iterable`](iterable.qd) operation on it.
+If you need to access multiple columns from the same table, consider calling `.tablecolumns` for efficiency, which returns a collection of columns. You can then perform any [`Iterable`](iterable.md) operation on it.
 
 > **Example 6**
 > 

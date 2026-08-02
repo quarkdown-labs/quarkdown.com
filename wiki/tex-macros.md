@@ -2,7 +2,7 @@
 
 # TeX macros
 
-When writing [TeX formulae](tex-formulae.qd), you may want to use custom macros.
+When writing [TeX formulae](tex-formulae.md), you may want to use custom macros.
 
 The **`.texmacro {name} {content}`**  function defines a new macro that can be used in equations.
 
@@ -16,7 +16,7 @@ The **`.texmacro {name} {content}`**  function defines a new macro that can be u
 > 
 > $$\gradient f$$
 
-As with every Quarkdown function, you can use the last argument as a [*block argument*](syntax-of-a-function-call.qd).
+As with every Quarkdown function, you can use the last argument as a [*block argument*](syntax-of-a-function-call.md#block-vs-inline-function-calls).
 
 > **Example 2**
 > 

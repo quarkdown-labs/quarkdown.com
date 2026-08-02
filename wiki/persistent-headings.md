@@ -4,7 +4,7 @@
 
 The **`.lastheading {depth}`**  function allows you to reference the last heading of a given depth across pages or slides.
 
-When used in combination with [page margin content](page-margin-content.qd), this function enables persistent headings, such as chapter titles or section names, to appear in the page margins.
+When used in combination with [page margin content](page-margin-content.md), this function enables persistent headings, such as chapter titles or section names, to appear in the page margins.
 
 > `depth` refers to the heading level: `1` for `#`, `2` for `##`, and so on.
 

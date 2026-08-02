@@ -12,12 +12,12 @@ arguments:
 
 | Data | Additional info | Corresponding option | Generated Quarkdown function |
 | --- | --- | --- | --- |
-| Project name |  | `--name` | [`.docname`](document-metadata.qd) |
-| Authors | Separated by commas | `--authors` | [`.docauthors`](document-metadata.qd) |
-| Document type | `paged`/`slides`/`plain` | `--type` | [`.doctype`](document-metadata.qd) |
-| Document language | [Valid language tag or full name](localization.qd) | `--lang` | [`.doclang`](document-metadata.qd) |
-| Color theme (unprompted) |  | `--color-theme` | [`.theme`](themes.qd) |
-| Layout theme (unprompted) |  | `--layout-theme` | [`.theme`](themes.qd) |
+| Project name |  | `--name` | [`.docname`](document-metadata.md) |
+| Authors | Separated by commas | `--authors` | [`.docauthors`](document-metadata.md#authors) |
+| Document type | `paged`/`slides`/`plain` | `--type` | [`.doctype`](document-metadata.md) |
+| Document language | [Valid language tag or full name](localization.md) | `--lang` | [`.doclang`](document-metadata.md) |
+| Color theme (unprompted) |  | `--color-theme` | [`.theme`](themes.md) |
+| Layout theme (unprompted) |  | `--layout-theme` | [`.theme`](themes.md) |
 
 Additional options:
 

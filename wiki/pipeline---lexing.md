@@ -35,6 +35,6 @@ Markdown recognizes two macro-categories of tokens: **block** tokens and **inlin
 
 To accomplish this separation, two distinct lexers are supplied: a block lexer and an inline lexer, which extract their corresponding tokens.
 
-**Function calls** are extracted both as blocks and inlines, with just a [few differences](syntax-of-a-function-call.qd) between them.
+**Function calls** are extracted both as blocks and inlines, with just a [few differences](syntax-of-a-function-call.md#block-vs-inline-function-calls) between them.
 
 At the beginning, only the block lexer is invoked. Once the source is broken down into its outer blocks, they are passed to the parser, which is delegated to search for nested information.

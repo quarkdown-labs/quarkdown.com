@@ -6,7 +6,7 @@ The **`.read {path}`**  function returns the string content of the specified fil
 
 > The `path` parameter can be either a path relative to the main source file’s location or an absolute path. Use a slash (`/`) as the path separator, regardless of the operating system.
 
-An optional `lines` parameter of type [`Range`](range.qd) selects a specific range of lines (inclusive, starting from 1). An invalid or out-of-bounds range causes an error. If you do not provide a range, Quarkdown reads the entire file.
+An optional `lines` parameter of type [`Range`](range.md) selects a specific range of lines (inclusive, starting from 1). An invalid or out-of-bounds range causes an error. If you do not provide a range, Quarkdown reads the entire file.
 
 ```markdown
 .read {myfile.txt} lines:{3..8}
@@ -20,7 +20,7 @@ Open ranges work as follows:
 
 > **Example 1**
 > 
-> `.read` is particularly useful in combination with functions such as [`.code`](code.qd), [`.mermaid`](mermaid-diagrams.qd) and [`.css`](css.qd) to load code snippets from external files.
+> `.read` is particularly useful in combination with functions such as [`.code`](code.md), [`.mermaid`](mermaid-diagrams.md) and [`.css`](css.md) to load code snippets from external files.
 > 
 > ```markdown
 > .code

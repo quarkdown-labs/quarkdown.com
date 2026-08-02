@@ -68,7 +68,7 @@ A block formula can span over multiple lines thanks to a syntax similar to fence
 
 ## The `.math` function
 
-Equations can also be created via the **`.math`** [primitive function](primitives.qd). This is useful when the equation content is computed from other functions, or when you want to apply styling to a specific formula.
+Equations can also be created via the **`.math`** [primitive function](primitives.md). This is useful when the equation content is computed from other functions, or when you want to apply styling to a specific formula.
 
 > **Example 5**
 > 
@@ -85,7 +85,7 @@ Equations can also be created via the **`.math`** [primitive function](primitive
 > 
 > $$E = mc^2$$
 
-By default, `.math` produces a block formula when produced by a [block function call](syntax-of-a-function-call.qd). You can force one or the other via the `block` parameter:
+By default, `.math` produces a block formula when produced by a [block function call](syntax-of-a-function-call.md#block-vs-inline-function-calls). You can force one or the other via the `block` parameter:
 
 > **Example 6**
 > 
@@ -110,7 +110,7 @@ The content is evaluated as Quarkdown, so nested function calls are evaluated, c
 
 ### Styling
 
-Both inline and block equations accept the same [styling properties](element-styling-properties.qd) as containers.
+Both inline and block equations accept the same [styling properties](element-styling-properties.md) as containers.
 
 > **Example 8**
 > 
@@ -123,7 +123,7 @@ Both inline and block equations accept the same [styling properties](element-sty
 
 ### Extending
 
-`.math` backs the standard `$ ... $` syntax, so [extending it](element-styling.qd) affects every equation in the document at once.
+`.math` backs the standard `$ ... $` syntax, so [extending it](element-styling.md) affects every equation in the document at once.
 
 > **Example 9**
 > 
@@ -145,4 +145,4 @@ Both inline and block equations accept the same [styling properties](element-sty
 
 ## Macros
 
-Quarkdown supports the creation of TeX macros via the `.texmacro` function. See [*TeX macros*](tex-macros.qd) for more information.
+Quarkdown supports the creation of TeX macros via the `.texmacro` function. See [*TeX macros*](tex-macros.md) for more information.

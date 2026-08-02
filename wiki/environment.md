@@ -18,7 +18,7 @@ Quarkdown can read environment variables from the host system at compile time, a
 
 > **Example 2**
 > 
-> Since the result may be `none`, you can use [optionality functions](none.qd) to handle missing values:
+> Since the result may be `none`, you can use [optionality functions](none.md) to handle missing values:
 > 
 > ```markdown
 > .container background:{.env {COLOR}::otherwise {teal}}
@@ -29,7 +29,7 @@ Quarkdown can read environment variables from the host system at compile time, a
 
 ## Permissions
 
-Reading environment variables requires the `process` [permission](cli-compiler.qd).
+Reading environment variables requires the `process` [permission](cli-compiler.md#permissions).
 
 ```shell
 quarkdown c main.qd --allow process

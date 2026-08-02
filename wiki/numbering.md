@@ -4,15 +4,15 @@
 
 The **`.numbering`** function sets the global numbering configuration of the document. The following elements can be numbered:
 
-- Headings and [table of contents](table-of-contents.qd) entries
-- [Figures](figure.qd)
+- Headings and [table of contents](table-of-contents.md) entries
+- [Figures](figure.md)
 - Tables
-- [Equations](tex-formulae.qd)
+- [Equations](tex-formulae.md)
 - Code blocks
-- [Footnotes](footnotes.qd)
+- [Footnotes](footnotes.md)
 - Custom elements (`.numbered`)
 
-The configuration is represented by a [Dictionary](dictionary.qd). The following snippet shows the full configuration schema, where all entries are optional:
+The configuration is represented by a [Dictionary](dictionary.md). The following snippet shows the full configuration schema, where all entries are optional:
 
 ```yaml
 .numbering
@@ -97,12 +97,12 @@ To avoid merging and turn off numbering rules for unspecified entries, set the `
 
 To prevent a heading from being numbered, you can either:
 
-- Use a [decorative heading](headings.qd) (`#!`, `##!`, etc.), which also excludes the heading from the [table of contents](table-of-contents.qd).
-- Use the [`.heading`](headings.qd) function with `numbered:{no}` for more granular control, allowing you to independently decide whether the heading appears in the table of contents.
+- Use a [decorative heading](headings.md#decorative-headings) (`#!`, `##!`, etc.), which also excludes the heading from the [table of contents](table-of-contents.md).
+- Use the [`.heading`](headings.md) function with `numbered:{no}` for more granular control, allowing you to independently decide whether the heading appears in the table of contents.
 
 ## Figures
 
-[Figures](figure.qd) are numbered only if they have a **caption**, which may also be empty.
+[Figures](figure.md) are numbered only if they have a **caption**, which may also be empty.
 
 > **Example 2**
 > 
@@ -167,7 +167,7 @@ To prevent a heading from being numbered, you can either:
 
 ## Equations
 
-[Math blocks](tex-formulae.qd) (equations) are numbered only if they have a [cross-reference ID](cross-references.qd).
+[Math blocks](tex-formulae.md) (equations) are numbered only if they have a [cross-reference ID](cross-references.md).
 
 > **Example 4**
 > 
@@ -216,7 +216,7 @@ Conventionally, if the equation is not cross-referenced anywhere in the document
 
 ## Footnotes
 
-The numbering format of [footnotes](footnotes.qd) is flat, meaning it only considers the leftmost symbol and ignores the rest.
+The numbering format of [footnotes](footnotes.md) is flat, meaning it only considers the leftmost symbol and ignores the rest.
 
 If not specified, footnotes format defaults to `1` (decimal).
 
@@ -238,7 +238,7 @@ Along with the built-in numerable elements discussed above, Quarkdown allows any
 The function accepts two arguments:
 
 1. A key string. The element’s number is counted across previous occurrences with the same key.
-2. A [lambda](lambda.qd) block that takes the number as an argument, formatted according to the active numbering format.
+2. A [lambda](lambda.md) block that takes the number as an argument, formatted according to the active numbering format.
 
 ```markdown
 .numbered {greetings}
@@ -254,7 +254,7 @@ Executing the previous block renders an empty string in place of `number` becaus
     - greetings: 1.a
 ```
 
-A numbered block can also be cross-referenced. See [*Cross-references*](cross-references.qd) for details.
+A numbered block can also be cross-referenced. See [*Cross-references*](cross-references.md#custom-numbered-elements) for details.
 
 Full example:
 
@@ -286,4 +286,4 @@ Full example:
 
 ## Localization
 
-The localized name of the labeled element appears in captions if [`.doclang`](document-metadata.qd) is set and the locale is supported. For instance, *Figure* and *Table* for the English locale, *Figura* and *Tabella* for Italian.
+The localized name of the labeled element appears in captions if [`.doclang`](document-metadata.md) is set and the locale is supported. For instance, *Figure* and *Table* for the English locale, *Figura* and *Tabella* for Italian.

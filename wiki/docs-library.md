@@ -2,13 +2,13 @@
 
 # Docs library
 
-The built-in [`docs`](https://github.com/iamgio/quarkdown/blob/main/quarkdown-libs/src/main/resources/docs.qd) library is written in Quarkdown and provides the standard structure for a [`docs` document](document-types.qd), with sidebars, navigation, and a table of contents.
+The built-in [`docs`](https://github.com/iamgio/quarkdown/blob/main/quarkdown-libs/src/main/resources/docs.qd) library is written in Quarkdown and provides the standard structure for a [`docs` document](document-types.md#docs-docs), with sidebars, navigation, and a table of contents.
 
 This library is the recommended way to set up a documentation project, and it is what this wiki uses. It wraps the raw `.doctype {docs}` setup into a simple, customizable include.
 
-> When creating a project via [`quarkdown create`](cli-project-creator.qd), the generated project is already set up to use the `docs` library.
+> When creating a project via [`quarkdown create`](cli-project-creator.md), the generated project is already set up to use the `docs` library.
 
-The first step is to [import](importing-external-libraries.qd) the library:
+The first step is to [import](importing-external-libraries.md) the library:
 
 ```markdown
 .include {docs}
@@ -27,10 +27,10 @@ A project that uses the `docs` library is expected to have a similar structure:
 - page-2.qd
 - ...
 
-- **`_setup.qd`**, containing shared configuration such as [themes](themes.qd), [fonts](font-configuration.qd), custom [functions](declaring-functions.qd) and [variables](variables.qd). This file is included automatically by the library.
+- **`_setup.qd`**, containing shared configuration such as [themes](themes.md), [fonts](font-configuration.md), custom [functions](declaring-functions.md) and [variables](variables.md). This file is included automatically by the library.
 - **`_nav.qd`** containing the navigation links that populate the page list sidebar. This file is included automatically by the library.
 - **`main.qd`**, the home page of the documentation, and entry point of the compilation.
-- Each other `.qd` file is a [subdocument](subdocuments.qd), and should include the library at the top:
+- Each other `.qd` file is a [subdocument](subdocuments.md), and should include the library at the top:
 
   ```markdown
   .docname {My page}
@@ -43,9 +43,9 @@ The library takes care of the following:
 
 1. Setting the document type to `docs`
 2. Including `_setup.qd` from the project root
-3. Placing the navigation from `_nav.qd` in the left sidebar via [`.pagemargin`](page-margin-content.qd) and [`.navigation`](https://quarkdown.com/docs/quarkdown-stdlib/com.quarkdown.stdlib.module.Document/navigation-container.html)
-4. Placing a [table of contents](table-of-contents.qd) in the right sidebar
-5. Adding a [decorative heading](headings.qd) from [`.docname`](document-metadata.qd)
+3. Placing the navigation from `_nav.qd` in the left sidebar via [`.pagemargin`](page-margin-content.md) and [`.navigation`](https://quarkdown.com/docs/quarkdown-stdlib/com.quarkdown.stdlib.module.Document/navigation-container.html)
+4. Placing a [table of contents](table-of-contents.md) in the right sidebar
+5. Adding a [decorative heading](headings.md#decorative-headings) from [`.docname`](document-metadata.md)
 
 ## Setup file
 
@@ -65,7 +65,7 @@ The `_setup.qd` file is a good place for project-wide configuration shared acros
 
 ## Navigation file
 
-The `_nav.qd` file contains the links that appear in the page list sidebar. It consists of a list of links to subdocuments, optionally grouped by [decorative headings](headings.qd):
+The `_nav.qd` file contains the links that appear in the page list sidebar. It consists of a list of links to subdocuments, optionally grouped by [decorative headings](headings.md#decorative-headings):
 
 > **Example 2**
 > 
@@ -91,8 +91,8 @@ You can swap or change these positions by overriding two variables in your `_set
 
 | Variable | Default | Description |
 | --- | --- | --- |
-| `pagelistposition` | `lefttop` | [Position](page-margin-content.qd) of the page list sidebar |
-| `tocposition` | `righttop` | [Position](page-margin-content.qd) of the table of contents sidebar |
+| `pagelistposition` | `lefttop` | [Position](page-margin-content.md) of the page list sidebar |
+| `tocposition` | `righttop` | [Position](page-margin-content.md) of the table of contents sidebar |
 
 > **Example 3**
 > 
@@ -107,4 +107,4 @@ You can swap or change these positions by overriding two variables in your `_set
 
 ## Orphan pages
 
-Note that, by design, Quarkdown does not compile orphan source files. In order to be compiled as a [subdocument](subdocuments.qd), a source file must be referenced by another file, be it in `_nav.qd` or in the content of another page.
+Note that, by design, Quarkdown does not compile orphan source files. In order to be compiled as a [subdocument](subdocuments.md), a source file must be referenced by another file, be it in `_nav.qd` or in the content of another page.

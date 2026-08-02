@@ -2,7 +2,7 @@
 
 # PDF export
 
-When running Quarkdown’s [compiler](cli-compiler.qd) via `quarkdown c`, specifying the **`--pdf`** flag generates a PDF file.
+When running Quarkdown’s [compiler](cli-compiler.md) via `quarkdown c`, specifying the **`--pdf`** flag generates a PDF file.
 
 - The content of the PDF matches exactly what the HTML output would render in the Chrome browser.
 - All document types and features supported by the HTML target are also supported.

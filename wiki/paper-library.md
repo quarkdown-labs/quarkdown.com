@@ -14,9 +14,9 @@ The library features the following components:
   - Theorems
   - Proofs
 
-> The supported languages align with those supported by Quarkdown’s core. See [*Built-in localization*](localization.qd) for further information.
+> The supported languages align with those supported by Quarkdown’s core. See [*Built-in localization*](localization.md#built-in-localization) for further information.
 
-The first step is to [import](importing-external-libraries.qd) the library:
+The first step is to [import](importing-external-libraries.md) the library:
 
 ```markdown
 .include {paper}
@@ -87,7 +87,7 @@ The default title suffix is `.` (dot) and can be customized via `.paperblocksuff
 
 ### Numbering
 
-Defining a [numbering format](numbering.qd) causes the blocks of that type to be numbered. The format names are plural: `definitions`, `lemmas`, `theorems`, `proofs`.
+Defining a [numbering format](numbering.md) causes the blocks of that type to be numbered. The format names are plural: `definitions`, `lemmas`, `theorems`, `proofs`.
 
 > **Example 5**
 > 

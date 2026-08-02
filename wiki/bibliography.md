@@ -144,7 +144,7 @@ trends-journals
 
 ## Title
 
-By default, the title is [localized](localization.qd) to the current locale set via `.doclang`, if supported. You can set a custom title using the `title` parameter.
+By default, the title is [localized](localization.md) to the current locale set via `.doclang`, if supported. You can set a custom title using the `title` parameter.
 
 > **Example 3**
 > 
@@ -165,11 +165,11 @@ The heading that precedes the bibliography can be further customized with the fo
 | Parameter | Description | Accepts | Default |
 | --- | --- | --- | --- |
 | `headingdepth` | Depth of the heading that precedes the bibliography. | Integer | `1` |
-| `breakpage` | Whether the heading triggers an automatic [page break](page-break.qd). | Boolean | `yes` |
-| `numberheading` | Whether the heading should be [numbered](numbering.qd) and have its position tracked in the document hierarchy. | Boolean | `no` |
-| `indexheading` | Whether the heading should be included in the document’s [table of contents](table-of-contents.qd). Implicitly enables `numberheading`. | Boolean | `no` |
+| `breakpage` | Whether the heading triggers an automatic [page break](page-break.md#automatic-break). | Boolean | `yes` |
+| `numberheading` | Whether the heading should be [numbered](numbering.md) and have its position tracked in the document hierarchy. | Boolean | `no` |
+| `indexheading` | Whether the heading should be included in the document’s [table of contents](table-of-contents.md). Implicitly enables `numberheading`. | Boolean | `no` |
 
-For example, depending on the current [auto page break](page-break.qd) configuration, the title may cause a page break. You can prevent this:
+For example, depending on the current [auto page break](page-break.md#automatic-break) configuration, the title may cause a page break. You can prevent this:
 
 ```markdown
 .bibliography {file.bib} title:{My bibliography} breakpage:{no}

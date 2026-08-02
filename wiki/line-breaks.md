@@ -13,7 +13,7 @@ Second line
 
 This syntax, however, is not always ideal. It can be ambiguous and lead to confusion. Additionally, some text editors may unexpectedly trim trailing spaces, which removes the intended line breaks.
 
-> Some Markdown users suggest using explicit `<br>` HTML tags. Quarkdown, however, [discourages direct HTML injection](html.qd).
+> Some Markdown users suggest using explicit `<br>` HTML tags. Quarkdown, however, [discourages direct HTML injection](html.md).
 
 As an alternative, Quarkdown provides the **`.br`** function for explicit line breaks.
 

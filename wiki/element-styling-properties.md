@@ -2,23 +2,23 @@
 
 # Element styling properties
 
-Several functions, such as [`.container`](container.qd) and [`.heading`](headings.qd), share a common set of styling parameters to customize colors, spacing, borders, and text appearance of the element they produce.
+Several functions, such as [`.container`](container.md) and [`.heading`](headings.md), share a common set of styling parameters to customize colors, spacing, borders, and text appearance of the element they produce.
 
 ## Parameters
 
 | Parameter | Description | Accepts | Default |
 | --- | --- | --- | --- |
-| `foreground` | Text color. | [`Color`](color.qd) | Document’s default |
-| `background` | Background color. | [`Color`](color.qd) | None |
-| `border` | Border color. | [`Color`](color.qd) | Browser’s default if `borderwidth` is set, none otherwise |
-| `borderwidth` | Border thickness. | [`Sizes`](sizes.qd) | Browser’s default if `border` is set, none otherwise |
+| `foreground` | Text color. | [`Color`](color.md) | Document’s default |
+| `background` | Background color. | [`Color`](color.md) | None |
+| `border` | Border color. | [`Color`](color.md) | Browser’s default if `borderwidth` is set, none otherwise |
+| `borderwidth` | Border thickness. | [`Sizes`](sizes.md) | Browser’s default if `border` is set, none otherwise |
 | `borderstyle` | Border type. | `normal`, `dashed`, `dotted`, `double` | `normal` if `border` or `borderwidth` is set, none otherwise |
-| `margin` | Whitespace outside the element. | [`Sizes`](sizes.qd) | None |
-| `padding` | Whitespace between the border and the content. | [`Sizes`](sizes.qd) | None |
-| `radius` | Corner (and border) radius. | [`Sizes`](sizes.qd) | None |
+| `margin` | Whitespace outside the element. | [`Sizes`](sizes.md) | None |
+| `padding` | Whitespace between the border and the content. | [`Sizes`](sizes.md) | None |
+| `radius` | Corner (and border) radius. | [`Sizes`](sizes.md) | None |
 | `alignment` | Content alignment. | `start`, `center`, `end` | Browser’s default |
 | `textalignment` | Text alignment. | `start`, `center`, `end`, `justify` | Follows `alignment` if set |
-| `fontsize`, `fontweight`, `fontstyle`, `fontvariant`, `textdecoration`, `textcase` | Text transformation. See [Advanced text formatting](text.qd) for the accepted values. |  | None |
+| `fontsize`, `fontweight`, `fontstyle`, `fontvariant`, `textdecoration`, `textcase` | Text transformation. See [Advanced text formatting](text.md) for the accepted values. |  | None |
 
 ## Example
 

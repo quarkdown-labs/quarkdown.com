@@ -12,10 +12,10 @@ Unlike standard Markdown headings (`#`, `##`, etc.), this function allows explic
 | --- | --- | --- | --- |
 | `content` | Inline content of the heading. | Inline content | Required |
 | `depth` | Importance level of the heading (1 for H1, 6 for H6). | Integer (1-6) | Required |
-| `ref` | Custom identifier for [cross-referencing](cross-references.qd). If unset, the ID is automatically generated. | String | Unset |
-| `numbered` | Whether the heading is [numbered](numbering.qd) and has its position tracked in the document hierarchy. Actual numbering depends on the active `.numbering` configuration. | Boolean | `yes` |
-| `indexed` | Whether the heading appears in the [table of contents](table-of-contents.qd) and navigation sidebar. | Boolean | `yes` |
-| `breakpage` | Whether the heading triggers an automatic [page break](page-break.qd). | Boolean | `yes` |
+| `ref` | Custom identifier for [cross-referencing](cross-references.md). If unset, the ID is automatically generated. | String | Unset |
+| `numbered` | Whether the heading is [numbered](numbering.md) and has its position tracked in the document hierarchy. Actual numbering depends on the active `.numbering` configuration. | Boolean | `yes` |
+| `indexed` | Whether the heading appears in the [table of contents](table-of-contents.md) and navigation sidebar. | Boolean | `yes` |
+| `breakpage` | Whether the heading triggers an automatic [page break](page-break.md#automatic-break). | Boolean | `yes` |
 
 ## Basic usage
 
@@ -31,17 +31,17 @@ Unlike standard Markdown headings (`#`, `##`, etc.), this function allows explic
 
 ## Controlling numbering
 
-You can create headings that are not tracked by the [numbering](numbering.qd) system:
+You can create headings that are not tracked by the [numbering](numbering.md) system:
 
 ```markdown
 .heading {Appendix} depth:{1} numbered:{no}
 ```
 
-Unlike [decorative headings](decorative-headings.qd) (`#!`), this approach lets you independently control whether the heading appears in the table of contents.
+Unlike [decorative headings](decorative-headings.md) (`#!`), this approach lets you independently control whether the heading appears in the table of contents.
 
 ## Controlling table of contents indexing
 
-By default, headings appear in the [table of contents](table-of-contents.qd) and navigation sidebar of `plain` and `paged` documents. You can exclude a heading while still allowing it to be numbered:
+By default, headings appear in the [table of contents](table-of-contents.md) and navigation sidebar of `plain` and `paged` documents. You can exclude a heading while still allowing it to be numbered:
 
 ```markdown
 .heading {Secret section} depth:{2} indexed:{no}
@@ -55,7 +55,7 @@ Conversely, you can include an unnumbered heading in the table of contents:
 
 ## Disabling page breaks
 
-By default, headings trigger automatic page breaks (when [`.autopagebreak`](page-break.qd) is enabled). You can disable this for individual headings:
+By default, headings trigger automatic page breaks (when [`.autopagebreak`](page-break.md#automatic-break) is enabled). You can disable this for individual headings:
 
 ```markdown
 .heading {Continued} depth:{1} breakpage:{no}
@@ -63,7 +63,7 @@ By default, headings trigger automatic page breaks (when [`.autopagebreak`](page
 
 ## Custom identifiers
 
-You can assign a custom identifier for [cross-referencing](cross-references.qd):
+You can assign a custom identifier for [cross-referencing](cross-references.md):
 
 ```markdown
 .heading {Introduction} depth:{2} ref:{intro}
@@ -71,7 +71,7 @@ You can assign a custom identifier for [cross-referencing](cross-references.qd):
 
 ## Styling
 
-`.heading` accepts every option described on [*Element styling properties*](element-styling-properties.qd), for customizing colors, spacing, borders, and text appearance.
+`.heading` accepts every option described on [*Element styling properties*](element-styling-properties.md), for customizing colors, spacing, borders, and text appearance.
 
 > **Example 2**
 > 
@@ -83,4 +83,4 @@ You can assign a custom identifier for [cross-referencing](cross-references.qd):
 
 ## Decorative headings
 
-See also [Decorative headings](decorative-headings.qd) for headings excluded from numbering and the table of contents.
+See also [Decorative headings](decorative-headings.md) for headings excluded from numbering and the table of contents.

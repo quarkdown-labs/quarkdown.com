@@ -2,7 +2,7 @@
 
 # CLI - Webserver
 
-Quarkdown’s webserver allows direct communication between the compiler and the browser, making [live previewing](inside-live-preview.qd) possible.
+Quarkdown’s webserver allows direct communication between the compiler and the browser, making [live previewing](inside-live-preview.md) possible.
 
 You can start the server via **`quarkdown start`**.
 

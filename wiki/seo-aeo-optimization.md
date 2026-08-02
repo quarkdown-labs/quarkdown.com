@@ -2,13 +2,13 @@
 
 # SEO & AEO optimization
 
-When publishing a Quarkdown document as a website, especially [`plain`](document-types.qd) and [`docs`](document-types.qd) projects with multiple [subdocuments](subdocuments.qd), a few setup steps make the site easier to find and index. This page collects the recommended settings for both search engines (SEO) and AI agents (AEO).
+When publishing a Quarkdown document as a website, especially [`plain`](document-types.md#plain-plain) and [`docs`](document-types.md#docs-docs) projects with multiple [subdocuments](subdocuments.md), a few setup steps make the site easier to find and index. This page collects the recommended settings for both search engines (SEO) and AI agents (AEO).
 
-Most of these are already taken care of by Quarkdown’s [project creator](cli-project-creator.qd) when picking the `docs` document type.
+Most of these are already taken care of by Quarkdown’s [project creator](cli-project-creator.md) when picking the `docs` document type.
 
 ## Base URL
 
-Set the site’s canonical base URL through [`.htmloptions`](html-options.qd):
+Set the site’s canonical base URL through [`.htmloptions`](html-options.md):
 
 ```markdown
 .htmloptions baseurl:{https://example.com}
@@ -25,7 +25,7 @@ This has two effects:
 
 Search engines and AI crawlers check for a `robots.txt` file at the root of your site to learn which pages they may access, and where to find the sitemap generated from the base URL.
 
-Ship it as a [static asset](html-static-assets.qd) by placing it in the project’s `public/` directory:
+Ship it as a [static asset](html-static-assets.md) by placing it in the project’s `public/` directory:
 
 - main.qd
 - public/
@@ -45,7 +45,7 @@ The `Sitemap` line should use the same URL passed to `.htmloptions baseurl:{...}
 
 ## Per-subdocument page titles
 
-By default, every page in a multi-subdocument project shows its own name in search engines and browser tabs, defined by its [`.docname`](document-metadata.qd).
+By default, every page in a multi-subdocument project shows its own name in search engines and browser tabs, defined by its [`.docname`](document-metadata.md).
 
 > **Example 1**
 > 
@@ -83,7 +83,7 @@ Filling in the metadata fields on populate the corresponding HTML `<meta>` tags,
     - documentation
 ```
 
-See [Document metadata](document-metadata.qd) for the full reference, including per-subdocument overrides.
+See [Document metadata](document-metadata.md) for the full reference, including per-subdocument overrides.
 
 ## Shipping a Markdown copy
 
@@ -115,7 +115,7 @@ The second run writes `.md` files alongside the HTML output, so the result is a 
 
 ## Pointing agents at `llms.txt`
 
-The [llms.txt convention](https://llmstxt.org) proposes a single Markdown file at the root of a site (`/llms.txt`) that curates the most useful entry points for LLM-based crawlers. Ship it as a [static asset](html-static-assets.qd) in `public/`, alongside `robots.txt`.
+The [llms.txt convention](https://llmstxt.org) proposes a single Markdown file at the root of a site (`/llms.txt`) that curates the most useful entry points for LLM-based crawlers. Ship it as a [static asset](html-static-assets.md) in `public/`, alongside `robots.txt`.
 
 Agents that fetch a rendered page, however, have no built-in way to discover that an index exists. To bridge this, add a short discoverability directive on every page using the **`.llmstxt`** function. This emits two variants of the same pointer:
 

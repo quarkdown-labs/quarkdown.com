@@ -4,7 +4,7 @@
 
 If you’ve used Typst, you may be familiar with the `#show` directive for styling elements.   
 
-Quarkdown provides a similar, powerful mechanism that involves [function extensions](extending-functions.qd), allowing you to customize not only their appearance, but also their behavior and content.
+Quarkdown provides a similar, powerful mechanism that involves [function extensions](extending-functions.md), allowing you to customize not only their appearance, but also their behavior and content.
 
 Several Markdown elements are associated to a special function called *primitive*. For example, headings (`#`, `##`, etc.) are backed by the `.heading` primitive function.
 Extending a primitive allows you to intercept and alter the call itself through `.super`, which invokes the original function with optional overrides.
@@ -22,7 +22,7 @@ Extending a primitive allows you to intercept and alter the call itself through 
 > 
 > ## This is red
 
-> For a list of styling properties supported by most primitives, see [*Styling properties*](element-styling-properties.qd).
+> For a list of styling properties supported by most primitives, see [*Styling properties*](element-styling-properties.md).
 
 ## Conditional styling
 
@@ -43,7 +43,7 @@ The `where` parameter allows you to apply styling conditionally based on the arg
 > 
 > ### This is not red
 
-Any argument of the intercepted call can be used in the condition, for example [cross-reference identifiers](cross-references.qd) via `ref`:
+Any argument of the intercepted call can be used in the condition, for example [cross-reference identifiers](cross-references.md) via `ref`:
 
 > **Example 3**
 > 
@@ -66,7 +66,7 @@ Intercepted parameters can also be modified on the go. A common use case would b
 
 > **Example 4**
 > 
-> Here we add an [icon](icons.qd) to all external links. Note that [body arguments](syntax-of-a-function-call.qd) work with `.super` normally.
+> Here we add an [icon](icons.md) to all external links. Note that [body arguments](syntax-of-a-function-call.md#the-body-argument) work with `.super` normally.
 > 
 > ```markdown
 > .extend {link} where:{url: .url::startswith {https://quarkdown.com}::not}

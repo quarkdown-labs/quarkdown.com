@@ -8,17 +8,17 @@ This applies to:
 
 - Figures
 
-  - [Figure Markdown extension](figure.qd)
-  - [`.figure`](custom-figure.qd)
-  - [Mermaid diagrams](mermaid-diagrams.qd) and derivatives such as [XY charts](xy-chart.qd)
+  - [Figure Markdown extension](figure.md)
+  - [`.figure`](custom-figure.md)
+  - [Mermaid diagrams](mermaid-diagrams.md) and derivatives such as [XY charts](xy-chart.md)
 - Tables
 
-  - [Table caption Markdown extension](table-caption.qd)
-  - [Tables from CSV](table-from-csv.qd)
+  - [Table caption Markdown extension](table-caption.md)
+  - [Tables from CSV](table-from-csv.md)
 - Code blocks
 
-  - [Code caption Markdown extension](code-caption.qd)
-  - [`.code`](code.qd)
+  - [Code caption Markdown extension](code-caption.md)
+  - [`.code`](code.md)
 
 ---
 

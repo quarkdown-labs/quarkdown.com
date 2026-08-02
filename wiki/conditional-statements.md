@@ -4,8 +4,8 @@
 
 The **`.if`** function creates a conditional statement:
 
-1. The first parameter is the [`boolean`](boolean.qd) condition to evaluate.
-2. The second parameter is a parameter-less [lambda](lambda.qd) that runs only if the condition is true.
+1. The first parameter is the [`boolean`](boolean.md) condition to evaluate.
+2. The second parameter is a parameter-less [lambda](lambda.md) that runs only if the condition is true.
 
 > **Example 1**
 > 
@@ -32,7 +32,7 @@ The function returns the lambda’s result if the condition is satisfied, or not
 >                 Hello!
 > ```
 
-This behavior lets you use the function as part of any expression. For example, you can use it to conditionally include content inside layout functions, such as [stacks](stacks.qd).
+This behavior lets you use the function as part of any expression. For example, you can use it to conditionally include content inside layout functions, such as [stacks](stacks.md).
 
 > **Example 3**
 > 
@@ -54,7 +54,7 @@ This behavior lets you use the function as part of any expression. For example, 
 
 The **`.ifnot`** function is a shorthand that inverts `.if`’s behavior, returning a value only if the condition is *not* satisfied.
 
-Quarkdown does not yet have an *else* statement, but you can emulate one using the [`.let`](let.qd) function:
+Quarkdown does not yet have an *else* statement, but you can emulate one using the [`.let`](let.md) function:
 
 > **Example 4**
 > 

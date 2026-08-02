@@ -4,7 +4,7 @@
 
 **`quarkdown c <file>`** is the command for compiling a main source file into a browser-renderable output.
 
-For all available options, refer to the [CLI options](cli-options.qd) page.
+For all available options, refer to the [CLI options](cli-options.md) page.
 
 ## Permissions
 
@@ -34,7 +34,7 @@ The final permission set is computed as: *defaults + allowed – denied*.
 > 
 > For example, when rendering to HTML:
 > 
-> - The following requires `project-read`, because the [media storage system](media-storage.qd) is turned on for HTML output, and the compiler needs to handle the image file:
+> - The following requires `project-read`, because the [media storage system](media-storage.md) is turned on for HTML output, and the compiler needs to handle the image file:
 > 
 >   ```markdown
 >   ![Image](path/to/image.png)

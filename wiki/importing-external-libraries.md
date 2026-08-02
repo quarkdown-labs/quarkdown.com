@@ -2,7 +2,7 @@
 
 # Importing external libraries
 
-The **`.include`** function, previously seen in [*Including other Quarkdown files*](including-other-quarkdown-files.qd), can also import external **libraries**.
+The **`.include`** function, previously seen in [*Including other Quarkdown files*](including-other-quarkdown-files.md), can also import external **libraries**.
 
 When you download Quarkdown or build it via `distZip`, the `lib/qd` directory contains utility libraries written in Quarkdown itself.
 

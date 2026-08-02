@@ -2,24 +2,24 @@
 
 # Destructuring
 
-Destructuring splits a [lambda](lambda.qd) parameter into its individual components. For instance, a [pair](iterable.qd) has two components, while a generic [iterable](iterable.qd) can have many.
+Destructuring splits a [lambda](lambda.md) parameter into its individual components. For instance, a [pair](iterable.md#pair) has two components, while a generic [iterable](iterable.md) can have many.
 
 The following types support destructuring:
 
-- [`Iterable`](iterable.qd), including [`Pair`](iterable.qd)
-- [`Dictionary`](dictionary.qd), as an iterable of pairs
+- [`Iterable`](iterable.md), including [`Pair`](iterable.md#pair)
+- [`Dictionary`](dictionary.md), as an iterable of pairs
 
 A value is destructured into `N` components when all of the following conditions are met:
 
 - The type supports destructuring
-- The lambda expects a single argument, such as with [`.foreach`](loops.qd)
+- The lambda expects a single argument, such as with [`.foreach`](loops.md)
 - You supply `N > 1` lambda parameters
 
 When Quarkdown destructures the lambda argument, it operates on the individual components rather than the element itself.
 
 ## Example: `.foreach`
 
-In this example, we define a [Dictionary](dictionary.qd) and iterate over its destructured key-value components.
+In this example, we define a [Dictionary](dictionary.md) and iterate over its destructured key-value components.
 
 > **Example 1**
 > 
@@ -43,7 +43,7 @@ In this example, we define a [Dictionary](dictionary.qd) and iterate over its de
 
 ## Example: `.sorted`
 
-In this example, we define a [Dictionary](dictionary.qd) and iterate over its destructured key-value components using `.foreach`, but only after sorting its entries by value using [`.sorted`](iterable.qd), which takes a lambda that defines the ordering criteria.
+In this example, we define a [Dictionary](dictionary.md) and iterate over its destructured key-value components using `.foreach`, but only after sorting its entries by value using [`.sorted`](iterable.md#operations), which takes a lambda that defines the ordering criteria.
 
 > **Example 2**
 > 

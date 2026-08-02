@@ -43,13 +43,13 @@ Overriding these rules is supported, although currently unavailable via CLI.
 
 ## Opting out
 
-Some images should not be copied to the media directory, for example [HTML static assets](html-static-assets.qd) that are already present in the output at a known path.
+Some images should not be copied to the media directory, for example [HTML static assets](html-static-assets.md) that are already present in the output at a known path.
 
-- Paths starting with the [`@` passthrough prefix](html-static-assets.qd) are excluded from media storage automatically, since they are meant to reference files that are already present in the output.
+- Paths starting with the [`@` passthrough prefix](html-static-assets.md#referencing-static-assets) are excluded from media storage automatically, since they are meant to reference files that are already present in the output.
 
 - 
 
-- The [`.image`](primitives.qd) primitive function accepts a `mediastorage` parameter that lets you disable media storage for individual images:
+- The [`.image`](primitives.md#images) primitive function accepts a `mediastorage` parameter that lets you disable media storage for individual images:
 
   ```markdown
   .image {logo.png} label:{Logo} mediastorage:{no}

@@ -104,7 +104,7 @@ This is a footnote reference[^first], and another one[^second].
 
 ## Numbering
 
-Footnotes are numbered by default with decimal numbers, starting from 1. To apply a different numbering style, such as Roman numerals, use the `.numbering` function. See [*Numbering*](numbering.qd) for more information.
+Footnotes are numbered by default with decimal numbers, starting from 1. To apply a different numbering style, such as Roman numerals, use the `.numbering` function. See [*Numbering*](numbering.md) for more information.
 
 > **Example 5**
 > 
@@ -119,4 +119,4 @@ Footnotes are numbered incrementally across the subdocument. Page-level numberin
 
 ## Display
 
-Footnotes render differently depending on the document type. See [*Document types*](document-types.qd) for more information.
+Footnotes render differently depending on the document type. See [*Document types*](document-types.md) for more information.

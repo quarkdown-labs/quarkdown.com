@@ -67,7 +67,7 @@ A box can have a type, which defaults to `callout` if not specified. The availab
 
 ## Automatic localization
 
-If you omit the title, set [`.doclang`](document-metadata.qd), and the locale is supported, the box title is automatically [localized](localization.qd).
+If you omit the title, set [`.doclang`](document-metadata.md), and the locale is supported, the box title is automatically [localized](localization.md).
 
 > **Example 4**
 > 
@@ -94,4 +94,4 @@ If you omit the title, set [`.doclang`](document-metadata.qd), and the locale is
 > > 
 > > This is a warning box!
 
-> Boxes and [typed quotes](quote-types.qd) are two different ways to create typed alerts.
+> Boxes and [typed quotes](quote-types.md) are two different ways to create typed alerts.

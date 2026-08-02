@@ -6,7 +6,7 @@ The **`.include {file} {sandbox?}`**  function loads and evaluates an external Q
 
 The parameter accepts a string that represents the **path to the target file**, which can be relative to the main source file’s location or absolute.
 
-> To include external libraries, refer to [*Importing external libraries*](importing-external-libraries.qd).
+> To include external libraries, refer to [*Importing external libraries*](importing-external-libraries.md).
 
 > **Example 1**
 > 
@@ -30,12 +30,12 @@ The parameter accepts a string that represents the **path to the target file**, 
 
 > Circular dependency results in an error.
 
-> Do not confuse inclusion with [subdocuments](subdocuments.qd).
-> See [*Inclusion vs. subdocuments*](inclusion-vs-subdocuments.qd) for a comparison.
+> Do not confuse inclusion with [subdocuments](subdocuments.md).
+> See [*Inclusion vs. subdocuments*](inclusion-vs-subdocuments.md) for a comparison.
 
 ## Bulk include
 
-A clean approach with typesetting systems is having a main file that gathers all the different subfiles together. The `.includeall` function, which takes an [Iterable](iterable.qd) of paths, serves as a convenient shorthand for repeated `.include` calls.
+A clean approach with typesetting systems is having a main file that gathers all the different subfiles together. The `.includeall` function, which takes an [Iterable](iterable.md) of paths, serves as a convenient shorthand for repeated `.include` calls.
 
 The following snippet is from [Mock](https://github.com/iamgio/quarkdown/blob/main/mock)’s `main.qd` file:
 
@@ -68,7 +68,7 @@ The following snippet is from [Mock](https://github.com/iamgio/quarkdown/blob/ma
     - localization.qd
 ```
 
-You can also combine the function with [`.listfiles`](listing-files.qd) to automatically include all files in a directory:
+You can also combine the function with [`.listfiles`](listing-files.md) to automatically include all files in a directory:
 
 ```markdown
 .includeall {.listfiles {somedirectory} sortby:{name}}
@@ -115,7 +115,7 @@ Both contexts are synchronized bidirectionally. Any customization, function, var
 
 Similar to `share`, but function and variable declarations do not propagate back to the main file.
 
-This is the same behavior used in nested lambda scopes, such as in [`.function`](declaring-functions.qd) and [`.foreach`](loops.qd).
+This is the same behavior used in nested lambda scopes, such as in [`.function`](declaring-functions.md) and [`.foreach`](loops.md).
 
 > Output:
 > 
@@ -126,7 +126,7 @@ This is the same behavior used in nested lambda scopes, such as in [`.function`]
 
 The included file is completely isolated from the main file. Any changes, including metadata and layout options, do not propagate back.
 
-This is the same behavior as [subdocuments](subdocuments.qd).
+This is the same behavior as [subdocuments](subdocuments.md).
 
 > Output:
 > 

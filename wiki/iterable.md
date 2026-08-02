@@ -2,9 +2,9 @@
 
 # Iterable
 
-Iterable values are ordered lists or unordered sets that you can iterate through with a [loop](loops.qd).
+Iterable values are ordered lists or unordered sets that you can iterate through with a [loop](loops.md).
 
-Iterables can also be destructured. See [*Destructuring*](destructuring.qd) for more information.
+Iterables can also be destructured. See [*Destructuring*](destructuring.md) for more information.
 
 ## Collection
 
@@ -55,18 +55,18 @@ Nested collections can be represented by nested Markdown lists as well.
 
 A pair is an iterable of two values.
 
-You can create a pair via **`.pair {first} {second}`** or retrieve one as a [Dictionary](dictionary.qd) entry.
+You can create a pair via **`.pair {first} {second}`** or retrieve one as a [Dictionary](dictionary.md) entry.
 
 ## Dictionary
 
-When used in a function that requires an iterable, a [Dictionary](dictionary.qd) value is treated as a list of key-value pairs.
+When used in a function that requires an iterable, a [Dictionary](dictionary.md) value is treated as a list of key-value pairs.
 
 ## Range
 
-An integer [`Range`](range.qd) is a valid ordered iterable value.
+An integer [`Range`](range.md) is a valid ordered iterable value.
 
 ## Operations
 
-Assuming `myiterable` is an iterable, you can access useful operations such as `getat`, `sorted`, `average`, and many more via [function call chaining](syntax-of-a-function-call.qd) as `.myiterable::operation`.
+Assuming `myiterable` is an iterable, you can access useful operations such as `getat`, `sorted`, `average`, and many more via [function call chaining](syntax-of-a-function-call.md#chaining-calls) as `.myiterable::operation`.
 
 For a complete list of operations, refer to the standard library’s [`Collection` documentation](https://quarkdown.com/docs/quarkdown-stdlib/com.quarkdown.stdlib.module.Collection).

@@ -10,7 +10,7 @@ These functions are supported in `paged` and `slides` documents. In other docume
 
 ## Fixed page counter
 
-You can display a page counter on each page using [page margin content](page-margin-content.qd):
+You can display a page counter on each page using [page margin content](page-margin-content.md):
 
 ```markdown
 .pagemargin {bottomcenter}
@@ -21,7 +21,7 @@ You can display a page counter on each page using [page margin content](page-mar
 
 The **`.formatpagenumber {format}`**  function sets a new page number format from the page where it appears. It only affects page numbers from that point onwards.
 
-The format string accepts the same syntax as the one in [numbering](numbering.qd):
+The format string accepts the same syntax as the one in [numbering](numbering.md):
 
 - `1` (default) for decimal (1, 2, 3, …)
 - `a` for lowercase latin alphabet (a, b, c, …)
@@ -29,7 +29,7 @@ The format string accepts the same syntax as the one in [numbering](numbering.qd
 - `i` for lowercase roman numerals (i, ii, iii, …)
 - `I` for uppercase roman numerals (I, II, III, …)
 
-These changes are reflected in `.currentpage` and page numbers in the [table of contents](table-of-contents.qd).
+These changes are reflected in `.currentpage` and page numbers in the [table of contents](table-of-contents.md).
 
 > **Example 1**
 > 
@@ -52,7 +52,7 @@ These changes are reflected in `.currentpage` and page numbers in the [table of 
 
 The **`.resetpagenumber {from?}`**  function allows you to overwrite the current page number at any point in a `paged` or `slides` document.
 
-These changes are reflected in `.currentpage` and page numbers in the [table of contents](table-of-contents.qd).
+These changes are reflected in `.currentpage` and page numbers in the [table of contents](table-of-contents.md).
 
 > **Example 2**
 > 

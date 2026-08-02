@@ -30,7 +30,7 @@ You can omit the unit, in which case `px` is used by default.
 
 ## Size group (`Sizes`)
 
-Some parameters require a group of sizes, also known as **`Sizes`**. This is required, for example, by [`.pageformat`](page-format.qd)’s `margin` parameter, and allows you to set up to four different values for each side of a rectangle.
+Some parameters require a group of sizes, also known as **`Sizes`**. This is required, for example, by [`.pageformat`](page-format.md)’s `margin` parameter, and allows you to set up to four different values for each side of a rectangle.
 
 The format follows CSS conventions, with three different ways to express a size group:
 

@@ -4,7 +4,7 @@
 
 > Main packages: [`core.parser`](https://github.com/iamgio/quarkdown/tree/main/quarkdown-core/src/main/kotlin/com/quarkdown/core/parser), [`core.ast`](https://github.com/iamgio/quarkdown/tree/main/quarkdown-core/src/main/kotlin/com/quarkdown/core/ast)
 
-Continuing with the metaphor introduced in [Lexing](pipeline---lexing.qd), once the nouns, verbs, and adjectives are extracted from a sentence, our brain is responsible for linking them together to build information out of them.
+Continuing with the metaphor introduced in [Lexing](pipeline---lexing.md), once the nouns, verbs, and adjectives are extracted from a sentence, our brain is responsible for linking them together to build information out of them.
 
 The parser takes the sequence of tokens and organizes them into a tree structure called an *Abstract Syntax Tree* (AST), which defines the relationships between different parts of the document. Each element of the tree is called a *Node*.
 

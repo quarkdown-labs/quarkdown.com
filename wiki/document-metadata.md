@@ -9,9 +9,9 @@ You can set document information using the following functions. By convention, y
 | `.docname` | The name of the document. | `Untitled Quarkdown Document` |
 | `.docdescription` | A short description of the document. | (empty) |
 | `.docauthors` | The authors of the document. | (empty) |
-| `.dockeywords` | Keywords associated with the document, as an [iterable](iterable.qd). | (empty) |
-| `.doctype` | Type of output document: `plain`, `slides`, `paged`, `docs`. See [Document types](document-types.qd) for more information. | `plain` |
-| `.doclang` | The language of the document: either a case-insensitive English full name (such as `English`, `Italian`, `French (Canada)`) or an IETF BCP 47 language tag (such as `en`, `it`, `fr-CA`). This setting defines the target locale for content localization, locale-specific styles like Chinese fonts for Chinese locales, and the HTML `lang` attribute for hyphenation and accessibility. See [Localization](localization.qd) for more. | (none) |
+| `.dockeywords` | Keywords associated with the document, as an [iterable](iterable.md). | (empty) |
+| `.doctype` | Type of output document: `plain`, `slides`, `paged`, `docs`. See [Document types](document-types.md) for more information. | `plain` |
+| `.doclang` | The language of the document: either a case-insensitive English full name (such as `English`, `Italian`, `French (Canada)`) or an IETF BCP 47 language tag (such as `en`, `it`, `fr-CA`). This setting defines the target locale for content localization, locale-specific styles like Chinese fonts for Chinese locales, and the HTML `lang` attribute for hyphenation and accessibility. See [Localization](localization.md) for more. | (none) |
 
 ## Modify-or-echo
 
@@ -37,7 +37,7 @@ The `.docauthors` function sets the document’s authors.
     - Jane Doe
 ```
 
-The function takes a [Dictionary](dictionary.qd) as its value, where each key is the author’s name and values are nested dictionaries containing author information. There are no constraints on the information entries you can use.
+The function takes a [Dictionary](dictionary.md) as its value, where each key is the author’s name and values are nested dictionaries containing author information. There are no constraints on the information entries you can use.
 
 ```markdown
 .docauthors
@@ -82,7 +82,7 @@ Whether you define the author using `.docauthors` or `.docauthor`, calling `.doc
 
 ## Keywords
 
-The `.dockeywords` function sets the document’s keywords as an [iterable](iterable.qd).
+The `.dockeywords` function sets the document’s keywords as an [iterable](iterable.md).
 
 When exporting the document as HTML, these keywords are used for search engine optimization (SEO).
 

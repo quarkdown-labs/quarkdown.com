@@ -14,4 +14,4 @@ The **`.filename {path} {extension?}`**  function returns the file name from a g
 > 
 > point
 
-This can be particularly useful when combined with [`.listfiles`](listing-files.qd).
+This can be particularly useful when combined with [`.listfiles`](listing-files.md).

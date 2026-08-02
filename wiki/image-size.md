@@ -22,7 +22,7 @@ While base Markdown requires HTML code to constrain the size of an image, Quarkd
 > 
 > <img src="media/sky@-233435969.jpg" alt="Icon" width="300.0px" height="100.0px" />
 
-In addition to pixels (whose unit can be omitted), any other [size](sizes.qd) unit is supported. When using other units, you must use either `*` or a space as the delimiter instead of `x`.
+In addition to pixels (whose unit can be omitted), any other [size](sizes.md) unit is supported. When using other units, you must use either `*` or a space as the delimiter instead of `x`.
 
 ```markdown
 !(5cm*35mm)[Alt](image.png)

@@ -24,7 +24,7 @@ For this reason, Quarkdown dropped mixed content support and focused on covering
 >   Content of the collapsible block.
 >   </details>
 >   ```
-> - The same in Quarkdown, using the [`.collapse`](collapsible.qd) function:
+> - The same in Quarkdown, using the [`.collapse`](collapsible.md) function:
 > 
 >   ```markdown
 >   .collapse {Title of the collapsible block}
@@ -40,7 +40,7 @@ For this reason, Quarkdown dropped mixed content support and focused on covering
 >       This is a styled container.
 >   </div>
 >   ```
-> - The same in Quarkdown, using [`.container`](container.qd):
+> - The same in Quarkdown, using [`.container`](container.md):
 > 
 >   ```markdown
 >   .container border:{black} borderwidth:{1} padding:{8}

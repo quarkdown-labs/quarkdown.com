@@ -8,7 +8,7 @@ The **`.container`**  function creates a highly customizable block of content, a
 
 > **Example 1**
 > 
-> Imagine you want to create a row with two columns, each containing a heading and some text. A beginner might try the following *wrong* approach. As explained in the [Stacks](stacks.qd) page, stack functions rely on the strict Markdown concept of a block, an isolated chunk of the document, to determine which elements they handle.
+> Imagine you want to create a row with two columns, each containing a heading and some text. A beginner might try the following *wrong* approach. As explained in the [Stacks](stacks.md) page, stack functions rely on the strict Markdown concept of a block, an isolated chunk of the document, to determine which elements they handle.
 > 
 > ```markdown
 > <!-- WRONG! -->
@@ -80,14 +80,14 @@ The **`.container`**  function creates a highly customizable block of content, a
 
 | Parameter | Description | Accepts | Default |
 | --- | --- | --- | --- |
-| `width` | Box width constraint. | [`Size`](sizes.qd) | No constraint |
-| `height` | Box height constraint. | [`Size`](sizes.qd) | No constraint |
-| `fullwidth` | Whether to take up the parent’s full width. Overridden by `width`. | [`Boolean`](boolean.qd) | False |
+| `width` | Box width constraint. | [`Size`](sizes.md) | No constraint |
+| `height` | Box height constraint. | [`Size`](sizes.md) | No constraint |
+| `fullwidth` | Whether to take up the parent’s full width. Overridden by `width`. | [`Boolean`](boolean.md) | False |
 | `classname` | Custom CSS class name. | String | None |
 
 ## Styling
 
-`.container` accepts every option described on [*Element styling*](element-styling.qd), for customizing colors, spacing, borders, and text appearance.
+`.container` accepts every option described on [*Element styling*](element-styling.md), for customizing colors, spacing, borders, and text appearance.
 
 > **Example 4**
 > 

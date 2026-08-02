@@ -25,13 +25,13 @@ Example:
 .font {fonts/Inter.ttf} heading:{GoogleFonts:Poppins} code:{Courier New}
 ```
 
-> Font resources are processed by the [media storage system](media-storage.qd). This ensures that, for example, HTML output includes local fonts in the output directory for increased portability.
+> Font resources are processed by the [media storage system](media-storage.md). This ensures that, for example, HTML output includes local fonts in the output directory for increased portability.
 > 
 > Note that system fonts may not be installed on all devices. While this should not affect PDF output, it can be problematic when sharing HTML output.
 
 ## Other parameters
 
-- **`size`**: base font [size](sizes.qd). Other elements, such as headings, scale accordingly. For example, `12px`.
+- **`size`**: base font [size](sizes.md). Other elements, such as headings, scale accordingly. For example, `12px`.
 
 ## Fallbacks for multi-language documents
 

@@ -6,7 +6,7 @@ Many functions accept rich Quarkdown content as their argument.
 
 ## Block content
 
-Body parameters usually accept *block content*, which refers to one or more *block* elements that Quarkdown supports. This includes paragraphs, headings, code blocks, quotes, [block function calls](syntax-of-a-function-call.qd), and more.
+Body parameters usually accept *block content*, which refers to one or more *block* elements that Quarkdown supports. This includes paragraphs, headings, code blocks, quotes, [block function calls](syntax-of-a-function-call.md#block-vs-inline-function-calls), and more.
 Inner *inline* elements are processed as well.
 
 In other words, everything you can express with Quarkdown *outside* a function call will also work here.
@@ -26,18 +26,18 @@ In other words, everything you can express with Quarkdown *outside* a function c
         ...
 ```
 
-> See more: [`.center`](align.qd), [`.row`](stacks.qd)
+> See more: [`.center`](align.md), [`.row`](stacks.md)
 
 ## Inline content
 
-*Inline content* strictly accepts inline data and ignores any block syntax. This includes plain text, strong (bold), emphasis (italics), code spans, links, images, [inline math](tex-formulae.qd), [inline function calls](syntax-of-a-function-call.qd), and more.
+*Inline content* strictly accepts inline data and ignores any block syntax. This includes plain text, strong (bold), emphasis (italics), code spans, links, images, [inline math](tex-formulae.md), [inline function calls](syntax-of-a-function-call.md#block-vs-inline-function-calls), and more.
 
 ```markdown
 .box {My _box_ title}
     ...
 ```
 
-> See more: [`.box`](box.qd)
+> See more: [`.box`](box.md)
 
 Block syntax has no effect where inline content is required. In the following example, *# My box* is parsed as plain text, since headings are block elements.
 
@@ -53,6 +53,6 @@ Inline function calls are accepted:
     ...
 ```
 
-> See more: [`.sum`](math.qd)
+> See more: [`.sum`](math.md)
 
 In general, everything that can appear inside a paragraph can also go into an inline argument.

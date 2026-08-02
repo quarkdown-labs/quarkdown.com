@@ -22,7 +22,7 @@ This invoke-time adaptation reduces constraints, allowing the same value to be h
 In the previous example:
 
 - `.var`’s signature accepts a `DynamicValue`.
-- `.if` takes a [`Boolean`](boolean.qd), so the dynamic `true` value kept in the `myvar` variable is converted to boolean.
+- `.if` takes a [`Boolean`](boolean.md), so the dynamic `true` value kept in the `myvar` variable is converted to boolean.
 - `.uppercase` takes a `String`, so the `true` value is used as a string.
 
 See the *Value types* section of this wiki to see all supported types.
@@ -58,5 +58,5 @@ The following example is a simplified version of a function defined in this wiki
 
 The previous example shows how versatile Quarkdown values are. In the function declaration, the `.source` argument is retrieved twice:
 
-- In [`.code`](code.qd), which expects a string, so the source is read as-is and inserted in a code block.
+- In [`.code`](code.md), which expects a string, so the source is read as-is and inserted in a code block.
 - At the top level: the Quarkdown source is automatically adapted to the context, so it is parsed as rich Markdown content.

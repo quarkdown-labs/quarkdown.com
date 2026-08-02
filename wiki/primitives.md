@@ -2,13 +2,13 @@
 
 # Primitive functions
 
-Primitive functions return elements that back standard Markdown syntax. Each one accepts parameters that plain Markdown may not, and can be intercepted via [`.extend`](extending-functions.qd) to customize their behavior and appearance across the entire document, even if created via standard Markdown syntax.
+Primitive functions return elements that back standard Markdown syntax. Each one accepts parameters that plain Markdown may not, and can be intercepted via [`.extend`](extending-functions.md) to customize their behavior and appearance across the entire document, even if created via standard Markdown syntax.
 
-For example, extending `.heading` affects every `#`, `##`, and so on. Extending `.math` affects every `$ ... $` and `$$$ ... $$$`. See [*Element styling*](element-styling.qd) for the full mechanism.
+For example, extending `.heading` affects every `#`, `##`, and so on. Extending `.math` affects every `$ ... $` and `$$$ ... $$$`. See [*Element styling*](element-styling.md) for the full mechanism.
 
 ## Available primitives
 
-- [**`.heading`**](headings.qd)  backs `#`, `##`, … headings. Exposes explicit control over depth, numbering, page breaks, and cross-reference identifiers.
+- [**`.heading`**](headings.md)  backs `#`, `##`, … headings. Exposes explicit control over depth, numbering, page breaks, and cross-reference identifiers.
 
 - 
 
@@ -20,20 +20,20 @@ For example, extending `.heading` affects every `#`, `##`, and so on. Extending 
 
 - 
 
-- **`.image`**  backs `![alt](url "title")`, with additional control over figure wrapping and [media storage](media-storage.qd).
+- **`.image`**  backs `![alt](url "title")`, with additional control over figure wrapping and [media storage](media-storage.md).
 
 - 
 
-- [**`.figure`**](figure.qd)  backs the block that wraps an image or other content.
+- [**`.figure`**](figure.md)  backs the block that wraps an image or other content.
 
 - 
 
-- [**`.math`**](tex-formulae.qd)  backs `$ ... $` and `$$$ ... $$$` formulas.
+- [**`.math`**](tex-formulae.md)  backs `$ ... $` and `$$$ ... $$$` formulas.
 
 - 
 
-- [**`.code`**](code.qd)  backs fenced and indented code blocks.
+- [**`.code`**](code.md)  backs fenced and indented code blocks.
 
 - 
 
-- [**`.pagebreak`**](page-break.qd)  backs `<<<`. Can be extended to decorate every forced page break in the document.
+- [**`.pagebreak`**](page-break.md)  backs `<<<`. Can be extended to decorate every forced page break in the document.

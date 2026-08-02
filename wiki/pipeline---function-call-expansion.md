@@ -4,7 +4,7 @@
 
 > Main packages: [`core.function`](https://github.com/iamgio/quarkdown/tree/main/quarkdown-core/src/main/kotlin/com/quarkdown/core/function)
 
-Among the nodes generated from the [Parsing](pipeline---parsing.qd) stage, those of type `FunctionCallNode(context, name, arguments)` represent [function calls](syntax-of-a-function-call.qd).
+Among the nodes generated from the [Parsing](pipeline---parsing.md) stage, those of type `FunctionCallNode(context, name, arguments)` represent [function calls](syntax-of-a-function-call.md).
 
 While all other nodes never change after they are created, this is the only kind of *mutable* node, which means its inner data is expected to change after the AST has been fully generated. Its mutation affects its child nodes, which is initially an empty collection that is later populated by a component called *function call expander*.
 
@@ -21,4 +21,4 @@ After retrieving the output node from the mapper, the expander can push it to th
 
 [^1]: User-defined functions are also dynamically stored into a volatile library. Native libraries (e.g. `stdlib`) load their functions via reflection instead.
 
-[^2]: Quarkdown is [dynamically typed](typing.qd), while the native libraries are written in a statically typed language (Kotlin). When an argument-parameter binding is created, if the argument’s type is dynamic, a conversion to its parameter’s static type is performed via the `ValueFactory`. If the conversion fails, an error is thrown.
+[^2]: Quarkdown is [dynamically typed](typing.md), while the native libraries are written in a statically typed language (Kotlin). When an argument-parameter binding is created, if the argument’s type is dynamic, a conversion to its parameter’s static type is performed via the `ValueFactory`. If the conversion fails, an error is thrown.

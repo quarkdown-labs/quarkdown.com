@@ -10,7 +10,7 @@ This guide provides a broad overview without diving deep into every detail. Each
 
 ## Creating a document
 
-> Reference: [Project Creator](cli-project-creator.qd)
+> Reference: [Project Creator](cli-project-creator.md)
 
 To create a new document, run the project creator from your terminal:
 
@@ -39,7 +39,7 @@ Once the project is created, open `my-document.qd` in your favorite text editor.
 
 ### Choosing a document type
 
-> Reference: [Document types](document-types.qd)
+> Reference: [Document types](document-types.md)
 
 During the initial setup, you choose a document type from one of the following options:
 
@@ -50,7 +50,7 @@ During the initial setup, you choose a document type from one of the following o
 
 ### Choosing a theme
 
-> Reference: [Themes](themes.qd)
+> Reference: [Themes](themes.md)
 
 Themes are split into two groups: *color* themes define the color scheme of a document, while *layout* themes set the general structural rules of the layout.
 
@@ -65,11 +65,11 @@ Some popular combinations include:
 - `galactic + hyperlegible`: The theme used in this wiki, with a highly readable font
 - `beaver + beamer`: An academic presentation style
 
-See [Themes](themes.qd) for a complete list of available themes.
+See [Themes](themes.md) for a complete list of available themes.
 
 ## Compiling
 
-> Reference: [Compiler](cli-compiler.qd)
+> Reference: [Compiler](cli-compiler.md)
 
 Compile the document to make sure everything works as expected:
 
@@ -86,7 +86,7 @@ To export to PDF, add the `--pdf` flag:
 quarkdown c main.qd --pdf
 ```
 
-See the [PDF export](pdf-export.qd) page for more information about PDF export and its requirements. If you installed Quarkdown using a package manager or the install script, you should be ready to go.
+See the [PDF export](pdf-export.md) page for more information about PDF export and its requirements. If you installed Quarkdown using a package manager or the install script, you should be ready to go.
 
 ## Live preview
 
@@ -126,7 +126,7 @@ For a refresher on Markdown basics, see [markdownguide.org](https://www.markdown
 
 ### Image size
 
-> References: [Image size](image-size.qd), [Size](sizes.qd)
+> References: [Image size](image-size.md), [Size](sizes.md)
 
 You might have noticed that the image in the previous example appears too large. Quarkdown overcomes this well-known Markdown limitation by allowing you to specify image dimensions:
 
@@ -154,7 +154,7 @@ To specify only the height:
 
 ### Figures
 
-> Reference: [Figures](figure.qd)
+> Reference: [Figures](figure.md)
 
 When an image stands alone, separated from other content, it automatically becomes a figure. Figures are centered and can have a caption.
 
@@ -174,7 +174,7 @@ You can add a caption by appending a title in quotes:
 
 ### Equations and formulae
 
-> Reference: [TeX formulae](tex-formulae.qd)
+> Reference: [TeX formulae](tex-formulae.md)
 
 You can include TeX equations using the `$ expression $` syntax. Note that whitespace matters.
 
@@ -194,7 +194,7 @@ Notice that the second equation appears centered on its own line, even though it
 
 ## Function call syntax
 
-> Reference: [Syntax of a function call](syntax-of-a-function-call.qd)
+> Reference: [Syntax of a function call](syntax-of-a-function-call.md)
 
 Before exploring more features, let’s look at Quarkdown’s function call syntax.
 
@@ -228,7 +228,7 @@ You can chain multiple function calls together, where the output of one becomes 
 
 ### Variables
 
-> Reference: [Variables](variables.qd)
+> Reference: [Variables](variables.md)
 
 Define a variable using the `.var` function and access it like any other function:
 
@@ -246,7 +246,7 @@ To change a variable’s value, call it with a new argument:
 
 ## Custom elements
 
-> Reference: [Declaring functions](declaring-functions.qd), [Boxes](box.qd)
+> Reference: [Declaring functions](declaring-functions.md), [Boxes](box.md)
 
 You can define custom functions using `.function`. Functions are reusable components that encapsulate logic and content. In this section, we create a function that generates an *Example* box, commonly used in educational documents.
 
@@ -294,9 +294,9 @@ Update the call accordingly:
 
 <img src="media/custom-element@-1454835906.png" alt="Custom element" width="650.0px" />
 
-Congratulations! You’ve created your first reusable element using [boxes](box.qd). Many more layout tools are available, such as [containers](container.qd) and [stacks](stacks.qd).
+Congratulations! You’ve created your first reusable element using [boxes](box.md). Many more layout tools are available, such as [containers](container.md) and [stacks](stacks.md).
 
-For advanced styling of custom elements, you can use CSS rules. See [CSS](css.qd) for more information.
+For advanced styling of custom elements, you can use CSS rules. See [CSS](css.md) for more information.
 
 > For the sake of simplicity, let’s remove the function call for now:
 > 
@@ -307,7 +307,7 @@ For advanced styling of custom elements, you can use CSS rules. See [CSS](css.qd
 
 ## Styling elements
 
-> Reference: [Element styling](element-styling.qd), [Element styling properties](element-styling-properties.qd), [Extending functions](extending-functions.qd)
+> Reference: [Element styling](element-styling.md), [Element styling properties](element-styling-properties.md), [Extending functions](extending-functions.md)
 
 You can alter the appearance and behavior of built-in Markdown elements, such as headings and paragraphs. Quarkdown provides a mechanism similar to Typst’s `#show` rules, based on the `.extend` function, to intercept and customize the primitive functions backing these elements.
 
@@ -320,7 +320,7 @@ For example, to make all level 2 headings appear on a teal background:
 
 Every `## Heading` now renders with the new styling, while other levels remain unchanged. `.super` invokes the original function, optionally overriding any of its arguments.
 
-To add an icon to all external links, you can intercept the `.link` primitive function and add an [icon](icons.qd) to its content:
+To add an icon to all external links, you can intercept the `.link` primitive function and add an [icon](icons.md) to its content:
 
 ```markdown
 .extend {link} where:{url: .url::startswith {https://quarkdown.com}::not}
@@ -329,7 +329,7 @@ To add an icon to all external links, you can intercept the `.link` primitive fu
         .content .icon {box-arrow-up-right}
 ```
 
-To italicize the word “Quarkdown” in all paragraphs, you can use the [`.match`](regex-match.qd) function:
+To italicize the word “Quarkdown” in all paragraphs, you can use the [`.match`](regex-match.md) function:
 
 ```markdown
 .extend {paragraph}
@@ -342,14 +342,14 @@ To italicize the word “Quarkdown” in all paragraphs, you can use the [`.matc
 In the previous snippet:
 
 - `content` is the intercepted argument from the `.paragraph` function;
-- `.content::match {Quarkdown}` finds the pattern “Quarkdown” in the paragraph content, and applies the transformation `*.1*` to it, which italicizes the matched text. `.1` is an [implicit lambda parameter](lambda.qd);
+- `.content::match {Quarkdown}` finds the pattern “Quarkdown” in the paragraph content, and applies the transformation `*.1*` to it, which italicizes the matched text. `.1` is an [implicit lambda parameter](lambda.md);
 - `.super` is called with the modified content as its body argument.
 
-For more complex styling needs, you can use [CSS](css.qd) rules via `.css` to target specific elements and apply custom styles, and `.cssproperties` to customize global properties.
+For more complex styling needs, you can use [CSS](css.md) rules via `.css` to target specific elements and apply custom styles, and `.cssproperties` to customize global properties.
 
 ## Numbering
 
-> Reference: [Numbering](numbering.qd)
+> Reference: [Numbering](numbering.md)
 
 Many documents, especially academic ones, require numbered elements such as sections, figures, tables, equations, and code. In Quarkdown, you can achieve this using the `.numbering` function.
 
@@ -372,7 +372,7 @@ Add a numbering scheme at the top of your document, right before the content beg
 ...
 ```
 
-> This YAML-like syntax represents a [dictionary](dictionary.qd) data type.
+> This YAML-like syntax represents a [dictionary](dictionary.md) data type.
 
 <img src="media/numbering@1628411633.png" alt="Numbering" width="650.0px" />
 
@@ -388,7 +388,7 @@ Any other character is treated as literal text.
 
 ## Table of contents
 
-> Reference: [Table of contents](table-of-contents.qd)
+> Reference: [Table of contents](table-of-contents.md)
 
 Longer documents often include a table of contents at the beginning that lists all sections and subsections.
 
@@ -406,7 +406,7 @@ In Quarkdown, simply call the `.tableofcontents` function where you want the tab
 
 ## Footnotes
 
-> Reference: [Footnotes](footnotes.qd)
+> Reference: [Footnotes](footnotes.md)
 
 Footnotes let you add additional information without cluttering the main text. Let’s add a footnote to our introduction:
 
@@ -430,7 +430,7 @@ In `plain` documents, footnotes appear in the margin next to the reference, simi
 
 ## Cross-references
 
-> Reference: [Cross-references](cross-references.qd)
+> Reference: [Cross-references](cross-references.md)
 
 Cross-references let you refer to numbered elements elsewhere in your document.
 
@@ -452,11 +452,11 @@ The Quarkdown logo is shown in .ref {logo}.
 
 <img src="media/cross-reference@-1758121868.png" alt="Cross-reference" width="650.0px" />
 
-See [Cross-references](cross-references.qd) to learn how to add IDs to other elements, such as sections, tables, equations, and code blocks.
+See [Cross-references](cross-references.md) to learn how to add IDs to other elements, such as sections, tables, equations, and code blocks.
 
 ## Page margins and counter
 
-> References: [Page format](page-format.qd), [Page margin content](page-margin-content.qd), [Page counter](page-counter.qd)
+> References: [Page format](page-format.md), [Page margin content](page-margin-content.md), [Page counter](page-counter.md)
 
 In `paged` and `slides` documents, you typically want a page counter to help readers navigate and understand where they are in the document.
 
@@ -488,11 +488,11 @@ Now add a page counter to the bottom center of each page:
 
 Each page now displays its number and the total number of pages.
 
-The `.pagemargin` function can add any kind of content to each page. See [Page margin content](page-margin-content.qd) for all available margin positions.
+The `.pagemargin` function can add any kind of content to each page. See [Page margin content](page-margin-content.md) for all available margin positions.
 
 ### Persistent headings
 
-> Reference: [Persistent headings](persistent-headings.qd)
+> Reference: [Persistent headings](persistent-headings.md)
 
 Page margins can also display the current section title on each page. The following example shows the current level-1 heading in the bottom left margin:
 
@@ -509,13 +509,13 @@ Page margins can also display the current section title on each page. The follow
 
 ## Multi-file projects
 
-> Reference: [Inclusion vs. subdocuments](inclusion-vs-subdocuments.qd)
+> Reference: [Inclusion vs. subdocuments](inclusion-vs-subdocuments.md)
 
 There are two main ways to split a large document into multiple source files: inclusion and subdocuments.
 
 ### Including files
 
-> Reference: [Including other Quarkdown files](including-other-quarkdown-files.qd)
+> Reference: [Including other Quarkdown files](including-other-quarkdown-files.md)
 
 The `.include` function inserts the content of another Quarkdown file into the current one. This approach is common in LaTeX and other markup languages for splitting a large document into smaller, more manageable files, such as one per chapter or section.
 
@@ -597,7 +597,7 @@ Here we used `.include` twice. For a larger number of files, consider using `.in
 
 ### Referencing files
 
-> Reference: [Subdocuments](subdocuments.qd)
+> Reference: [Subdocuments](subdocuments.md)
 
 The second approach uses subdocuments, which are particularly common for knowledge bases and wikis.
 
@@ -622,7 +622,7 @@ You can also visualize the knowledge graph formed by subdocuments:
 
 ## Static assets
 
-> Reference: [HTML static assets](html-static-assets.qd)
+> Reference: [HTML static assets](html-static-assets.md)
 
 When exporting to HTML, you might want to ship extra files alongside the generated document, such as a `robots.txt` or a `CNAME` for GitHub Pages.
 

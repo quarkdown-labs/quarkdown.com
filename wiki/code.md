@@ -41,7 +41,7 @@ Quarkdown also provides a more powerful **`.code`**  block function.
 
 ### Content processing
 
-Standard code blocks render their content as-is without any processing. The `.code` function, on the other hand, accepts any Quarkdown string as its body parameter, which means you can **evaluate functions** before displaying their output as code. This is particularly useful when combining `.code` with [`.read`](file-text-content.qd) to load a code snippet from a file:
+Standard code blocks render their content as-is without any processing. The `.code` function, on the other hand, accepts any Quarkdown string as its body parameter, which means you can **evaluate functions** before displaying their output as code. This is particularly useful when combining `.code` with [`.read`](file-text-content.md) to load a code snippet from a file:
 
 > **Example 3**
 > 
@@ -89,7 +89,7 @@ The `.code` function specifies the language through the optional `lang` argument
 
 ### Line numbers
 
-Standard code blocks always show line numbers by default. The `.code` function lets you toggle line numbers using the optional `linenumbers` [`Boolean`](boolean.qd) argument, which defaults to `yes` (equivalent to `true`).
+Standard code blocks always show line numbers by default. The `.code` function lets you toggle line numbers using the optional `linenumbers` [`Boolean`](boolean.md) argument, which defaults to `yes` (equivalent to `true`).
 
 > **Example 5**
 > 
@@ -112,7 +112,7 @@ Standard code blocks always show line numbers by default. The `.code` function l
 
 ### Focused lines
 
-The `.code` function allows you to focus on a [`Range`](range.qd) of lines, starting from `1`. Line numbers must be enabled for this feature to work.
+The `.code` function allows you to focus on a [`Range`](range.md) of lines, starting from `1`. Line numbers must be enabled for this feature to work.
 
 > **Example 6**
 > 
@@ -135,7 +135,7 @@ The `.code` function allows you to focus on a [`Range`](range.qd) of lines, star
 
 ### Extending
 
-`.code` is a [primitive](primitives.qd), so [extending it](element-styling.qd) affects every code block in the document at once, including fenced and indented blocks.
+`.code` is a [primitive](primitives.md), so [extending it](element-styling.md) affects every code block in the document at once, including fenced and indented blocks.
 
 > **Example 7**
 > 

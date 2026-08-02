@@ -2,7 +2,7 @@
 
 # Table caption
 
-The Quarkdown flavor introduces table captions, which you can set by adding a line immediately below the table. The content is wrapped between double quotes, single quotes, or parentheses, exactly like the image *title* attribute and [code captions](code-caption.qd).
+The Quarkdown flavor introduces table captions, which you can set by adding a line immediately below the table. The content is wrapped between double quotes, single quotes, or parentheses, exactly like the image *title* attribute and [code captions](code-caption.md).
 
 > **Example 1**
 > 
@@ -47,8 +47,8 @@ The Quarkdown flavor introduces table captions, which you can set by adding a li
 
 ## Changing position
 
-The relative position of captions can be customized. See [Caption position](caption-position.qd) for further information.
+The relative position of captions can be customized. See [Caption position](caption-position.md) for further information.
 
 ## Numbering
 
-Tables can also be **numbered**. See [Numbering](numbering.qd) for further information.
+Tables can also be **numbered**. See [Numbering](numbering.md) for further information.

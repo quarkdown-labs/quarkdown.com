@@ -40,4 +40,4 @@ ls "$INSTALL/docs"
 quarkdown doctor get agent-skill
 ```
 
-See [Use with AI agents](agent-skill.qd) for installation instructions.
+See [Use with AI agents](agent-skill.md) for installation instructions.

@@ -2,7 +2,7 @@
 
 # Document types
 
-The [`.doctype`](document-metadata.qd) function defines the type of document based on different use cases. Each document type offers its own set of features and behaviors tailored to specific output formats.
+The [`.doctype`](document-metadata.md) function defines the type of document based on different use cases. Each document type offers its own set of features and behaviors tailored to specific output formats.
 
 ## Plain (`plain`)
 
@@ -17,11 +17,11 @@ The document consists of three main elements:
 
 ### Margin content
 
-[Page margin content](page-margin-content.qd) appears in a fixed position that remains visible as you scroll.
+[Page margin content](page-margin-content.md) appears in a fixed position that remains visible as you scroll.
 
 ### Footnotes
 
-[Footnotes](footnotes.qd) appear as sidenotes in this document type, positioned in the right margin area next to their first reference. On mobile devices, footnotes appear at the end of the page instead.
+[Footnotes](footnotes.md) appear as sidenotes in this document type, positioned in the right margin area next to their first reference. On mobile devices, footnotes appear at the end of the page instead.
 
 ### PDF
 
@@ -29,44 +29,44 @@ When you export to PDF, the output artifact contains a single page that fits the
 
 ## Paged (`paged`)
 
-A paged document follows a traditional layout with content divided into separate pages. Page breaks occur either [explicitly](page-break.qd) through manual insertion or implicitly when content exceeds the available space.
+A paged document follows a traditional layout with content divided into separate pages. Page breaks occur either [explicitly](page-break.md) through manual insertion or implicitly when content exceeds the available space.
 
 <img src="media/paged@917491167.png" alt="Paged" width="1000.0px" />
 
 ### Margin content
 
-[Page margin content](page-margin-content.qd) appears on each page in a dedicated area.
+[Page margin content](page-margin-content.md) appears on each page in a dedicated area.
 
 ### Footnotes
 
-[Footnotes](footnotes.qd) appear at the bottom of the page where their first reference occurs, in a dedicated area.
+[Footnotes](footnotes.md) appear at the bottom of the page where their first reference occurs, in a dedicated area.
 
 ## Slides (`slides`)
 
-A slides document is designed for presentations, with a layout optimized for displaying content one slide at a time. Unless specified by the layout [theme](themes.qd), slides center their content horizontally. Slide breaks occur only through [explicit insertion](page-break.qd).
+A slides document is designed for presentations, with a layout optimized for displaying content one slide at a time. Unless specified by the layout [theme](themes.md), slides center their content horizontally. Slide breaks occur only through [explicit insertion](page-break.md).
 
 <img src="media/slides@2095090542.png" alt="Slides" width="1000.0px" />
 
 ### Margin content
 
-[Page margin content](page-margin-content.qd) appears on each slide without a dedicated area, which means it could potentially overlap the actual content.
+[Page margin content](page-margin-content.md) appears on each slide without a dedicated area, which means it could potentially overlap the actual content.
 
 ### Footnotes
 
-[Footnotes](footnotes.qd) appear at the bottom of the slide where their first reference occurs, without a dedicated area.
+[Footnotes](footnotes.md) appear at the bottom of the slide where their first reference occurs, without a dedicated area.
 
 ### PDF
 
 When you export to PDF:
 
 - Each slide becomes a separate page in the output artifact
-- Each [fragment](slides-fragment.qd) state appears on its own page
+- Each [fragment](slides-fragment.md) state appears on its own page
 
 ## Docs (`docs`)
 
 A docs document is designed for technical documentation, featuring a structured navigation-first layout with sidebars, a header with a search bar, and navigation buttons in the footer. This type is ideal for creating wikis, guides, and reference materials. The wiki you are currently reading is a docs document!
 
-Docs documents leverage [subdocuments](subdocuments.qd), and include a lightweight, precise and client-side search functionality that allows finding content within the entire documentation set.
+Docs documents leverage [subdocuments](subdocuments.md), and include a lightweight, precise and client-side search functionality that allows finding content within the entire documentation set.
 
 ### Margin content
 
@@ -77,4 +77,4 @@ Docs documents leverage [subdocuments](subdocuments.qd), and include a lightweig
 
 ### Footnotes
 
-[Footnotes](footnotes.qd) appear at the bottom of the page, in a dedicated area.
+[Footnotes](footnotes.md) appear at the bottom of the page, in a dedicated area.

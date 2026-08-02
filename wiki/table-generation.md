@@ -4,10 +4,10 @@
 
 ## Table generation by columns
 
-The **`.table`** function takes a single block argument which is an [iterable](iterable.qd) of **tables**.
+The **`.table`** function takes a single block argument which is an [iterable](iterable.md) of **tables**.
 The result of the call is a **new table** that combines the supplied tables **by columns**.
 
-In the following example, `.repeat` is used, which, like other supported [loops](loops.qd), returns the results from each iteration as an iterable.
+In the following example, `.repeat` is used, which, like other supported [loops](loops.md), returns the results from each iteration as an iterable.
 
 > **Example 1**
 > 
