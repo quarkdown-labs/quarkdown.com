@@ -24,15 +24,15 @@ Quarkdown is a modern, open-source typesetting system that extends Markdown with
 
 ## Learn More
 
-For detailed documentation, syntax reference, scripting guides, and technical topics, visit the Quarkdown Wiki: https://quarkdown.com/wiki
+For detailed documentation, syntax reference, scripting guides, and technical topics, visit the [Quarkdown Wiki](https://quarkdown.com/wiki/index.md).
 
-In particular, check out the Quickstart Guide for a hands-on introduction: https://quarkdown.com/wiki/quickstart
+In particular, check out the [Quickstart Guide](https://quarkdown.com/wiki/quickstart.md) for a hands-on introduction.
 
 ## Links
 
 - [Website](https://quarkdown.com)
 - [GitHub](https://github.com/iamgio/quarkdown)
-- [Wiki](https://quarkdown.com/wiki)
+- [Wiki](https://quarkdown.com/wiki/index.md)
 - [API Docs](https://quarkdown.com/docs)
 - [Blog](https://quarkdown.com/blog)
 - [VS Code Extension](https://quarkdown.com/vs-code)
