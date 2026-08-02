@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # TeX macros
 
 When writing [TeX formulae](tex-formulae.qd), you may want to use custom macros.

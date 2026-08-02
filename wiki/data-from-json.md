@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Data from JSON
 
 The **`.json {path}`**  function loads a JSON file and returns its content ready to use in your document.

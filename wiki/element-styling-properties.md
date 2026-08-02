@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Element styling properties
 
 Several functions, such as [`.container`](container.qd) and [`.heading`](headings.qd), share a common set of styling parameters to customize colors, spacing, borders, and text appearance of the element they produce.

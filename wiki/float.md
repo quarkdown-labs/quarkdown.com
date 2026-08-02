@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Float
 
 The **`.float {alignment}`** function transforms any content into a floating element that breaks the normal flow and allows subsequent content to wrap around it.

@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Regex-based styling
 
 The **`.match {content} {pattern} {replacement}`**  function:

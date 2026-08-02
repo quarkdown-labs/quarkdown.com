@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Paragraph style
 
 The **`.paragraphstyle`**  function allows you to override the global style of paragraphs.

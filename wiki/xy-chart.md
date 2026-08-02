@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # XY chart
 
 The **`.xychart`**  function allows you to plot 2D line and bar charts in a pure, flexible Quarkdown fashion, through the power of [Mermaid diagrams](mermaid-diagrams.qd).

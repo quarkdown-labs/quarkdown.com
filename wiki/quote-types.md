@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Quote types
 
 If a blockquote begins with `Tip:`, `Note:`, `Warning:`, or `Important:`, Quarkdown assigns that type to the quote. The prefix is stripped off and the element is styled accordingly.

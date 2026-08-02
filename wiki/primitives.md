@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Primitive functions
 
 Primitive functions return elements that back standard Markdown syntax. Each one accepts parameters that plain Markdown may not, and can be intercepted via [`.extend`](extending-functions.qd) to customize their behavior and appearance across the entire document, even if created via standard Markdown syntax.

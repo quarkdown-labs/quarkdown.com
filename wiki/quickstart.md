@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Quickstart
 
 Welcome to Quarkdown! This guide walks you through the main features you need to create your first document.

@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # CLI - Compiler
 
 **`quarkdown c <file>`** is the command for compiling a main source file into a browser-renderable output.

@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # CLI - Doctor
 
 **`quarkdown doctor`** groups commands that report information about the current Quarkdown installation.

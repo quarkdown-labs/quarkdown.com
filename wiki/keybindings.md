@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Keybindings
 
 The **`.keybinding {keys}`**  function displays a keyboard shortcut or key combination.

@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Box
 
 The **`.box`**  function creates a special box container with an inline *title* and block *content*.

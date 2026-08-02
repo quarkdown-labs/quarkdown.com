@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Image size
 
 While base Markdown requires HTML code to constrain the size of an image, Quarkdown introduces a syntax extension that achieves the same result more elegantly: `!(WIDTHxHEIGHT)[ALT](URL)`.

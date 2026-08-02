@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Media storage
 
 **Media storage** is a feature that ensures all required files are present in the output directory when you export a Quarkdown project.

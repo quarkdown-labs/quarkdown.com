@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Boolean
 
 Boolean values are represented by the following literals, which are **case insensitive**:

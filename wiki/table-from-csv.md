@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Table from CSV
 
 The **`.csv {path} {mode?} {caption?}`**  function loads a table from a CSV file. The first row of the CSV file always serves as the header row.

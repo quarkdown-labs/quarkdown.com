@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # File name
 
 The **`.filename {path} {extension?}`**  function returns the file name from a given file path. The optional `extension` boolean parameter controls whether the file extension is included in the result.

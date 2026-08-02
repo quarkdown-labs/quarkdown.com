@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Variables
 
 Variables allow you to store and reuse values throughout your document. They are essential for avoiding repetition, creating dynamic content, and building reusable components.

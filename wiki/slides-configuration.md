@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Slides configuration
 
 The **`.slides`**  function allows you to override the default configuration of `slides` documents. All of its parameters are **optional**:

@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # HTML static assets
 
 Static assets let you ship arbitrary files alongside your compiled HTML output, without any further processing.

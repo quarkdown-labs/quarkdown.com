@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Page format
 
 The **`.pageformat`**  function configures the page format. All its parameters are **optional**, and if left unset, they delegate their default value to the underlying renderer depending on the document type.

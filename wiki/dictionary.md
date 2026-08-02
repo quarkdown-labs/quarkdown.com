@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Dictionary
 
 In Quarkdown, a dictionary is a collection of key-value pairs without duplicate keys. Keys are always strings, while values can be any type.

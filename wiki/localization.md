@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Localization
 
 Quarkdown supports **string localization** out of the box.

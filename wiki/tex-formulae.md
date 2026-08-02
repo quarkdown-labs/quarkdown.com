@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # TeX formulae
 
 Quarkdown natively supports TeX math equations and formulae. When rendering to HTML, this feature is powered by [KaTeX](https://www.katex.org).

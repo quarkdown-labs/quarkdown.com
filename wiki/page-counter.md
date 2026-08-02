@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Page counter
 
 The **`.currentpage`** and **`.totalpages`** functions display, respectively, the current index (beginning from 1) of the page or slide where the function call appears and the total number of pages or slides. They do not accept any arguments.

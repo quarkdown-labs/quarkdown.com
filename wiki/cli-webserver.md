@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # CLI - Webserver
 
 Quarkdown’s webserver allows direct communication between the compiler and the browser, making [live previewing](inside-live-preview.qd) possible.

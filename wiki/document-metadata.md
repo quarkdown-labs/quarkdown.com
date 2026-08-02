@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Document metadata
 
 You can set document information using the following functions. By convention, you should call these functions at the beginning of your Quarkdown source.

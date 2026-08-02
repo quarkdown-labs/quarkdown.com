@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Math
 
 Mathematical functions provide a way to perform numeric operations.

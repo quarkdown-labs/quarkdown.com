@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # None
 
 *None* is a special value that represents nothing or emptiness (similar to `null` in many programming languages). Functions can return it, and it also serves as a placeholder for [optional parameters](declaring-functions.qd).

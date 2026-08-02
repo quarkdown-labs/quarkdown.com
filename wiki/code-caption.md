@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Code caption
 
 Quarkdown introduces code captions, which you can set by adding a caption directly in the code block declaration. Place the caption after the language identifier, wrapped in double quotes, single quotes, or parentheses. This syntax is the same as the image *title* attribute and [table captions](table-caption.qd).

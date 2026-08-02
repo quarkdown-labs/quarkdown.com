@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Pipeline
 
 When you supply an input file to Quarkdown, it undergoes a process of elaboration to be transformed into an output resource, such as an HTML document that the browser can display. Under the hood, this process is represented by a **sequential pipeline**, in which the output of one stage becomes the input of the next one.

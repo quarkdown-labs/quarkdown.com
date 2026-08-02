@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Text
 
 The **`.text`** inline function provides extensive text formatting that cannot be expressed in plain Markdown.

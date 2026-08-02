@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Figure
 
 Quarkdown introduces the concept of **figure**, which is missing in base Markdown. A figure wraps an image and centers it horizontally. When a paragraph contains only a single image (in other words, the image is isolated from other content), Quarkdown automatically converts it into a figure.

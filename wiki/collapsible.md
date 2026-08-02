@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Collapsible
 
 The **`.collapse`** function creates an interactive collapsible block that users can toggle by clicking.

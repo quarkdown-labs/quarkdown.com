@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Bibliography
 
 Quarkdown provides CSL-powered bibliography support for the following bibliography formats:

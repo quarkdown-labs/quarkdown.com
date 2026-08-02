@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Icons
 
 The **`.icon {name}`**  function displays a pixel-perfect icon by its name.

@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Slides speaker notes
 
 Speaker notes are helpful tools for remembering talking points, reminders, or extra details while presenting.

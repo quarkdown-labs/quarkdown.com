@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Custom figure
 
 The **`.figure {caption?} {body}`** function generalizes the [image figures](figure.qd) syntax extension by allowing any content to be treated as a *figure* block. This means the content:

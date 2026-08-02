@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Table caption
 
 The Quarkdown flavor introduces table captions, which you can set by adding a line immediately below the table. The content is wrapped between double quotes, single quotes, or parentheses, exactly like the image *title* attribute and [code captions](code-caption.qd).

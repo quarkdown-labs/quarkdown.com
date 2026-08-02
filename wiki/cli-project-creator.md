@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # CLI - Project creator
 
 The **project creator** is a CLI project wizard that makes it fast to set up a new Quarkdown project.

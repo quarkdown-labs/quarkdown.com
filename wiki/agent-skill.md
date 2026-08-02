@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Quarkdown skill for agents
 
 Quarkdown ships with an agent skill and a full offline copy of its wiki and stdlib API reference, so AI agents can consult the source of truth before generating `.qd` documents.

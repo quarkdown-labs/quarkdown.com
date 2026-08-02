@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Table manipulation
 
 This page describes table manipulation functions  that allow you to sort, filter, and compute values from any kind of table, including plain Markdown ones and those [loaded from CSV](table-from-csv.qd).

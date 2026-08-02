@@ -1,0 +1,135 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
+# SEO & AEO optimization
+
+When publishing a Quarkdown document as a website, especially [`plain`](document-types.qd) and [`docs`](document-types.qd) projects with multiple [subdocuments](subdocuments.qd), a few setup steps make the site easier to find and index. This page collects the recommended settings for both search engines (SEO) and AI agents (AEO).
+
+Most of these are already taken care of by Quarkdown’s [project creator](cli-project-creator.qd) when picking the `docs` document type.
+
+## Base URL
+
+Set the site’s canonical base URL through [`.htmloptions`](html-options.qd):
+
+```markdown
+.htmloptions baseurl:{https://example.com}
+```
+
+This has two effects:
+
+1. Every generated page gets a `<link rel="canonical">` pointing to its final URL, which helps search engines pick the preferred address for each page.
+2. When the project contains at least one subdocument, Quarkdown emits a `sitemap.xml`, listing every page for crawlers to discover.
+
+> The base URL should not include a trailing slash and should point to the directory where `index.html` is served from.
+
+## Robots.txt
+
+Search engines and AI crawlers check for a `robots.txt` file at the root of your site to learn which pages they may access, and where to find the sitemap generated from the base URL.
+
+Ship it as a [static asset](html-static-assets.qd) by placing it in the project’s `public/` directory:
+
+- main.qd
+- public/
+
+  - robots.txt
+
+A minimal file that welcomes all crawlers and points them to the sitemap:
+
+```
+User-agent: *
+Allow: /
+
+Sitemap: https://example.com/sitemap.xml
+```
+
+The `Sitemap` line should use the same URL passed to `.htmloptions baseurl:{...}`, so crawlers pick up every subdocument.
+
+## Per-subdocument page titles
+
+By default, every page in a multi-subdocument project shows its own name in search engines and browser tabs, defined by its [`.docname`](document-metadata.qd).
+
+> **Example 1**
+> 
+> The HTML title will be *My document*:
+> 
+> ```markdown
+> .docname {My document}
+> ```
+
+The recommended pattern combines the subdocument’s own name with the site name, and lives in a common setup file (such as `_setup.qd` in `docs` documents).
+
+> **Example 2**
+> 
+> The HTML title will be *Subdocument name | My site* for non-root pages:
+> 
+> ```markdown
+> .ifnot {.docname::equals {My site}}
+>     .htmloptions title:{.docname | My site}
+> ```
+
+> `.htmloptions title:` overrides the browser tab and search result title independently of `.docname`, which is still used for on-page headings and file names.
+
+## Document metadata
+
+Filling in the metadata fields on populate the corresponding HTML `<meta>` tags, consumed both by search engines and by AI agents.
+
+```markdown
+.docname {My site}
+.doclang {English}
+.docauthor {Jane Doe}
+.docdescription {A short summary of what this site is about, ideally under 160 characters.}
+.dockeywords
+    - typesetting
+    - markdown
+    - documentation
+```
+
+See [Document metadata](document-metadata.qd) for the full reference, including per-subdocument overrides.
+
+## Shipping a Markdown copy
+
+Modern AI agents and LLM-based crawlers prefer plain Markdown over HTML because it strips away layout noise and preserves the document structure. Quarkdown can produce both artifacts from the same source in two runs of the compiler:
+
+```bash
+quarkdown c main.qd -r html --clean
+quarkdown c main.qd -r markdown
+```
+
+The second run writes `.md` files alongside the HTML output, so the result is a single directory containing both formats:
+
+- My site/
+
+  - index.html
+  - index.md
+  - page-1/
+
+    - index.html
+  - page-1.md
+  - page-2/
+
+    - index.html
+  - page-2.md
+
+> **Example 3**
+> 
+> This very page is readable in Markdown at [/wiki/seo-aeo-optimization.md](/wiki/seo-aeo-optimization.md?).
+
+## Pointing agents at `llms.txt`
+
+The [llms.txt convention](https://llmstxt.org) proposes a single Markdown file at the root of a site (`/llms.txt`) that curates the most useful entry points for LLM-based crawlers. Ship it as a [static asset](html-static-assets.qd) in `public/`, alongside `robots.txt`.
+
+Agents that fetch a rendered page, however, have no built-in way to discover that an index exists. To bridge this, add a short discoverability directive on every page using the **`.llmstxt`** function. This emits two variants of the same pointer:
+
+- A visually hidden HTML paragraph that stays out of the visual layout but remains in the DOM, so agents that fetch the HTML still see it.
+- A Markdown blockquote, emitted only when the target is Markdown, carrying the same pointer for agents that consume the `.md` version.
+
+Place the call in a shared setup file, so it appears on every subdocument:
+
+> **Example 4**
+> 
+> > `_setup.qd`
+> 
+> ```markdown
+> .llmstxt path:{/llms.txt} markdownavailable:{yes}
+> ```
+
+Set `markdownavailable` to `yes` when the site also ships `.md` files (see [Shipping a Markdown copy](#shipping-a-markdown-copy)). In that case, the directive also tells agents how to fetch the raw Markdown of the current page.

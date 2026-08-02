@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Multi-column layout
 
 [**`.pageformat {columns}`**](page-format.qd) applies a multi-column layout to each page when the value of `columns` is higher than 1.

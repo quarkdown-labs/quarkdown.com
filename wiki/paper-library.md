@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Paper library
 
 The built-in [`paper`](https://github.com/iamgio/quarkdown/blob/main/quarkdown-libs/src/main/resources/paper) library is written in Quarkdown and adds support for typical elements of scientific papers in a LaTeX fashion.

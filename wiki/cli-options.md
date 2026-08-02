@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # CLI - Options
 
 This page lists all the options available for the [compiler](cli-compiler.qd) and REPL.

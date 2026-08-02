@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Align
 
 The **`.align`** block function sets the horizontal alignment of content, including multiline text alignment.

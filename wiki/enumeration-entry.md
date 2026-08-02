@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Enumeration entry
 
 An **enumeration entry** is an input value that matches the name of an element from an enumeration. Enumerations cannot be created from the Quarkdown language, so the term *enumeration* refers to a native JVM `enum`.

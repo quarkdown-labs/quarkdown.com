@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Slides fragment
 
 A **fragment** is an interactive section of a slide that can show or hide content when the user attempts to go to the next slide.

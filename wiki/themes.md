@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Themes
 
 A theme defines the look and feel of your Quarkdown document. More themes are planned for the future.

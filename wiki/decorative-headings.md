@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Decorative headings
 
 To prevent a heading from being numbered and from appearing in the [table of contents](table-of-contents.qd), append a `!` after the last `#` sign. For example: `#!`, `##!`, `###!`, etc.

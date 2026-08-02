@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Table of contents
 
 A table of contents provides a quick overview of your document by displaying links to headings in a visual hierarchy. Readers can click on any entry to jump directly to that section. You can see a table of contents right now in the right sidebar, or at the end of the page if you’re on a mobile device.

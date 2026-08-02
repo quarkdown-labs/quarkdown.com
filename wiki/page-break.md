@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Page break
 
 A page break is a forced interruption of the page flow that causes content following the break to appear on the next page. Page breaks do not affect `plain` and `docs` documents, except for printing.

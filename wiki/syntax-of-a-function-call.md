@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Syntax of a function call
 
 **Functions** are the key feature of Quarkdown, distinguishing it from other Markdown dialects and many other markup languages. They are loaded from external libraries, either native (e.g., [standard library](https://github.com/iamgio/quarkdown/tree/main/quarkdown-stdlib/src/main/kotlin/com/quarkdown/stdlib)) or defined in a Quarkdown source, and come in different categories:

@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Sizes
 
 Many functions accept sizes as arguments. This page explains the correct format for defining them.

@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Markdown content
 
 Many functions accept rich Quarkdown content as their argument.

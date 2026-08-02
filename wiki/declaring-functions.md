@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Declaring functions
 
 You can declare functions using the **`.function`**  function (in Quarkdown, everything is a function!).

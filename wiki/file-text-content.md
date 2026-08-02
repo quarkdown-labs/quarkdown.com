@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # File text content
 
 The **`.read {path}`**  function returns the string content of the specified file.

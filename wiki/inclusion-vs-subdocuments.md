@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Inclusion vs subdocuments
 
 Quarkdown offers two ways to include content from other files: **inclusion** and **subdocumenting**. These approaches differ significantly in how they work and what they are best suited for.

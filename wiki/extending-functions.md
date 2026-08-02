@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Extending functions
 
 Function extension is a powerful feature that lets you transform, decorate, or replace a function’s behavior.

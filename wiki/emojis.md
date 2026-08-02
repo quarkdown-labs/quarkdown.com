@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Emojis
 
 Quarkdown documents support emojis through direct insertion or shortcode functions.

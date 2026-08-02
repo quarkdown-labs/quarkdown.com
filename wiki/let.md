@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Let
 
 The **`.let`** function defines a temporary variable that is accessible only within its scope. It accepts two parameters:

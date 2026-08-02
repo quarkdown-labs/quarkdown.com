@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Importing external libraries
 
 The **`.include`** function, previously seen in [*Including other Quarkdown files*](including-other-quarkdown-files.qd), can also import external **libraries**.

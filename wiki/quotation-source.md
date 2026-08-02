@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Quotation source
 
 Quarkdown allows a blockquote to have a citation source.

@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Font configuration
 
 The **`.font`**  function overrides the global font configuration.

@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Footnotes
 
 Footnotes allow readers to reference additional information without cluttering the main content.

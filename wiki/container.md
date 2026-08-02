@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Container
 
 The **`.container`**  function creates a highly customizable block of content, and resets the current layout rules back to normal.

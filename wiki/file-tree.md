@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # File Tree
 
 The **`.filetree`**  function creates a visual file tree from a standard Markdown list.

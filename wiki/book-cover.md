@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Book cover
 
 A common pattern for [paged documents](document-types.qd) is a full-bleed cover page, where an image spans the entire first page. This is achieved by combining:

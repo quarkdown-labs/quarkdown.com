@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Conditional statements
 
 The **`.if`** function creates a conditional statement:

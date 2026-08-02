@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Destructuring
 
 Destructuring splits a [lambda](lambda.qd) parameter into its individual components. For instance, a [pair](iterable.qd) has two components, while a generic [iterable](iterable.qd) can have many.

@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Listing files
 
 The **`.listfiles {path} {directories?} {recursive?} {pattern?} {fullpath?} {sortby?} {order?}`**  function returns an [iterable](iterable.qd) of entries from a directory.

@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # CSS
 
 The **`.css`**  function lets you apply CSS styles to the document.

@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Whitespace
 
 You can add blank space anywhere via the **`.whitespace`** function  , which accepts optional `width` and `height` [Size](sizes.qd) arguments.

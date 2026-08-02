@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # HTML options
 
 The **`.htmloptions`**  function configures HTML-specific generation settings.

@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Element styling
 
 If you’ve used Typst, you may be familiar with the `#show` directive for styling elements.   

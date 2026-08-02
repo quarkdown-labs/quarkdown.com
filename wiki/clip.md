@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Clip
 
 The **`.clip {shape}`** block function clips its content to a defined shape.

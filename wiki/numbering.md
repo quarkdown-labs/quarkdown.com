@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Numbering
 
 The **`.numbering`** function sets the global numbering configuration of the document. The following elements can be numbered:

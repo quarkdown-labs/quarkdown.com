@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Page margin content
 
 The **`.pagemargin`** function displays content on each page in a fixed position along its [margins](page-format.qd).

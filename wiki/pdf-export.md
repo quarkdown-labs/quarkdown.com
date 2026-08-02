@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # PDF export
 
 When running Quarkdown’s [compiler](cli-compiler.qd) via `quarkdown c`, specifying the **`--pdf`** flag generates a PDF file.

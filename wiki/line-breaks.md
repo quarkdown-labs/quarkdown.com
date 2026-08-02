@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Line breaks
 
 Quarkdown follows the standard Markdown specification, so you can create soft line breaks by ending a line with two or more spaces:

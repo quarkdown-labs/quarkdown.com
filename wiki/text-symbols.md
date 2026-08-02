@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Text symbols
 
 Quarkdown features automatic text replacement for commonly used UTF-8 symbols.

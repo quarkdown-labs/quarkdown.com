@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Logging
 
 Quarkdown provides several ways to log content to standard channels, which can be useful for debugging and error handling.

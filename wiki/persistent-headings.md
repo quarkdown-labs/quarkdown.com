@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Persistent headings
 
 The **`.lastheading {depth}`**  function allows you to reference the last heading of a given depth across pages or slides.

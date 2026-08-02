@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Including other Quarkdown files
 
 The **`.include {file} {sandbox?}`**  function loads and evaluates an external Quarkdown source file.

@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Cross references
 
 In typesetting, cross-references are references to other parts of the document, such as figures, tables, sections, and equations.

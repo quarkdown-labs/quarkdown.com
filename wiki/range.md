@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Range
 
 The syntax for defining a range is **`a..b`**, where `a` and `b` are non-negative integers, for example `2..10`.

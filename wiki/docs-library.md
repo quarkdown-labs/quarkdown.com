@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Docs library
 
 The built-in [`docs`](https://github.com/iamgio/quarkdown/blob/main/quarkdown-libs/src/main/resources/docs.qd) library is written in Quarkdown and provides the standard structure for a [`docs` document](document-types.qd), with sidebars, navigation, and a table of contents.

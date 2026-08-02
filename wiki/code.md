@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Code
 
 You can create code blocks using the standard Markdown specification: either with 4-space or 1-tab indentation, or with triple backticks or tildes.

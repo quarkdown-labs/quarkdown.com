@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Headings
 
 The **`.heading {content} {depth}`**  function creates a heading with fine-grained control over its behavior.

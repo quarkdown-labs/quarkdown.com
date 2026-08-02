@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # HTML
 
 Standard Markdown specifications allow freely mixing Markdown and HTML, as they are meant to be implemented by parsers that solely rely on HTML rendering.

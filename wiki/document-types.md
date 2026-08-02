@@ -1,3 +1,5 @@
+> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+
 # Document types
 
 The [`.doctype`](document-metadata.qd) function defines the type of document based on different use cases. Each document type offers its own set of features and behaviors tailored to specific output formats.
