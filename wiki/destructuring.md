@@ -1,4 +1,4 @@
-> For the complete documentation index, see [llms.txt](/wiki/llms.txt).
+> For the complete documentation index, see [llms.txt](https://quarkdown.com/wiki/llms.txt).
 
 # Destructuring
 
