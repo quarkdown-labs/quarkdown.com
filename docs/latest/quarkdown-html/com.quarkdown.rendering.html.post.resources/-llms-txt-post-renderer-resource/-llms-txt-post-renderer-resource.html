@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-    <title>HtmlOptions</title>
+    <title>LlmsTxtPostRendererResource</title>
 <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>
     <script>document.documentElement.classList.replace("no-js", "js");</script>
     <script>const storage = localStorage.getItem("dokka-dark-mode")
@@ -44,7 +44,7 @@
         </div>
         <div class="navigation-controls">
         <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
-                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true" data-filter=":quarkdown-core/main">jvm</button>
+                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true" data-filter=":quarkdown-html/main">jvm</button>
             <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
                 <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox" data-role="dropdown-toggle" aria-controls="platform-tags-listbox" aria-haspopup="listbox" aria-expanded="false" aria-label="Toggle source sets"></button>
                 <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
@@ -55,7 +55,7 @@
                     </div>
                         <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
                             <label class="checkbox">
-                                <input type="checkbox" class="checkbox--input" id=":quarkdown-core/main" data-filter=":quarkdown-core/main">
+                                <input type="checkbox" class="checkbox--input" id=":quarkdown-html/main" data-filter=":quarkdown-html/main">
                                 <span class="checkbox--icon"></span>
                                 jvm
                             </label>
@@ -91,12 +91,12 @@
         </nav>
         <div id="resizer" class="resizer" data-item-type="BAR"></div>
         <div id="main" data-item-type="SECTION" role="main">
-<div class="main-content" data-page-type="member" id="content" pageids="quarkdown-core::com.quarkdown.core.context.options/HtmlOptions/HtmlOptions/#kotlin.String?#kotlin.String?#kotlin.String?#kotlin.Boolean/PointingToDeclaration//1831116724">
-  <div class="breadcrumbs"><a href="../../index.html">quarkdown-core</a><span class="delimiter">/</span><a href="../index.html">com.quarkdown.core.context.options</a><span class="delimiter">/</span><a href="index.html">HtmlOptions</a><span class="delimiter">/</span><span class="current">HtmlOptions</span></div>
+<div class="main-content" data-page-type="member" id="content" pageids="quarkdown-html::com.quarkdown.rendering.html.post.resources/LlmsTxtPostRendererResource/LlmsTxtPostRendererResource/#com.quarkdown.core.context.Context/PointingToDeclaration//-203176000">
+  <div class="breadcrumbs"><a href="../../index.html">quarkdown-html</a><span class="delimiter">/</span><a href="../index.html">com.quarkdown.rendering.html.post.resources</a><span class="delimiter">/</span><a href="index.html">LlmsTxtPostRendererResource</a><span class="delimiter">/</span><span class="current">LlmsTxtPostRendererResource</span></div>
   <div class="cover ">
-    <h1 class="cover"><span>Html</span><wbr><span><span>Options</span></span></h1>
+    <h1 class="cover"><span>Llms</span><wbr><span>Txt</span><wbr><span>Post</span><wbr><span>Renderer</span><wbr><span><span>Resource</span></span></h1>
   </div>
-  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">baseUrl<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">title<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">llmsTxtContent<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">isMarkdownMirrorAvailable<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span></span></span><span class="token punctuation">)</span></div><h4 class="tableheader">Parameters</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>base</span><wbr><span><span>Url</span></span></u></div></span></div><div><div class="title"><p class="paragraph">the base URL to use for resolving relative paths in the generated HTML, without a trailing slash, e.g. <code class="lang-kotlin">https://example.com</code></p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>title</span></span></u></div></span></div><div><div class="title"><p class="paragraph">overrides the document name used in the HTML <code class="lang-kotlin">&lt;title&gt;</code> tag. If <code class="lang-kotlin">null</code>, the document name is used</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>llms</span><wbr><span>Txt</span><wbr><span><span>Content</span></span></u></div></span></div><div><div class="title"><p class="paragraph">the content to include in the <code class="lang-kotlin">llms.txt</code> file, if any. If <code class="lang-kotlin">null</code>, no <code class="lang-kotlin">llms.txt</code> file is generated</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>is</span><wbr><span>Markdown</span><wbr><span>Mirror</span><wbr><span><span>Available</span></span></u></div></span></div><div><div class="title"><p class="paragraph">whether <code class="lang-kotlin">llms.txt</code> should link to Markdown files rather than HTML. Markdown generation is handled externally</p></div></div></div></div></div></div></div>
+  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-html/main"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="../../../quarkdown-core/com.quarkdown.core.context/-context/index.html">Context</a></span></span><span class="token punctuation">)</span></div><h4 class="tableheader">Parameters</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":quarkdown-html/main" data-filterable-set=":quarkdown-html/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>context</span></span></u></div></span></div><div><div class="title"><p class="paragraph">the context of the document being rendered</p></div></div></div></div></div></div></div>
 </div>
     <div class="footer">
         <div class="footer--container">
