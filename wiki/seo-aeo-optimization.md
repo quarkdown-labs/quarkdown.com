@@ -43,31 +43,6 @@ Sitemap: https://example.com/sitemap.xml
 
 The `Sitemap` line should use the same URL passed to `.htmloptions baseurl:{...}`, so crawlers pick up every subdocument.
 
-## Per-subdocument page titles
-
-By default, every page in a multi-subdocument project shows its own name in search engines and browser tabs, defined by its [`.docname`](document-metadata.md).
-
-> **Example 1**
-> 
-> The HTML title will be *My document*:
-> 
-> ```markdown
-> .docname {My document}
-> ```
-
-The recommended pattern combines the subdocument’s own name with the site name, and lives in a common setup file (such as `_setup.qd` in `docs` documents).
-
-> **Example 2**
-> 
-> The HTML title will be *Subdocument name | My site* for non-root pages:
-> 
-> ```markdown
-> .ifnot {.docname::equals {My site}}
->     .htmloptions title:{.docname | My site}
-> ```
-
-> `.htmloptions title:` overrides the browser tab and search result title independently of `.docname`, which is still used for on-page headings and file names.
-
 ## Document metadata
 
 Filling in the metadata fields on populate the corresponding HTML `<meta>` tags, consumed both by search engines and by AI agents.
@@ -77,6 +52,7 @@ Filling in the metadata fields on populate the corresponding HTML `<meta>` tags,
 .doclang {English}
 .docauthor {Jane Doe}
 .docdescription {A short summary of what this site is about, ideally under 160 characters.}
+
 .dockeywords
     - typesetting
     - markdown
@@ -109,7 +85,7 @@ The second run writes `.md` files alongside the HTML output, so the result is a 
     - index.html
   - page-2.md
 
-> **Example 3**
+> **Example 1**
 > 
 > This very page is readable in Markdown at [/wiki/seo-aeo-optimization.md](/wiki/seo-aeo-optimization.md?).
 
@@ -124,7 +100,7 @@ The **`.llmstxt`** function takes care of:
 
 Place the call in a shared setup file so both effects apply to every page:
 
-> **Example 4**
+> **Example 2**
 > 
 > > `_setup.qd`
 > 
@@ -136,3 +112,26 @@ Place the call in a shared setup file so both effects apply to every page:
 Set `markdownavailable` to `yes` when the site also ships `.md` files (see [Shipping a Markdown copy](#shipping-a-markdown-copy)). In that case, the directive tells agents how to fetch the Markdown version of the current page.
 
 > `llms.txt` uses absolute URLs, so `.llmstxt` requires [`.htmloptions baseurl:{...}`](#base-url) to be set.
+
+## Per-subdocument page titles
+
+By default, every page in a multi-subdocument project shows its own name in search engines and browser tabs, defined by its [`.docname`](document-metadata.md).
+
+> **Example 3**
+> 
+> The HTML title will be *My document*:
+> 
+> ```markdown
+> .docname {My document}
+> ```
+
+The recommended pattern combines the subdocument’s own name with the site name, and lives in a common setup file (such as `_setup.qd` in `docs` documents).
+
+> **Example 4**
+> 
+> The HTML title will be *Subdocument name | My site* for non-root pages:
+> 
+> ```markdown
+> .ifnot {.docname::equals {My site}}
+>     .htmloptions title:{.docname | My site}
+> ```
