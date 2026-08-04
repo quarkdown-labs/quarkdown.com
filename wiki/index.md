@@ -18,8 +18,9 @@ Even without the skill, agents can accurately fetch and read this wiki, [thanks 
 Because Quarkdown is a young project, most models lack training data about it. Include this directive in your first prompt to prevent hallucinations:
 
 ```text
-Quarkdown documentation lives at https://quarkdown.com/wiki.
-Treat it as the sole source of truth, and do not answer from prior knowledge.
+Quarkdown documentation lives at https://quarkdown.com/wiki (index: https://quarkdown.com/wiki/llms.txt).
+Treat it as the sole source of truth; do not answer from prior knowledge.
+When fetching pages, use the .md variant of each URL (e.g. https://quarkdown.com/wiki/index.md) to get clean Markdown source.
 ```
 
 ### Reference docs
