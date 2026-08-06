@@ -16,11 +16,11 @@ export const faqs: Faq[] = [
   },
   {
     question: 'Are docs and wikis ready for production?',
-    answer: 'Yes, <code>.doctype {docs}</code> produces sites on the same ballpark as Astro Starlight, Docusaurus, or MkDocs, while being extremely easy to set up and fast to compile. SEO and accessibility are supported out of the box, and AEO readiness is coming soon.',
+    answer: 'Yes, <code>.doctype {docs}</code> produces sites on the same ballpark as Astro Starlight, Docusaurus, or MkDocs, while being extremely easy to set up and fast to compile. SEO, agent readiness and accessibility are supported out of the box.',
   },
   {
     question: 'What output formats are supported?',
-    answer: 'Quarkdown can output to HTML, PDF, and plain text via the <code>--renderer</code> (<code>-r</code>) option. Markdown export is also planned.',
+    answer: 'Quarkdown can output to HTML, PDF, Markdown, and plain text via the <code>--renderer</code> (<code>-r</code>) option.',
   },
   {
     question: 'Quarkdown is Turing complete. How is it safe?',
