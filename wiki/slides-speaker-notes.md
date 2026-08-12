@@ -19,7 +19,7 @@ By default, speaker notes are displayed only when the document is viewed in the 
 
 ### Outside speaker view
 
-Additionally, notes may be displayed outside the speaker view, and also in exported PDF, by enabling `.slides speakernotes:{yes}` (see [Slides configuration](slides-configuration.qd)).
+Additionally, notes may be displayed outside the speaker view, and also in exported PDF, by enabling `.slides speakernotes:{yes}` (see [Slides configuration](slides-configuration.md)).
 
 - HTML:
 

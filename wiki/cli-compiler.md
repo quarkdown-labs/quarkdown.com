@@ -27,7 +27,7 @@ The final permission set is computed as: *defaults + allowed – denied*.
 | `global-read` | Read files from the entire file system, including outside the project directory |
 | `network` | Access remote resources over the network (e.g. fetching remote media) |
 | `native-content` | Embed native content, such as raw HTML and CSS *(default)* |
-| `process` | Access the host process environment (e.g. reading [environment variables](environment.qd)) |
+| `process` | Access the host process environment (e.g. reading [environment variables](environment.md)) |
 | `all` | Shorthand for all of the above |
 
 > `project-read`, `global-read` and `network` are only requested when the *compiler* needs access to a resource.

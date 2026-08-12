@@ -20,7 +20,7 @@ The second parameter is .param2
 
 You can omit the header in these cases:
 
-- When the lambda expects 0 parameters (such as in [conditional statements](conditional-statements.qd))
+- When the lambda expects 0 parameters (such as in [conditional statements](conditional-statements.md))
 - In any other case, the parameters become *implicit* and can be accessed by position via `.1`, `.2`, `.3`, etc.
 
 ```markdown
