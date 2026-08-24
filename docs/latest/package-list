@@ -338,6 +338,7 @@ com.quarkdown.rendering.markdown.post
 module:quarkdown-native-library-processor
 com.quarkdown.processor
 com.quarkdown.processor.annotation
+com.quarkdown.processor.coercion
 com.quarkdown.processor.generation
 com.quarkdown.processor.model
 com.quarkdown.processor.util
