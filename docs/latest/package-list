@@ -19,7 +19,7 @@ $dokka.location:com.quarkdown.stdlib/Data/csv/#com.quarkdown.core.context.Contex
 $dokka.location:com.quarkdown.stdlib/Data/filename/#com.quarkdown.core.context.Context#kotlin.String#kotlin.Boolean/PointingToDeclaration/quarkdown-stdlib/com.quarkdown.stdlib.module.Data/filename.html
 $dokka.location:com.quarkdown.stdlib/Data/json/#com.quarkdown.core.context.Context#kotlin.String/PointingToDeclaration/quarkdown-stdlib/com.quarkdown.stdlib.module.Data/json.html
 $dokka.location:com.quarkdown.stdlib/Data/listfiles/#com.quarkdown.core.context.Context#kotlin.String#kotlin.Boolean#kotlin.Boolean#kotlin.String?#kotlin.Boolean#com.quarkdown.stdlib.FileSorting#com.quarkdown.stdlib.internal.Ordering/PointingToDeclaration/quarkdown-stdlib/com.quarkdown.stdlib.module.Data/listfiles.html
-$dokka.location:com.quarkdown.stdlib/Data/pathtoroot/#com.quarkdown.core.context.Context#com.quarkdown.core.context.file.RootGranularity/PointingToDeclaration/quarkdown-stdlib/com.quarkdown.stdlib.module.Data/pathtoroot.html
+$dokka.location:com.quarkdown.stdlib/Data/pathtoroot/#com.quarkdown.core.context.Context#com.quarkdown.core.filesystem.RootGranularity/PointingToDeclaration/quarkdown-stdlib/com.quarkdown.stdlib.module.Data/pathtoroot.html
 $dokka.location:com.quarkdown.stdlib/Data/read/#com.quarkdown.core.context.Context#kotlin.String#com.quarkdown.core.function.value.data.Range/PointingToDeclaration/quarkdown-stdlib/com.quarkdown.stdlib.module.Data/read.html
 $dokka.location:com.quarkdown.stdlib/Dictionary/dictionary/#kotlin.collections.Map[kotlin.String,com.quarkdown.core.function.value.OutputValue[*]]/PointingToDeclaration/quarkdown-stdlib/com.quarkdown.stdlib.module.Dictionary/dictionary.html
 $dokka.location:com.quarkdown.stdlib/Dictionary/get/#kotlin.collections.Map[kotlin.String,com.quarkdown.core.function.value.OutputValue[*]]#kotlin.String#com.quarkdown.core.function.value.DynamicValue/PointingToDeclaration/quarkdown-stdlib/com.quarkdown.stdlib.module.Dictionary/get.html
@@ -212,7 +212,6 @@ com.quarkdown.core.bibliography
 com.quarkdown.core.bibliography.style
 com.quarkdown.core.bibliography.style.csl
 com.quarkdown.core.context
-com.quarkdown.core.context.file
 com.quarkdown.core.context.hooks
 com.quarkdown.core.context.hooks.location
 com.quarkdown.core.context.hooks.presence
@@ -232,6 +231,7 @@ com.quarkdown.core.document.size
 com.quarkdown.core.document.slides
 com.quarkdown.core.document.sub
 com.quarkdown.core.document.tex
+com.quarkdown.core.filesystem
 com.quarkdown.core.flavor
 com.quarkdown.core.flavor.base
 com.quarkdown.core.flavor.quarkdown
