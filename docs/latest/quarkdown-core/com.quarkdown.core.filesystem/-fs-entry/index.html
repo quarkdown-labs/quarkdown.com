@@ -98,7 +98,7 @@
     <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">FsEntry</a></div><p class="paragraph">A platform-neutral handle to a file or directory, bound to the <a href="../-file-system/index.html">FileSystem</a> backend that created it. An entry provides path math, existence and metadata queries, content reading, and directory listing, without exposing the underlying I/O engine.</p><p class="paragraph">Entries are created via <a href="../-file-system/resolve.html">FileSystem.resolve</a> or derived from other entries (<a href="resolve.html">resolve</a>, <a href="parent.html">parent</a>, <a href="children.html">children</a>).</p></div></div>
   </div>
   <div class="tabbedcontent">
-    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button><button class="section-tab" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION,EXTENSION_PROPERTY,EXTENSION_FUNCTION">Members &amp; Extensions</button></div>
     <div class="tabs-section-body">
       <div data-togglable="PROPERTY">
         <h2 class="tableheader">Properties</h2>
@@ -462,6 +462,21 @@
               <div>
                 <div class="title">
                   <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="to-file-or-null.html"><span class="token function">toFileOrNull</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html">File</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Converts this entry to a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html">File</a>, if it is backed by the physical disk file system. This is the boundary between the platform-neutral input abstraction and JVM-only output or process-level code; input-side code must not use it.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1177227444%2FFunctions%2F1831116724" anchor-label="toOutputResource" id="-1177227444%2FFunctions%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
+          <div class="table-row table-row_content" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../com.quarkdown.core.pipeline.output/to-output-resource.html"><span>to</span><wbr><span>Output</span><wbr><span><span>Resource</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1177227444%2FFunctions%2F1831116724"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="index.html">FsEntry</a><span class="token punctuation">.</span><a href="../../com.quarkdown.core.pipeline.output/to-output-resource.html"><span class="token function">toOutputResource</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator"> = </span>this.name<span class="token punctuation">, </span></span><span class="parameter ">useChecksumInvalidation<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span><span class="token punctuation">, </span></span><span class="parameter ">symlink<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.quarkdown.core.pipeline.output/-output-resource/index.html">OutputResource</a></div><div class="brief "><p class="paragraph">Converts this entry to an <a href="../../com.quarkdown.core.pipeline.output/-output-resource/index.html">OutputResource</a> for the pipeline to output.</p></div></div></div>
                 </div>
               </div>
             </div>
