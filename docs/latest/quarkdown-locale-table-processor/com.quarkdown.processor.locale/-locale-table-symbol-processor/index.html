@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-    <title>LocaleLoader</title>
+    <title>LocaleTableSymbolProcessor</title>
 <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>
     <script>document.documentElement.classList.replace("no-js", "js");</script>
     <script>const storage = localStorage.getItem("dokka-dark-mode")
@@ -44,7 +44,7 @@
         </div>
         <div class="navigation-controls">
         <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
-                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true" data-filter=":quarkdown-core/main">jvm</button>
+                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true" data-filter=":quarkdown-locale-table-processor/main">jvm</button>
             <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
                 <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox" data-role="dropdown-toggle" aria-controls="platform-tags-listbox" aria-haspopup="listbox" aria-expanded="false" aria-label="Toggle source sets"></button>
                 <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
@@ -55,7 +55,7 @@
                     </div>
                         <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
                             <label class="checkbox">
-                                <input type="checkbox" class="checkbox--input" id=":quarkdown-core/main" data-filter=":quarkdown-core/main">
+                                <input type="checkbox" class="checkbox--input" id=":quarkdown-locale-table-processor/main" data-filter=":quarkdown-locale-table-processor/main">
                                 <span class="checkbox--icon"></span>
                                 jvm
                             </label>
@@ -91,47 +91,28 @@
         </nav>
         <div id="resizer" class="resizer" data-item-type="BAR"></div>
         <div id="main" data-item-type="SECTION" role="main">
-<div class="main-content" data-page-type="classlike" id="content" pageids="quarkdown-core::com.quarkdown.core.localization/LocaleLoader///PointingToDeclaration//1831116724">
-  <div class="breadcrumbs"><a href="../../index.html">quarkdown-core</a><span class="delimiter">/</span><a href="../index.html">com.quarkdown.core.localization</a><span class="delimiter">/</span><span class="current">LocaleLoader</span></div>
+<div class="main-content" data-page-type="classlike" id="content" pageids="quarkdown-locale-table-processor::com.quarkdown.processor.locale/LocaleTableSymbolProcessor///PointingToDeclaration//717846645">
+  <div class="breadcrumbs"><a href="../../index.html">quarkdown-locale-table-processor</a><span class="delimiter">/</span><a href="../index.html">com.quarkdown.processor.locale</a><span class="delimiter">/</span><span class="current">LocaleTableSymbolProcessor</span></div>
   <div class="cover ">
-    <h1 class="cover"><span>Locale</span><wbr><span><span>Loader</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="index.html">LocaleLoader</a></div><p class="paragraph">Loader of <a href="../-locale/index.html">Locale</a>s.</p></div></div>
+    <h1 class="cover"><span>Locale</span><wbr><span>Table</span><wbr><span>Symbol</span><wbr><span><span>Processor</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-locale-table-processor/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">LocaleTableSymbolProcessor</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">codeGenerator<span class="token operator">: </span><span data-unresolved-link="com.google.devtools.ksp.processing/CodeGenerator///PointingToDeclaration/">CodeGenerator</span></span></span><span class="token punctuation">)</span> : <span data-unresolved-link="com.google.devtools.ksp.processing/SymbolProcessor///PointingToDeclaration/">SymbolProcessor</span></div><p class="paragraph">KSP processor that generates the locale name tables at build time from the build JDK's CLDR locale data, so that locale resolution and display names are available at runtime on any platform without depending on <code class="lang-kotlin">java.util.Locale</code>. See <a href="../../../quarkdown-locale-table-processor/com.quarkdown.processor.locale/-locale-table-code-generator/index.html">LocaleTableCodeGenerator</a> for the emitted artifact.</p><p class="paragraph">The processor reads no source symbols: it emits its single output on the first round, unconditionally.</p></div></div>
   </div>
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
     <div class="tabs-section-body">
-      <div data-togglable="TYPE">
-        <h2 class="tableheader">Types</h2>
-        <div class="table"><a data-name="-1211052644%2FClasslikes%2F1831116724" anchor-label="Companion" id="-1211052644%2FClasslikes%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="tableheader">Constructors</h2>
+        <div class="table"><a data-name="-651172141%2FConstructors%2F717846645" anchor-label="LocaleTableSymbolProcessor" id="-651172141%2FConstructors%2F717846645" data-filterable-set=":quarkdown-locale-table-processor/main"></a>
+          <div class="table-row table-row_content" data-togglable="CONSTRUCTOR" data-filterable-current=":quarkdown-locale-table-processor/main" data-filterable-set=":quarkdown-locale-table-processor/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
-                  <div><a href="-companion/index.html"><span><span>Companion</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1211052644%2FClasslikes%2F1831116724"></span>
+                  <div><a href="-locale-table-symbol-processor.html"><span>Locale</span><wbr><span>Table</span><wbr><span>Symbol</span><wbr><span><span>Processor</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-651172141%2FConstructors%2F717846645"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">object </span><a href="-companion/index.html">Companion</a></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div data-togglable="PROPERTY">
-        <h2 class="tableheader">Properties</h2>
-        <div class="table"><a data-name="-329368620%2FProperties%2F1831116724" anchor-label="all" id="-329368620%2FProperties%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="all.html"><span><span>all</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-329368620%2FProperties%2F1831116724"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">val </span><a href="all.html">all</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.sequences/-sequence/index.html">Sequence</a><span class="token operator">&lt;</span><a href="../-locale/index.html">Locale</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">All supported base-language locales, without territory variants. Territory-carrying locales (e.g. <code class="lang-kotlin">en-US</code>) are resolved on demand via <a href="from-tag.html">fromTag</a> or <a href="from-name.html">fromName</a>.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-locale-table-processor/main"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">codeGenerator<span class="token operator">: </span><span data-unresolved-link="com.google.devtools.ksp.processing/CodeGenerator///PointingToDeclaration/">CodeGenerator</span></span></span><span class="token punctuation">)</span></div></div></div>
                 </div>
               </div>
             </div>
@@ -140,47 +121,47 @@
       </div>
       <div data-togglable="FUNCTION">
         <h2 class="tableheader">Functions</h2>
-        <div class="table"><a data-name="-699642888%2FFunctions%2F1831116724" anchor-label="find" id="-699642888%2FFunctions%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+        <div class="table"><a data-name="-1531701697%2FFunctions%2F717846645" anchor-label="finish" id="-1531701697%2FFunctions%2F717846645" data-filterable-set=":quarkdown-locale-table-processor/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-locale-table-processor/main" data-filterable-set=":quarkdown-locale-table-processor/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
-                  <div><a href="find.html"><span><span>find</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-699642888%2FFunctions%2F1831116724"></span>
+                  <div><a href="index.html#-1531701697%2FFunctions%2F717846645"><span><span>finish</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1531701697%2FFunctions%2F717846645"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="find.html"><span class="token function">find</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">identifier<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-locale/index.html">Locale</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Finds a locale by its tag or name.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-locale-table-processor/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="index.html#-1531701697%2FFunctions%2F717846645"><span class="token function">finish</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="260429460%2FFunctions%2F1831116724" anchor-label="fromName" id="260429460%2FFunctions%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+<a data-name="2015143775%2FFunctions%2F717846645" anchor-label="onError" id="2015143775%2FFunctions%2F717846645" data-filterable-set=":quarkdown-locale-table-processor/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-locale-table-processor/main" data-filterable-set=":quarkdown-locale-table-processor/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
-                  <div><a href="from-name.html"><span>from</span><wbr><span><span>Name</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="260429460%2FFunctions%2F1831116724"></span>
+                  <div><a href="index.html#2015143775%2FFunctions%2F717846645"><span>on</span><wbr><span><span>Error</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2015143775%2FFunctions%2F717846645"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="from-name.html"><span class="token function">fromName</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-locale/index.html">Locale</a><span class="token operator">?</span></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-locale-table-processor/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="index.html#2015143775%2FFunctions%2F717846645"><span class="token function">onError</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="-282137505%2FFunctions%2F1831116724" anchor-label="fromTag" id="-282137505%2FFunctions%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+<a data-name="229607814%2FFunctions%2F717846645" anchor-label="process" id="229607814%2FFunctions%2F717846645" data-filterable-set=":quarkdown-locale-table-processor/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-locale-table-processor/main" data-filterable-set=":quarkdown-locale-table-processor/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
-                  <div><a href="from-tag.html"><span>from</span><wbr><span><span>Tag</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-282137505%2FFunctions%2F1831116724"></span>
+                  <div><a href="process.html"><span><span>process</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="229607814%2FFunctions%2F717846645"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="from-tag.html"><span class="token function">fromTag</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">tag<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-locale/index.html">Locale</a><span class="token operator">?</span></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-locale-table-processor/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="process.html"><span class="token function">process</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">resolver<span class="token operator">: </span><span data-unresolved-link="com.google.devtools.ksp.processing/Resolver///PointingToDeclaration/">Resolver</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span data-unresolved-link="com.google.devtools.ksp.symbol/KSAnnotated///PointingToDeclaration/">KSAnnotated</span><span class="token operator">&gt;</span></div></div></div>
                 </div>
               </div>
             </div>

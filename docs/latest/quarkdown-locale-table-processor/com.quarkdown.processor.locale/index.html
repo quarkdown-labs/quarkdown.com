@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-    <title>doclang</title>
+    <title>com.quarkdown.processor.locale</title>
 <link href="../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../";</script>
     <script>document.documentElement.classList.replace("no-js", "js");</script>
     <script>const storage = localStorage.getItem("dokka-dark-mode")
@@ -44,7 +44,7 @@
         </div>
         <div class="navigation-controls">
         <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
-                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true" data-filter=":quarkdown-stdlib/main">jvm</button>
+                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true" data-filter=":quarkdown-locale-table-processor/main">jvm</button>
             <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
                 <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox" data-role="dropdown-toggle" aria-controls="platform-tags-listbox" aria-haspopup="listbox" aria-expanded="false" aria-label="Toggle source sets"></button>
                 <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
@@ -55,7 +55,7 @@
                     </div>
                         <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
                             <label class="checkbox">
-                                <input type="checkbox" class="checkbox--input" id=":quarkdown-stdlib/main" data-filter=":quarkdown-stdlib/main">
+                                <input type="checkbox" class="checkbox--input" id=":quarkdown-locale-table-processor/main" data-filter=":quarkdown-locale-table-processor/main">
                                 <span class="checkbox--icon"></span>
                                 jvm
                             </label>
@@ -91,12 +91,50 @@
         </nav>
         <div id="resizer" class="resizer" data-item-type="BAR"></div>
         <div id="main" data-item-type="SECTION" role="main">
-<div class="main-content" data-page-type="member" id="content" pageids="quarkdown-stdlib::com.quarkdown.stdlib/Document/doclang/#com.quarkdown.core.context.MutableContext#kotlin.String?/PointingToDeclaration//742850071">
-  <div class="breadcrumbs"><a href="../index.html">quarkdown-stdlib</a><span class="delimiter">/</span><a href="index.html">com.quarkdown.stdlib.module.Document</a><span class="delimiter">/</span><span class="current">doclang</span></div>
+<div class="main-content" data-page-type="package" id="content" pageids="quarkdown-locale-table-processor::com.quarkdown.processor.locale////PointingToDeclaration//717846645">
+  <div class="breadcrumbs"><a href="../index.html">quarkdown-locale-table-processor</a><span class="delimiter">/</span><span class="current">com.quarkdown.processor.locale</span></div>
   <div class="cover ">
-    <h1 class="cover"><span><span>doclang</span></span></h1>
+    <h1 class="cover"><span><span>Package-level</span></span> <span><span>declarations</span></span></h1>
   </div>
-  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-stdlib/main"><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea"><span class="token punctuation">.</span><span class="token function">doclang</span><span class="token punctuation"> </span><span class="token constant">locale</span><span class="token operator">:</span><span class="token punctuation">{</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">}</span><span class="token punctuation"> </span><span class="token operator">-&gt; </span><a href="../../quarkdown-core/com.quarkdown.core.function.value/-any/index.html">Any</a></code></pre><span class="copy-tooltip"><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span class="copy-icon"></span></span></div><p class="paragraph">If <a href="doclang.html">locale</a> is specified, sets the document language to that value. The document language affects localization (<a href="../../quarkdown-stdlib/com.quarkdown.stdlib/index.html">localization</a>, <a href="../../quarkdown-stdlib/com.quarkdown.stdlib/index.html">localize</a>), hyphenation and other locale-specific properties.</p><p class="paragraph">For a list of supported locales for built-in localizations, see <a href="https://quarkdown.com/wiki/localization">here</a>.</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">.doclang {en}</code></pre><span class="copy-tooltip"><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span class="copy-icon"></span></span></div><p class="paragraph">or</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">.doclang {English}</code></pre><span class="copy-tooltip"><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span class="copy-icon"></span></span></div><p class="paragraph">If it's unset, the current language of the document is returned as its localized name (e.g. <code class="lang-kotlin">English</code>, <code class="lang-kotlin">Italiano</code>, <code class="lang-kotlin">Français</code>).</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">The current document language is .doclang</code></pre><span class="copy-tooltip"><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span class="copy-icon"></span></span></div><span class="kdoc-tag"><h4 class="">Return</h4><p class="paragraph">the English name of the current document language if <a href="doclang.html">locale</a> is unset, nothing otherwise</p></span><h4 class="tableheader">Parameters</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":quarkdown-stdlib/main" data-filterable-set=":quarkdown-stdlib/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>locale</span></span></u></div></span></div><div><div class="title"><dl><ul><li><a href="#anchor__optional"></a>Optional</li></ul></dl><p class="paragraph">optional, case-insensitive,                 either a locale tag (e.g. <code class="lang-kotlin">en</code>, <code class="lang-kotlin">en-US</code>, <code class="lang-kotlin">it</code>, <code class="lang-kotlin">fr-CA</code>)                 or an English name of a locale (e.g. <code class="lang-kotlin">English</code>, <code class="lang-kotlin">English (United States)</code>, <code class="lang-kotlin">Italian</code>, <code class="lang-kotlin">French (Canada)</code>)                 to assign to the document</p></div></div></div></div></div><h4 class="tableheader">Throws</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":quarkdown-stdlib/main" data-filterable-set=":quarkdown-stdlib/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-illegal-argument-exception/index.html"><span>Illegal</span><wbr><span>Argument</span><wbr><span><span>Exception</span></span></a></div></span></div><div><div class="title"><p class="paragraph">if the locale tag is invalid or not found</p></div></div></div></div></div><span class="kdoc-tag"><h4 class="kdoctag">Wiki page</h4><a href="https://quarkdown.com/wiki/document-metadata">document-metadata</a></span></div></div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="TYPE">Types</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="TYPE">
+        <h2 class="tableheader">Types</h2>
+        <div class="table"><a data-name="-1864545355%2FClasslikes%2F717846645" anchor-label="LocaleTableSymbolProcessor" id="-1864545355%2FClasslikes%2F717846645" data-filterable-set=":quarkdown-locale-table-processor/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-locale-table-processor/main" data-filterable-set=":quarkdown-locale-table-processor/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-locale-table-symbol-processor/index.html"><span>Locale</span><wbr><span>Table</span><wbr><span>Symbol</span><wbr><span><span>Processor</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1864545355%2FClasslikes%2F717846645"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-locale-table-processor/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="-locale-table-symbol-processor/index.html">LocaleTableSymbolProcessor</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">codeGenerator<span class="token operator">: </span><span data-unresolved-link="com.google.devtools.ksp.processing/CodeGenerator///PointingToDeclaration/">CodeGenerator</span></span></span><span class="token punctuation">)</span> : <span data-unresolved-link="com.google.devtools.ksp.processing/SymbolProcessor///PointingToDeclaration/">SymbolProcessor</span></div><div class="brief "><p class="paragraph">KSP processor that generates the locale name tables at build time from the build JDK's CLDR locale data, so that locale resolution and display names are available at runtime on any platform without depending on <code class="lang-kotlin">java.util.Locale</code>. See <a href="../../quarkdown-locale-table-processor/com.quarkdown.processor.locale/-locale-table-code-generator/index.html">LocaleTableCodeGenerator</a> for the emitted artifact.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1023206084%2FClasslikes%2F717846645" anchor-label="LocaleTableSymbolProcessorProvider" id="1023206084%2FClasslikes%2F717846645" data-filterable-set=":quarkdown-locale-table-processor/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-locale-table-processor/main" data-filterable-set=":quarkdown-locale-table-processor/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-locale-table-symbol-processor-provider/index.html"><span>Locale</span><wbr><span>Table</span><wbr><span>Symbol</span><wbr><span>Processor</span><wbr><span><span>Provider</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1023206084%2FClasslikes%2F717846645"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-locale-table-processor/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="-locale-table-symbol-processor-provider/index.html">LocaleTableSymbolProcessorProvider</a> : <span data-unresolved-link="com.google.devtools.ksp.processing/SymbolProcessorProvider///PointingToDeclaration/">SymbolProcessorProvider</span></div><div class="brief "><p class="paragraph">KSP entry point that instantiates <a href="-locale-table-symbol-processor/index.html">LocaleTableSymbolProcessor</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
     <div class="footer">
         <div class="footer--container">

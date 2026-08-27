@@ -313,6 +313,8 @@ module:quarkdown-interaction
 com.quarkdown.interaction
 com.quarkdown.interaction.executable
 com.quarkdown.interaction.os
+module:quarkdown-locale-table-processor
+com.quarkdown.processor.locale
 module:quarkdown-lsp
 com.quarkdown.lsp
 com.quarkdown.lsp.cache
