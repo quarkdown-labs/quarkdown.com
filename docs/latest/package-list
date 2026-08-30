@@ -352,6 +352,7 @@ com.quarkdown.rendering.plaintext.node
 com.quarkdown.rendering.plaintext.post
 module:quarkdown-quarkdoc
 com.quarkdown.quarkdoc.dokka
+com.quarkdown.quarkdoc.dokka.index
 com.quarkdown.quarkdoc.dokka.kdoc
 com.quarkdown.quarkdoc.dokka.page
 com.quarkdown.quarkdoc.dokka.signature
@@ -366,8 +367,7 @@ com.quarkdown.quarkdoc.dokka.transformers.type
 com.quarkdown.quarkdoc.dokka.util
 module:quarkdown-quarkdoc-reader
 com.quarkdown.quarkdoc.reader
-com.quarkdown.quarkdoc.reader.anchors
-com.quarkdown.quarkdoc.reader.dokka
+com.quarkdown.quarkdoc.reader.json
 module:quarkdown-server
 com.quarkdown.server
 com.quarkdown.server.browser
