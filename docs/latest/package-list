@@ -311,6 +311,7 @@ module:quarkdown-install-layout-navigator
 com.quarkdown.installlayout
 module:quarkdown-interaction
 com.quarkdown.interaction
+com.quarkdown.interaction.cdp
 com.quarkdown.interaction.executable
 com.quarkdown.interaction.os
 module:quarkdown-locale-table-processor
