@@ -185,3 +185,26 @@ Passing [None](none.md) as an argument to a nullable parameter restores it to it
 > ### H3
 > 
 > #### H4
+
+## Scoping extensions
+
+Extensions declared inside a [lambda](lambda.md) only apply within that scope, and do not leak back out.
+
+> **Example 9**
+> 
+> ```markdown
+> .function {greet}
+>     Hello
+> 
+> .if {yes}
+>     .extend {greet}
+>         Hi
+> 
+>     .greet
+> 
+> .greet
+> ```
+> 
+> Hi
+> 
+> Hello

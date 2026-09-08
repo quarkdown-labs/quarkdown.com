@@ -13,7 +13,7 @@ The document consists of three main elements:
 - A central content area
 - Two side margin areas
 
-<img src="media/plain@2004236914.png" alt="Plain" width="1000.0px" />
+<img src="media/plain@-2073503868.png" alt="Plain" width="1000.0px" />
 
 ### Margin content
 
@@ -31,7 +31,7 @@ When you export to PDF, the output artifact contains a single page that fits the
 
 A paged document follows a traditional layout with content divided into separate pages. Page breaks occur either [explicitly](page-break.md) through manual insertion or implicitly when content exceeds the available space.
 
-<img src="media/paged@917491167.png" alt="Paged" width="1000.0px" />
+<img src="media/paged@-1340752775.png" alt="Paged" width="1000.0px" />
 
 ### Margin content
 
@@ -45,7 +45,7 @@ A paged document follows a traditional layout with content divided into separate
 
 A slides document is designed for presentations, with a layout optimized for displaying content one slide at a time. Unless specified by the layout [theme](themes.md), slides center their content horizontally. Slide breaks occur only through [explicit insertion](page-break.md).
 
-<img src="media/slides@2095090542.png" alt="Slides" width="1000.0px" />
+<img src="media/slides@2014846214.png" alt="Slides" width="1000.0px" />
 
 ### Margin content
 

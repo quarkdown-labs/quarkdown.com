@@ -35,12 +35,11 @@ The **`.tablebyrows`**  function takes two arguments: an optional iterable of he
 > **Example 2**
 > 
 > ```markdown
-> .var {headers}
->    - Name
->    - Age
->    - City
-> 
-> .tablebyrows {.headers}
+> .tablebyrows headers:{
+>     - Name
+>     - Age
+>     - City
+> }
 >     - - John
 >       - 25
 >       - NY

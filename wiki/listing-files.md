@@ -28,9 +28,9 @@ By default, the result is an *unordered* collection of absolute paths to the imm
 > ```
 > 
 > - file1.txt
-> - subfolder
 > - file2.txt
 > - file3.md
+> - subfolder
 
 The result is an iterable value, that can be passed to [`.foreach`](loops.md).
 
@@ -44,11 +44,11 @@ The result is an iterable value, that can be passed to [`.foreach`](loops.md).
 > 
 > **File:** file1.txt
 > 
-> **File:** subfolder
-> 
 > **File:** file2.txt
 > 
 > **File:** file3.md
+> 
+> **File:** subfolder
 
 ## Full paths
 
@@ -60,10 +60,10 @@ By default, each entry is returned as its absolute path:
 > .listfiles {assets/folder}
 > ```
 > 
-> - /home/runner/work/quarkdown/quarkdown/docs/./assets/folder/file1.txt
-> - /home/runner/work/quarkdown/quarkdown/docs/./assets/folder/subfolder
-> - /home/runner/work/quarkdown/quarkdown/docs/./assets/folder/file2.txt
-> - /home/runner/work/quarkdown/quarkdown/docs/./assets/folder/file3.md
+> - /home/runner/work/quarkdown/quarkdown/docs/assets/folder/file1.txt
+> - /home/runner/work/quarkdown/quarkdown/docs/assets/folder/file2.txt
+> - /home/runner/work/quarkdown/quarkdown/docs/assets/folder/file3.md
+> - /home/runner/work/quarkdown/quarkdown/docs/assets/folder/subfolder
 
 This can be used in combination with [`.read`](file-text-content.md) to load file content:
 
@@ -92,12 +92,12 @@ Setting `recursive:{yes}` walks every nested subdirectory and returns all descen
 > ```
 > 
 > - file1.txt
-> - subfolder
-> - nested-file3.md
-> - nested-file1.txt
-> - nested-file2.txt
 > - file2.txt
 > - file3.md
+> - subfolder
+> - nested-file1.txt
+> - nested-file2.txt
+> - nested-file3.md
 
 The root directory itself is never included in the result.
 
@@ -112,9 +112,9 @@ Passing a `pattern` keeps only entries whose **bare file name** matches the give
 > ```
 > 
 > - file1.txt
+> - file2.txt
 > - nested-file1.txt
 > - nested-file2.txt
-> - file2.txt
 
 ## Excluding directories
 
@@ -126,9 +126,9 @@ Set `directories:{no}` to keep only files in the result, omitting subdirectories
 > .listfiles {assets/folder} directories:{no}
 > ```
 > 
-> - /home/runner/work/quarkdown/quarkdown/docs/./assets/folder/file1.txt
-> - /home/runner/work/quarkdown/quarkdown/docs/./assets/folder/file2.txt
-> - /home/runner/work/quarkdown/quarkdown/docs/./assets/folder/file3.md
+> - /home/runner/work/quarkdown/quarkdown/docs/assets/folder/file1.txt
+> - /home/runner/work/quarkdown/quarkdown/docs/assets/folder/file2.txt
+> - /home/runner/work/quarkdown/quarkdown/docs/assets/folder/file3.md
 
 ## Sorting
 

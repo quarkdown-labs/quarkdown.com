@@ -41,7 +41,7 @@ Each parameter is optional and accepts `top` or `bottom` values. Documents use `
 > "Survey results."
 > ```
 > 
-> ![Default: bottom](media/bottom@352379950.png)
+> ![Default: bottom](media/bottom@761067142.png)
 
 > **Example 2**
 > 
@@ -49,7 +49,7 @@ Each parameter is optional and accepts `top` or `bottom` values. Documents use `
 > .captionposition {top}
 > ```
 > 
-> ![Default: top](media/top@2046903110.png)
+> ![Default: top](media/top@-678490352.png)
 
 > **Example 3**
 > 
@@ -57,6 +57,6 @@ Each parameter is optional and accepts `top` or `bottom` values. Documents use `
 > .captionposition {bottom} tables:{bottom}
 > ```
 > 
-> ![Default: bottom, tables: top](media/bottom-tables-top@-550246784.png)
+> ![Default: bottom, tables: top](media/bottom-tables-top@-899726250.png)
 
 > Photo credits: [Pixabay](https://www.pexels.com/photo/blue-skies-53594/)

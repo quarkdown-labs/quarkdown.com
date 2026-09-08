@@ -22,4 +22,4 @@ A common pattern for [paged documents](document-types.md) is a full-bleed cover 
 > ...
 > ```
 > 
-> <img src="media/result@1475823167.png" alt="Book cover" width="500.0px" />
+> <img src="media/result@752526775.png" alt="Book cover" width="500.0px" />

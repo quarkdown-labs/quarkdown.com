@@ -12,7 +12,7 @@ Before addressing the expansion itself, we should understand how data is exchang
 
 In Quarkdown, not all types can be returned and not all types can be used as arguments. Therefore, functions should feature `InputValue` parameters and return an `OutputValue`. A complete set of value types is visualized in the following Venn-UML diagram:
 
-<img src="media/value-types@-1108999339.svg" alt="Value types" width="80.0%" />
+<img src="media/value-types@1187675523.svg" alt="Value types" width="80.0%" />
 
 Whenever a function returns some `OutputValue`, it must be converted to some `Node` that can be rendered on screen. For instance, a `StringValue` becomes text, an `OrderedCollectionValue` becomes an ordered list, a `BooleanValue` becomes a checkbox, a `DictionaryValue` becomes a table, and so on. This operation is handled by a *value-node mapper*.
 

@@ -40,7 +40,7 @@ Unlike the link syntax, the function accepts dynamic paths, making it suitable f
     .subdocument {.path} label:{.path::filename}
 ```
 
-<img src="media/list-files@800717893.png" alt="List files" width="400.0px" />
+<img src="media/list-files@1709375761.png" alt="List files" width="400.0px" />
 
 Quarkdown makes sure a file is evaluated only once, so circular and recursive references are handled gracefully.
 
@@ -116,7 +116,7 @@ Subdocuments are structured in a directed graph, where the edges are the links b
 
 You can visualize the graph via the **`.subdocumentgraph`** function:
 
-<img src="media/graph@1013049673.png" alt="Graph" width="700.0px" />
+<img src="media/graph@1267996015.png" alt="Graph" width="700.0px" />
 
 ## Output
 

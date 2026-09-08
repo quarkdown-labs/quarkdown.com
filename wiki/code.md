@@ -87,14 +87,18 @@ The `.code` function specifies the language through the optional `lang` argument
 > }
 > ```
 
-### Line numbers
+### Callouts
 
-Standard code blocks always show line numbers by default. The `.code` function lets you toggle line numbers using the optional `linenumbers` [`Boolean`](boolean.md) argument, which defaults to `yes` (equivalent to `true`).
+The `.code` function can attach numbered markers to specific lines through the optional `callouts` argument, a [`Dictionary`](dictionary.md) that pairs line numbers with a description.
 
 > **Example 5**
 > 
 > ```markdown
-> .code linenumbers:{no}
+> .code callouts:{
+>     - 2: Defines the horizontal coordinate.
+>     - 5: Takes the two coordinates.
+>     - 6: Assigns the horizontal coordinate.
+> }
 >     .read {assets/point.ts}
 > ```
 > 
@@ -133,11 +137,36 @@ The `.code` function allows you to focus on a [`Range`](range.md) of lines, star
 > }
 > ```
 
+### Line numbers
+
+Standard code blocks always show line numbers by default. The `.code` function lets you toggle line numbers using the optional `linenumbers` [`Boolean`](boolean.md) argument, which defaults to `yes` (equivalent to `true`).
+
+> **Example 7**
+> 
+> ```markdown
+> .code linenumbers:{no}
+>     .read {assets/point.ts}
+> ```
+> 
+> ```
+> export class Point {
+>     x: number;
+>     y: number;
+> 
+>     constructor(x: number, y: number) {
+>         this.x = x;
+>         this.y = y;
+>     }
+> }
+> ```
+
+Note that line numbers are required for callouts and focused lines to work.
+
 ### Extending
 
 `.code` is a [primitive](primitives.md), so [extending it](element-styling.md) affects every code block in the document at once, including fenced and indented blocks.
 
-> **Example 7**
+> **Example 8**
 > 
 > ````markdown
 > .extend {code} where:{lang: .lang::equals {javascript}}

@@ -21,4 +21,4 @@ Using `spacing:{0} indent:{2}` produces the classic LaTeX look.
 > .paragraphstyle lineheight:{2.5} spacing:{0} indent:{2}
 > ```
 > 
-> ![Customized](media/customized@-413235730.png)
+> ![Customized](media/customized@1405756840.png)

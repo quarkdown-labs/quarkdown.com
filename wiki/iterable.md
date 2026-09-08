@@ -69,4 +69,25 @@ An integer [`Range`](range.md) is a valid ordered iterable value.
 
 Assuming `myiterable` is an iterable, you can access useful operations such as `getat`, `sorted`, `average`, and many more via [function call chaining](syntax-of-a-function-call.md#chaining-calls) as `.myiterable::operation`.
 
+Operations are immutable and never modify the original iterable. For instance, `prepended` and `appended` produce a new collection with an extra element at the beginning or end, respectively.
+
+> **Example 3**
+> 
+> ```markdown
+> .var {letters}
+>     - B
+>     - C
+> 
+> .foreach {.letters::prepended {A}::appended {D}}
+>     .1
+> ```
+> 
+> A
+> 
+> B
+> 
+> C
+> 
+> D
+
 For a complete list of operations, refer to the standard library’s [`Collection` documentation](https://quarkdown.com/docs/quarkdown-stdlib/com.quarkdown.stdlib.module.Collection).

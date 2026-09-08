@@ -16,7 +16,7 @@ Quarkdown introduces the concept of **figure**, which is missing in base Markdow
 > 
 > Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 > 
-> ![Icon](media/icon@-1965017468.svg)
+> ![Icon](media/icon@-146045328.svg)
 > 
 > Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
@@ -32,7 +32,7 @@ If the image contains a *title* attribute (wrapped in double quotes, single quot
 > ![Icon](assets/icon.svg "The Quarkdown icon.")
 > ```
 > 
-> ![Icon](media/icon@-1965017468.svg "The Quarkdown icon.")
+> ![Icon](media/icon@-146045328.svg "The Quarkdown icon.")
 > The Quarkdown icon.
 
 > Figures can be **numbered**. See [Numbering](numbering.md) for more information.

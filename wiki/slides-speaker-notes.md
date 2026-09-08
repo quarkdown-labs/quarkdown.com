@@ -11,7 +11,7 @@ Calling the **`.speakernote`** function adds a speaker note to the current slide
   This is a **speaker note** for the current slide.
 ```
 
-<img src="media/speaker-view@1491601534.png" alt="image" width="1000.0px" />
+<img src="media/speaker-view@317752726.png" alt="image" width="1000.0px" />
 
 By default, speaker notes are displayed only when the document is viewed in the **speaker view**, which you can enable by pressing the **`S`** key while viewing the HTML presentation.
 
@@ -23,10 +23,10 @@ Additionally, notes may be displayed outside the speaker view, and also in expor
 
 - HTML:
 
-  <img src="media/notes-html@1122679330.png" alt="Notes in regular presentation" width="1000.0px" />
+  <img src="media/notes-html@401025042.png" alt="Notes in regular presentation" width="1000.0px" />
 
 - 
 
 - PDF:
 
-  <img src="media/notes-pdf@1127104209.png" alt="Notes in PDF" width="1000.0px" />
+  <img src="media/notes-pdf@1231526535.png" alt="Notes in PDF" width="1000.0px" />

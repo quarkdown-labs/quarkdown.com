@@ -36,7 +36,7 @@ The first step is to [import](importing-external-libraries.md) the library:
 > This is not part of the abstract, instead.
 > ```
 > 
-> ![Abstract](media/abstract@-1234298775.png)
+> ![Abstract](media/abstract@438755279.png)
 
 The alignment of the title defaults to center and can be changed via `.abstractalignment {start|center|end}`.
 
@@ -50,7 +50,7 @@ The alignment of the title defaults to center and can be changed via `.abstracta
 >     .loremipsum
 > ```
 > 
-> ![Abstract with start-aligned title](media/abstract-start-aligned@1313743797.png)
+> ![Abstract with start-aligned title](media/abstract-start-aligned@1393325923.png)
 
 ## Titled blocks
 
@@ -71,7 +71,7 @@ All the mentioned functions take one block argument that defines the content.
 >     then the average velocity is defined as $ v = \frac {\Delta x} {\Delta t} $.
 > ```
 > 
-> ![Definition](media/definition@-1852095880.png)
+> ![Definition](media/definition@-2070706242.png)
 
 ### Custom title suffix
 
@@ -83,7 +83,7 @@ The default title suffix is `.` (dot) and can be customized via `.paperblocksuff
 > .paperblocksuffix {:}
 > ```
 > 
-> ![Custom block suffix](media/custom-suffix@1981985468.png)
+> ![Custom block suffix](media/custom-suffix@-1345198248.png)
 
 ### Numbering
 
@@ -108,7 +108,7 @@ Defining a [numbering format](numbering.md) causes the blocks of that type to be
 >     .loremipsum
 > ```
 > 
-> <img src="media/numbered-blocks@-1436212582.png" alt="Numbered blocks" width="600.0px" />
+> <img src="media/numbered-blocks@-614041734.png" alt="Numbered blocks" width="600.0px" />
 
 ### End-of-proof
 
@@ -124,7 +124,7 @@ Proofs also feature a special *end-of-proof* character, which defaults to `∎`.
 >     .loremipsum
 > ```
 > 
-> ![Proof with end character](media/proof@248170837.png)
+> ![Proof with end character](media/proof@-2038975583.png)
 
 You can customize the end-of-proof character via `.proofend {string}`:
 
@@ -134,4 +134,4 @@ You can customize the end-of-proof character via `.proofend {string}`:
 > .proofend {😎}
 > ```
 > 
-> ![Proof character customization](media/proof-custom-end@-2092143121.png)
+> ![Proof character customization](media/proof-custom-end@226456841.png)

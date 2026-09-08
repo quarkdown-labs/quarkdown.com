@@ -6,7 +6,7 @@ The **`.pagemargin`** function displays content on each page in a fixed position
 
 - In `paged` documents, a special area of each page is reserved for margins:
 
-  <img src="media/margin-areas@-1641807538.png" alt="Paged margin areas" height="600.0px" />
+  <img src="media/margin-areas@654006408.png" alt="Paged margin areas" height="600.0px" />
 
   > Credits: [Paged.js](https://pagedjs.org/documentation/7-generated-content-in-margin-boxes/#margin-boxes-of-a-page)
 
@@ -32,7 +32,7 @@ The function accepts an optional `position` and a body argument `content`:
 >     **This** is a margin content.
 > ```
 > 
-> ![Fixed positions](media/fixed-positions@-1248707586.png)
+> ![Fixed positions](media/fixed-positions@1618639190.png)
 
 ## Scoped margins
 
@@ -54,7 +54,7 @@ When used in `paged` and `slides` documents, page margin content takes effect on
 > ## Third page
 > ```
 > 
-> ![Scoped page margins](media/scoped-margins@-389057199.png)
+> ![Scoped page margins](media/scoped-margins@-131036025.png)
 
 Overwriting the page margin again changes it from that point onward.
 
@@ -69,7 +69,7 @@ Overwriting the page margin again changes it from that point onward.
 >     From third page
 > ```
 > 
-> ![Scoped page margins](media/scoped-overwrite@-1224128169.png)
+> ![Scoped page margins](media/scoped-overwrite@35824897.png)
 
 ## Mirror positions
 
@@ -84,7 +84,7 @@ Mirror positions are marked in italics in the table above and refer to `outside`
 >     **This** is a margin content.
 > ```
 > 
-> ![Mirror positions](media/mirror-positions@-624552315.png)
+> ![Mirror positions](media/mirror-positions@1435388019.png)
 
 ## Footer
 
@@ -105,7 +105,7 @@ The **`.footer`** function is a shorthand for `.pagemargin {bottomcenter}`.
 >     [GitHub](https://github.com/iamgio/quarkdown)
 > ```
 > 
-> ![Page footer](media/footer@19407874.png)
+> ![Page footer](media/footer@2008000276.png)
 
 ## Page counter
 
