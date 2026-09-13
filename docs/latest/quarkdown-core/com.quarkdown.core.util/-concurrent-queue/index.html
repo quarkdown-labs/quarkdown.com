@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-    <title>MutableAssociatedProperties</title>
+    <title>ConcurrentQueue</title>
 <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>
     <script>document.documentElement.classList.replace("no-js", "js");</script>
     <script>const storage = localStorage.getItem("dokka-dark-mode")
@@ -91,23 +91,23 @@
         </nav>
         <div id="resizer" class="resizer" data-item-type="BAR"></div>
         <div id="main" data-item-type="SECTION" role="main">
-<div class="main-content" data-page-type="classlike" id="content" pageids="quarkdown-core::com.quarkdown.core.property/MutableAssociatedProperties///PointingToDeclaration//1831116724">
-  <div class="breadcrumbs"><a href="../../index.html">quarkdown-core</a><span class="delimiter">/</span><a href="../index.html">com.quarkdown.core.property</a><span class="delimiter">/</span><span class="current">MutableAssociatedProperties</span></div>
+<div class="main-content" data-page-type="classlike" id="content" pageids="quarkdown-core::com.quarkdown.core.util/ConcurrentQueue///PointingToDeclaration//1831116724">
+  <div class="breadcrumbs"><a href="../../index.html">quarkdown-core</a><span class="delimiter">/</span><a href="../index.html">com.quarkdown.core.util</a><span class="delimiter">/</span><span class="current">ConcurrentQueue</span></div>
   <div class="cover ">
-    <h1 class="cover"><span>Mutable</span><wbr><span>Associated</span><wbr><span><span>Properties</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">MutableAssociatedProperties</a><span class="token operator">&lt;</span><a href="index.html">T</a><span class="token operator"> : </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token punctuation">, </span><a href="index.html">V</a><span class="token operator">&gt;</span> : <a href="../-associated-properties/index.html">AssociatedProperties</a><span class="token operator">&lt;</span><a href="index.html">T</a><span class="token punctuation">, </span><a href="index.html">V</a><span class="token operator">&gt; </span></div><p class="paragraph">Mutable implementation of <a href="../-associated-properties/index.html">AssociatedProperties</a>.</p></div></div>
+    <h1 class="cover"><span>Concurrent</span><wbr><span><span>Queue</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">ConcurrentQueue</a><span class="token operator">&lt;</span><a href="index.html">T</a><span class="token operator"> : </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token operator">&gt;</span></div><p class="paragraph">A thread-safe FIFO queue, safe to fill from concurrent producers.</p><p class="paragraph">On platforms without multithreading, a plain list is a valid implementation.</p></div></div>
   </div>
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
     <div class="tabs-section-body">
       <div data-togglable="CONSTRUCTOR">
         <h2 class="tableheader">Constructors</h2>
-        <div class="table"><a data-name="720571708%2FConstructors%2F1831116724" anchor-label="MutableAssociatedProperties" id="720571708%2FConstructors%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
+        <div class="table"><a data-name="-909964935%2FConstructors%2F1831116724" anchor-label="ConcurrentQueue" id="-909964935%2FConstructors%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
           <div class="table-row table-row_content" data-togglable="CONSTRUCTOR" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
-                  <div><a href="-mutable-associated-properties.html"><span>Mutable</span><wbr><span>Associated</span><wbr><span><span>Properties</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="720571708%2FConstructors%2F1831116724"></span>
+                  <div><a href="-concurrent-queue.html"><span>Concurrent</span><wbr><span><span>Queue</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-909964935%2FConstructors%2F1831116724"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
@@ -121,17 +121,47 @@
       </div>
       <div data-togglable="FUNCTION">
         <h2 class="tableheader">Functions</h2>
-        <div class="table"><a data-name="417300565%2FFunctions%2F1831116724" anchor-label="of" id="417300565%2FFunctions%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
+        <div class="table"><a data-name="2084218758%2FFunctions%2F1831116724" anchor-label="clear" id="2084218758%2FFunctions%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
           <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
-                  <div><a href="of.html"><span><span>of</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="417300565%2FFunctions%2F1831116724"></span>
+                  <div><a href="clear.html"><span><span>clear</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2084218758%2FFunctions%2F1831116724"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="of.html"><span class="token function">of</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">key<span class="token operator">: </span><a href="index.html">T</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-mutable-property-container/index.html">MutablePropertyContainer</a><span class="token operator">&lt;</span><a href="index.html">V</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Retrieves the <a href="../-property-container/index.html">PropertyContainer</a> associated with the given key, also registering an empty new one to it if it doesn't exist.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="clear.html"><span class="token function">clear</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Removes all elements from the queue.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1840481685%2FFunctions%2F1831116724" anchor-label="plusAssign" id="-1840481685%2FFunctions%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="plus-assign.html"><span>plus</span><wbr><span><span>Assign</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1840481685%2FFunctions%2F1831116724"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">operator </span><span class="token keyword">fun </span><a href="plus-assign.html"><span class="token function">plusAssign</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">element<span class="token operator">: </span><a href="index.html">T</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Appends <a href="plus-assign.html">element</a> to the tail of the queue.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1843531608%2FFunctions%2F1831116724" anchor-label="poll" id="-1843531608%2FFunctions%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="poll.html"><span><span>poll</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1843531608%2FFunctions%2F1831116724"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="poll.html"><span class="token function">poll</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">T</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Removes and returns the head of the queue, or <code class="lang-kotlin">null</code> if the queue is empty.</p></div></div></div>
                 </div>
               </div>
             </div>
