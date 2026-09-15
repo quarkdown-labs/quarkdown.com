@@ -5,6 +5,8 @@ export const links = {
   wiki: '/wiki',
   quickstart: '/wiki/quickstart',
   docs: '/docs/quarkdown-stdlib',
+  // TODO: point to the tools index page once it exists.
+  tools: '/',
   vsCode: '/vs-code',
   blog: '/blog',
   productHunt: 'https://www.producthunt.com/products/quarkdown',

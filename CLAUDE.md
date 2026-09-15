@@ -22,8 +22,20 @@ src/
   layouts/     → reusable page layouts
   components/  → UI components (.astro or .tsx)
   styles/      → global SCSS files
+  generated/   → HTML fragments written by external CI, imported with `?raw`
 public/        → static assets (served as-is)
 ```
+
+## Tools
+
+`/tools` hosts small utility pages. They are ordinary pages of this repository, written and edited here like any other,
+and they are safe from the `/docs` (API reference) and `/wiki` routes, which the Quarkdown repository overwrites on
+every release.
+
+One of them is generated: `src/generated/emoji-list.html`, the table behind `/tools/emoji`, is a bare HTML fragment
+produced by the `Update emoji list` workflow of the [Quarkdown repository](https://github.com/iamgio/quarkdown), which
+commits it here on demand. It is the only file that workflow touches, and the only one under `src/generated/`. Do not
+edit it by hand; it carries no styling of its own, so the page renders it with the site theme.
 
 ## Engineering Practices
 
