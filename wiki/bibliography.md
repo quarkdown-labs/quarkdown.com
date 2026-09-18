@@ -72,75 +72,8 @@ including `ieee` (default), `apa`, `chicago-author-date`, `nature`, `modern-lang
 .bibliography {bibliography.bib} style:{apa}
 ```
 
-```text
-american-anthropological-association
-american-chemical-society
-american-geophysical-union
-american-institute-of-aeronautics-and-astronautics
-american-institute-of-physics
-american-medical-association
-american-meteorological-society
-american-physics-society
-american-physiological-society
-american-political-science-association
-american-society-for-microbiology
-american-society-of-civil-engineers
-american-society-of-mechanical-engineers
-american-sociological-association
-angewandte-chemie
-annual-reviews
-annual-reviews-author-date
-apa
-associacao-brasileira-de-normas-tecnicas
-association-for-computing-machinery
-biomed-central
-bmj
-bristol-university-press
-cell
-chicago-author-date
-chicago-notes-bibliography
-chicago-notes
-chicago-shortened-notes-bibliography
-copernicus-publications
-current-opinion
-deutsche-gesellschaft-fur-psychologie
-deutsche-sprache
-elsevier-harvard
-elsevier-vancouver
-elsevier-with-titles
-frontiers
-future-medicine
-future-science-group
-gost-r-7-0-5-2008-numeric
-harvard-cite-them-right
-ieee
-institute-of-physics-numeric
-karger-journals
-mary-ann-liebert-vancouver
-modern-language-association
-multidisciplinary-digital-publishing-institute
-nature
-pensoft-journals
-plos
-royal-society-of-chemistry
-sage-vancouver
-sist02
-spie-journals
-springer-basic-author-date
-springer-basic-brackets
-springer-fachzeitschriften-medizin-psychologie
-springer-humanities-author-date
-springer-lecture-notes-in-computer-science
-springer-mathphys-brackets
-springer-socpsych-author-date
-springer-vancouver
-taylor-and-francis-chicago-author-date
-taylor-and-francis-national-library-of-medicine
-the-institution-of-engineering-and-technology
-the-lancet
-thieme-german
-trends-journals
-```
+The full list of supported styles is available in the
+[style catalog](https://github.com/quarkdown-labs/kotlin-bibliographer/tree/main/styles).
 
 ## Title
 

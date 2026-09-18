@@ -16,7 +16,7 @@ Quarkdown’s built-in libraries expose localization tables that localize elemen
 > 
 > Contributions to support new locales are welcome:
 > 
-> - [stdlib](https://github.com/iamgio/quarkdown/blob/main/quarkdown-stdlib/src/main/resources/lib/localization.qd?)
+> - [stdlib](https://github.com/iamgio/quarkdown/blob/main/quarkdown-stdlib/src/main/kotlin/com/quarkdown/stdlib/localization/LocalizationTable.kt?)
 > - [paperlib](https://github.com/iamgio/quarkdown/blob/main/quarkdown-libs/src/main/resources/paper.qd?)
 
 ## Creating your own localized strings

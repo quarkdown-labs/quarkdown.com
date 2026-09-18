@@ -360,6 +360,9 @@ body.quarkdown.quarkdown-paged .pagedjs_area {
 h1, h2, h3, h4, h5, h6 {
   break-after: avoid;
 }
+h1.allow-break-after, h2.allow-break-after, h3.allow-break-after, h4.allow-break-after, h5.allow-break-after, h6.allow-break-after {
+  break-after: auto;
+}
 
 .quarkdown.quarkdown p {
   margin-top: 0;
@@ -486,12 +489,6 @@ details > summary + p,
 .quarkdown table:not(pre table) > caption.caption-bottom {
   margin-top: var(--caption-margin);
 }
-.quarkdown figure > figcaption.caption-top {
-  order: 0;
-}
-.quarkdown figure > figcaption.caption-bottom {
-  order: 2;
-}
 .quarkdown table:not(pre table):has(> caption.caption-top) {
   caption-side: top;
 }
@@ -547,6 +544,13 @@ details > summary + p,
 .quarkdown pre, .quarkdown pre code {
   border-radius: var(--qd-code-border-radius);
 }
+.quarkdown-paged.quarkdown pre,
+.quarkdown-paged.quarkdown pre code {
+  overflow: clip;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
 .quarkdown .hljs-ln td {
   padding: var(--qd-code-line-numbers-padding) !important;
 }
@@ -661,12 +665,11 @@ details > summary + p,
   text-align: center;
 }
 .quarkdown figure {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: block;
 }
-.quarkdown figure > :not(figcaption) {
-  order: 1;
+.quarkdown figure > .mermaid {
+  width: fit-content;
+  margin-inline: auto;
 }
 .quarkdown figure:has(.mermaid, > pre) {
   margin-left: 0;

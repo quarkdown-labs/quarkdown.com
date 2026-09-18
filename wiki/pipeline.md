@@ -14,4 +14,4 @@ When you supply an input file to Quarkdown, it undergoes a process of elaboratio
 
 > *This section aims to be a simplification of what is explained in the author’s Bachelor’s thesis: [Quarkdown – Typesetting versatile di documenti articolati](https://amslaurea.unibo.it/id/eprint/33690/1/garofalo_giorgio_tesi.pdf) (Italian), in which Quarkdown’s architecture is thoroughly explained and documented. The thesis is updated to September 2024, while this section is going to be kept up to date.*
 > 
-> <img src="media/thesis-cover@2077850509.png" alt="Dissertation" height="500.0px" />
+> <img src="media/thesis-cover@-2044203818.png" alt="Dissertation" height="500.0px" />

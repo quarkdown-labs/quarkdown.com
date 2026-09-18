@@ -34,7 +34,7 @@ You can use the `.emoji`  function with a shortcode:
 
 > During compilation, the first call to `.emoji` in a document loads the entire emoji set, which may slightly increase compilation time. Subsequent calls are faster.
 
-For a complete list of supported shortcodes, refer to the [Emoji Cheat Sheet](https://quarkdown.com/docs/emoji-list/).
+For a complete list of supported shortcodes, refer to the [Emoji Cheat Sheet](https://quarkdown.com/tools/emoji/).
 
 ### Variants
 

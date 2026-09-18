@@ -25,7 +25,7 @@ Multiple calls to `.pageformat` are layered on top of each other, with later cal
 
 Each page consists of a *content area* in which the main content is displayed, and a *margin area*, a blank outline that may host [page margin content](page-margin-content.md) such as [page counters](page-counter.md).
 
-<img src="media/content-area@-1227620245.png" alt="Content area" width="400.0px" />
+<img src="media/content-area@-1054707276.png" alt="Content area" width="400.0px" />
 
 ### Margins
 
@@ -37,7 +37,7 @@ The `margin` parameter affects the size of the margin area, reducing the surface
 > .pageformat margin:{4cm}
 > ```
 > 
-> <img src="media/margins@278679589.png" alt="Margins" width="500.0px" />
+> <img src="media/margins@451592558.png" alt="Margins" width="500.0px" />
 
 ### Borders
 
@@ -52,7 +52,7 @@ The `bordertop`, `borderright`, `borderbottom`, `borderleft`, and `bordercolor` 
 > .pageformat bordertop:{1px} borderbottom:{4px}
 > ```
 > 
-> <img src="media/borders@1472391203.png" alt="image" width="500.0px" />
+> <img src="media/borders@1645304172.png" alt="image" width="500.0px" />
 
 ## Scoped formatting
 
@@ -70,7 +70,7 @@ The `side` parameter restricts a format to left (verso) or right (recto) pages o
 > .pageformat side:{right} margin:{2cm 1cm 2cm 3cm}
 > ```
 > 
-> ![Per-side formatting](media/sides@-571117362.png)
+> ![Per-side formatting](media/sides@-398204393.png)
 
 ### Per-range formatting
 

@@ -17,9 +17,9 @@ Supported shapes:
 >     ![Sky](assets/sky.jpg)
 > ```
 > 
-> ![Sky](media/sky@2099926233.jpg)
+> ![Sky](media/sky@-2022128094.jpg)
 > 
-> ![Sky](media/sky@2099926233.jpg)
+> ![Sky](media/sky@-2022128094.jpg)
 
 ## Figures
 
@@ -34,10 +34,10 @@ When clipping a [figure](figure.md), only the content is affected, leaving the c
 >     ![Sky](assets/sky.jpg "A blue sky.")
 > ```
 > 
-> ![Sky](media/sky@2099926233.jpg "A blue sky.")
+> ![Sky](media/sky@-2022128094.jpg "A blue sky.")
 > A blue sky.
 > 
-> ![Sky](media/sky@2099926233.jpg "A blue sky.")
+> ![Sky](media/sky@-2022128094.jpg "A blue sky.")
 > A blue sky.
 
 ## General content

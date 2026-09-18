@@ -46,4 +46,4 @@ This is particularly useful for multi-language documents, such as documents cont
 > .font {GoogleFonts:Corinthia}
 > ```
 > 
-> ![Multi-language fonts](media/multi-language@-1265315987.png)
+> ![Multi-language fonts](media/multi-language@-1092403018.png)
