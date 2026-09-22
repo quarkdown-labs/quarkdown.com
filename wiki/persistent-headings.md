@@ -20,7 +20,7 @@ When used in combination with [page margin content](page-margin-content.md), thi
 >     .loremipsum
 > ```
 > 
-> ![Persistent heading](media/result@-1580191894.png)
+> ![Persistent heading](media/result@-1532524780.png)
 
 Note that headings of lesser depth reset the last reference.
 
@@ -50,4 +50,4 @@ Note that headings of lesser depth reset the last reference.
 >     .loremipsum
 > ```
 > 
-> ![Reset](media/reset@-963148238.png)
+> ![Reset](media/reset@-915481124.png)

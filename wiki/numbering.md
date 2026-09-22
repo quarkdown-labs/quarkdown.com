@@ -89,9 +89,9 @@ To avoid merging and turn off numbering rules for unspecified entries, set the `
 > ### Title   <!--  2.A  -->
 > ```
 > 
-> <img src="media/headings-latex@742225731.png" alt="Latex theme numbering" width="550.0px" />
+> <img src="media/headings-latex@789892845.png" alt="Latex theme numbering" width="550.0px" />
 > 
-> <img src="media/toc-latex@273713954.png" alt="Latex theme table of contents" width="550.0px" />
+> <img src="media/toc-latex@321381068.png" alt="Latex theme table of contents" width="550.0px" />
 
 ### Excluding headings from numbering
 
@@ -126,7 +126,7 @@ To prevent a heading from being numbered, you can either:
 > ```
 > ````
 > 
-> <img src="media/figures-nested-format@1947325280.png" alt="Figure numbering with format 1.1" width="600.0px" />
+> <img src="media/figures-nested-format@1994992394.png" alt="Figure numbering with format 1.1" width="600.0px" />
 
 ## Tables
 
@@ -163,7 +163,7 @@ To prevent a heading from being numbered, you can either:
 > | **Joe**   | 32  | Sushi         |
 > ```
 > 
-> <img src="media/tables@-384042060.png" alt="Table numbering" width="600.0px" />
+> <img src="media/tables@-336374946.png" alt="Table numbering" width="600.0px" />
 
 ## Equations
 
@@ -180,7 +180,7 @@ To prevent a heading from being numbered, you can either:
 > $ F = ma $ {#force}
 > ```
 > 
-> <img src="media/equations@-1964854648.png" alt="Equation numbering" width="600.0px" />
+> <img src="media/equations@-1917187534.png" alt="Equation numbering" width="600.0px" />
 
 Conventionally, if the equation is not cross-referenced anywhere in the document, but you still want it to be numbered, you can use `_` as the ID.
 
@@ -212,7 +212,7 @@ Conventionally, if the equation is not cross-referenced anywhere in the document
 > ```
 > ````
 > 
-> <img src="media/equations@-1964854648.png" alt="Code blocks" width="600.0px" />
+> <img src="media/equations@-1917187534.png" alt="Code blocks" width="600.0px" />
 
 ## Footnotes
 
@@ -229,7 +229,7 @@ If not specified, footnotes format defaults to `1` (decimal).
 > Here is a footnote reference[^: First], and another one[^: Second].
 > ```
 > 
-> ![Footnote numbering](media/footnotes-roman@-1966865492.png)
+> ![Footnote numbering](media/footnotes-roman@-1919198378.png)
 
 ## Custom numbered elements
 
@@ -282,7 +282,7 @@ Full example:
 >     **Hi!** Here we have the number **.number**
 > ```
 > 
-> <img src="media/custom-numbered@-1487759733.png" alt="Custom numbering" width="600.0px" />
+> <img src="media/custom-numbered@-1440092619.png" alt="Custom numbering" width="600.0px" />
 
 ## Localization
 

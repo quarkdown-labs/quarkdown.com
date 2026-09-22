@@ -13,8 +13,8 @@ To address this limitation, the **`.landscape`** function renders content in lan
     Content
 ```
 
-<img src="media/landscape@1618513094.png" alt="Landscape" width="700.0px" />
+<img src="media/landscape@1666180208.png" alt="Landscape" width="700.0px" />
 
 For comparison, the same content in portrait orientation would stretch and compress the content, reducing readability:
 
-<img src="media/portrait@511431404.png" alt="Portrait" width="700.0px" />
+<img src="media/portrait@559098518.png" alt="Portrait" width="700.0px" />

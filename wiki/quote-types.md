@@ -25,10 +25,10 @@ For compatibility purposes, the GitHub-style syntax `[!NOTE]`, `[!TIP]`, `[!WARN
 
 If the document’s locale is set via [`.doclang`](document-metadata.md) and the locale is supported, a localized prefix is displayed and styled according to the current layout theme.
 
-<img src="media/minimal-theme@1668330307.png" alt="Minimal theme" width="550.0px" />
+<img src="media/minimal-theme@1715997421.png" alt="Minimal theme" width="550.0px" />
 Localized prefix in the ‘minimal’ layout theme
 
-<img src="media/latex-theme@778105010.png" alt="Latex theme" width="650.0px" />
+<img src="media/latex-theme@825772124.png" alt="Latex theme" width="650.0px" />
 Localized prefix in the ‘latex’ layout theme
 
 > Quotes and [boxes](box.md) are different ways to achieve typed alerts.

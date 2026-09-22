@@ -58,4 +58,4 @@ To gain nested information, the parser analyzes each token and starts searching 
 - Once the inner tokens are extracted, they undergo the parsing stage again
 - This process continues until no more nested tokens remain. This is called **recursive parsing**, visualized in the following figure:
 
-<img src="media/recursive-parsing@924848745.svg" alt="Recursive parsing" width="200.0px" />
+<img src="media/recursive-parsing@972515859.svg" alt="Recursive parsing" width="200.0px" />

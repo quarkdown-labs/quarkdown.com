@@ -53,9 +53,9 @@ To understand which elements to handle, stack functions rely on the strict Markd
 >     ![](assets/icon.svg)
 > ```
 > 
-> ![](media/icon@26867641.svg)
+> ![](media/icon@74534755.svg)
 > 
-> ![](media/icon@26867641.svg)
+> ![](media/icon@74534755.svg)
 
 ## Parameters
 
