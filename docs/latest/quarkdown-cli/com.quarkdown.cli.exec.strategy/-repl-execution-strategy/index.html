@@ -95,24 +95,24 @@
   <div class="breadcrumbs"><a href="../../index.html">quarkdown-cli</a><span class="delimiter">/</span><a href="../index.html">com.quarkdown.cli.exec.strategy</a><span class="delimiter">/</span><span class="current">ReplExecutionStrategy</span></div>
   <div class="cover ">
     <h1 class="cover"><span>Repl</span><wbr><span>Execution</span><wbr><span><span>Strategy</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-cli/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">ReplExecutionStrategy</a> : <a href="../-pipeline-execution-strategy/index.html">PipelineExecutionStrategy</a></div><p class="paragraph">A strategy to execute a <a href="../../../quarkdown-core/com.quarkdown.core.pipeline/-pipeline/index.html">Pipeline</a> in a continuous REPL (Read-Eval-Print Loop) mode. Note that the context is shared across iterations.</p></div></div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-cli/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">ReplExecutionStrategy</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">readLine<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>::readlnOrNull</span></span><span class="token punctuation">)</span> : <a href="../-pipeline-execution-strategy/index.html">PipelineExecutionStrategy</a></div><p class="paragraph">A strategy to execute a <a href="../../../quarkdown-core/com.quarkdown.core.pipeline/-pipeline/index.html">Pipeline</a> in a continuous REPL (Read-Eval-Print Loop) mode. The pipeline's context is shared across iterations, so definitions persist from one input to the next.</p><h4 class="tableheader">Parameters</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":quarkdown-cli/main" data-filterable-set=":quarkdown-cli/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>read</span><wbr><span><span>Line</span></span></u></div></span></div><div><div class="title"><p class="paragraph">supplier of the next input line, or <code class="lang-kotlin">null</code> when the input is exhausted. Defaults to standard input</p></div></div></div></div></div></div></div>
   </div>
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
     <div class="tabs-section-body">
       <div data-togglable="CONSTRUCTOR">
         <h2 class="tableheader">Constructors</h2>
-        <div class="table"><a data-name="-392374236%2FConstructors%2F918969369" anchor-label="ReplExecutionStrategy" id="-392374236%2FConstructors%2F918969369" data-filterable-set=":quarkdown-cli/main"></a>
+        <div class="table"><a data-name="450951576%2FConstructors%2F918969369" anchor-label="ReplExecutionStrategy" id="450951576%2FConstructors%2F918969369" data-filterable-set=":quarkdown-cli/main"></a>
           <div class="table-row table-row_content" data-togglable="CONSTRUCTOR" data-filterable-current=":quarkdown-cli/main" data-filterable-set=":quarkdown-cli/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-repl-execution-strategy.html"><span>Repl</span><wbr><span>Execution</span><wbr><span><span>Strategy</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-392374236%2FConstructors%2F918969369"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="450951576%2FConstructors%2F918969369"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-cli/main"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-cli/main"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">readLine<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>::readlnOrNull</span></span><span class="token punctuation">)</span></div></div></div>
                 </div>
               </div>
             </div>
