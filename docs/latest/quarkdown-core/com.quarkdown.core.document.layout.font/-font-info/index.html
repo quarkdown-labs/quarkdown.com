@@ -44,7 +44,7 @@
         </div>
         <div class="navigation-controls">
         <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
-                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true" data-filter=":quarkdown-core/main">jvm</button>
+                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true" data-filter=":quarkdown-core/commonMain">common</button>
             <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
                 <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox" data-role="dropdown-toggle" aria-controls="platform-tags-listbox" aria-haspopup="listbox" aria-expanded="false" aria-label="Toggle source sets"></button>
                 <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
@@ -55,9 +55,9 @@
                     </div>
                         <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
                             <label class="checkbox">
-                                <input type="checkbox" class="checkbox--input" id=":quarkdown-core/main" data-filter=":quarkdown-core/main">
+                                <input type="checkbox" class="checkbox--input" id=":quarkdown-core/commonMain" data-filter=":quarkdown-core/commonMain">
                                 <span class="checkbox--icon"></span>
-                                jvm
+                                common
                             </label>
                         </li>
                 </ul>
@@ -91,28 +91,32 @@
         </nav>
         <div id="resizer" class="resizer" data-item-type="BAR"></div>
         <div id="main" data-item-type="SECTION" role="main">
-<div class="main-content" data-page-type="classlike" id="content" pageids="quarkdown-core::com.quarkdown.core.document.layout.font/FontInfo///PointingToDeclaration//1831116724">
+<div class="main-content" data-page-type="classlike" id="content" pageids="quarkdown-core::com.quarkdown.core.document.layout.font/FontInfo///PointingToDeclaration//-1573300633">
   <div class="breadcrumbs"><a href="../../index.html">quarkdown-core</a><span class="delimiter">/</span><a href="../index.html">com.quarkdown.core.document.layout.font</a><span class="delimiter">/</span><span class="current">FontInfo</span></div>
   <div class="cover ">
     <h1 class="cover"><span>Font</span><wbr><span><span>Info</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="index.html">FontInfo</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>mainFamily<span class="token operator">: </span><a href="../../com.quarkdown.core.misc.font/-font-family/index.html">FontFamily</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>headingFamily<span class="token operator">: </span><a href="../../com.quarkdown.core.misc.font/-font-family/index.html">FontFamily</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>codeFamily<span class="token operator">: </span><a href="../../com.quarkdown.core.misc.font/-font-family/index.html">FontFamily</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>size<span class="token operator">: </span><a href="../../com.quarkdown.core.document.size/-size/index.html">Size</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div><p class="paragraph">Immutable information about the global font configuration of a document. When any of the fields is <code class="lang-kotlin">null</code>, the default value supplied by the underlying renderer is used.</p><h4 class="tableheader">Parameters</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>main</span><wbr><span><span>Family</span></span></u></div></span></div><div><div class="title"><p class="paragraph">font family of generic content</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>heading</span><wbr><span><span>Family</span></span></u></div></span></div><div><div class="title"><p class="paragraph">font family of headings</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>code</span><wbr><span><span>Family</span></span></u></div></span></div><div><div class="title"><p class="paragraph">font family of code blocks and code spans</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>size</span></span></u></div></span></div><div><div class="title"><p class="paragraph">font size of generic content. Other elements will scale accordingly</p></div></div></div></div></div></div></div>
+    <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+      <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain" data-active="" data-toggle=":quarkdown-core/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="index.html">FontInfo</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>mainFamily<span class="token operator">: </span><a href="../../com.quarkdown.core.misc.font/-font-family/index.html">FontFamily</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>headingFamily<span class="token operator">: </span><a href="../../com.quarkdown.core.misc.font/-font-family/index.html">FontFamily</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>codeFamily<span class="token operator">: </span><a href="../../com.quarkdown.core.misc.font/-font-family/index.html">FontFamily</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>size<span class="token operator">: </span><a href="../../com.quarkdown.core.document.size/-size/index.html">Size</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div><p class="paragraph">Immutable information about the global font configuration of a document. When any of the fields is <code class="lang-kotlin">null</code>, the default value supplied by the underlying renderer is used.</p><h4 class="tableheader">Parameters</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>main</span><wbr><span><span>Family</span></span></u></div></span></div><div><div class="title"><p class="paragraph">font family of generic content</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>heading</span><wbr><span><span>Family</span></span></u></div></span></div><div><div class="title"><p class="paragraph">font family of headings</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>code</span><wbr><span><span>Family</span></span></u></div></span></div><div><div class="title"><p class="paragraph">font family of code blocks and code spans</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>size</span></span></u></div></span></div><div><div class="title"><p class="paragraph">font size of generic content. Other elements will scale accordingly</p></div></div></div></div></div></div>    </div>
   </div>
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
     <div class="tabs-section-body">
       <div data-togglable="CONSTRUCTOR">
         <h2 class="tableheader">Constructors</h2>
-        <div class="table"><a data-name="1146049497%2FConstructors%2F1831116724" anchor-label="FontInfo" id="1146049497%2FConstructors%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row table-row_content" data-togglable="CONSTRUCTOR" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+        <div class="table"><a data-name="1146049497%2FConstructors%2F-1573300633" anchor-label="FontInfo" id="1146049497%2FConstructors%2F-1573300633" data-filterable-set=":quarkdown-core/commonMain"></a>
+          <div class="table-row table-row_content" data-togglable="CONSTRUCTOR" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-font-info.html"><span>Font</span><wbr><span><span>Info</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1146049497%2FConstructors%2F1831116724"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1146049497%2FConstructors%2F-1573300633"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">mainFamily<span class="token operator">: </span><a href="../../com.quarkdown.core.misc.font/-font-family/index.html">FontFamily</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">headingFamily<span class="token operator">: </span><a href="../../com.quarkdown.core.misc.font/-font-family/index.html">FontFamily</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">codeFamily<span class="token operator">: </span><a href="../../com.quarkdown.core.misc.font/-font-family/index.html">FontFamily</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">size<span class="token operator">: </span><a href="../../com.quarkdown.core.document.size/-size/index.html">Size</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div></div></div>
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain" data-active="" data-toggle=":quarkdown-core/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">mainFamily<span class="token operator">: </span><a href="../../com.quarkdown.core.misc.font/-font-family/index.html">FontFamily</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">headingFamily<span class="token operator">: </span><a href="../../com.quarkdown.core.misc.font/-font-family/index.html">FontFamily</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">codeFamily<span class="token operator">: </span><a href="../../com.quarkdown.core.misc.font/-font-family/index.html">FontFamily</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">size<span class="token operator">: </span><a href="../../com.quarkdown.core.document.size/-size/index.html">Size</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div></div>                  </div>
                 </div>
               </div>
             </div>
@@ -121,62 +125,70 @@
       </div>
       <div data-togglable="PROPERTY">
         <h2 class="tableheader">Properties</h2>
-        <div class="table"><a data-name="-22080291%2FProperties%2F1831116724" anchor-label="codeFamily" id="-22080291%2FProperties%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+        <div class="table"><a data-name="-22080291%2FProperties%2F-1573300633" anchor-label="codeFamily" id="-22080291%2FProperties%2F-1573300633" data-filterable-set=":quarkdown-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="code-family.html"><span>code</span><wbr><span><span>Family</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-22080291%2FProperties%2F1831116724"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-22080291%2FProperties%2F-1573300633"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="code-family.html">codeFamily</a><span class="token operator">: </span><a href="../../com.quarkdown.core.misc.font/-font-family/index.html">FontFamily</a><span class="token operator">?</span></div></div></div>
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain" data-active="" data-toggle=":quarkdown-core/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="code-family.html">codeFamily</a><span class="token operator">: </span><a href="../../com.quarkdown.core.misc.font/-font-family/index.html">FontFamily</a><span class="token operator">?</span></div></div>                  </div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="576342310%2FProperties%2F1831116724" anchor-label="headingFamily" id="576342310%2FProperties%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+<a data-name="576342310%2FProperties%2F-1573300633" anchor-label="headingFamily" id="576342310%2FProperties%2F-1573300633" data-filterable-set=":quarkdown-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="heading-family.html"><span>heading</span><wbr><span><span>Family</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="576342310%2FProperties%2F1831116724"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="576342310%2FProperties%2F-1573300633"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="heading-family.html">headingFamily</a><span class="token operator">: </span><a href="../../com.quarkdown.core.misc.font/-font-family/index.html">FontFamily</a><span class="token operator">?</span></div></div></div>
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain" data-active="" data-toggle=":quarkdown-core/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="heading-family.html">headingFamily</a><span class="token operator">: </span><a href="../../com.quarkdown.core.misc.font/-font-family/index.html">FontFamily</a><span class="token operator">?</span></div></div>                  </div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="-363674735%2FProperties%2F1831116724" anchor-label="mainFamily" id="-363674735%2FProperties%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+<a data-name="-363674735%2FProperties%2F-1573300633" anchor-label="mainFamily" id="-363674735%2FProperties%2F-1573300633" data-filterable-set=":quarkdown-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="main-family.html"><span>main</span><wbr><span><span>Family</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-363674735%2FProperties%2F1831116724"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-363674735%2FProperties%2F-1573300633"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="main-family.html">mainFamily</a><span class="token operator">: </span><a href="../../com.quarkdown.core.misc.font/-font-family/index.html">FontFamily</a><span class="token operator">?</span></div></div></div>
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain" data-active="" data-toggle=":quarkdown-core/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="main-family.html">mainFamily</a><span class="token operator">: </span><a href="../../com.quarkdown.core.misc.font/-font-family/index.html">FontFamily</a><span class="token operator">?</span></div></div>                  </div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="942151501%2FProperties%2F1831116724" anchor-label="size" id="942151501%2FProperties%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+<a data-name="942151501%2FProperties%2F-1573300633" anchor-label="size" id="942151501%2FProperties%2F-1573300633" data-filterable-set=":quarkdown-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="size.html"><span><span>size</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="942151501%2FProperties%2F1831116724"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="942151501%2FProperties%2F-1573300633"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="size.html">size</a><span class="token operator">: </span><a href="../../com.quarkdown.core.document.size/-size/index.html">Size</a><span class="token operator">?</span></div></div></div>
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain" data-active="" data-toggle=":quarkdown-core/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="size.html">size</a><span class="token operator">: </span><a href="../../com.quarkdown.core.document.size/-size/index.html">Size</a><span class="token operator">?</span></div></div>                  </div>
                 </div>
               </div>
             </div>

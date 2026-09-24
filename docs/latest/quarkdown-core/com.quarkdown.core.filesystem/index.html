@@ -44,7 +44,8 @@
         </div>
         <div class="navigation-controls">
         <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
-                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true" data-filter=":quarkdown-core/main">jvm</button>
+                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true" data-filter=":quarkdown-core/commonMain">common</button>
+                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true" data-filter=":quarkdown-core/jvmMain">jvm</button>
             <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
                 <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox" data-role="dropdown-toggle" aria-controls="platform-tags-listbox" aria-haspopup="listbox" aria-expanded="false" aria-label="Toggle source sets"></button>
                 <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
@@ -55,7 +56,14 @@
                     </div>
                         <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
                             <label class="checkbox">
-                                <input type="checkbox" class="checkbox--input" id=":quarkdown-core/main" data-filter=":quarkdown-core/main">
+                                <input type="checkbox" class="checkbox--input" id=":quarkdown-core/commonMain" data-filter=":quarkdown-core/commonMain">
+                                <span class="checkbox--icon"></span>
+                                common
+                            </label>
+                        </li>
+                        <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":quarkdown-core/jvmMain" data-filter=":quarkdown-core/jvmMain">
                                 <span class="checkbox--icon"></span>
                                 jvm
                             </label>
@@ -91,7 +99,7 @@
         </nav>
         <div id="resizer" class="resizer" data-item-type="BAR"></div>
         <div id="main" data-item-type="SECTION" role="main">
-<div class="main-content" data-page-type="package" id="content" pageids="quarkdown-core::com.quarkdown.core.filesystem////PointingToDeclaration//1831116724">
+<div class="main-content" data-page-type="package" id="content" pageids="quarkdown-core::com.quarkdown.core.filesystem////PointingToDeclaration//1701741596">
   <div class="breadcrumbs"><a href="../index.html">quarkdown-core</a><span class="delimiter">/</span><span class="current">com.quarkdown.core.filesystem</span></div>
   <div class="cover ">
     <h1 class="cover"><span><span>Package-level</span></span> <span><span>declarations</span></span></h1>
@@ -101,141 +109,193 @@
     <div class="tabs-section-body">
       <div data-togglable="TYPE">
         <h2 class="tableheader">Types</h2>
-        <div class="table"><a data-name="-1851119535%2FClasslikes%2F1831116724" anchor-label="DiskFileSystem" id="-1851119535%2FClasslikes%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+        <div class="table"><a data-name="-1851119535%2FClasslikes%2F-1851574377" anchor-label="DiskFileSystem" id="-1851119535%2FClasslikes%2F-1851574377" data-filterable-set=":quarkdown-core/jvmMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/jvmMain" data-filterable-set=":quarkdown-core/jvmMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-disk-file-system/index.html"><span>Disk</span><wbr><span>File</span><wbr><span><span>System</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1851119535%2FClasslikes%2F1831116724"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1851119535%2FClasslikes%2F-1851574377"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="-disk-file-system/index.html">DiskFileSystem</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">workingDirectory<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html">File</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span> : <a href="-okio-backed-file-system/index.html">OkioBackedFileSystem</a></div><div class="brief "><p class="paragraph">A <a href="-file-system/index.html">FileSystem</a> backed by the physical disk file system. This is the default file system used by the pipeline and the CLI.</p></div></div></div>
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-core/jvmMain" data-filterable-set=":quarkdown-core/jvmMain" data-active="" data-toggle=":quarkdown-core/jvmMain">jvm</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/jvmMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="-disk-file-system/index.html">DiskFileSystem</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">workingDirectory<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html">File</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span> : <a href="-okio-backed-file-system/index.html">OkioBackedFileSystem</a></div><div class="brief "><p class="paragraph">A <a href="-file-system/index.html">FileSystem</a> backed by the physical disk file system. This is the default file system used by the pipeline and the CLI.</p></div></div>                  </div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="-1678266578%2FClasslikes%2F1831116724" anchor-label="FileSystem" id="-1678266578%2FClasslikes%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+<a data-name="-1678266578%2FClasslikes%2F-1573300633" anchor-label="FileSystem" id="-1678266578%2FClasslikes%2F-1573300633" data-filterable-set=":quarkdown-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-file-system/index.html"><span>File</span><wbr><span><span>System</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1678266578%2FClasslikes%2F1831116724"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1678266578%2FClasslikes%2F-1573300633"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-file-system/index.html">FileSystem</a></div><div class="brief "><p class="paragraph">A file system abstraction which can retrieve files, either absolutely or relative to a working directory.</p></div></div></div>
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain" data-active="" data-toggle=":quarkdown-core/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-file-system/index.html">FileSystem</a></div><div class="brief "><p class="paragraph">A file system abstraction which can retrieve files, either absolutely or relative to a working directory.</p></div></div>                  </div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="-600864316%2FClasslikes%2F1831116724" anchor-label="FsEntry" id="-600864316%2FClasslikes%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+<a data-name="-600864316%2FClasslikes%2F-1573300633" anchor-label="FsEntry" id="-600864316%2FClasslikes%2F-1573300633" data-filterable-set=":quarkdown-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-fs-entry/index.html"><span>Fs</span><wbr><span><span>Entry</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-600864316%2FClasslikes%2F1831116724"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-600864316%2FClasslikes%2F-1573300633"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="-fs-entry/index.html">FsEntry</a></div><div class="brief "><p class="paragraph">A platform-neutral handle to a file or directory, bound to the <a href="-file-system/index.html">FileSystem</a> backend that created it. An entry provides path math, existence and metadata queries, content reading, and directory listing, without exposing the underlying I/O engine.</p></div></div></div>
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain" data-active="" data-toggle=":quarkdown-core/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="-fs-entry/index.html">FsEntry</a></div><div class="brief "><p class="paragraph">A platform-neutral handle to a file or directory, bound to the <a href="-file-system/index.html">FileSystem</a> backend that created it. An entry provides path math, existence and metadata queries, content reading, and directory listing, without exposing the underlying I/O engine.</p></div></div>                  </div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="-2109098808%2FClasslikes%2F1831116724" anchor-label="FsPaths" id="-2109098808%2FClasslikes%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+<a data-name="-2109098808%2FClasslikes%2F-1573300633" anchor-label="FsPaths" id="-2109098808%2FClasslikes%2F-1573300633" data-filterable-set=":quarkdown-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-fs-paths/index.html"><span>Fs</span><wbr><span><span>Paths</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2109098808%2FClasslikes%2F1831116724"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2109098808%2FClasslikes%2F-1573300633"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">object </span><a href="-fs-paths/index.html">FsPaths</a></div><div class="brief "><p class="paragraph">Utilities for raw path strings, backing checks that do not require a <a href="-file-system/index.html">FileSystem</a>.</p></div></div></div>
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain" data-active="" data-toggle=":quarkdown-core/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">object </span><a href="-fs-paths/index.html">FsPaths</a></div><div class="brief "><p class="paragraph">Utilities for raw path strings, backing checks that do not require a <a href="-file-system/index.html">FileSystem</a>.</p></div></div>                  </div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="533320102%2FClasslikes%2F1831116724" anchor-label="OkioBackedFileSystem" id="533320102%2FClasslikes%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+<a data-name="533320102%2FClasslikes%2F-1573300633" anchor-label="OkioBackedFileSystem" id="533320102%2FClasslikes%2F-1573300633" data-filterable-set=":quarkdown-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-okio-backed-file-system/index.html"><span>Okio</span><wbr><span>Backed</span><wbr><span>File</span><wbr><span><span>System</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="533320102%2FClasslikes%2F1831116724"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="533320102%2FClasslikes%2F-1573300633"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">class </span><a href="-okio-backed-file-system/index.html">OkioBackedFileSystem</a> : <a href="-file-system/index.html">FileSystem</a></div><div class="brief "><p class="paragraph">Base class for the public <a href="-file-system/index.html">FileSystem</a> entry points (<a href="-disk-file-system/index.html">DiskFileSystem</a>, <a href="-virtual-file-system/index.html">VirtualFileSystem</a>), which are always root file systems and delegate their behavior to the internal <a href="../../quarkdown-core/com.quarkdown.core.filesystem/-okio-file-system/index.html">OkioFileSystem</a> engine, while acting themselves as the lineage root of their <a href="-okio-backed-file-system/branch.html">branch</a>es.</p></div></div></div>
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain" data-active="" data-toggle=":quarkdown-core/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">class </span><a href="-okio-backed-file-system/index.html">OkioBackedFileSystem</a> : <a href="-file-system/index.html">FileSystem</a></div><div class="brief "><p class="paragraph">Base class for the public <a href="-file-system/index.html">FileSystem</a> entry points (DiskFileSystem, <a href="-virtual-file-system/index.html">VirtualFileSystem</a>), which are always root file systems and delegate their behavior to the internal <a href="../../quarkdown-core/com.quarkdown.core.filesystem/-okio-file-system/index.html">OkioFileSystem</a> engine, while acting themselves as the lineage root of their <a href="-okio-backed-file-system/branch.html">branch</a>es.</p></div></div>                  </div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="696661053%2FClasslikes%2F1831116724" anchor-label="RootGranularity" id="696661053%2FClasslikes%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+<a data-name="696661053%2FClasslikes%2F-1573300633" anchor-label="RootGranularity" id="696661053%2FClasslikes%2F-1573300633" data-filterable-set=":quarkdown-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-root-granularity/index.html"><span>Root</span><wbr><span><span>Granularity</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="696661053%2FClasslikes%2F1831116724"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="696661053%2FClasslikes%2F-1573300633"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">enum </span><a href="-root-granularity/index.html">RootGranularity</a> : <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><a href="-root-granularity/index.html">RootGranularity</a><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">Types of granularity for determining the root of the file system.</p></div></div></div>
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain" data-active="" data-toggle=":quarkdown-core/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">enum </span><a href="-root-granularity/index.html">RootGranularity</a> : <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><a href="-root-granularity/index.html">RootGranularity</a><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">Types of granularity for determining the root of the file system.</p></div></div>                  </div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="-205630381%2FClasslikes%2F1831116724" anchor-label="VirtualFileSystem" id="-205630381%2FClasslikes%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+<a data-name="-205630381%2FClasslikes%2F-1573300633" anchor-label="VirtualFileSystem" id="-205630381%2FClasslikes%2F-1573300633" data-filterable-set=":quarkdown-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-virtual-file-system/index.html"><span>Virtual</span><wbr><span>File</span><wbr><span><span>System</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-205630381%2FClasslikes%2F1831116724"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-205630381%2FClasslikes%2F-1573300633"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="-virtual-file-system/index.html">VirtualFileSystem</a> : <a href="-okio-backed-file-system/index.html">OkioBackedFileSystem</a></div><div class="brief "><p class="paragraph">An in-memory <a href="-file-system/index.html">FileSystem</a>, detached from the physical disk. Entries produced by this file system return <code class="lang-kotlin">null</code> from <a href="-fs-entry/to-file-or-null.html">FsEntry.toFileOrNull</a>.</p></div></div></div>
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain" data-active="" data-toggle=":quarkdown-core/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="-virtual-file-system/index.html">VirtualFileSystem</a> : <a href="-okio-backed-file-system/index.html">OkioBackedFileSystem</a></div><div class="brief "><p class="paragraph">An in-memory <a href="-file-system/index.html">FileSystem</a>, detached from the physical disk. Entries produced by this file system return <code class="lang-kotlin">null</code> from FsEntry.toFileOrNull.</p></div></div>                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div data-togglable="EXTENSION_FUNCTION">
+      <div data-togglable="FUNCTION">
         <h2 class="tableheader">Functions</h2>
-        <div class="table"><a data-name="-26306440%2FFunctions%2F1831116724" anchor-label="getRootFileSystem" id="-26306440%2FFunctions%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+        <div class="table"><a data-name="-1019214776%2FFunctions%2F1701741596" anchor-label="defaultFileSystem" id="-1019214776%2FFunctions%2F1701741596" data-filterable-set=":quarkdown-core/commonMain,:quarkdown-core/jvmMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/commonMain,:quarkdown-core/jvmMain" data-filterable-set=":quarkdown-core/commonMain,:quarkdown-core/jvmMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
-                  <div><a href="get-root-file-system.html"><span>get</span><wbr><span>Root</span><wbr><span>File</span><wbr><span><span>System</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-26306440%2FFunctions%2F1831116724"></span>
+                  <div><a href="default-file-system.html"><span>default</span><wbr><span>File</span><wbr><span><span>System</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1019214776%2FFunctions%2F1701741596"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="../com.quarkdown.core.context/-context/index.html">Context</a><span class="token punctuation">.</span><a href="get-root-file-system.html"><span class="token function">getRootFileSystem</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">granularity<span class="token operator">: </span><a href="-root-granularity/index.html">RootGranularity</a><span class="token operator"> = </span>RootGranularity.PROJECT</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-file-system/index.html">FileSystem</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Retrieves the relative path to the root of the file system. The root of the file system is determined by the working directory of the current subdocument.</p></div></div></div>
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain" data-active="" data-toggle=":quarkdown-core/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":quarkdown-core/jvmMain" data-filterable-set=":quarkdown-core/jvmMain" data-toggle=":quarkdown-core/jvmMain">jvm</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">fun </span><a href="default-file-system.html"><span class="token function">defaultFileSystem</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-file-system/index.html">FileSystem</a></div></div><div class="content sourceset-dependent-content" data-togglable=":quarkdown-core/jvmMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">fun </span><a href="default-file-system.html"><span class="token function">defaultFileSystem</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-file-system/index.html">FileSystem</a></div></div>                  </div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="152727522%2FFunctions%2F1831116724" anchor-label="toFsEntry" id="152727522%2FFunctions%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+<a data-name="-26306440%2FFunctions%2F-1573300633" anchor-label="getRootFileSystem" id="-26306440%2FFunctions%2F-1573300633" data-filterable-set=":quarkdown-core/commonMain"></a>
+          <div class="table-row table-row_content" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
-                  <div><a href="to-fs-entry.html"><span>to</span><wbr><span>Fs</span><wbr><span><span>Entry</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="152727522%2FFunctions%2F1831116724"></span>
+                  <div><a href="get-root-file-system.html"><span>get</span><wbr><span>Root</span><wbr><span>File</span><wbr><span><span>System</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-26306440%2FFunctions%2F-1573300633"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html">File</a><span class="token punctuation">.</span><a href="to-fs-entry.html"><span class="token function">toFsEntry</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-fs-entry/index.html">FsEntry</a></div><div class="brief "><p class="paragraph">Wraps this file as a disk-backed <a href="-fs-entry/index.html">FsEntry</a>. The inverse of <a href="-fs-entry/to-file-or-null.html">FsEntry.toFileOrNull</a>.</p></div></div></div>
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain" data-active="" data-toggle=":quarkdown-core/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="../com.quarkdown.core.context/-context/index.html">Context</a><span class="token punctuation">.</span><a href="get-root-file-system.html"><span class="token function">getRootFileSystem</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">granularity<span class="token operator">: </span><a href="-root-granularity/index.html">RootGranularity</a><span class="token operator"> = </span>RootGranularity.PROJECT</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-file-system/index.html">FileSystem</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Retrieves the relative path to the root of the file system. The root of the file system is determined by the working directory of the current subdocument.</p></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1963397029%2FFunctions%2F-1851574377" anchor-label="toFileOrNull" id="1963397029%2FFunctions%2F-1851574377" data-filterable-set=":quarkdown-core/jvmMain"></a>
+          <div class="table-row table-row_content" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":quarkdown-core/jvmMain" data-filterable-set=":quarkdown-core/jvmMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="to-file-or-null.html"><span>to</span><wbr><span>File</span><wbr><span>Or</span><wbr><span><span>Null</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1963397029%2FFunctions%2F-1851574377"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-core/jvmMain" data-filterable-set=":quarkdown-core/jvmMain" data-active="" data-toggle=":quarkdown-core/jvmMain">jvm</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/jvmMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="-fs-entry/index.html">FsEntry</a><span class="token punctuation">.</span><a href="to-file-or-null.html"><span class="token function">toFileOrNull</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html">File</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Converts this entry to a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html">File</a>, if it is backed by the physical disk file system. This is the boundary between the platform-neutral input abstraction and JVM-only output or process-level code; input-side code must not use it.</p></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="152727522%2FFunctions%2F-1851574377" anchor-label="toFsEntry" id="152727522%2FFunctions%2F-1851574377" data-filterable-set=":quarkdown-core/jvmMain"></a>
+          <div class="table-row table-row_content" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":quarkdown-core/jvmMain" data-filterable-set=":quarkdown-core/jvmMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="to-fs-entry.html"><span>to</span><wbr><span>Fs</span><wbr><span><span>Entry</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="152727522%2FFunctions%2F-1851574377"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-core/jvmMain" data-filterable-set=":quarkdown-core/jvmMain" data-active="" data-toggle=":quarkdown-core/jvmMain">jvm</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/jvmMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html">File</a><span class="token punctuation">.</span><a href="to-fs-entry.html"><span class="token function">toFsEntry</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-fs-entry/index.html">FsEntry</a></div><div class="brief "><p class="paragraph">Wraps this file as a disk-backed <a href="-fs-entry/index.html">FsEntry</a>. The inverse of <a href="to-file-or-null.html">FsEntry.toFileOrNull</a>.</p></div></div>                  </div>
                 </div>
               </div>
             </div>

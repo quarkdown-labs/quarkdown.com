@@ -44,7 +44,7 @@
         </div>
         <div class="navigation-controls">
         <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
-                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true" data-filter=":quarkdown-core/main">jvm</button>
+                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true" data-filter=":quarkdown-core/commonMain">common</button>
             <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
                 <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox" data-role="dropdown-toggle" aria-controls="platform-tags-listbox" aria-haspopup="listbox" aria-expanded="false" aria-label="Toggle source sets"></button>
                 <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
@@ -55,9 +55,9 @@
                     </div>
                         <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
                             <label class="checkbox">
-                                <input type="checkbox" class="checkbox--input" id=":quarkdown-core/main" data-filter=":quarkdown-core/main">
+                                <input type="checkbox" class="checkbox--input" id=":quarkdown-core/commonMain" data-filter=":quarkdown-core/commonMain">
                                 <span class="checkbox--icon"></span>
-                                jvm
+                                common
                             </label>
                         </li>
                 </ul>
@@ -91,28 +91,32 @@
         </nav>
         <div id="resizer" class="resizer" data-item-type="BAR"></div>
         <div id="main" data-item-type="SECTION" role="main">
-<div class="main-content" data-page-type="classlike" id="content" pageids="quarkdown-core::com.quarkdown.core.document.layout/DocumentLayoutInfo///PointingToDeclaration//1831116724">
+<div class="main-content" data-page-type="classlike" id="content" pageids="quarkdown-core::com.quarkdown.core.document.layout/DocumentLayoutInfo///PointingToDeclaration//-1573300633">
   <div class="breadcrumbs"><a href="../../index.html">quarkdown-core</a><span class="delimiter">/</span><a href="../index.html">com.quarkdown.core.document.layout</a><span class="delimiter">/</span><span class="current">DocumentLayoutInfo</span></div>
   <div class="cover ">
     <h1 class="cover"><span>Document</span><wbr><span>Layout</span><wbr><span><span>Info</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="index.html">DocumentLayoutInfo</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>pageFormats<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../../com.quarkdown.core.document.layout.page/-page-format-info/index.html">PageFormatInfo</a><span class="token operator">&gt;</span><span class="token operator"> = </span>emptyList()<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>fonts<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../../com.quarkdown.core.document.layout.font/-font-info/index.html">FontInfo</a><span class="token operator">&gt;</span><span class="token operator"> = </span>emptyList()<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>paragraphStyle<span class="token operator">: </span><a href="../../com.quarkdown.core.document.layout.paragraph/-paragraph-style-info/index.html">ParagraphStyleInfo</a><span class="token operator"> = </span>ParagraphStyleInfo()<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>captionPosition<span class="token operator">: </span><a href="../../com.quarkdown.core.document.layout.caption/-caption-position-info/index.html">CaptionPositionInfo</a><span class="token operator"> = </span>CaptionPositionInfo()</span></span><span class="token punctuation">)</span></div><p class="paragraph">Mutable information about the layout options of a document. When any of the fields is <code class="lang-kotlin">null</code>, the default value supplied by the underlying renderer is used.</p><h4 class="tableheader">Parameters</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>page</span><wbr><span><span>Formats</span></span></u></div></span></div><div><div class="title"><p class="paragraph">format of the pages of the document, in ascending order of precedence</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>fonts</span></span></u></div></span></div><div><div class="title"><p class="paragraph">list of font configurations used in the document, in order of precedence</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>paragraph</span><wbr><span><span>Style</span></span></u></div></span></div><div><div class="title"><p class="paragraph">style of paragraphs in the document</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>caption</span><wbr><span><span>Position</span></span></u></div></span></div><div><div class="title"><p class="paragraph">position of captions of figures, tables, and more in the document</p></div></div></div></div></div></div></div>
+    <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+      <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain" data-active="" data-toggle=":quarkdown-core/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="index.html">DocumentLayoutInfo</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>pageFormats<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../../com.quarkdown.core.document.layout.page/-page-format-info/index.html">PageFormatInfo</a><span class="token operator">&gt;</span><span class="token operator"> = </span>emptyList()<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>fonts<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../../com.quarkdown.core.document.layout.font/-font-info/index.html">FontInfo</a><span class="token operator">&gt;</span><span class="token operator"> = </span>emptyList()<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>paragraphStyle<span class="token operator">: </span><a href="../../com.quarkdown.core.document.layout.paragraph/-paragraph-style-info/index.html">ParagraphStyleInfo</a><span class="token operator"> = </span>ParagraphStyleInfo()<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>captionPosition<span class="token operator">: </span><a href="../../com.quarkdown.core.document.layout.caption/-caption-position-info/index.html">CaptionPositionInfo</a><span class="token operator"> = </span>CaptionPositionInfo()</span></span><span class="token punctuation">)</span></div><p class="paragraph">Mutable information about the layout options of a document. When any of the fields is <code class="lang-kotlin">null</code>, the default value supplied by the underlying renderer is used.</p><h4 class="tableheader">Parameters</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>page</span><wbr><span><span>Formats</span></span></u></div></span></div><div><div class="title"><p class="paragraph">format of the pages of the document, in ascending order of precedence</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>fonts</span></span></u></div></span></div><div><div class="title"><p class="paragraph">list of font configurations used in the document, in order of precedence</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>paragraph</span><wbr><span><span>Style</span></span></u></div></span></div><div><div class="title"><p class="paragraph">style of paragraphs in the document</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>caption</span><wbr><span><span>Position</span></span></u></div></span></div><div><div class="title"><p class="paragraph">position of captions of figures, tables, and more in the document</p></div></div></div></div></div></div>    </div>
   </div>
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
     <div class="tabs-section-body">
       <div data-togglable="CONSTRUCTOR">
         <h2 class="tableheader">Constructors</h2>
-        <div class="table"><a data-name="2115253200%2FConstructors%2F1831116724" anchor-label="DocumentLayoutInfo" id="2115253200%2FConstructors%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row table-row_content" data-togglable="CONSTRUCTOR" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+        <div class="table"><a data-name="2115253200%2FConstructors%2F-1573300633" anchor-label="DocumentLayoutInfo" id="2115253200%2FConstructors%2F-1573300633" data-filterable-set=":quarkdown-core/commonMain"></a>
+          <div class="table-row table-row_content" data-togglable="CONSTRUCTOR" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-document-layout-info.html"><span>Document</span><wbr><span>Layout</span><wbr><span><span>Info</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2115253200%2FConstructors%2F1831116724"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2115253200%2FConstructors%2F-1573300633"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">pageFormats<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../../com.quarkdown.core.document.layout.page/-page-format-info/index.html">PageFormatInfo</a><span class="token operator">&gt;</span><span class="token operator"> = </span>emptyList()<span class="token punctuation">, </span></span><span class="parameter ">fonts<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../../com.quarkdown.core.document.layout.font/-font-info/index.html">FontInfo</a><span class="token operator">&gt;</span><span class="token operator"> = </span>emptyList()<span class="token punctuation">, </span></span><span class="parameter ">paragraphStyle<span class="token operator">: </span><a href="../../com.quarkdown.core.document.layout.paragraph/-paragraph-style-info/index.html">ParagraphStyleInfo</a><span class="token operator"> = </span>ParagraphStyleInfo()<span class="token punctuation">, </span></span><span class="parameter ">captionPosition<span class="token operator">: </span><a href="../../com.quarkdown.core.document.layout.caption/-caption-position-info/index.html">CaptionPositionInfo</a><span class="token operator"> = </span>CaptionPositionInfo()</span></span><span class="token punctuation">)</span></div></div></div>
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain" data-active="" data-toggle=":quarkdown-core/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">pageFormats<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../../com.quarkdown.core.document.layout.page/-page-format-info/index.html">PageFormatInfo</a><span class="token operator">&gt;</span><span class="token operator"> = </span>emptyList()<span class="token punctuation">, </span></span><span class="parameter ">fonts<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../../com.quarkdown.core.document.layout.font/-font-info/index.html">FontInfo</a><span class="token operator">&gt;</span><span class="token operator"> = </span>emptyList()<span class="token punctuation">, </span></span><span class="parameter ">paragraphStyle<span class="token operator">: </span><a href="../../com.quarkdown.core.document.layout.paragraph/-paragraph-style-info/index.html">ParagraphStyleInfo</a><span class="token operator"> = </span>ParagraphStyleInfo()<span class="token punctuation">, </span></span><span class="parameter ">captionPosition<span class="token operator">: </span><a href="../../com.quarkdown.core.document.layout.caption/-caption-position-info/index.html">CaptionPositionInfo</a><span class="token operator"> = </span>CaptionPositionInfo()</span></span><span class="token punctuation">)</span></div></div>                  </div>
                 </div>
               </div>
             </div>
@@ -121,62 +125,70 @@
       </div>
       <div data-togglable="PROPERTY">
         <h2 class="tableheader">Properties</h2>
-        <div class="table"><a data-name="-1234354612%2FProperties%2F1831116724" anchor-label="captionPosition" id="-1234354612%2FProperties%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+        <div class="table"><a data-name="-1234354612%2FProperties%2F-1573300633" anchor-label="captionPosition" id="-1234354612%2FProperties%2F-1573300633" data-filterable-set=":quarkdown-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="caption-position.html"><span>caption</span><wbr><span><span>Position</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1234354612%2FProperties%2F1831116724"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1234354612%2FProperties%2F-1573300633"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="caption-position.html">captionPosition</a><span class="token operator">: </span><a href="../../com.quarkdown.core.document.layout.caption/-caption-position-info/index.html">CaptionPositionInfo</a></div></div></div>
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain" data-active="" data-toggle=":quarkdown-core/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="caption-position.html">captionPosition</a><span class="token operator">: </span><a href="../../com.quarkdown.core.document.layout.caption/-caption-position-info/index.html">CaptionPositionInfo</a></div></div>                  </div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="-1800103785%2FProperties%2F1831116724" anchor-label="fonts" id="-1800103785%2FProperties%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+<a data-name="-1800103785%2FProperties%2F-1573300633" anchor-label="fonts" id="-1800103785%2FProperties%2F-1573300633" data-filterable-set=":quarkdown-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="fonts.html"><span><span>fonts</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1800103785%2FProperties%2F1831116724"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1800103785%2FProperties%2F-1573300633"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="fonts.html">fonts</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../../com.quarkdown.core.document.layout.font/-font-info/index.html">FontInfo</a><span class="token operator">&gt;</span></div></div></div>
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain" data-active="" data-toggle=":quarkdown-core/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="fonts.html">fonts</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../../com.quarkdown.core.document.layout.font/-font-info/index.html">FontInfo</a><span class="token operator">&gt;</span></div></div>                  </div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="1816358510%2FProperties%2F1831116724" anchor-label="pageFormats" id="1816358510%2FProperties%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+<a data-name="1816358510%2FProperties%2F-1573300633" anchor-label="pageFormats" id="1816358510%2FProperties%2F-1573300633" data-filterable-set=":quarkdown-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="page-formats.html"><span>page</span><wbr><span><span>Formats</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1816358510%2FProperties%2F1831116724"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1816358510%2FProperties%2F-1573300633"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="page-formats.html">pageFormats</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../../com.quarkdown.core.document.layout.page/-page-format-info/index.html">PageFormatInfo</a><span class="token operator">&gt;</span></div></div></div>
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain" data-active="" data-toggle=":quarkdown-core/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="page-formats.html">pageFormats</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../../com.quarkdown.core.document.layout.page/-page-format-info/index.html">PageFormatInfo</a><span class="token operator">&gt;</span></div></div>                  </div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="-1231084644%2FProperties%2F1831116724" anchor-label="paragraphStyle" id="-1231084644%2FProperties%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+<a data-name="-1231084644%2FProperties%2F-1573300633" anchor-label="paragraphStyle" id="-1231084644%2FProperties%2F-1573300633" data-filterable-set=":quarkdown-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="paragraph-style.html"><span>paragraph</span><wbr><span><span>Style</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1231084644%2FProperties%2F1831116724"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1231084644%2FProperties%2F-1573300633"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="paragraph-style.html">paragraphStyle</a><span class="token operator">: </span><a href="../../com.quarkdown.core.document.layout.paragraph/-paragraph-style-info/index.html">ParagraphStyleInfo</a></div></div></div>
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain" data-active="" data-toggle=":quarkdown-core/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="paragraph-style.html">paragraphStyle</a><span class="token operator">: </span><a href="../../com.quarkdown.core.document.layout.paragraph/-paragraph-style-info/index.html">ParagraphStyleInfo</a></div></div>                  </div>
                 </div>
               </div>
             </div>
@@ -185,17 +197,19 @@
       </div>
       <div data-togglable="FUNCTION">
         <h2 class="tableheader">Functions</h2>
-        <div class="table"><a data-name="455679298%2FFunctions%2F1831116724" anchor-label="getPageFormatsWithDefault" id="455679298%2FFunctions%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+        <div class="table"><a data-name="455679298%2FFunctions%2F-1573300633" anchor-label="getPageFormatsWithDefault" id="455679298%2FFunctions%2F-1573300633" data-filterable-set=":quarkdown-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="get-page-formats-with-default.html"><span>get</span><wbr><span>Page</span><wbr><span>Formats</span><wbr><span>With</span><wbr><span><span>Default</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="455679298%2FFunctions%2F1831116724"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="455679298%2FFunctions%2F-1573300633"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="get-page-formats-with-default.html"><span class="token function">getPageFormatsWithDefault</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">default<span class="token operator">: </span><a href="../../com.quarkdown.core.document.layout.page/-page-format-info/index.html">PageFormatInfo</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../../com.quarkdown.core.document.layout.page/-page-format-info/index.html">PageFormatInfo</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Returns the effective page formats by prepending <a href="get-page-formats-with-default.html">default</a> (if non-null) and folding formats that share the same <a href="../../com.quarkdown.core.document.layout.page/-page-format-info/selector.html">PageFormatInfo.selector</a>.</p></div></div></div>
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain" data-active="" data-toggle=":quarkdown-core/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="get-page-formats-with-default.html"><span class="token function">getPageFormatsWithDefault</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">default<span class="token operator">: </span><a href="../../com.quarkdown.core.document.layout.page/-page-format-info/index.html">PageFormatInfo</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../../com.quarkdown.core.document.layout.page/-page-format-info/index.html">PageFormatInfo</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Returns the effective page formats by prepending <a href="get-page-formats-with-default.html">default</a> (if non-null) and folding formats that share the same <a href="../../com.quarkdown.core.document.layout.page/-page-format-info/selector.html">PageFormatInfo.selector</a>.</p></div></div>                  </div>
                 </div>
               </div>
             </div>

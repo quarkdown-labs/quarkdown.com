@@ -44,7 +44,7 @@
         </div>
         <div class="navigation-controls">
         <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
-                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true" data-filter=":quarkdown-core/main">jvm</button>
+                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true" data-filter=":quarkdown-core/commonMain">common</button>
             <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
                 <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox" data-role="dropdown-toggle" aria-controls="platform-tags-listbox" aria-haspopup="listbox" aria-expanded="false" aria-label="Toggle source sets"></button>
                 <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
@@ -55,9 +55,9 @@
                     </div>
                         <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
                             <label class="checkbox">
-                                <input type="checkbox" class="checkbox--input" id=":quarkdown-core/main" data-filter=":quarkdown-core/main">
+                                <input type="checkbox" class="checkbox--input" id=":quarkdown-core/commonMain" data-filter=":quarkdown-core/commonMain">
                                 <span class="checkbox--icon"></span>
-                                jvm
+                                common
                             </label>
                         </li>
                 </ul>
@@ -91,28 +91,32 @@
         </nav>
         <div id="resizer" class="resizer" data-item-type="BAR"></div>
         <div id="main" data-item-type="SECTION" role="main">
-<div class="main-content" data-page-type="classlike" id="content" pageids="quarkdown-core::com.quarkdown.core.parser.walker.lambda/LambdaGrammar///PointingToDeclaration//1831116724">
+<div class="main-content" data-page-type="classlike" id="content" pageids="quarkdown-core::com.quarkdown.core.parser.walker.lambda/LambdaGrammar///PointingToDeclaration//-1573300633">
   <div class="breadcrumbs"><a href="../../index.html">quarkdown-core</a><span class="delimiter">/</span><a href="../index.html">com.quarkdown.core.parser.walker.lambda</a><span class="delimiter">/</span><span class="current">LambdaGrammar</span></div>
   <div class="cover ">
     <h1 class="cover"><span>Lambda</span><wbr><span><span>Grammar</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">LambdaGrammar</a> : <span data-unresolved-link="com.github.h0tk3y.betterParse.grammar/Grammar///PointingToDeclaration/">Grammar</span><span class="token operator">&lt;</span><a href="../-parsed-lambda/index.html">ParsedLambda</a><span class="token operator">&gt; </span></div><p class="paragraph">Grammar that parses a lambda expression.</p><p class="paragraph">A lambda has the form <code class="lang-kotlin">param1 param2?: body content</code>, where the header (<code class="lang-kotlin">param1 param2?:</code>) defines parameters and the body is everything after the delimiter.</p><p class="paragraph">Parameters are word-character identifiers, optionally suffixed with <code class="lang-kotlin">?</code> to mark them as optional. The delimiter is a colon (<code class="lang-kotlin">:</code>).</p><p class="paragraph">If the header cannot be parsed (i.e. no valid parameter-delimiter sequence is found), the entire input is treated as a body with no parameters.</p><p class="paragraph">The grammar is context-aware: while parsing the header, normal tokens (parameter names, whitespace, etc.) are matched individually. Once the delimiter is matched, a stateful <a href="../../../quarkdown-core/com.quarkdown.core.parser.walker.lambda/-lambda-grammar/body.html">body</a> token activates and captures the entire remaining input in one shot.</p><h4 class="tableheader">See also</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../-parsed-lambda/index.html"><span>Parsed</span><wbr><span><span>Lambda</span></span></a></div></span></div><div></div></div></div></div></div></div>
+    <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+      <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain" data-active="" data-toggle=":quarkdown-core/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">LambdaGrammar</a> : <span data-unresolved-link="com.github.h0tk3y.betterParse.grammar/Grammar///PointingToDeclaration/">Grammar</span><span class="token operator">&lt;</span><a href="../-parsed-lambda/index.html">ParsedLambda</a><span class="token operator">&gt; </span></div><p class="paragraph">Grammar that parses a lambda expression.</p><p class="paragraph">A lambda has the form <code class="lang-kotlin">param1 param2?: body content</code>, where the header (<code class="lang-kotlin">param1 param2?:</code>) defines parameters and the body is everything after the delimiter.</p><p class="paragraph">Parameters are word-character identifiers, optionally suffixed with <code class="lang-kotlin">?</code> to mark them as optional. The delimiter is a colon (<code class="lang-kotlin">:</code>).</p><p class="paragraph">If the header cannot be parsed (i.e. no valid parameter-delimiter sequence is found), the entire input is treated as a body with no parameters.</p><p class="paragraph">The grammar is context-aware: while parsing the header, normal tokens (parameter names, whitespace, etc.) are matched individually. Once the delimiter is matched, a stateful <a href="../../../quarkdown-core/com.quarkdown.core.parser.walker.lambda/-lambda-grammar/body.html">body</a> token activates and captures the entire remaining input in one shot.</p><h4 class="tableheader">See also</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../-parsed-lambda/index.html"><span>Parsed</span><wbr><span><span>Lambda</span></span></a></div></span></div><div></div></div></div></div></div>    </div>
   </div>
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
     <div class="tabs-section-body">
       <div data-togglable="CONSTRUCTOR">
         <h2 class="tableheader">Constructors</h2>
-        <div class="table"><a data-name="-660390273%2FConstructors%2F1831116724" anchor-label="LambdaGrammar" id="-660390273%2FConstructors%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row table-row_content" data-togglable="CONSTRUCTOR" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+        <div class="table"><a data-name="-660390273%2FConstructors%2F-1573300633" anchor-label="LambdaGrammar" id="-660390273%2FConstructors%2F-1573300633" data-filterable-set=":quarkdown-core/commonMain"></a>
+          <div class="table-row table-row_content" data-togglable="CONSTRUCTOR" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-lambda-grammar.html"><span>Lambda</span><wbr><span><span>Grammar</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-660390273%2FConstructors%2F1831116724"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-660390273%2FConstructors%2F-1573300633"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain" data-active="" data-toggle=":quarkdown-core/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div>                  </div>
                 </div>
               </div>
             </div>
@@ -121,62 +125,70 @@
       </div>
       <div data-togglable="PROPERTY">
         <h2 class="tableheader">Properties</h2>
-        <div class="table"><a data-name="-1304686999%2FProperties%2F1831116724" anchor-label="declaredParsers" id="-1304686999%2FProperties%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+        <div class="table"><a data-name="-1304686999%2FProperties%2F-1573300633" anchor-label="declaredParsers" id="-1304686999%2FProperties%2F-1573300633" data-filterable-set=":quarkdown-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
-                  <div><a href="index.html#-1304686999%2FProperties%2F1831116724"><span>declared</span><wbr><span><span>Parsers</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1304686999%2FProperties%2F1831116724"></span>
+                  <div><a href="index.html#-1304686999%2FProperties%2F-1573300633"><span>declared</span><wbr><span><span>Parsers</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1304686999%2FProperties%2F-1573300633"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">val </span><a href="index.html#-1304686999%2FProperties%2F1831116724">declaredParsers</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-set/index.html">Set</a><span class="token operator">&lt;</span><span data-unresolved-link="com.github.h0tk3y.betterParse.parser/Parser///PointingToDeclaration/">Parser</span><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain" data-active="" data-toggle=":quarkdown-core/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">val </span><a href="index.html#-1304686999%2FProperties%2F-1573300633">declaredParsers</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-set/index.html">Set</a><span class="token operator">&lt;</span><span data-unresolved-link="com.github.h0tk3y.betterParse.parser/Parser///PointingToDeclaration/">Parser</span><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div>                  </div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="-506170886%2FProperties%2F1831116724" anchor-label="rootParser" id="-506170886%2FProperties%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+<a data-name="-506170886%2FProperties%2F-1573300633" anchor-label="rootParser" id="-506170886%2FProperties%2F-1573300633" data-filterable-set=":quarkdown-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="root-parser.html"><span>root</span><wbr><span><span>Parser</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-506170886%2FProperties%2F1831116724"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-506170886%2FProperties%2F-1573300633"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="root-parser.html">rootParser</a><span class="token operator">: </span><span data-unresolved-link="com.github.h0tk3y.betterParse.parser/Parser///PointingToDeclaration/">Parser</span><span class="token operator">&lt;</span><a href="../-parsed-lambda/index.html">ParsedLambda</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Entry point: one or more whitespace-separated parameters, a delimiter, and the remaining body.</p></div></div></div>
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain" data-active="" data-toggle=":quarkdown-core/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="root-parser.html">rootParser</a><span class="token operator">: </span><span data-unresolved-link="com.github.h0tk3y.betterParse.parser/Parser///PointingToDeclaration/">Parser</span><span class="token operator">&lt;</span><a href="../-parsed-lambda/index.html">ParsedLambda</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Entry point: one or more whitespace-separated parameters, a delimiter, and the remaining body.</p></div></div>                  </div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="534387980%2FProperties%2F1831116724" anchor-label="tokenizer" id="534387980%2FProperties%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+<a data-name="534387980%2FProperties%2F-1573300633" anchor-label="tokenizer" id="534387980%2FProperties%2F-1573300633" data-filterable-set=":quarkdown-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
-                  <div><a href="index.html#534387980%2FProperties%2F1831116724"><span><span>tokenizer</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="534387980%2FProperties%2F1831116724"></span>
+                  <div><a href="index.html#534387980%2FProperties%2F-1573300633"><span><span>tokenizer</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="534387980%2FProperties%2F-1573300633"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">val </span><a href="index.html#534387980%2FProperties%2F1831116724">tokenizer</a><span class="token operator">: </span><span data-unresolved-link="com.github.h0tk3y.betterParse.lexer/Tokenizer///PointingToDeclaration/">Tokenizer</span></div></div></div>
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain" data-active="" data-toggle=":quarkdown-core/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">val </span><a href="index.html#534387980%2FProperties%2F-1573300633">tokenizer</a><span class="token operator">: </span><span data-unresolved-link="com.github.h0tk3y.betterParse.lexer/Tokenizer///PointingToDeclaration/">Tokenizer</span></div></div>                  </div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="-1246612323%2FProperties%2F1831116724" anchor-label="tokens" id="-1246612323%2FProperties%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+<a data-name="-1246612323%2FProperties%2F-1573300633" anchor-label="tokens" id="-1246612323%2FProperties%2F-1573300633" data-filterable-set=":quarkdown-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
-                  <div><a href="index.html#-1246612323%2FProperties%2F1831116724"><span><span>tokens</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1246612323%2FProperties%2F1831116724"></span>
+                  <div><a href="index.html#-1246612323%2FProperties%2F-1573300633"><span><span>tokens</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1246612323%2FProperties%2F-1573300633"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">val </span><a href="index.html#-1246612323%2FProperties%2F1831116724">tokens</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span data-unresolved-link="com.github.h0tk3y.betterParse.lexer/Token///PointingToDeclaration/">Token</span><span class="token operator">&gt;</span></div></div></div>
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain" data-active="" data-toggle=":quarkdown-core/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">val </span><a href="index.html#-1246612323%2FProperties%2F-1573300633">tokens</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span data-unresolved-link="com.github.h0tk3y.betterParse.lexer/Token///PointingToDeclaration/">Token</span><span class="token operator">&gt;</span></div></div>                  </div>
                 </div>
               </div>
             </div>
@@ -185,17 +197,19 @@
       </div>
       <div data-togglable="FUNCTION">
         <h2 class="tableheader">Functions</h2>
-        <div class="table"><a data-name="-421464655%2FFunctions%2F1831116724" anchor-label="tryParse" id="-421464655%2FFunctions%2F1831116724" data-filterable-set=":quarkdown-core/main"></a>
-          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/main" data-filterable-set=":quarkdown-core/main">
+        <div class="table"><a data-name="-421464655%2FFunctions%2F-1573300633" anchor-label="tryParse" id="-421464655%2FFunctions%2F-1573300633" data-filterable-set=":quarkdown-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
-                  <div><a href="index.html#-421464655%2FFunctions%2F1831116724"><span>try</span><wbr><span><span>Parse</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-421464655%2FFunctions%2F1831116724"></span>
+                  <div><a href="index.html#-421464655%2FFunctions%2F-1573300633"><span>try</span><wbr><span><span>Parse</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-421464655%2FFunctions%2F-1573300633"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/main"><div class="symbol monospace"><span class="token keyword">override </span><span class="token keyword">fun </span><a href="index.html#-421464655%2FFunctions%2F1831116724"><span class="token function">tryParse</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">tokens<span class="token operator">: </span><span data-unresolved-link="com.github.h0tk3y.betterParse.lexer/TokenMatchesSequence///PointingToDeclaration/">TokenMatchesSequence</span><span class="token punctuation">, </span></span><span class="parameter ">fromPosition<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.github.h0tk3y.betterParse.parser/ParseResult///PointingToDeclaration/">ParseResult</span><span class="token operator">&lt;</span><a href="../-parsed-lambda/index.html">ParsedLambda</a><span class="token operator">&gt;</span></div></div></div>
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain" data-active="" data-toggle=":quarkdown-core/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">override </span><span class="token keyword">fun </span><a href="index.html#-421464655%2FFunctions%2F-1573300633"><span class="token function">tryParse</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">tokens<span class="token operator">: </span><span data-unresolved-link="com.github.h0tk3y.betterParse.lexer/TokenMatchesSequence///PointingToDeclaration/">TokenMatchesSequence</span><span class="token punctuation">, </span></span><span class="parameter ">fromPosition<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.github.h0tk3y.betterParse.parser/ParseResult///PointingToDeclaration/">ParseResult</span><span class="token operator">&lt;</span><a href="../-parsed-lambda/index.html">ParsedLambda</a><span class="token operator">&gt;</span></div></div>                  </div>
                 </div>
               </div>
             </div>

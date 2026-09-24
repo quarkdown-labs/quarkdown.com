@@ -288,6 +288,7 @@ com.quarkdown.core.pipeline.output.visitor
 com.quarkdown.core.pipeline.session
 com.quarkdown.core.pipeline.stage
 com.quarkdown.core.pipeline.stages
+com.quarkdown.core.platform
 com.quarkdown.core.property
 com.quarkdown.core.rendering
 com.quarkdown.core.rendering.representable
@@ -298,6 +299,8 @@ com.quarkdown.core.util.node
 com.quarkdown.core.util.node.conversion.list
 com.quarkdown.core.visitor.node
 com.quarkdown.core.visitor.token
+module:quarkdown-core-test-fixtures
+com.quarkdown.core
 module:quarkdown-html
 com.quarkdown.rendering.html
 com.quarkdown.rendering.html.css
@@ -345,9 +348,10 @@ module:quarkdown-markdown
 com.quarkdown.rendering.markdown.extension
 com.quarkdown.rendering.markdown.node
 com.quarkdown.rendering.markdown.post
+module:quarkdown-native-library-annotations
+com.quarkdown.processor.annotation
 module:quarkdown-native-library-processor
 com.quarkdown.processor
-com.quarkdown.processor.annotation
 com.quarkdown.processor.coercion
 com.quarkdown.processor.generation
 com.quarkdown.processor.model

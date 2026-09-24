@@ -44,7 +44,7 @@
         </div>
         <div class="navigation-controls">
         <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
-                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true" data-filter=":quarkdown-html/main">jvm</button>
+                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true" data-filter=":quarkdown-html/commonMain">common</button>
             <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
                 <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox" data-role="dropdown-toggle" aria-controls="platform-tags-listbox" aria-haspopup="listbox" aria-expanded="false" aria-label="Toggle source sets"></button>
                 <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
@@ -55,9 +55,9 @@
                     </div>
                         <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
                             <label class="checkbox">
-                                <input type="checkbox" class="checkbox--input" id=":quarkdown-html/main" data-filter=":quarkdown-html/main">
+                                <input type="checkbox" class="checkbox--input" id=":quarkdown-html/commonMain" data-filter=":quarkdown-html/commonMain">
                                 <span class="checkbox--icon"></span>
-                                jvm
+                                common
                             </label>
                         </li>
                 </ul>
@@ -91,28 +91,32 @@
         </nav>
         <div id="resizer" class="resizer" data-item-type="BAR"></div>
         <div id="main" data-item-type="SECTION" role="main">
-<div class="main-content" data-page-type="classlike" id="content" pageids="quarkdown-html::com.quarkdown.rendering.html.post.resources/SearchIndexPostRendererResource///PointingToDeclaration//-203176000">
+<div class="main-content" data-page-type="classlike" id="content" pageids="quarkdown-html::com.quarkdown.rendering.html.post.resources/SearchIndexPostRendererResource///PointingToDeclaration//796425179">
   <div class="breadcrumbs"><a href="../../index.html">quarkdown-html</a><span class="delimiter">/</span><a href="../index.html">com.quarkdown.rendering.html.post.resources</a><span class="delimiter">/</span><span class="current">SearchIndexPostRendererResource</span></div>
   <div class="cover ">
     <h1 class="cover"><span>Search</span><wbr><span>Index</span><wbr><span>Post</span><wbr><span>Renderer</span><wbr><span><span>Resource</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-html/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">SearchIndexPostRendererResource</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">index<span class="token operator">: </span><a href="../../com.quarkdown.rendering.html.search/-search-index/index.html">SearchIndex</a></span></span><span class="token punctuation">)</span> : <a href="../-post-renderer-resource/index.html">PostRendererResource</a></div><p class="paragraph">A <a href="../-post-renderer-resource/index.html">PostRendererResource</a> that outputs a search index as a JSON file.</p><p class="paragraph">The generated <code class="lang-kotlin">search-index.json</code> file is placed in the output directory and can be fetched by client-side JavaScript to provide documentation search without requiring a server.</p><h4 class="tableheader">Parameters</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":quarkdown-html/main" data-filterable-set=":quarkdown-html/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>index</span></span></u></div></span></div><div><div class="title"><p class="paragraph">the search index to serialize</p></div></div></div></div></div><h4 class="tableheader">See also</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":quarkdown-html/main" data-filterable-set=":quarkdown-html/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../../com.quarkdown.rendering.html.search/-search-index/index.html"><span>Search</span><wbr><span><span>Index</span></span></a></div></span></div><div></div></div></div><div class="table-row table-row_content" data-filterable-current=":quarkdown-html/main" data-filterable-set=":quarkdown-html/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../../com.quarkdown.rendering.html.search/-search-index-generator/index.html"><span>Search</span><wbr><span>Index</span><wbr><span><span>Generator</span></span></a></div></span></div><div></div></div></div></div></div></div>
+    <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+      <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-html/commonMain" data-filterable-set=":quarkdown-html/commonMain" data-active="" data-toggle=":quarkdown-html/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-html/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">SearchIndexPostRendererResource</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">index<span class="token operator">: </span><a href="../../com.quarkdown.rendering.html.search/-search-index/index.html">SearchIndex</a></span></span><span class="token punctuation">)</span> : <a href="../-post-renderer-resource/index.html">PostRendererResource</a></div><p class="paragraph">A <a href="../-post-renderer-resource/index.html">PostRendererResource</a> that outputs a search index as a JSON file.</p><p class="paragraph">The generated <code class="lang-kotlin">search-index.json</code> file is placed in the output directory and can be fetched by client-side JavaScript to provide documentation search without requiring a server.</p><h4 class="tableheader">Parameters</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":quarkdown-html/commonMain" data-filterable-set=":quarkdown-html/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>index</span></span></u></div></span></div><div><div class="title"><p class="paragraph">the search index to serialize</p></div></div></div></div></div><h4 class="tableheader">See also</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":quarkdown-html/commonMain" data-filterable-set=":quarkdown-html/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../../com.quarkdown.rendering.html.search/-search-index/index.html"><span>Search</span><wbr><span><span>Index</span></span></a></div></span></div><div></div></div></div><div class="table-row table-row_content" data-filterable-current=":quarkdown-html/commonMain" data-filterable-set=":quarkdown-html/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../../com.quarkdown.rendering.html.search/-search-index-generator/index.html"><span>Search</span><wbr><span>Index</span><wbr><span><span>Generator</span></span></a></div></span></div><div></div></div></div></div></div>    </div>
   </div>
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
     <div class="tabs-section-body">
       <div data-togglable="CONSTRUCTOR">
         <h2 class="tableheader">Constructors</h2>
-        <div class="table"><a data-name="-945879120%2FConstructors%2F-203176000" anchor-label="SearchIndexPostRendererResource" id="-945879120%2FConstructors%2F-203176000" data-filterable-set=":quarkdown-html/main"></a>
-          <div class="table-row table-row_content" data-togglable="CONSTRUCTOR" data-filterable-current=":quarkdown-html/main" data-filterable-set=":quarkdown-html/main">
+        <div class="table"><a data-name="-945879120%2FConstructors%2F796425179" anchor-label="SearchIndexPostRendererResource" id="-945879120%2FConstructors%2F796425179" data-filterable-set=":quarkdown-html/commonMain"></a>
+          <div class="table-row table-row_content" data-togglable="CONSTRUCTOR" data-filterable-current=":quarkdown-html/commonMain" data-filterable-set=":quarkdown-html/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-search-index-post-renderer-resource.html"><span>Search</span><wbr><span>Index</span><wbr><span>Post</span><wbr><span>Renderer</span><wbr><span><span>Resource</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-945879120%2FConstructors%2F-203176000"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-945879120%2FConstructors%2F796425179"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-html/main"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">index<span class="token operator">: </span><a href="../../com.quarkdown.rendering.html.search/-search-index/index.html">SearchIndex</a></span></span><span class="token punctuation">)</span></div></div></div>
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-html/commonMain" data-filterable-set=":quarkdown-html/commonMain" data-active="" data-toggle=":quarkdown-html/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-html/commonMain"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">index<span class="token operator">: </span><a href="../../com.quarkdown.rendering.html.search/-search-index/index.html">SearchIndex</a></span></span><span class="token punctuation">)</span></div></div>                  </div>
                 </div>
               </div>
             </div>
@@ -121,17 +125,19 @@
       </div>
       <div data-togglable="PROPERTY">
         <h2 class="tableheader">Properties</h2>
-        <div class="table"><a data-name="536376771%2FProperties%2F-203176000" anchor-label="runsInPreviewMode" id="536376771%2FProperties%2F-203176000" data-filterable-set=":quarkdown-html/main"></a>
-          <div class="table-row table-row_content" data-filterable-current=":quarkdown-html/main" data-filterable-set=":quarkdown-html/main">
+        <div class="table"><a data-name="536376771%2FProperties%2F796425179" anchor-label="runsInPreviewMode" id="536376771%2FProperties%2F796425179" data-filterable-set=":quarkdown-html/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-html/commonMain" data-filterable-set=":quarkdown-html/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-post-renderer-resource/runs-in-preview-mode.html"><span>runs</span><wbr><span>In</span><wbr><span>Preview</span><wbr><span><span>Mode</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="536376771%2FProperties%2F-203176000"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="536376771%2FProperties%2F796425179"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-html/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">val </span><a href="../-post-renderer-resource/runs-in-preview-mode.html">runsInPreviewMode</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Whether this resource should be included in the output during live preview.</p></div></div></div>
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-html/commonMain" data-filterable-set=":quarkdown-html/commonMain" data-active="" data-toggle=":quarkdown-html/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-html/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">val </span><a href="../-post-renderer-resource/runs-in-preview-mode.html">runsInPreviewMode</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Whether this resource should be included in the output during live preview.</p></div></div>                  </div>
                 </div>
               </div>
             </div>
@@ -140,17 +146,19 @@
       </div>
       <div data-togglable="FUNCTION">
         <h2 class="tableheader">Functions</h2>
-        <div class="table"><a data-name="-427040467%2FFunctions%2F-203176000" anchor-label="includeTo" id="-427040467%2FFunctions%2F-203176000" data-filterable-set=":quarkdown-html/main"></a>
-          <div class="table-row table-row_content" data-filterable-current=":quarkdown-html/main" data-filterable-set=":quarkdown-html/main">
+        <div class="table"><a data-name="-427040467%2FFunctions%2F796425179" anchor-label="includeTo" id="-427040467%2FFunctions%2F796425179" data-filterable-set=":quarkdown-html/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-html/commonMain" data-filterable-set=":quarkdown-html/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="include-to.html"><span>include</span><wbr><span><span>To</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-427040467%2FFunctions%2F-203176000"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-427040467%2FFunctions%2F796425179"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-html/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="include-to.html"><span class="token function">includeTo</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">resources<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-mutable-set/index.html">MutableSet</a><span class="token operator">&lt;</span><a href="../../../quarkdown-core/com.quarkdown.core.pipeline.output/-output-resource/index.html">OutputResource</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">rendered<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-char-sequence/index.html">CharSequence</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Collects resources and adds them to the output set.</p></div></div></div>
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-html/commonMain" data-filterable-set=":quarkdown-html/commonMain" data-active="" data-toggle=":quarkdown-html/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-html/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="include-to.html"><span class="token function">includeTo</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">resources<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-mutable-set/index.html">MutableSet</a><span class="token operator">&lt;</span><a href="../../../quarkdown-core/com.quarkdown.core.pipeline.output/-output-resource/index.html">OutputResource</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">rendered<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-char-sequence/index.html">CharSequence</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Collects resources and adds them to the output set.</p></div></div>                  </div>
                 </div>
               </div>
             </div>
