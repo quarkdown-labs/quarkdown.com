@@ -44,7 +44,7 @@
         </div>
         <div class="navigation-controls">
         <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
-                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true" data-filter=":quarkdown-cli/main">jvm</button>
+                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true" data-filter=":quarkdown-stdlib/commonMain">common</button>
             <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
                 <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox" data-role="dropdown-toggle" aria-controls="platform-tags-listbox" aria-haspopup="listbox" aria-expanded="false" aria-label="Toggle source sets"></button>
                 <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
@@ -55,9 +55,9 @@
                     </div>
                         <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
                             <label class="checkbox">
-                                <input type="checkbox" class="checkbox--input" id=":quarkdown-cli/main" data-filter=":quarkdown-cli/main">
+                                <input type="checkbox" class="checkbox--input" id=":quarkdown-stdlib/commonMain" data-filter=":quarkdown-stdlib/commonMain">
                                 <span class="checkbox--icon"></span>
-                                jvm
+                                common
                             </label>
                         </li>
                 </ul>
@@ -91,12 +91,12 @@
         </nav>
         <div id="resizer" class="resizer" data-item-type="BAR"></div>
         <div id="main" data-item-type="SECTION" role="main">
-<div class="main-content" data-page-type="member" id="content" pageids="quarkdown-cli::com.quarkdown.cli.lib/QdLibraries/fromDirectory/#java.io.File/PointingToDeclaration//918969369">
-  <div class="breadcrumbs"><a href="../../index.html">quarkdown-cli</a><span class="delimiter">/</span><a href="../index.html">com.quarkdown.cli.lib</a><span class="delimiter">/</span><a href="index.html">QdLibraries</a><span class="delimiter">/</span><span class="current">fromDirectory</span></div>
+<div class="main-content" data-page-type="member" id="content" pageids="quarkdown-stdlib::com.quarkdown.stdlib.external/QdLibraries/fromDirectory/#com.quarkdown.core.filesystem.FsEntry/PointingToDeclaration//960984932">
+  <div class="breadcrumbs"><a href="../../index.html">quarkdown-stdlib</a><span class="delimiter">/</span><a href="../index.html">com.quarkdown.stdlib.external</a><span class="delimiter">/</span><a href="index.html">QdLibraries</a><span class="delimiter">/</span><span class="current">fromDirectory</span></div>
   <div class="cover ">
     <h1 class="cover"><span>from</span><wbr><span><span>Directory</span></span></h1>
   </div>
-  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-cli/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="from-directory.html"><span class="token function">fromDirectory</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">directory<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html">File</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-set/index.html">Set</a><span class="token operator">&lt;</span><a href="../../../quarkdown-stdlib/com.quarkdown.stdlib.external/-qd-library-exporter/index.html">QdLibraryExporter</a><span class="token operator">&gt;</span></div><p class="paragraph">Loads all .qd libraries from a directory.</p><span class="kdoc-tag"><h4 class="">Return</h4><p class="paragraph">set of <a href="../../../quarkdown-stdlib/com.quarkdown.stdlib.external/-qd-library-exporter/index.html">QdLibraryExporter</a>s</p></span><h4 class="tableheader">Parameters</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":quarkdown-cli/main" data-filterable-set=":quarkdown-cli/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>directory</span></span></u></div></span></div><div><div class="title"><p class="paragraph">directory to load libraries from</p></div></div></div></div></div></div></div>
+  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-stdlib/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="from-directory.html"><span class="token function">fromDirectory</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">directory<span class="token operator">: </span><a href="../../../quarkdown-core/com.quarkdown.core.filesystem/-fs-entry/index.html">FsEntry</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-set/index.html">Set</a><span class="token operator">&lt;</span><a href="../-qd-library-exporter/index.html">QdLibraryExporter</a><span class="token operator">&gt;</span></div><p class="paragraph">Loads all .qd libraries from a directory, on any file system. Sources are read lazily, when a library is first loaded.</p><span class="kdoc-tag"><h4 class="">Return</h4><p class="paragraph">set of <a href="../-qd-library-exporter/index.html">QdLibraryExporter</a>s, one per <code class="lang-kotlin">.qd</code> file directly inside <a href="from-directory.html">directory</a></p></span><h4 class="tableheader">Parameters</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":quarkdown-stdlib/commonMain" data-filterable-set=":quarkdown-stdlib/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>directory</span></span></u></div></span></div><div><div class="title"><p class="paragraph">directory to load libraries from</p></div></div></div></div></div><h4 class="tableheader">Throws</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":quarkdown-stdlib/commonMain" data-filterable-set=":quarkdown-stdlib/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-illegal-argument-exception/index.html"><span>Illegal</span><wbr><span>Argument</span><wbr><span><span>Exception</span></span></a></div></span></div><div><div class="title"><p class="paragraph">if <a href="from-directory.html">directory</a> does not exist or is not a directory</p></div></div></div></div></div></div></div>
 </div>
     <div class="footer">
         <div class="footer--container">

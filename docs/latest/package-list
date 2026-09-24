@@ -174,7 +174,6 @@ com.quarkdown.cli.doctor
 com.quarkdown.cli.doctor.get
 com.quarkdown.cli.exec
 com.quarkdown.cli.exec.strategy
-com.quarkdown.cli.lib
 com.quarkdown.cli.lsp
 com.quarkdown.cli.preview
 com.quarkdown.cli.renderer
