@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-    <title>ServerFreePortScanner</title>
+    <title>PortUnavailableException</title>
 <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>
     <script>document.documentElement.classList.replace("no-js", "js");</script>
     <script>const storage = localStorage.getItem("dokka-dark-mode")
@@ -91,66 +91,77 @@
         </nav>
         <div id="resizer" class="resizer" data-item-type="BAR"></div>
         <div id="main" data-item-type="SECTION" role="main">
-<div class="main-content" data-page-type="classlike" id="content" pageids="quarkdown-server::com.quarkdown.server/ServerFreePortScanner///PointingToDeclaration//1314577368">
-  <div class="breadcrumbs"><a href="../../index.html">quarkdown-server</a><span class="delimiter">/</span><a href="../index.html">com.quarkdown.server</a><span class="delimiter">/</span><span class="current">ServerFreePortScanner</span></div>
+<div class="main-content" data-page-type="classlike" id="content" pageids="quarkdown-server::com.quarkdown.server/PortUnavailableException///PointingToDeclaration//1314577368">
+  <div class="breadcrumbs"><a href="../../index.html">quarkdown-server</a><span class="delimiter">/</span><a href="../index.html">com.quarkdown.server</a><span class="delimiter">/</span><span class="current">PortUnavailableException</span></div>
   <div class="cover ">
-    <h1 class="cover"><span>Server</span><wbr><span>Free</span><wbr><span>Port</span><wbr><span><span>Scanner</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-server/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">ServerFreePortScanner</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">server<span class="token operator">: </span><a href="../-server/index.html">Server</a></span></span><span class="token punctuation">)</span></div><p class="paragraph">Scans for a free port and starts the server on it.</p><h4 class="tableheader">Parameters</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":quarkdown-server/main" data-filterable-set=":quarkdown-server/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>server</span></span></u></div></span></div><div><div class="title"><p class="paragraph">server to start</p></div></div></div></div></div></div></div>
+    <h1 class="cover"><span>Port</span><wbr><span>Unavailable</span><wbr><span><span>Exception</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-server/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">PortUnavailableException</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>port<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">cause<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-throwable/index.html">Throwable</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span> : <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html">IOException</a></div><p class="paragraph">Thrown when the server cannot bind to the requested <a href="../../../quarkdown-server/com.quarkdown.server/-port-unavailable-exception/--root--.html">port</a> because it is already in use.</p><h4 class="tableheader">Parameters</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":quarkdown-server/main" data-filterable-set=":quarkdown-server/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>port</span></span></u></div></span></div><div><div class="title"><p class="paragraph">the port that could not be bound</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":quarkdown-server/main" data-filterable-set=":quarkdown-server/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>cause</span></span></u></div></span></div><div><div class="title"><p class="paragraph">the underlying binding failure, if any</p></div></div></div></div></div><h4 class="tableheader">See also</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":quarkdown-server/main" data-filterable-set=":quarkdown-server/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../-server/start.html"><span>Server.</span><wbr><span>start</span></a></div></span></div><div></div></div></div><div class="table-row table-row_content" data-filterable-current=":quarkdown-server/main" data-filterable-set=":quarkdown-server/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../-server-free-port-scanner/index.html"><span>Server</span><wbr><span>Free</span><wbr><span>Port</span><wbr><span><span>Scanner</span></span></a></div></span></div><div></div></div></div></div></div></div>
   </div>
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
     <div class="tabs-section-body">
       <div data-togglable="CONSTRUCTOR">
         <h2 class="tableheader">Constructors</h2>
-        <div class="table"><a data-name="-1677421634%2FConstructors%2F1314577368" anchor-label="ServerFreePortScanner" id="-1677421634%2FConstructors%2F1314577368" data-filterable-set=":quarkdown-server/main"></a>
+        <div class="table"><a data-name="904903436%2FConstructors%2F1314577368" anchor-label="PortUnavailableException" id="904903436%2FConstructors%2F1314577368" data-filterable-set=":quarkdown-server/main"></a>
           <div class="table-row table-row_content" data-togglable="CONSTRUCTOR" data-filterable-current=":quarkdown-server/main" data-filterable-set=":quarkdown-server/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
-                  <div><a href="-server-free-port-scanner.html"><span>Server</span><wbr><span>Free</span><wbr><span>Port</span><wbr><span><span>Scanner</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1677421634%2FConstructors%2F1314577368"></span>
+                  <div><a href="-port-unavailable-exception.html"><span>Port</span><wbr><span>Unavailable</span><wbr><span><span>Exception</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="904903436%2FConstructors%2F1314577368"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-server/main"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">server<span class="token operator">: </span><a href="../-server/index.html">Server</a></span></span><span class="token punctuation">)</span></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-server/main"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">port<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">cause<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-throwable/index.html">Throwable</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div></div></div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div data-togglable="TYPE">
-        <h2 class="tableheader">Types</h2>
-        <div class="table"><a data-name="-812405010%2FClasslikes%2F1314577368" anchor-label="Companion" id="-812405010%2FClasslikes%2F1314577368" data-filterable-set=":quarkdown-server/main"></a>
+      <div data-togglable="PROPERTY">
+        <h2 class="tableheader">Properties</h2>
+        <div class="table"><a data-name="-654012527%2FProperties%2F1314577368" anchor-label="cause" id="-654012527%2FProperties%2F1314577368" data-filterable-set=":quarkdown-server/main"></a>
           <div class="table-row table-row_content" data-filterable-current=":quarkdown-server/main" data-filterable-set=":quarkdown-server/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
-                  <div><a href="-companion/index.html"><span><span>Companion</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-812405010%2FClasslikes%2F1314577368"></span>
+                  <div><a href="index.html#-654012527%2FProperties%2F1314577368"><span><span>cause</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-654012527%2FProperties%2F1314577368"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-server/main"><div class="symbol monospace"><span class="token keyword">object </span><a href="-companion/index.html">Companion</a></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-server/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">val </span><a href="index.html#-654012527%2FProperties%2F1314577368">cause</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-throwable/index.html">Throwable</a><span class="token operator">?</span></div></div></div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div data-togglable="FUNCTION">
-        <h2 class="tableheader">Functions</h2>
-        <div class="table"><a data-name="1557626477%2FFunctions%2F1314577368" anchor-label="attemptStartUntilPortAvailable" id="1557626477%2FFunctions%2F1314577368" data-filterable-set=":quarkdown-server/main"></a>
+<a data-name="1824300659%2FProperties%2F1314577368" anchor-label="message" id="1824300659%2FProperties%2F1314577368" data-filterable-set=":quarkdown-server/main"></a>
           <div class="table-row table-row_content" data-filterable-current=":quarkdown-server/main" data-filterable-set=":quarkdown-server/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
-                  <div><a href="attempt-start-until-port-available.html"><span>attempt</span><wbr><span>Start</span><wbr><span>Until</span><wbr><span>Port</span><wbr><span><span>Available</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1557626477%2FFunctions%2F1314577368"></span>
+                  <div><a href="index.html#1824300659%2FProperties%2F1314577368"><span><span>message</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1824300659%2FProperties%2F1314577368"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-server/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="attempt-start-until-port-available.html"><span class="token function">attemptStartUntilPortAvailable</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">startingPort<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">onReady<span class="token operator">: </span><span class="token punctuation">(</span><a href="../../com.quarkdown.server.stop/-stoppable/index.html">Stoppable</a><span class="token punctuation">, </span>port<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Attempts to start the server on a free port. Only a port reported as occupied before <a href="attempt-start-until-port-available.html">onReady</a> starts makes the scan advance: any other failure propagates to the caller instead of being retried on another port.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-server/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">val </span><a href="index.html#1824300659%2FProperties%2F1314577368">message</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1439361398%2FProperties%2F1314577368" anchor-label="port" id="1439361398%2FProperties%2F1314577368" data-filterable-set=":quarkdown-server/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-server/main" data-filterable-set=":quarkdown-server/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="port.html"><span><span>port</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1439361398%2FProperties%2F1314577368"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-server/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="port.html">port</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></div></div></div>
                 </div>
               </div>
             </div>
