@@ -137,7 +137,7 @@
                 <div class="title">
                   <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
                     <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain" data-active="" data-toggle=":quarkdown-core/commonMain">common</button></div>
-<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="../-base-markdown-block-token-regex-patterns/block-code.html">blockCode</a><span class="token operator">: </span><a href="../../com.quarkdown.core.lexer.regex.pattern/-token-regex-pattern/index.html">TokenRegexPattern</a></div><div class="brief "><p class="paragraph">4-spaces indented content.</p></div></div>                  </div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="../-base-markdown-block-token-regex-patterns/block-code.html">blockCode</a><span class="token operator">: </span><a href="../../com.quarkdown.core.lexer.regex.pattern/-token-regex-pattern/index.html">TokenRegexPattern</a></div><div class="brief "><p class="paragraph">4-spaces indented content: lines indented by at least 4 spaces, possibly separated by blank lines.</p></div></div>                  </div>
                 </div>
               </div>
             </div>
@@ -154,7 +154,7 @@
                 <div class="title">
                   <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
                     <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain" data-active="" data-toggle=":quarkdown-core/commonMain">common</button></div>
-<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="../-base-markdown-block-token-regex-patterns/block-quote.html">blockQuote</a><span class="token operator">: </span><a href="../../com.quarkdown.core.lexer.regex.pattern/-token-regex-pattern/index.html">TokenRegexPattern</a></div><div class="brief "><p class="paragraph"><code class="lang-kotlin">&gt;</code>-beginning content.</p></div></div>                  </div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="../-base-markdown-block-token-regex-patterns/block-quote.html">blockQuote</a><span class="token operator">: </span><a href="../../com.quarkdown.core.lexer.regex.pattern/-token-regex-pattern/index.html">TokenRegexPattern</a></div><div class="brief "><p class="paragraph"><code class="lang-kotlin">&gt;</code>-beginning content: one or more quote lines, each of which may be followed by lazy continuation lines (non-empty lines that are not interruptions) when the quote line has content of its own.</p></div></div>                  </div>
                 </div>
               </div>
             </div>
@@ -222,7 +222,7 @@
                 <div class="title">
                   <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
                     <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain" data-active="" data-toggle=":quarkdown-core/commonMain">common</button></div>
-<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="../-base-markdown-block-token-regex-patterns/footnote-definition.html">footnoteDefinition</a><span class="token operator">: </span><a href="../../com.quarkdown.core.lexer.regex.pattern/-token-regex-pattern/index.html">TokenRegexPattern</a></div><div class="brief "><p class="paragraph">Creation of a referenceable footnote defined by label and content.</p></div></div>                  </div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="../-base-markdown-block-token-regex-patterns/footnote-definition.html">footnoteDefinition</a><span class="token operator">: </span><a href="../../com.quarkdown.core.lexer.regex.pattern/-token-regex-pattern/index.html">TokenRegexPattern</a></div><div class="brief "><p class="paragraph">Definition of a footnote, whose text follows the same rules as a <a href="../-base-markdown-block-token-regex-patterns/paragraph.html">paragraph</a> and may start on the next line.</p></div></div>                  </div>
                 </div>
               </div>
             </div>
@@ -307,7 +307,7 @@
                 <div class="title">
                   <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
                     <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain" data-active="" data-toggle=":quarkdown-core/commonMain">common</button></div>
-<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="../-base-markdown-block-token-regex-patterns/list-item.html">listItem</a><span class="token operator">: </span><a href="../../com.quarkdown.core.lexer.regex.pattern/-token-regex-pattern/index.html">TokenRegexPattern</a></div><div class="brief "><p class="paragraph">Item of a list.</p></div></div>                  </div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="../-base-markdown-block-token-regex-patterns/list-item.html">listItem</a><span class="token operator">: </span><a href="../../com.quarkdown.core.lexer.regex.pattern/-token-regex-pattern/index.html">TokenRegexPattern</a></div><div class="brief "><p class="paragraph">Item of a list, made of its bullet, an optional task marker, and every following line up to the first one that cannot continue it.</p></div></div>                  </div>
                 </div>
               </div>
             </div>
@@ -409,7 +409,7 @@
                 <div class="title">
                   <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
                     <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain" data-active="" data-toggle=":quarkdown-core/commonMain">common</button></div>
-<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="../-base-markdown-block-token-regex-patterns/paragraph.html">paragraph</a><span class="token operator">: </span><a href="../../com.quarkdown.core.lexer.regex.pattern/-token-regex-pattern/index.html">TokenRegexPattern</a></div><div class="brief "><p class="paragraph">Plain text content.</p></div></div>                  </div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="../-base-markdown-block-token-regex-patterns/paragraph.html">paragraph</a><span class="token operator">: </span><a href="../../com.quarkdown.core.lexer.regex.pattern/-token-regex-pattern/index.html">TokenRegexPattern</a></div><div class="brief "><p class="paragraph">Plain text content: a non-empty line, continued by every following non-empty line that is not an interruption.</p></div></div>                  </div>
                 </div>
               </div>
             </div>
@@ -426,7 +426,7 @@
                 <div class="title">
                   <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
                     <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain" data-active="" data-toggle=":quarkdown-core/commonMain">common</button></div>
-<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="../-base-markdown-block-token-regex-patterns/setext-heading.html">setextHeading</a><span class="token operator">: </span><a href="../../com.quarkdown.core.lexer.regex.pattern/-token-regex-pattern/index.html">TokenRegexPattern</a></div><div class="brief "><p class="paragraph">Text followed by a horizontal rule on a new line.</p></div></div>                  </div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="../-base-markdown-block-token-regex-patterns/setext-heading.html">setextHeading</a><span class="token operator">: </span><a href="../../com.quarkdown.core.lexer.regex.pattern/-token-regex-pattern/index.html">TokenRegexPattern</a></div><div class="brief "><p class="paragraph">Heading underlined by <code class="lang-kotlin">=</code> or <code class="lang-kotlin">-</code>: one or more non-empty lines that do not start with a bullet, up to the first underline. The heading text spans every line up to the underline (exclusive).</p></div></div>                  </div>
                 </div>
               </div>
             </div>
