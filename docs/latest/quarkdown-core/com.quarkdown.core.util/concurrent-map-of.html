@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-    <title>toCursorPosition</title>
+    <title>concurrentMapOf</title>
 <link href="../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../";</script>
     <script>document.documentElement.classList.replace("no-js", "js");</script>
     <script>const storage = localStorage.getItem("dokka-dark-mode")
@@ -44,7 +44,8 @@
         </div>
         <div class="navigation-controls">
         <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
-                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true" data-filter=":quarkdown-lsp/jvmMain">jvm</button>
+                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true" data-filter=":quarkdown-core/commonMain">common</button>
+                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true" data-filter=":quarkdown-core/jvmMain">jvm</button>
             <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
                 <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox" data-role="dropdown-toggle" aria-controls="platform-tags-listbox" aria-haspopup="listbox" aria-expanded="false" aria-label="Toggle source sets"></button>
                 <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
@@ -55,7 +56,14 @@
                     </div>
                         <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
                             <label class="checkbox">
-                                <input type="checkbox" class="checkbox--input" id=":quarkdown-lsp/jvmMain" data-filter=":quarkdown-lsp/jvmMain">
+                                <input type="checkbox" class="checkbox--input" id=":quarkdown-core/commonMain" data-filter=":quarkdown-core/commonMain">
+                                <span class="checkbox--icon"></span>
+                                common
+                            </label>
+                        </li>
+                        <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":quarkdown-core/jvmMain" data-filter=":quarkdown-core/jvmMain">
                                 <span class="checkbox--icon"></span>
                                 jvm
                             </label>
@@ -91,14 +99,14 @@
         </nav>
         <div id="resizer" class="resizer" data-item-type="BAR"></div>
         <div id="main" data-item-type="SECTION" role="main">
-<div class="main-content" data-page-type="member" id="content" pageids="quarkdown-lsp::com.quarkdown.lsp.interop//toCursorPosition/org.eclipse.lsp4j.Position#/PointingToDeclaration//-784418359">
-  <div class="breadcrumbs"><a href="../index.html">quarkdown-lsp</a><span class="delimiter">/</span><a href="index.html">com.quarkdown.lsp.interop</a><span class="delimiter">/</span><span class="current">toCursorPosition</span></div>
+<div class="main-content" data-page-type="member" id="content" pageids="quarkdown-core::com.quarkdown.core.util//concurrentMapOf/#/PointingToDeclaration//1701741596">
+  <div class="breadcrumbs"><a href="../index.html">quarkdown-core</a><span class="delimiter">/</span><a href="index.html">com.quarkdown.core.util</a><span class="delimiter">/</span><span class="current">concurrentMapOf</span></div>
   <div class="cover ">
-    <h1 class="cover"><span>to</span><wbr><span>Cursor</span><wbr><span><span>Position</span></span></h1>
+    <h1 class="cover"><span>concurrent</span><wbr><span>Map</span><wbr><span><span>Of</span></span></h1>
   </div>
   <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
-    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-lsp/jvmMain" data-filterable-set=":quarkdown-lsp/jvmMain" data-active="" data-toggle=":quarkdown-lsp/jvmMain">jvm</button></div>
-<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-lsp/jvmMain"><div class="symbol monospace"><span class="token keyword">fun </span><span data-unresolved-link="org.eclipse.lsp4j/Position///PointingToDeclaration/">Position</span><span class="token punctuation">.</span><a href="to-cursor-position.html"><span class="token function">toCursorPosition</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../com.quarkdown.lsp.model/-cursor-position/index.html">CursorPosition</a></div><span class="kdoc-tag"><h4 class="">Return</h4><p class="paragraph"><span data-unresolved-link="org.eclipse.lsp4j/Position///PointingToDeclaration/">this</span> LSP4J position as a <a href="../com.quarkdown.lsp.model/-cursor-position/index.html">CursorPosition</a></p></span></div>  </div>
+    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain" data-active="" data-toggle=":quarkdown-core/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":quarkdown-core/jvmMain" data-filterable-set=":quarkdown-core/jvmMain" data-toggle=":quarkdown-core/jvmMain">jvm</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="concurrent-map-of.html">K</a><span class="token operator"> : </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token punctuation">, </span><a href="concurrent-map-of.html">V</a><span class="token operator"> : </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token operator">&gt; </span><a href="concurrent-map-of.html"><span class="token function">concurrentMapOf</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-mutable-map/index.html">MutableMap</a><span class="token operator">&lt;</span><a href="concurrent-map-of.html">K</a><span class="token punctuation">, </span><a href="concurrent-map-of.html">V</a><span class="token operator">&gt;</span></div><span class="kdoc-tag"><h4 class="">Return</h4><p class="paragraph">an empty mutable map, safe to read and write from concurrent threads under the platform's concurrency model</p></span></div><div class="content sourceset-dependent-content" data-togglable=":quarkdown-core/jvmMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="concurrent-map-of.html">K</a><span class="token operator"> : </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token punctuation">, </span><a href="concurrent-map-of.html">V</a><span class="token operator"> : </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token operator">&gt; </span><a href="concurrent-map-of.html"><span class="token function">concurrentMapOf</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-mutable-map/index.html">MutableMap</a><span class="token operator">&lt;</span><a href="concurrent-map-of.html">K</a><span class="token punctuation">, </span><a href="concurrent-map-of.html">V</a><span class="token operator">&gt;</span></div></div>  </div>
 </div>
     <div class="footer">
         <div class="footer--container">

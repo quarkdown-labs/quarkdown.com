@@ -44,7 +44,7 @@
         </div>
         <div class="navigation-controls">
         <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
-                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true" data-filter=":quarkdown-lsp/main">jvm</button>
+                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true" data-filter=":quarkdown-lsp/commonMain">common</button>
             <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
                 <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox" data-role="dropdown-toggle" aria-controls="platform-tags-listbox" aria-haspopup="listbox" aria-expanded="false" aria-label="Toggle source sets"></button>
                 <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
@@ -55,9 +55,9 @@
                     </div>
                         <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
                             <label class="checkbox">
-                                <input type="checkbox" class="checkbox--input" id=":quarkdown-lsp/main" data-filter=":quarkdown-lsp/main">
+                                <input type="checkbox" class="checkbox--input" id=":quarkdown-lsp/commonMain" data-filter=":quarkdown-lsp/commonMain">
                                 <span class="checkbox--icon"></span>
-                                jvm
+                                common
                             </label>
                         </li>
                 </ul>
@@ -91,28 +91,32 @@
         </nav>
         <div id="resizer" class="resizer" data-item-type="BAR"></div>
         <div id="main" data-item-type="SECTION" role="main">
-<div class="main-content" data-page-type="classlike" id="content" pageids="quarkdown-lsp::com.quarkdown.lsp.subservices/OnTypeFormattingSubservice///PointingToDeclaration//-248931646">
+<div class="main-content" data-page-type="classlike" id="content" pageids="quarkdown-lsp::com.quarkdown.lsp.subservices/OnTypeFormattingSubservice///PointingToDeclaration//-1063064807">
   <div class="breadcrumbs"><a href="../../index.html">quarkdown-lsp</a><span class="delimiter">/</span><a href="../index.html">com.quarkdown.lsp.subservices</a><span class="delimiter">/</span><span class="current">OnTypeFormattingSubservice</span></div>
   <div class="cover ">
     <h1 class="cover"><span>On</span><wbr><span>Type</span><wbr><span>Formatting</span><wbr><span><span>Subservice</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-lsp/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">OnTypeFormattingSubservice</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">editSuppliers<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../../com.quarkdown.lsp.ontype/-on-type-formatting-edit-supplier/index.html">OnTypeFormattingEditSupplier</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span> : <a href="../-text-document-subservice/index.html">TextDocumentSubservice</a><span class="token operator">&lt;</span><a href="../../com.quarkdown.lsp.model/-cursor-position/index.html">CursorPosition</a><span class="token punctuation">, </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../../com.quarkdown.lsp.model/-text-patch/index.html">TextPatch</a><span class="token operator">&gt;</span><span class="token operator">&gt; </span></div><p class="paragraph">Subservice for handling on-type formatting requests. It aggregates edits from all suppliers and returns them as a single list.</p></div></div>
+    <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+      <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-lsp/commonMain" data-filterable-set=":quarkdown-lsp/commonMain" data-active="" data-toggle=":quarkdown-lsp/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-lsp/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">OnTypeFormattingSubservice</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">editSuppliers<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../../com.quarkdown.lsp.ontype/-on-type-formatting-edit-supplier/index.html">OnTypeFormattingEditSupplier</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span> : <a href="../-text-document-subservice/index.html">TextDocumentSubservice</a><span class="token operator">&lt;</span><a href="../../com.quarkdown.lsp.model/-cursor-position/index.html">CursorPosition</a><span class="token punctuation">, </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../../com.quarkdown.lsp.model/-text-patch/index.html">TextPatch</a><span class="token operator">&gt;</span><span class="token operator">&gt; </span></div><p class="paragraph">Subservice for handling on-type formatting requests. It aggregates edits from all suppliers and returns them as a single list.</p></div>    </div>
   </div>
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
     <div class="tabs-section-body">
       <div data-togglable="CONSTRUCTOR">
         <h2 class="tableheader">Constructors</h2>
-        <div class="table"><a data-name="74407892%2FConstructors%2F-248931646" anchor-label="OnTypeFormattingSubservice" id="74407892%2FConstructors%2F-248931646" data-filterable-set=":quarkdown-lsp/main"></a>
-          <div class="table-row table-row_content" data-togglable="CONSTRUCTOR" data-filterable-current=":quarkdown-lsp/main" data-filterable-set=":quarkdown-lsp/main">
+        <div class="table"><a data-name="74407892%2FConstructors%2F-1063064807" anchor-label="OnTypeFormattingSubservice" id="74407892%2FConstructors%2F-1063064807" data-filterable-set=":quarkdown-lsp/commonMain"></a>
+          <div class="table-row table-row_content" data-togglable="CONSTRUCTOR" data-filterable-current=":quarkdown-lsp/commonMain" data-filterable-set=":quarkdown-lsp/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-on-type-formatting-subservice.html"><span>On</span><wbr><span>Type</span><wbr><span>Formatting</span><wbr><span><span>Subservice</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="74407892%2FConstructors%2F-248931646"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="74407892%2FConstructors%2F-1063064807"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-lsp/main"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">editSuppliers<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../../com.quarkdown.lsp.ontype/-on-type-formatting-edit-supplier/index.html">OnTypeFormattingEditSupplier</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span></div></div></div>
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-lsp/commonMain" data-filterable-set=":quarkdown-lsp/commonMain" data-active="" data-toggle=":quarkdown-lsp/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-lsp/commonMain"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">editSuppliers<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../../com.quarkdown.lsp.ontype/-on-type-formatting-edit-supplier/index.html">OnTypeFormattingEditSupplier</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span></div></div>                  </div>
                 </div>
               </div>
             </div>
@@ -121,17 +125,19 @@
       </div>
       <div data-togglable="FUNCTION">
         <h2 class="tableheader">Functions</h2>
-        <div class="table"><a data-name="-1250171574%2FFunctions%2F-248931646" anchor-label="process" id="-1250171574%2FFunctions%2F-248931646" data-filterable-set=":quarkdown-lsp/main"></a>
-          <div class="table-row table-row_content" data-filterable-current=":quarkdown-lsp/main" data-filterable-set=":quarkdown-lsp/main">
+        <div class="table"><a data-name="-1250171574%2FFunctions%2F-1063064807" anchor-label="process" id="-1250171574%2FFunctions%2F-1063064807" data-filterable-set=":quarkdown-lsp/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-lsp/commonMain" data-filterable-set=":quarkdown-lsp/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="process.html"><span><span>process</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1250171574%2FFunctions%2F-248931646"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1250171574%2FFunctions%2F-1063064807"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-lsp/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="process.html"><span class="token function">process</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">params<span class="token operator">: </span><a href="../../com.quarkdown.lsp.model/-cursor-position/index.html">CursorPosition</a><span class="token punctuation">, </span></span><span class="parameter ">document<span class="token operator">: </span><a href="../../com.quarkdown.lsp/-text-document/index.html">TextDocument</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../../com.quarkdown.lsp.model/-text-patch/index.html">TextPatch</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Processes the given parameters and text to produce an output.</p></div></div></div>
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-lsp/commonMain" data-filterable-set=":quarkdown-lsp/commonMain" data-active="" data-toggle=":quarkdown-lsp/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-lsp/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="process.html"><span class="token function">process</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">params<span class="token operator">: </span><a href="../../com.quarkdown.lsp.model/-cursor-position/index.html">CursorPosition</a><span class="token punctuation">, </span></span><span class="parameter ">document<span class="token operator">: </span><a href="../../com.quarkdown.lsp/-text-document/index.html">TextDocument</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../../com.quarkdown.lsp.model/-text-patch/index.html">TextPatch</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Processes the given parameters and text to produce an output.</p></div></div>                  </div>
                 </div>
               </div>
             </div>
