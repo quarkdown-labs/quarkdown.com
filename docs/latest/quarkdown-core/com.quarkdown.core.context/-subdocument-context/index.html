@@ -137,7 +137,7 @@
                 <div class="title">
                   <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
                     <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain" data-active="" data-toggle=":quarkdown-core/commonMain">common</button></div>
-<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="attached-pipeline.html">attachedPipeline</a><span class="token operator">: </span><a href="../../com.quarkdown.core.pipeline/-pipeline/index.html">Pipeline</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">The pipeline this context is attached to, if it exists. A context can have up to 1 attached pipeline.</p></div></div>                  </div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">var </span><a href="attached-pipeline.html">attachedPipeline</a><span class="token operator">: </span><a href="../../com.quarkdown.core.pipeline/-pipeline/index.html">Pipeline</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">The pipeline this context is opened for, if any.</p></div></div>                  </div>
                 </div>
               </div>
             </div>
@@ -435,19 +435,19 @@
       </div>
       <div data-togglable="FUNCTION">
         <h2 class="tableheader">Functions</h2>
-        <div class="table"><a data-name="770331391%2FFunctions%2F-1573300633" anchor-label="close" id="770331391%2FFunctions%2F-1573300633" data-filterable-set=":quarkdown-core/commonMain"></a>
+        <div class="table"><a data-name="-1684033164%2FFunctions%2F-1573300633" anchor-label="close" id="-1684033164%2FFunctions%2F-1573300633" data-filterable-set=":quarkdown-core/commonMain"></a>
           <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
-                  <div><a href="../-mutable-context/close.html"><span><span>close</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="770331391%2FFunctions%2F-1573300633"></span>
+                  <div><a href="close.html"><span><span>close</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1684033164%2FFunctions%2F-1573300633"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
                   <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
                     <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain" data-active="" data-toggle=":quarkdown-core/commonMain">common</button></div>
-<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="../-mutable-context/close.html"><span class="token function">close</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Releases this context and its subdocument contexts from the pipeline registry.</p></div></div>                  </div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="close.html"><span class="token function">close</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Detaches only this context's own pipeline.</p></div></div>                  </div>
                 </div>
               </div>
             </div>
@@ -719,7 +719,7 @@
                 <div class="title">
                   <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
                     <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain" data-active="" data-toggle=":quarkdown-core/commonMain">common</button></div>
-<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="../-mutable-context/open.html"><span class="token function">open</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">pipeline<span class="token operator">: </span><a href="../../com.quarkdown.core.pipeline/-pipeline/index.html">Pipeline</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Opens this context for <a href="../-mutable-context/open.html">pipeline</a>, which becomes its <a href="../-base-context/attached-pipeline.html">attachedPipeline</a>. Opening again for the same pipeline is a no-op.</p></div></div>                  </div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="../-mutable-context/open.html"><span class="token function">open</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">pipeline<span class="token operator">: </span><a href="../../com.quarkdown.core.pipeline/-pipeline/index.html">Pipeline</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Opens this context for <a href="../-mutable-context/open.html">pipeline</a>, which becomes its <a href="../-mutable-context/attached-pipeline.html">attachedPipeline</a>. Opening again for the same pipeline is a no-op.</p></div></div>                  </div>
                 </div>
               </div>
             </div>
