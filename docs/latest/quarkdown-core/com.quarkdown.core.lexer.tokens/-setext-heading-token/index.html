@@ -97,26 +97,26 @@
     <h1 class="cover"><span>Setext</span><wbr><span>Heading</span><wbr><span><span>Token</span></span></h1>
     <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
       <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain" data-active="" data-toggle=":quarkdown-core/commonMain">common</button></div>
-<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">SetextHeadingToken</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">data<span class="token operator">: </span><a href="../../com.quarkdown.core.lexer/-token-data/index.html">TokenData</a></span></span><span class="token punctuation">)</span> : <a href="../../com.quarkdown.core.lexer/-token/index.html">Token</a></div><p class="paragraph">Examples:</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">Heading<br>====</code></pre><span class="copy-tooltip"><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span class="copy-icon"></span></span></div><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">Heading<br>---</code></pre><span class="copy-tooltip"><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span class="copy-icon"></span></span></div><h4 class="tableheader">See also</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../../com.quarkdown.core.ast.base.block/-heading/index.html"><span><span>Heading</span></span></a></div></span></div><div></div></div></div></div></div>    </div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">SetextHeadingToken</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">data<span class="token operator">: </span><a href="../../com.quarkdown.core.lexer/-token-data/index.html">TokenData</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>content<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>underline<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>customId<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span> : <a href="../../com.quarkdown.core.lexer/-token/index.html">Token</a></div><p class="paragraph">Examples:</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">Heading<br>====</code></pre><span class="copy-tooltip"><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span class="copy-icon"></span></span></div><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">Heading<br>---</code></pre><span class="copy-tooltip"><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span class="copy-icon"></span></span></div><h4 class="tableheader">Parameters</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>content</span></span></u></div></span></div><div><div class="title"><p class="paragraph">raw heading text, spanning every line up to the underline</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>underline</span></span></u></div></span></div><div><div class="title"><p class="paragraph">the run of <code class="lang-kotlin">=</code> or <code class="lang-kotlin">-</code> that underlines the heading</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>custom</span><wbr><span><span>Id</span></span></u></div></span></div><div><div class="title"><p class="paragraph">raw <code class="lang-kotlin">{#custom-id}</code> identifier, if any</p></div></div></div></div></div><h4 class="tableheader">See also</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../../com.quarkdown.core.ast.base.block/-heading/index.html"><span><span>Heading</span></span></a></div></span></div><div></div></div></div></div></div>    </div>
   </div>
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
     <div class="tabs-section-body">
       <div data-togglable="CONSTRUCTOR">
         <h2 class="tableheader">Constructors</h2>
-        <div class="table"><a data-name="338271808%2FConstructors%2F-1573300633" anchor-label="SetextHeadingToken" id="338271808%2FConstructors%2F-1573300633" data-filterable-set=":quarkdown-core/commonMain"></a>
+        <div class="table"><a data-name="-753923564%2FConstructors%2F-1573300633" anchor-label="SetextHeadingToken" id="-753923564%2FConstructors%2F-1573300633" data-filterable-set=":quarkdown-core/commonMain"></a>
           <div class="table-row table-row_content" data-togglable="CONSTRUCTOR" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-setext-heading-token.html"><span>Setext</span><wbr><span>Heading</span><wbr><span><span>Token</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="338271808%2FConstructors%2F-1573300633"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-753923564%2FConstructors%2F-1573300633"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
                   <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
                     <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain" data-active="" data-toggle=":quarkdown-core/commonMain">common</button></div>
-<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">data<span class="token operator">: </span><a href="../../com.quarkdown.core.lexer/-token-data/index.html">TokenData</a></span></span><span class="token punctuation">)</span></div></div>                  </div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">data<span class="token operator">: </span><a href="../../com.quarkdown.core.lexer/-token-data/index.html">TokenData</a><span class="token punctuation">, </span></span><span class="parameter ">content<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">underline<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">customId<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span></div></div>                  </div>
                 </div>
               </div>
             </div>
@@ -125,7 +125,41 @@
       </div>
       <div data-togglable="PROPERTY">
         <h2 class="tableheader">Properties</h2>
-        <div class="table"><a data-name="2038063534%2FProperties%2F-1573300633" anchor-label="data" id="2038063534%2FProperties%2F-1573300633" data-filterable-set=":quarkdown-core/commonMain"></a>
+        <div class="table"><a data-name="641098518%2FProperties%2F-1573300633" anchor-label="content" id="641098518%2FProperties%2F-1573300633" data-filterable-set=":quarkdown-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="content.html"><span><span>content</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="641098518%2FProperties%2F-1573300633"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain" data-active="" data-toggle=":quarkdown-core/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="content.html">content</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2020424353%2FProperties%2F-1573300633" anchor-label="customId" id="-2020424353%2FProperties%2F-1573300633" data-filterable-set=":quarkdown-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="custom-id.html"><span>custom</span><wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2020424353%2FProperties%2F-1573300633"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain" data-active="" data-toggle=":quarkdown-core/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="custom-id.html">customId</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2038063534%2FProperties%2F-1573300633" anchor-label="data" id="2038063534%2FProperties%2F-1573300633" data-filterable-set=":quarkdown-core/commonMain"></a>
           <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
@@ -138,6 +172,23 @@
                   <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
                     <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain" data-active="" data-toggle=":quarkdown-core/commonMain">common</button></div>
 <div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="../../com.quarkdown.core.lexer/-token/data.html">data</a><span class="token operator">: </span><a href="../../com.quarkdown.core.lexer/-token-data/index.html">TokenData</a></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2061607005%2FProperties%2F-1573300633" anchor-label="underline" id="-2061607005%2FProperties%2F-1573300633" data-filterable-set=":quarkdown-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="underline.html"><span><span>underline</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2061607005%2FProperties%2F-1573300633"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-core/commonMain" data-filterable-set=":quarkdown-core/commonMain" data-active="" data-toggle=":quarkdown-core/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="underline.html">underline</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div></div>                  </div>
                 </div>
               </div>
             </div>
