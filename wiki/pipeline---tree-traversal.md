@@ -2,7 +2,7 @@
 
 # Pipeline - Tree traversal
 
-> Main packages: [`core.ast.iterator`](https://github.com/iamgio/quarkdown/tree/main/quarkdown-core/src/main/kotlin/com/quarkdown/core/ast/iterator), [`core.context.hooks`](https://github.com/iamgio/quarkdown/tree/main/quarkdown-core/src/main/kotlin/com/quarkdown/core/context/hooks)
+> Main packages: [`core.ast.iterator`](https://github.com/iamgio/quarkdown/tree/main/quarkdown-core/src/commonMain/kotlin/com/quarkdown/core/ast/iterator), [`core.context.hooks`](https://github.com/iamgio/quarkdown/tree/main/quarkdown-core/src/commonMain/kotlin/com/quarkdown/core/context/hooks)
 
 After the function calls have been expanded, the AST is traversed depth-first to gather enriched information about the document, such as:
 

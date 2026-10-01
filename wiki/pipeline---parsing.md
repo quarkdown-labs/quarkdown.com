@@ -2,7 +2,7 @@
 
 # Pipeline - Parsing
 
-> Main packages: [`core.parser`](https://github.com/iamgio/quarkdown/tree/main/quarkdown-core/src/main/kotlin/com/quarkdown/core/parser), [`core.ast`](https://github.com/iamgio/quarkdown/tree/main/quarkdown-core/src/main/kotlin/com/quarkdown/core/ast)
+> Main packages: [`core.parser`](https://github.com/iamgio/quarkdown/tree/main/quarkdown-core/src/commonMain/kotlin/com/quarkdown/core/parser), [`core.ast`](https://github.com/iamgio/quarkdown/tree/main/quarkdown-core/src/commonMain/kotlin/com/quarkdown/core/ast)
 
 Continuing with the metaphor introduced in [Lexing](pipeline---lexing.md), once the nouns, verbs, and adjectives are extracted from a sentence, our brain is responsible for linking them together to build information out of them.
 
@@ -58,4 +58,4 @@ To gain nested information, the parser analyzes each token and starts searching 
 - Once the inner tokens are extracted, they undergo the parsing stage again
 - This process continues until no more nested tokens remain. This is called **recursive parsing**, visualized in the following figure:
 
-<img src="media/recursive-parsing@972515859.svg" alt="Recursive parsing" width="200.0px" />
+<img src="media/recursive-parsing@1652708246.svg" alt="Recursive parsing" width="200.0px" />

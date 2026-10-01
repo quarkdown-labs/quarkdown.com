@@ -2,7 +2,7 @@
 
 # Pipeline - Lexing
 
-> Main packages: [`core.lexer`](https://github.com/iamgio/quarkdown/tree/main/quarkdown-core/src/main/kotlin/com/quarkdown/core/lexer)
+> Main packages: [`core.lexer`](https://github.com/iamgio/quarkdown/tree/main/quarkdown-core/src/commonMain/kotlin/com/quarkdown/core/lexer)
 
 Lexing is like breaking down a sentence into its individual words before figuring out the meaning of the sentence. Imagine you are reading a paragraph, and before understanding the message, you first recognize individual words like nouns, verbs, and punctuation.
 
@@ -23,7 +23,7 @@ Markdown recognizes two macro-categories of tokens: **block** tokens and **inlin
   - of multiple items
   ```
 
-  <img src="media/blocks-diagram@1148867345.svg" alt="Blocks" width="500.0px" />
+  <img src="media/blocks-diagram@1829059732.svg" alt="Blocks" width="500.0px" />
 
 - 
 

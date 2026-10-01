@@ -2,7 +2,7 @@
 
 # Pipeline - Tree rewrite
 
-> Main packages: [`core.ast.iterator`](https://github.com/iamgio/quarkdown/tree/main/quarkdown-core/src/main/kotlin/com/quarkdown/core/ast/iterator), [`core.pipeline.stages`](https://github.com/iamgio/quarkdown/tree/main/quarkdown-core/src/main/kotlin/com/quarkdown/core/pipeline/stages)
+> Main packages: [`core.ast.iterator`](https://github.com/iamgio/quarkdown/tree/main/quarkdown-core/src/commonMain/kotlin/com/quarkdown/core/ast/iterator), [`core.pipeline.stages`](https://github.com/iamgio/quarkdown/tree/main/quarkdown-core/src/commonMain/kotlin/com/quarkdown/core/pipeline/stages)
 
 Once the queued function calls have been [expanded](pipeline---function-call-expansion.md), the AST is rewritten in place to apply any [show-rules](element-styling.md) via user-defined [extensions](extending-functions.md).
 

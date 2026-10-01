@@ -23,9 +23,22 @@ Quarkdown introduces code captions, which you can set by adding a caption direct
 > ```
 > Fibonacci function
 
+> **Example 2**
+> 
+> ````markdown
+> ``` "A block with no language"
+> plain text
+> ```
+> ````
+> 
+> ```
+> plain text
+> ```
+> A block with no language
+
 Equivalently, via the [`.code`](code.md) function:
 
-> **Example 2**
+> **Example 3**
 > 
 > ```markdown
 > .code lang:{python} caption:{Fibonacci function}

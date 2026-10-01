@@ -2,7 +2,7 @@
 
 # Pipeline - Post rendering
 
-> Main packages: [`core.rendering`](https://github.com/iamgio/quarkdown/tree/main/quarkdown-core/src/main/kotlin/com/quarkdown/core/rendering), [`core.pipeline.output`](https://github.com/iamgio/quarkdown/tree/main/quarkdown-core/src/main/kotlin/com/quarkdown/core/pipeline/output)
+> Main packages: [`core.rendering`](https://github.com/iamgio/quarkdown/tree/main/quarkdown-core/src/commonMain/kotlin/com/quarkdown/core/rendering), [`core.pipeline.output`](https://github.com/iamgio/quarkdown/tree/main/quarkdown-core/src/commonMain/kotlin/com/quarkdown/core/pipeline/output)
 > 
 > Rendering modules: [`quarkdown-html`](https://github.com/iamgio/quarkdown/tree/main/quarkdown-html), [`quarkdown-plaintext`](https://github.com/iamgio/quarkdown/tree/main/quarkdown-plaintext)
 

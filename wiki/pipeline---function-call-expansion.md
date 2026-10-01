@@ -2,17 +2,17 @@
 
 # Pipeline - Function call expansion
 
-> Main packages: [`core.function`](https://github.com/iamgio/quarkdown/tree/main/quarkdown-core/src/main/kotlin/com/quarkdown/core/function)
+> Main packages: [`core.function`](https://github.com/iamgio/quarkdown/tree/main/quarkdown-core/src/commonMain/kotlin/com/quarkdown/core/function)
 
 Among the nodes generated from the [Parsing](pipeline---parsing.md) stage, those of type `FunctionCallNode(context, name, arguments)` represent [function calls](syntax-of-a-function-call.md).
 
 While all other nodes never change after they are created, this is the only kind of *mutable* node, which means its inner data is expected to change after the AST has been fully generated. Its mutation affects its child nodes, which is initially an empty collection that is later populated by a component called *function call expander*.
 
-Before addressing the expansion itself, we should understand how data is exchanged among functions. Quarkdown functions, either explicitly or implicitly, always return a [`Value`](https://github.com/iamgio/quarkdown/tree/main/quarkdown-core/src/main/kotlin/eu/iamgio/quarkdown/function/value), a type-checked object wrapper.
+Before addressing the expansion itself, we should understand how data is exchanged among functions. Quarkdown functions, either explicitly or implicitly, always return a [`Value`](https://github.com/iamgio/quarkdown/tree/main/quarkdown-core/src/commonMain/kotlin/eu/iamgio/quarkdown/function/value), a type-checked object wrapper.
 
 In Quarkdown, not all types can be returned and not all types can be used as arguments. Therefore, functions should feature `InputValue` parameters and return an `OutputValue`. A complete set of value types is visualized in the following Venn-UML diagram:
 
-<img src="media/value-types@1408255606.svg" alt="Value types" width="80.0%" />
+<img src="media/value-types@2088447993.svg" alt="Value types" width="80.0%" />
 
 Whenever a function returns some `OutputValue`, it must be converted to some `Node` that can be rendered on screen. For instance, a `StringValue` becomes text, an `OrderedCollectionValue` becomes an ordered list, a `BooleanValue` becomes a checkbox, a `DictionaryValue` becomes a table, and so on. This operation is handled by a *value-node mapper*.
 
