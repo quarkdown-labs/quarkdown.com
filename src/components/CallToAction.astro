@@ -26,6 +26,12 @@ const { href, variant = 'link' } = Astro.props;
     transition: background-color 0.2s;
   }
 
+  // An action that leads nowhere, e.g. the plan the visitor already holds.
+  .cta[aria-disabled='true'] {
+    pointer-events: none;
+    opacity: 0.6;
+  }
+
   .cta--link:hover {
     text-decoration: underline;
   }

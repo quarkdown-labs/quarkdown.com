@@ -7,13 +7,13 @@ interface Props {
   plan: Plan;
 }
 
-const { name, badge, price, highlighted, features, action } = Astro.props.plan;
+const { id, name, badge, price, highlighted, features, action } = Astro.props.plan;
 
 // The fractional part of a price, if any, is typeset smaller than its whole part.
 const [whole, fraction] = price?.amount.split('.') ?? [];
 ---
 
-<article class:list={['plan', { 'plan--highlighted': highlighted }]} data-plan-highlighted={highlighted}>
+<article class:list={['plan', { 'plan--highlighted': highlighted }]} data-plan-id={id} data-plan-highlighted={highlighted}>
   <header class="plan-header">
     <h2 class="plan-name">{name}</h2>
     {badge && <span class="plan-badge">{badge}</span>}
@@ -40,6 +40,21 @@ const [whole, fraction] = price?.amount.split('.') ?? [];
     </div>
   )}
 </article>
+
+<script>
+  import { currentPlanLabel, currentPlanParam } from '../plans';
+
+  // Quarkdown Studio links here naming the visitor's plan: that plan's action becomes an inert label.
+  const current = new URLSearchParams(location.search).get(currentPlanParam);
+  const currentAction = current
+    ? document.querySelector<HTMLAnchorElement>(`[data-plan-id="${CSS.escape(current)}"] .plan-action a`)
+    : null;
+  if (currentAction) {
+    currentAction.textContent = currentPlanLabel;
+    currentAction.removeAttribute('href');
+    currentAction.setAttribute('aria-disabled', 'true');
+  }
+</script>
 
 <script>
   import { gsap, loadScrollTrigger } from '../scripts/gsap';

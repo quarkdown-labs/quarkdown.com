@@ -12,6 +12,8 @@ export interface PlanPrice {
 }
 
 export interface Plan {
+  /** Id of the plan in Quarkdown Studio, which links here with `?current=<id>`. */
+  id: 'free' | 'pro' | 'enterprise';
   name: string;
   badge?: string;
   price?: PlanPrice;
@@ -20,8 +22,15 @@ export interface Plan {
   action?: PlanAction;
 }
 
+/** Label of the action of the plan the visitor's Studio organization already holds. */
+export const currentPlanLabel = 'Your current plan';
+
+/** Query parameter Quarkdown Studio names the visitor's current plan with. */
+export const currentPlanParam = 'current';
+
 export const plans: Plan[] = [
   {
+    id: 'free',
     name: 'Free',
     price: { amount: '$0', period: 'mo' },
     features: [
@@ -35,6 +44,7 @@ export const plans: Plan[] = [
     action: { label: 'Open Studio', href: links.studio, variant: 'secondary' },
   },
   {
+    id: 'pro',
     name: 'Pro',
     badge: 'Best value',
     price: { amount: '$6.99', period: 'mo' },
@@ -51,6 +61,7 @@ export const plans: Plan[] = [
     action: { label: 'Upgrade now', href: links.upgrade, variant: 'primary' },
   },
   {
+    id: 'enterprise',
     name: 'Enterprise',
     price: { amount: 'Custom' },
     features: [
