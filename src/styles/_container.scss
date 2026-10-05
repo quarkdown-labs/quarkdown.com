@@ -1,8 +1,11 @@
 @use 'colors' as *;
 
+$container-border-width: 1px;
+$container-border-bottom-width: 3px;
+
 @mixin styled-container {
   background-color: $brand-800;
-  border: 1px solid $brand-400;
-  border-bottom-width: 3px;
+  border: $container-border-width solid $brand-400;
+  border-bottom-width: $container-border-bottom-width;
   border-radius: 10px;
 }

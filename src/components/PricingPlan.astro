@@ -10,7 +10,7 @@ interface Props {
 const { name, badge, price, highlighted, features, action } = Astro.props.plan;
 ---
 
-<article class:list={['plan', { 'plan--highlighted': highlighted }]}>
+<article class:list={['plan', { 'plan--highlighted': highlighted }]} data-plan-highlighted={highlighted}>
   <header class="plan-header">
     <h2 class="plan-name">{name}</h2>
     {badge && <span class="plan-badge">{badge}</span>}
@@ -38,6 +38,35 @@ const { name, badge, price, highlighted, features, action } = Astro.props.plan;
   )}
 </article>
 
+<script>
+  import { gsap, loadScrollTrigger } from '../scripts/gsap';
+
+  // A glint sweeps across the highlighted plan's border as the page scrolls.
+  const plans = document.querySelectorAll<HTMLElement>('[data-plan-highlighted]');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (plans.length > 0 && !reducedMotion) {
+    await loadScrollTrigger();
+
+    plans.forEach((plan) => {
+      gsap.fromTo(plan,
+        { '--plan-shine': '-30%' },
+        {
+          '--plan-shine': '130%',
+          ease: 'none',
+          scrollTrigger: {
+            trigger: plan,
+            // The plan is visible on load: the animation starts from the very top of the page.
+            start: 'clamp(top bottom)',
+            end: 'clamp(top 15%)',
+            scrub: 0.6,
+          },
+        },
+      );
+    });
+  }
+</script>
+
 <style lang="scss">
   @use '../styles/colors' as *;
   @use '../styles/typography' as *;
@@ -61,8 +90,28 @@ const { name, badge, price, highlighted, features, action } = Astro.props.plan;
   }
 
   .plan--highlighted {
+    --plan-shine: -30%;
+    position: relative;
     background-color: $brand-700;
     border-color: $brand-300;
+
+    // A glint laid over the border only: the gradient is masked out of the padding box.
+    &::before {
+      content: '';
+      position: absolute;
+      inset: (-$container-border-width) (-$container-border-width) (-$container-border-bottom-width);
+      padding: $container-border-width $container-border-width $container-border-bottom-width;
+      border-radius: inherit;
+      background: linear-gradient(
+        115deg,
+        transparent calc(var(--plan-shine) - 25%),
+        $heading var(--plan-shine),
+        transparent calc(var(--plan-shine) + 25%)
+      );
+      mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+      filter: drop-shadow(0 0 3px $heading) drop-shadow(0 0 8px rgba($heading, 0.6));
+      pointer-events: none;
+    }
   }
 
   .plan-header {
