@@ -10,9 +10,10 @@ export const links = {
   vsCode: '/vs-code',
   blog: '/blog',
   pricing: '/pricing',
-  // TODO: point to the checkout and contact destinations once they exist.
+  // TODO: point to Quarkdown Studio and its checkout once they exist.
+  studio: '#',
   upgrade: '#',
-  contact: '#',
+  contact: 'mailto:info@quarkdown.com',
   productHunt: 'https://www.producthunt.com/products/quarkdown',
   discussions: `${REPO}/discussions`,
   sponsor: 'https://github.com/sponsors/iamgio',

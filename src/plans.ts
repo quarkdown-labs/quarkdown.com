@@ -32,6 +32,7 @@ export const plans: Plan[] = [
       '3 exports/hour, per project',
       '20MB storage',
     ],
+    action: { label: 'Open Studio', href: links.studio, variant: 'secondary' },
   },
   {
     name: 'Pro',
