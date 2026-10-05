@@ -48,7 +48,7 @@ export const plans: Plan[] = [
       'Priority support',
       '1GB storage',
     ],
-    action: { label: 'Upgrade', href: links.upgrade, variant: 'primary' },
+    action: { label: 'Upgrade now', href: links.upgrade, variant: 'primary' },
   },
   {
     name: 'Enterprise',
