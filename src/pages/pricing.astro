@@ -54,6 +54,8 @@ const description = `Compare ${meta.name} plans: Free, Pro and Enterprise.`;
   $highlight-overflow: 1.5rem;
   $highlight-overlap: 1rem;
   $stacked-gap: 1.5rem;
+  $neighbor-tilt: 6deg;
+  $neighbor-perspective: 1200px;
 
   .plans {
     display: grid;
@@ -68,13 +70,19 @@ const description = `Compare ${meta.name} plans: Free, Pro and Enterprise.`;
       margin: (-$highlight-overflow) (-$highlight-overlap);
     }
 
-    // Neighbors win back the room the highlighted plan covers on their inner edge.
-    :global(.plan:has(+ .plan--highlighted)) {
+    // Neighbors win back the room the highlighted plan covers on their inner edge,
+    // and turn slightly towards it, their inner edge receding behind it.
+    // General sibling combinators, as non-plan siblings (e.g. hoisted scripts) may sit in between.
+    :global(.plan:has(~ .plan--highlighted)) {
       padding-inline-end: calc(var(--plan-padding) + #{$highlight-overlap});
+      transform-origin: left center;
+      transform: perspective($neighbor-perspective) rotateY($neighbor-tilt);
     }
 
-    :global(.plan--highlighted + .plan) {
+    :global(.plan--highlighted ~ .plan) {
       padding-inline-start: calc(var(--plan-padding) + #{$highlight-overlap});
+      transform-origin: right center;
+      transform: perspective($neighbor-perspective) rotateY(-$neighbor-tilt);
     }
 
     @include md-down {
@@ -87,9 +95,10 @@ const description = `Compare ${meta.name} plans: Free, Pro and Enterprise.`;
         margin: 0;
       }
 
-      :global(.plan:has(+ .plan--highlighted)),
-      :global(.plan--highlighted + .plan) {
+      :global(.plan:has(~ .plan--highlighted)),
+      :global(.plan--highlighted ~ .plan) {
         padding-inline: var(--plan-padding);
+        transform: none;
       }
     }
   }
