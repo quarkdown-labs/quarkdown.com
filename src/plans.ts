@@ -36,7 +36,7 @@ export const plans: Plan[] = [
   {
     name: 'Pro',
     badge: 'Best value',
-    price: { amount: '$7', period: 'mo' },
+    price: { amount: '$6.99', period: 'mo' },
     highlighted: true,
     features: [
       'Everything in Free',

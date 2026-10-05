@@ -8,6 +8,9 @@ interface Props {
 }
 
 const { name, badge, price, highlighted, features, action } = Astro.props.plan;
+
+// The fractional part of a price, if any, is typeset smaller than its whole part.
+const [whole, fraction] = price?.amount.split('.') ?? [];
 ---
 
 <article class:list={['plan', { 'plan--highlighted': highlighted }]} data-plan-highlighted={highlighted}>
@@ -16,7 +19,7 @@ const { name, badge, price, highlighted, features, action } = Astro.props.plan;
     {badge && <span class="plan-badge">{badge}</span>}
     {price && (
       <p class="plan-price">
-        <span class="plan-price-amount">{price.amount}</span>
+        <span class="plan-price-amount">{whole}{fraction && <span class="plan-price-fraction">.{fraction}</span>}</span>
         {price.period && <span class="plan-price-period">/{price.period}</span>}
       </p>
     )}
@@ -145,6 +148,10 @@ const { name, badge, price, highlighted, features, action } = Astro.props.plan;
     @include prose-heading;
     font-size: $font-size-h2;
     color: $heading;
+  }
+
+  .plan-price-fraction {
+    font-size: 0.75em;
   }
 
   .plan-price-period {
