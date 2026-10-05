@@ -1,0 +1,138 @@
+---
+/** One choice of a tab switcher. */
+export interface TabOption {
+  /** Value written to the scope when the option is selected. */
+  id: string;
+  label: string;
+  /** A short aside shown beside the label, e.g. a saving. */
+  hint?: string;
+}
+
+interface Props {
+  /**
+   * Name of the `data-*` attribute the switcher writes the selected option's id to, on its closest
+   * ancestor carrying it. That ancestor's styles decide what each option shows.
+   */
+  scope: string;
+  /** Accessible name of the group. */
+  label: string;
+  options: TabOption[];
+  /** Id of the option selected at first; the first option when omitted. */
+  selected?: string;
+}
+
+const { scope, label, options, selected = options[0]?.id } = Astro.props;
+---
+
+<div class="tab-switcher" role="radiogroup" aria-label={label} data-tab-scope={scope}>
+  <span class="tab-switcher-indicator" aria-hidden="true"></span>
+  {options.map(({ id, label, hint }) => (
+    <button type="button" role="radio" aria-checked={String(id === selected)} data-tab-option={id}>
+      {label}
+      {hint && <span class="tab-switcher-hint">{hint}</span>}
+    </button>
+  ))}
+</div>
+
+<script>
+  // Selecting an option writes its id to the switcher's scope attribute, on the closest ancestor carrying it.
+  document.querySelectorAll<HTMLElement>('[data-tab-scope]').forEach((switcher) => {
+    const attribute = `data-${switcher.dataset.tabScope}`;
+    const options = switcher.querySelectorAll<HTMLButtonElement>('[data-tab-option]');
+    options.forEach((option) => {
+      option.addEventListener('click', () => {
+        const scope = switcher.closest(`[${attribute}]`);
+        const id = option.dataset.tabOption;
+        if (!scope || !id) return;
+        scope.setAttribute(attribute, id);
+        options.forEach((other) => other.setAttribute('aria-checked', String(other === option)));
+      });
+    });
+  });
+</script>
+
+<style lang="scss">
+  @use '../styles/colors' as *;
+  @use '../styles/typography' as *;
+
+  $segment-radius: 7px;
+  $slide-duration: 0.25s;
+
+  // The selected segment's look, worn by the sliding indicator, or by the option itself without anchor positioning.
+  @mixin selected-segment {
+    background-color: $brand-500;
+    border: 1px solid $brand-400;
+    border-radius: $segment-radius;
+  }
+
+  .tab-switcher {
+    position: relative;
+    display: inline-flex;
+    gap: 0.25rem;
+    padding: 0.3rem;
+    border: 1px solid $brand-600;
+    border-radius: 10px;
+    background-color: $brand-800;
+    // Each switcher's indicator follows its own selected option only.
+    anchor-scope: --tab-selected;
+  }
+
+  button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    padding: 0.5rem 1.1rem;
+    border: 1px solid transparent;
+    border-radius: $segment-radius;
+    background: transparent;
+    font-family: $font-body;
+    font-size: $font-size-nav;
+    color: $text;
+    cursor: pointer;
+    transition: color $slide-duration;
+
+    &:hover {
+      color: $heading;
+    }
+
+    &[aria-checked='true'] {
+      anchor-name: --tab-selected;
+      color: $heading;
+    }
+  }
+
+  // Sits behind the options, pinned to the selected one, and slides when the selection moves.
+  .tab-switcher-indicator {
+    @include selected-segment;
+    position: absolute;
+    position-anchor: --tab-selected;
+    inset: anchor(top) anchor(right) anchor(bottom) anchor(left);
+    transition: inset $slide-duration ease;
+
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
+  }
+
+  @supports not (anchor-name: --tab-selected) {
+    .tab-switcher-indicator {
+      display: none;
+    }
+
+    button[aria-checked='true'] {
+      @include selected-segment;
+    }
+  }
+
+  .tab-switcher-hint {
+    @include overline;
+    font-size: 0.75em;
+    color: $brand-300;
+    transition: color $slide-duration;
+
+    [aria-checked='true'] & {
+      color: $brand-100;
+    }
+  }
+</style>

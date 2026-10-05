@@ -1,7 +1,7 @@
 ---
 import CallToAction from './CallToAction.astro';
 import Icon from './Icon.astro';
-import type { Plan } from '../plans';
+import { billingIntervals, forInterval, type Plan } from '../plans';
 
 interface Props {
   plan: Plan;
@@ -9,20 +9,28 @@ interface Props {
 
 const { id, name, badge, price, highlighted, features, action } = Astro.props.plan;
 
-// The fractional part of a price, if any, is typeset smaller than its whole part.
-const [whole, fraction] = price?.amount.split('.') ?? [];
+// The price and action per billing interval; the pricing page shows the selected interval's.
+const variants = billingIntervals.map(({ id: interval }) => {
+  const intervalPrice = price && forInterval(price, interval);
+  // The fractional part of a price, if any, is typeset smaller than its whole part.
+  const [whole, fraction] = intervalPrice?.amount.split('.') ?? [];
+  return { interval, price: intervalPrice, whole, fraction, href: action && forInterval(action.href, interval) };
+});
 ---
 
 <article class:list={['plan', { 'plan--highlighted': highlighted }]} data-plan-id={id} data-plan-highlighted={highlighted}>
   <header class="plan-header">
     <h2 class="plan-name">{name}</h2>
     {badge && <span class="plan-badge">{badge}</span>}
-    {price && (
-      <p class="plan-price">
-        <span class="plan-price-amount">{whole}{fraction && <span class="plan-price-fraction">.{fraction}</span>}</span>
-        {price.period && <span class="plan-price-period">/{price.period}</span>}
-      </p>
-    )}
+    {variants.map(({ interval, price, whole, fraction }) => price && (
+      <div class="plan-price" data-interval={interval}>
+        <p>
+          <span class="plan-price-amount">{whole}{fraction && <span class="plan-price-fraction">.{fraction}</span>}</span>
+          {price.period && <span class="plan-price-period">/{price.period}</span>}
+        </p>
+        {price.note && <p class="plan-price-note">{price.note}</p>}
+      </div>
+    ))}
   </header>
 
   <ul class="plan-features">
@@ -34,11 +42,11 @@ const [whole, fraction] = price?.amount.split('.') ?? [];
     ))}
   </ul>
 
-  {action && (
-    <div class="plan-action">
-      <CallToAction href={action.href} variant={action.variant}>{action.label}</CallToAction>
+  {action && variants.map(({ interval, href }) => (
+    <div class="plan-action" data-interval={interval}>
+      <CallToAction href={href!} variant={action.variant}>{action.label}</CallToAction>
     </div>
-  )}
+  ))}
 </article>
 
 <script>
@@ -46,14 +54,14 @@ const [whole, fraction] = price?.amount.split('.') ?? [];
 
   // Quarkdown Studio links here naming the visitor's plan: that plan's action becomes an inert label.
   const current = new URLSearchParams(location.search).get(currentPlanParam);
-  const currentAction = current
-    ? document.querySelector<HTMLAnchorElement>(`[data-plan-id="${CSS.escape(current)}"] .plan-action a`)
-    : null;
-  if (currentAction) {
-    currentAction.textContent = currentPlanLabel;
-    currentAction.removeAttribute('href');
-    currentAction.setAttribute('aria-disabled', 'true');
-  }
+  const currentActions = current
+    ? document.querySelectorAll<HTMLAnchorElement>(`[data-plan-id="${CSS.escape(current)}"] .plan-action a`)
+    : [];
+  currentActions.forEach((action) => {
+    action.textContent = currentPlanLabel;
+    action.removeAttribute('href');
+    action.setAttribute('aria-disabled', 'true');
+  });
 </script>
 
 <script>
@@ -171,6 +179,12 @@ const [whole, fraction] = price?.amount.split('.') ?? [];
 
   .plan-price-period {
     margin-left: 0.15em;
+    color: $text-faint;
+  }
+
+  .plan-price-note {
+    margin-top: 0.25rem;
+    font-size: 0.9em;
     color: $text-faint;
   }
 

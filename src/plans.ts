@@ -1,14 +1,31 @@
-import { links } from './links';
+import type { TabOption } from './components/TabSwitcher.astro';
+import { links, type BillingInterval } from './links';
+
+/** Billing intervals the pricing page switches between, the first one shown by default. */
+export const billingIntervals: (TabOption & { id: BillingInterval })[] = [
+  { id: 'monthly', label: 'Monthly' },
+  { id: 'yearly', label: 'Yearly', hint: 'Save 14%' },
+];
+
+/** A value that is either the same for every billing interval, or set per interval. */
+export type PerInterval<T> = T | Record<BillingInterval, T>;
+
+/** [value] for [interval]. */
+export function forInterval<T extends object | string>(value: PerInterval<T>, interval: BillingInterval): T {
+  return typeof value === 'object' && interval in value ? (value as Record<BillingInterval, T>)[interval] : (value as T);
+}
 
 export interface PlanAction {
   label: string;
-  href: string;
+  href: PerInterval<string>;
   variant: 'primary' | 'secondary';
 }
 
 export interface PlanPrice {
   amount: string;
   period?: string;
+  /** A line under the price, e.g. how it is billed. */
+  note?: string;
 }
 
 export interface Plan {
@@ -16,7 +33,7 @@ export interface Plan {
   id: 'free' | 'pro' | 'enterprise';
   name: string;
   badge?: string;
-  price?: PlanPrice;
+  price?: PerInterval<PlanPrice>;
   highlighted?: boolean;
   features: string[];
   action?: PlanAction;
@@ -47,7 +64,10 @@ export const plans: Plan[] = [
     id: 'pro',
     name: 'Pro',
     badge: 'Best value',
-    price: { amount: '$6.99', period: 'mo' },
+    price: {
+      monthly: { amount: '$6.99', period: 'mo' },
+      yearly: { amount: '$6', period: 'mo', note: 'Billed $72 yearly' },
+    },
     highlighted: true,
     features: [
       'Everything in Free',

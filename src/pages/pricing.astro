@@ -3,9 +3,10 @@ import Base from '../layouts/Base.astro';
 import BackgroundEffects from '../components/BackgroundEffects.astro';
 import Feature from '../components/Feature.astro';
 import PricingPlan from '../components/PricingPlan.astro';
+import TabSwitcher from '../components/TabSwitcher.astro';
 import Faq from '../components/Faq.astro';
 import Footer from '../components/Footer.astro';
-import { plans } from '../plans';
+import { billingIntervals, plans } from '../plans';
 import { meta } from '../meta';
 
 const title = `Pricing | ${meta.name}`;
@@ -15,9 +16,13 @@ const description = `Compare ${meta.name} plans: Free, Pro and Enterprise.`;
 <Base title={title} description={description}>
   <BackgroundEffects />
 
-  <main class="pricing">
+  <main class="pricing" data-billing={billingIntervals[0].id}>
     <h1 class="pricing-title">Pricing</h1>
     <p class="lead">Supercharge your flow with {meta.name} Studio.</p>
+
+    <div class="switch">
+      <TabSwitcher scope="billing" label="Billing period" options={billingIntervals} />
+    </div>
 
     <div class="plans">
       {plans.map((plan) => <PricingPlan plan={plan} />)}
@@ -51,6 +56,23 @@ const description = `Compare ${meta.name} plans: Free, Pro and Enterprise.`;
     margin-top: 1rem;
   }
 
+  .switch {
+    margin-top: 2.5rem;
+  }
+
+  // Only the selected billing interval's prices and actions show.
+  $billing-intervals: monthly, yearly;
+
+  @each $shown in $billing-intervals {
+    @each $hidden in $billing-intervals {
+      @if $shown != $hidden {
+        .pricing[data-billing='#{$shown}'] :global([data-interval='#{$hidden}']) {
+          display: none;
+        }
+      }
+    }
+  }
+
   $highlight-overflow: 1.5rem;
   $highlight-overlap: 1rem;
   $stacked-gap: 1.5rem;
@@ -60,7 +82,7 @@ const description = `Compare ${meta.name} plans: Free, Pro and Enterprise.`;
   .plans {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    margin-top: 6.5rem;
+    margin-top: 5rem;
 
     // Plans in a row share their height, so that their actions line up at the bottom.
     // The highlighted plan stands out by extending past its neighbors on both ends,
