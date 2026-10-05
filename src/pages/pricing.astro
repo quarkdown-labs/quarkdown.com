@@ -1,0 +1,97 @@
+---
+import Base from '../layouts/Base.astro';
+import BackgroundEffects from '../components/BackgroundEffects.astro';
+import Feature from '../components/Feature.astro';
+import PricingPlan from '../components/PricingPlan.astro';
+import Faq from '../components/Faq.astro';
+import Footer from '../components/Footer.astro';
+import { plans } from '../plans';
+import { meta } from '../meta';
+
+const title = `Pricing | ${meta.name}`;
+const description = `Compare ${meta.name} plans: Free, Pro and Enterprise.`;
+---
+
+<Base title={title} description={description}>
+  <BackgroundEffects />
+
+  <main class="pricing">
+    <h1 class="pricing-title">Pricing</h1>
+    <p class="lead">Supercharge your flow with {meta.name} Studio.</p>
+
+    <div class="plans">
+      {plans.map((plan) => <PricingPlan plan={plan} />)}
+    </div>
+  </main>
+
+  <Feature title="Frequently asked questions">
+    <Faq />
+  </Feature>
+
+  <Footer />
+</Base>
+
+<style lang="scss">
+  @use '../styles/typography' as *;
+  @use '../styles/breakpoints' as *;
+
+  .pricing {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 9rem 1.5rem 6rem;
+    text-align: center;
+
+    @include md-down {
+      padding-top: 7rem;
+    }
+  }
+
+  .lead {
+    @include text;
+    margin-top: 1rem;
+  }
+
+  $highlight-overflow: 1.5rem;
+  $highlight-overlap: 1rem;
+  $stacked-gap: 1.5rem;
+
+  .plans {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 6.5rem;
+
+    // Plans in a row share their height, so that their actions line up at the bottom.
+    // The highlighted plan stands out by extending past its neighbors on both ends,
+    // and by overlapping their edges from above.
+    :global(.plan--highlighted) {
+      position: relative;
+      z-index: 1;
+      margin: (-$highlight-overflow) (-$highlight-overlap);
+    }
+
+    // Neighbors win back the room the highlighted plan covers on their inner edge.
+    :global(.plan:has(+ .plan--highlighted)) {
+      padding-inline-end: calc(var(--plan-padding) + #{$highlight-overlap});
+    }
+
+    :global(.plan--highlighted + .plan) {
+      padding-inline-start: calc(var(--plan-padding) + #{$highlight-overlap});
+    }
+
+    @include md-down {
+      grid-template-columns: 1fr;
+      gap: $stacked-gap;
+      max-width: 520px;
+      margin-inline: auto;
+
+      :global(.plan--highlighted) {
+        margin: 0;
+      }
+
+      :global(.plan:has(+ .plan--highlighted)),
+      :global(.plan--highlighted + .plan) {
+        padding-inline: var(--plan-padding);
+      }
+    }
+  }
+</style>

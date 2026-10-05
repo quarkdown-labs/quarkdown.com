@@ -1,0 +1,133 @@
+---
+import CallToAction from './CallToAction.astro';
+import Icon from './Icon.astro';
+import type { Plan } from '../plans';
+
+interface Props {
+  plan: Plan;
+}
+
+const { name, badge, price, highlighted, features, action } = Astro.props.plan;
+---
+
+<article class:list={['plan', { 'plan--highlighted': highlighted }]}>
+  <header class="plan-header">
+    <h2 class="plan-name">{name}</h2>
+    {badge && <span class="plan-badge">{badge}</span>}
+    {price && (
+      <p class="plan-price">
+        <span class="plan-price-amount">{price.amount}</span>
+        {price.period && <span class="plan-price-period">/{price.period}</span>}
+      </p>
+    )}
+  </header>
+
+  <ul class="plan-features">
+    {features.map((feature) => (
+      <li>
+        <Icon name="check" class="plan-check" />
+        <span>{feature}</span>
+      </li>
+    ))}
+  </ul>
+
+  {action && (
+    <div class="plan-action">
+      <CallToAction href={action.href} variant={action.variant}>{action.label}</CallToAction>
+    </div>
+  )}
+</article>
+
+<style lang="scss">
+  @use '../styles/colors' as *;
+  @use '../styles/typography' as *;
+  @use '../styles/breakpoints' as *;
+  @use '../styles/container' as *;
+
+  $padding: 2rem;
+
+  // Exposed so that layouts can account for it, e.g. when plans overlap.
+  .plan {
+    @include styled-container;
+    --plan-padding: #{$padding};
+    display: flex;
+    flex-direction: column;
+    padding: var(--plan-padding);
+    text-align: start;
+
+    @include sm-down {
+      --plan-padding: #{$padding * 0.75};
+    }
+  }
+
+  .plan--highlighted {
+    background-color: $brand-700;
+    border-color: $brand-300;
+  }
+
+  .plan-header {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.25rem 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid $brand-600;
+  }
+
+  .plan-name {
+    margin: 0;
+    font-size: $font-size-h3;
+  }
+
+  .plan-badge {
+    @include overline;
+    color: $text-faint;
+  }
+
+  .plan-price {
+    @include prose;
+    flex-basis: 100%;
+  }
+
+  // The heading font lacks a consistent face for figures and symbols:
+  // prices use the prose font, which matches the features and ships a semibold weight.
+  .plan-price-amount {
+    @include prose-heading;
+    font-size: $font-size-h2;
+    color: $heading;
+  }
+
+  .plan-price-period {
+    margin-left: 0.15em;
+    color: $text-faint;
+  }
+
+  .plan-features {
+    @include prose;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    list-style: none;
+
+    li {
+      display: flex;
+      gap: 0.75rem;
+    }
+  }
+
+  // Icon renders in its own component, out of reach of this component's scoped styles.
+  // The check is centered on the first line of its feature, even when the text wraps.
+  .plan-features :global(.plan-check) {
+    flex-shrink: 0;
+    margin-top: calc((1lh - 1em) / 2);
+    color: $heading;
+  }
+
+  .plan-action {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: auto;
+    padding-top: 2rem;
+  }
+</style>

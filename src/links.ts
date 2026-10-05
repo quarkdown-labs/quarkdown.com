@@ -9,6 +9,10 @@ export const links = {
   tools: '/',
   vsCode: '/vs-code',
   blog: '/blog',
+  pricing: '/pricing',
+  // TODO: point to the checkout and contact destinations once they exist.
+  upgrade: '#',
+  contact: '#',
   productHunt: 'https://www.producthunt.com/products/quarkdown',
   discussions: `${REPO}/discussions`,
   sponsor: 'https://github.com/sponsors/iamgio',
