@@ -1,0 +1,60 @@
+---
+import ProsePage from '../../layouts/ProsePage.astro';
+import CallToAction from '../../components/CallToAction.astro';
+import { contactEmail, links, mailto } from '../../links';
+import { educationDiscount, educationEmail } from '../../education';
+import { meta } from '../../meta';
+
+const studio = `${meta.name} Studio`;
+---
+
+<ProsePage
+  title="Education discount"
+  description={`Students and educators get ${educationDiscount} off ${studio} Pro for a year.`}
+  breadcrumbs={[{ href: links.pricing, label: 'Pricing' }]}
+>
+  <Fragment slot="lead">
+    Students and educators get {educationDiscount} off {studio} Pro for a year.
+  </Fragment>
+
+  <h2>Who can apply</h2>
+  <p>
+    Students, teachers, researchers and staff of schools and universities
+    who have not yet redeemed the discount.
+  </p>
+
+  <h2>How to apply</h2>
+  <p>
+    Email <a href={mailto()}>{contactEmail}</a> with the following subject and message.
+    Sending from a school or university address is preferred,
+    otherwise attach a proof of enrollment or employment, such as a student ID.
+  </p>
+
+  <p>
+    If we approve your request, we'll get back to you with a promo code valid for a year.
+    The discount applies to both monthly and yearly subscriptions.
+  </p>
+
+  <p class="template-label">Subject:</p>
+  <pre class="template"><code>{educationEmail.subject}</code></pre>
+
+  <p class="template-label">Content:</p>
+  <pre class="template"><code>{educationEmail.body}</code></pre>
+
+  <CallToAction href={mailto(educationEmail.subject, educationEmail.body)} variant="primary" wide>
+    Compose email
+  </CallToAction>
+</ProsePage>
+
+<style lang="scss">
+  // Text to copy into an email: wrapped rather than scrolled, and tied to the label above it.
+  .template-label {
+    margin-bottom: 0.5em;
+    font-weight: 600;
+  }
+
+  .template {
+    white-space: pre-wrap;
+    margin-top: 0.5em;
+  }
+</style>

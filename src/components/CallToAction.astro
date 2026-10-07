@@ -2,12 +2,14 @@
 interface Props {
   href: string;
   variant?: 'link' | 'primary' | 'secondary';
+  /** Whether the action spans the full width of its container. */
+  wide?: boolean;
 }
 
-const { href, variant = 'link' } = Astro.props;
+const { href, variant = 'link', wide } = Astro.props;
 ---
 
-<a href={href} class:list={['cta', `cta--${variant}`]}>
+<a href={href} class:list={['cta', `cta--${variant}`, { 'cta--wide': wide }]}>
   <slot />
 </a>
 
@@ -30,6 +32,11 @@ const { href, variant = 'link' } = Astro.props;
   .cta[aria-disabled='true'] {
     pointer-events: none;
     opacity: 0.6;
+  }
+
+  .cta--wide {
+    display: flex;
+    justify-content: center;
   }
 
   .cta--link:hover {

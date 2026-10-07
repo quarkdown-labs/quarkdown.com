@@ -7,6 +7,8 @@ import TabSwitcher from '../components/TabSwitcher.astro';
 import Faq from '../components/Faq.astro';
 import Footer from '../components/Footer.astro';
 import { billingIntervals, plans } from '../plans';
+import { educationDiscount } from '../education';
+import { links } from '../links';
 import { meta } from '../meta';
 
 const title = `Pricing | ${meta.name}`;
@@ -27,6 +29,10 @@ const description = `Compare ${meta.name} plans: Free, Pro and Enterprise.`;
     <div class="plans">
       {plans.map((plan) => <PricingPlan plan={plan} />)}
     </div>
+
+    <p class="education">
+      Are you a student or educator? <a href={links.education}>Get {educationDiscount} off Pro</a>.
+    </p>
   </main>
 
   <Feature title="Frequently asked questions">
@@ -37,6 +43,7 @@ const description = `Compare ${meta.name} plans: Free, Pro and Enterprise.`;
 </Base>
 
 <style lang="scss">
+  @use '../styles/colors' as *;
   @use '../styles/typography' as *;
   @use '../styles/breakpoints' as *;
 
@@ -78,6 +85,16 @@ const description = `Compare ${meta.name} plans: Free, Pro and Enterprise.`;
   $stacked-gap: 1.5rem;
   $neighbor-tilt: 6deg;
   $neighbor-perspective: 1200px;
+
+  .education {
+    @include prose;
+    // Clears the highlighted plan, which extends below the others.
+    margin-top: calc(#{$highlight-overflow} + 5rem);
+
+    a {
+      color: $heading;
+    }
+  }
 
   .plans {
     display: grid;
