@@ -1,0 +1,82 @@
+---
+import Icon from './Icon.astro';
+import { comparison, plans } from '../plans';
+---
+
+<div class="comparison prose">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col"><span class="sr-only">Feature</span></th>
+        {plans.map(({ name, highlighted }) => (
+          <th scope="col" class:list={{ highlighted }}>{name}</th>
+        ))}
+      </tr>
+    </thead>
+    <tbody>
+      {comparison.map(({ feature, values }) => (
+        <tr>
+          <th scope="row">{feature}</th>
+          {plans.map(({ id, highlighted }) => {
+            const value = values[id];
+            return (
+              <td class:list={{ highlighted }}>
+                {value === true && <><Icon name="check" class="included" /><span class="sr-only">Included</span></>}
+                {value === false && <><span class="excluded" aria-hidden="true">&ndash;</span><span class="sr-only">Not included</span></>}
+                {typeof value === 'string' && value}
+              </td>
+            );
+          })}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
+<style lang="scss">
+  @use '../styles/colors' as *;
+
+  .comparison {
+    // Builds on the prose table, whose layout and borders it keeps.
+    // Plans share the width left by the features, in equal columns.
+    table {
+      margin: 0;
+      table-layout: fixed;
+    }
+
+    thead th:first-child {
+      width: 40%;
+    }
+
+    thead th {
+      font-weight: 600;
+    }
+
+    // Feature names head their rows, but read as plain text.
+    tbody th {
+      color: $text;
+      background: none;
+      border-bottom-color: $brand-700;
+    }
+
+    tbody tr:last-child th {
+      border-bottom: none;
+    }
+
+    .highlighted {
+      background-color: rgba($heading, 0.03);
+    }
+
+    thead .highlighted {
+      background-color: $brand-700;
+    }
+  }
+
+  .comparison :global(.included) {
+    color: $heading;
+  }
+
+  .excluded {
+    color: $text-faint;
+  }
+</style>

@@ -71,7 +71,7 @@ export const plans: Plan[] = [
     highlighted: true,
     features: [
       'Everything in Free',
-      'Read and write with your local AI agent',
+      'Read and write via MCP',
       'Unlimited active projects',
       'Unlimited exports',
       'Markdown export',
@@ -91,4 +91,35 @@ export const plans: Plan[] = [
     ],
     action: { label: 'Contact us', href: links.contact, variant: 'secondary' },
   },
+];
+
+/** A plan's value for a compared feature: included or not, or a description of the allowance. */
+export type ComparisonValue = boolean | string;
+
+export interface ComparisonRow {
+  feature: string;
+  values: Record<Plan['id'], ComparisonValue>;
+}
+
+/** Feature-by-feature comparison of the plans. */
+export const comparison: ComparisonRow[] = [
+  { feature: 'Powered by Quarkdown', values: { free: true, pro: true, enterprise: true } },
+  { feature: 'All 4 document types', values: { free: true, pro: true, enterprise: true } },
+  { feature: 'Live previews', values: { free: 'Unlimited', pro: 'Unlimited', enterprise: 'Unlimited' } },
+  { feature: 'Vim mode', values: { free: true, pro: true, enterprise: true } },
+  { feature: 'Spell checker', values: { free: true, pro: true, enterprise: true } },
+  { feature: 'Present slides', values: { free: true, pro: true, enterprise: true } },
+  { feature: 'Knowledge graph visualization', values: { free: true, pro: true, enterprise: true } },
+  { feature: 'HTML and PDF export', values: { free: true, pro: true, enterprise: true } },
+  { feature: 'Markdown export', values: { free: false, pro: true, enterprise: true } },
+  { feature: 'Active projects', values: { free: '3', pro: 'Unlimited', enterprise: 'Unlimited' } },
+  { feature: 'Exports', values: { free: '3/hour, per project', pro: 'Unlimited', enterprise: 'Unlimited' } },
+  { feature: 'Storage', values: { free: '20MB', pro: '1GB', enterprise: 'Custom' } },
+  { feature: 'Real-time collaboration', values: { free: false, pro: 'Soon', enterprise: 'Soon' } },
+  { feature: 'Read and write via MCP', values: { free: false, pro: true, enterprise: true } },
+  { feature: 'Priority support', values: { free: false, pro: true, enterprise: true } },
+  { feature: 'White-glove setup', values: { free: false, pro: false, enterprise: true } },
+  { feature: 'On-premises deployment', values: { free: false, pro: false, enterprise: 'Soon' } },
+  { feature: 'Custom features', values: { free: false, pro: false, enterprise: true } },
+  { feature: 'App languages', values: { free: 'English, Mandarin', pro: 'English, Mandarin', enterprise: 'English, Mandarin' } },
 ];
