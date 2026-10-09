@@ -146,3 +146,17 @@ Both inline and block equations accept the same [styling properties](element-sty
 ## Macros
 
 Quarkdown supports the creation of TeX macros via the `.texmacro` function. See [*TeX macros*](tex-macros.md) for more information.
+
+## Extensions
+
+Quarkdown ships with built-in [libraries](importing-external-libraries.md) that port popular LaTeX packages as sets of macros. To enable one, include it by name:
+
+```markdown
+.include {latex-siunitx}
+```
+
+Its commands are then available in every formula of the document.
+
+| Name | Description | Example |
+| --- | --- | --- |
+| [`latex-siunitx`](https://github.com/iamgio/quarkdown/blob/main/quarkdown-libs/src/main/resources/latex-siunitx.qd) | Quantities and units from [siunitx](https://ctan.org/pkg/siunitx): `\qty`, `\unit`, `\num`, `\ang`, ranges, SI prefixes, units, and powers. | `\qty{9.81}{\meter\per\second\squared}` $\qty{9.81}{\meter\per\second\squared}$ |

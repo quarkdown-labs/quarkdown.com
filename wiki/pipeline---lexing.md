@@ -23,7 +23,7 @@ Markdown recognizes two macro-categories of tokens: **block** tokens and **inlin
   - of multiple items
   ```
 
-  <img src="media/blocks-diagram@1829059732.svg" alt="Blocks" width="500.0px" />
+  <img src="media/blocks-diagram@1640746682.svg" alt="Blocks" width="500.0px" />
 
 - 
 

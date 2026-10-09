@@ -10,7 +10,7 @@
 > .pageformat columns:{2}
 > ```
 > 
-> ![Example](media/two-columns@-2085273684.png)
+> ![Example](media/two-columns@2021380562.png)
 
 ## Full-span content
 
@@ -24,4 +24,4 @@ You can set some content to span across all columns of the layout by using the *
 >     ![Image](robinson-crusoe.jpg)
 > ```
 > 
-> ![Full-span example](media/fullspan@968434529.png)
+> ![Full-span example](media/fullspan@780121479.png)

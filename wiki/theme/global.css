@@ -468,6 +468,9 @@ details > summary + p,
   transform: translateY(1px);
 }
 
+.quarkdown table:not(pre table) tr {
+  break-inside: avoid;
+}
 .quarkdown table:not(pre table) th:not([align]) {
   text-align: var(--qd-table-default-header-alignment);
 }
@@ -1285,7 +1288,7 @@ details > summary + p,
   width: calc(var(--pagedjs-height-right) - var(--pagedjs-margin-top) - var(--pagedjs-margin-bottom) - 60px) !important;
 }
 
-:root:has(.quarkdown-paged) {
+:root:has(> body.quarkdown-paged) {
   color-scheme: light;
 }
 
@@ -1489,7 +1492,7 @@ body.quarkdown-paged:not(:has(.pagedjs_page)) {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  html:has(.quarkdown-plain, .quarkdown-docs) {
+  html:has(> body:is(.quarkdown-plain, .quarkdown-docs)) {
     scroll-behavior: smooth;
   }
 }

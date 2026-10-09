@@ -45,7 +45,7 @@ The function accepts the following optional parameters:
 > ...
 > ```
 > 
-> <img src="media/basic@927070518.png" alt="Table of contents" width="550.0px" />
+> <img src="media/basic@738757468.png" alt="Table of contents" width="550.0px" />
 
 ## Behavior by document type
 
@@ -60,7 +60,7 @@ The table of contents adapts to different document types:
 
 > **Example 2**
 > 
-> <img src="media/minimal-theme@715828519.png" alt="Table of contents with minimal theme" width="550.0px" />
+> <img src="media/minimal-theme@527515469.png" alt="Table of contents with minimal theme" width="550.0px" />
 > ‘minimal’ theme
 
 ## Ignoring specific headings
@@ -100,7 +100,7 @@ The `focus` parameter highlights a specific entry in the table of contents, draw
 > .tableofcontents maxdepth:{2} focus:{A.B}
 > ```
 > 
-> <img src="media/focused@-870198579.png" alt="Table of contents with focus" width="550.0px" />
+> <img src="media/focused@-1058511629.png" alt="Table of contents with focus" width="550.0px" />
 
 This feature is particularly useful in presentations, where you might want to show a mini table of contents at the beginning of each chapter to orient your audience.
 
