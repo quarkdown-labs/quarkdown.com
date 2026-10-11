@@ -26,3 +26,6 @@ pnpm-debug.log*
 # quarkdown
 /output/
 /quarkdown-output/
+# Impeccable design context
+.impeccable/
+PRODUCT.md

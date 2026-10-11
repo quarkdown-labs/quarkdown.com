@@ -1,17 +1,21 @@
 ---
-interface Props {
-  href: string;
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends Omit<HTMLAttributes<'a'>, 'href'> {
+  /** Destination of the action. Without one, the action renders as a button for scripts to handle. */
+  href?: string;
   variant?: 'link' | 'primary' | 'secondary';
   /** Whether the action spans the full width of its container. */
   wide?: boolean;
 }
 
-const { href, variant = 'link', wide } = Astro.props;
+const { href, variant = 'link', wide, ...attributes } = Astro.props;
+const Element = href ? 'a' : 'button';
 ---
 
-<a href={href} class:list={['cta', `cta--${variant}`, { 'cta--wide': wide }]}>
+<Element href={href} type={href ? undefined : 'button'} class:list={['cta', `cta--${variant}`, { 'cta--wide': wide }]} {...attributes}>
   <slot />
-</a>
+</Element>
 
 <style lang="scss">
   @use '../styles/colors' as *;
@@ -25,7 +29,14 @@ const { href, variant = 'link', wide } = Astro.props;
     font-size: $font-size-cta;
     color: $heading;
     text-decoration: none;
+    cursor: pointer;
     transition: background-color 0.2s;
+  }
+
+  // Buttons lose the user agent's look; the button variants below draw their own.
+  .cta--link {
+    background: none;
+    border: none;
   }
 
   // An action that leads nowhere, e.g. the plan the visitor already holds.

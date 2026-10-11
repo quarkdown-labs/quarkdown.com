@@ -1,0 +1,42 @@
+---
+/**
+ * A framed screenshot of Quarkdown Studio. Without an image, it renders as a flat placeholder of its theme's ground.
+ */
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import { imagePresets } from '../../image';
+
+interface Props {
+  image?: ImageMetadata;
+  alt: string;
+  /** Theme the screenshot shows, which colors the placeholder. */
+  theme?: 'light' | 'dark';
+  class?: string;
+}
+
+const { image, alt, theme = 'dark', class: className } = Astro.props;
+---
+
+<figure class:list={['screenshot', `screenshot--${theme}`, className]}>
+  {image ? <Image src={image} alt={alt} {...imagePresets.screenshot} /> : <figcaption class="sr-only">{alt}</figcaption>}
+</figure>
+
+<style lang="scss">
+  @use '../../styles/screenshot' as *;
+
+  .screenshot {
+    @include screenshot-frame;
+
+    :global(img) {
+      @include screenshot-image;
+    }
+  }
+
+  .screenshot--light {
+    background: $screenshot-light-ground;
+  }
+
+  .screenshot--dark {
+    background: $screenshot-dark-ground;
+  }
+</style>

@@ -1,0 +1,61 @@
+---
+import Base from '../layouts/Base.astro';
+import BackgroundEffects from '../components/BackgroundEffects.astro';
+import Footer from '../components/Footer.astro';
+import StudioHero from '../components/studio/StudioHero.astro';
+import StudioChapter from '../components/studio/StudioChapter.astro';
+import Screenshot from '../components/studio/Screenshot.astro';
+import IsometricScene from '../components/studio/IsometricScene.astro';
+import AgentAtom from '../components/studio/AgentAtom.astro';
+import StudioClosing from '../components/studio/StudioClosing.astro';
+import { links } from '../links';
+import { meta } from '../meta';
+
+const title = `${meta.name} Studio | Subatomically spectacular`;
+const description = `${meta.name} Studio brings the full power of ${meta.name} to your browser. Write, preview and export, with nothing to install.`;
+---
+
+<Base title={title} description={description}>
+  <BackgroundEffects />
+  <StudioHero />
+
+  <main>
+    <StudioChapter
+      title="Every keystroke, typeset"
+      description={`Studio runs on the very compiler behind ${meta.name}, so your documents come out exactly as they would from the command line. Papers, slides and docs: the preview keeps up as you type.`}
+    >
+      <div class="keystroke-screenshot">
+        <Screenshot alt="Quarkdown Studio's editor beside the live preview of the document being written" />
+      </div>
+    </StudioChapter>
+
+    <StudioChapter
+      layout="overlay"
+      title="Calm on the surface, powerful underneath"
+      description="A beautiful, focused interface that stays out of your way while you write, with the depth power users expect the moment they reach for it."
+    >
+      <IsometricScene alt="Quarkdown Studio's interface" />
+    </StudioChapter>
+
+    <StudioChapter
+      title="Hand the pen to your agent"
+      description={`Studio speaks MCP. Connect your AI agent and it can read your documents, write changes and export the result, fluently in ${meta.name}. <a href="${links.pricing}">Available on Pro</a>.`}
+    >
+      <AgentAtom alt="A Studio project being edited by an AI agent over MCP" />
+    </StudioChapter>
+  </main>
+
+  <StudioClosing />
+  <Footer />
+</Base>
+
+<style lang="scss">
+  @use '../styles/colors' as *;
+
+  .keystroke-screenshot {
+    max-width: 1100px;
+    margin: 0 auto;
+    border-radius: 14px;
+    box-shadow: 0 40px 100px -30px rgba(0, 0, 0, 0.8), 0 0 140px -50px rgba($brand-100, 0.3);
+  }
+</style>

@@ -10,4 +10,9 @@ export const imagePresets = {
     widths: [400, 640, 900] as number[],
     sizes: '(max-width: 768px) 100vw, 50vw',
   },
+  /** Full-width product screenshots. */
+  screenshot: {
+    widths: [640, 1100, 1600, 2200] as number[],
+    sizes: '(max-width: 1200px) 100vw, 1100px',
+  },
 } as const;

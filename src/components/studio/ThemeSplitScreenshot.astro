@@ -1,0 +1,155 @@
+---
+/**
+ * A screenshot of Quarkdown Studio, split by a diagonal seam into its light and dark themes.
+ * The seam follows the pointer; scrolling turns the screenshot from a sideways 3D tilt to face-on.
+ * Without screenshots, each theme renders as a flat placeholder of its own ground color.
+ */
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import { imagePresets } from '../../image';
+
+interface Props {
+  light?: ImageMetadata;
+  dark?: ImageMetadata;
+  alt: string;
+  /** Seconds before the dark theme sweeps in, e.g. to land with an entrance animation. */
+  introDelay?: number;
+}
+
+const { light, dark, alt, introDelay = 0.4 } = Astro.props;
+
+const themes = [
+  { id: 'light', image: light },
+  { id: 'dark', image: dark },
+] as const;
+---
+
+<figure class="theme-split" data-theme-split data-intro-delay={introDelay}>
+  <div class="frame">
+    {themes.map(({ id, image }) => (
+      <div class:list={['pane', `pane--${id}`]}>
+        <div class="pane-surface">
+          {image && <Image src={image} alt="" loading="eager" {...imagePresets.screenshot} />}
+        </div>
+      </div>
+    ))}
+  </div>
+  <figcaption class="sr-only">{alt}</figcaption>
+</figure>
+
+<script>
+  import { gsap, loadScrollTrigger } from '../../scripts/gsap';
+
+  const SEAM_REST = 0.5;
+  const SEAM_RANGE = [0.15, 0.85] as const;
+  const SEAM_EASE = 0.12; // Fraction of the distance to the pointer covered per frame.
+  const INTRO_DURATION = 1.8;
+  const SEAM_START = 1.2; // Past the right edge, so the screenshot starts fully light.
+
+  const figure = document.querySelector<HTMLElement>('[data-theme-split]')!;
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // The seam eases towards the pointer, and back to rest when it leaves.
+  let seam = SEAM_REST;
+  let target = SEAM_REST;
+  let frame = 0;
+
+  function follow() {
+    seam += (target - seam) * SEAM_EASE;
+    figure.style.setProperty('--seam', seam.toFixed(4));
+    frame = Math.abs(target - seam) > 0.001 ? requestAnimationFrame(follow) : 0;
+  }
+
+  function aim(value: number) {
+    target = gsap.utils.clamp(...SEAM_RANGE, value);
+    if (!frame) frame = requestAnimationFrame(follow);
+  }
+
+  figure.addEventListener('pointermove', (event) => {
+    const { left, width } = figure.getBoundingClientRect();
+    aim((event.clientX - left) / width);
+  });
+  figure.addEventListener('pointerleave', () => aim(SEAM_REST));
+
+  if (!reducedMotion) {
+    // The dark theme sweeps in once, from the right edge, which it rests at from the start rather than once the delay is over.
+    gsap.fromTo(figure, { '--seam': SEAM_START }, {
+      '--seam': SEAM_REST,
+      duration: INTRO_DURATION,
+      delay: Number(figure.dataset.introDelay),
+      ease: 'expo.out',
+    });
+
+    await loadScrollTrigger();
+    gsap.fromTo(figure, { '--tilt': 1 }, {
+      '--tilt': 0,
+      ease: 'none',
+      scrollTrigger: { trigger: figure, start: 'top 85%', end: 'top 15%', scrub: 0.6 },
+    });
+  }
+</script>
+
+<style lang="scss">
+  @use '../../styles/colors' as *;
+  @use '../../styles/screenshot' as *;
+
+  $slant: 12%; // Horizontal run of the seam from its midpoint to either edge.
+  // Sideways tilt at rest, undone as --tilt goes from 1 to 0.
+  $turn-y: 28deg;
+  $turn-x: 20deg;
+  $turn-z: -2deg;
+
+  .theme-split {
+    --seam: 0.5;
+    --tilt: 1;
+    perspective: 1400px;
+    cursor: ew-resize;
+    touch-action: pan-y;
+  }
+
+  .frame {
+    @include screenshot-frame;
+    transform:
+      rotateY(calc(var(--tilt) * #{$turn-y}))
+      rotateX(calc(var(--tilt) * #{$turn-x}))
+      rotateZ(calc(var(--tilt) * #{$turn-z}))
+      scale(calc(1 - var(--tilt) * 0.08));
+    box-shadow:
+      calc(var(--tilt) * -40px) 40px 80px -20px rgba(0, 0, 0, 0.7),
+      0 0 120px -40px rgba($brand-100, 0.25);
+    will-change: transform;
+  }
+
+  .pane {
+    position: absolute;
+    inset: 0;
+  }
+
+  .pane-surface {
+    position: absolute;
+    inset: 0;
+
+    :global(img) {
+      @include screenshot-image;
+    }
+  }
+
+  .pane--light .pane-surface {
+    background: $screenshot-light-ground;
+  }
+
+  // The dark theme lies on top, clipped right of the seam; its wrapper's shadow lights the seam's edge.
+  .pane--dark {
+    filter: drop-shadow(-1px 0 0 rgba($brand-50, 0.7)) drop-shadow(-12px 0 24px rgba($brand-50, 0.18));
+
+    .pane-surface {
+      background: $screenshot-dark-ground;
+      clip-path: polygon(
+        calc(var(--seam) * 100% + #{$slant}) 0,
+        100% 0,
+        100% 100%,
+        calc(var(--seam) * 100% - #{$slant}) 100%
+      );
+    }
+  }
+</style>
