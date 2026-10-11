@@ -120,7 +120,7 @@ export const comparison: ComparisonRow[] = [
   { feature: 'Priority export queue', values: { free: false, pro: true, enterprise: true } },
   { feature: 'Storage', values: { free: '20MB', pro: '1GB', enterprise: 'Custom' } },
   { feature: 'Real-time collaboration', values: { free: false, pro: 'Soon', enterprise: 'Soon' } },
-  { feature: 'Read & write via MCP', values: { free: false, pro: true, enterprise: true } },
+  { feature: 'Read, write and export via MCP', values: { free: false, pro: true, enterprise: true } },
   { feature: 'Priority support', values: { free: false, pro: true, enterprise: true } },
   { feature: 'White-glove setup', values: { free: false, pro: false, enterprise: true } },
   { feature: 'On-premises deployment', values: { free: false, pro: false, enterprise: 'Soon' } },
