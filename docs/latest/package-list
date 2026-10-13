@@ -279,6 +279,7 @@ com.quarkdown.core.misc.color
 com.quarkdown.core.misc.color.decoder
 com.quarkdown.core.misc.font
 com.quarkdown.core.misc.font.resolver
+com.quarkdown.core.packages
 com.quarkdown.core.parser
 com.quarkdown.core.parser.walker
 com.quarkdown.core.parser.walker.funcall
@@ -359,6 +360,15 @@ com.quarkdown.processor.coercion
 com.quarkdown.processor.generation
 com.quarkdown.processor.model
 com.quarkdown.processor.util
+module:quarkdown-package-manager
+com.quarkdown.pm.install
+com.quarkdown.pm.layout
+com.quarkdown.pm.manifest
+com.quarkdown.pm.model
+com.quarkdown.pm.net
+com.quarkdown.pm.repo
+com.quarkdown.pm.repo.github
+com.quarkdown.pm.resolve
 module:quarkdown-plaintext
 com.quarkdown.rendering.plaintext.extension
 com.quarkdown.rendering.plaintext.node
