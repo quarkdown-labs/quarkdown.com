@@ -6,14 +6,18 @@ import PricingPlan from '../components/PricingPlan.astro';
 import PlanComparison from '../components/PlanComparison.astro';
 import TabSwitcher from '../components/TabSwitcher.astro';
 import Faq from '../components/Faq.astro';
+import { pricingFaqs } from '../faqs';
 import Footer from '../components/Footer.astro';
-import { billingIntervals, plans } from '../plans';
+import { billingIntervals, plans, refundWindowDays } from '../plans';
 import { educationDiscount } from '../education';
-import { links } from '../links';
+import { contactEmail, links, mailto } from '../links';
 import { meta } from '../meta';
 
 const title = `Pricing | ${meta.name}`;
 const description = `Compare ${meta.name} plans: Free, Pro and Enterprise.`;
+const moneyBack =
+  `Email <a href="${mailto()}">${contactEmail}</a> ` +
+  `within ${refundWindowDays} days of your first payment for a full refund, no questions asked.`;
 ---
 
 <Base title={title} description={description}>
@@ -40,8 +44,14 @@ const description = `Compare ${meta.name} plans: Free, Pro and Enterprise.`;
     <PlanComparison />
   </Feature>
 
+  <Feature
+    overline="Not your cup of tea?"
+    title="Money-back guarantee"
+    description={moneyBack}
+  />
+
   <Feature title="Frequently asked questions">
-    <Faq />
+    <Faq items={pricingFaqs} />
   </Feature>
 
   <Footer />

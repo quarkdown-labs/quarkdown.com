@@ -39,6 +39,9 @@ export interface Plan {
   action?: PlanAction;
 }
 
+/** Days after a first, undiscounted subscription payment within which it is refunded on request, no questions asked. */
+export const refundWindowDays = 7;
+
 /** Label of the action of the plan the visitor's Studio organization already holds. */
 export const currentPlanLabel = 'Your current plan';
 

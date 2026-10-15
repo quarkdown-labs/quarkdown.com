@@ -1,9 +1,16 @@
 ---
-import { faqs } from '../faqs';
+import type { Faq } from '../faqs';
+
+interface Props {
+  /** The questions to list, the first one shown open. */
+  items: Faq[];
+}
+
+const { items } = Astro.props;
 ---
 
 <div class="faq-list">
-  {faqs.map(({ question, answer }, index) => (
+  {items.map(({ question, answer }, index) => (
     <details class="faq-item" open={index === 0}>
       <summary class="faq-question">
         <span class="faq-question-text">{question}</span>

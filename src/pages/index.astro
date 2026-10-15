@@ -14,6 +14,7 @@ import AgentShowcase from '../components/AgentShowcase.astro';
 import FlexibilityOutput from '../components/FlexibilityOutput.astro';
 import CallToAction from '../components/CallToAction.astro';
 import Faq from '../components/Faq.astro';
+import { quarkdownFaqs } from '../faqs';
 import { links } from '../links';
 import { noBoilerplate, scripting, flexibility } from '../codes';
 import noBoilerplateOutput from '../assets/output/no-boilerplate.jpg';
@@ -97,7 +98,7 @@ import scriptingOutput from '../assets/output/scripting.png';
   </Feature>
 
   <Feature title="Frequently asked questions">
-    <Faq />
+    <Faq items={quarkdownFaqs} />
   </Feature>
 
   <Footer />

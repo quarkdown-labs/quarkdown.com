@@ -33,6 +33,7 @@ export const links = {
   pricing: '/pricing',
   education: '/pricing/education',
   privacy: '/privacy',
+  terms: '/terms',
   studio: STUDIO,
   upgrade: {
     monthly: checkout('pro', 'monthly'),

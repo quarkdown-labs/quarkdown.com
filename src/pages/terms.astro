@@ -1,0 +1,152 @@
+---
+import ProsePage from '../layouts/ProsePage.astro';
+import { contactEmail, links, mailto } from '../links';
+import { meta } from '../meta';
+import { getAuthor } from '../authors';
+import { refundWindowDays } from '../plans';
+
+const studio = `${meta.name} Studio`;
+const provider = getAuthor('iamgio');
+const lastUpdated = 'October 14, 2026';
+---
+
+<ProsePage
+  title="Terms of service"
+  description={`The terms that apply when you use ${studio}.`}
+>
+  <Fragment slot="lead">
+    The agreement between you and us when you use {studio}. Last updated {lastUpdated}.
+  </Fragment>
+
+  <h2>The agreement</h2>
+  <p>
+    {studio}, at <a href={links.studio}>studio.quarkdown.com</a>, is provided by
+    <a href={provider.url}>{provider.name}</a> ("we", "us").
+    "You" means both the person using {studio} and every account they use it with,
+    each identified by its email address.
+    By creating an account or using {studio}, you agree to these terms and to our
+    <a href={links.privacy}>privacy policy</a>. If you do not agree, do not use the service.
+  </p>
+  <p>
+    The open-source {meta.name} compiler and its tools are licensed separately under the
+    <a href={meta.license}>GNU General Public License v3</a>.
+    These terms cover only the hosted {studio} service.
+  </p>
+
+  <h2>Who can use it</h2>
+  <p>
+    You must be at least 13 years old. If you are under 18, or under the age of digital consent in your country,
+    you need permission from a parent or guardian, and a paid plan must be purchased by an adult.
+  </p>
+  <p>
+    If you use {studio} on behalf of an organization, you confirm that you are authorized to accept these terms for it.
+  </p>
+
+  <h2>Your account</h2>
+  <p>
+    Keep your sign-in details secure and your email address current: we use it for account and billing messages.
+    You are responsible for what happens under your account, including actions taken by AI agents or other apps you connect to it.
+    Tell us at <a href={mailto()}>{contactEmail}</a> if you suspect someone else has access to it.
+  </p>
+
+  <h2>Your content</h2>
+  <p>
+    You own the projects, files and exports you create in {studio}.
+    You give us permission to store, process, compile and display them only as needed to run the service for you,
+    for example to render previews, produce exports, and sync your work between devices.
+    This permission ends when you delete the content or your account.
+  </p>
+  <p>
+    You are responsible for having the rights to everything you upload, such as images, fonts and included packages.
+    We do our best to keep your data safe, but we recommend keeping your own copy of important work,
+    which you can download at any time as a source archive.
+  </p>
+
+  <h2>Acceptable use</h2>
+  <p>You agree not to use {studio} to:</p>
+  <ul>
+    <li>break the law or infringe the rights of others;</li>
+    <li>store or distribute malware, or content that is abusive, exploitative or harmful;</li>
+    <li>attack, probe or overload the service, or try to escape the sandbox that compiles your documents;</li>
+    <li>get around plan limits, for example by creating accounts to multiply free allowances;</li>
+    <li>resell or offer the service to others without our written agreement.</li>
+  </ul>
+  <p>
+    Documents can run code when they compile. Compilation is time-limited and isolated,
+    and runs that misuse it may be stopped.
+  </p>
+
+  <h2>Plans and payments</h2>
+  <p>
+    {studio} has a free plan and paid plans, described on the <a href={links.pricing}>pricing page</a>.
+    Paid plans are billed in advance, monthly or yearly, through Stripe, and renew automatically until you cancel.
+    Prices may include or add taxes depending on where you live.
+  </p>
+  <p>
+    We may change prices or plan contents. A price change applies from your next billing period after we tell you,
+    and you can cancel before it takes effect.
+  </p>
+  <p>
+    Each plan has limits, such as storage, active projects and exports. If you move to a plan with lower limits,
+    your oldest projects beyond its allowance are frozen until you upgrade or delete others,
+    and once your storage is full, your files become read-only.
+    Nothing is deleted because of a downgrade.
+  </p>
+
+  <h2>Cancellation and refunds</h2>
+  <p>
+    You can cancel at any time from <em>Settings → Team</em> in {studio}.
+    Your plan stays active until the end of the period you paid for, and then returns to the free plan.
+  </p>
+  <p>
+    If you are subscribing to a paid plan for the first time, you can get a full refund of your first payment,
+    no questions asked, by emailing <a href={mailto()}>{contactEmail}</a> within {refundWindowDays} days of it.
+    A refund cancels the subscription immediately, and your account returns to the free plan with its limits.
+    This money-back guarantee applies only if that subscription was bought without any discount or promo code,
+    including the education discount. It does not cover renewals or later subscriptions, and it applies once per person and once per email address, so a person who has received it before cannot claim it again under a different address.
+  </p>
+  <p>
+    Nothing here limits any refund rights you have under the law.
+  </p>
+
+  <h2>Changes to the service</h2>
+  <p>
+    {studio} is under active development. We may add, change or remove features, and we do not guarantee
+    that the service will always be available or free of errors.
+    If we discontinue {studio}, we will give you reasonable notice to download your content
+    and refund the unused part of any prepaid plan.
+  </p>
+
+  <h2>Ending the agreement</h2>
+  <p>
+    You can stop using {studio} at any time. To delete your account and its content,
+    email us at <a href={mailto()}>{contactEmail}</a>.
+  </p>
+  <p>
+    We may suspend or close an account that seriously or repeatedly breaks these terms.
+    Unless the breach makes it inappropriate, we will tell you first and give you a chance to download your content.
+  </p>
+
+  <h2>Disclaimers and liability</h2>
+  <p>
+    The service is provided "as is". To the extent the law allows, we make no warranties about it beyond those in these terms,
+    and our total liability to you for any claim is limited to the amount you paid us in the 12 months before it.
+    We are not liable for indirect or consequential losses, such as lost profits or data.
+  </p>
+  <p>
+    Nothing in these terms limits liability that cannot be limited by law,
+    or takes away rights you have as a consumer where you live.
+  </p>
+
+  <h2>Changes to these terms</h2>
+  <p>
+    We may update these terms as {studio} evolves. The date at the top shows when they last changed.
+    For significant changes, we will let you know by email or in {studio} before they take effect,
+    and continuing to use the service afterwards means you accept them.
+  </p>
+
+  <h2>Contact</h2>
+  <p>
+    Questions about these terms go to <a href={mailto()}>{contactEmail}</a>.
+  </p>
+</ProsePage>
