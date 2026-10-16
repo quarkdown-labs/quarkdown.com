@@ -369,6 +369,7 @@ com.quarkdown.pm.net
 com.quarkdown.pm.repo
 com.quarkdown.pm.repo.github
 com.quarkdown.pm.resolve
+com.quarkdown.pm.template
 module:quarkdown-plaintext
 com.quarkdown.rendering.plaintext.extension
 com.quarkdown.rendering.plaintext.node
