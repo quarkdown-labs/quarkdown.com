@@ -100,10 +100,12 @@ $dokka.location:com.quarkdown.stdlib/Localization/localize/#com.quarkdown.core.c
 $dokka.location:com.quarkdown.stdlib/Logger/debug/#kotlin.String/PointingToDeclaration/quarkdown-stdlib/com.quarkdown.stdlib.module.Logger/debug.html
 $dokka.location:com.quarkdown.stdlib/Logger/error/#kotlin.String/PointingToDeclaration/quarkdown-stdlib/com.quarkdown.stdlib.module.Logger/error.html
 $dokka.location:com.quarkdown.stdlib/Logger/log/#kotlin.String/PointingToDeclaration/quarkdown-stdlib/com.quarkdown.stdlib.module.Logger/log.html
+$dokka.location:com.quarkdown.stdlib/Logical/and/#kotlin.Boolean#kotlin.Boolean/PointingToDeclaration/quarkdown-stdlib/com.quarkdown.stdlib.module.Logical/and.html
 $dokka.location:com.quarkdown.stdlib/Logical/equals/#com.quarkdown.core.function.value.DynamicValue#com.quarkdown.core.function.value.DynamicValue/PointingToDeclaration/quarkdown-stdlib/com.quarkdown.stdlib.module.Logical/equals.html
 $dokka.location:com.quarkdown.stdlib/Logical/isgreater/#kotlin.Number#kotlin.Number#kotlin.Boolean/PointingToDeclaration/quarkdown-stdlib/com.quarkdown.stdlib.module.Logical/isgreater.html
 $dokka.location:com.quarkdown.stdlib/Logical/islower/#kotlin.Number#kotlin.Number#kotlin.Boolean/PointingToDeclaration/quarkdown-stdlib/com.quarkdown.stdlib.module.Logical/islower.html
 $dokka.location:com.quarkdown.stdlib/Logical/not/#kotlin.Boolean/PointingToDeclaration/quarkdown-stdlib/com.quarkdown.stdlib.module.Logical/not.html
+$dokka.location:com.quarkdown.stdlib/Logical/or/#kotlin.Boolean#kotlin.Boolean/PointingToDeclaration/quarkdown-stdlib/com.quarkdown.stdlib.module.Logical/or.html
 $dokka.location:com.quarkdown.stdlib/Markdown/markdown/#com.quarkdown.core.context.Context#kotlin.String/PointingToDeclaration/quarkdown-stdlib/com.quarkdown.stdlib.module.Markdown/markdown.html
 $dokka.location:com.quarkdown.stdlib/Math/abs/#kotlin.Number/PointingToDeclaration/quarkdown-stdlib/com.quarkdown.stdlib.module.Math/abs.html
 $dokka.location:com.quarkdown.stdlib/Math/cos/#kotlin.Number/PointingToDeclaration/quarkdown-stdlib/com.quarkdown.stdlib.module.Math/cos.html
