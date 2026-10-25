@@ -157,6 +157,7 @@ $dokka.location:com.quarkdown.stdlib/Strings/isempty/#kotlin.String/PointingToDe
 $dokka.location:com.quarkdown.stdlib/Strings/isnotempty/#kotlin.String/PointingToDeclaration/quarkdown-stdlib/com.quarkdown.stdlib.module.Strings/isnotempty.html
 $dokka.location:com.quarkdown.stdlib/Strings/lowercase/#kotlin.String/PointingToDeclaration/quarkdown-stdlib/com.quarkdown.stdlib.module.Strings/lowercase.html
 $dokka.location:com.quarkdown.stdlib/Strings/plaintext/#com.quarkdown.core.ast.InlineMarkdownContent/PointingToDeclaration/quarkdown-stdlib/com.quarkdown.stdlib.module.Strings/plaintext.html
+$dokka.location:com.quarkdown.stdlib/Strings/split/#kotlin.String#kotlin.String/PointingToDeclaration/quarkdown-stdlib/com.quarkdown.stdlib.module.Strings/split.html
 $dokka.location:com.quarkdown.stdlib/Strings/startswith/#kotlin.String#kotlin.String#kotlin.Boolean/PointingToDeclaration/quarkdown-stdlib/com.quarkdown.stdlib.module.Strings/startswith.html
 $dokka.location:com.quarkdown.stdlib/Strings/string/#kotlin.String/PointingToDeclaration/quarkdown-stdlib/com.quarkdown.stdlib.module.Strings/string.html
 $dokka.location:com.quarkdown.stdlib/Strings/uppercase/#kotlin.String/PointingToDeclaration/quarkdown-stdlib/com.quarkdown.stdlib.module.Strings/uppercase.html
