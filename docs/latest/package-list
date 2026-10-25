@@ -104,6 +104,7 @@ $dokka.location:com.quarkdown.stdlib/Logger/debug/#kotlin.String/PointingToDecla
 $dokka.location:com.quarkdown.stdlib/Logger/error/#kotlin.String/PointingToDeclaration/quarkdown-stdlib/com.quarkdown.stdlib.module.Logger/error.html
 $dokka.location:com.quarkdown.stdlib/Logger/log/#kotlin.String/PointingToDeclaration/quarkdown-stdlib/com.quarkdown.stdlib.module.Logger/log.html
 $dokka.location:com.quarkdown.stdlib/Logical/and/#kotlin.Boolean#kotlin.Boolean/PointingToDeclaration/quarkdown-stdlib/com.quarkdown.stdlib.module.Logical/and.html
+$dokka.location:com.quarkdown.stdlib/Logical/contains/#com.quarkdown.core.function.value.DynamicValue#com.quarkdown.core.function.value.DynamicValue/PointingToDeclaration/quarkdown-stdlib/com.quarkdown.stdlib.module.Logical/contains.html
 $dokka.location:com.quarkdown.stdlib/Logical/equals/#com.quarkdown.core.function.value.DynamicValue#com.quarkdown.core.function.value.DynamicValue/PointingToDeclaration/quarkdown-stdlib/com.quarkdown.stdlib.module.Logical/equals.html
 $dokka.location:com.quarkdown.stdlib/Logical/isgreater/#kotlin.Number#kotlin.Number#kotlin.Boolean/PointingToDeclaration/quarkdown-stdlib/com.quarkdown.stdlib.module.Logical/isgreater.html
 $dokka.location:com.quarkdown.stdlib/Logical/islower/#kotlin.Number#kotlin.Number#kotlin.Boolean/PointingToDeclaration/quarkdown-stdlib/com.quarkdown.stdlib.module.Logical/islower.html
