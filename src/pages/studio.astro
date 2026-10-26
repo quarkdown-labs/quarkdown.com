@@ -10,6 +10,7 @@ import AgentAtom from '../components/studio/AgentAtom.astro';
 import StudioClosing from '../components/studio/StudioClosing.astro';
 import { links } from '../links';
 import { meta } from '../meta';
+import editorDark from '../assets/studio/editor-dark.png';
 
 const title = `${meta.name} Studio | Subatomically spectacular`;
 const description = `${meta.name} Studio brings the full power of ${meta.name} to your browser. Write, preview and export, with nothing to install.`;
@@ -25,7 +26,7 @@ const description = `${meta.name} Studio brings the full power of ${meta.name} t
       description={`Studio runs on the very compiler behind ${meta.name}, so your documents come out exactly as they would from the command line. Papers, slides and docs: the preview keeps up as you type.`}
     >
       <div class="keystroke-screenshot">
-        <Screenshot alt="Quarkdown Studio's editor beside the live preview of the document being written" />
+        <Screenshot image={editorDark} alt="Quarkdown Studio's editor beside the live preview of the document being written" />
       </div>
     </StudioChapter>
 
@@ -34,14 +35,14 @@ const description = `${meta.name} Studio brings the full power of ${meta.name} t
       title="Calm on the surface, powerful underneath"
       description="A beautiful, focused interface that stays out of your way while you write, with the depth power users expect the moment they reach for it."
     >
-      <IsometricScene alt="Quarkdown Studio's interface" />
+      <IsometricScene image={editorDark} alt="Quarkdown Studio's interface" />
     </StudioChapter>
 
     <StudioChapter
       title="Hand the pen to your agent"
       description={`Studio speaks MCP. Connect your AI agent and it can read your documents, write changes and export the result, fluently in ${meta.name}. <a href="${links.pricing}">Available on Pro</a>.`}
     >
-      <AgentAtom alt="A Studio project being edited by an AI agent over MCP" />
+      <AgentAtom image={editorDark} alt="A Studio project being edited by an AI agent over MCP" />
     </StudioChapter>
   </main>
 

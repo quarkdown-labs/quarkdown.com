@@ -44,7 +44,7 @@ const themes = [
   const SEAM_RANGE = [0.15, 0.85] as const;
   const SEAM_EASE = 0.12; // Fraction of the distance to the pointer covered per frame.
   const INTRO_DURATION = 1.8;
-  const SEAM_START = 1.2; // Past the right edge, so the screenshot starts fully light.
+  const SEAM_START = 1.6; // Past the right edge with the whole slant, so the screenshot starts fully light.
 
   const figure = document.querySelector<HTMLElement>('[data-theme-split]')!;
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -93,11 +93,12 @@ const themes = [
   @use '../../styles/colors' as *;
   @use '../../styles/screenshot' as *;
 
-  $slant: 12%; // Horizontal run of the seam from its midpoint to either edge.
+  $slant: 50%; // Horizontal run of the seam from its midpoint to either edge: at rest, it runs corner to corner.
   // Sideways tilt at rest, undone as --tilt goes from 1 to 0.
   $turn-y: 28deg;
   $turn-x: 20deg;
   $turn-z: -2deg;
+  $recenter: 7%; // Shift that recenters the tilted screenshot, whose near side looms larger.
 
   .theme-split {
     --seam: 0.5;
@@ -110,6 +111,7 @@ const themes = [
   .frame {
     @include screenshot-frame;
     transform:
+      translateX(calc(var(--tilt) * #{$recenter}))
       rotateY(calc(var(--tilt) * #{$turn-y}))
       rotateX(calc(var(--tilt) * #{$turn-x}))
       rotateZ(calc(var(--tilt) * #{$turn-z}))
@@ -138,10 +140,8 @@ const themes = [
     background: $screenshot-light-ground;
   }
 
-  // The dark theme lies on top, clipped right of the seam; its wrapper's shadow lights the seam's edge.
+  // The dark theme lies on top, clipped right of the seam.
   .pane--dark {
-    filter: drop-shadow(-1px 0 0 rgba($brand-50, 0.7)) drop-shadow(-12px 0 24px rgba($brand-50, 0.18));
-
     .pane-surface {
       background: $screenshot-dark-ground;
       clip-path: polygon(

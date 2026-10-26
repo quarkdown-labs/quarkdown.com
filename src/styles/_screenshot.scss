@@ -1,7 +1,7 @@
 @use 'colors' as *;
 @use 'breakpoints' as *;
 
-$screenshot-aspect: 16 / 10;
+$screenshot-aspect: 3024 / 1634; // Of the Studio screenshots in `assets/studio`.
 $screenshot-radius: 14px;
 $screenshot-light-ground: #f4f6f6;
 $screenshot-dark-ground: $brand-800;

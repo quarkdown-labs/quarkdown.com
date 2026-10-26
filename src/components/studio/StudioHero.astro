@@ -6,6 +6,8 @@
 import DotPattern from '../DotPattern.astro';
 import ThemeSplitScreenshot from './ThemeSplitScreenshot.astro';
 import WaitlistButton from './WaitlistButton.astro';
+import editorLight from '../../assets/studio/editor-light.png';
+import editorDark from '../../assets/studio/editor-dark.png';
 
 /** When the screenshot lands, in seconds into the entrance; its light and dark themes split as it does. */
 const SCREENSHOT_LANDING = 1.6;
@@ -39,6 +41,8 @@ const emphasis = 'spectacular';
 
     <div class="hero-screenshot" data-hero-screenshot data-landing={SCREENSHOT_LANDING}>
       <ThemeSplitScreenshot
+        light={editorLight}
+        dark={editorDark}
         alt="Quarkdown Studio's editor, half in its light theme and half in its dark theme"
         introDelay={SCREENSHOT_LANDING}
       />
