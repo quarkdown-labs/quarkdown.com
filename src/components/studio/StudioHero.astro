@@ -1,50 +1,57 @@
 ---
 /**
- * Hero of the Studio page, staged as a particle collision: the title's letters draw together towards its center,
- * set off a shockwave as they lock in, and the screenshot rises out of depth into its tilt.
+ * Hero of the Studio page. On entrance, the title's first word is typed out, then the second's letters
+ * draw together towards its center out of a blur; the waitlist action rises in, and the screenshot rises
+ * out of depth into its tilt.
  */
 import DotPattern from '../DotPattern.astro';
 import ThemeSplitScreenshot from './ThemeSplitScreenshot.astro';
 import WaitlistButton from './WaitlistButton.astro';
+import Typewriter from '../Typewriter.astro';
 import editorLight from '../../assets/studio/editor-light.png';
 import editorDark from '../../assets/studio/editor-dark.png';
 
-/** When the screenshot lands, in seconds into the entrance; its light and dark themes split as it does. */
-const SCREENSHOT_LANDING = 1.6;
+/** Fraction of the emphasis's convergence after which it reads settled, and the rest of the hero follows. */
+const SETTLED = 0.5;
+
+/** Seconds the screenshot takes to land once it starts rising; its light and dark themes split as it does. */
+const SCREENSHOT_RISE = 0.8;
 
 const lead = 'Subatomically';
-const emphasis = 'spectacular';
+const TYPING_DELAY_MS = 45; // Per character of the lead.
+const typingSeconds = (lead.length * TYPING_DELAY_MS) / 1000;
+
+/**
+ * The title's emphasis, split into letters that converge on entrance, [delay] seconds in, over [convergence] seconds.
+ * It starts once the lead is typed out, so the lead reads first.
+ */
+const emphasis = { text: 'spectacular', delay: typingSeconds, convergence: 1.3 };
+
+/** When the waitlist action and the screenshot start rising in: as soon as the emphasis reads settled. */
+const followUp = emphasis.delay + emphasis.convergence * SETTLED;
 ---
 
 <section class="hero">
   <DotPattern />
 
   <div class="hero-inner">
-    <h1 class="hero-title" aria-label={`${lead} ${emphasis}`} data-hero-title>
-      <span class="shockwave" aria-hidden="true" data-shockwave></span>
-      <span class="lead" aria-hidden="true">
-        {[...lead].map((char) => <span class="particle">{char}</span>)}
-      </span>
-      <strong aria-hidden="true">
-        {[...emphasis].map((char) => <span class="particle">{char}</span>)}
+    <h1 class="hero-title" data-hero-title>
+      <span class="lead"><Typewriter text={lead} delay={TYPING_DELAY_MS} start="load" /></span>
+      <strong class="emphasis" aria-label={emphasis.text} data-delay={emphasis.delay} data-convergence={emphasis.convergence}>
+        {[...emphasis.text].map((char) => <span class="particle" aria-hidden="true">{char}</span>)}
       </strong>
     </h1>
-
-    <p class="hero-subtitle" data-hero-rise>
-      Quarkdown Studio brings the full power of Quarkdown to the browser.
-      Write, preview and export, with nothing to install.
-    </p>
 
     <div class="hero-actions" data-hero-rise>
       <WaitlistButton />
     </div>
 
-    <div class="hero-screenshot" data-hero-screenshot data-landing={SCREENSHOT_LANDING}>
+    <div class="hero-screenshot" data-hero-screenshot data-follow-up={followUp}>
       <ThemeSplitScreenshot
         light={editorLight}
         dark={editorDark}
         alt="Quarkdown Studio's editor, half in its light theme and half in its dark theme"
-        introDelay={SCREENSHOT_LANDING}
+        introDelay={followUp + SCREENSHOT_RISE}
       />
     </div>
   </div>
@@ -54,17 +61,14 @@ const emphasis = 'spectacular';
   import { gsap } from '../../scripts/gsap';
 
   const SPREAD = 0.35; // How far letters start from their place, relative to their distance from the title's center.
-  const CONVERGENCE = 1;
 
   const title = document.querySelector<HTMLElement>('[data-hero-title]')!;
-  const particles = title.querySelectorAll<HTMLElement>('.particle');
-  const shockwave = document.querySelector<HTMLElement>('[data-shockwave]')!;
+  const emphasis = title.querySelector<HTMLElement>('.emphasis')!;
   const rising = document.querySelectorAll<HTMLElement>('[data-hero-rise]');
   const screenshot = document.querySelector<HTMLElement>('[data-hero-screenshot]')!;
-  const landing = Number(screenshot.dataset.landing);
+  const followUp = Number(screenshot.dataset.followUp);
 
   gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
-    const impact = CONVERGENCE * 0.55;
     const { left, width } = title.getBoundingClientRect();
     const center = left + width / 2;
 
@@ -74,31 +78,29 @@ const emphasis = 'spectacular';
       return (left + width / 2 - center) * SPREAD;
     };
 
-    gsap.timeline()
-      // Letters draw together towards the title's center, condensing out of a faint blur.
-      .fromTo(particles, { '--spread': (_, particle) => `${spreadOf(particle)}px`, '--condense': 1 }, {
-        '--spread': '0px',
-        '--condense': 0,
-        duration: CONVERGENCE,
-        ease: 'expo.out',
-      })
-      // The collision: a ring of light bursts out of the title as the letters lock in.
-      .fromTo(shockwave, { scale: 0.05, opacity: 1 }, {
-        scale: 1,
-        opacity: 0,
-        duration: 1.8,
-        ease: 'expo.out',
-        immediateRender: false, // Stays unseen until the impact.
-      }, impact)
+    const timeline = gsap.timeline();
+
+    // The emphasis's letters draw together towards the title's center, condensing out of a faint blur.
+    timeline.fromTo(emphasis.querySelectorAll<HTMLElement>('.particle'), {
+      '--spread': (_, particle) => `${spreadOf(particle)}px`,
+      '--condense': 1,
+    }, {
+      '--spread': '0px',
+      '--condense': 0,
+      duration: Number(emphasis.dataset.convergence),
+      ease: 'power2.out',
+    }, Number(emphasis.dataset.delay));
+
+    timeline
       .fromTo(rising, { y: 24, opacity: 0, filter: 'blur(8px)' }, {
         y: 0,
         opacity: 1,
         filter: 'blur(0px)',
-        duration: 1,
+        duration: 1.8,
         ease: 'expo.out',
         stagger: 0.12,
         clearProps: 'all',
-      }, impact * 0.75)
+      }, followUp)
       // The screenshot rises out of depth and settles into its tilt.
       .fromTo(screenshot, { y: 220, z: -600, rotationX: 35, opacity: 0, transformPerspective: 1200 }, {
         y: 0,
@@ -108,7 +110,7 @@ const emphasis = 'spectacular';
         duration: 1.6,
         ease: 'expo.out',
         clearProps: 'transform,opacity',
-      }, landing - 0.8);
+      }, followUp);
   });
 </script>
 
@@ -143,10 +145,10 @@ const emphasis = 'spectacular';
     font-family: $font-body;
     font-size: $font-size-h1;
     line-height: 0.95;
-    margin-bottom: 3.5rem;
+    margin-bottom: 5rem;
 
     .lead,
-    strong {
+    .emphasis {
       display: block;
     }
 
@@ -156,24 +158,6 @@ const emphasis = 'spectacular';
       line-height: 1;
       margin: 0.12em 0 0;
     }
-  }
-
-  // A ring of light around the title, burst once by the entrance.
-  .shockwave {
-    $size: min(150vw, 100rem);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: -1;
-    width: $size;
-    aspect-ratio: 1;
-    translate: -50% -50%;
-    border-radius: 50%;
-    border: 2px solid rgba($brand-50, 0.8);
-    background: radial-gradient(circle, transparent 60%, rgba($brand-100, 0.12) 100%);
-    box-shadow: 0 0 80px rgba($brand-100, 0.5), inset 0 0 80px rgba($brand-100, 0.4);
-    opacity: 0;
-    pointer-events: none;
   }
 
   // On entrance, letters draw in by --spread and condense out of a blur as --condense goes from 1 to 0.
@@ -187,31 +171,19 @@ const emphasis = 'spectacular';
     filter: blur(calc(var(--condense) * 10px));
   }
 
-  .hero-subtitle {
-    @include text;
-    max-width: 40rem;
-    text-wrap: balance;
-    margin-bottom: 3.5rem;
-
-    @include sm-down {
-      br {
-        display: none;
-      }
-    }
-  }
-
   .hero-actions {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
-    // Sets the actions apart from the screenshot tucked under them.
-    filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.55));
+
+    > :global(*) {
+      filter: drop-shadow(0 10px 18px rgba($brand-500, 0.5));
+    }
   }
 
-  // The copy stays above the screenshot, whose far edge tucks under the actions.
+  // The title and action stay above the screenshot, whose far edge tucks under the actions.
   .hero-title,
-  .hero-subtitle,
   .hero-actions {
     position: relative;
     z-index: 1;

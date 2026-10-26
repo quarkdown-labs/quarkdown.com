@@ -4,7 +4,7 @@ import type { HTMLAttributes } from 'astro/types';
 interface Props extends Omit<HTMLAttributes<'a'>, 'href'> {
   /** Destination of the action. Without one, the action renders as a button for scripts to handle. */
   href?: string;
-  variant?: 'link' | 'primary' | 'secondary';
+  variant?: 'link' | 'primary' | 'secondary' | 'studio';
   /** Whether the action spans the full width of its container. */
   wide?: boolean;
 }
@@ -18,6 +18,7 @@ const Element = href ? 'a' : 'button';
 </Element>
 
 <style lang="scss">
+  @use 'sass:color';
   @use '../styles/colors' as *;
   @use '../styles/typography' as *;
 
@@ -77,6 +78,18 @@ const Element = href ? 'a' : 'button';
 
     &:hover {
       background-color: $brand-700;
+    }
+  }
+
+  .cta--studio {
+    @extend %cta-button;
+    background-color: $studio;
+    border-color: color.scale($studio, $lightness: -50%);
+    border-width: 2px;
+    color: $heading;
+
+    &:hover {
+      background-color: $studio-hover;
     }
   }
 </style>

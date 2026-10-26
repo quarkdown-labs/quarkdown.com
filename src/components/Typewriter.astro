@@ -1,12 +1,13 @@
 ---
 /**
- * Scroll-triggered typewriter animation powered by `typewriter-effect`.
+ * Typewriter animation powered by `typewriter-effect`, triggered by scrolling or on load.
  *
  * Renders the full text as a visually hidden but crawlable placeholder
  * for SEO and accessibility (`opacity: 0` is still announced by screen
- * readers). When the element scrolls into view, the typewriter animation
- * begins. A `<noscript>` fallback restores the placeholder for no-JS
- * browsers and crawlers (progressive enhancement).
+ * readers). When the element scrolls into view (or as soon as the page
+ * loads, with `start="load"`), the typewriter animation begins. A
+ * `<noscript>` fallback restores the placeholder for no-JS browsers and
+ * crawlers (progressive enhancement).
  *
  * @example
  * <h2>Spend your time <Typewriter text="writing" /></h2>
@@ -14,16 +15,18 @@
 interface Props {
   /** The text to type out. */
   text: string;
-  /** Typing speed in ms per character. Default: 80 */
+  /** Average typing speed in ms per character, eased slower at both ends of the text. Default: 80 */
   delay?: number;
+  /** When typing begins: once scrolled to eye level, or as soon as the page loads. Default: scroll */
+  start?: 'scroll' | 'load';
 }
 
-const { text, delay = 80 } = Astro.props;
+const { text, delay = 80, start = 'scroll' } = Astro.props;
 ---
 
 <span class="typewriter-wrapper">
   <span class="typewriter-placeholder">{text}</span>
-  <span class="typewriter" data-typewriter data-text={text} data-delay={delay}></span>
+  <span class="typewriter" data-typewriter data-text={text} data-delay={delay} data-start={start}></span>
   <noscript><style>.typewriter-placeholder { opacity: 1 !important; }</style></noscript>
 </span>
 
@@ -31,17 +34,32 @@ const { text, delay = 80 } = Astro.props;
   import Typewriter from "typewriter-effect/dist/core";
 
   const CURSOR_HIDE_PAUSE = 1200;
+  // How much slower than average the first and last characters are typed, and faster the middle ones.
+  const EASE_STRENGTH = 0.6;
   const TYPE_ROOT_MARGIN = "-30% 0px -30% 0px";
 
   const instances = new Map<Element, Typewriter>();
   const pendingStart = new Set<Element>();
 
-  function createTypewriter(el: HTMLSpanElement): Typewriter {
-    const text = el.dataset.text!;
-    const delay = Number(el.dataset.delay);
+  /**
+   * Delay before typing the [index]th of [count] characters, eased in and out around an [average]:
+   * slow at both ends, fast in the middle, so the whole text takes as long as at a constant [average].
+   */
+  function easedDelay(index: number, count: number, average: number): number {
+    const progress = count > 1 ? index / (count - 1) : 0;
+    return average * (1 + EASE_STRENGTH * Math.cos(2 * Math.PI * progress));
+  }
 
-    return new Typewriter(el, { delay, cursor: "|" })
-      .typeString(text)
+  function createTypewriter(el: HTMLSpanElement): Typewriter {
+    const chars = [...el.dataset.text!];
+    const delay = Number(el.dataset.delay);
+    const typewriter = new Typewriter(el, { delay, cursor: "|" });
+
+    // The typewriter waits its current delay before every queued event, changing the delay included:
+    // halving it makes each character wait its eased delay in total, across both events.
+    chars.forEach((char, i) => typewriter.changeDelay(easedDelay(i, chars.length, delay) / 2).typeString(char));
+
+    return typewriter
       .pauseFor(CURSOR_HIDE_PAUSE)
       .callFunction(({ elements }: { elements: { cursor: HTMLElement } }) => {
         elements.cursor.style.visibility = "hidden";
@@ -87,6 +105,11 @@ const { text, delay = 80 } = Astro.props;
   );
 
   document.querySelectorAll<HTMLSpanElement>("[data-typewriter]").forEach((el) => {
+    if (el.dataset.start === "load") {
+      createTypewriter(el).start();
+      return;
+    }
+
     const wrapper = el.parentElement!;
     hideObserver.observe(wrapper);
     typeObserver.observe(wrapper);
