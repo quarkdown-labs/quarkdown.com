@@ -44,7 +44,7 @@ const themes = [
   const SEAM_RANGE = [0.15, 0.85] as const;
   const SEAM_EASE = 0.12; // Fraction of the distance to the pointer covered per frame.
   const INTRO_DURATION = 1.8;
-  const SEAM_START = 1.6; // Past the right edge with the whole slant, so the screenshot starts fully light.
+  const SEAM_START = -0.6; // Past the left edge with the whole slant, so the screenshot starts fully dark.
 
   const figure = document.querySelector<HTMLElement>('[data-theme-split]')!;
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -72,7 +72,7 @@ const themes = [
   figure.addEventListener('pointerleave', () => aim(SEAM_REST));
 
   if (!reducedMotion) {
-    // The dark theme sweeps in once, from the right edge, which it rests at from the start rather than once the delay is over.
+    // The light theme sweeps in once, from the left edge, the seam resting there from the start rather than once the delay is over.
     gsap.fromTo(figure, { '--seam': SEAM_START }, {
       '--seam': SEAM_REST,
       duration: INTRO_DURATION,
