@@ -8,6 +8,7 @@ import DotPattern from '../DotPattern.astro';
 import ThemeSplitScreenshot from './ThemeSplitScreenshot.astro';
 import WaitlistButton from './WaitlistButton.astro';
 import Typewriter from '../Typewriter.astro';
+import StudioLockup from './StudioLockup.astro';
 import editorLight from '../../assets/studio/editor-light.png';
 import editorDark from '../../assets/studio/editor-dark.png';
 
@@ -35,6 +36,10 @@ const followUp = emphasis.delay + emphasis.convergence * SETTLED;
   <DotPattern />
 
   <div class="hero-inner">
+    <div class="hero-lockup">
+      <StudioLockup />
+    </div>
+
     <h1 class="hero-title" data-hero-title>
       <span class="lead"><Typewriter text={lead} delay={TYPING_DELAY_MS} start="load" /></span>
       <strong class="emphasis" aria-label={emphasis.text} data-delay={emphasis.delay} data-convergence={emphasis.convergence}>
@@ -138,6 +143,12 @@ const followUp = emphasis.delay + emphasis.convergence * SETTLED;
     @include md-down {
       padding: 7rem 1.5rem 4rem;
     }
+  }
+
+  .hero-lockup {
+    font-size: 1.75rem;
+    color: $brand-200;
+    margin-bottom: 2rem;
   }
 
   .hero-title {
