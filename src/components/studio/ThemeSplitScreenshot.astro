@@ -1,7 +1,7 @@
 ---
 /**
  * A screenshot of Quarkdown Studio, split by a diagonal seam into its light and dark themes.
- * The seam follows the pointer; scrolling turns the screenshot from a sideways 3D tilt to face-on.
+ * The seam passes through the pointer; scrolling turns the screenshot from a sideways 3D tilt to face-on.
  * Without screenshots, each theme renders as a flat placeholder of its own ground color.
  */
 import { Image } from 'astro:assets';
@@ -41,12 +41,13 @@ const themes = [
   import { gsap, loadScrollTrigger } from '../../scripts/gsap';
 
   const SEAM_REST = 0.5;
-  const SEAM_RANGE = [0.15, 0.85] as const;
   const SEAM_EASE = 0.12; // Fraction of the distance to the pointer covered per frame.
   const INTRO_DURATION = 1.8;
-  const SEAM_START = -0.6; // Past the left edge with the whole slant, so the screenshot starts fully dark.
+  const SEAM_START_MARGIN = 0.05; // Past the left edge, beyond the slant, so the screenshot starts fully dark.
 
   const figure = document.querySelector<HTMLElement>('[data-theme-split]')!;
+  const screen = figure.querySelector<HTMLElement>('.frame')!;
+  const slant = Number(getComputedStyle(figure).getPropertyValue('--slant'));
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // The seam eases towards the pointer, and back to rest when it leaves.
@@ -61,19 +62,24 @@ const themes = [
   }
 
   function aim(value: number) {
-    target = gsap.utils.clamp(...SEAM_RANGE, value);
+    // Far enough for the seam's line to reach every corner.
+    target = gsap.utils.clamp(-slant, 1 + slant, value);
     if (!frame) frame = requestAnimationFrame(follow);
   }
 
+  // The seam runs from `seam + slant` at the top to `seam - slant` at the bottom, in fractions of the width:
+  // solving for the seam whose line crosses the pointer's position.
   figure.addEventListener('pointermove', (event) => {
-    const { left, width } = figure.getBoundingClientRect();
-    aim((event.clientX - left) / width);
+    const { left, top, width, height } = screen.getBoundingClientRect();
+    const x = (event.clientX - left) / width;
+    const y = (event.clientY - top) / height;
+    aim(x - slant * (1 - 2 * y));
   });
   figure.addEventListener('pointerleave', () => aim(SEAM_REST));
 
   if (!reducedMotion) {
     // The light theme sweeps in once, from the left edge, the seam resting there from the start rather than once the delay is over.
-    gsap.fromTo(figure, { '--seam': SEAM_START }, {
+    gsap.fromTo(figure, { '--seam': -slant - SEAM_START_MARGIN }, {
       '--seam': SEAM_REST,
       duration: INTRO_DURATION,
       delay: Number(figure.dataset.introDelay),
@@ -93,15 +99,16 @@ const themes = [
   @use '../../styles/colors' as *;
   @use '../../styles/screenshot' as *;
 
-  $slant: 50%; // Horizontal run of the seam from its midpoint to either edge: at rest, it runs corner to corner.
   // Sideways tilt at rest, undone as --tilt goes from 1 to 0.
   $turn-y: 28deg;
   $turn-x: 20deg;
   $turn-z: -2deg;
   $recenter: 7%; // Shift that recenters the tilted screenshot, whose near side looms larger.
 
+  // --slant is the seam's horizontal run from its midpoint to either edge, as a fraction of the width.
   .theme-split {
     --seam: 0.5;
+    --slant: 0.35;
     --tilt: 1;
     perspective: 1400px;
     cursor: ew-resize;
@@ -145,10 +152,10 @@ const themes = [
     .pane-surface {
       background: $screenshot-dark-ground;
       clip-path: polygon(
-        calc(var(--seam) * 100% + #{$slant}) 0,
+        calc((var(--seam) + var(--slant)) * 100%) 0,
         100% 0,
         100% 100%,
-        calc(var(--seam) * 100% - #{$slant}) 100%
+        calc((var(--seam) - var(--slant)) * 100%) 100%
       );
     }
   }
