@@ -1,7 +1,7 @@
 ---
 /**
  * The Quarkdown Studio lockup: the Quarkdown mark on its disc, followed by the "Studio" wordmark,
- * as in Studio itself. Ink draws in the current text color.
+ * as in Studio itself. Ink draws in the current text color, and the disc in a faint wash of it.
  */
 ---
 
@@ -54,8 +54,6 @@
 </svg>
 
 <style lang="scss">
-  @use '../../styles/colors' as *;
-
   .lockup {
     display: block;
     height: 1.5em;
@@ -63,6 +61,7 @@
   }
 
   .disc {
-    fill: $brand-600;
+    fill: currentColor;
+    fill-opacity: 0.2;
   }
 </style>
