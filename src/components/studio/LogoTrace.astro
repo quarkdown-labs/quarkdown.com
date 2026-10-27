@@ -1,19 +1,27 @@
 ---
 /**
- * The Quarkdown logo, unseen until `logoTrace` plays it: its outline traces itself, fills in, then swells and dissolves.
- * Centered on its closest positioned ancestor, behind that ancestor's content.
+ * The Quarkdown logo, unseen until `logoTrace` plays it: its outline traces itself and fills in,
+ * then optionally swells and dissolves.
+ * As a backdrop, it is centered on its closest positioned ancestor, behind that ancestor's content;
+ * inline, it takes its place in the flow.
  */
 import Logo from '../../assets/logo.svg';
 
 interface Props {
-  /** Height of the logo, relative to its positioned ancestor (e.g. `200%`) or absolute. */
+  /** Height of the logo: relative to its positioned ancestor as a backdrop (e.g. `200%`), or absolute. */
   size?: string;
+  placement?: 'backdrop' | 'inline';
 }
 
-const { size = '200%' } = Astro.props;
+const { size = '200%', placement = 'backdrop' } = Astro.props;
 ---
 
-<Logo class="logo-trace" style={{ '--size': size }} aria-hidden="true" data-logo-trace />
+<Logo
+  class:list={['logo-trace', `logo-trace--${placement}`]}
+  style={{ '--size': size }}
+  aria-hidden="true"
+  data-logo-trace
+/>
 
 <style lang="scss">
   @use '../../styles/colors' as *;
@@ -21,14 +29,8 @@ const { size = '200%' } = Astro.props;
   // --fill goes from 0 to 1 as the traced outline fills in.
   .logo-trace {
     --fill: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: -1;
     height: var(--size);
     width: auto;
-    translate: -50% -50%;
-    color: $brand-400;
     opacity: 0;
     pointer-events: none;
 
@@ -37,5 +39,20 @@ const { size = '200%' } = Astro.props;
       fill-opacity: var(--fill);
       stroke-width: 0.5;
     }
+  }
+
+  .logo-trace--backdrop {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    translate: -50% -50%;
+    color: $brand-400;
+  }
+
+  .logo-trace--inline {
+    display: block;
+    margin: 0 auto;
+    color: $heading;
   }
 </style>

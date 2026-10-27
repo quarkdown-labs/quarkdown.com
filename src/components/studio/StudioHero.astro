@@ -1,8 +1,8 @@
 ---
 /**
  * Hero of the Studio page. On entrance, the title's first word is typed out, then the second's letters
- * draw together towards its center out of a blur; the waitlist action rises in, and the screenshot rises
- * out of depth into its tilt.
+ * draw together towards its center out of a blur; the subtitle and waitlist action rise in,
+ * and the screenshot rises out of depth into its tilt.
  */
 import DotPattern from '../DotPattern.astro';
 import ThemeSplitScreenshot from './ThemeSplitScreenshot.astro';
@@ -46,6 +46,8 @@ const followUp = emphasis.delay + emphasis.convergence * SETTLED;
         {[...emphasis.text].map((char) => <span class="particle" aria-hidden="true">{char}</span>)}
       </strong>
     </h1>
+
+    <p class="hero-subtitle" data-hero-rise>The power of Quarkdown, for everyone.</p>
 
     <div class="hero-actions" data-hero-rise>
       <WaitlistButton />
@@ -101,7 +103,7 @@ const followUp = emphasis.delay + emphasis.convergence * SETTLED;
         y: 0,
         opacity: 1,
         filter: 'blur(0px)',
-        duration: 1.8,
+        duration: 1,
         ease: 'expo.out',
         stagger: 0.12,
         clearProps: 'all',
@@ -156,7 +158,7 @@ const followUp = emphasis.delay + emphasis.convergence * SETTLED;
     font-family: $font-body;
     font-size: $font-size-h1;
     line-height: 0.95;
-    margin-bottom: 5rem;
+    margin-bottom: 2.5rem;
 
     .lead,
     .emphasis {
@@ -182,6 +184,12 @@ const followUp = emphasis.delay + emphasis.convergence * SETTLED;
     filter: blur(calc(var(--condense) * 10px));
   }
 
+  .hero-subtitle {
+    @include text;
+    text-wrap: balance;
+    margin-bottom: 4rem;
+  }
+
   .hero-actions {
     display: flex;
     flex-wrap: wrap;
@@ -195,6 +203,7 @@ const followUp = emphasis.delay + emphasis.convergence * SETTLED;
 
   // The title and action stay above the screenshot, whose far edge tucks under the actions.
   .hero-title,
+  .hero-subtitle,
   .hero-actions {
     position: relative;
     z-index: 1;
