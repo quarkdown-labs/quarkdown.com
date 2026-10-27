@@ -35,16 +35,46 @@ export const quarkdownFaqs: Faq[] = [
   },
 ];
 
+// Questions asked both about Quarkdown Studio itself and about its plans.
+
+const whatIsStudio: Faq = {
+  question: 'What is Quarkdown Studio?',
+  answer: 'Quarkdown Studio is the official cloud editor for Quarkdown. Manage, preview and export your projects straight from your browser, with nothing to install.',
+};
+
+const privacy: Faq = {
+  question: 'Is my work private?',
+  answer: `Your projects are yours: we never sell your data or use your work to train AI models, and you can download your sources at any time. Read our <a href="${links.privacy}">privacy policy</a> for the details.`,
+};
+
+const agents: Faq = {
+  question: 'Can AI agents work on my projects?',
+  answer: 'With Pro, your agents can read, write and export your projects through MCP. You can disconnect them at any time.',
+};
+
+/** Questions about Quarkdown Studio. */
+export const studioFaqs: Faq[] = [
+  whatIsStudio,
+  {
+    question: 'How is Quarkdown Studio different from the Quarkdown CLI?',
+    answer: 'Studio runs the very same Quarkdown compiler. The core difference lies in the live preview, which is up to 5 times faster in Studio than in the CLI.',
+  },
+  agents,
+  {
+    question: 'Will Quarkdown stay free and open source?',
+    answer: `Yes. The Quarkdown compiler and CLI are, and will stay, free and <a href="${links.repo}" target="_blank" rel="noopener">open source</a>.`,
+  },
+  {
+    question: 'How much does Studio cost?',
+    answer: `Studio has a Free plan, free forever with no card required, and a Pro plan for more projects, exports and storage. See the <a href="${links.pricing}">pricing</a> for the details.`,
+  },
+  privacy,
+];
+
 /** Questions about Quarkdown Studio's plans and billing. */
 export const pricingFaqs: Faq[] = [
-  {
-    question: 'What is Quarkdown Studio?',
-    answer: 'Quarkdown Studio is the official online editor for Quarkdown. Write with a live preview, manage your projects and export them to PDF, HTML or Markdown, straight from your browser with nothing to install.',
-  },
-  {
-    question: 'Is my work private?',
-    answer: `Your projects are yours: we never sell your data or use your work to train AI models, and you can download your sources at any time. Read our <a href="${links.privacy}">privacy policy</a> for the details.`,
-  },
+  whatIsStudio,
+  privacy,
   {
     question: 'Do I need a credit card for the Free plan?',
     answer: 'No. The Free plan is free forever, with no card required. Upgrade only when you need more projects, exports or storage.',
@@ -65,8 +95,5 @@ export const pricingFaqs: Faq[] = [
     question: 'Do you offer discounts for students and educators?',
     answer: `Yes, students and educators get <a href="${links.education}">${educationDiscount} off Pro</a> for a year.`,
   },
-  {
-    question: 'Can AI agents work on my projects?',
-    answer: 'With Pro, agents such as Claude and Cursor can read, write and export your projects through MCP. You can disconnect them at any time from <em>Settings → Apps</em>.',
-  },
+  agents,
 ];
