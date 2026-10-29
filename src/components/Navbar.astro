@@ -10,11 +10,12 @@ import Icon from './Icon.astro';
     <span class="sr-only">Quarkdown</span>
   </a>
   <div class="links">
-    <a href={links.wiki}>Wiki</a>
-    <a href={links.blog}>Blog</a>
     <a href={links.repo} class="icon" aria-label="GitHub">
       <Icon name="github" />
     </a>
+    <a href={links.blog}>Blog</a>
+    <a href={links.wiki}>Wiki</a>
+    <a href={links.packages}>Packages</a>
   </div>
 </nav>
 
@@ -24,6 +25,9 @@ import Icon from './Icon.astro';
   @use '../styles/typography' as *;
   @use '../styles/breakpoints' as *;
 
+  // Height of a single-row bar, which the overlays keep while the links are stacked.
+  $overlay-height: 5.75rem;
+
   .navbar {
     position: fixed;
     top: 0;
@@ -32,11 +36,18 @@ import Icon from './Icon.astro';
     z-index: 100;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     padding: 1.5rem 3rem 2rem;
     transition: background-color 0.3s;
+    // The stacked links make the bar taller than its overlays: only its links take clicks.
+    pointer-events: none;
+
+    a {
+      pointer-events: auto;
+    }
 
     @include md-down {
+      align-items: center;
       padding: 1.2rem 1.5rem;
     }
 
@@ -44,8 +55,14 @@ import Icon from './Icon.astro';
     &::after {
       content: '';
       position: absolute;
-      inset: 0;
+      inset: 0 0 auto;
+      height: $overlay-height;
       z-index: -1;
+
+      @include md-down {
+        bottom: 0;
+        height: auto;
+      }
     }
 
     // Color overlay
@@ -76,13 +93,22 @@ import Icon from './Icon.astro';
     }
   }
 
+  // Stacked down the right edge while the navbar is a translucent overlay; in a row once it can turn solid.
   .links {
     display: flex;
-    align-items: center;
-    gap: 2rem;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1.25rem;
+
+    @include md-down {
+      flex-direction: row-reverse;
+      align-items: center;
+      gap: 2rem;
+    }
 
     @include sm-down {
       margin-left: auto;
+      gap: 1rem;
     }
   }
 
