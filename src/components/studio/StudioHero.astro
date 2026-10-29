@@ -32,7 +32,7 @@ const emphasis = { text: 'spectacular', delay: typingSeconds, convergence: 1.3 }
 const followUp = emphasis.delay + emphasis.convergence * SETTLED;
 ---
 
-<section class="hero">
+<section class="hero" data-hero>
   <DotPattern />
 
   <div class="hero-inner">
@@ -47,7 +47,7 @@ const followUp = emphasis.delay + emphasis.convergence * SETTLED;
       </strong>
     </h1>
 
-    <p class="hero-subtitle" data-hero-rise>The power of Quarkdown, right in your browser.</p>
+    <p class="hero-subtitle" data-hero-rise>The power of Quarkdown, in the palm of your browser.</p>
 
     <div class="hero-actions" data-hero-rise>
       <WaitlistButton />
@@ -67,6 +67,7 @@ const followUp = emphasis.delay + emphasis.convergence * SETTLED;
 <script>
   import { gsap } from '../../scripts/gsap';
 
+  const GLOW_DURATION = 0.8;
   const SPREAD = 0.35; // How far letters start from their place, relative to their distance from the title's center.
 
   const title = document.querySelector<HTMLElement>('[data-hero-title]')!;
@@ -74,6 +75,7 @@ const followUp = emphasis.delay + emphasis.convergence * SETTLED;
   const rising = document.querySelectorAll<HTMLElement>('[data-hero-rise]');
   const screenshot = document.querySelector<HTMLElement>('[data-hero-screenshot]')!;
   const followUp = Number(screenshot.dataset.followUp);
+  const hero = document.querySelector<HTMLElement>('[data-hero]')!;
 
   gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
     const { left, width } = title.getBoundingClientRect();
@@ -118,6 +120,14 @@ const followUp = emphasis.delay + emphasis.convergence * SETTLED;
         ease: 'expo.out',
         clearProps: 'transform,opacity',
       }, followUp);
+
+    // The background brightens from its dim shade to its own as the rest of the hero comes in.
+    const shades = getComputedStyle(hero);
+    timeline.fromTo(hero, { '--glow': shades.getPropertyValue('--glow-dim').trim() }, {
+      '--glow': shades.getPropertyValue('--glow').trim(),
+      duration: GLOW_DURATION,
+      ease: 'expo.out',
+    }, followUp);
   });
 </script>
 
@@ -126,9 +136,12 @@ const followUp = emphasis.delay + emphasis.convergence * SETTLED;
   @use '../../styles/typography' as *;
   @use '../../styles/breakpoints' as *;
 
+  // The entrance brightens --glow from --glow-dim.
   .hero {
+    --glow: #{$brand-700};
+    --glow-dim: #{$brand-900};
     position: relative;
-    background: linear-gradient($brand-700 -10%, transparent 70%);
+    background: linear-gradient(var(--glow) -10%, transparent 70%);
     overflow: hidden;
   }
 
