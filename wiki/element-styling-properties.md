@@ -2,7 +2,7 @@
 
 # Element styling properties
 
-Several functions, such as [`.container`](container.md) and [`.heading`](headings.md), share a common set of styling parameters to customize colors, spacing, borders, and text appearance of the element they produce.
+Several functions, such as [`.container`](container.md), the [stack functions](stacks.md) and [`.heading`](headings.md), share a common set of styling parameters to customize colors, spacing, borders, and text appearance of the element they produce.
 
 ## Parameters
 

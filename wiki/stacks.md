@@ -53,9 +53,9 @@ To understand which elements to handle, stack functions rely on the strict Markd
 >     ![](assets/icon.svg)
 > ```
 > 
-> ![](media/icon@566414092.svg)
+> ![](media/icon@1207047283.svg)
 > 
-> ![](media/icon@566414092.svg)
+> ![](media/icon@1207047283.svg)
 
 ## Parameters
 
@@ -66,6 +66,8 @@ All stack functions accept the following optional arguments:
 | `alignment` | Main axis alignment (CSS `justify-content`). | `start`, `center`, `end`, `spacebetween`, `spacearound`, `spaceevenly` |
 | `cross` | Cross axis alignment (CSS `align-items`). | `start`, `center`, `end`, `stretch` |
 | `gap` | Space between items. | [`Size`](sizes.md) |
+| `width` | Width of the stack. | [`Size`](sizes.md) |
+| `height` | Height of the stack. | [`Size`](sizes.md) |
 
 The `grid` function requires a `columns` argument, which must be specified as an integer.   
 
@@ -92,11 +94,32 @@ It also provides optional `vgap` and `hgap` parameters that override the `gap` s
 > 
 > ***D***
 
+## Styling
+
+Stack functions also accept the [element styling properties](element-styling-properties.md), to style the block as a whole.
+
+> **Example 5**
+> 
+> ```markdown
+> .row gap:{1cm} background:{teal} foreground:{white} padding:{12px} radius:{8px}
+>     A
+> 
+>     B
+> 
+>     C
+> ```
+> 
+> A
+> 
+> B
+> 
+> C
+
 ## Composition
 
 You can compose stack functions to create complex layouts:
 
-> **Example 5**
+> **Example 6**
 > 
 > ```markdown
 > .row alignment:{spacearound}

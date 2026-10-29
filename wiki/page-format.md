@@ -8,13 +8,14 @@ Multiple calls to `.pageformat` are layered on top of each other, with later cal
 
 | Parameter | Description | Accepts | Supported documents |
 | --- | --- | --- | --- |
-| `side` | Restricts the format to left (verso) or right (recto) pages only. See [Scoped formatting](#scoped-formatting). | `left`, `right` | `paged` |
-| `pages` | Restricts the format to specific pages by 1-based inclusive range. See [Scoped formatting](#scoped-formatting). Combinable with `side`. | Range, e.g. `2..5` | `paged` |
+| `side` | Restricts the format to left (verso) or right (recto) pages only. See [Scoped formatting](#scoped-formatting). | `left`, `right` | `paged`, `slides` |
+| `pages` | Restricts the format to specific pages by 1-based inclusive range. See [Scoped formatting](#scoped-formatting). Combinable with `side`. | Range, e.g. `2..5` | `paged`, `slides` |
 | `size` | Name of the paper format. | `A0`..`A10`, `B0`..`B5`, `letter`, `legal`, `ledger` | `paged`, `slides` |
 | `width` | Page width. If `size` is set too, this value overrides its width. | [`Size`](sizes.md#size-single-size), e.g. `300px`, `15cm`, `5.8in` | `plain`, `paged`, `slides`, `docs` |
 | `height` | Page height. If `size` is set too, this value overrides its height. | [`Size`](sizes.md#size-single-size), e.g. `300px`, `15cm`, `5.8in` | `paged`, `slides` |
 | `orientation` | Whether width and height of the paper format (`size`) should be swapped. This defaults to `portrait` for `plain` and `paged` documents and to `landscape` for `slides`. | `portrait`, `landscape` | `paged`, `slides` |
 | `margin` | Blank space between page borders and content area. | [`Sizes`](sizes.md#size-group-sizes), e.g. `1cm`, `15mm 30px`, `2in 1in 3in 2in` | `plain`, `paged`, `slides` |
+| `padding` | Blank space between the borders of the content area and the content itself. | [`Sizes`](sizes.md#size-group-sizes), e.g. `1cm`, `15mm 30px`, `2in 1in 3in 2in` | `plain`, `paged`, `slides` |
 | `bordertop`, `borderright`, `borderbottom`, `borderleft` | Thickness of the border at each side of the content area. | [`Size`](sizes.md) | `plain`, `paged`, `slides` |
 | `bordercolor` | Color of the border around the content area. | [`Color`](color.md) | `plain`, `paged`, `slides` |
 | `background` | Background color of each page. | [`Color`](color.md) | `plain`, `paged`, `slides`, `docs` |
@@ -25,7 +26,7 @@ Multiple calls to `.pageformat` are layered on top of each other, with later cal
 
 Each page consists of a *content area* in which the main content is displayed, and a *margin area*, a blank outline that may host [page margin content](page-margin-content.md) such as [page counters](page-counter.md).
 
-<img src="media/content-area@-515160825.png" alt="Content area" width="400.0px" />
+<img src="media/content-area@125472366.png" alt="Content area" width="400.0px" />
 
 ### Margins
 
@@ -37,7 +38,7 @@ The `margin` parameter affects the size of the margin area, reducing the surface
 > .pageformat margin:{4cm}
 > ```
 > 
-> <img src="media/margins@991139009.png" alt="Margins" width="500.0px" />
+> <img src="media/margins@1631772200.png" alt="Margins" width="500.0px" />
 
 ### Borders
 
@@ -52,11 +53,11 @@ The `bordertop`, `borderright`, `borderbottom`, `borderleft`, and `bordercolor` 
 > .pageformat bordertop:{1px} borderbottom:{4px}
 > ```
 > 
-> <img src="media/borders@-2110116673.png" alt="image" width="500.0px" />
+> <img src="media/borders@-1469483482.png" alt="image" width="500.0px" />
 
 ## Scoped formatting
 
-In `paged` documents, the `side` and `pages` parameters restrict a format to specific pages.
+In `paged` and `slides` documents, the `side` and `pages` parameters restrict a format to specific pages or slides.
 
 ### Per-side formatting
 
@@ -70,7 +71,7 @@ The `side` parameter restricts a format to left (verso) or right (recto) pages o
 > .pageformat side:{right} margin:{2cm 1cm 2cm 3cm}
 > ```
 > 
-> ![Per-side formatting](media/sides@141342058.png)
+> ![Per-side formatting](media/sides@781975249.png)
 
 ### Per-range formatting
 

@@ -1,0 +1,109 @@
+> For the complete documentation index, see [llms.txt](https://quarkdown.com/wiki/llms.txt).
+
+# Publishing packages
+
+A package, called ***atom***, is a directory of Quarkdown sources and assets that other documents can load, as described in [*Installing and importing packages*](packages.md).
+
+## Anatomy of a package
+
+A package is a directory that contains a manifest and an entry point, plus any other file the entry point needs.
+
+- my-atom/
+
+  - atom.toml
+  - main.qd
+  - README.md
+  - ...
+
+- `atom.toml` is the **manifest**, which always sits at the root of the package.
+- The **entry point** is the Quarkdown file that `.include` loads.
+- `README.md` is optional but recommended, as a way to provide information to users.
+- Any other file can contain additional sources or assets.
+
+## The manifest
+
+```toml
+[atom]
+name = "my-atom"
+version = "1.0.0"
+entrypoint = "main.qd"
+description = "What the package does."
+authors = [ "John Doe <https://example.com>" ]
+license = "Apache-2.0"
+categories = ["layout"]
+repository = "https://github.com/example/my-atom"
+min-quarkdown = "2.6.4"
+```
+
+| Key | Required | Meaning |
+| --- | --- | --- |
+| `name` | yes | Package name, as used in references |
+| `version` | yes | Package version, as used in references |
+| `entrypoint` | yes | File that `.include` loads, relative to the package root |
+| `description` | no | Short description |
+| `authors` | no | Authors, as `Name <contact>` |
+| `license` | no | SPDX license identifier |
+| `categories` | no | Free-form categories for discovery |
+| `repository` | no | URL of the package’s own source repository |
+| `min-quarkdown` | no | Lowest Quarkdown version the package supports |
+
+## The entry point
+
+When the atom is included via `.include`, the entry point is included like any other Quarkdown file (see [*Including other Quarkdown files*](including-other-quarkdown-files.md) for more).
+
+> **Example 1**
+> 
+> ```markdown
+> <!-- Package's main.qd -->
+> 
+> Hello, world!
+> 
+> .function {myfunction}
+>     Hello from my function!
+> 
+> <!-- Consumer's main.qd -->
+> 
+> .include {@atoms/my-atom:1.0.0}
+> 
+> .myfunction
+> ```
+> 
+> Hello, world!
+> 
+> Hello from my function!
+
+## Templates
+
+A package can also act as a **project template** for `quarkdown create`, so that users scaffold a new project from it with a single command:
+
+```
+quarkdown create --template @atoms/simple-cv:1.0.0
+```
+
+To make a package a template, add a `[template]` table to its manifest:
+
+```toml
+[template]
+doctype = "paged"
+content = "template.qd"
+additional-files = ["sections/experience.qd", "references.bib"]
+enforce-theme = true
+```
+
+| Key | Required | Meaning |
+| --- | --- | --- |
+| `content` | yes | Quarkdown file whose text becomes the initial content of the new project’s main file, copied as-is |
+| `doctype` | no | Document type of the new project (`plain`, `paged`, `slides`, `docs`). If set, the wizard skips the question |
+| `additional-files` | no | Files copied into the new project at the same relative path, as-is |
+| `enforce-theme` | no | Whether the template sets a preferred theme (default `false`). If `true`, new projects never declare a `.theme` |
+
+## Internal files
+
+Files and directories whose name starts with `__` (double underscore), are internal to the source files and are not installed into users’ projects.
+
+## Publishing
+
+Once the package works locally, publish it to the official `@atoms` repository by [following its instructions](https://github.com/quarkdown-labs/atoms).
+Because each published version is immutable, to ship a change you’ll need to publish a new one.
+
+Published packages appear in the [atoms catalog](https://studio.quarkdown.com/atoms).

@@ -8,6 +8,8 @@ The parameter accepts a string that represents the **path to the target file**, 
 
 > To include external libraries, refer to [*Importing external libraries*](importing-external-libraries.md).
 
+> To include a package from the package repository, refer to [*Packages*](packages.md).
+
 > **Example 1**
 > 
 > > `file.qd`

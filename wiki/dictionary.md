@@ -58,6 +58,8 @@ Trailing colons before nested dictionaries are optional:
   - food: Pasta
 ```
 
+An empty dictionary can be created via **`.emptydictionary`**.
+
 ## Operations
 
 You can pass a dictionary to any function that accepts an [iterable](iterable.md#operations), where it is treated as an iterable of pairs.

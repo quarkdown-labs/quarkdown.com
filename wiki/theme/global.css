@@ -37,6 +37,8 @@ body.quarkdown.quarkdown-plain > main {
   border-color: var(--qd-page-content-border-color);
   border-style: var(--qd-page-content-border-style);
   box-sizing: border-box;
+  padding: var(--qd-page-content-padding-top) var(--qd-page-content-padding-right) var(--qd-page-content-padding-bottom) var(--qd-page-content-padding-left);
+  box-sizing: border-box;
 }
 @media screen and (max-width: 800px), print, pagedjs-ignore {
   body.quarkdown.quarkdown-plain {
@@ -171,24 +173,24 @@ body.quarkdown.quarkdown-docs > :is(header, .content-wrapper) > aside:first-chil
     display: none;
   }
 }
-body.quarkdown.quarkdown-slides .reveal:not(:has(.pdf-page)) {
+body.quarkdown.quarkdown-slides .reveal .slide-background {
   border-width: var(--qd-page-content-border-width);
   border-color: var(--qd-page-content-border-color);
   border-style: var(--qd-page-content-border-style);
   box-sizing: border-box;
+  background-color: var(--qd-background-color);
 }
-body.quarkdown.quarkdown-slides .reveal .slides > .pdf-page {
-  border-width: var(--qd-page-content-border-width);
-  border-color: var(--qd-page-content-border-color);
-  border-style: var(--qd-page-content-border-style);
+body.quarkdown.quarkdown-slides .reveal .slides section {
+  padding: var(--qd-page-content-padding-top) var(--qd-page-content-padding-right) var(--qd-page-content-padding-bottom) var(--qd-page-content-padding-left);
   box-sizing: border-box;
 }
 body.quarkdown.quarkdown-slides .reveal .slides > .pdf-page section {
-  padding: 0 var(--qd-slides-horizontal-inset, 0) !important;
+  padding: var(--qd-page-content-padding-top) var(--qd-page-content-padding-right) var(--qd-page-content-padding-bottom) var(--qd-page-content-padding-left) !important;
+  box-sizing: border-box;
   top: 0 !important;
 }
-body.quarkdown.quarkdown-slides .reveal .slides.slides.slides section:not(:has(h1, h2)) {
-  padding-top: var(--qd-slides-blank-vertical-inset, 0) !important;
+body.quarkdown.quarkdown-slides .reveal .slides.slides.slides section:not(:has(h1, h2, h3)) {
+  padding-top: calc(var(--qd-page-content-padding-top) + var(--qd-slides-blank-vertical-inset, 0px)) !important;
 }
 body.quarkdown.quarkdown-paged .pagedjs_pages {
   display: flex;
@@ -200,6 +202,8 @@ body.quarkdown.quarkdown-paged .pagedjs_area {
   border-width: var(--qd-page-content-border-width);
   border-color: var(--qd-page-content-border-color);
   border-style: var(--qd-page-content-border-style);
+  box-sizing: border-box;
+  padding: var(--qd-page-content-padding-top) var(--qd-page-content-padding-right) var(--qd-page-content-padding-bottom) var(--qd-page-content-padding-left);
   box-sizing: border-box;
 }
 
@@ -1089,6 +1093,10 @@ details > summary + p,
 .quarkdown .footnote-definition {
   display: flex;
   flex-direction: row;
+  overflow-wrap: anywhere;
+}
+.quarkdown .footnote-definition > .footnote-label {
+  flex-shrink: 0;
 }
 .quarkdown .footnote-reference a {
   text-decoration: none;
@@ -1097,6 +1105,11 @@ details > summary + p,
   border-top: 1px solid var(--qd-page-content-border-color);
   width: 40%;
   height: 4px;
+}
+
+.pagedjs_footnote_inner_content {
+  column-width: auto !important;
+  column-gap: normal !important;
 }
 
 .quarkdown-slides .footnote-area {
@@ -1302,6 +1315,24 @@ body.quarkdown-paged:not(:has(.pagedjs_page)) {
   body.quarkdown-paged .pagedjs_page {
     box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
   }
+}
+
+body.quarkdown-slides {
+  --r-background-color: var(--qd-background-color);
+  --r-main-color: var(--qd-main-color);
+  --r-heading-color: var(--qd-heading-color);
+  --r-link-color: var(--qd-link-color);
+  --r-main-font: var(--qd-main-custom-font, var(--qd-main-localized-font, var(--qd-main-font, serif))), var(--qd-main-localized-font, var(--qd-main-font, serif)), var(--qd-main-font, serif), serif;
+  --r-heading-font: var(--qd-heading-custom-font, var(--qd-heading-localized-font, var(--qd-heading-font, var(--qd-main-custom-font, var(--qd-main-localized-font, var(--qd-main-font, serif))), var(--qd-main-localized-font, var(--qd-main-font, serif)), var(--qd-main-font, serif), serif))), var(--qd-heading-localized-font, var(--qd-heading-font, var(--qd-main-custom-font, var(--qd-main-localized-font, var(--qd-main-font, serif))), var(--qd-main-localized-font, var(--qd-main-font, serif)), var(--qd-main-font, serif), serif)), var(--qd-heading-font, var(--qd-main-custom-font, var(--qd-main-localized-font, var(--qd-main-font, serif))), var(--qd-main-localized-font, var(--qd-main-font, serif)), var(--qd-main-font, serif), serif), var(--qd-main-custom-font, var(--qd-main-localized-font, var(--qd-main-font, serif))), var(--qd-main-localized-font, var(--qd-main-font, serif)), var(--qd-main-font, serif), serif;
+  --r-code-font: var(--qd-code-custom-font, var(--qd-code-localized-font, var(--qd-code-font, monospace))), var(--qd-code-localized-font, var(--qd-code-font, monospace)), var(--qd-code-font, monospace), monospace;
+  --r-main-font-size: var(--qd-main-font-size);
+  --r-block-margin: var(--qd-block-margin);
+  --r-heading-margin: var(--qd-heading-margin);
+}
+
+html.reveal-print {
+  --qd-page-content-padding-right: var(--qd-slides-horizontal-inset);
+  --qd-page-content-padding-left: var(--qd-slides-horizontal-inset);
 }
 
 .quarkdown-docs {
@@ -1606,6 +1637,10 @@ body.quarkdown-paged:not(:has(.pagedjs_page)) {
   max-height: 90vh;
   overflow-y: auto;
   transition: background-color 0.3s;
+  user-select: none;
+}
+.quarkdown nav.sidebar.sidebar.sidebar.sidebar.selecting {
+  pointer-events: none;
 }
 @media screen and (min-width: 801px), pagedjs-ignore {
   .quarkdown nav.sidebar.sidebar.sidebar.sidebar {
@@ -1735,6 +1770,10 @@ body.quarkdown-paged:not(:has(.pagedjs_page)) {
   --qd-page-content-border-width: unset;
   --qd-page-content-border-color: var(--qd-main-color);
   --qd-page-content-border-style: unset;
+  --qd-page-content-padding-top: 0px;
+  --qd-page-content-padding-right: 0px;
+  --qd-page-content-padding-bottom: 0px;
+  --qd-page-content-padding-left: 0px;
   --qd-line-height: 1.5;
   --qd-letter-spacing: normal;
   --qd-paragraph-text-indent: none;
@@ -1795,16 +1834,6 @@ body.quarkdown-paged:not(:has(.pagedjs_page)) {
   --qd-docs-search-border-color: var(--qd-docs-separator-border-color);
   --qd-docs-search-focused-border: var(--qd-primary-color);
   color-scheme: var(--qd-color-scheme);
-  --r-background-color: var(--qd-background-color);
-  --r-main-color: var(--qd-main-color);
-  --r-heading-color: var(--qd-heading-color);
-  --r-link-color: var(--qd-link-color);
-  --r-main-font: var(--qd-main-font);
-  --r-main-font-size: var(--qd-main-font-size);
-  --r-code-font: var(--qd-code-font);
-  --r-heading-font: var(--qd-heading-font);
-  --r-block-margin: var(--qd-block-margin);
-  --r-heading-margin: var(--qd-heading-margin);
 }
 
 .sr-only {

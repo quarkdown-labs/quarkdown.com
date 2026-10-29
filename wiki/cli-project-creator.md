@@ -14,12 +14,25 @@ arguments:
 | --- | --- | --- | --- |
 | Project name |  | `--name` | [`.docname`](document-metadata.md) |
 | Authors | Separated by commas | `--authors` | [`.docauthors`](document-metadata.md#authors) |
-| Document type | `paged`/`slides`/`plain` | `--type` | [`.doctype`](document-metadata.md) |
+| Document type | `paged`/`slides`/`plain`/`docs` | `--type` | [`.doctype`](document-metadata.md) |
 | Document language | [Valid language tag or full name](localization.md) | `--lang` | [`.doclang`](document-metadata.md) |
 | Color theme (unprompted) |  | `--color-theme` | [`.theme`](themes.md) |
 | Layout theme (unprompted) |  | `--layout-theme` | [`.theme`](themes.md) |
 
 Additional options:
 
+- `--template <reference>`: creates the project from a package template. See [*Create from template*](#create-from-template) below.
 - `--empty`: does not include sample initial content
 - `--main-file <name>`: sets the name of the main `.qd` source file. Defaults to the name of the parent directory.
+
+## Create from template
+
+A [package](packages.md) can declare itself a **project template**, which you can use via the `--template` option.
+
+```
+quarkdown create --template @atoms/simple-cv:1.0.0
+```
+
+You can find templates on the [Quarkdown Atoms catalog](https://studio.quarkdown.com/atoms?templates=true).
+
+To make your own package a template, see [*Publishing packages*](publishing-packages.md#templates).

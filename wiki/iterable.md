@@ -51,6 +51,8 @@ Nested collections can be represented by nested Markdown lists as well.
 > 
 > E
 
+An empty collection can be created via **`.emptycollection`**.
+
 ## Pair
 
 A pair is an iterable of two values.
