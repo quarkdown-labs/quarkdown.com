@@ -35,6 +35,7 @@ export const links = {
   privacy: '/privacy',
   terms: '/terms',
   studio: STUDIO,
+  waitlist: `${STUDIO}/waitlist`,
   upgrade: {
     monthly: checkout('pro', 'monthly'),
     yearly: checkout('pro', 'yearly'),

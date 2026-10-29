@@ -1,7 +1,8 @@
 ---
-/** Joins the Quarkdown Studio waitlist. Not wired yet: scripts may hook onto `[data-waitlist]`. */
+/** Joins the Quarkdown Studio waitlist, on Studio's own waitlist page. */
+import { links } from '../../links';
 import CallToAction from '../CallToAction.astro';
 import Icon from '../Icon.astro';
 ---
 
-<CallToAction variant="studio" data-waitlist>Join the waitlist<Icon name="arrow-right" /></CallToAction>
+<CallToAction variant="studio" href={links.waitlist}>Join the waitlist<Icon name="arrow-right" /></CallToAction>
