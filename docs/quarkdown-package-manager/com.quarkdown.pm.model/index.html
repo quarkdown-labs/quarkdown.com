@@ -1,0 +1,301 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>com.quarkdown.pm.model</title>
+<link href="../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+      if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      } else {
+        const savedDarkMode = JSON.parse(storage)
+        if (savedDarkMode === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      }
+    </script>
+<script type="text/javascript" src="../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../styles/style.css" rel="Stylesheet">
+<link href="../../styles/main.css" rel="Stylesheet">
+<link href="../../styles/prism.css" rel="Stylesheet">
+<link href="../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../scripts/safe-local-storage_blocking.js"></script>
+<script type="text/javascript" src="../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../scripts/prism.js" async></script>
+<script type="text/javascript" src="../../ui-kit/ui-kit.min.js" defer></script>
+<link href="../../images/logo-icon.svg">
+<link href="../../styles/stylesheet.css" rel="Stylesheet"></head>
+<body>
+<div class="root">
+    <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+<a class="library-name--link" href="../../index.html" tabindex="1">
+                    quarkdown
+            </a>        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle" type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">2.7.0
+        </div>
+        <div class="navigation-controls">
+        <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
+                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true" data-filter=":quarkdown-package-manager/commonMain">common</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox" data-role="dropdown-toggle" aria-controls="platform-tags-listbox" aria-haspopup="listbox" aria-expanded="false" aria-label="Toggle source sets"></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
+                    <div class="dropdown--header"><span>Target filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close target filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":quarkdown-package-manager/commonMain" data-filter=":quarkdown-package-manager/commonMain">
+                                <span class="checkbox--icon"></span>
+                                common
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </ul>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button" type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </header>
+    <div id="container">
+        <nav id="leftColumn" class="sidebar" data-item-type="SECTION" data-item-config="{&quot;defaultSize&quot;: 280, &quot;minSize&quot;: 200, &quot;maxSize&quot;: 400}">
+            <a class="toc--skip-link" href="#main">Skip to content</a>
+            <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list" data-role="dropdown-listbox" aria-label="Table of contents">
+                    <div class="dropdown--header">
+                            <span>
+                                    quarkdown
+                            </span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar--inner" id="sideMenu"></div>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </nav>
+        <div id="resizer" class="resizer" data-item-type="BAR"></div>
+        <div id="main" data-item-type="SECTION" role="main">
+<div class="main-content" data-page-type="package" id="content" pageids="quarkdown-package-manager::com.quarkdown.pm.model////PointingToDeclaration//-697178788">
+  <div class="breadcrumbs"><a href="../index.html">quarkdown-package-manager</a><span class="delimiter">/</span><span class="current">com.quarkdown.pm.model</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>Package-level</span></span> <span><span>declarations</span></span></h1>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="TYPE">Types</button><button class="section-tab" data-togglable="FUNCTION,EXTENSION_FUNCTION">Functions</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="TYPE">
+        <h2 class="tableheader">Types</h2>
+        <div class="table"><a data-name="-1574502467%2FClasslikes%2F-697178788" anchor-label="AtomManifest" id="-1574502467%2FClasslikes%2F-697178788" data-filterable-set=":quarkdown-package-manager/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-package-manager/commonMain" data-filterable-set=":quarkdown-package-manager/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-atom-manifest/index.html"><span>Atom</span><wbr><span><span>Manifest</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1574502467%2FClasslikes%2F-697178788"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-package-manager/commonMain" data-filterable-set=":quarkdown-package-manager/commonMain" data-active="" data-toggle=":quarkdown-package-manager/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-package-manager/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-atom-manifest/index.html">AtomManifest</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>version<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>entrypoint<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>description<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>authors<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span><span class="token operator"> = </span>emptyList()<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>minQuarkdownVersion<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>categories<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span><span class="token operator"> = </span>emptyList()<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>repository<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>license<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Metadata of a package ("atom"), as declared in the <code class="lang-kotlin">atom</code> table of its manifest.</p></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-276940829%2FClasslikes%2F-697178788" anchor-label="PackageFile" id="-276940829%2FClasslikes%2F-697178788" data-filterable-set=":quarkdown-package-manager/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-package-manager/commonMain" data-filterable-set=":quarkdown-package-manager/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-package-file/index.html"><span>Package</span><wbr><span><span>File</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-276940829%2FClasslikes%2F-697178788"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-package-manager/commonMain" data-filterable-set=":quarkdown-package-manager/commonMain" data-active="" data-toggle=":quarkdown-package-manager/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-package-manager/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-package-file/index.html">PackageFile</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>path<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>content<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-byte-array/index.html">ByteArray</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">A file belonging to a package.</p></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="515834582%2FClasslikes%2F-697178788" anchor-label="PackageIdentifier" id="515834582%2FClasslikes%2F-697178788" data-filterable-set=":quarkdown-package-manager/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-package-manager/commonMain" data-filterable-set=":quarkdown-package-manager/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-package-identifier/index.html"><span>Package</span><wbr><span><span>Identifier</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="515834582%2FClasslikes%2F-697178788"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-package-manager/commonMain" data-filterable-set=":quarkdown-package-manager/commonMain" data-active="" data-toggle=":quarkdown-package-manager/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-package-manager/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-package-identifier/index.html">PackageIdentifier</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>scope<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Identifies a package independently of its version.</p></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-997484656%2FClasslikes%2F-697178788" anchor-label="PackageManifest" id="-997484656%2FClasslikes%2F-697178788" data-filterable-set=":quarkdown-package-manager/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-package-manager/commonMain" data-filterable-set=":quarkdown-package-manager/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-package-manifest/index.html"><span>Package</span><wbr><span><span>Manifest</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-997484656%2FClasslikes%2F-697178788"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-package-manager/commonMain" data-filterable-set=":quarkdown-package-manager/commonMain" data-active="" data-toggle=":quarkdown-package-manager/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-package-manager/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-package-manifest/index.html">PackageManifest</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>atom<span class="token operator">: </span><a href="-atom-manifest/index.html">AtomManifest</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>template<span class="token operator">: </span><a href="-template-manifest/index.html">TemplateManifest</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Root of a package manifest.</p></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-945259944%2FClasslikes%2F-697178788" anchor-label="PackageReference" id="-945259944%2FClasslikes%2F-697178788" data-filterable-set=":quarkdown-package-manager/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-package-manager/commonMain" data-filterable-set=":quarkdown-package-manager/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-package-reference/index.html"><span>Package</span><wbr><span><span>Reference</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-945259944%2FClasslikes%2F-697178788"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-package-manager/commonMain" data-filterable-set=":quarkdown-package-manager/commonMain" data-active="" data-toggle=":quarkdown-package-manager/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-package-manager/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-package-reference/index.html">PackageReference</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>identifier<span class="token operator">: </span><a href="-package-identifier/index.html">PackageIdentifier</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>version<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">A reference to an exact version of a package, as written in Quarkdown source: <code class="lang-kotlin">@&lt;scope&gt;/&lt;name&gt;:&lt;version&gt;</code>.</p></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1302471851%2FClasslikes%2F-697178788" anchor-label="PackageRepository" id="-1302471851%2FClasslikes%2F-697178788" data-filterable-set=":quarkdown-package-manager/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-package-manager/commonMain" data-filterable-set=":quarkdown-package-manager/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-package-repository/index.html"><span>Package</span><wbr><span><span>Repository</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1302471851%2FClasslikes%2F-697178788"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-package-manager/commonMain" data-filterable-set=":quarkdown-package-manager/commonMain" data-active="" data-toggle=":quarkdown-package-manager/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-package-manager/commonMain"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-package-repository/index.html">PackageRepository</a></div><div class="brief "><p class="paragraph">A source of packages, such as a remote Git repository.</p></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1271910249%2FClasslikes%2F-697178788" anchor-label="RepositoryPackage" id="1271910249%2FClasslikes%2F-697178788" data-filterable-set=":quarkdown-package-manager/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-package-manager/commonMain" data-filterable-set=":quarkdown-package-manager/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-repository-package/index.html"><span>Repository</span><wbr><span><span>Package</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1271910249%2FClasslikes%2F-697178788"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-package-manager/commonMain" data-filterable-set=":quarkdown-package-manager/commonMain" data-active="" data-toggle=":quarkdown-package-manager/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-package-manager/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-repository-package/index.html">RepositoryPackage</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>manifest<span class="token operator">: </span><a href="-package-manifest/index.html">PackageManifest</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>files<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="-package-file/index.html">PackageFile</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">A package resolved from a <a href="-package-repository/index.html">PackageRepository</a>.</p></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1774641076%2FClasslikes%2F-697178788" anchor-label="TemplateManifest" id="1774641076%2FClasslikes%2F-697178788" data-filterable-set=":quarkdown-package-manager/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-package-manager/commonMain" data-filterable-set=":quarkdown-package-manager/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-template-manifest/index.html"><span>Template</span><wbr><span><span>Manifest</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1774641076%2FClasslikes%2F-697178788"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-package-manager/commonMain" data-filterable-set=":quarkdown-package-manager/commonMain" data-active="" data-toggle=":quarkdown-package-manager/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-package-manager/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-template-manifest/index.html">TemplateManifest</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>doctype<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>content<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>additionalFiles<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span><span class="token operator"> = </span>emptyList()<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>enforceTheme<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Declaration that makes a package usable as a project template, as declared in the <code class="lang-kotlin">template</code> table of its manifest.</p></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="tableheader">Functions</h2>
+        <div class="table"><a data-name="-1564741660%2FFunctions%2F-697178788" anchor-label="download" id="-1564741660%2FFunctions%2F-697178788" data-filterable-set=":quarkdown-package-manager/commonMain"></a>
+          <div class="table-row table-row_content" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":quarkdown-package-manager/commonMain" data-filterable-set=":quarkdown-package-manager/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="download.html"><span><span>download</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1564741660%2FFunctions%2F-697178788"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-package-manager/commonMain" data-filterable-set=":quarkdown-package-manager/commonMain" data-active="" data-toggle=":quarkdown-package-manager/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-package-manager/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="-repository-package/index.html">RepositoryPackage</a><span class="token punctuation">.</span><a href="download.html"><span class="token function">download</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../quarkdown-core/com.quarkdown.core.filesystem/-virtual-file-system/index.html">VirtualFileSystem</a></div><div class="brief "><p class="paragraph">Loads every file of this package into a new in-memory file system, rooted at <code class="lang-kotlin">/</code>.</p></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-iterable/index.html">Iterable</a><span class="token operator">&lt;</span><a href="-package-file/index.html">PackageFile</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="download.html"><span class="token function">download</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../quarkdown-core/com.quarkdown.core.filesystem/-virtual-file-system/index.html">VirtualFileSystem</a></div><div class="brief "><p class="paragraph">Loads these files into a new in-memory file system, rooted at <code class="lang-kotlin">/</code>, each at its package-relative path. The result can be read through the regular file system API, included into a document, or exported to disk via <code class="lang-kotlin">FsEntry.toOutputResources()</code>.</p></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1807010085%2FFunctions%2F-697178788" anchor-label="latestVersion" id="1807010085%2FFunctions%2F-697178788" data-filterable-set=":quarkdown-package-manager/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":quarkdown-package-manager/commonMain" data-filterable-set=":quarkdown-package-manager/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="latest-version.html"><span>latest</span><wbr><span><span>Version</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1807010085%2FFunctions%2F-697178788"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":quarkdown-package-manager/commonMain" data-filterable-set=":quarkdown-package-manager/commonMain" data-active="" data-toggle=":quarkdown-package-manager/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":quarkdown-package-manager/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="latest-version.html"><span class="token function">latestVersion</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">versions<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-iterable/index.html">Iterable</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Picks the newest of <a href="latest-version.html">versions</a> by semantic-version precedence.</p></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <div class="footer--container">
+            <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+            <div class="footer--content">
+                <div>
+                    <span>Generated by </span>
+                    <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                        Dokka
+                    </a>
+                    <div>© 2026 Quarkdown</div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
