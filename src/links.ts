@@ -35,6 +35,7 @@ export const links = {
   privacy: '/privacy',
   terms: '/terms',
   studio: STUDIO,
+  tryStudio: `${STUDIO}/open`,
   packages: `${STUDIO}/atoms`,
   waitlist: `${STUDIO}/waitlist`,
   upgrade: {
