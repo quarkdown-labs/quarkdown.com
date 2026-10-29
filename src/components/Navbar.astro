@@ -150,6 +150,13 @@ const groups: NavGroup[] = [
   }
 
   .logo {
+    color: $text;
+    transition: color 0.2s;
+
+    &:hover {
+      color: $heading;
+    }
+
     :global(svg) {
       width: 128px;
       height: auto;
