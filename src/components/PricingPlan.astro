@@ -1,7 +1,8 @@
 ---
 import CallToAction from './CallToAction.astro';
 import Icon from './Icon.astro';
-import { billingIntervals, forInterval, type Plan } from '../plans';
+import { currencies } from '../currencies';
+import { actionHref, billingIntervals, forInterval, showPrice, type Plan } from '../plans';
 
 interface Props {
   plan: Plan;
@@ -9,21 +10,23 @@ interface Props {
 
 const { id, name, badge, price, highlighted, features, action } = Astro.props.plan;
 
-// The price and action per billing interval; the pricing page shows the selected interval's.
-const variants = billingIntervals.map(({ id: interval }) => {
-  const intervalPrice = price && forInterval(price, interval);
-  // The fractional part of a price, if any, is typeset smaller than its whole part.
-  const [whole, fraction] = intervalPrice?.amount.split('.') ?? [];
-  return { interval, price: intervalPrice, whole, fraction, href: action && forInterval(action.href, interval) };
-});
+// The price and action per billing interval and currency; the pricing page shows the selected ones.
+const variants = billingIntervals.flatMap(({ id: interval }) =>
+  currencies.map(({ id: currency }) => {
+    const shown = price && showPrice(forInterval(price, interval), currency);
+    // The fractional part of a price, if any, is typeset smaller than its whole part.
+    const [whole, fraction] = shown?.amount.split('.') ?? [];
+    return { interval, currency, price: shown, whole, fraction, href: action && actionHref(action, interval, currency) };
+  }),
+);
 ---
 
 <article class:list={['plan', { 'plan--highlighted': highlighted }]} data-plan-id={id} data-plan-highlighted={highlighted}>
   <header class="plan-header">
     <h2 class="plan-name">{name}</h2>
     {badge && <span class="plan-badge">{badge}</span>}
-    {variants.map(({ interval, price, whole, fraction }) => price && (
-      <div class="plan-price" data-interval={interval}>
+    {variants.map(({ interval, currency, price, whole, fraction }) => price && (
+      <div class="plan-price" data-interval={interval} data-currency={currency}>
         <p>
           <span class="plan-price-amount">{whole}{fraction && <span class="plan-price-fraction">.{fraction}</span>}</span>
           {price.period && <span class="plan-price-period">/{price.period}</span>}
@@ -42,8 +45,8 @@ const variants = billingIntervals.map(({ id: interval }) => {
     ))}
   </ul>
 
-  {action && variants.map(({ interval, href }) => (
-    <div class="plan-action" data-interval={interval}>
+  {action && variants.map(({ interval, currency, href }) => (
+    <div class="plan-action" data-interval={interval} data-currency={currency}>
       <CallToAction href={href!} variant={action.variant}>{action.label}</CallToAction>
     </div>
   ))}

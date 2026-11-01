@@ -9,6 +9,7 @@ import Faq from '../components/Faq.astro';
 import { pricingFaqs } from '../faqs';
 import Footer from '../components/Footer.astro';
 import { billingIntervals, plans, refundWindowDays } from '../plans';
+import { currencies } from '../currencies';
 import { educationDiscount } from '../education';
 import { contactEmail, links, mailto } from '../links';
 import { meta } from '../meta';
@@ -23,7 +24,7 @@ const moneyBack =
 <Base title={title} description={description}>
   <BackgroundEffects />
 
-  <main class="pricing" data-billing={billingIntervals[0].id}>
+  <main class="pricing" data-billing={billingIntervals[0].id} data-currency={currencies[0].id}>
     <h1 class="pricing-title">Pricing</h1>
     <p class="lead">Supercharge your flow with {meta.name} Studio.</p>
 
@@ -33,6 +34,10 @@ const moneyBack =
 
     <div class="plans">
       {plans.map((plan) => <PricingPlan plan={plan} />)}
+    </div>
+
+    <div class="currency">
+      <TabSwitcher scope="currency" label="Currency" options={currencies} size="small" />
     </div>
 
     <p class="education">
@@ -55,6 +60,16 @@ const moneyBack =
   </Feature>
 
   <Footer />
+
+  <script>
+    import { guessCurrency } from '../currencies';
+
+    // Prices open in the currency the visitor most likely pays in, which the currency switcher can still change.
+    const currency = guessCurrency(Intl.DateTimeFormat().resolvedOptions().timeZone, navigator.languages);
+    document
+      .querySelector<HTMLButtonElement>(`[data-tab-scope="currency"] [data-tab-option="${currency}"]`)
+      ?.click();
+  </script>
 </Base>
 
 <style lang="scss">
@@ -82,18 +97,21 @@ const moneyBack =
     margin-top: 2.5rem;
   }
 
-  // Only the selected billing interval's prices and actions show.
-  $billing-intervals: monthly, yearly;
-
-  @each $shown in $billing-intervals {
-    @each $hidden in $billing-intervals {
-      @if $shown != $hidden {
-        .pricing[data-billing='#{$shown}'] :global([data-interval='#{$hidden}']) {
-          display: none;
+  // Only the prices and actions of the selected [scope] value show: those tagged with another [values] are hidden.
+  @mixin selected-only($scope, $attribute, $values) {
+    @each $shown in $values {
+      @each $hidden in $values {
+        @if $shown != $hidden {
+          .pricing[data-#{$scope}='#{$shown}'] :global([data-#{$attribute}='#{$hidden}']) {
+            display: none;
+          }
         }
       }
     }
   }
+
+  @include selected-only(billing, interval, (monthly, yearly));
+  @include selected-only(currency, currency, (usd, eur, gbp));
 
   $highlight-overflow: 1.5rem;
   $highlight-overlap: 1rem;
@@ -101,10 +119,14 @@ const moneyBack =
   $neighbor-tilt: 6deg;
   $neighbor-perspective: 1200px;
 
+  .currency {
+    // Clears the highlighted plan, which extends below the others.
+    margin-top: calc(#{$highlight-overflow} + 3rem);
+  }
+
   .education {
     @include prose;
-    // Clears the highlighted plan, which extends below the others.
-    margin-top: calc(#{$highlight-overflow} + 5rem);
+    margin-top: 4rem;
 
     a {
       color: $heading;

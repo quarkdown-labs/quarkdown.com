@@ -8,9 +8,12 @@ const STUDIO = import.meta.env.DEV ? 'http://localhost:5173' : 'https://studio.q
 /** How often a paid plan is billed, as Quarkdown Studio names it. */
 export type BillingInterval = 'monthly' | 'yearly';
 
-/** Studio route that opens a checkout for a plan, billed every interval. */
-const checkout = (plan: string, interval: BillingInterval) =>
-  `${STUDIO}/billing/checkout?${new URLSearchParams({ plan, interval })}`;
+/** Currency a paid plan is charged in, as Quarkdown Studio names it (lower-case ISO 4217). */
+export type Currency = 'usd' | 'eur' | 'gbp';
+
+/** Studio route that opens a checkout for a plan, billed every interval in a currency. */
+const checkout = (plan: string, interval: BillingInterval, currency: Currency) =>
+  `${STUDIO}/billing/checkout?${new URLSearchParams({ plan, interval, currency })}`;
 
 /** A link that composes an email to Quarkdown, optionally prefilled. */
 export function mailto(subject?: string, body?: string) {
@@ -38,10 +41,7 @@ export const links = {
   tryStudio: `${STUDIO}/open`,
   packages: `${STUDIO}/atoms`,
   waitlist: `${STUDIO}/waitlist`,
-  upgrade: {
-    monthly: checkout('pro', 'monthly'),
-    yearly: checkout('pro', 'yearly'),
-  },
+  upgrade: (interval: BillingInterval, currency: Currency) => checkout('pro', interval, currency),
   contact: mailto(),
   productHunt: 'https://www.producthunt.com/products/quarkdown',
   discussions: `${REPO}/discussions`,

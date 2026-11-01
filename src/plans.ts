@@ -1,10 +1,31 @@
 import type { TabOption } from './components/TabSwitcher.astro';
-import { links, type BillingInterval } from './links';
+import { currencies, formatPrice, inEveryCurrency, mapCurrencies, type PerCurrency } from './currencies';
+import { links, type BillingInterval, type Currency } from './links';
+
+/** Price of Pro billed monthly, per month. */
+const proMonthly: PerCurrency<number> = { usd: 6.99, eur: 6.99, gbp: 5.99 };
+
+/** Price of Pro billed yearly, per year. */
+const proYearly: PerCurrency<number> = { usd: 72, eur: 72, gbp: 60 };
+
+/** Months in a year, the yearly price's share of which is shown per month. */
+const MONTHS_PER_YEAR = 12;
+
+/** Cents in a unit of currency, the precision a per-month price is rounded to. */
+const CENTS = 100;
+
+/** Hundredths in a whole, for writing a share as a percentage. */
+const PERCENT = 100;
+
+/** The share of a year of monthly Pro that yearly Pro saves, the smallest across currencies, in percent. */
+const yearlySavingPercent = Math.round(
+  Math.min(...currencies.map(({ id }) => 1 - proYearly[id] / (proMonthly[id] * MONTHS_PER_YEAR))) * PERCENT,
+);
 
 /** Billing intervals the pricing page switches between, the first one shown by default. */
 export const billingIntervals: (TabOption & { id: BillingInterval })[] = [
   { id: 'monthly', label: 'Monthly' },
-  { id: 'yearly', label: 'Yearly', hint: 'Save 14%' },
+  { id: 'yearly', label: 'Yearly', hint: `Save ${yearlySavingPercent}%` },
 ];
 
 /** A value that is either the same for every billing interval, or set per interval. */
@@ -17,15 +38,39 @@ export function forInterval<T extends object | string>(value: PerInterval<T>, in
 
 export interface PlanAction {
   label: string;
-  href: PerInterval<string>;
+  /** Where the action leads, the same for every billing interval and currency or built from them. */
+  href: string | ((interval: BillingInterval, currency: Currency) => string);
   variant: 'primary' | 'secondary';
 }
 
 export interface PlanPrice {
+  /** Amount per currency, or a word standing in for one, e.g. Custom. */
+  amount: PerCurrency<number> | string;
+  period?: string;
+  /** What is charged at once, shown under the price, e.g. a yearly total. */
+  billed?: { amount: PerCurrency<number>; period: string };
+}
+
+/** A price as shown in one currency. */
+export interface ShownPrice {
   amount: string;
   period?: string;
   /** A line under the price, e.g. how it is billed. */
   note?: string;
+}
+
+/** [price] as shown in [currency]. */
+export function showPrice({ amount, period, billed }: PlanPrice, currency: Currency): ShownPrice {
+  return {
+    amount: typeof amount === 'string' ? amount : formatPrice(amount[currency], currency),
+    period,
+    note: billed && `Billed ${formatPrice(billed.amount[currency], currency)} ${billed.period}`,
+  };
+}
+
+/** Where [action] leads for [interval] and [currency]. */
+export function actionHref({ href }: PlanAction, interval: BillingInterval, currency: Currency): string {
+  return typeof href === 'string' ? href : href(interval, currency);
 }
 
 export interface Plan {
@@ -52,7 +97,7 @@ export const plans: Plan[] = [
   {
     id: 'free',
     name: 'Free',
-    price: { amount: '$0', period: 'mo' },
+    price: { amount: inEveryCurrency(0), period: 'mo' },
     features: [
       'All document types: plain, paged, slide, docs',
       'Unlimited live previews',
@@ -68,8 +113,12 @@ export const plans: Plan[] = [
     name: 'Pro',
     badge: 'Best value',
     price: {
-      monthly: { amount: '$6.99', period: 'mo' },
-      yearly: { amount: '$6', period: 'mo', note: 'Billed $72 yearly' },
+      monthly: { amount: proMonthly, period: 'mo' },
+      yearly: {
+        amount: mapCurrencies(proYearly, (total) => Math.round((total / MONTHS_PER_YEAR) * CENTS) / CENTS),
+        period: 'mo',
+        billed: { amount: proYearly, period: 'yearly' },
+      },
     },
     highlighted: true,
     features: [

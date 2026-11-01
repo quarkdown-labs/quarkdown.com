@@ -19,12 +19,14 @@ interface Props {
   options: TabOption[];
   /** Id of the option selected at first; the first option when omitted. */
   selected?: string;
+  /** How large the switcher is drawn: `small` for a secondary choice beside other content. */
+  size?: 'regular' | 'small';
 }
 
-const { scope, label, options, selected = options[0]?.id } = Astro.props;
+const { scope, label, options, selected = options[0]?.id, size = 'regular' } = Astro.props;
 ---
 
-<div class="tab-switcher" role="radiogroup" aria-label={label} data-tab-scope={scope}>
+<div class:list={['tab-switcher', `tab-switcher--${size}`]} role="radiogroup" aria-label={label} data-tab-scope={scope}>
   <span class="tab-switcher-indicator" aria-hidden="true"></span>
   {options.map(({ id, label, hint }) => (
     <button type="button" role="radio" aria-checked={String(id === selected)} data-tab-option={id}>
@@ -99,6 +101,16 @@ const { scope, label, options, selected = options[0]?.id } = Astro.props;
     &[aria-checked='true'] {
       anchor-name: --tab-selected;
       color: $heading;
+    }
+  }
+
+  .tab-switcher--small {
+    gap: 0.15rem;
+    padding: 0.2rem;
+
+    button {
+      padding: 0.3rem 0.75rem;
+      font-size: $font-size-overline;
     }
   }
 
