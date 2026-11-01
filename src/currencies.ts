@@ -1,3 +1,5 @@
+import { getCountryForTimezone } from 'countries-and-timezones';
+import countryToCurrency, { type Countries } from 'country-to-currency';
 import type { TabOption } from './components/TabSwitcher.astro';
 import type { Currency } from './links';
 
@@ -43,59 +45,27 @@ export function formatPrice(amount: number, currency: Currency): string {
   }).format(amount);
 }
 
-/** Time zones of the places that pay in a currency other than the default one. */
-const CURRENCY_BY_TIME_ZONE: Record<string, Currency> = {
-  ...Object.fromEntries(
-    ['Europe/London', 'Europe/Belfast', 'Europe/Guernsey', 'Europe/Isle_of_Man', 'Europe/Jersey'].map((zone) => [zone, 'gbp']),
-  ),
-  ...Object.fromEntries(
-    [
-      'Europe/Amsterdam', 'Europe/Andorra', 'Europe/Athens', 'Europe/Berlin', 'Europe/Bratislava', 'Europe/Brussels',
-      'Europe/Dublin', 'Europe/Helsinki', 'Europe/Lisbon', 'Europe/Ljubljana', 'Europe/Luxembourg', 'Europe/Madrid',
-      'Europe/Malta', 'Europe/Mariehamn', 'Europe/Monaco', 'Europe/Nicosia', 'Europe/Paris', 'Europe/Podgorica',
-      'Europe/Riga', 'Europe/Rome', 'Europe/San_Marino', 'Europe/Tallinn', 'Europe/Vatican', 'Europe/Vienna',
-      'Europe/Vilnius', 'Europe/Zagreb', 'Atlantic/Azores', 'Atlantic/Canary', 'Atlantic/Madeira', 'Africa/Ceuta',
-      'Asia/Famagusta', 'Asia/Nicosia',
-    ].map((zone) => [zone, 'eur']),
-  ),
-};
+/** The currency [region] (ISO 3166-1) pays in, when it is one prices are shown in. */
+function currencyOfRegion(region: string): Currency | undefined {
+  const currency = countryToCurrency[region as Countries]?.toLowerCase();
+  return currencies.find(({ id }) => id === currency)?.id;
+}
 
-/** Regions (ISO 3166-1) that pay in a currency other than the default one. */
-const CURRENCY_BY_REGION: Record<string, Currency> = {
-  ...Object.fromEntries(['GB', 'GG', 'IM', 'JE'].map((region) => [region, 'gbp'])),
-  ...Object.fromEntries(
-    [
-      'AD', 'AT', 'BE', 'CY', 'DE', 'EE', 'ES', 'FI', 'FR', 'GR', 'HR', 'IE', 'IT', 'LT', 'LU', 'LV', 'MC', 'ME',
-      'MT', 'NL', 'PT', 'SI', 'SK', 'SM', 'VA',
-    ].map((region) => [region, 'eur']),
-  ),
-};
-
-/** Prefix of the time zones that name an offset rather than a place, such as a privacy browser's `Etc/UTC`. */
-const PLACELESS_TIME_ZONE_PREFIX = 'Etc/';
-
-/** Time zone that names no place. */
-const UTC_TIME_ZONE = 'UTC';
-
-/** The currency [locale]'s region pays in, inferring the region from the language when the tag names none. */
-function currencyOfLocale(locale: string): Currency | undefined {
+/** The region [locale] names, inferring it from the language when the tag names none. */
+function regionOfLocale(locale: string): string | undefined {
   try {
-    const { region } = new Intl.Locale(locale).maximize();
-    return region ? CURRENCY_BY_REGION[region] : undefined;
+    return new Intl.Locale(locale).maximize().region;
   } catch {
     return undefined;
   }
 }
 
 /**
- * The currency a visitor most likely pays in: the one of the place their [timeZone] names, or, when it names
+ * The currency a visitor most likely pays in: the one of the country their [timeZone] names, or, when it names
  * none, the one of their first preferred [locales]' region; the default currency otherwise.
  */
 export function guessCurrency(timeZone: string, locales: readonly string[]): Currency {
-  const fallback = currencies[0].id;
-  if (timeZone !== UTC_TIME_ZONE && !timeZone.startsWith(PLACELESS_TIME_ZONE_PREFIX)) {
-    return CURRENCY_BY_TIME_ZONE[timeZone] ?? fallback;
-  }
   const [locale] = locales;
-  return (locale && currencyOfLocale(locale)) || fallback;
+  const region = getCountryForTimezone(timeZone)?.id ?? (locale && regionOfLocale(locale));
+  return (region && currencyOfRegion(region)) || currencies[0].id;
 }
