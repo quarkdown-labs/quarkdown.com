@@ -1,0 +1,1 @@
+import{n as e}from"./currencies.DtenecGi.js";var t=e(Intl.DateTimeFormat().resolvedOptions().timeZone,navigator.languages);document.querySelector(`[data-tab-scope="currency"] [data-tab-option="${t}"]`)?.click();
