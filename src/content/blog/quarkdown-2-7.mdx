@@ -1,0 +1,82 @@
+---
+title: "Quarkdown 2.7: packages and templates"
+date: 2026-11-01
+description: Quarkdown now ships with a package manager. How to use it, how it works, and the reasoning behind it.
+---
+
+Quarkdown 2.7 ships with a package manager, and it's the change we've been looking forward to the most.
+
+Here's the whole user experience:
+
+```markdown
+.include {@atoms/cowsay:1.0.0}
+
+.cowsay {Hello, Quarkdown!}
+```
+
+<div class="result">
+  <div style="display: flex; flex-direction: column; align-items: center; gap: 0.25em;">
+    <div style="padding: 0.5em 1em; border: 1px solid lightgray; border-radius: 0.5em;">Hello, Quarkdown!</div>
+    <div style="font-size: 1.5em;">🐄</div>
+  </div>
+</div>
+
+Yes, that's it. No install commands or configuration files.
+Quarkdown packages are called *atoms*, and you can browse them all in the [official catalog](https://studio.quarkdown.com/atoms).
+
+Atoms can also be templates. For example, you can create a new resumé project with:
+
+```shell
+quarkdown create --template @atoms/simple-cv:1.0.0
+```
+
+## Why not just grow the standard library
+
+Users want new layouts, themes, title pages, and those are all fair requests, but they're also opinions.
+There is no single right layout for a resumé or a paper, and if we add one to the compiler, it will all break down to the author's taste.
+
+We'd rather keep the core about building blocks, and let whatever you build with them live outside of it, where you can share it without waiting for us to cut a release.
+
+Over the next months, we'll proceed to deprecate Quarkdown's built-in libraries like `.include {paper}` and replace them with atoms.
+
+## How it works
+
+A package is included like a local file, represented by the format `@scope/name:version`. When the compiler reaches that `.include`, it:
+
+1. looks for the package inside your project, under `@scope/name/`;
+2. if it's missing, or the installed version isn't the one you asked for, downloads it from `@scope`'s repository;
+3. includes its entry point, exactly like any other `.qd` file.
+
+This way, we don't need any dependency manifest file. After the first compilation, your project looks like this, and the download step is skipped from then on:
+
+```
+my-project/
+  @atoms/
+    cowsay/
+      atom.toml
+      main.qd
+  main.qd
+```
+
+By installing packages next to your source, you get self-contained projects with great flexibility.
+You are free to gitignore the `@atoms` folder or not, and if you don't:
+- there is no clear distinction between your sources and its dependencies, so that you can **modify the atom's source directly**;
+- clones will compile offline.
+
+### The official registry
+
+[`@atoms`](https://github.com/quarkdown-labs/atoms) is a GitHub repository anybody can contribute to.
+
+This repository relies on *frozen releases* to ensure full reproducibility and avoid breaking changes.
+
+## On security
+
+Since atoms fetched as part of the compilation process are executed within your documents, we take security seriously. All packages are reviewed before being merged into the official registry, and we encourage users to report any security issues they find.
+
+The same `--allow` and `--deny` flags that control what your Quarkdown documents can do always apply to your installed atoms.
+
+## Make your own
+
+If there's a chunk of Quarkdown you keep copy-pasting between projects, it's an atom waiting to happen. Add an `atom.toml` next to it, follow [*Publishing packages*](https://quarkdown.com/wiki/publishing-packages), and open a pull request.
+
+[Get Quarkdown](/#install), or read the full [release notes](https://github.com/iamgio/quarkdown/releases/tag/v2.7.0).
