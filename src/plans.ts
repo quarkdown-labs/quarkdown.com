@@ -161,6 +161,7 @@ export const comparison: ComparisonRow[] = [
   { feature: 'Live previews', values: { free: 'Unlimited', pro: 'Unlimited', enterprise: 'Unlimited' } },
   { feature: 'Vim mode', values: { free: true, pro: true, enterprise: true } },
   { feature: 'Spell checker', values: { free: true, pro: true, enterprise: true } },
+  { feature: 'Writing suggestions', values: { free: true, pro: true, enterprise: true } },
   { feature: 'Present slides', values: { free: true, pro: true, enterprise: true } },
   { feature: 'Knowledge graph visualization', values: { free: true, pro: true, enterprise: true } },
   { feature: 'HTML and PDF export', values: { free: true, pro: true, enterprise: true } },
