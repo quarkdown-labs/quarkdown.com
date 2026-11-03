@@ -1,5 +1,6 @@
 ---
 import Icon from './Icon.astro';
+import Hint from './Hint.astro';
 import { comparison, plans } from '../plans';
 ---
 
@@ -14,9 +15,9 @@ import { comparison, plans } from '../plans';
       </tr>
     </thead>
     <tbody>
-      {comparison.map(({ feature, values }) => (
+      {comparison.map(({ feature, hint, values }) => (
         <tr>
-          <th scope="row">{feature}</th>
+          <th scope="row">{feature}{hint && <Hint text={hint} subject={feature} />}</th>
           {plans.map(({ id, highlighted }) => {
             const value = values[id];
             return (

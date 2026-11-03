@@ -151,26 +151,28 @@ export type ComparisonValue = boolean | string;
 
 export interface ComparisonRow {
   feature: string;
+  /** An explanation of [feature] as HTML, for when its name alone is unclear. */
+  hint?: string;
   values: Record<Plan['id'], ComparisonValue>;
 }
 
 /** Feature-by-feature comparison of the plans. */
 export const comparison: ComparisonRow[] = [
-  { feature: 'Powered by Quarkdown', values: { free: true, pro: true, enterprise: true } },
-  { feature: 'All 4 document types', values: { free: true, pro: true, enterprise: true } },
+  { feature: 'Powered by Quarkdown', hint: 'Studio runs the very same open-source Quarkdown compiler as the CLI, with a faster live preview engine.', values: { free: true, pro: true, enterprise: true } },
+  { feature: 'All 4 document types', hint: 'Plain, paged, slides, docs.', values: { free: true, pro: true, enterprise: true } },
   { feature: 'Live previews', values: { free: 'Unlimited', pro: 'Unlimited', enterprise: 'Unlimited' } },
   { feature: 'Vim mode', values: { free: true, pro: true, enterprise: true } },
   { feature: 'Spell checker', values: { free: true, pro: true, enterprise: true } },
-  { feature: 'Writing suggestions', values: { free: true, pro: true, enterprise: true } },
+  { feature: 'Writing suggestions', hint: 'Style checks that flag unclear, inconsistent or wordy prose as you write. Powered by <a href="https://vale.sh" target="_blank" rel="noopener">Vale</a>.', values: { free: true, pro: true, enterprise: true } },
   { feature: 'Present slides', values: { free: true, pro: true, enterprise: true } },
   { feature: 'Knowledge graph visualization', values: { free: true, pro: true, enterprise: true } },
   { feature: 'HTML and PDF export', values: { free: true, pro: true, enterprise: true } },
   { feature: 'Markdown export', values: { free: false, pro: true, enterprise: true } },
   { feature: 'Active projects', values: { free: '3', pro: 'Unlimited', enterprise: 'Unlimited' } },
   { feature: 'Exports', values: { free: '3/hour, per project', pro: 'Unlimited', enterprise: 'Unlimited' } },
-  { feature: 'Export timeout', values: { free: '5s', pro: '30s', enterprise: 'Custom' } },
-  { feature: 'Export artifact retention', values: { free: false, pro: '20 days', enterprise: 'Custom' } },
-  { feature: 'Priority export queue', values: { free: false, pro: true, enterprise: true } },
+  { feature: 'Export timeout', hint: 'How long a single export can run before it is stopped.', values: { free: '5s', pro: '30s', enterprise: 'Custom' } },
+  { feature: 'Export artifact retention', hint: 'How long exported files stay available to download.', values: { free: false, pro: '20 days', enterprise: 'Custom' } },
+  { feature: 'Priority export queue', hint: 'Your exports run ahead of those from the Free plan.', values: { free: false, pro: true, enterprise: true } },
   { feature: 'Storage', values: { free: '20MB', pro: '1GB', enterprise: 'Custom' } },
   { feature: 'Real-time collaboration', values: { free: false, pro: 'Soon', enterprise: 'Soon' } },
   { feature: 'Read, write and export via MCP', values: { free: false, pro: true, enterprise: true } },

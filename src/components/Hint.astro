@@ -1,0 +1,103 @@
+---
+/**
+ * A (?) that explains its neighboring text in a tooltip, shown on hover, and on focus for keyboard and touch.
+ */
+import Icon from './Icon.astro';
+
+interface Props {
+  /** The explanation shown in the tooltip, as HTML. */
+  text: string;
+  /** What is explained, naming the button for assistive technologies. */
+  subject: string;
+}
+
+const { text, subject } = Astro.props;
+const id = `hint-${crypto.randomUUID()}`;
+---
+
+<span class="hint">
+  <button type="button" class="trigger" aria-label={`About ${subject}`} aria-describedby={id}>
+    <Icon name="question-circle" />
+  </button>
+  <span id={id} role="tooltip" class="tooltip" set:html={text} />
+</span>
+
+<style lang="scss">
+  @use '../styles/colors' as *;
+  @use '../styles/typography' as *;
+
+  $tooltip-width: 16rem;
+  $tooltip-gap: 0.5rem;
+  $transition: 0.15s ease;
+
+  .hint {
+    position: relative;
+    // Its box is as tall as the icon alone, so that it centers on the text's x-height.
+    display: inline-flex;
+    vertical-align: middle;
+    // Optical correction: the circle reads as sitting low when centered geometrically.
+    top: -1px;
+    margin-inline-start: 0.6em;
+  }
+
+  .trigger {
+    display: inline-flex;
+    padding: 0;
+    border: none;
+    background: none;
+    color: $text-faint;
+    font-size: 0.9em;
+    cursor: help;
+    transition: color $transition;
+  }
+
+  .tooltip {
+    @include prose;
+    font-size: 0.85rem;
+    line-height: 1.55;
+    position: absolute;
+    z-index: 2;
+    bottom: calc(100% + #{$tooltip-gap});
+    left: 50%;
+    width: max-content;
+    max-width: $tooltip-width;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid $brand-600;
+    border-radius: 0.5rem;
+    background-color: $brand-800;
+    font-weight: normal;
+    text-align: left;
+    white-space: normal;
+    transform: translateX(-50%);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity $transition, visibility $transition;
+
+    // Bridges the gap down to the trigger, so that the pointer can reach the tooltip, and its links, without leaving the hint.
+    &::after {
+      content: '';
+      position: absolute;
+      inset-inline: 0;
+      top: 100%;
+      height: $tooltip-gap;
+    }
+
+    :global(a) {
+      color: $heading;
+    }
+  }
+
+  .hint:hover,
+  .hint:focus-within {
+    .trigger {
+      color: $heading;
+    }
+
+    .tooltip {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+  }
+</style>
