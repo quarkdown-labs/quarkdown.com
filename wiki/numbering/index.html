@@ -90,34 +90,34 @@ header .version {
     - figures: 1.1</code></pre><h2 id="headings">Headings</h2><div class="box tip"><header><h4>Example 1</h4></header><div class="box-content"><pre><code class="language-markdown">.numbering
     - headings: 1.A.a
 
-## Title    &lt;!--   1   --&gt;
-### Title   &lt;!--  1.A  --&gt;
-#### Title  &lt;!-- 1.A.a --&gt;
-#### Title  &lt;!-- 1.A.b --&gt;
-##### Title &lt;!-- None  --&gt;
-### Title   &lt;!--  1.B  --&gt;
-## Title    &lt;!--   2   --&gt;
-### Title   &lt;!--  2.A  --&gt;</code></pre><div class="container fullwidth quarkdown-output"><figure><img src="media/headings-latex@1211449818.png" alt="Latex theme numbering" style="width: 550.0px;" /></figure><figure><img src="media/toc-latex@742938041.png" alt="Latex theme table of contents" style="width: 550.0px;" /></figure></div></div></div><h3 id="excluding-headings-from-numbering">Excluding headings from numbering</h3><p>To prevent a heading from being numbered, you can either:</p><ul><li>Use a <a href="../headings/#decorative-headings">decorative heading</a> (<span class="codespan-content"><code>#!</code></span>, <span class="codespan-content"><code>##!</code></span>, etc.), which also excludes the heading from the <a href="../table-of-contents/">table of contents</a>.</li><li>Use the <a href="../headings/"><span class="codespan-content"><code>.heading</code></span></a> function with <span class="codespan-content"><code>numbered:{no}</code></span> for more granular control, allowing you to independently decide whether the heading appears in the table of contents.</li></ul><h2 id="figures">Figures</h2><p><a href="../figure/">Figures</a> are numbered only if they have a <strong>caption</strong>, which may also be empty.</p><div class="box tip"><header><h4>Example 2</h4></header><div class="box-content"><pre><code class="language-markdown nohljsln">```markdown
+# Title    &lt;!--   1   --&gt;
+## Title   &lt;!--  1.A  --&gt;
+### Title  &lt;!-- 1.A.a --&gt;
+### Title  &lt;!-- 1.A.b --&gt;
+#### Title &lt;!-- None  --&gt;
+## Title   &lt;!--  1.B  --&gt;
+# Title    &lt;!--   2   --&gt;
+## Title   &lt;!--  2.A  --&gt;</code></pre><div class="container fullwidth quarkdown-output"><figure><img src="media/headings-latex@1289799565.png" alt="Latex theme numbering" style="width: 550.0px;" /></figure><figure><img src="media/toc-latex@821287788.png" alt="Latex theme table of contents" style="width: 550.0px;" /></figure></div></div></div><h3 id="excluding-headings-from-numbering">Excluding headings from numbering</h3><p>To prevent a heading from being numbered, you can either:</p><ul><li>Use a <a href="../headings/#decorative-headings">decorative heading</a> (<span class="codespan-content"><code>#!</code></span>, <span class="codespan-content"><code>##!</code></span>, etc.), which also excludes the heading from the <a href="../table-of-contents/">table of contents</a>.</li><li>Use the <a href="../headings/"><span class="codespan-content"><code>.heading</code></span></a> function with <span class="codespan-content"><code>numbered:{no}</code></span> for more granular control, allowing you to independently decide whether the heading appears in the table of contents.</li></ul><h2 id="figures">Figures</h2><p><a href="../figure/">Figures</a> are numbered only if they have a <strong>caption</strong>, which may also be empty.</p><div class="box tip"><header><h4>Example 2</h4></header><div class="box-content"><pre><code class="language-markdown nohljsln">```markdown
 .numbering
     - headings: 1.A.a
     - figures: 1.1
 
-## Title
+# Title
 
 ![Logo](quarkdown-icon.svg &quot;The Quarkdown icon.&quot;)
 
-### Title
-
-![Logo](quarkdown-icon.svg &quot;&quot;)
-
 ## Title
 
 ![Logo](quarkdown-icon.svg &quot;&quot;)
-```</code></pre><div class="container fullwidth quarkdown-output"><figure><img src="media/figures-nested-format@-1878417929.png" alt="Figure numbering with format 1.1" style="width: 600.0px;" /></figure></div></div></div><h2 id="tables">Tables</h2><div class="box tip"><header><h4>Example 3</h4></header><div class="box-content"><pre><code class="language-markdown nohljsln">.numbering
+
+# Title
+
+![Logo](quarkdown-icon.svg &quot;&quot;)
+```</code></pre><div class="container fullwidth quarkdown-output"><figure><img src="media/figures-nested-format@-1800068182.png" alt="Figure numbering with format 1.1" style="width: 600.0px;" /></figure></div></div></div><h2 id="tables">Tables</h2><div class="box tip"><header><h4>Example 3</h4></header><div class="box-content"><pre><code class="language-markdown nohljsln">.numbering
     - headings: 1.A.a
     - tables: 1.1
 
-## Title
+# Title
 
 |           | Age | Favorite food |
 |-----------|-----|---------------|
@@ -126,7 +126,7 @@ header .version {
 | **Joe**   | 32  | Sushi         |
 &quot;Study results.&quot;
 
-### Title
+## Title
 
 |           | Age | Favorite food |
 |-----------|-----|---------------|
@@ -134,18 +134,18 @@ header .version {
 | **Lucas** | 19  | Pizza         |
 | **Joe**   | 32  | Sushi         |
 
-## Title
+# Title
 
 |           | Age | Favorite food |
 |-----------|-----|---------------|
 | **Anne**  | 24  | Hamburger     |
 | **Lucas** | 19  | Pizza         |
-| **Joe**   | 32  | Sushi         |</code></pre><div class="container fullwidth quarkdown-output"><figure><img src="media/tables@85182027.png" alt="Table numbering" style="width: 600.0px;" /></figure></div></div></div><h2 id="equations">Equations</h2><p><a href="../tex-formulae/">Math blocks</a> (equations) are numbered only if they have a <a href="../cross-references/">cross-reference ID</a>.</p><div class="box tip"><header><h4>Example 4</h4></header><div class="box-content"><pre><code class="language-markdown nohljsln">.numbering
+| **Joe**   | 32  | Sushi         |</code></pre><div class="container fullwidth quarkdown-output"><figure><img src="media/tables@163531774.png" alt="Table numbering" style="width: 600.0px;" /></figure></div></div></div><h2 id="equations">Equations</h2><p><a href="../tex-formulae/">Math blocks</a> (equations) are numbered only if they have a <a href="../cross-references/">cross-reference ID</a>.</p><div class="box tip"><header><h4>Example 4</h4></header><div class="box-content"><pre><code class="language-markdown nohljsln">.numbering
     - equations: (1)
 
 $ E = mc^2 $ {#energy}
 
-$ F = ma $ {#force}</code></pre><div class="container fullwidth quarkdown-output"><figure><img src="media/equations@-1495630561.png" alt="Equation numbering" style="width: 600.0px;" /></figure></div></div></div><p>Conventionally, if the equation is not cross-referenced anywhere in the document, but you still want it to be numbered, you can use <span class="codespan-content"><code>_</code></span> as the ID.</p><div class="box tip"><header><h4>Example 5</h4></header><div class="box-content"><pre><code class="language-markdown">$ E = mc^2 $ {#_}
+$ F = ma $ {#force}</code></pre><div class="container fullwidth quarkdown-output"><figure><img src="media/equations@-1417280814.png" alt="Equation numbering" style="width: 600.0px;" /></figure></div></div></div><p>Conventionally, if the equation is not cross-referenced anywhere in the document, but you still want it to be numbered, you can use <span class="codespan-content"><code>_</code></span> as the ID.</p><div class="box tip"><header><h4>Example 5</h4></header><div class="box-content"><pre><code class="language-markdown">$ E = mc^2 $ {#_}
 
 $ F = ma $ {#_}</code></pre></div></div><h2 id="code-blocks">Code blocks</h2><div class="box tip"><header><h4>Example 6</h4></header><div class="box-content"><pre><code class="language-markdown nohljsln">.numbering
     - code: 1
@@ -159,10 +159,10 @@ def hello():
 fun main() {
     println(&quot;Hello, world!&quot;)
 }
-```</code></pre><div class="container fullwidth quarkdown-output"><figure><img src="media/equations@-1495630561.png" alt="Code blocks" style="width: 600.0px;" /></figure></div></div></div><h2 id="footnotes">Footnotes</h2><p>The numbering format of <a href="../footnotes/">footnotes</a> is flat, meaning it only considers the leftmost symbol and ignores the rest.</p><p>If not specified, footnotes format defaults to <span class="codespan-content"><code>1</code></span> (decimal).</p><div class="box tip"><header><h4>Example 7</h4></header><div class="box-content"><pre><code class="language-markdown nohljsln">.numbering
+```</code></pre><div class="container fullwidth quarkdown-output"><figure><img src="media/equations@-1417280814.png" alt="Code blocks" style="width: 600.0px;" /></figure></div></div></div><h2 id="footnotes">Footnotes</h2><p>The numbering format of <a href="../footnotes/">footnotes</a> is flat, meaning it only considers the leftmost symbol and ignores the rest.</p><p>If not specified, footnotes format defaults to <span class="codespan-content"><code>1</code></span> (decimal).</p><div class="box tip"><header><h4>Example 7</h4></header><div class="box-content"><pre><code class="language-markdown nohljsln">.numbering
     - footnotes: i
 
-Here is a footnote reference[^: First], and another one[^: Second].</code></pre><div class="container fullwidth quarkdown-output"><figure><img src="media/footnotes-roman@-1497641405.png" alt="Footnote numbering" /></figure></div></div></div><h2 id="custom-numbered-elements">Custom numbered elements</h2><p>Along with the built-in numerable elements discussed above, Quarkdown allows any element to be numbered if wrapped in a <span class="codespan-content"><code>.numbered</code></span> block.</p><p>The function accepts two arguments:</p><ol><li>A key string. The element&rsquo;s number is counted across previous occurrences with the same key.</li><li>A <a href="../lambda/">lambda</a> block that takes the number as an argument, formatted according to the active numbering format.</li></ol><pre><code class="language-markdown">.numbered {greetings}
+Here is a footnote reference[^: First], and another one[^: Second].</code></pre><div class="container fullwidth quarkdown-output"><figure><img src="media/footnotes-roman@-1419291658.png" alt="Footnote numbering" /></figure></div></div></div><h2 id="custom-numbered-elements">Custom numbered elements</h2><p>Along with the built-in numerable elements discussed above, Quarkdown allows any element to be numbered if wrapped in a <span class="codespan-content"><code>.numbered</code></span> block.</p><p>The function accepts two arguments:</p><ol><li>A key string. The element&rsquo;s number is counted across previous occurrences with the same key.</li><li>A <a href="../lambda/">lambda</a> block that takes the number as an argument, formatted according to the active numbering format.</li></ol><pre><code class="language-markdown">.numbered {greetings}
     number:
     **Hello!** This block has the number **.number**</code></pre><p>Executing the previous block renders an empty string in place of <span class="codespan-content"><code>number</code></span> because you need to specify the numbering format for <span class="codespan-content"><code>greetings</code></span> in the <span class="codespan-content"><code>.numbering</code></span> call:</p><pre><code class="language-yaml">.numbering
     ...
@@ -170,7 +170,7 @@ Here is a footnote reference[^: First], and another one[^: Second].</code></pre>
     - headings: 1.1
     - greetings: 1.a
 
-## Title 1
+# Title 1
 
 .numbered {greetings}
     number:
@@ -180,11 +180,11 @@ Here is a footnote reference[^: First], and another one[^: Second].</code></pre>
     number:
     **Hey!** This has instead the number **.number**
 
-## Title 2
+# Title 2
 
 .numbered {greetings}
     number:
-    **Hi!** Here we have the number **.number**</code></pre><div class="container fullwidth quarkdown-output"><figure><img src="media/custom-numbered@-1018535646.png" alt="Custom numbering" style="width: 600.0px;" /></figure></div></div></div><h2 id="localization">Localization</h2><p>The localized name of the labeled element appears in captions if <a href="../document-metadata/"><span class="codespan-content"><code>.doclang</code></span></a> is set and the locale is supported. For instance, <em>Figure</em> and <em>Table</em> for the English locale, <em>Figura</em> and <em>Tabella</em> for Italian.</p>
+    **Hi!** Here we have the number **.number**</code></pre><div class="container fullwidth quarkdown-output"><figure><img src="media/custom-numbered@-940185899.png" alt="Custom numbering" style="width: 600.0px;" /></figure></div></div></div><h2 id="localization">Localization</h2><p>The localized name of the labeled element appears in captions if <a href="../document-metadata/"><span class="codespan-content"><code>.doclang</code></span></a> is set and the locale is supported. For instance, <em>Figure</em> and <em>Table</em> for the English locale, <em>Figura</em> and <em>Tabella</em> for Italian.</p>
         <div id="footnote-area">
           <div class="footnote-rule"></div>
         </div>

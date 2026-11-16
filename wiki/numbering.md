@@ -79,19 +79,19 @@ To avoid merging and turn off numbering rules for unspecified entries, set the `
 > .numbering
 >     - headings: 1.A.a
 > 
-> ## Title    <!--   1   -->
-> ### Title   <!--  1.A  -->
-> #### Title  <!-- 1.A.a -->
-> #### Title  <!-- 1.A.b -->
-> ##### Title <!-- None  -->
-> ### Title   <!--  1.B  -->
-> ## Title    <!--   2   -->
-> ### Title   <!--  2.A  -->
+> # Title    <!--   1   -->
+> ## Title   <!--  1.A  -->
+> ### Title  <!-- 1.A.a -->
+> ### Title  <!-- 1.A.b -->
+> #### Title <!-- None  -->
+> ## Title   <!--  1.B  -->
+> # Title    <!--   2   -->
+> ## Title   <!--  2.A  -->
 > ```
 > 
-> <img src="media/headings-latex@1922405373.png" alt="Latex theme numbering" width="550.0px" />
+> <img src="media/headings-latex@2064729926.png" alt="Latex theme numbering" width="550.0px" />
 > 
-> <img src="media/toc-latex@1453893596.png" alt="Latex theme table of contents" width="550.0px" />
+> <img src="media/toc-latex@1596218149.png" alt="Latex theme table of contents" width="550.0px" />
 
 ### Excluding headings from numbering
 
@@ -112,21 +112,21 @@ To prevent a heading from being numbered, you can either:
 >     - headings: 1.A.a
 >     - figures: 1.1
 > 
-> ## Title
+> # Title
 > 
 > ![Logo](quarkdown-icon.svg "The Quarkdown icon.")
 > 
-> ### Title
+> ## Title
 > 
 > ![Logo](quarkdown-icon.svg "")
 > 
-> ## Title
+> # Title
 > 
 > ![Logo](quarkdown-icon.svg "")
 > ```
 > ````
 > 
-> <img src="media/figures-nested-format@-1167462374.png" alt="Figure numbering with format 1.1" width="600.0px" />
+> <img src="media/figures-nested-format@-1025137821.png" alt="Figure numbering with format 1.1" width="600.0px" />
 
 ## Tables
 
@@ -137,7 +137,7 @@ To prevent a heading from being numbered, you can either:
 >     - headings: 1.A.a
 >     - tables: 1.1
 > 
-> ## Title
+> # Title
 > 
 > |           | Age | Favorite food |
 > |-----------|-----|---------------|
@@ -146,7 +146,7 @@ To prevent a heading from being numbered, you can either:
 > | **Joe**   | 32  | Sushi         |
 > "Study results."
 > 
-> ### Title
+> ## Title
 > 
 > |           | Age | Favorite food |
 > |-----------|-----|---------------|
@@ -154,7 +154,7 @@ To prevent a heading from being numbered, you can either:
 > | **Lucas** | 19  | Pizza         |
 > | **Joe**   | 32  | Sushi         |
 > 
-> ## Title
+> # Title
 > 
 > |           | Age | Favorite food |
 > |-----------|-----|---------------|
@@ -163,7 +163,7 @@ To prevent a heading from being numbered, you can either:
 > | **Joe**   | 32  | Sushi         |
 > ```
 > 
-> <img src="media/tables@796137582.png" alt="Table numbering" width="600.0px" />
+> <img src="media/tables@938462135.png" alt="Table numbering" width="600.0px" />
 
 ## Equations
 
@@ -180,7 +180,7 @@ To prevent a heading from being numbered, you can either:
 > $ F = ma $ {#force}
 > ```
 > 
-> <img src="media/equations@-784675006.png" alt="Equation numbering" width="600.0px" />
+> <img src="media/equations@-642350453.png" alt="Equation numbering" width="600.0px" />
 
 Conventionally, if the equation is not cross-referenced anywhere in the document, but you still want it to be numbered, you can use `_` as the ID.
 
@@ -212,7 +212,7 @@ Conventionally, if the equation is not cross-referenced anywhere in the document
 > ```
 > ````
 > 
-> <img src="media/equations@-784675006.png" alt="Code blocks" width="600.0px" />
+> <img src="media/equations@-642350453.png" alt="Code blocks" width="600.0px" />
 
 ## Footnotes
 
@@ -229,7 +229,7 @@ If not specified, footnotes format defaults to `1` (decimal).
 > Here is a footnote reference[^: First], and another one[^: Second].
 > ```
 > 
-> ![Footnote numbering](media/footnotes-roman@-786685850.png)
+> ![Footnote numbering](media/footnotes-roman@-644361297.png)
 
 ## Custom numbered elements
 
@@ -265,7 +265,7 @@ Full example:
 >     - headings: 1.1
 >     - greetings: 1.a
 > 
-> ## Title 1
+> # Title 1
 > 
 > .numbered {greetings}
 >     number:
@@ -275,14 +275,14 @@ Full example:
 >     number:
 >     **Hey!** This has instead the number **.number**
 > 
-> ## Title 2
+> # Title 2
 > 
 > .numbered {greetings}
 >     number:
 >     **Hi!** Here we have the number **.number**
 > ```
 > 
-> <img src="media/custom-numbered@-307580091.png" alt="Custom numbering" width="600.0px" />
+> <img src="media/custom-numbered@-165255538.png" alt="Custom numbering" width="600.0px" />
 
 ## Localization
 

@@ -15,7 +15,7 @@ Quarkdown introduces a compact `[^label: definition]` syntax that allows you to 
 > and another one[^second: This is another definition.].
 > ```
 > 
-> ![Footnote](media/basic@-92016575.png)
+> ![Footnote](media/basic@50307978.png)
 
 Named footnotes can be referenced multiple times.
 
@@ -26,7 +26,7 @@ Named footnotes can be referenced multiple times.
 > and another one[^first].
 > ```
 > 
-> ![Footnote multi-reference](media/multi-reference@1896726808.png)
+> ![Footnote multi-reference](media/multi-reference@2039051361.png)
 
 Definitions can include inline formatting.
 
@@ -36,7 +36,7 @@ Definitions can include inline formatting.
 > This is a footnote reference[^first: This is the **definition**.]
 > ```
 > 
-> ![Footnote formatting](media/formatted@1179833331.png)
+> ![Footnote formatting](media/formatted@1322157884.png)
 
 ### Anonymous footnotes
 
@@ -113,7 +113,7 @@ Footnotes are numbered by default with decimal numbers, starting from 1. To appl
 >     - footnotes: i
 > ```
 > 
-> ![Footnote Roman numbering](media/roman-numbering@-1902750746.png)
+> ![Footnote Roman numbering](media/roman-numbering@-1760426193.png)
 
 Footnotes are numbered incrementally across the subdocument. Page-level numbering is not supported yet.
 

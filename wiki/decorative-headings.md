@@ -17,7 +17,7 @@ To prevent a heading from being numbered and from appearing in the [table of con
 > ```
 > ````
 > 
-> ![Decorative heading](media/decorative-heading@-1621094754.png)
+> ![Decorative heading](media/decorative-heading@-1478770201.png)
 
 > A heading with all optional flags disabled via [`.heading`](headings.md) is equivalent to a decorative heading:
 > 

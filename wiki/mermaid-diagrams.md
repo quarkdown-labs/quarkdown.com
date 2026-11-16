@@ -75,7 +75,7 @@ An optional `caption` argument assigns a caption to the diagram and lets the blo
 >         E --> F
 > ```
 > 
-> ![Diagram with caption](media/with-caption@-469722775.png)
+> ![Diagram with caption](media/with-caption@-327398222.png)
 
 > **Example 4**
 > 
@@ -92,4 +92,4 @@ An optional `caption` argument assigns a caption to the diagram and lets the blo
 >         E --> F
 > ```
 > 
-> ![Diagram with empty caption](media/numbered@-1511437760.png)
+> ![Diagram with empty caption](media/numbered@-1369113207.png)

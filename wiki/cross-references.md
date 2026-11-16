@@ -21,7 +21,7 @@ You typically set the ID using the `{#id}` syntax. The exact location depends on
 > ## Getting started {#getting-started}
 > ```
 > 
-> ![Sections](media/section-reference@851186848.png)
+> ![Sections](media/section-reference@993511401.png)
 
 > In HTML rendering, the reference ID of headings also becomes the HTML `id` attribute, which makes them suitable for linking.
 
@@ -35,7 +35,7 @@ You typically set the ID using the `{#id}` syntax. The exact location depends on
 > ![Logo](icon.svg "The Quarkdown icon") {#logo}
 > ```
 > 
-> ![Figures](media/figure-reference@-1518376649.png)
+> ![Figures](media/figure-reference@-1376052096.png)
 
 ### Tables
 
@@ -52,7 +52,7 @@ You typically set the ID using the `{#id}` syntax. The exact location depends on
 > {#data}
 > ```
 > 
-> ![Tables](media/table-reference@872554967.png)
+> ![Tables](media/table-reference@1014879520.png)
 
 > **Example 4**
 > 
@@ -77,7 +77,7 @@ You typically set the ID using the `{#id}` syntax. The exact location depends on
 > $ E = mc^2 $ {#energy}
 > ```
 > 
-> ![Equations](media/equation-reference@1446752527.png)
+> ![Equations](media/equation-reference@1589077080.png)
 
 > **Example 6**
 > 
@@ -105,7 +105,7 @@ You typically set the ID using the `{#id}` syntax. The exact location depends on
 > ```
 > ````
 > 
-> ![Code blocks](media/codeblock-reference@-527813083.png)
+> ![Code blocks](media/codeblock-reference@-385488530.png)
 
 > **Example 8**
 > 
@@ -133,4 +133,4 @@ You typically set the ID using the `{#id}` syntax. The exact location depends on
 >     **Example .number:** this is a custom numbered element.
 > ```
 > 
-> ![Custom numbered elements](media/numbered-reference@1958415155.png)
+> ![Custom numbered elements](media/numbered-reference@2100739708.png)
