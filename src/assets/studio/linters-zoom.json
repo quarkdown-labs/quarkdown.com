@@ -1,0 +1,27 @@
+{
+    "width": 1512,
+    "height": 804,
+    "easing": "cubic-bezier(0.65, 0, 0.35, 1)",
+    "moves": [
+        {
+            "startMs": 1500,
+            "durationMs": 500,
+            "to": {
+                "x": 236,
+                "y": 464,
+                "width": 640,
+                "height": 340
+            }
+        },
+        {
+            "startMs": 7451,
+            "durationMs": 841,
+            "to": {
+                "x": 0,
+                "y": 0,
+                "width": 1512,
+                "height": 804
+            }
+        }
+    ]
+}
