@@ -1,0 +1,49 @@
+---
+/**
+ * A framed Studio screenshot, in the full-window aspect ratio.
+ * A crop, given its pixel [density], keeps its own ratio and its CSS size at most.
+ */
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import { imagePresets } from '../../image';
+
+interface Props {
+  image: ImageMetadata;
+  alt: string;
+  /** Pixel density of a crop, e.g. 3 for a @3x capture. Full-window screenshots leave it out. */
+  density?: number;
+  loading?: 'eager' | 'lazy';
+  class?: string;
+}
+
+const { image, alt, density, loading = 'lazy', class: className } = Astro.props;
+const naturalWidth = density && `${image.width / density}px`;
+---
+
+<div class:list={['screenshot', className, { crop: density }]} style={naturalWidth && `--natural-width: ${naturalWidth}`}>
+  <Image src={image} alt={alt} loading={loading} {...imagePresets.screenshot} />
+</div>
+
+<style lang="scss">
+  @use '../../styles/screenshot' as *;
+
+  .screenshot {
+    @include screenshot-frame;
+    width: 100%;
+    background: $screenshot-light-ground;
+
+    :global(img) {
+      @include screenshot-image;
+    }
+  }
+
+  .crop {
+    aspect-ratio: auto;
+    width: min(100%, var(--natural-width));
+
+    :global(img) {
+      display: block;
+      height: auto;
+    }
+  }
+</style>

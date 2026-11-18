@@ -39,6 +39,7 @@ const themes = [
 
 <script>
   import { gsap, loadScrollTrigger } from '../../scripts/gsap';
+  import { TILT } from '../../scripts/tilt';
 
   const SEAM_REST = 0.5;
   const SEAM_EASE = 0.12; // Fraction of the distance to the pointer covered per frame.
@@ -90,7 +91,7 @@ const themes = [
     gsap.fromTo(figure, { '--tilt': 1 }, {
       '--tilt': 0,
       ease: 'none',
-      scrollTrigger: { trigger: figure, start: 'top 85%', end: 'top 15%', scrub: 0.6 },
+      scrollTrigger: { trigger: figure, start: TILT.start, end: TILT.end, scrub: 0.6 },
     });
   }
 </script>
@@ -105,10 +106,10 @@ const themes = [
   $turn-z: -2deg;
   $recenter: 7%; // Shift that recenters the tilted screenshot, whose near side looms larger.
 
-  // --slant is the seam's horizontal run from its midpoint to either edge, as a fraction of the width.
+  // Set from outside: --wipe (0 to 1) slides the dark theme off, --lift (0 to 1) deepens the shadow.
   .theme-split {
     --seam: 0.5;
-    --slant: 0.35;
+    --slant: #{$theme-seam-slant};
     --tilt: 1;
     perspective: 1400px;
     cursor: ew-resize;
@@ -125,7 +126,8 @@ const themes = [
       scale(calc(1 - var(--tilt) * 0.08));
     box-shadow:
       calc(var(--tilt) * -40px) 40px 80px -20px rgba(0, 0, 0, 0.7),
-      0 0 120px -40px rgba($brand-100, 0.25);
+      0 0 120px -40px rgba($brand-100, 0.25),
+      0 calc(var(--lift, 0) * 48px) calc(var(--lift, 0) * 96px) calc(var(--lift, 0) * -24px) rgba(0, 0, 0, 0.7);
     will-change: transform;
   }
 
@@ -151,12 +153,7 @@ const themes = [
   .pane--dark {
     .pane-surface {
       background: $screenshot-dark-ground;
-      clip-path: polygon(
-        calc((var(--seam) + var(--slant)) * 100%) 0,
-        100% 0,
-        100% 100%,
-        calc((var(--seam) - var(--slant)) * 100%) 100%
-      );
+      @include theme-seam-clip;
     }
   }
 </style>

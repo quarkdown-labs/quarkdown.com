@@ -1,0 +1,87 @@
+---
+/**
+ * A screen recording of Studio as an animated WebP, optionally zoomed by a camera timeline.
+ * It plays on a canvas while its showcase visual is active; without `ImageDecoder`, it falls back to the plain image.
+ */
+import type { CameraTimeline } from '../../scripts/camera';
+
+interface Props {
+  /** URL of the animated WebP. */
+  src: string;
+  camera?: CameraTimeline;
+  alt: string;
+}
+
+const { src, camera, alt } = Astro.props;
+---
+
+<div class="recording" data-recording data-src={src} data-camera={camera && JSON.stringify(camera)}>
+  <canvas role="img" aria-label={alt} hidden></canvas>
+  <img alt={alt} loading="lazy" decoding="async" hidden />
+</div>
+
+<script>
+  import { cameraOf } from '../../scripts/camera';
+  import { canPlayRecordings, RecordingPlayer } from '../../scripts/recording';
+  import { reportProgress, whileActive } from '../../scripts/showcase';
+
+  const PRELOAD_MARGIN = '100% 0px'; // One viewport ahead.
+
+  const recordings = document.querySelectorAll<HTMLElement>('[data-recording]');
+  const playable = canPlayRecordings();
+
+  recordings.forEach((recording) => {
+    const { src, camera } = recording.dataset;
+    const canvas = recording.querySelector('canvas')!;
+    const img = recording.querySelector('img')!;
+
+    if (!playable) {
+      img.src = src!;
+      img.hidden = false;
+      return;
+    }
+
+    canvas.hidden = false;
+    const player = new RecordingPlayer(
+      canvas,
+      src!,
+      cameraOf(camera ? JSON.parse(camera) : undefined),
+      (progress) => reportProgress(recording, progress),
+    );
+
+    const preload = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) return;
+      preload.disconnect();
+      void player.still();
+    }, { rootMargin: PRELOAD_MARGIN });
+    preload.observe(recording);
+
+    whileActive(recording, {
+      // Settled, it keeps the frame it shows.
+      activate: (settled) => {
+        if (!settled) void player.play();
+      },
+      deactivate: () => player.pause(),
+    });
+  });
+</script>
+
+<style lang="scss">
+  @use '../../styles/screenshot' as *;
+
+  .recording {
+    @include screenshot-frame;
+    width: 100%;
+    background: $screenshot-light-ground;
+
+    canvas,
+    img {
+      @include screenshot-image;
+      display: block;
+    }
+
+    [hidden] {
+      display: none;
+    }
+  }
+</style>

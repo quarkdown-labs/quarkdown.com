@@ -4,13 +4,22 @@
  * Renders blurred glow ovals at alternating left/right viewport edges,
  * plus a noise texture overlay. Purely visual — hidden from assistive tech.
  */
+type Side = 'left' | 'right' | 'center';
+
+interface Props {
+  /** Sides whose glows to leave out. */
+  without?: Side[];
+}
+
+const { without = [] } = Astro.props;
+
+const glows: Side[] = ['right', 'left', 'center', 'center'];
 ---
 
 <div class="bg-effects" aria-hidden="true">
-  <div class="glow glow--right glow--1"></div>
-  <div class="glow glow--left glow--2"></div>
-  <div class="glow glow--center glow--3"></div>
-  <div class="glow glow--center glow--4"></div>
+  {glows.map((side, index) => !without.includes(side) && (
+    <div class:list={['glow', `glow--${side}`, `glow--${index + 1}`]}></div>
+  ))}
   <div class="noise"></div>
 </div>
 

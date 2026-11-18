@@ -1,7 +1,7 @@
 @use 'colors' as *;
 @use 'breakpoints' as *;
 
-$screenshot-aspect: 3024 / 1634; // Of the Studio screenshots in `assets/studio`.
+$screenshot-aspect: 1512 / 804; // Of the full-window Studio screenshots in `assets/studio`.
 $screenshot-radius: 14px;
 $screenshot-light-ground: #f4f6f6;
 $screenshot-dark-ground: $brand-800;
@@ -27,4 +27,19 @@ $screenshot-dark-ground: $brand-800;
   object-fit: cover;
   object-position: top left;
   filter: none;
+}
+
+/// Horizontal run of a theme split's seam from its midpoint to either edge, as a fraction of the width.
+$theme-seam-slant: 0.35;
+
+/// Clips a theme split's dark half to the right of its seam, at --seam and slanting by --slant.
+/// --wipe, from 0 to 1, pushes the seam past the right edge.
+@mixin theme-seam-clip {
+  --wiped: calc(var(--wipe, 0) * (1 + var(--slant) - var(--seam)));
+  clip-path: polygon(
+    calc((var(--seam) + var(--wiped) + var(--slant)) * 100%) 0,
+    100% 0,
+    100% 100%,
+    calc((var(--seam) + var(--wiped) - var(--slant)) * 100%) 100%
+  );
 }

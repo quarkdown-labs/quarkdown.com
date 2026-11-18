@@ -3,18 +3,29 @@ import Base from '../layouts/Base.astro';
 import BackgroundEffects from '../components/BackgroundEffects.astro';
 import Footer from '../components/Footer.astro';
 import StudioHero from '../components/studio/StudioHero.astro';
+import StudioShowcase from '../components/studio/StudioShowcase.astro';
+import WaitlistButton from '../components/studio/WaitlistButton.astro';
 import Feature from '../components/Feature.astro';
 import Faq from '../components/Faq.astro';
 import { studioFaqs } from '../faqs';
 import { meta } from '../meta';
+import { withStudioLockup } from '../studio-name';
 
 const title = `${meta.name} Studio | Subatomically spectacular`;
 const description = `${meta.name} Studio brings the full power of ${meta.name} to your browser. Write, preview and export, with nothing to install.`;
 ---
 
 <Base title={title} description={description}>
-  <BackgroundEffects />
+  <BackgroundEffects without={['left']} />
   <StudioHero />
+  <StudioShowcase />
+
+  <Feature
+    title="Be the first to know"
+    description={withStudioLockup('Studio is on its way.')}
+  >
+    <WaitlistButton />
+  </Feature>
 
   <Feature title="Frequently asked questions">
     <Faq items={studioFaqs} />

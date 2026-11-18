@@ -1,0 +1,33 @@
+---
+/** The name of a plan, as a badge. */
+import { plans, type Plan } from '../plans';
+
+interface Props {
+  plan: Plan['id'];
+}
+
+const { name } = plans.find(({ id }) => id === Astro.props.plan)!;
+---
+
+<span class="plan-badge">{name}</span>
+
+<style lang="scss">
+  @use '../styles/colors' as *;
+  @use '../styles/typography' as *;
+
+  .plan-badge {
+    display: inline-block;
+    padding: 0.2em 0.55em;
+    font-family: $font-sans;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: $letter-spacing-sans;
+    line-height: 1;
+    text-transform: none;
+    vertical-align: middle;
+    color: #fff;
+    text-shadow: none;
+    background: $studio;
+    border-radius: 0.35em;
+  }
+</style>

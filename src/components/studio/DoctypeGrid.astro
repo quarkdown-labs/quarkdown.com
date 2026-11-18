@@ -1,0 +1,125 @@
+---
+/**
+ * Stills of the same workspace, one per document type. Stacked until the showcase visual activates,
+ * then spread into a grid, one card after another.
+ */
+import type { ImageMetadata } from 'astro';
+import Screenshot from './Screenshot.astro';
+
+interface Card {
+  image: ImageMetadata;
+  label: string;
+  alt: string;
+}
+
+interface Props {
+  /** In grid order, the first one in front. */
+  cards: Card[];
+}
+
+const { cards } = Astro.props;
+
+/** Matches `$columns` in the styles below. */
+const COLUMNS = 2;
+---
+
+<div class="grid" style={`--count: ${cards.length}`}>
+  {cards.map(({ image, label, alt }, index) => (
+    <div class="card" style={`--n: ${index}; --column: ${index % COLUMNS}; --row: ${Math.floor(index / COLUMNS)}`}>
+      <figure class="card-body">
+        <Screenshot image={image} alt={alt} class="card-screenshot" />
+        <figcaption class="card-label">{label}</figcaption>
+      </figure>
+    </div>
+  ))}
+</div>
+
+<style lang="scss">
+  @use 'sass:math';
+  @use '../../styles/colors' as *;
+  @use '../../styles/typography' as *;
+  @use '../../styles/screenshot' as *;
+
+  // A square grid of cells, sized as fractions of the grid, so cells keep the cards' aspect ratio.
+  $columns: 2;
+  $gap: 0.03;
+  $cell-scale: math.div(1 - $gap * ($columns - 1), $columns);
+  $cell-step: ($cell-scale + $gap) * 100%;
+  $duration: 700ms;
+  $stagger: 120ms;
+  $hover-grow: 1.5;
+  $hover-shrink: 2 - $hover-grow;
+  $hover-duration: 300ms;
+  $ease: cubic-bezier(0.65, 0, 0.35, 1);
+
+  .grid {
+    position: relative;
+    width: 100%;
+    aspect-ratio: $screenshot-aspect;
+  }
+
+  .card {
+    position: absolute;
+    inset: 0;
+    z-index: calc(var(--count) - var(--n));
+    transform-origin: top left;
+    transform: translate(calc(var(--column) * #{$cell-step}), calc(var(--row) * #{$cell-step})) scale($cell-scale);
+    transition: transform $duration $ease calc(var(--n) * #{$stagger});
+  }
+
+  // Scaled from its outer corner, so a hovered card grows while the others shrink without overlapping.
+  .card-body {
+    height: 100%;
+    transform-origin: calc(var(--column) / #{$columns - 1} * 100%) calc(var(--row) / #{$columns - 1} * 100%);
+    transition: transform $hover-duration $ease;
+  }
+
+  :global([data-showcase-visual][data-active]) .grid:has(.card:hover) {
+    .card-body {
+      transform: scale($hover-shrink);
+    }
+
+    .card:hover .card-body {
+      transform: scale($hover-grow);
+    }
+  }
+
+  .card :global(.card-screenshot) {
+    box-shadow: 0 12px 40px -12px rgba(0, 0, 0, 0.7);
+  }
+
+  // Sized by the inverse of the cell scale, to read at its own size in a cell.
+  .card-label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: math.div(0.25rem, $cell-scale) math.div(0.6rem, $cell-scale);
+    font-family: $font-sans;
+    font-size: math.div(0.85rem, $cell-scale);
+    font-weight: 600;
+    letter-spacing: $letter-spacing-sans;
+    line-height: 1.2;
+    color: $brand-50;
+    background: $brand-900;
+    border-radius: 0 $screenshot-radius 0 math.div(0.5rem, $cell-scale);
+    transition: opacity $duration $ease calc(var(--n) * #{$stagger});
+  }
+
+  :global([data-showcase-visual][data-settled]) {
+    .card,
+    .card-label {
+      transition: none;
+    }
+  }
+
+  // Stacked and unlabelled until first played.
+  :global([data-showcase-visual]:not([data-active], [data-played])) {
+    .card {
+      transform: none;
+    }
+
+    .card-label {
+      opacity: 0;
+    }
+  }
+</style>

@@ -1,0 +1,485 @@
+---
+/**
+ * Studio's features, one sticky panel each, its visual beside its copy. Each panel stacks over the previous one,
+ * and its visual crossfades in place of the previous visual. The hero's screenshot travels into the first panel.
+ * On narrow screens, and with reduced motion, panels simply scroll by.
+ */
+import type { ComponentProps } from 'astro/types';
+import Feature from '../Feature.astro';
+import PlanBadge from '../PlanBadge.astro';
+import Screenshot from './Screenshot.astro';
+import Recording from './Recording.astro';
+import DoctypeGrid from './DoctypeGrid.astro';
+import McpConversation, { type Turn } from './McpConversation.astro';
+import livePreview from '../../assets/studio/live-preview.webp?url';
+import completion from '../../assets/studio/completion.webp?url';
+import completionCamera from '../../assets/studio/completion-zoom.json';
+import linters from '../../assets/studio/linters.webp?url';
+import lintersCamera from '../../assets/studio/linters-zoom.json';
+import paged from '../../assets/studio/editor-light.png';
+import docs from '../../assets/studio/docs-light.png';
+import slides from '../../assets/studio/slides-light.png';
+import plain from '../../assets/studio/plain-light.png';
+import mcpBefore from '../../assets/studio/mcp-before-light.png';
+import mcpAfter from '../../assets/studio/mcp-after-light.png';
+import mcpTranscript from '../../assets/studio/mcp-transcript.json';
+import exportMenu from '../../assets/studio/export-menu-light.png';
+import type { Plan } from '../../plans';
+import { withStudioLockup } from '../../studio-name';
+
+/** [transcript] without the agent's closing reply, which the after close-up makes redundant. */
+const withoutClosingReply = (transcript: Turn[]) => (transcript.at(-1)?.role === 'assistant' ? transcript.slice(0, -1) : transcript);
+
+/** A feature shown by [Visual] with [props], optionally marked as part of [plan]. */
+const feature = <C extends (props: any) => any>(
+  title: string,
+  description: string,
+  Visual: C,
+  props: ComponentProps<C>,
+  plan?: Plan['id'],
+) => ({ title, description: withStudioLockup(description), Visual, props, plan });
+
+/** Visuals with a progress bar under their copy. */
+const PLAYING = new Set<unknown>([Recording, McpConversation]);
+
+const features = [
+  feature(
+    'Writing, superfast',
+    'Write, check, and iterate at the pace of your keystrokes. Studio\'s live preview is up to 5x faster than the CLI\'s.',
+    Recording,
+    { src: livePreview, alt: 'The document title being retyped in the editor, and the paged preview updating with each keystroke' },
+  ),
+  feature(
+    'One is all you need',
+    'Knowledge bases, papers, slides, or plain notes. Studio handles them all and makes multiple subscriptions a thing of the past.',
+    DoctypeGrid,
+    {
+      cards: [
+        { image: paged, label: 'Paged', alt: 'Studio previewing a paged document' },
+        { image: docs, label: 'Docs', alt: 'Studio previewing a documentation website' },
+        { image: slides, label: 'Slides', alt: 'Studio previewing a slide deck' },
+        { image: plain, label: 'Plain', alt: 'Studio previewing a plain document' },
+      ],
+    },
+  ),
+  feature(
+    'Autopilot over MCP',
+    `Agents already write impeccable Quarkdown. Yours can now read, edit, and export, directly in the cloud.`,
+    McpConversation,
+    {
+      transcript: withoutClosingReply(mcpTranscript as Turn[]),
+      before: { image: mcpBefore, alt: 'The abstract of a paper in the editor and in the preview, before the edit' },
+      after: { image: mcpAfter, alt: 'The shorter abstract, with the new sentence marked as written by the agent' },
+      density: 2,
+    },
+    'pro',
+  ),
+  feature(
+    'Smart completion',
+    'Let Studio suggest the functions and values on the tip of your tongue, or check their documentation in a glance.',
+    Recording,
+    {
+      src: completion,
+      camera: completionCamera,
+      alt: 'A function call completed together with its argument and value, then its documentation shown on hover',
+    },
+  ),
+  feature(
+    'Everybody slips',
+    `We make sure redundant phrasing, repetitions, and other common mistakes never make it into your final draft. <a href="https://vale.sh" target="_blank" rel="noopener">Powered by Vale</a>.`,
+    Recording,
+    { src: linters, camera: lintersCamera, alt: 'A redundant phrase underlined, its tooltip explaining why, and the fix applied' },
+  ),
+  feature(
+    'Exports for every need',
+    'Take your document out as PDF, HTML, or Markdown.',
+    Screenshot,
+    { image: exportMenu, alt: 'The export menu, offering PDF, HTML, Markdown, history and source download', density: 3 },
+  ),
+];
+---
+
+<div class="showcase" data-showcase>
+  {features.map(({ title, description, Visual, props, plan }) => (
+    <div class="panel" data-showcase-panel>
+      <div class="box">
+        <div class="visual" data-showcase-visual>
+          <Visual {...props} />
+        </div>
+      </div>
+
+      <div class="copy" data-showcase-copy>
+        <Feature title={title} description={description} align="start" class="copy-feature">
+          {plan && <PlanBadge slot="overline" plan={plan} />}
+        </Feature>
+        {PLAYING.has(Visual) && <div class="progress" data-showcase-progress aria-hidden="true"></div>}
+      </div>
+    </div>
+  ))}
+  <div class="showcase-end" aria-hidden="true"></div>
+</div>
+
+<script>
+  import { gsap, loadScrollTrigger } from '../../scripts/gsap';
+  import { media } from '../../scripts/breakpoints';
+  import { TILT } from '../../scripts/tilt';
+  import { activateOnToggle, onProgress, setActive } from '../../scripts/showcase';
+
+  /** Matches `stage-mode` in the styles below. */
+  const STAGE_MODE = `${media.mdUp} and ${media.motionOk}`;
+  const INLINE_MODE = `${media.mdDown} and ${media.motionOk}`;
+
+  /** The showcase is pulled up into the hero by [PULL] times the first panel's empty top, less [LEAD_GAP] pixels. */
+  const PULL = 2;
+  const LEAD_GAP = 12;
+  /** Pixels a stopped panel's copy drifts up until the next panel stops. */
+  const COPY_RISE = 160;
+  /** Fraction of a step, before the next stop, over which the copy dims and blurs out. */
+  const COPY_FADE = 0.5;
+  const COPY_BLUR = '8px';
+  /** Seconds a visual takes to fade in over the previous one. */
+  const SWAP_DURATION = 0.5;
+  /** Fraction of a swap after which the previous visual starts fading out underneath. */
+  const SWAP_OUTGOING_DELAY = 0.4;
+
+  const ScrollTrigger = await loadScrollTrigger();
+
+  const showcase = document.querySelector<HTMLElement>('[data-showcase]')!;
+  const panels = [...showcase.querySelectorAll<HTMLElement>('[data-showcase-panel]')];
+  const visuals = panels.map((panel) => panel.querySelector<HTMLElement>('[data-showcase-visual]')!);
+  const source = document.querySelector<HTMLElement>('[data-showcase-source]');
+
+  const deactivateAll = () => visuals.forEach((visual) => setActive(visual, false));
+
+  panels.forEach((panel) => {
+    const bar = panel.querySelector<HTMLElement>('[data-showcase-progress]');
+    if (bar) onProgress(panel, (progress) => bar.style.setProperty('--progress', `${progress}`));
+  });
+
+  /** The layout offset of [element] from [ancestor], or from the page, ignoring transforms and stickiness. */
+  function offsetOf(element: HTMLElement, ancestor?: HTMLElement) {
+    let left = 0;
+    let top = 0;
+    for (let node: Element | null = element; node instanceof HTMLElement && node !== ancestor; node = node.offsetParent) {
+      left += node.offsetLeft;
+      top += node.offsetTop;
+    }
+    return { left, top };
+  }
+
+  // Scroll positions come from the layout alone, so they hold wherever the page is scrolled, e.g. on reload.
+
+  /** Scroll between two panels' stops. */
+  const step = () => panels[0].offsetHeight + parseFloat(getComputedStyle(panels[0]).marginBottom);
+  /** Scroll position at which panel [i] sticks. */
+  const stopOf = (i: number) => offsetOf(showcase).top + i * step() - parseFloat(getComputedStyle(panels[0]).top);
+
+  /** The transform, from the top left corner, that lays the hero's screenshot over the first panel's box. */
+  function towardsFirst(source: HTMLElement) {
+    const box = panels[0].querySelector<HTMLElement>('.box')!;
+    const from = offsetOf(source);
+    const to = offsetOf(showcase);
+    const within = offsetOf(box, panels[0]);
+    return {
+      x: to.left + within.left - from.left,
+      y: to.top + within.top - from.top,
+      scale: box.offsetWidth / source.offsetWidth,
+    };
+  }
+
+  /**
+   * Carries the hero's screenshot, once face-on, over the first panel's box, where that panel's visual replaces it.
+   * Its path bows to the left; vertically it keeps pace with the scroll. On the way, its dark theme slides off and it lifts.
+   */
+  function handOff(source: HTMLElement) {
+    const sync = ({ progress }: { progress: number }) => {
+      showcase.toggleAttribute('data-handed-off', progress === 1);
+      source.style.visibility = progress === 1 ? 'hidden' : '';
+    };
+    // Measured once per refresh, by the first function-based value below.
+    let to = towardsFirst(source);
+    // Leading x over y bows the path.
+    const along = gsap.parseEase('power1.inOut');
+    const ahead = gsap.parseEase('sine.out');
+
+    gsap.set(source, { transformOrigin: 'top left' });
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: source,
+        start: TILT.end,
+        end: () => stopOf(0),
+        scrub: true,
+        invalidateOnRefresh: true,
+        onUpdate: sync,
+        onRefresh: sync,
+      },
+    })
+      .fromTo(source, { x: 0 }, { x: () => (to = towardsFirst(source)).x, duration: 1, ease: (t: number) => ahead(along(t)) }, 0)
+      .fromTo(source, { y: 0 }, { y: () => to.y, duration: 1, ease: 'none' }, 0)
+      .fromTo(source, { scale: 1 }, { scale: () => to.scale, duration: 1, ease: 'power1.inOut' }, 0)
+      .fromTo(source, { '--wipe': 0 }, { '--wipe': 1, duration: 1, ease: along }, 0)
+      .fromTo(source, { '--lift': 0 }, { '--lift': 1, duration: 0.5, ease: 'sine.out' }, 0)
+      .to(source, { '--lift': 0, duration: 0.5, ease: 'sine.in' }, 0.5);
+  }
+
+  /** Until set up, swaps are instant, so a reload lands in the right state. */
+  let loaded = false;
+
+  /** Panel [i]'s copy drifts up from its stop until the next one, or until the showcase scrolls away. */
+  function rise(i: number) {
+    gsap.fromTo(panels[i].querySelector('[data-showcase-copy]'), { y: 0 }, {
+      y: -COPY_RISE,
+      ease: 'none',
+      scrollTrigger: { start: () => stopOf(i), end: () => stopOf(i + 1), scrub: true },
+    });
+  }
+
+  /**
+   * Panel [i] takes over from the previous one: the previous copy fades out,
+   * then, as panel [i] stops, its visual crossfades in. Scrolling back up, the swap is instant.
+   */
+  function swap(i: number) {
+    const previous = panels[i - 1];
+    const outgoing = previous.querySelector<HTMLElement>('.box')!;
+    const incoming = visuals[i];
+
+    gsap.fromTo(previous.querySelector('[data-showcase-copy]'), { opacity: 1, filter: 'blur(0px)' }, {
+      opacity: 0,
+      filter: `blur(${COPY_BLUR})`,
+      ease: 'none',
+      scrollTrigger: { start: () => stopOf(i) - COPY_FADE * step(), end: () => stopOf(i), scrub: true },
+    });
+
+    gsap.set(incoming, { autoAlpha: 0 });
+    ScrollTrigger.create({
+      start: () => stopOf(i),
+      end: 'max',
+      onToggle: ({ isActive: shown, direction }) => {
+        const duration = shown && direction > 0 && loaded ? SWAP_DURATION : 0;
+        gsap.to(incoming, { autoAlpha: shown ? 1 : 0, duration, ease: 'power2.out', overwrite: true });
+        gsap.to(outgoing, {
+          autoAlpha: shown ? 0 : 1,
+          duration: duration * (1 - SWAP_OUTGOING_DELAY),
+          delay: duration * SWAP_OUTGOING_DELAY,
+          ease: 'none',
+          overwrite: true,
+        });
+      },
+    });
+  }
+
+  const modes = gsap.matchMedia();
+
+  // A visual is active from its panel's stop until the next one.
+  modes.add(STAGE_MODE, () => {
+    // Runs before every refresh measures anything.
+    const pullUp = () => {
+      showcase.style.marginTop = '';
+      const emptyTop = offsetOf(panels[0].querySelector<HTMLElement>('.box')!, panels[0]).top;
+      showcase.style.marginTop = `${-PULL * (emptyTop - LEAD_GAP)}px`;
+    };
+    pullUp();
+    ScrollTrigger.addEventListener('refreshInit', pullUp);
+
+    showcase.toggleAttribute('data-handed-off', !source);
+    if (source) handOff(source);
+
+    panels.forEach((_, i) => {
+      if (i > 0) swap(i);
+      rise(i);
+
+      ScrollTrigger.create({
+        start: () => stopOf(i),
+        end: () => stopOf(i + 1),
+        onToggle: activateOnToggle(visuals[i]),
+      });
+    });
+
+    // Trigger callbacks tween visuals and boxes outside the media context, which won't revert them.
+    return () => {
+      ScrollTrigger.removeEventListener('refreshInit', pullUp);
+      showcase.style.marginTop = '';
+      showcase.removeAttribute('data-handed-off');
+      if (source) source.style.visibility = '';
+      gsap.set([...visuals, ...panels.map((panel) => panel.querySelector('.box'))], { clearProps: 'opacity,visibility' });
+      deactivateAll();
+    };
+  });
+
+  // Each visual is active while in view.
+  modes.add(INLINE_MODE, () => {
+    visuals.forEach((visual) => ScrollTrigger.create({ trigger: visual, start: 'top 75%', end: 'bottom 25%', onToggle: activateOnToggle(visual) }));
+    return deactivateAll;
+  });
+
+  // With reduced motion, every visual shows its final state from the start.
+  modes.add(media.reducedMotion, () => {
+    visuals.forEach((visual) => setActive(visual, true, { settled: true }));
+    return deactivateAll;
+  });
+
+  // Syncs every trigger to the current scroll before swaps start animating.
+  ScrollTrigger.refresh();
+  loaded = true;
+</script>
+
+<style lang="scss">
+  @use '../../styles/colors' as *;
+  @use '../../styles/breakpoints' as *;
+  @use '../../styles/screenshot' as *;
+  @use '../../styles/container' as *;
+
+  $gutter: 2rem;
+  $copy-width: 30rem;
+  $copy-gap: 8rem;
+  $visual-max-height: 60vh;
+  $panel-padding: 24rem;
+  $panel-height: 95vh;
+  $panel-gap: 0rem;
+  $bleed: $screenshot-radius + 2px;
+  $progress-width: 8rem;
+  $progress-height: 3px;
+
+  /// Matches `STAGE_MODE` in the script.
+  @mixin stage-mode {
+    @include md-up {
+      @include motion-ok {
+        @content;
+      }
+    }
+  }
+
+  // Above the hero, which it is pulled into.
+  .showcase {
+    position: relative;
+    z-index: 1;
+    max-width: $content-width;
+    margin: 0 auto;
+  }
+
+  // Narrow, the copy comes first.
+  .panel {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .copy :global(.copy-feature) {
+    padding-bottom: 2rem;
+  }
+
+  // Filled by --progress, from 0 to 1.
+  .progress {
+    width: $progress-width;
+    height: $progress-height;
+    margin: 0 $gutter 2rem;
+    border-radius: $progress-height;
+    overflow: hidden;
+    background: rgba($brand-400, 0.35);
+
+    &::after {
+      content: '';
+      display: block;
+      height: 100%;
+      background: $brand-100;
+      transform: scaleX(var(--progress, 0));
+      transform-origin: left;
+    }
+
+    @include reduced-motion {
+      display: none;
+    }
+  }
+
+  .box {
+    padding: 0 $gutter 3rem;
+  }
+
+  .showcase-end {
+    display: none;
+  }
+
+  // A single cell that its content can fill.
+  .visual {
+    display: grid;
+    grid-template: minmax(0, 1fr) / minmax(0, 1fr);
+    place-items: center;
+  }
+
+  @include md-up {
+    .showcase {
+      max-width: none;
+    }
+
+    .panel {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) $copy-width;
+      align-items: center;
+      column-gap: $copy-gap;
+      padding-block: $panel-padding;
+      padding-right: max(#{$gutter}, (100% - #{$content-width}) / 2);
+    }
+
+    // Bleeds past the viewport's left edge by the frame's radius, hiding its corners; unframed visuals keep clear by --bleed-inset.
+    .box {
+      --bleed-inset: calc(#{$bleed} + #{$gutter});
+      justify-self: end;
+      width: calc(100% + #{$bleed});
+      max-width: calc(#{$visual-max-height} * #{$screenshot-aspect});
+      margin-left: -$bleed;
+      padding: 0;
+    }
+
+    .copy :global(.copy-feature) {
+      padding: 0;
+    }
+
+    .progress {
+      margin: 2rem 0 0;
+    }
+  }
+
+  @include stage-mode {
+    // Let pointers through to the hero, which the showcase overlaps.
+    .showcase,
+    .panel {
+      pointer-events: none;
+    }
+
+    .visual,
+    .copy {
+      pointer-events: auto;
+    }
+
+    // Keeps the last panel stuck for a whole step, like the others. Sticky ignores the panel's own margin, so this takes an element.
+    .showcase-end {
+      display: block;
+      height: calc(#{$panel-height} + #{$panel-gap});
+    }
+
+    // Centered once stuck, each panel stacks over the previous one. The script reads these sizes.
+    .panel {
+      position: sticky;
+      top: calc((100vh - #{$panel-height}) / 2);
+      height: $panel-height;
+      margin-bottom: $panel-gap;
+      padding-block: 0;
+    }
+
+    .box {
+      position: relative;
+      aspect-ratio: $screenshot-aspect;
+    }
+
+    // Raises the chat so its latest turn sits nearer the middle.
+    .visual {
+      --chat-lift: 15%;
+      position: absolute;
+      inset: 0;
+    }
+
+    // The first visual shows once the hero has handed over.
+    .showcase:not([data-handed-off]) .panel:first-child .visual {
+      visibility: hidden;
+    }
+  }
+</style>

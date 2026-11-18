@@ -1,5 +1,8 @@
 @use 'colors' as *;
 
+/// Width of a page's content column, e.g. a hero's.
+$content-width: 1200px;
+
 $container-border-width: 1px;
 $container-border-bottom-width: 3px;
 

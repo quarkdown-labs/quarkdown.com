@@ -4,6 +4,7 @@ import { gsap } from 'gsap';
 export async function loadScrollTrigger() {
   const { ScrollTrigger } = await import('gsap/ScrollTrigger');
   gsap.registerPlugin(ScrollTrigger);
+  return ScrollTrigger;
 }
 
 export { gsap };

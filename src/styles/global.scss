@@ -124,3 +124,16 @@ a {
     content: 'Copied!';
   }
 }
+
+// The Studio lockup in running text (see `studio-name.ts`).
+.studio-inline svg {
+  display: inline-block;
+  height: 1.15em;
+  width: auto;
+  vertical-align: -0.22em;
+  margin-inline: -0.1em -0.06em;
+}
+
+.studio-inline--possessive svg {
+  margin-inline-end: -0.28em;
+}

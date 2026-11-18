@@ -3,13 +3,16 @@ interface Props {
   overline?: string;
   title?: string;
   description?: string;
+  /** Alignment of the overline, title and description. */
+  align?: 'center' | 'start';
+  class?: string;
 }
 
-const { overline, title, description } = Astro.props;
+const { overline, title, description, align = 'center', class: className } = Astro.props;
 ---
 
-<section class="feature">
-  {overline && <span class="feature-overline">{overline}</span>}
+<section class:list={['feature', `feature--${align}`, className]}>
+  {(overline || Astro.slots.has('overline')) && <span class="feature-overline"><slot name="overline">{overline}</slot></span>}
   <h2 class="feature-title"><slot name="title">{title}</slot></h2>
   {description && <p class="feature-description" set:html={description}></p>}
   {Astro.slots.has('default') && (
@@ -24,6 +27,11 @@ const { overline, title, description } = Astro.props;
   @use '../styles/typography' as *;
   @use '../styles/breakpoints' as *;
 
+  @mixin start-aligned {
+    align-items: start;
+    text-align: start;
+  }
+
   .feature {
     display: flex;
     flex-direction: column;
@@ -34,9 +42,12 @@ const { overline, title, description } = Astro.props;
     margin: 0 auto;
 
     @include sm-down {
-      align-items: start;
-      text-align: start;
+      @include start-aligned;
     }
+  }
+
+  .feature--start {
+    @include start-aligned;
   }
 
   .feature-overline {

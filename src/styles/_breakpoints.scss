@@ -13,3 +13,21 @@ $bp-md: 1024px;
     @content;
   }
 }
+
+@mixin md-up {
+  @media (min-width: $bp-md + 1px) {
+    @content;
+  }
+}
+
+@mixin motion-ok {
+  @media (prefers-reduced-motion: no-preference) {
+    @content;
+  }
+}
+
+@mixin reduced-motion {
+  @media (prefers-reduced-motion: reduce) {
+    @content;
+  }
+}

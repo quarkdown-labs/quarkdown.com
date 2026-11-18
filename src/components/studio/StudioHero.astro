@@ -53,13 +53,16 @@ const followUp = emphasis.delay + emphasis.convergence * SETTLED;
       <WaitlistButton />
     </div>
 
+    <!-- Separate elements for the entrance and the showcase handoff, so their transforms don't conflict. -->
     <div class="hero-screenshot" data-hero-screenshot data-follow-up={followUp}>
-      <ThemeSplitScreenshot
-        light={editorLight}
-        dark={editorDark}
-        alt="Quarkdown Studio's editor, half in its light theme and half in its dark theme"
-        introDelay={followUp + SCREENSHOT_RISE}
-      />
+      <div class="hero-carried" data-showcase-source>
+        <ThemeSplitScreenshot
+          light={editorLight}
+          dark={editorDark}
+          alt="Quarkdown Studio's editor, half in its light theme and half in its dark theme"
+          introDelay={followUp + SCREENSHOT_RISE}
+        />
+      </div>
     </div>
   </div>
 </section>
@@ -135,6 +138,7 @@ const followUp = emphasis.delay + emphasis.convergence * SETTLED;
   @use '../../styles/colors' as *;
   @use '../../styles/typography' as *;
   @use '../../styles/breakpoints' as *;
+  @use '../../styles/container' as *;
 
   // The entrance brightens --glow from --glow-dim.
   .hero {
@@ -142,7 +146,8 @@ const followUp = emphasis.delay + emphasis.convergence * SETTLED;
     --glow-dim: #{$brand-900};
     position: relative;
     background: linear-gradient(var(--glow) -10%, transparent 70%);
-    overflow: hidden;
+    // Sideways only, so the screenshot can be carried into the showcase.
+    overflow-x: clip;
   }
 
   .hero-inner {
@@ -151,9 +156,9 @@ const followUp = emphasis.delay + emphasis.convergence * SETTLED;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    max-width: 1200px;
+    max-width: $content-width;
     margin: 0 auto;
-    padding: 7.5rem 2rem 6rem;
+    padding: 7.5rem 2rem 0;
 
     @include md-down {
       padding: 7rem 1.5rem 4rem;
@@ -220,6 +225,16 @@ const followUp = emphasis.delay + emphasis.convergence * SETTLED;
   .hero-actions {
     position: relative;
     z-index: 1;
+  }
+
+  // Carried into the showcase, the screenshot passes over its copy, but under the actions.
+  .hero-carried {
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-actions {
+    z-index: 3;
   }
 
   .hero-screenshot {
