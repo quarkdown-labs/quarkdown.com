@@ -9,8 +9,7 @@ import ThemeSplitScreenshot from './ThemeSplitScreenshot.astro';
 import WaitlistButton from './WaitlistButton.astro';
 import Typewriter from '../Typewriter.astro';
 import StudioLockup from './StudioLockup.astro';
-import editorLight from '../../assets/studio/editor-light.png';
-import editorDark from '../../assets/studio/editor-dark.png';
+import { editorScreenshots } from './editor-screenshots';
 
 /** Fraction of the emphasis's convergence after which it reads settled, and the rest of the hero follows. */
 const SETTLED = 0.5;
@@ -56,12 +55,7 @@ const followUp = emphasis.delay + emphasis.convergence * SETTLED;
     <!-- Separate elements for the entrance and the showcase handoff, so their transforms don't conflict. -->
     <div class="hero-screenshot" data-hero-screenshot data-follow-up={followUp}>
       <div class="hero-carried" data-showcase-source>
-        <ThemeSplitScreenshot
-          light={editorLight}
-          dark={editorDark}
-          alt="Quarkdown Studio's editor, half in its light theme and half in its dark theme"
-          introDelay={followUp + SCREENSHOT_RISE}
-        />
+        <ThemeSplitScreenshot {...editorScreenshots} introDelay={followUp + SCREENSHOT_RISE} />
       </div>
     </div>
   </div>
@@ -139,6 +133,7 @@ const followUp = emphasis.delay + emphasis.convergence * SETTLED;
   @use '../../styles/typography' as *;
   @use '../../styles/breakpoints' as *;
   @use '../../styles/container' as *;
+  @use '../../styles/studio-stage' as *;
 
   // The entrance brightens --glow from --glow-dim.
   .hero {
@@ -209,20 +204,16 @@ const followUp = emphasis.delay + emphasis.convergence * SETTLED;
   }
 
   .hero-actions {
+    @include studio-actions;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
-
-    > :global(*) {
-      filter: drop-shadow(0 10px 18px rgba($brand-500, 0.5));
-    }
   }
 
-  // The title and action stay above the screenshot, whose far edge tucks under the actions.
+  // The title stays above the screenshot.
   .hero-title,
-  .hero-subtitle,
-  .hero-actions {
+  .hero-subtitle {
     position: relative;
     z-index: 1;
   }
@@ -238,8 +229,6 @@ const followUp = emphasis.delay + emphasis.convergence * SETTLED;
   }
 
   .hero-screenshot {
-    width: 100%;
-    max-width: 1100px;
-    margin-top: clamp(-2.5rem, -2.5vw, -0.75rem);
+    @include studio-screenshot;
   }
 </style>

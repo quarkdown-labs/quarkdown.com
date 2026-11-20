@@ -1,0 +1,46 @@
+---
+/** Quarkdown Studio, introduced outside its own page: its interactive screenshot, under an action leading to that page. */
+import Feature from '../Feature.astro';
+import CallToAction from '../CallToAction.astro';
+import Icon from '../Icon.astro';
+import ThemeSplitScreenshot from './ThemeSplitScreenshot.astro';
+import { editorScreenshots } from './editor-screenshots';
+import { links } from '../../links';
+import { withStudioLockup } from '../../studio-name';
+---
+
+<Feature class="studio-teaser" description="Cloud saves, MCP, and first-class Quarkdown support in a web app tailored to writers like you.">
+  <Fragment slot="title" set:html={withStudioLockup('3x faster with Studio')} />
+  <div class="teaser">
+    <div class="actions">
+      <CallToAction variant="studio" href={links.studioPage}>Discover Studio<Icon name="arrow-right" /></CallToAction>
+    </div>
+    <div class="screenshot">
+      <ThemeSplitScreenshot {...editorScreenshots} loading="lazy" />
+    </div>
+  </div>
+</Feature>
+
+<style lang="scss">
+  @use '../../styles/typography' as *;
+  @use '../../styles/studio-stage' as *;
+
+  // As large as the Installation title that follows it.
+  :global(.studio-teaser .feature-title) {
+    font-size: $font-size-h1;
+  }
+
+  .teaser {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .actions {
+    @include studio-actions;
+  }
+
+  .screenshot {
+    @include studio-screenshot;
+  }
+</style>

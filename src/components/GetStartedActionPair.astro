@@ -2,10 +2,11 @@
 import CallToAction from './CallToAction.astro';
 import Icon from './Icon.astro';
 import { links } from '../links';
+import { withStudioLockup } from '../studio-name';
 ---
 
 <div class="action-pair">
-  <CallToAction href="#install" variant="secondary">Install</CallToAction>
+  <CallToAction href={links.studioPage} variant="secondary"><Fragment set:html={withStudioLockup('Try Studio')} /></CallToAction>
   <CallToAction href={links.quickstart} variant="primary">Get started<Icon name="arrow-right" /></CallToAction>
 </div>
 
@@ -15,5 +16,10 @@ import { links } from '../links';
     align-items: center;
     gap: 1rem;
     margin-top: 1rem;
+  }
+
+  // Closer than the action's gap, as a word.
+  .action-pair :global(.studio-inline svg) {
+    margin-inline-start: -0.3em;
   }
 </style>

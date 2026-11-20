@@ -12,11 +12,12 @@ interface Props {
   light?: ImageMetadata;
   dark?: ImageMetadata;
   alt: string;
-  /** Seconds before the dark theme sweeps in, e.g. to land with an entrance animation. */
+  /** Seconds, once in view, before the light theme sweeps in, e.g. to land with an entrance animation. */
   introDelay?: number;
+  loading?: 'eager' | 'lazy';
 }
 
-const { light, dark, alt, introDelay = 0.4 } = Astro.props;
+const { light, dark, alt, introDelay = 0.4, loading = 'eager' } = Astro.props;
 
 const themes = [
   { id: 'light', image: light },
@@ -29,7 +30,7 @@ const themes = [
     {themes.map(({ id, image }) => (
       <div class:list={['pane', `pane--${id}`]}>
         <div class="pane-surface">
-          {image && <Image src={image} alt="" loading="eager" {...imagePresets.screenshot} />}
+          {image && <Image src={image} alt="" loading={loading} {...imagePresets.screenshot} />}
         </div>
       </div>
     ))}
@@ -79,15 +80,17 @@ const themes = [
   figure.addEventListener('pointerleave', () => aim(SEAM_REST));
 
   if (!reducedMotion) {
-    // The light theme sweeps in once, from the left edge, the seam resting there from the start rather than once the delay is over.
-    gsap.fromTo(figure, { '--seam': -slant - SEAM_START_MARGIN }, {
+    // The light theme sweeps in once, from the left edge, as soon as the screenshot comes into view; the seam rests there until then.
+    const intro = gsap.fromTo(figure, { '--seam': -slant - SEAM_START_MARGIN }, {
       '--seam': SEAM_REST,
       duration: INTRO_DURATION,
       delay: Number(figure.dataset.introDelay),
       ease: 'expo.out',
+      paused: true,
     });
 
-    await loadScrollTrigger();
+    const ScrollTrigger = await loadScrollTrigger();
+    ScrollTrigger.create({ trigger: figure, start: 'top bottom', once: true, onEnter: () => intro.restart(true) });
     gsap.fromTo(figure, { '--tilt': 1 }, {
       '--tilt': 0,
       ease: 'none',

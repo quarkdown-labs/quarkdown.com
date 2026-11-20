@@ -7,6 +7,7 @@ import ReactivePreview from '../components/ReactivePreview.astro';
 import QuarkdownCode from '../components/QuarkdownCode.astro';
 import Typewriter from '../components/Typewriter.astro';
 import Installation from '../components/Installation.astro';
+import StudioTeaser from '../components/studio/StudioTeaser.astro';
 import Footer from '../components/Footer.astro';
 import DoctypeShowcase from '../components/DoctypeShowcase.astro';
 import AuthoringShowcase from '../components/AuthoringShowcase.astro';
@@ -86,6 +87,8 @@ import scriptingOutput from '../assets/output/scripting.png';
       <QuarkdownCode prioritizeCode code={scripting} output={scriptingOutput} alt="Animal cards rendered from a custom function" />
     </Feature>
   </main>
+
+  <StudioTeaser />
 
   <Installation />
 

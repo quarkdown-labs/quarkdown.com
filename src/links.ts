@@ -38,6 +38,7 @@ export const links = {
   privacy: '/privacy',
   terms: '/terms',
   studio: STUDIO,
+  studioPage: '/studio',
   tryStudio: `${STUDIO}/open`,
   packages: `${STUDIO}/atoms`,
   waitlist: `${STUDIO}/waitlist`,
