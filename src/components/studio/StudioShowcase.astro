@@ -134,7 +134,7 @@ const features = [
   const LEAD_GAP = 12;
   /** Pixels a stopped panel's copy drifts up until the next panel stops. */
   const COPY_RISE = 160;
-  /** Fraction of a step, before the next stop, over which the copy dims and blurs out. */
+  /** Fraction of a step, before a stop, over which the incoming copy sharpens in and the outgoing one blurs out. */
   const COPY_FADE = 0.5;
   const COPY_BLUR = '8px';
   /** Seconds a visual takes to fade in over the previous one. */
@@ -225,30 +225,31 @@ const features = [
   /** Until set up, swaps are instant, so a reload lands in the right state. */
   let loaded = false;
 
-  /** Panel [i]'s copy drifts up from its stop until the next one, or until the showcase scrolls away. */
-  function rise(i: number) {
-    gsap.fromTo(panels[i].querySelector('[data-showcase-copy]'), { y: 0 }, {
-      y: -COPY_RISE,
-      ease: 'none',
-      scrollTrigger: { start: () => stopOf(i), end: () => stopOf(i + 1), scrub: true },
+  /**
+   * Panel [i]'s copy, in one timeline so that its fades never overwrite each other: it sharpens in as its panel comes up to its stop,
+   * drifts up while stopped, and blurs out as the next panel comes up to its own. Durations are fractions of a step.
+   */
+  function flow(i: number) {
+    const copy = panels[i].querySelector('[data-showcase-copy]');
+    const shown = { opacity: 1, filter: 'blur(0px)' };
+    const hidden = { opacity: 0, filter: `blur(${COPY_BLUR})` };
+    const lead = i > 0 ? COPY_FADE : 0;
+
+    const timeline = gsap.timeline({
+      defaults: { ease: 'none' },
+      scrollTrigger: { start: () => stopOf(i) - lead * step(), end: () => stopOf(i + 1), scrub: true },
     });
+    if (lead) timeline.fromTo(copy, hidden, { ...shown, duration: lead });
+    timeline.fromTo(copy, { y: 0 }, { y: -COPY_RISE, duration: 1 }, lead);
+    if (i < panels.length - 1) {
+      timeline.fromTo(copy, shown, { ...hidden, duration: COPY_FADE, immediateRender: false }, lead + 1 - COPY_FADE);
+    }
   }
 
-  /**
-   * Panel [i] takes over from the previous one: the previous copy fades out,
-   * then, as panel [i] stops, its visual crossfades in. Scrolling back up, the swap is instant.
-   */
+  /** As panel [i] stops over the previous one, its visual crossfades in. Scrolling back up, the swap is instant. */
   function swap(i: number) {
-    const previous = panels[i - 1];
-    const outgoing = previous.querySelector<HTMLElement>('.box')!;
+    const outgoing = panels[i - 1].querySelector<HTMLElement>('.box')!;
     const incoming = visuals[i];
-
-    gsap.fromTo(previous.querySelector('[data-showcase-copy]'), { opacity: 1, filter: 'blur(0px)' }, {
-      opacity: 0,
-      filter: `blur(${COPY_BLUR})`,
-      ease: 'none',
-      scrollTrigger: { start: () => stopOf(i) - COPY_FADE * step(), end: () => stopOf(i), scrub: true },
-    });
 
     gsap.set(incoming, { autoAlpha: 0 });
     ScrollTrigger.create({
@@ -286,7 +287,7 @@ const features = [
 
     panels.forEach((_, i) => {
       if (i > 0) swap(i);
-      rise(i);
+      flow(i);
 
       ScrollTrigger.create({
         start: () => stopOf(i),
@@ -335,7 +336,7 @@ const features = [
   $visual-max-height: 60vh;
   $panel-padding: 24rem;
   $panel-height: 95vh;
-  $panel-gap: 0rem;
+  $panel-gap: -40vh;
   $bleed: $screenshot-radius + 2px;
   $progress-width: 8rem;
   $progress-height: 3px;
@@ -454,6 +455,11 @@ const features = [
     .showcase-end {
       display: block;
       height: calc(#{$panel-height} + #{$panel-gap});
+    }
+
+    // Room for what a negative gap leaves of the last panel past the showcase's end, which padding leaves out of its stuck time.
+    .showcase {
+      padding-bottom: max(0px, #{-$panel-gap});
     }
 
     // Centered once stuck, each panel stacks over the previous one. The script reads these sizes.
