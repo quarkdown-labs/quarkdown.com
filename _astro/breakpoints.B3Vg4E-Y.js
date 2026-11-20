@@ -1,0 +1,1 @@
+var e={sm:768,md:1024},t={mdDown:`(max-width: ${e.md}px)`,mdUp:`(min-width: ${e.md+1}px)`,motionOk:`(prefers-reduced-motion: no-preference)`,reducedMotion:`(prefers-reduced-motion: reduce)`};export{t as n,e as t};
