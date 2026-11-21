@@ -41,6 +41,7 @@ const themes = [
 <script>
   import { gsap, loadScrollTrigger } from '../../scripts/gsap';
   import { TILT } from '../../scripts/tilt';
+  import { scrollWhereTopAt } from '../../scripts/layout';
 
   const SEAM_REST = 0.5;
   const SEAM_EASE = 0.12; // Fraction of the distance to the pointer covered per frame.
@@ -94,7 +95,11 @@ const themes = [
     gsap.fromTo(figure, { '--tilt': 1 }, {
       '--tilt': 0,
       ease: 'none',
-      scrollTrigger: { trigger: figure, start: TILT.start, end: TILT.end, scrub: 0.6 },
+      scrollTrigger: {
+        start: () => scrollWhereTopAt(figure, TILT.start),
+        end: () => scrollWhereTopAt(figure, TILT.end),
+        scrub: 0.6,
+      },
     });
   }
 </script>

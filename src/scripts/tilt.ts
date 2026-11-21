@@ -1,2 +1,2 @@
-/** ScrollTrigger range over which a tilted screenshot turns face-on. */
-export const TILT = { start: 'top 85%', end: 'top 45%' } as const;
+/** Fractions of the viewport's height that a tilted screenshot's top passes as it turns face-on, see `scrollWhereTopAt`. */
+export const TILT = { start: 0.85, end: 0.45 } as const;

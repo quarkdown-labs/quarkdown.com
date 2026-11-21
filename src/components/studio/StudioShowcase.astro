@@ -123,6 +123,7 @@ const features = [
   import { gsap, loadScrollTrigger } from '../../scripts/gsap';
   import { media } from '../../scripts/breakpoints';
   import { TILT } from '../../scripts/tilt';
+  import { offsetOf, scrollWhereTopAt } from '../../scripts/layout';
   import { activateOnToggle, onProgress, setActive } from '../../scripts/showcase';
 
   /** Matches `stage-mode` in the styles below. */
@@ -160,17 +161,6 @@ const features = [
     if (bar) onProgress(panel, (progress) => bar.style.setProperty('--progress', `${progress}`));
   });
 
-  /** The layout offset of [element] from [ancestor], or from the page, ignoring transforms and stickiness. */
-  function offsetOf(element: HTMLElement, ancestor?: HTMLElement) {
-    let left = 0;
-    let top = 0;
-    for (let node: Element | null = element; node instanceof HTMLElement && node !== ancestor; node = node.offsetParent) {
-      left += node.offsetLeft;
-      top += node.offsetTop;
-    }
-    return { left, top };
-  }
-
   // Scroll positions come from the layout alone, so they hold wherever the page is scrolled, e.g. on reload.
 
   /** Scroll between two panels' stops. */
@@ -202,15 +192,11 @@ const features = [
     };
     // Measured once per refresh, by the first function-based value below.
     let to = towardsFirst(source);
-    // Leading x over y bows the path.
-    const along = gsap.parseEase('power1.inOut');
-    const ahead = gsap.parseEase('sine.out');
 
     gsap.set(source, { transformOrigin: 'top left' });
     gsap.timeline({
       scrollTrigger: {
-        trigger: source,
-        start: TILT.end,
+        start: () => scrollWhereTopAt(source, TILT.end),
         end: () => stopOf(0),
         scrub: true,
         invalidateOnRefresh: true,
@@ -218,10 +204,10 @@ const features = [
         onRefresh: sync,
       },
     })
-      .fromTo(source, { x: 0 }, { x: () => (to = towardsFirst(source)).x, duration: 1, ease: (t: number) => ahead(along(t)) }, 0)
+      .fromTo(source, { x: 0 }, { x: () => (to = towardsFirst(source)).x, duration: 1, ease: 'sine.out' }, 0)
       .fromTo(source, { y: 0 }, { y: () => to.y, duration: 1, ease: 'none' }, 0)
-      .fromTo(source, { scale: 1 }, { scale: () => to.scale, duration: 1, ease: 'power1.inOut' }, 0)
-      .fromTo(source, { '--wipe': 0 }, { '--wipe': 1, duration: 1, ease: along }, 0)
+      .fromTo(source, { scale: 1 }, { scale: () => to.scale, duration: 1, ease: 'power1.out' }, 0)
+      .fromTo(source, { '--wipe': 0 }, { '--wipe': 1, duration: 1, ease: 'power1.out' }, 0)
       .fromTo(source, { '--lift': 0 }, { '--lift': 1, duration: 0.5, ease: 'sine.out' }, 0)
       .to(source, { '--lift': 0, duration: 0.5, ease: 'sine.in' }, 0.5);
   }
