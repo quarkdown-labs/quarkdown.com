@@ -1,7 +1,8 @@
 ---
 /**
  * A screen recording of Studio as a looping video, optionally zoomed by a camera timeline.
- * It plays from the start whenever its showcase visual becomes active, and loads a viewport ahead of it.
+ * It plays from the start whenever its showcase visual becomes active. A viewport ahead of it, it is downloaded whole
+ * and played from memory: Safari, streaming it, would run out of data partway through its first play.
  */
 import type { CameraTimeline } from '../../scripts/camera';
 
@@ -15,14 +16,12 @@ interface Props {
 const { src, camera, alt } = Astro.props;
 ---
 
-<div class="recording" data-recording data-camera={camera && JSON.stringify(camera)}>
-  <!-- The time fragment makes Safari show the first frame before playing. -->
+<div class="recording" data-recording data-src={src} data-camera={camera && JSON.stringify(camera)}>
   <video
-    src={`${src}#t=0.001`}
     muted
     loop
     playsinline
-    preload="none"
+    preload="auto"
     disablepictureinpicture
     disableremoteplayback
     role="img"
@@ -40,17 +39,28 @@ const { src, camera, alt } = Astro.props;
 
   document.querySelectorAll<HTMLElement>('[data-recording]').forEach((recording) => {
     const video = recording.querySelector('video')!;
-    const { camera } = recording.dataset;
+    const { src, camera } = recording.dataset;
     const player = new RecordingPlayer(
       video,
       cameraOf(camera ? JSON.parse(camera) : undefined),
       (progress) => reportProgress(recording, progress),
     );
 
+    /** Downloads the video whole, or streams it if that fails. The time fragment makes Safari show the first frame. */
+    async function load() {
+      try {
+        const response = await fetch(src!);
+        if (!response.ok) throw new Error(response.statusText);
+        video.src = `${URL.createObjectURL(await response.blob())}#t=0.001`;
+      } catch {
+        video.src = `${src}#t=0.001`;
+      }
+    }
+
     const preload = new IntersectionObserver(([entry]) => {
       if (!entry.isIntersecting) return;
       preload.disconnect();
-      video.preload = 'auto';
+      void load();
     }, { rootMargin: PRELOAD_MARGIN });
     preload.observe(recording);
 
