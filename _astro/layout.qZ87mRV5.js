@@ -1,0 +1,1 @@
+var e={start:.85,end:.45};function t(e,t){let n=0,r=0;for(let i=e;i instanceof HTMLElement&&i!==t;i=i.offsetParent)n+=i.offsetLeft,r+=i.offsetTop;return{left:n,top:r}}var n=(e,n)=>t(e).top-n*innerHeight;export{n,e as r,t};
