@@ -2,7 +2,7 @@
 /**
  * A recorded conversation with an AI agent working on a Studio project over MCP, as a chat.
  * The before close-up opens it from the user, and the after close-up follows the edit from the agent.
- * Turns come in one by one while the showcase visual is active.
+ * Turns come in one by one while the showcase visual is active, starting over on every visit.
  */
 import type { ImageMetadata } from 'astro';
 import Screenshot from './Screenshot.astro';
@@ -81,6 +81,7 @@ const messages: (Turn | CloseupMessage)[] = [
 <script>
   import { gsap } from '../../scripts/gsap';
   import { reportProgress, whileActive } from '../../scripts/showcase';
+  import { media } from '../../scripts/breakpoints';
 
   const TURN_INTERVAL = 1.5; // Seconds.
   const TURN_DURATION = 0.6;
@@ -102,7 +103,11 @@ const messages: (Turn | CloseupMessage)[] = [
     });
 
     whileActive(conversation, {
-      activate: (settled) => (settled ? timeline.progress(1).pause() : timeline.restart()),
+      // Not an entry animation: it plays from the start on every visit. With reduced motion, it shows the whole chat at once.
+      activate: () => {
+        if (matchMedia(media.reducedMotion).matches) timeline.progress(1).pause();
+        else timeline.restart();
+      },
       deactivate: () => timeline.pause(),
     });
   });

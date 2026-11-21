@@ -24,6 +24,7 @@ const { src, camera, alt } = Astro.props;
   import { cameraOf } from '../../scripts/camera';
   import { canPlayRecordings, RecordingPlayer } from '../../scripts/recording';
   import { reportProgress, whileActive } from '../../scripts/showcase';
+  import { media } from '../../scripts/breakpoints';
 
   const PRELOAD_MARGIN = '100% 0px'; // One viewport ahead.
 
@@ -57,9 +58,9 @@ const { src, camera, alt } = Astro.props;
     preload.observe(recording);
 
     whileActive(recording, {
-      // Settled, it keeps the frame it shows.
-      activate: (settled) => {
-        if (!settled) void player.play();
+      // Not an entry animation: it plays from the start on every visit. With reduced motion, it stays still.
+      activate: () => {
+        if (!matchMedia(media.reducedMotion).matches) void player.play();
       },
       deactivate: () => player.pause(),
     });
