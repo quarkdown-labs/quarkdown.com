@@ -4,7 +4,7 @@
     "easing": "cubic-bezier(0.65, 0, 0.35, 1)",
     "moves": [
         {
-            "startMs": 1500,
+            "startMs": 300,
             "durationMs": 500,
             "to": {
                 "x": 230,
@@ -14,7 +14,7 @@
             }
         },
         {
-            "startMs": 8499,
+            "startMs": 7300,
             "durationMs": 500,
             "to": {
                 "x": 230,
@@ -24,7 +24,7 @@
             }
         },
         {
-            "startMs": 12079,
+            "startMs": 10880,
             "durationMs": 500,
             "to": {
                 "x": 0,

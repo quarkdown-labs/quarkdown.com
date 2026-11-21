@@ -1,12 +1,12 @@
 ---
 /**
- * A screen recording of Studio as an animated WebP, optionally zoomed by a camera timeline.
- * It plays on a canvas while its showcase visual is active; without `ImageDecoder`, it falls back to the plain image.
+ * A screen recording of Studio as a looping video, optionally zoomed by a camera timeline.
+ * It plays from the start whenever its showcase visual becomes active, and loads a viewport ahead of it.
  */
 import type { CameraTimeline } from '../../scripts/camera';
 
 interface Props {
-  /** URL of the animated WebP. */
+  /** URL of the video. */
   src: string;
   camera?: CameraTimeline;
   alt: string;
@@ -15,37 +15,34 @@ interface Props {
 const { src, camera, alt } = Astro.props;
 ---
 
-<div class="recording" data-recording data-src={src} data-camera={camera && JSON.stringify(camera)}>
-  <canvas role="img" aria-label={alt} hidden></canvas>
-  <img alt={alt} loading="lazy" decoding="async" hidden />
+<div class="recording" data-recording data-camera={camera && JSON.stringify(camera)}>
+  <!-- The time fragment makes Safari show the first frame before playing. -->
+  <video
+    src={`${src}#t=0.001`}
+    muted
+    loop
+    playsinline
+    preload="none"
+    disablepictureinpicture
+    disableremoteplayback
+    role="img"
+    aria-label={alt}
+  ></video>
 </div>
 
 <script>
   import { cameraOf } from '../../scripts/camera';
-  import { canPlayRecordings, RecordingPlayer } from '../../scripts/recording';
+  import { RecordingPlayer } from '../../scripts/recording';
   import { reportProgress, whileActive } from '../../scripts/showcase';
   import { media } from '../../scripts/breakpoints';
 
   const PRELOAD_MARGIN = '100% 0px'; // One viewport ahead.
 
-  const recordings = document.querySelectorAll<HTMLElement>('[data-recording]');
-  const playable = canPlayRecordings();
-
-  recordings.forEach((recording) => {
-    const { src, camera } = recording.dataset;
-    const canvas = recording.querySelector('canvas')!;
-    const img = recording.querySelector('img')!;
-
-    if (!playable) {
-      img.src = src!;
-      img.hidden = false;
-      return;
-    }
-
-    canvas.hidden = false;
+  document.querySelectorAll<HTMLElement>('[data-recording]').forEach((recording) => {
+    const video = recording.querySelector('video')!;
+    const { camera } = recording.dataset;
     const player = new RecordingPlayer(
-      canvas,
-      src!,
+      video,
       cameraOf(camera ? JSON.parse(camera) : undefined),
       (progress) => reportProgress(recording, progress),
     );
@@ -53,14 +50,14 @@ const { src, camera, alt } = Astro.props;
     const preload = new IntersectionObserver(([entry]) => {
       if (!entry.isIntersecting) return;
       preload.disconnect();
-      void player.still();
+      video.preload = 'auto';
     }, { rootMargin: PRELOAD_MARGIN });
     preload.observe(recording);
 
     whileActive(recording, {
       // Not an entry animation: it plays from the start on every visit. With reduced motion, it stays still.
       activate: () => {
-        if (!matchMedia(media.reducedMotion).matches) void player.play();
+        if (!matchMedia(media.reducedMotion).matches) player.play();
       },
       deactivate: () => player.pause(),
     });
@@ -74,15 +71,13 @@ const { src, camera, alt } = Astro.props;
     @include screenshot-frame;
     width: 100%;
     background: $screenshot-light-ground;
+  }
 
-    canvas,
-    img {
-      @include screenshot-image;
-      display: block;
-    }
-
-    [hidden] {
-      display: none;
-    }
+  // Zoomed by the camera from its top left corner.
+  video {
+    @include screenshot-image;
+    display: block;
+    transform-origin: top left;
+    will-change: transform;
   }
 </style>
