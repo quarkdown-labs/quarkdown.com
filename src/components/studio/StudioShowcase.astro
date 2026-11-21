@@ -132,8 +132,6 @@ const features = [
   /** The showcase is pulled up into the hero by [PULL] times the first panel's empty top, less [LEAD_GAP] pixels. */
   const PULL = 2;
   const LEAD_GAP = 12;
-  /** Pixels a stopped panel's copy drifts up until the next panel stops. */
-  const COPY_RISE = 160;
   /** Fraction of a step, before a stop, over which the incoming copy sharpens in and the outgoing one blurs out. */
   const COPY_FADE = 0.5;
   const COPY_BLUR = '8px';
@@ -141,6 +139,12 @@ const features = [
   const SWAP_DURATION = 0.5;
   /** Fraction of a swap after which the previous visual starts fading out underneath. */
   const SWAP_OUTGOING_DELAY = 0.4;
+  /** Fraction of a step beyond the first and last stops within which a resting scroll settles on them. */
+  const SNAP_REACH = 0.5;
+  /** Pixels past a stop at which a snap lands: the stop's own triggers are only on past it. */
+  const SNAP_LEAD = 2;
+  /** Fraction of the way to the next stop past which a resting scroll settles on it rather than on the previous one. */
+  const SNAP_ADVANCE = 0.7;
 
   const ScrollTrigger = await loadScrollTrigger();
 
@@ -227,7 +231,8 @@ const features = [
 
   /**
    * Panel [i]'s copy, in one timeline so that its fades never overwrite each other: it sharpens in as its panel comes up to its stop,
-   * drifts up while stopped, and blurs out as the next panel comes up to its own. Durations are fractions of a step.
+   * keeps rising with the scroll while stopped, as if it never stopped, and blurs out as the next panel comes up to its own.
+   * Durations are fractions of a step.
    */
   function flow(i: number) {
     const copy = panels[i].querySelector('[data-showcase-copy]');
@@ -237,10 +242,10 @@ const features = [
 
     const timeline = gsap.timeline({
       defaults: { ease: 'none' },
-      scrollTrigger: { start: () => stopOf(i) - lead * step(), end: () => stopOf(i + 1), scrub: true },
+      scrollTrigger: { start: () => stopOf(i) - lead * step(), end: () => stopOf(i + 1), scrub: true, invalidateOnRefresh: true },
     });
     if (lead) timeline.fromTo(copy, hidden, { ...shown, duration: lead });
-    timeline.fromTo(copy, { y: 0 }, { y: -COPY_RISE, duration: 1 }, lead);
+    timeline.fromTo(copy, { y: 0 }, { y: () => -step(), duration: 1 }, lead);
     if (i < panels.length - 1) {
       timeline.fromTo(copy, shown, { ...hidden, duration: COPY_FADE, immediateRender: false }, lead + 1 - COPY_FADE);
     }
@@ -265,6 +270,28 @@ const features = [
           ease: 'none',
           overwrite: true,
         });
+      },
+    });
+  }
+
+  /**
+   * Once scrolling comes to rest in the showcase, settles it on a panel's stop: the previous one, unless it is past [SNAP_ADVANCE].
+   * Heading out past the first or last panel, it scrolls freely.
+   */
+  function snapToPanels() {
+    ScrollTrigger.create({
+      start: () => stopOf(0) - SNAP_REACH * step(),
+      end: () => stopOf(panels.length - 1) + SNAP_REACH * step(),
+      snap: {
+        snapTo: (progress, self) => {
+          const { start, end } = self!;
+          const target = Math.floor((start + progress * (end - start) - stopOf(0)) / step() + 1 - SNAP_ADVANCE);
+          if (target < 0 || target >= panels.length) return progress;
+          return (stopOf(target) + SNAP_LEAD - start) / (end - start);
+        },
+        duration: { min: 0.2, max: 0.6 },
+        delay: 0,
+        ease: 'power2.inOut',
       },
     });
   }
@@ -295,6 +322,8 @@ const features = [
         onToggle: activateOnToggle(visuals[i]),
       });
     });
+
+    snapToPanels();
 
     // Trigger callbacks tween visuals and boxes outside the media context, which won't revert them.
     return () => {
@@ -336,7 +365,7 @@ const features = [
   $visual-max-height: 60vh;
   $panel-padding: 24rem;
   $panel-height: 95vh;
-  $panel-gap: -40vh;
+  $panel-gap: -50vh;
   $bleed: $screenshot-radius + 2px;
   $progress-width: 8rem;
   $progress-height: 3px;
