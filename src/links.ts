@@ -28,6 +28,7 @@ export const links = {
   base: 'https://quarkdown.com',
   wiki: '/wiki',
   quickstart: '/wiki/quickstart',
+  install: '/#install',
   docs: '/docs/quarkdown-stdlib',
   // TODO: point to the tools index page once it exists.
   tools: '/',
