@@ -1,6 +1,7 @@
 ---
-/** The name of a plan, as a badge. */
+/** The name of a plan, as a badge linking to the pricing page. */
 import { plans, type Plan } from '../plans';
+import { links } from '../links';
 
 interface Props {
   plan: Plan['id'];
@@ -9,7 +10,7 @@ interface Props {
 const { name } = plans.find(({ id }) => id === Astro.props.plan)!;
 ---
 
-<span class="plan-badge">{name}</span>
+<a class="plan-badge" href={links.pricing}>{name}</a>
 
 <style lang="scss">
   @use '../styles/colors' as *;
@@ -26,6 +27,7 @@ const { name } = plans.find(({ id }) => id === Astro.props.plan)!;
     text-transform: none;
     vertical-align: middle;
     color: #fff;
+    text-decoration: none;
     text-shadow: none;
     background: $studio;
     border-radius: 0.35em;
