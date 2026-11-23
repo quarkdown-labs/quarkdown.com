@@ -93,7 +93,7 @@ export const pricingFaqs: Faq[] = [
   },
   {
     question: 'Do you offer discounts for students and educators?',
-    answer: `Yes, students and educators get <a href="${links.education}">${educationDiscount} off Pro</a> for a year.`,
+    answer: `Yes, students and educators get <a href="${links.education}">${educationDiscount} off a yearly Pro plan</a>.`,
   },
   agents,
 ];
