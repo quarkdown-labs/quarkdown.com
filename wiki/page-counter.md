@@ -46,7 +46,7 @@ These changes are reflected in `.currentpage` and page numbers in the [table of 
 > # Third page
 > ```
 > 
-> ![Page number format](media/format@787617428.png)
+> ![Page number format](media/format@329254998.png)
 
 ## Resetting the page number
 
@@ -69,4 +69,4 @@ These changes are reflected in `.currentpage` and page numbers in the [table of 
 > # Third page
 > ```
 > 
-> ![Page number reset](media/reset@328698708.png)
+> ![Page number reset](media/reset@-129663722.png)

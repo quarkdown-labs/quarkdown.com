@@ -147,9 +147,37 @@ The **`.join`** function merges the elements of an iterable into a single inline
 > 
 > A, B, C
 
+> **Example 8**
+> 
+> ```markdown
+> .var {letters}
+>   - A
+>   - B
+>   - C
+> 
+> .letters::join {" + "}
+> ```
+> 
+> A + B + C
+
+> **Example 9**
+> 
+> The `last` parameter sets a different separator before the last element.
+> 
+> ```markdown
+> .var {letters}
+>   - A
+>   - B
+>   - C
+> 
+> .letters::join last:{" and "}
+> ```
+> 
+> A, B and C
+
 Like `.foreach`, it accepts a [lambda](lambda.md) block that transforms each element before joining.
 
-> **Example 8**
+> **Example 10**
 > 
 > ```markdown
 > .var {letters}
@@ -171,7 +199,7 @@ Like `.foreach`, it accepts an [`Iterable`](iterable.md) value and a single-para
 
 If no element satisfies the condition, the result is [`none`](none.md).
 
-> **Example 9**
+> **Example 11**
 > 
 > ```markdown
 > .var {numbers}
@@ -184,7 +212,7 @@ If no element satisfies the condition, the result is [`none`](none.md).
 > 
 > 8
 
-> **Example 10**
+> **Example 12**
 > 
 > Here, we look up an element’s index within a list.
 > 
@@ -201,7 +229,7 @@ If no element satisfies the condition, the result is [`none`](none.md).
 
 The **`.findall`** function works the same way, but returns a collection of all the elements that satisfy the condition.
 
-> **Example 11**
+> **Example 13**
 > 
 > ```markdown
 > .var {numbers}

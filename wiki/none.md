@@ -33,7 +33,7 @@ This is particularly useful when a value is stored in a variable that might or m
 > ```
 > 
 > 1. Value of color: teal
-> 2. Value of color: None
+> 2. Value of color: `None`
 
 ## Example operations
 

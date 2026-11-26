@@ -79,11 +79,30 @@ The backslash and the newline are consumed by the compiler, and optional leading
 
 Line continuation is supported in both block and inline function calls.
 
+## Whitespace in arguments
+
+Since leading and trailing whitespace in inline arguments is ignored, `{ hello }` and `{hello}` are the same. To keep it, enclose the argument in double quotes, placed right next to the braces: `{" hello "}`.
+
+> **Example 4**
+> 
+> ```markdown
+> .var {letters}
+>   - A
+>   - B
+>   - C
+> 
+> .letters::join {", "} last:{" and "}
+> ```
+> 
+> A, B and C
+
+If your intent is to pass an argument that starts and ends with double quotes, escape them: `{\"Hello\"}`.
+
 ## Nested function calls
 
 Function calls can be nested in arguments, allowing you to compose complex expressions.
 
-> **Example 4**
+> **Example 5**
 > 
 > ```markdown
 > .multiply {.pow {3} to:{2}} by:{.pi}
@@ -121,7 +140,7 @@ Behind the scenes, the compiler transforms this call into:
 .uppercase {.myvar}
 ```
 
-> **Example 5**
+> **Example 6**
 > 
 > ```markdown
 > .var {myvar} {hello!}
@@ -135,7 +154,7 @@ Generally speaking, `.a::b` is transformed into `.b {.a}`, `.a::b::c` into `.c {
 
 You can append additional arguments to any function in the chain. Just keep in mind that the chained value is always **the first argument**, positionally speaking, of the next call.
 
-> **Example 6**
+> **Example 7**
 > 
 > `.a {x}::b {y}` is transformed into `.b {.a {x}} {y}`:
 > 
@@ -151,7 +170,7 @@ Many core functions are designed to be called in a chain, for example [`None` op
 
 A function call must normally be surrounded by whitespace, a symbol, or the beginning or end of a line. This means that a call directly adjacent to a word character is not recognized:
 
-> **Example 7**
+> **Example 8**
 > 
 > ```markdown
 > H.text {2} script:{sub}O
@@ -161,7 +180,7 @@ A function call must normally be surrounded by whitespace, a symbol, or the begi
 
 Wrapping the entire function call in curly braces allows it to appear anywhere, regardless of the surrounding characters. The wrapping braces are consumed by the compiler and do not appear in the output:
 
-> **Example 8**
+> **Example 9**
 > 
 > ```markdown
 > H{.text {2} script:{sub}}O
@@ -177,7 +196,7 @@ Function calls can appear in two contexts: inline or block.
 
 An **inline** function call is preceded and/or followed by other inline content, such as text. The output of an inline function call is simply replaced in the parent’s block.
 
-> **Example 9**
+> **Example 10**
 > 
 > ```markdown
 > Ever wondered what **26+16** equals? It's .sum {26} {16}. Here you go.

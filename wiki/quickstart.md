@@ -128,7 +128,7 @@ create [links](https://quarkdown.com), and much more.
 ![Logo](image/logo.png)
 ```
 
-<img src="media/markup@1425493914.png" alt="Markup" width="650.0px" />
+<img src="media/markup@967131484.png" alt="Markup" width="650.0px" />
 
 For a refresher on Markdown basics, see [markdownguide.org](https://www.markdownguide.org/basic-syntax).
 
@@ -144,7 +144,7 @@ You might have noticed that the image in the previous example appears too large.
 
 Now the image is sized appropriately.
 
-<img src="media/image-size@-1717420561.png" alt="Image size" width="650.0px" />
+<img src="media/image-size@2119184305.png" alt="Image size" width="650.0px" />
 
 This sets the image width to 50% of the available width while maintaining the aspect ratio. Supported units include `px`, `pt`, `cm`, `mm`, `in`, and `%`. If you omit the unit, Quarkdown assumes `px`.
 
@@ -178,7 +178,7 @@ You can add a caption by appending a title in quotes:
 !(50%)[Logo](image/logo.png "The Quarkdown logo")
 ```
 
-<img src="media/figure@-479924130.png" alt="Figure" width="650.0px" />
+<img src="media/figure@-938286560.png" alt="Figure" width="650.0px" />
 
 ### Equations and formulae
 
@@ -198,7 +198,7 @@ $ f(x, y) = \frac{x}{y} $
 
 Notice that the second equation appears centered on its own line, even though it uses the same syntax. Just like figures, isolated equations automatically become block equations.
 
-<img src="media/equations@-967546107.png" alt="Equations" width="650.0px" />
+<img src="media/equations@-1425908537.png" alt="Equations" width="650.0px" />
 
 ## Function call syntax
 
@@ -300,7 +300,7 @@ Update the call accordingly:
     This is my example!
 ```
 
-<img src="media/custom-element@324774178.png" alt="Custom element" width="650.0px" />
+<img src="media/custom-element@-133588252.png" alt="Custom element" width="650.0px" />
 
 Congratulations! You’ve created your first reusable element using [boxes](box.md). Many more layout tools are available, such as [containers](container.md) and [stacks](stacks.md).
 
@@ -382,7 +382,7 @@ Add a numbering scheme at the top of your document, right before the content beg
 
 > This YAML-like syntax represents a [dictionary](dictionary.md) data type.
 
-<img src="media/numbering@719140083.png" alt="Numbering" width="650.0px" />
+<img src="media/numbering@260777653.png" alt="Numbering" width="650.0px" />
 
 Valid symbols for numbering formats are:
 
@@ -458,7 +458,7 @@ Add the `logo` ID to it and reference it in the text:
 The Quarkdown logo is shown in .ref {logo}.
 ```
 
-<img src="media/cross-reference@-125600178.png" alt="Cross-reference" width="650.0px" />
+<img src="media/cross-reference@-583962608.png" alt="Cross-reference" width="650.0px" />
 
 See [Cross-references](cross-references.md) to learn how to add IDs to other elements, such as sections, tables, equations, and code blocks.
 
@@ -626,7 +626,7 @@ You can also visualize the knowledge graph formed by subdocuments:
 .subdocumentgraph
 ```
 
-<img src="media/subdocuments@1091598090.png" alt="Subdocuments" width="650.0px" />
+<img src="media/subdocuments@633235660.png" alt="Subdocuments" width="650.0px" />
 
 ## Packages
 
