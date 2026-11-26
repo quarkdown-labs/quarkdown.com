@@ -131,7 +131,7 @@ const features = [
   const INLINE_MODE = `${media.mdDown} and ${media.motionOk}`;
 
   /** The showcase is pulled up into the hero by [PULL] times the first panel's empty top, less [LEAD_GAP] pixels. */
-  const PULL = 2;
+  const PULL = 3;
   const LEAD_GAP = 12;
   /** Fraction of a step, before a stop, over which the incoming copy sharpens in and the outgoing one blurs out. */
   const COPY_FADE = 0.5;
@@ -224,16 +224,14 @@ const features = [
     const copy = panels[i].querySelector('[data-showcase-copy]');
     const shown = { opacity: 1, filter: 'blur(0px)' };
     const hidden = { opacity: 0, filter: `blur(${COPY_BLUR})` };
-    const lead = i > 0 ? COPY_FADE : 0;
-
     const timeline = gsap.timeline({
       defaults: { ease: 'none' },
-      scrollTrigger: { start: () => stopOf(i) - lead * step(), end: () => stopOf(i + 1), scrub: true, invalidateOnRefresh: true },
+      scrollTrigger: { start: () => stopOf(i) - COPY_FADE * step(), end: () => stopOf(i + 1), scrub: true, invalidateOnRefresh: true },
     });
-    if (lead) timeline.fromTo(copy, hidden, { ...shown, duration: lead });
-    timeline.fromTo(copy, { y: 0 }, { y: () => -step(), duration: 1 }, lead);
+    timeline.fromTo(copy, hidden, { ...shown, duration: COPY_FADE });
+    timeline.fromTo(copy, { y: 0 }, { y: () => -step(), duration: 1 }, COPY_FADE);
     if (i < panels.length - 1) {
-      timeline.fromTo(copy, shown, { ...hidden, duration: COPY_FADE, immediateRender: false }, lead + 1 - COPY_FADE);
+      timeline.fromTo(copy, shown, { ...hidden, duration: COPY_FADE, immediateRender: false }, 1);
     }
   }
 
