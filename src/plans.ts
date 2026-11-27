@@ -128,6 +128,7 @@ export const plans: Plan[] = [
       'Unlimited exports',
       'Markdown export',
       'Priority export queue',
+      'Export retention',
       'Priority support',
       '1GB storage',
     ],
@@ -178,7 +179,7 @@ export const comparison: ComparisonRow[] = [
   { feature: 'Read, write and export via MCP', values: { free: false, pro: true, enterprise: true } },
   { feature: 'Priority support', values: { free: false, pro: true, enterprise: true } },
   { feature: 'White-glove setup', values: { free: false, pro: false, enterprise: true } },
-  { feature: 'On-premises deployment', values: { free: false, pro: false, enterprise: 'Soon' } },
+  { feature: 'On-premises deployment', values: { free: false, pro: false, enterprise: true } },
   { feature: 'Custom features', values: { free: false, pro: false, enterprise: true } },
   { feature: 'App languages', values: { free: 'English, Mandarin', pro: 'English, Mandarin', enterprise: 'English, Mandarin' } },
 ];

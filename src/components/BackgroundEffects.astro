@@ -7,8 +7,8 @@
 type Side = 'left' | 'right' | 'center';
 
 interface Props {
-  /** Sides whose glows to leave out. */
-  without?: Side[];
+  /** Numbers of the glows to leave out, counting from 1 as their `glow--<number>` classes do. */
+  without?: number[];
 }
 
 const { without = [] } = Astro.props;
@@ -17,7 +17,7 @@ const glows: Side[] = ['right', 'left', 'center', 'center'];
 ---
 
 <div class="bg-effects" aria-hidden="true">
-  {glows.map((side, index) => !without.includes(side) && (
+  {glows.map((side, index) => !without.includes(index + 1) && (
     <div class:list={['glow', `glow--${side}`, `glow--${index + 1}`]}></div>
   ))}
   <div class="noise"></div>
